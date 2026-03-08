@@ -1,0 +1,49 @@
+{
+  "name": "Ixelles",
+  "slug": "ixelles",
+  "region": "Bruxelles",
+  "postal_code": "1050",
+  "distance_minutes": 12,
+  "response_time_minutes": 30,
+  "building_profile": "Immeubles de maître Art nouveau, appartements anciens avec colonnes montantes vétustes, copropriétés rénovées",
+  "nearby_landmarks": [
+    "Place Flagey",
+    "Bois de la Cambre",
+    "Université Libre de Bruxelles",
+    "Étangs d'Ixelles"
+  ],
+  "common_issues": [
+    "Fuites sur colonnes montantes dans les immeubles anciens",
+    "Remplacement de chaudières Vaillant dans les appartements",
+    "Problèmes de pression d'eau dans les immeubles de plusieurs étages",
+    "Détartrage de chauffe-eaux dans les zones à eau calcaire"
+  ],
+  "services": [
+    "Dépannage plomberie urgence",
+    "Remplacement chaudière Vaillant",
+    "Entretien chaudière annuel",
+    "Réparation fuite d'eau",
+    "Installation sanitaire complète",
+    "Détartrage chauffe-eau"
+  ],
+  "nearby_communes": [
+    "etterbeek",
+    "saint-gilles",
+    "bruxelles-ville"
+  ],
+  "faq": [
+    {
+      "q": "Quel est le délai d'intervention à Ixelles ?",
+      "a": "Nous intervenons généralement dans les 30 minutes à Ixelles, selon la disponibilité de nos techniciens."
+    },
+    {
+      "q": "Intervenez-vous sur les colonnes montantes d'immeubles à Ixelles ?",
+      "a": "Oui, nos plombiers interviennent régulièrement sur les colonnes montantes des immeubles anciens du quartier Flagey et des Étangs d'Ixelles."
+    },
+    {
+      "q": "Proposez-vous des contrats d'entretien pour chaudières Vaillant à Ixelles ?",
+      "a": "Oui, nous proposons des contrats d'entretien annuels pour toutes les chaudières Vaillant, incluant la vérification complète et le nettoyage."
+    }
+  ],
+  "last_updated": "2026-03-05T00:00:00Z"
+}

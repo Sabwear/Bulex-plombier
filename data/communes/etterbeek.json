@@ -1,0 +1,45 @@
+{
+  "name": "Etterbeek",
+  "slug": "etterbeek",
+  "region": "Bruxelles",
+  "postal_code": "1040",
+  "distance_minutes": 12,
+  "response_time_minutes": 25,
+  "building_profile": "Immeubles à appartements, maisons de maître, résidences du quartier européen",
+  "nearby_landmarks": [
+    "Parc du Cinquantenaire",
+    "Quartier européen",
+    "Place Jourdan",
+    "Gare d'Etterbeek"
+  ],
+  "common_issues": [
+    "Fuites dans les immeubles à appartements du quartier européen",
+    "Remplacement de chaudières dans les maisons de maître",
+    "Problèmes de tuyauterie dans les bâtiments anciens",
+    "Détartrage dans les zones à eau calcaire"
+  ],
+  "services": [
+    "Dépannage plomberie urgence",
+    "Remplacement chaudière Vaillant",
+    "Entretien chaudière annuel",
+    "Réparation fuite d'eau",
+    "Détartrage chauffe-eau",
+    "Installation sanitaire complète"
+  ],
+  "nearby_communes": [
+    "ixelles",
+    "bruxelles-ville",
+    "woluwe-saint-lambert"
+  ],
+  "faq": [
+    {
+      "q": "Intervenez-vous près du Cinquantenaire à Etterbeek ?",
+      "a": "Oui, nous intervenons dans tout Etterbeek, y compris le quartier du Cinquantenaire et la Place Jourdan."
+    },
+    {
+      "q": "Pouvez-vous intervenir dans les immeubles à appartements à Etterbeek ?",
+      "a": "Oui, nos techniciens sont habitués aux interventions dans les copropriétés et immeubles à appartements d'Etterbeek."
+    }
+  ],
+  "last_updated": "2026-03-05T00:00:00Z"
+}

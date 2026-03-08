@@ -1,0 +1,46 @@
+{
+  "name": "Koekelberg",
+  "slug": "koekelberg",
+  "region": "Bruxelles",
+  "postal_code": "1081",
+  "distance_minutes": 10,
+  "response_time_minutes": 25,
+  "building_profile": "Maisons mitoyennes, petits immeubles à appartements, quartiers résidentiels autour de la Basilique",
+  "nearby_landmarks": [
+    "Basilique du Sacré-Cœur",
+    "Parc Elisabeth",
+    "Place Simonis",
+    "Quartier résidentiel de Koekelberg"
+  ],
+  "common_issues": [
+    "Remplacement de chaudières dans les maisons mitoyennes",
+    "Fuites sur anciennes canalisations en plomb",
+    "Problèmes de chauffage dans les appartements",
+    "Débouchage de canalisations"
+  ],
+  "services": [
+    "Dépannage plomberie urgence",
+    "Remplacement chaudière Vaillant",
+    "Entretien chaudière annuel",
+    "Réparation fuite d'eau",
+    "Remplacement tuyauterie vétuste",
+    "Débouchage canalisations"
+  ],
+  "nearby_communes": [
+    "jette",
+    "ganshoren",
+    "molenbeek",
+    "berchem-sainte-agathe"
+  ],
+  "faq": [
+    {
+      "q": "Intervenez-vous à Koekelberg ?",
+      "a": "Oui, Koekelberg est dans notre zone d'intervention. Nous intervenons rapidement grâce à la proximité avec nos équipes."
+    },
+    {
+      "q": "Pouvez-vous remplacer les canalisations en plomb à Koekelberg ?",
+      "a": "Oui, nous remplaçons les anciennes canalisations en plomb par des matériaux modernes conformes aux normes actuelles."
+    }
+  ],
+  "last_updated": "2026-03-05T00:00:00Z"
+}

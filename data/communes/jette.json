@@ -1,0 +1,49 @@
+{
+  "name": "Jette",
+  "slug": "jette",
+  "region": "Bruxelles",
+  "postal_code": "1090",
+  "distance_minutes": 8,
+  "response_time_minutes": 25,
+  "building_profile": "Maisons unifamiliales, habitations mitoyennes des années 60–80, quelques nouvelles constructions",
+  "nearby_landmarks": [
+    "Parc de la Jeunesse",
+    "Église Notre-Dame de Laeken",
+    "Miroir d'eau de Jette",
+    "Centre commercial Basilix"
+  ],
+  "common_issues": [
+    "Remplacement de vieilles chaudières au gaz dans les maisons mitoyennes",
+    "Débouchage de canalisations dans les maisons anciennes",
+    "Fuites de radiateurs dans les installations de chauffage central",
+    "Problèmes de thermostat sur chaudières Vaillant"
+  ],
+  "services": [
+    "Dépannage plomberie urgence",
+    "Remplacement chaudière Vaillant",
+    "Entretien chaudière annuel",
+    "Débouchage canalisations",
+    "Réparation et remplacement radiateurs",
+    "Installation thermostat intelligent"
+  ],
+  "nearby_communes": [
+    "ganshoren",
+    "koekelberg",
+    "bruxelles-ville"
+  ],
+  "faq": [
+    {
+      "q": "Intervenez-vous rapidement à Jette ?",
+      "a": "Oui, Jette fait partie de nos zones d'intervention prioritaires. Nous intervenons en moyenne en 25 minutes."
+    },
+    {
+      "q": "Pouvez-vous remplacer ma vieille chaudière à Jette ?",
+      "a": "Absolument. Nous sommes spécialisés dans le remplacement de chaudières anciennes par des modèles Vaillant à condensation, plus économiques et écologiques."
+    },
+    {
+      "q": "Faites-vous le débouchage de canalisations à Jette ?",
+      "a": "Oui, nous intervenons pour le débouchage mécanique et par hydrocurage sur toute la commune de Jette."
+    }
+  ],
+  "last_updated": "2026-03-05T00:00:00Z"
+}

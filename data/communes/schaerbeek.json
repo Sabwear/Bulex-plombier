@@ -1,0 +1,49 @@
+{
+  "name": "Schaerbeek",
+  "slug": "schaerbeek",
+  "region": "Bruxelles",
+  "postal_code": "1030",
+  "distance_minutes": 10,
+  "response_time_minutes": 25,
+  "building_profile": "Maisons bourgeoises Art déco, immeubles à appartements, logements sociaux rénovés",
+  "nearby_landmarks": [
+    "Gare de Schaerbeek",
+    "Parc Josaphat",
+    "Halles de Schaerbeek",
+    "Place Colignon"
+  ],
+  "common_issues": [
+    "Fuites dans les toitures plates et gouttières des maisons bourgeoises",
+    "Remplacement de chaudières dans les immeubles à appartements",
+    "Problèmes de tuyauterie en plomb dans les quartiers anciens",
+    "Pannes de chauffage en hiver dans les logements sociaux"
+  ],
+  "services": [
+    "Dépannage plomberie urgence",
+    "Remplacement chaudière Vaillant",
+    "Entretien chaudière annuel",
+    "Réparation fuite d'eau",
+    "Remplacement tuyauterie vétuste",
+    "Installation chauffage central"
+  ],
+  "nearby_communes": [
+    "evere",
+    "saint-josse-ten-noode",
+    "bruxelles-ville"
+  ],
+  "faq": [
+    {
+      "q": "Intervenez-vous dans tout Schaerbeek ?",
+      "a": "Oui, nous couvrons l'ensemble de Schaerbeek, du quartier Helmet à la Place Colignon en passant par le Parc Josaphat."
+    },
+    {
+      "q": "Pouvez-vous remplacer les tuyaux en plomb à Schaerbeek ?",
+      "a": "Oui, nous réalisons le remplacement de tuyauterie en plomb par des matériaux modernes conformes aux normes sanitaires actuelles."
+    },
+    {
+      "q": "Quel est le coût d'un entretien de chaudière Vaillant à Schaerbeek ?",
+      "a": "Le tarif d'un entretien annuel dépend du modèle. Contactez-nous pour un devis personnalisé sans engagement."
+    }
+  ],
+  "last_updated": "2026-03-05T00:00:00Z"
+}

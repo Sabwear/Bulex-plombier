@@ -1,0 +1,46 @@
+{
+  "name": "Saint-Gilles",
+  "slug": "saint-gilles",
+  "region": "Bruxelles",
+  "postal_code": "1060",
+  "distance_minutes": 12,
+  "response_time_minutes": 25,
+  "building_profile": "Maisons de maître Art nouveau, immeubles à appartements anciens, lofts et rénovations contemporaines",
+  "nearby_landmarks": [
+    "Parvis de Saint-Gilles",
+    "Hôtel de Ville de Saint-Gilles",
+    "Barrière de Saint-Gilles",
+    "Prison de Saint-Gilles"
+  ],
+  "common_issues": [
+    "Fuites sur tuyauteries anciennes dans les maisons Art nouveau",
+    "Problèmes de colonnes montantes dans les immeubles à appartements",
+    "Remplacement de chaudières dans les habitations rénovées",
+    "Détartrage dans les zones à eau calcaire"
+  ],
+  "services": [
+    "Dépannage plomberie urgence",
+    "Remplacement chaudière Vaillant",
+    "Entretien chaudière annuel",
+    "Réparation fuite d'eau",
+    "Détartrage chauffe-eau",
+    "Installation sanitaire complète"
+  ],
+  "nearby_communes": [
+    "bruxelles-ville",
+    "ixelles",
+    "forest",
+    "anderlecht"
+  ],
+  "faq": [
+    {
+      "q": "Intervenez-vous à Saint-Gilles ?",
+      "a": "Oui, nous intervenons dans tout Saint-Gilles, du Parvis à la Barrière, en passant par le quartier du Midi."
+    },
+    {
+      "q": "Connaissez-vous les spécificités des maisons Art nouveau ?",
+      "a": "Oui, nos techniciens ont l'expérience des bâtiments Art nouveau de Saint-Gilles avec leurs canalisations et configurations spécifiques."
+    }
+  ],
+  "last_updated": "2026-03-05T00:00:00Z"
+}

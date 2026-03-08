@@ -1,0 +1,45 @@
+{
+  "name": "Berchem-Sainte-Agathe",
+  "slug": "berchem-sainte-agathe",
+  "region": "Bruxelles",
+  "postal_code": "1082",
+  "distance_minutes": 12,
+  "response_time_minutes": 30,
+  "building_profile": "Maisons unifamiliales, lotissements résidentiels calmes, quelques immeubles à appartements",
+  "nearby_landmarks": [
+    "Parc Roi Baudouin",
+    "Église Sainte-Agathe",
+    "Centre commercial Basilix",
+    "Quartier résidentiel de Koekelberg"
+  ],
+  "common_issues": [
+    "Remplacement de vieilles chaudières dans les maisons unifamiliales",
+    "Problèmes de thermostat et régulation de chauffage",
+    "Fuites sur tuyauteries en cuivre vieillissantes",
+    "Débouchage de canalisations dans les maisons anciennes"
+  ],
+  "services": [
+    "Dépannage plomberie urgence",
+    "Remplacement chaudière Vaillant",
+    "Entretien chaudière annuel",
+    "Réparation fuite d'eau",
+    "Installation thermostat intelligent",
+    "Débouchage canalisations"
+  ],
+  "nearby_communes": [
+    "ganshoren",
+    "koekelberg",
+    "molenbeek"
+  ],
+  "faq": [
+    {
+      "q": "Intervenez-vous à Berchem-Sainte-Agathe ?",
+      "a": "Oui, Berchem-Sainte-Agathe fait partie de nos zones d'intervention régulières. Nous y intervenons en moyenne en 30 minutes."
+    },
+    {
+      "q": "Proposez-vous l'entretien de chaudière à Berchem-Sainte-Agathe ?",
+      "a": "Oui, nous proposons des contrats d'entretien annuels pour toutes les chaudières Vaillant installées à Berchem-Sainte-Agathe."
+    }
+  ],
+  "last_updated": "2026-03-05T00:00:00Z"
+}

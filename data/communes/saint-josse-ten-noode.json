@@ -1,0 +1,45 @@
+{
+  "name": "Saint-Josse-ten-Noode",
+  "slug": "saint-josse-ten-noode",
+  "region": "Bruxelles",
+  "postal_code": "1210",
+  "distance_minutes": 8,
+  "response_time_minutes": 20,
+  "building_profile": "Immeubles à appartements anciens, maisons de commerce avec logements aux étages, rénovations récentes",
+  "nearby_landmarks": [
+    "Place Saint-Josse",
+    "Jardin Botanique",
+    "Gare du Nord (proximité)",
+    "Quartier Madou"
+  ],
+  "common_issues": [
+    "Fuites dans les immeubles anciens à forte densité",
+    "Canalisations vétustes dans les bâtiments de commerce-logement",
+    "Remplacement de chaudières dans les appartements",
+    "Problèmes de pression d'eau"
+  ],
+  "services": [
+    "Dépannage plomberie urgence",
+    "Remplacement chaudière Vaillant",
+    "Entretien chaudière annuel",
+    "Réparation fuite d'eau",
+    "Remplacement tuyauterie vétuste",
+    "Installation sanitaire complète"
+  ],
+  "nearby_communes": [
+    "schaerbeek",
+    "bruxelles-ville",
+    "etterbeek"
+  ],
+  "faq": [
+    {
+      "q": "Intervenez-vous à Saint-Josse-ten-Noode ?",
+      "a": "Oui, Saint-Josse est l'une des communes les plus proches de notre base. Nous intervenons en environ 20 minutes."
+    },
+    {
+      "q": "Pouvez-vous intervenir dans les immeubles à appartements de Saint-Josse ?",
+      "a": "Oui, nos techniciens sont habitués aux interventions dans les immeubles à appartements et copropriétés de Saint-Josse."
+    }
+  ],
+  "last_updated": "2026-03-05T00:00:00Z"
+}

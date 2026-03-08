@@ -1,0 +1,45 @@
+{
+  "name": "Evere",
+  "slug": "evere",
+  "region": "Bruxelles",
+  "postal_code": "1140",
+  "distance_minutes": 10,
+  "response_time_minutes": 25,
+  "building_profile": "Maisons mitoyennes, immeubles résidentiels, quartiers résidentiels des années 60-80",
+  "nearby_landmarks": [
+    "Siège de l'OTAN",
+    "Cimetière de Bruxelles",
+    "Parc Walckiers",
+    "Centre commercial Evere"
+  ],
+  "common_issues": [
+    "Remplacement de chaudières vieillissantes dans les maisons mitoyennes",
+    "Débouchage de canalisations dans les constructions anciennes",
+    "Fuites sur installations de chauffage central",
+    "Problèmes de radiateurs dans les appartements"
+  ],
+  "services": [
+    "Dépannage plomberie urgence",
+    "Remplacement chaudière Vaillant",
+    "Entretien chaudière annuel",
+    "Débouchage canalisations",
+    "Réparation et remplacement radiateurs",
+    "Installation chauffage central"
+  ],
+  "nearby_communes": [
+    "schaerbeek",
+    "woluwe-saint-lambert",
+    "bruxelles-ville"
+  ],
+  "faq": [
+    {
+      "q": "Intervenez-vous à Evere ?",
+      "a": "Oui, Evere est dans notre zone d'intervention prioritaire. Nous y intervenons en moyenne en 25 minutes."
+    },
+    {
+      "q": "Faites-vous le remplacement de chaudière à Evere ?",
+      "a": "Oui, nous remplaçons les anciennes chaudières par des modèles Vaillant à condensation, adaptés aux maisons d'Evere."
+    }
+  ],
+  "last_updated": "2026-03-05T00:00:00Z"
+}

@@ -1,0 +1,45 @@
+{
+  "name": "Woluwe-Saint-Pierre",
+  "slug": "woluwe-saint-pierre",
+  "region": "Bruxelles",
+  "postal_code": "1150",
+  "distance_minutes": 18,
+  "response_time_minutes": 30,
+  "building_profile": "Villas de standing, propriétés résidentielles avec jardin, appartements de qualité, quartiers diplomatiques",
+  "nearby_landmarks": [
+    "Parc de Woluwe",
+    "Château Malou",
+    "Stockel (quartier résidentiel)",
+    "Centre Sportif de Woluwe-Saint-Pierre"
+  ],
+  "common_issues": [
+    "Entretien de systèmes de chauffage dans les villas de standing",
+    "Remplacement de chaudières haut de gamme",
+    "Fuites sur installations sanitaires anciennes",
+    "Problèmes de canalisation dans les propriétés avec jardin"
+  ],
+  "services": [
+    "Dépannage plomberie urgence",
+    "Remplacement chaudière Vaillant",
+    "Entretien chaudière annuel",
+    "Réparation fuite d'eau",
+    "Installation sanitaire complète",
+    "Installation chauffage central"
+  ],
+  "nearby_communes": [
+    "woluwe-saint-lambert",
+    "auderghem",
+    "etterbeek"
+  ],
+  "faq": [
+    {
+      "q": "Desservez-vous Woluwe-Saint-Pierre ?",
+      "a": "Oui, nous intervenons dans tout Woluwe-Saint-Pierre, de Stockel au Château Malou."
+    },
+    {
+      "q": "Quel est le délai pour Woluwe-Saint-Pierre ?",
+      "a": "Nous intervenons en moyenne en 30 minutes à Woluwe-Saint-Pierre."
+    }
+  ],
+  "last_updated": "2026-03-05T00:00:00Z"
+}

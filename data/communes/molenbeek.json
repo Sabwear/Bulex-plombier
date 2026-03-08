@@ -1,0 +1,46 @@
+{
+  "name": "Molenbeek-Saint-Jean",
+  "slug": "molenbeek",
+  "region": "Bruxelles",
+  "postal_code": "1080",
+  "distance_minutes": 12,
+  "response_time_minutes": 25,
+  "building_profile": "Maisons ouvrières rénovées, immeubles à appartements, nouvelles constructions le long du canal",
+  "nearby_landmarks": [
+    "Canal de Bruxelles",
+    "Parc des Muses",
+    "Tour & Taxis (proximité)",
+    "Gare de l'Ouest"
+  ],
+  "common_issues": [
+    "Canalisations vétustes dans les maisons ouvrières",
+    "Remplacement de chaudières anciennes",
+    "Problèmes d'humidité et fuites dans les sous-sols",
+    "Pannes de chauffage dans les immeubles à appartements"
+  ],
+  "services": [
+    "Dépannage plomberie urgence",
+    "Remplacement chaudière Vaillant",
+    "Entretien chaudière annuel",
+    "Réparation fuite d'eau",
+    "Débouchage canalisations",
+    "Installation chauffage central"
+  ],
+  "nearby_communes": [
+    "koekelberg",
+    "anderlecht",
+    "bruxelles-ville",
+    "berchem-sainte-agathe"
+  ],
+  "faq": [
+    {
+      "q": "Desservez-vous Molenbeek-Saint-Jean ?",
+      "a": "Oui, nous intervenons dans tout Molenbeek, des quartiers du canal aux zones résidentielles."
+    },
+    {
+      "q": "Quel est le délai d'intervention à Molenbeek ?",
+      "a": "Nous intervenons en moyenne en 25 minutes à Molenbeek-Saint-Jean."
+    }
+  ],
+  "last_updated": "2026-03-05T00:00:00Z"
+}

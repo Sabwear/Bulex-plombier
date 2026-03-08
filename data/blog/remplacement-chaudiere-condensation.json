@@ -1,0 +1,35 @@
+{
+  "slug": "remplacement-chaudiere-condensation",
+  "categories": [
+    "Installation"
+  ],
+  "tags": [
+    "Condensation",
+    "Eco",
+    "Economies",
+    "Vaillant"
+  ],
+  "image": "https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?q=80&w=800&auto=format&fit=crop",
+  "author": {
+    "name": "L'équipe Villant",
+    "avatar": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=100&auto=format&fit=crop",
+    "bio": "Experts certifiés Vaillant actifs dans les 19 communes de Bruxelles."
+  },
+  "languages": {
+    "fr": {
+      "title": "Remplacement de chaudière : Quand passer à la condensation ?",
+      "excerpt": "Votre ancienne chaudière montre des signes de fatigue ? Découvrez pourquoi passer à une chaudière Vaillant à condensation est le meilleur investissement.",
+      "date": "2026-02-20",
+      "content": "### Est-il temps de changer ?\n\nSi votre chaudière a plus de 15 ans, ses performances sont probablement bien en deçà des standards actuels. Les réparations deviennent de plus en plus coûteuses et fréquentes.\n\n### Les atouts de la condensation Vaillant\n\n- **Rendement jusqu'à 108%** : En récupérant la chaleur des fumées, vous utilisez moins d'énergie pour plus de confort.\n- **Prime Énergie** : À Bruxelles, le remplacement d'une ancienne chaudière par un modèle à condensation peut ouvrir droit à des primes intéressantes.\n- **Impact Ecologique** : Réduisez vos émissions de CO2 de manière significative.\n\n### Notre processus d'installation\n\nNous commençons par une étude thermique de votre logement pour choisir la puissance optimale. L'installation est réalisée en une journée, avec enlèvement de votre ancien appareil et mise en service complète."
+    },
+    "nl": {
+      "title": "Ketel vervangen: Wanneer overstappen op condensatie?",
+      "excerpt": "Vertoont uw oude ketel tekenen van vermoeidheid? Ontdek waarom overstappen op een Vaillant-condensatieketel de beste investering is.",
+      "date": "2026-02-20",
+      "content": "### Is het tijd om te veranderen?\n\nAls uw ketel ouder is dan 15 jaar, liggen de prestaties waarschijnlijk ver onder de huidige normen. Reparaties worden steeds duurder en frequenter.\n\n### De voordelen van Vaillant-condensatie\n\n- **Rendement tot 108%**: Door warmte uit rookgassen terug te winnen, verbruikt u minder energie voor meer comfort.\n- **Energiepremie**: In Brussel kan het vervangen van een oude ketel door een condensatiemodel recht geven op interessante premies.\n- **Ecologische Impact**: Verminder uw CO2-uitstoot aanzienlijk.\n\n### Ons installatieproces\n\nWe beginnen met een thermische studie van uw woning om de optimale capaciteit te kiezen. De installatie wordt in één dag uitgevoerd, inclusief verwijdering van uw oude apparaat en volledige inbedrijfstelling."
+    }
+  },
+  "related_slugs": [
+    "vaillant-pourquoi-choisir-bruxelles"
+  ]
+}

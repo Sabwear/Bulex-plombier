@@ -1,0 +1,45 @@
+{
+  "name": "Uccle",
+  "slug": "uccle",
+  "region": "Bruxelles",
+  "postal_code": "1180",
+  "distance_minutes": 18,
+  "response_time_minutes": 35,
+  "building_profile": "Villas résidentielles, maisons unifamiliales avec jardin, propriétés de standing, quelques appartements récents",
+  "nearby_landmarks": [
+    "Observatoire Royal de Belgique",
+    "Parc de Wolvendael",
+    "Fort Jaco",
+    "Quartier du Chat (Dieweg)"
+  ],
+  "common_issues": [
+    "Entretien de systèmes de chauffage dans les grandes villas",
+    "Remplacement de chaudières dans les maisons de standing",
+    "Fuites sur installations sanitaires dans les propriétés anciennes",
+    "Problèmes de canalisation dans les terrains en pente"
+  ],
+  "services": [
+    "Dépannage plomberie urgence",
+    "Remplacement chaudière Vaillant",
+    "Entretien chaudière annuel",
+    "Réparation fuite d'eau",
+    "Installation sanitaire complète",
+    "Installation chauffage central"
+  ],
+  "nearby_communes": [
+    "forest",
+    "watermael-boitsfort",
+    "saint-gilles"
+  ],
+  "faq": [
+    {
+      "q": "Desservez-vous tout Uccle ?",
+      "a": "Oui, nous intervenons dans tout Uccle, de Fort Jaco au Dieweg en passant par Wolvendael."
+    },
+    {
+      "q": "Quel est le délai d'intervention à Uccle ?",
+      "a": "En moyenne 35 minutes pour Uccle, selon la disponibilité de nos équipes et les conditions de circulation."
+    }
+  ],
+  "last_updated": "2026-03-05T00:00:00Z"
+}

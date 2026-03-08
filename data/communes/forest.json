@@ -1,0 +1,45 @@
+{
+  "name": "Forest",
+  "slug": "forest",
+  "region": "Bruxelles",
+  "postal_code": "1190",
+  "distance_minutes": 15,
+  "response_time_minutes": 30,
+  "building_profile": "Maisons mitoyennes Art déco, immeubles à appartements, quartiers résidentiels verdoyants",
+  "nearby_landmarks": [
+    "Parc de Forest",
+    "Abbaye de Forest",
+    "Forest National (salle de concert)",
+    "Altitude 100"
+  ],
+  "common_issues": [
+    "Fuites dans les maisons Art déco avec tuyauterie ancienne",
+    "Remplacement de chaudières dans les maisons mitoyennes",
+    "Problèmes d'évacuation dans les sous-sols",
+    "Pannes de chauffage en hiver"
+  ],
+  "services": [
+    "Dépannage plomberie urgence",
+    "Remplacement chaudière Vaillant",
+    "Entretien chaudière annuel",
+    "Réparation fuite d'eau",
+    "Installation sanitaire complète",
+    "Débouchage canalisations"
+  ],
+  "nearby_communes": [
+    "uccle",
+    "saint-gilles",
+    "anderlecht"
+  ],
+  "faq": [
+    {
+      "q": "Intervenez-vous dans tout Forest ?",
+      "a": "Oui, nous couvrons l'ensemble de Forest, du quartier de l'Altitude 100 au Parc de Forest."
+    },
+    {
+      "q": "Quel délai pour une urgence plomberie à Forest ?",
+      "a": "Nous intervenons en moyenne en 30 minutes pour les urgences à Forest."
+    }
+  ],
+  "last_updated": "2026-03-05T00:00:00Z"
+}

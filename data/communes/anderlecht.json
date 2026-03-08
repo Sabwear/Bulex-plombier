@@ -1,0 +1,45 @@
+{
+  "name": "Anderlecht",
+  "slug": "anderlecht",
+  "region": "Bruxelles",
+  "postal_code": "1070",
+  "distance_minutes": 15,
+  "response_time_minutes": 30,
+  "building_profile": "Maisons mitoyennes ouvrières, logements sociaux rénovés, nouvelles constructions résidentielles",
+  "nearby_landmarks": [
+    "Stade Constant Vanden Stock",
+    "Parc Astrid",
+    "Erasme (hôpital)",
+    "Marché des Abattoirs"
+  ],
+  "common_issues": [
+    "Canalisations vétustes dans les maisons ouvrières",
+    "Fuites sur anciennes installations de chauffage central",
+    "Remplacement de chaudières en fin de vie dans les logements sociaux",
+    "Problèmes de pression d'eau dans les immeubles récents"
+  ],
+  "services": [
+    "Dépannage plomberie urgence",
+    "Remplacement chaudière Vaillant",
+    "Entretien chaudière annuel",
+    "Réparation fuite d'eau",
+    "Débouchage canalisations",
+    "Installation chauffage central"
+  ],
+  "nearby_communes": [
+    "molenbeek",
+    "forest",
+    "saint-gilles"
+  ],
+  "faq": [
+    {
+      "q": "Intervenez-vous rapidement à Anderlecht ?",
+      "a": "Oui, nous intervenons dans tout Anderlecht, du quartier Erasme au centre, en général en 30 minutes."
+    },
+    {
+      "q": "Pouvez-vous remplacer ma chaudière à Anderlecht ?",
+      "a": "Absolument. Nous installons des chaudières Vaillant à condensation en remplacement de vos anciens appareils."
+    }
+  ],
+  "last_updated": "2026-03-05T00:00:00Z"
+}

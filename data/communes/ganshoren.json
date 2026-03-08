@@ -1,0 +1,45 @@
+{
+  "name": "Ganshoren",
+  "slug": "ganshoren",
+  "region": "Bruxelles",
+  "postal_code": "1083",
+  "distance_minutes": 10,
+  "response_time_minutes": 25,
+  "building_profile": "Maisons unifamiliales, pavillons résidentiels, quelques petits immeubles à appartements",
+  "nearby_landmarks": [
+    "Parc Roi Baudouin",
+    "Basilique de Koekelberg (proximité)",
+    "Quartier résidentiel calme",
+    "Centre sportif de Ganshoren"
+  ],
+  "common_issues": [
+    "Remplacement de chaudières dans les maisons unifamiliales",
+    "Entretien de systèmes de chauffage vieillissants",
+    "Fuites sur tuyauteries en cuivre",
+    "Problèmes de thermostat"
+  ],
+  "services": [
+    "Dépannage plomberie urgence",
+    "Remplacement chaudière Vaillant",
+    "Entretien chaudière annuel",
+    "Réparation fuite d'eau",
+    "Installation thermostat intelligent",
+    "Remplacement tuyauterie vétuste"
+  ],
+  "nearby_communes": [
+    "jette",
+    "berchem-sainte-agathe",
+    "koekelberg"
+  ],
+  "faq": [
+    {
+      "q": "Êtes-vous disponibles à Ganshoren ?",
+      "a": "Oui, Ganshoren est dans notre zone d'intervention. Nous y intervenons en environ 25 minutes."
+    },
+    {
+      "q": "Installez-vous des thermostats intelligents à Ganshoren ?",
+      "a": "Oui, nous instaurons des thermostats connectés compatibles avec les chaudières Vaillant pour optimiser votre consommation."
+    }
+  ],
+  "last_updated": "2026-03-05T00:00:00Z"
+}

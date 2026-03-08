@@ -1,0 +1,45 @@
+{
+  "name": "Watermael-Boitsfort",
+  "slug": "watermael-boitsfort",
+  "region": "Bruxelles",
+  "postal_code": "1170",
+  "distance_minutes": 20,
+  "response_time_minutes": 35,
+  "building_profile": "Cités-jardins, maisons unifamiliales, villas en bordure de forêt, logements du patrimoine Le Logis-Floréal",
+  "nearby_landmarks": [
+    "Cité-jardin Le Logis-Floréal",
+    "Hippodrome de Boitsfort",
+    "Forêt de Soignes",
+    "Place Keym"
+  ],
+  "common_issues": [
+    "Entretien de chaudières dans les cités-jardins patrimoniales",
+    "Problèmes d'humidité liés à la proximité de la forêt",
+    "Remplacement de systèmes de chauffage dans les maisons des années 20-30",
+    "Fuites sur installations sanitaires vieillissantes"
+  ],
+  "services": [
+    "Dépannage plomberie urgence",
+    "Remplacement chaudière Vaillant",
+    "Entretien chaudière annuel",
+    "Réparation fuite d'eau",
+    "Installation sanitaire complète",
+    "Détartrage chauffe-eau"
+  ],
+  "nearby_communes": [
+    "auderghem",
+    "uccle",
+    "woluwe-saint-pierre"
+  ],
+  "faq": [
+    {
+      "q": "Intervenez-vous à Watermael-Boitsfort ?",
+      "a": "Oui, nous intervenons dans tout Watermael-Boitsfort, y compris les cités-jardins du Logis-Floréal."
+    },
+    {
+      "q": "Connaissez-vous les spécificités du patrimoine Le Logis ?",
+      "a": "Oui, nos techniciens sont sensibilisés aux contraintes des bâtiments patrimoniaux de Watermael-Boitsfort."
+    }
+  ],
+  "last_updated": "2026-03-05T00:00:00Z"
+}

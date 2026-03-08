@@ -1,0 +1,35 @@
+{
+  "slug": "entretien-chaudiere-vaillant-importance",
+  "categories": [
+    "Entretien"
+  ],
+  "tags": [
+    "Maintenance",
+    "Sécurité",
+    "Vaillant",
+    "Légal"
+  ],
+  "image": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800&auto=format&fit=crop",
+  "author": {
+    "name": "L'équipe Villant",
+    "avatar": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=100&auto=format&fit=crop",
+    "bio": "Experts certifiés Vaillant actifs dans les 19 communes de Bruxelles."
+  },
+  "languages": {
+    "fr": {
+      "title": "L'importance de l'entretien annuel de votre chaudière Vaillant",
+      "excerpt": "L'entretien n'est pas seulement une obligation légale à Bruxelles, c'est le meilleur moyen de prolonger la vie de votre chaudière.",
+      "date": "2026-03-01",
+      "content": "### Une obligation légale, mais pas seulement\n\nÀ Bruxelles, l'entretien de votre chaudière au gaz est obligatoire tous les deux ans (ou tous les ans pour certains types). Au-delà de l'aspect légal, un entretien régulier par un professionnel certifié est primordial pour votre sécurité.\n\n### Pourquoi entretenir régulièrement ?\n\n- **Sécurité** : Prévention des risques d'intoxication au monoxyde de carbone.\n- **Économies** : Une chaudière bien réglée consomme jusqu'à 10% de moins.\n- **Longévité** : Évitez l'usure prématurée des composants critiques.\n\n### Ce que nous vérifions\n\nLors de notre passage, nous nettoyons le brûleur, vérifions l'échangeur de chaleur et contrôlons tous les dispositifs de sécurité. Vous recevez ensuite une attestation officielle pour votre assurance ou votre propriétaire."
+    },
+    "nl": {
+      "title": "Het belang van jaarlijks onderhoud voor uw Vaillant-ketel",
+      "excerpt": "Onderhoud is niet alleen een wettelijke verplichting in Brussel, het is de beste manier om de levensduur van uw ketel te verlengen.",
+      "date": "2026-03-01",
+      "content": "### Een wettelijke verplichting, maar niet alleen dat\n\nIn Brussel is het onderhoud van uw gasketel om de twee jaar verplicht (of jaarlijks voor bepaalde types). Naast het wettelijke aspect is regelmatig onderhoud door een gecertificeerde professional cruciaal voor uw veiligheid.\n\n### Waarom regelmatig onderhoud?\n\n- **Veiligheid**: Voorkomen van het risico op koolmonoxidevergiftiging.\n- **Besparingen**: Een goed afgestelde ketel verbruikt tot 10% minder.\n- **Levensduur**: Voorkom voortijdige slijtage van kritieke componenten.\n\n### Wat wij controleren\n\nTijdens ons bezoek reinigen we de brander, controleren we de warmtewisselaar en testen we alle veiligheidsvoorzieningen. U ontvangt vervolgens een officieel attest voor uw verzekering of eigenaar."
+    }
+  },
+  "related_slugs": [
+    "codes-erreur-vaillant-frequents"
+  ]
+}

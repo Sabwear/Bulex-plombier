@@ -1,0 +1,36 @@
+{
+  "slug": "codes-erreur-vaillant-frequents",
+  "categories": [
+    "Dépannage"
+  ],
+  "tags": [
+    "F.28",
+    "F.22",
+    "F.75",
+    "Vaillant",
+    "Réparation"
+  ],
+  "image": "https://images.unsplash.com/photo-1504148455328-c376907d081c?q=80&w=800&auto=format&fit=crop",
+  "author": {
+    "name": "L'équipe Villant",
+    "avatar": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=100&auto=format&fit=crop",
+    "bio": "Experts certifiés Vaillant actifs dans les 19 communes de Bruxelles."
+  },
+  "languages": {
+    "fr": {
+      "title": "Comment résoudre les codes d'erreur Vaillant fréquents (F.28, F.22, F.75)",
+      "excerpt": "Votre chaudière affiche un code d'erreur ? Voici comment interpréter les signaux de votre appareil Vaillant avant d'appeler un technicien.",
+      "date": "2026-02-25",
+      "content": "### Comprendre les codes d'erreur\n\nLes chaudières modernes Vaillant sont équipées d'un système d'autodiagnostic efficace. Voici les codes que nous rencontrons le plus souvent à Bruxelles.\n\n#### Code F.28 : Échec de l'allumage\nCe code signifie souvent que le gaz n'arrive pas ou que l'électrode est encrassée. Vérifiez si votre compteur de gaz est ouvert.\n\n#### Code F.22 : Manque d'eau\nLa pression est trop basse. Vous pouvez souvent résoudre ce problème vous-même en ajoutant de l'eau dans le circuit jusqu'à atteindre 1,5 bar.\n\n#### Code F.75 : Pompe ou capteur de pression\nLa chaudière ne détecte pas de montée de pression lors du démarrage de la pompe. Cela nécessite souvent l'intervention d'un expert pour vérifier le circulateur.\n\n### Quand appeler un expert ?\nSi le reset ne fonctionne pas, n'insistez pas. Une manipulation incorrecte peut endommager le bloc gaz ou la carte électronique."
+    },
+    "nl": {
+      "title": "Veelvoorkomende Vaillant-foutcodes oplossen (F.28, F.22, F.75)",
+      "excerpt": "Toont uw ketel een foutcode? Hier leest u hoe u de signalen van uw Vaillant-apparaat kunt interpreteren voordat u een technicus belt.",
+      "date": "2026-02-25",
+      "content": "### Foutcodes begrijpen\n\nModerne Vaillant-ketels zijn uitgerust met een efficiënt zelfdiagnosesysteem. Hier zijn de codes die we in Brussel het vaakst tegenkomen.\n\n#### Code F.28: Ontstekingsfout\nDeze code betekent vaak dat er geen gas is of dat de elektrode bevuild is. Controleer of uw gasmeter open staat.\n\n#### Code F.22: Te weinig water\nDe druk is te laag. U kunt dit probleem vaak zelf oplossen door water aan het circuit toe te voegen tot 1,5 bar.\n\n#### Code F.75: Pomp of druksensor\nDe ketel detecteert geen drukstijging bij het starten van de pomp. Dit vereist vaak de tussenkomst van een expert om de pomp te controleren.\n\n### Wanneer een expert bellen?\nAls een reset niet werkt, dring dan niet aan. Onjuiste handelingen kunnen het gasblok of de printplaat beschadigen."
+    }
+  },
+  "related_slugs": [
+    "remplacement-chaudiere-condensation"
+  ]
+}

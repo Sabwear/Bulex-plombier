@@ -1,0 +1,50 @@
+{
+  "name": "Bruxelles-Ville",
+  "slug": "bruxelles-ville",
+  "region": "Bruxelles",
+  "postal_code": "1000",
+  "distance_minutes": 10,
+  "response_time_minutes": 25,
+  "building_profile": "Immeubles de bureaux, appartements anciens du Pentagone, lofts rénovés, résidences de standing",
+  "nearby_landmarks": [
+    "Grand-Place",
+    "Manneken-Pis",
+    "Gare Centrale",
+    "Palais Royal"
+  ],
+  "common_issues": [
+    "Fuites sur colonnes montantes dans les immeubles anciens du centre",
+    "Problèmes de pression d'eau dans les immeubles de grande hauteur",
+    "Remplacement de chaudières dans les appartements rénovés",
+    "Pannes de chauffage dans les bâtiments historiques"
+  ],
+  "services": [
+    "Dépannage plomberie urgence",
+    "Remplacement chaudière Vaillant",
+    "Entretien chaudière annuel",
+    "Réparation fuite d'eau",
+    "Installation sanitaire complète",
+    "Remplacement tuyauterie vétuste"
+  ],
+  "nearby_communes": [
+    "saint-gilles",
+    "ixelles",
+    "schaerbeek",
+    "saint-josse-ten-noode"
+  ],
+  "faq": [
+    {
+      "q": "Intervenez-vous dans le centre de Bruxelles ?",
+      "a": "Oui, nous sommes actifs dans tout le Pentagone ainsi que les quartiers européens, Louise et les Marolles."
+    },
+    {
+      "q": "Quel est le temps d'intervention au centre-ville ?",
+      "a": "Nous intervenons en moyenne en 25 minutes dans Bruxelles-Ville, selon les conditions de circulation."
+    },
+    {
+      "q": "Intervenez-vous sur les immeubles anciens du centre ?",
+      "a": "Oui, nos techniciens ont l'expérience des bâtiments historiques bruxellois avec leurs spécificités (colonnes montantes, tuyauterie en plomb, etc.)."
+    }
+  ],
+  "last_updated": "2026-03-05T00:00:00Z"
+}

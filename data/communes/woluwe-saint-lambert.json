@@ -1,0 +1,46 @@
+{
+  "name": "Woluwe-Saint-Lambert",
+  "slug": "woluwe-saint-lambert",
+  "region": "Bruxelles",
+  "postal_code": "1200",
+  "distance_minutes": 15,
+  "response_time_minutes": 30,
+  "building_profile": "Maisons unifamiliales résidentielles, appartements de standing, quartiers verts et aérés",
+  "nearby_landmarks": [
+    "Centre commercial Woluwe Shopping Center",
+    "Parc de Woluwe",
+    "Hôpital UCL Saint-Luc",
+    "Musée du Transport Urbain"
+  ],
+  "common_issues": [
+    "Remplacement de chaudières dans les maisons résidentielles",
+    "Entretien de systèmes de chauffage dans les appartements de standing",
+    "Fuites sur installations sanitaires",
+    "Problèmes de thermostat et régulation"
+  ],
+  "services": [
+    "Dépannage plomberie urgence",
+    "Remplacement chaudière Vaillant",
+    "Entretien chaudière annuel",
+    "Réparation fuite d'eau",
+    "Installation thermostat intelligent",
+    "Installation sanitaire complète"
+  ],
+  "nearby_communes": [
+    "woluwe-saint-pierre",
+    "etterbeek",
+    "evere",
+    "schaerbeek"
+  ],
+  "faq": [
+    {
+      "q": "Intervenez-vous à Woluwe-Saint-Lambert ?",
+      "a": "Oui, nous desservons l'ensemble de Woluwe-Saint-Lambert, y compris les quartiers autour du Woluwe Shopping Center et de l'hôpital Saint-Luc."
+    },
+    {
+      "q": "Proposez-vous des thermostats connectés à Woluwe-Saint-Lambert ?",
+      "a": "Oui, nous installons des thermostats intelligents compatibles avec les chaudières Vaillant pour optimiser votre consommation énergétique."
+    }
+  ],
+  "last_updated": "2026-03-05T00:00:00Z"
+}

@@ -1,0 +1,45 @@
+{
+  "name": "Auderghem",
+  "slug": "auderghem",
+  "region": "Bruxelles",
+  "postal_code": "1160",
+  "distance_minutes": 18,
+  "response_time_minutes": 35,
+  "building_profile": "Villas résidentielles, maisons unifamiliales, appartements récents en bordure de forêt",
+  "nearby_landmarks": [
+    "Forêt de Soignes",
+    "Rouge-Cloître",
+    "Boulevard du Souverain",
+    "Centre Sportif Auderghem"
+  ],
+  "common_issues": [
+    "Entretien de chaudières dans les grandes villas",
+    "Problèmes d'humidité liés à la proximité de la forêt",
+    "Remplacement de systèmes de chauffage dans les maisons des années 70",
+    "Fuites sur installations sanitaires vieillissantes"
+  ],
+  "services": [
+    "Dépannage plomberie urgence",
+    "Remplacement chaudière Vaillant",
+    "Entretien chaudière annuel",
+    "Réparation fuite d'eau",
+    "Installation sanitaire complète",
+    "Détartrage chauffe-eau"
+  ],
+  "nearby_communes": [
+    "watermael-boitsfort",
+    "woluwe-saint-pierre",
+    "etterbeek"
+  ],
+  "faq": [
+    {
+      "q": "Desservez-vous tout Auderghem ?",
+      "a": "Oui, nous intervenons dans l'ensemble d'Auderghem, y compris les quartiers proches de la Forêt de Soignes et du Rouge-Cloître."
+    },
+    {
+      "q": "Quel délai pour une intervention à Auderghem ?",
+      "a": "Nous intervenons en moyenne en 35 minutes à Auderghem, selon la disponibilité de nos équipes."
+    }
+  ],
+  "last_updated": "2026-03-05T00:00:00Z"
+}
