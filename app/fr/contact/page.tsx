@@ -37,7 +37,7 @@ export default function ContactPage() {
             Vous avez un problème de plomberie, vous souhaitez demander un devis ou discuter d'un contrat d'entretien ? Villant Plombier est à votre disposition.
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <a href="mailto:contact@villant-loodgieter.be" className="btn btn-primary">📧 Envoyer un message</a>
+            <Link href="/demande-devis" className="btn btn-primary">Demander un devis</Link>
             <Link href="/" className="btn btn-outline">
               ← Retour à l'accueil
             </Link>
@@ -114,8 +114,44 @@ export default function ContactPage() {
 
             {/* What to include in your message */}
             <div>
-              <span className="badge badge-gold" style={{ marginBottom: '1rem' }}>Votre message</span>
-              <h2 style={{ marginTop: '0.75rem', marginBottom: '1.5rem' }}>Ce qu'il est préférable de mentionner</h2>
+              <span className="badge badge-gold" style={{ marginBottom: '1rem' }}>Formulaire</span>
+              <h2 style={{ marginTop: '0.75rem', marginBottom: '1.5rem' }}>Envoyez votre demande</h2>
+
+              <div className="card" style={{ marginBottom: '1.5rem' }}>
+                <form action="mailto:contact@villant-loodgieter.be" method="post" encType="text/plain" style={{ display: 'grid', gap: '0.85rem' }}>
+                  <input
+                    name="Nom"
+                    required
+                    placeholder="Nom complet"
+                    style={{ width: '100%', border: '1px solid var(--border)', borderRadius: 'var(--radius)', padding: '0.7rem 0.8rem' }}
+                  />
+                  <input
+                    type="email"
+                    name="Email"
+                    required
+                    placeholder="Adresse e-mail"
+                    style={{ width: '100%', border: '1px solid var(--border)', borderRadius: 'var(--radius)', padding: '0.7rem 0.8rem' }}
+                  />
+                  <input
+                    name="Adresse"
+                    required
+                    placeholder="Adresse à Bruxelles"
+                    style={{ width: '100%', border: '1px solid var(--border)', borderRadius: 'var(--radius)', padding: '0.7rem 0.8rem' }}
+                  />
+                  <textarea
+                    name="Message"
+                    rows={5}
+                    required
+                    placeholder="Décrivez votre demande..."
+                    style={{ width: '100%', border: '1px solid var(--border)', borderRadius: 'var(--radius)', padding: '0.7rem 0.8rem', resize: 'vertical' }}
+                  />
+                  <button type="submit" className="btn btn-primary">
+                    Envoyer la demande
+                  </button>
+                </form>
+              </div>
+
+              <h2 style={{ marginTop: '0.75rem', marginBottom: '1.5rem' }}>Informations utiles à mentionner</h2>
 
               <div className="card" style={{ marginBottom: '1.5rem' }}>
                 <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
@@ -196,7 +232,7 @@ export default function ContactPage() {
             ))}
           </div>
           <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-            <Link href="/diensten" className="btn btn-primary">Voir tous les services →</Link>
+            <Link href="/services" className="btn btn-primary">Voir tous les services →</Link>
           </div>
         </div>
       </section>
@@ -228,7 +264,7 @@ export default function ContactPage() {
           <h2>Prêt à nous contacter ?</h2>
           <p>Envoyez un e-mail à <strong style={{ color: 'rgba(255,255,255,0.95)' }}>contact@villant-loodgieter.be</strong> — votre plombier certifié Vaillant à Bruxelles vous répondra dans les plus brefs délais.</p>
           <div className="cta-actions">
-            <a href="mailto:contact@villant-loodgieter.be" className="btn btn-ghost-dark">📧 contact@villant-loodgieter.be</a>
+            <Link href="/demande-devis" className="btn btn-ghost-dark">Demander un devis</Link>
             <Link href="/over-ons" className="btn btn-ghost-dark">
               À propos de nous →
             </Link>

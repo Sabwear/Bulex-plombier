@@ -4,6 +4,7 @@ import NextImage from 'next/image';
 import blogStyles from '@/app/fr/blog/blog.module.css';
 import { getBlogPosts } from '@/data/types';
 import HomeHeroSlider from '@/components/hero/HomeHeroSlider';
+import { HOME_HERO_TRUST_STRIP } from '@/config/home-hero-slides';
 import {
   Mail, Award, Zap, Globe, UserCheck,
   Wrench, Settings, Construction,
@@ -32,9 +33,60 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   const posts = getBlogPosts();
+  const trustStrip = HOME_HERO_TRUST_STRIP.fr;
   return (
     <>
       <HomeHeroSlider lang="fr" />
+
+      <section style={{ paddingTop: '1.25rem' }}>
+        <div className="container">
+          <div
+            className="grid-4"
+            style={{
+              background: 'linear-gradient(180deg, #f8fffd 0%, #eef9f6 100%)',
+              border: '1px solid var(--border-light)',
+              borderRadius: 'var(--radius-lg)',
+              padding: '1rem',
+              boxShadow: 'var(--shadow-sm)',
+            }}
+          >
+            {trustStrip.map((item, index) => {
+              const icons = [Award, Zap, UserCheck, MapPin];
+              const Icon = icons[index] ?? CheckCircle2;
+              return (
+                <div
+                  key={item.title}
+                  className="card"
+                  style={{
+                    textAlign: 'left',
+                    padding: '1rem',
+                    background: 'rgba(255,255,255,0.8)',
+                    border: '1px solid #d7eee7',
+                  }}
+                >
+                  <div
+                    style={{
+                      width: '36px',
+                      height: '36px',
+                      borderRadius: '10px',
+                      background: 'var(--color-primary-light)',
+                      color: 'var(--color-primary)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      marginBottom: '0.6rem',
+                    }}
+                  >
+                    <Icon size={18} />
+                  </div>
+                  <h3 style={{ fontSize: 'var(--text-base)', marginBottom: '0.25rem' }}>{item.title}</h3>
+                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-muted)' }}>{item.subtitle}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
 
       {/* ── BENEFITS ───────────────────────────────────────── */}
       <section>

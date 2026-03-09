@@ -94,8 +94,7 @@ export default function MainHeader({ lang }: MainHeaderProps) {
               className="hidden md:inline-flex items-center justify-center gap-2 rounded-lg bg-primary hover:bg-primary-hover !text-white hover:!text-white text-sm font-semibold px-[15px] py-[10px] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary whitespace-nowrap"
             >
               <Phone size={16} />
-              <span>{data.cta.label}</span>
-              <span className="hidden lg:inline">· {SITE_PHONE.display}</span>
+              <span>{SITE_PHONE.display}</span>
             </Link>
 
             <button

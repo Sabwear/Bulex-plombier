@@ -29,7 +29,7 @@ export const SITE_NAVIGATION: Record<Locale, LocaleNavigation> = {
     topBar: {
       urgencyText: 'Urgence plomberie & chauffage à Bruxelles',
       interventionLabel: 'Planifier une intervention',
-      interventionHref: '/fr/contact',
+      interventionHref: '/fr/demande-devis',
     },
     navItems: [
       { label: 'Accueil', href: '/fr' },
@@ -57,7 +57,7 @@ export const SITE_NAVIGATION: Record<Locale, LocaleNavigation> = {
     topBar: {
       urgencyText: 'Spoed loodgieterij & verwarming in Brussel',
       interventionLabel: 'Plan een interventie',
-      interventionHref: '/nl/contact',
+      interventionHref: '/nl/demande-offerte',
     },
     navItems: [
       { label: 'Home', href: '/nl' },

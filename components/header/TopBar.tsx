@@ -17,7 +17,13 @@ export default function TopBar({ lang }: TopBarProps) {
     <div className="hidden lg:block w-full bg-gray-900 border-b border-gray-800">
       <div className="container">
         <div className="h-10 flex items-center justify-between gap-4">
-          <p className="text-xs text-gray-300 truncate">{data.topBar.urgencyText}</p>
+          <p className="text-xs text-gray-300 truncate inline-flex items-center gap-2">
+            <span className="relative inline-flex h-2.5 w-2.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75" />
+              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-red-500" />
+            </span>
+            {data.topBar.urgencyText}
+          </p>
 
           <div className="flex items-center gap-2 xl:gap-3">
             <a

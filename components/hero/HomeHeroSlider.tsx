@@ -4,7 +4,15 @@ import type { PointerEvent as ReactPointerEvent } from 'react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ChevronLeft, ChevronRight, ShieldCheck, Timer, Wrench } from 'lucide-react';
+import {
+  ChevronLeft,
+  ChevronRight,
+  ShieldCheck,
+  Timer,
+  Wrench,
+  Users,
+  CalendarClock,
+} from 'lucide-react';
 import type { Locale } from '@/config/locale-routes';
 import { HOME_HERO_SLIDES } from '@/config/home-hero-slides';
 
@@ -114,7 +122,7 @@ export default function HomeHeroSlider({ lang }: HomeHeroSliderProps) {
             <div className="container relative z-10 flex h-full items-center py-20 md:py-24">
               <div className="grid w-full gap-8 md:gap-10 lg:grid-cols-12 lg:gap-14">
                 <div className="lg:col-span-7">
-                  <span className="badge badge-green">
+                  <span className="badge badge-green shadow-sm">
                     {slide.eyebrow}
                   </span>
 
@@ -129,34 +137,52 @@ export default function HomeHeroSlider({ lang }: HomeHeroSliderProps) {
                   <div className="mt-7 flex flex-wrap gap-3 sm:gap-4">
                     <Link
                       href={slide.primaryCta.href}
-                      className="btn btn-primary"
+                      className="btn btn-primary shadow-md shadow-emerald-900/10"
                     >
                       {slide.primaryCta.label}
                     </Link>
                     <Link
                       href={slide.secondaryCta.href}
-                      className="btn btn-outline"
+                      className="btn btn-outline border-slate-300 bg-white/80 backdrop-blur-sm"
                     >
                       {slide.secondaryCta.label}
                     </Link>
+                  </div>
+
+                  <div className="mt-6 flex flex-wrap items-center gap-2.5">
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1.5 text-xs font-semibold text-emerald-800 sm:text-sm">
+                      <Users size={14} />
+                      {slide.trustLineItems[0]}
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-sky-200 bg-sky-50 px-3 py-1.5 text-xs font-semibold text-sky-800 sm:text-sm">
+                      <CalendarClock size={14} />
+                      {slide.trustLineItems[1]}
+                    </span>
                   </div>
                 </div>
 
                 <div className="lg:col-span-5">
                   <div className="grid gap-3 sm:gap-4">
-                    {slide.trustPoints.map((point, pointIndex) => {
+                    {slide.trustCards.map((card, pointIndex) => {
                       const Icon = trustIcons[pointIndex];
                       return (
                         <div
-                          key={point}
-                          className="flex items-center gap-3 rounded-xl border border-gray-200 bg-white/92 p-4 shadow-sm backdrop-blur-sm"
+                          key={card.title}
+                          className="group rounded-2xl border border-white/70 bg-gradient-to-br from-white/95 to-emerald-50/55 p-4 shadow-[0_8px_30px_rgba(15,23,42,0.08)] backdrop-blur-sm transition-transform duration-300 hover:-translate-y-1"
                         >
-                          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-50 text-emerald-700">
-                            <Icon size={20} />
+                          <div className="flex items-start gap-3">
+                            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-100 text-emerald-700 ring-1 ring-emerald-200 transition-colors group-hover:bg-emerald-600 group-hover:text-white group-hover:ring-emerald-600">
+                              <Icon size={20} />
+                            </div>
+                            <div>
+                              <p className="max-w-none text-sm font-semibold text-slate-900 sm:text-base">
+                                {card.title}
+                              </p>
+                              <p className="mt-1 text-xs leading-relaxed text-slate-600 sm:text-sm">
+                                {card.description}
+                              </p>
+                            </div>
                           </div>
-                          <p className="max-w-none text-sm font-medium text-slate-800 sm:text-base">
-                            {point}
-                          </p>
                         </div>
                       );
                     })}
