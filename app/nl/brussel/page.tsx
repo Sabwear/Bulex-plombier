@@ -23,25 +23,25 @@ export const metadata: Metadata = {
 };
 
 const communes = [
-  { name: 'Anderlecht', desc: 'Loodgieter en Vaillant herstelling in Anderlecht' },
-  { name: 'Brussel-Stad', desc: 'Spoedservice en sanitair installatie in de Vijfhoek van Brussel' },
-  { name: 'Elsene', desc: 'Ketel vervangen en waterlek herstellen in Elsene' },
-  { name: 'Etterbeek', desc: 'Verwarmingsinstallateur en onderhoudscontract in Etterbeek' },
-  { name: 'Evere', desc: 'Sanitair installatie en Vaillant diensten in Evere' },
-  { name: 'Ganshoren', desc: 'Loodgieterij en ketelherstelling in Ganshoren' },
-  { name: 'Jette', desc: 'Vaillant loodgieter en nieuwe verwarming in Jette' },
-  { name: 'Koekelberg', desc: 'Waterlek en verwarmingsdiensten in Koekelberg' },
-  { name: 'Sint-Jans-Molenbeek', desc: 'Spoedservice en sanitair installatie in Molenbeek' },
-  { name: 'Oudergem', desc: 'Gecertificeerde Vaillant herstelling in Oudergem' },
-  { name: 'Schaarbeek', desc: 'Loodgieter en ketelinstallatie in Schaarbeek' },
-  { name: 'Sint-Agatha-Berchem', desc: 'Verwarmingsinstallateur actief in Sint-Agatha-Berchem' },
-  { name: 'Sint-Gillis', desc: 'Sanitair en Vaillant loodgieter in Sint-Gillis' },
-  { name: 'Sint-Joost-ten-Node', desc: 'Vaillant herstelling en spoed in Sint-Joost' },
-  { name: 'Sint-Lambrechts-Woluwe', desc: 'Ketel vervangen en waterlek in Sint-Lambrechts-Woluwe' },
-  { name: 'Sint-Pieters-Woluwe', desc: 'Gecertificeerde technicus voor verwarming in Sint-Pieters-Woluwe' },
-  { name: 'Ukkel', desc: 'Loodgieter en Vaillant onderhoudscontract in Ukkel' },
-  { name: 'Vorst', desc: 'Sanitair installatie en ketelherstelling in Vorst' },
-  { name: 'Watermaal-Bosvoorde', desc: 'Verwarmingsinstallateur en Vaillant diensten in Watermaal-Bosvoorde' },
+  { name: 'Anderlecht', slug: 'anderlecht', desc: 'Loodgieter en Vaillant herstelling in Anderlecht' },
+  { name: 'Brussel-Stad', slug: 'brussel-stad', desc: 'Spoedservice en sanitair installatie in de Vijfhoek van Brussel' },
+  { name: 'Elsene', slug: 'elsene', desc: 'Ketel vervangen en waterlek herstellen in Elsene' },
+  { name: 'Etterbeek', slug: 'etterbeek', desc: 'Verwarmingsinstallateur en onderhoudscontract in Etterbeek' },
+  { name: 'Evere', slug: 'evere', desc: 'Sanitair installatie en Vaillant diensten in Evere' },
+  { name: 'Ganshoren', slug: 'ganshoren', desc: 'Loodgieterij en ketelherstelling in Ganshoren' },
+  { name: 'Jette', slug: 'jette', desc: 'Vaillant loodgieter en nieuwe verwarming in Jette' },
+  { name: 'Koekelberg', slug: 'koekelberg', desc: 'Waterlek en verwarmingsdiensten in Koekelberg' },
+  { name: 'Sint-Jans-Molenbeek', slug: 'sint-jans-molenbeek', desc: 'Spoedservice en sanitair installatie in Molenbeek' },
+  { name: 'Oudergem', slug: 'oudergem', desc: 'Gecertificeerde Vaillant herstelling in Oudergem' },
+  { name: 'Schaarbeek', slug: 'schaarbeek', desc: 'Loodgieter en ketelinstallatie in Schaarbeek' },
+  { name: 'Sint-Agatha-Berchem', slug: 'sint-agatha-berchem', desc: 'Verwarmingsinstallateur actief in Sint-Agatha-Berchem' },
+  { name: 'Sint-Gillis', slug: 'sint-gillis', desc: 'Sanitair en Vaillant loodgieter in Sint-Gillis' },
+  { name: 'Sint-Joost-ten-Node', slug: 'sint-joost-ten-node', desc: 'Vaillant herstelling en spoed in Sint-Joost' },
+  { name: 'Sint-Lambrechts-Woluwe', slug: 'sint-lambrechts-woluwe', desc: 'Ketel vervangen en waterlek in Sint-Lambrechts-Woluwe' },
+  { name: 'Sint-Pieters-Woluwe', slug: 'sint-pieters-woluwe', desc: 'Gecertificeerde technicus voor verwarming in Sint-Pieters-Woluwe' },
+  { name: 'Ukkel', slug: 'ukkel', desc: 'Loodgieter en Vaillant onderhoudscontract in Ukkel' },
+  { name: 'Vorst', slug: 'vorst', desc: 'Sanitair installatie en ketelherstelling in Vorst' },
+  { name: 'Watermaal-Bosvoorde', slug: 'watermaal-bosvoorde', desc: 'Verwarmingsinstallateur en Vaillant diensten in Watermaal-Bosvoorde' },
 ];
 
 export default function BrusselPage() {
@@ -49,7 +49,7 @@ export default function BrusselPage() {
     <>
       {/* HERO */}
       <section style={{
-        background: `linear-gradient(90deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.5) 100%), url('/assets/images/projects/img-7.jpg') center/cover no-repeat`,
+        background: `linear-gradient(90deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.5) 100%), url('/images/projects/img-7.jpg') center/cover no-repeat`,
         padding: '5rem 1.5rem 4rem',
         borderBottom: '1px solid var(--border)',
       }}>
@@ -110,7 +110,12 @@ export default function BrusselPage() {
 
           <div className="grid-3-strict">
             {communes.map((c) => (
-              <div key={c.name} className="card" style={{ borderLeft: '4px solid var(--color-primary)' }}>
+              <div
+                key={c.name}
+                id={c.slug}
+                className="card scroll-mt-32"
+                style={{ borderLeft: '4px solid var(--color-primary)' }}
+              >
                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
                   <span style={{ width: '20px', height: '20px', flexShrink: 0, marginTop: '2px' }}>
                     <Image src="/icons/plumbing-elements/plumber-1.svg" alt="" width={20} height={20} />

@@ -1,16 +1,17 @@
-import React from 'react';
+import type { Locale } from '@/config/locale-routes';
 import TopBar from './TopBar';
-import MainNav from './MainNav';
+import MainHeader from './MainHeader';
 
 interface SiteHeaderProps {
-  lang?: 'fr' | 'nl';
+  lang: Locale;
 }
 
-export default function SiteHeader({ lang = 'fr' }: SiteHeaderProps) {
+export default function SiteHeader({ lang }: SiteHeaderProps) {
   return (
-    <header className="flex flex-col w-full font-body relative z-50">
+    <div className="w-full">
       <TopBar lang={lang} />
-      <MainNav lang={lang} />
-    </header>
+      <MainHeader lang={lang} />
+    </div>
   );
 }
+

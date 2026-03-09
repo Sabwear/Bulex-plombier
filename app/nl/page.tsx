@@ -2,9 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import NextImage from 'next/image';
 import blogStyles from '@/app/fr/blog/blog.module.css';
-import { HeroSection } from '@/components/hero/HeroSection';
-import { HeroTrustStrip } from '@/components/hero/HeroTrustStrip';
 import { getBlogPosts } from '@/data/types';
+import HomeHeroSlider from '@/components/hero/HomeHeroSlider';
 import {
   Mail, Award, Zap, UserCheck,
   Wrench, Settings, Construction,
@@ -36,11 +35,7 @@ export default function HomePage() {
   const posts = getBlogPosts();
   return (
     <>
-      {/* ── HERO ───────────────────────────────────────────── */}
-      <HeroSection lang="nl" />
-
-      {/* ── TRUST STRIP ────────────────────────────────────── */}
-      <HeroTrustStrip lang="nl" />
+      <HomeHeroSlider lang="nl" />
 
       {/* ── BENEFITS ───────────────────────────────────────── */}
       <section>
@@ -85,12 +80,12 @@ export default function HomePage() {
 
           <div className="grid-3-strict">
             {[
-              { image: '/assets/images/service/1.jpg', icon: <Wrench size={32} />, title: 'Vaillant Herstelling Brussel', desc: "Probleem met uw Vaillant ketel? Onze gecertificeerde technici diagnosticeren en repareren alle Vaillant modellen snel en accuraat.", link: '/nl/diensten#vaillant-herstelling' },
-              { image: '/assets/images/service/2.jpg', icon: <Thermometer size={32} />, title: 'Boiler Vervangen Brussel', desc: "Is uw oude boiler aan het einde van zijn levensduur? Wij installeren een nieuwe, energiezuinige Vaillant ketel met volledige inbedrijfstelling.", link: '/nl/diensten#boiler-vervangen' },
-              { image: '/assets/images/projects/img-1.jpg', icon: <Grid size={32} />, title: 'Nieuwe Verwarming Plaatsen', desc: "Plannen voor nieuwe verwarming in Brussel? Wij ontwerpen en installeren een systeem op maat voor uw woning of bedrijfspand.", link: '/nl/diensten#verwarming' },
-              { image: '/assets/images/service/3.jpg', icon: <Construction size={32} />, title: 'Waterlek Herstellen Brussel', desc: "Een waterlek veroorzaakt snel schade. Ons team lokaliseert en repereert lekken onmiddellijk om ernstige schade aan uw eigendom te voorkomen.", link: '/nl/diensten#waterlek' },
-              { image: '/assets/images/service/5.jpg', icon: <Bath size={32} />, title: 'Sanitair Installatie Brussel', desc: "Badkamer renovatie of sanitaire toestellen? Wij installeren alles vakkundig: toiletten, douche, bad, wastafel en meer.", link: '/nl/diensten#sanitair' },
-              { image: '/assets/images/projects/img-3.jpg', icon: <Gauge size={32} />, title: 'Vaillant Onderhoudscontract', desc: "Jaarlijks onderhoud van uw Vaillant installatie. Inclusief inspectie, reiniging en een rapport voor gegarandeerde prestaties en duurzaamheid.", link: '/nl/diensten#onderhoud' },
+              { image: '/images/service/1.jpg', icon: <Wrench size={32} />, title: 'Vaillant Herstelling Brussel', desc: "Probleem met uw Vaillant ketel? Onze gecertificeerde technici diagnosticeren en repareren alle Vaillant modellen snel en accuraat.", link: '/nl/diensten#vaillant-herstelling' },
+              { image: '/images/service/2.jpg', icon: <Thermometer size={32} />, title: 'Boiler Vervangen Brussel', desc: "Is uw oude boiler aan het einde van zijn levensduur? Wij installeren een nieuwe, energiezuinige Vaillant ketel met volledige inbedrijfstelling.", link: '/nl/diensten#boiler-vervangen' },
+              { image: '/images/projects/img-1.jpg', icon: <Grid size={32} />, title: 'Nieuwe Verwarming Plaatsen', desc: "Plannen voor nieuwe verwarming in Brussel? Wij ontwerpen en installeren een systeem op maat voor uw woning of bedrijfspand.", link: '/nl/diensten#verwarming' },
+              { image: '/images/service/3.jpg', icon: <Construction size={32} />, title: 'Waterlek Herstellen Brussel', desc: "Een waterlek veroorzaakt snel schade. Ons team lokaliseert en repereert lekken onmiddellijk om ernstige schade aan uw eigendom te voorkomen.", link: '/nl/diensten#waterlek' },
+              { image: '/images/service/5.jpg', icon: <Bath size={32} />, title: 'Sanitair Installatie Brussel', desc: "Badkamer renovatie of sanitaire toestellen? Wij installeren alles vakkundig: toiletten, douche, bad, wastafel en meer.", link: '/nl/diensten#sanitair' },
+              { image: '/images/projects/img-3.jpg', icon: <Gauge size={32} />, title: 'Vaillant Onderhoudscontract', desc: "Jaarlijks onderhoud van uw Vaillant installatie. Inclusief inspectie, reiniging en een rapport voor gegarandeerde prestaties en duurzaamheid.", link: '/nl/diensten#onderhoud' },
             ].map((s) => (
               <div key={s.title} className="card">
                 <div className="card-image">
@@ -173,13 +168,34 @@ export default function HomePage() {
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', justifyContent: 'center', marginBottom: '32px' }}>
             {[
-              'Anderlecht', 'Brussel-Stad', 'Elsene', 'Etterbeek', 'Evere', 'Ganshoren', 'Jette',
-              'Koekelberg', 'Sint-Jans-Molenbeek', 'Oudergem', 'Schaarbeek', 'Sint-Joost-ten-Node', 'Sint-Agatha-Berchem', 'Sint-Gillis',
-              'Sint-Lambrechts-Woluwe', 'Sint-Pieters-Woluwe', 'Ukkel', 'Vorst', 'Watermaal-Bosvoorde',
+              { name: 'Anderlecht', slug: 'anderlecht' },
+              { name: 'Brussel-Stad', slug: 'brussel-stad' },
+              { name: 'Elsene', slug: 'elsene' },
+              { name: 'Etterbeek', slug: 'etterbeek' },
+              { name: 'Evere', slug: 'evere' },
+              { name: 'Ganshoren', slug: 'ganshoren' },
+              { name: 'Jette', slug: 'jette' },
+              { name: 'Koekelberg', slug: 'koekelberg' },
+              { name: 'Sint-Jans-Molenbeek', slug: 'sint-jans-molenbeek' },
+              { name: 'Oudergem', slug: 'oudergem' },
+              { name: 'Schaarbeek', slug: 'schaarbeek' },
+              { name: 'Sint-Joost-ten-Node', slug: 'sint-joost-ten-node' },
+              { name: 'Sint-Agatha-Berchem', slug: 'sint-agatha-berchem' },
+              { name: 'Sint-Gillis', slug: 'sint-gillis' },
+              { name: 'Sint-Lambrechts-Woluwe', slug: 'sint-lambrechts-woluwe' },
+              { name: 'Sint-Pieters-Woluwe', slug: 'sint-pieters-woluwe' },
+              { name: 'Ukkel', slug: 'ukkel' },
+              { name: 'Vorst', slug: 'vorst' },
+              { name: 'Watermaal-Bosvoorde', slug: 'watermaal-bosvoorde' },
             ].map((area) => (
-              <span key={area} className="area-chip" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <MapPin size={14} /> {area}
-              </span>
+              <Link
+                key={area.slug}
+                href={`/nl/brussel#${area.slug}`}
+                className="area-chip"
+                style={{ display: 'flex', alignItems: 'center', gap: '6px' }}
+              >
+                <MapPin size={14} /> {area.name}
+              </Link>
             ))}
           </div>
 

@@ -2,9 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import NextImage from 'next/image';
 import blogStyles from '@/app/fr/blog/blog.module.css';
-import { HeroSection } from '@/components/hero/HeroSection';
-import { HeroTrustStrip } from '@/components/hero/HeroTrustStrip';
 import { getBlogPosts } from '@/data/types';
+import HomeHeroSlider from '@/components/hero/HomeHeroSlider';
 import {
   Mail, Award, Zap, Globe, UserCheck,
   Wrench, Settings, Construction,
@@ -35,12 +34,7 @@ export default function HomePage() {
   const posts = getBlogPosts();
   return (
     <>
-      {/* ── HERO ───────────────────────────────────────────── */}
-      <HeroSection lang="fr" />
-
-      {/* ── TRUST STRIP ────────────────────────────────────── */}
-      <HeroTrustStrip lang="fr" />
-
+      <HomeHeroSlider lang="fr" />
 
       {/* ── BENEFITS ───────────────────────────────────────── */}
       <section>
@@ -85,12 +79,12 @@ export default function HomePage() {
 
           <div className="grid-3-strict">
             {[
-              { image: '/assets/images/service/1.jpg', icon: <Wrench size={32} />, title: 'Réparation Vaillant Bruxelles', desc: "Problème avec votre chaudière Vaillant ? Nos techniciens certifiés diagnostiquent et réparent tous les modèles Vaillant avec rapidité et précision.", link: '/diensten#vaillant-herstelling' },
-              { image: '/assets/images/service/2.jpg', icon: <Thermometer size={32} />, title: 'Remplacement Chaudière Bruxelles', desc: "Votre ancienne chaudière est en fin de vie ? Nous installons une nouvelle chaudière Vaillant économe en énergie avec mise en service complète.", link: '/diensten#boiler-vervangen' },
-              { image: '/assets/images/projects/img-1.jpg', icon: <Grid size={32} />, title: 'Installation d\'un Nouveau Chauffage', desc: "Des projets de nouveau chauffage à Bruxelles ? Nous concevons et installons un système adapté à votre domicile ou vos locaux professionnels.", link: '/diensten#verwarming' },
-              { image: '/assets/images/service/3.jpg', icon: <Construction size={32} />, title: 'Réparation Fuite d\'Eau Bruxelles', desc: "Une fuite d'eau cause rapidement des dégâts. Notre équipe localise et répare les fuites immédiatement pour éviter de graves dommages à votre propriété.", link: '/diensten#waterlek' },
-              { image: '/assets/images/service/5.jpg', icon: <Bath size={32} />, title: 'Installation Sanitaire Bruxelles', desc: "Rénovation de salle de bain ou appareils sanitaires ? Nous installons tout de manière experte : toilettes, douche, baignoire, lavabo et plus.", link: '/diensten#sanitair' },
-              { image: '/assets/images/projects/img-3.jpg', icon: <Gauge size={32} />, title: 'Contrat d\'Entretien Vaillant', desc: "Entretien annuel de votre installation Vaillant. Comprend l'inspection, le nettoyage et un rapport pour des performances et une durabilité garanties.", link: '/diensten#onderhoud' },
+              { image: '/images/service/1.jpg', icon: <Wrench size={32} />, title: 'Réparation Vaillant Bruxelles', desc: "Problème avec votre chaudière Vaillant ? Nos techniciens certifiés diagnostiquent et réparent tous les modèles Vaillant avec rapidité et précision.", link: '/diensten#vaillant-herstelling' },
+              { image: '/images/service/2.jpg', icon: <Thermometer size={32} />, title: 'Remplacement Chaudière Bruxelles', desc: "Votre ancienne chaudière est en fin de vie ? Nous installons une nouvelle chaudière Vaillant économe en énergie avec mise en service complète.", link: '/diensten#boiler-vervangen' },
+              { image: '/images/service/3.jpg', icon: <Grid size={32} />, title: 'Installation d\'un Nouveau Chauffage', desc: "Des projets de nouveau chauffage à Bruxelles ? Nous concevons et installons un système adapté à votre domicile ou vos locaux professionnels.", link: '/diensten#verwarming' },
+              { image: '/images/service/4.jpg', icon: <Construction size={32} />, title: 'Réparation Fuite d\'Eau Bruxelles', desc: "Une fuite d'eau cause rapidement des dégâts. Notre équipe localise et répare les fuites immédiatement pour éviter de graves dommages à votre propriété.", link: '/diensten#waterlek' },
+              { image: '/images/service/5.jpg', icon: <Bath size={32} />, title: 'Installation Sanitaire Bruxelles', desc: "Rénovation de salle de bain ou appareils sanitaires ? Nous installons tout de manière experte : toilettes, douche, baignoire, lavabo et plus.", link: '/diensten#sanitair' },
+              { image: '/images/service/6.jpg', icon: <Gauge size={32} />, title: 'Contrat d\'Entretien Vaillant', desc: "Entretien annuel de votre installation Vaillant. Comprend l'inspection, le nettoyage et un rapport pour des performances et une durabilité garanties.", link: '/diensten#onderhoud' },
             ].map((s) => (
               <div key={s.title} className="card">
                 <div className="card-image">
@@ -195,14 +189,14 @@ export default function HomePage() {
               { name: 'Woluwe-Saint-Lambert', slug: 'woluwe-saint-lambert' },
               { name: 'Woluwe-Saint-Pierre', slug: 'woluwe-saint-pierre' },
             ].map((area) => (
-              <Link key={area.slug} href={`/plombier/${area.slug}`} className="area-chip" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+              <Link key={area.slug} href={`/fr/plombier/${area.slug}`} className="area-chip" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                 <MapPin size={14} /> {area.name}
               </Link>
             ))}
           </div>
 
           <div style={{ textAlign: 'center' }}>
-            <Link href="/plombier" className="btn btn-outline">Voir toutes les communes desservies</Link>
+            <Link href="/fr/plombier" className="btn btn-outline">Voir toutes les communes desservies</Link>
           </div>
         </div>
       </section>
@@ -219,7 +213,7 @@ export default function HomePage() {
 
           <div className="steps-grid">
             {[
-              { n: '1', title: 'Contactez-nous', desc: "Envoyez un e-mail à contact@villant-loodgieter.be. Décrivez votre problème ou votre demande le plus précisément possible." },
+              { n: '1', title: '', desc: "Envoyez un e-mail à contact@villant-loodgieter.be. Décrivez votre problème ou votre demande le plus précisément possible." },
               { n: '2', title: 'Diagnostic et Devis', desc: "Notre technicien se rend sur place et pose un diagnostic transparent. Vous recevez un devis clair et précis avant de commencer les travaux." },
               { n: '3', title: 'Intervention experte', desc: "Des techniciens certifiés effectuent la réparation ou l'installation en appliquant les normes rigoureuses et des pièces d'origine Vaillant." },
               { n: '4', title: 'Suivi et Entretien', desc: "Après l'intervention, un bilan de fonctionnement. Nous vous conseillons sur l'entretien annuel recommandé pour votre installation Vaillant." },

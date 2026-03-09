@@ -110,7 +110,6 @@
   --brand-dark:   var(--color-primary-hover);
   --brand-accent: var(--color-primary);
   --shadow:       var(--shadow-md);
-  --shadow-lg:    var(--shadow-lg);
   --radius-sm:    4px;
   --radius:       8px;
   --radius-lg:    12px;
@@ -127,11 +126,7 @@
 }
 
 /* ── Reset & Base ───────────────────────────────────────────── */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+
 
 html {
   font-size: 16px;
@@ -198,7 +193,7 @@ img, svg { display: block; max-width: 100%; }
   padding-right: var(--section-px);
 }
 
-section {
+section:not(.hero-section) {
   padding-top: var(--section-py);
   padding-bottom: var(--section-py);
 }
@@ -517,64 +512,11 @@ section {
   box-shadow: var(--shadow-md);
 }
 
-/* ── Dark section (footer, CTA strip) ──────────────────────── */
-.dark-section {
-  background: var(--surface-dark);
-  color: var(--text-on-dark);
-}
-.dark-section h2, .dark-section h3 { color: #fff; }
-.dark-section p { color: rgba(255,255,255,0.72); }
-
-/* ── Trust badge ────────────────────────────────────────────── */
-.trust-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  font-size: var(--text-sm);
-  font-weight: var(--font-medium);
-  color: var(--color-primary);
-  padding: 6px 14px;
-  background: var(--color-primary-light);
-  border-radius: 100px;
-  border: 1px solid var(--color-primary-mid);
-}
-
-/* ── Value strip item ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-.value-item {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  background: var(--surface-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-5) var(--space-6);
-  box-shadow: var(--shadow-xs);
-  transition: box-shadow var(--transition), border-color var(--transition);
-}
-
-.value-item:hover {
-  box-shadow: var(--shadow-sm);
-  border-color: var(--color-primary-mid);
-}
-
-.value-item-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius);
-  background: var(--color-primary-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.25rem;
-  flex-shrink: 0;
-}
-
-
 /* ── CTA Band ── dark green strip ───────────────────────────── */
 .cta-band {
   background: 
     linear-gradient(rgba(0, 145, 126, 0.9), rgba(0, 145, 126, 0.9)),
-    url('/assets/images/contact.jpg') center/cover no-repeat;
+    url('/images/contact.jpg') center/cover no-repeat;
   padding: var(--space-20) var(--section-px);
   text-align: center;
   color: #fff;
@@ -592,10 +534,6 @@ section {
   box-shadow: var(--shadow-sm);
   border-top: 4px solid var(--color-primary);
 }
-
-/* ── Service card link ──────────────────────────────────────── */
-.service-card-link { text-decoration: none; display: block; }
-.service-card-link .card { height: 100%; }
 
 /* ── Step strip ─────────────────────────────────────────────── */
 .steps-grid {

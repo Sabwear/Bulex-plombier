@@ -109,7 +109,7 @@ export default function DienstenPage() {
     <>
       {/* HERO */}
       <section style={{
-        background: `linear-gradient(90deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.5) 100%), url('/assets/images/service/6.jpg') center/cover no-repeat`,
+        background: `linear-gradient(90deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.5) 100%), url('/images/service/6.jpg') center/cover no-repeat`,
         padding: '5rem 1.5rem 4rem',
         borderBottom: '1px solid var(--border)',
       }}>
