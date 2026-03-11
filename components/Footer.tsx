@@ -17,7 +17,7 @@ export default function Footer() {
         <div className={styles.brand}>
           <div className={styles.logo}>
             <img
-              src="/logo.png"
+              src="/logo-vaillant-loodgieter.png"
               alt="Villant Plombier"
               className={styles.logoImage}
             />

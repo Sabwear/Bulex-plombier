@@ -1,9 +1,14 @@
+const phoneDisplay = process.env.NEXT_PUBLIC_PHONE_DISPLAY || "02 345 67 89";
+const phoneDigits = phoneDisplay.replace(/\D/g, "");
+const phoneHref =
+  phoneDigits.length > 0 ? `tel:+${phoneDigits.padStart(11, "32")}` : "tel:+3223456789";
+
 export const SITE_CONFIG = {
   phone: {
-    display: "02 345 67 89",
-    href: "tel:+3223456789",
+    display: phoneDisplay,
+    href: phoneHref,
   },
-  email: "contact@villant-loodgieter.be",
+  email: process.env.NEXT_PUBLIC_SUPPORT_EMAIL || "contact@villant-loodgieter.be",
 };
 
 export const NAVIGATION = {

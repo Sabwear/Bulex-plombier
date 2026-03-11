@@ -1,0 +1,44 @@
+'use client';
+
+import Link from "next/link";
+import Image from "next/image";
+
+const WHATSAPP_NUMBER = "3223456789"; // matches SITE_PHONE (+32 2 345 67 89)
+
+export default function WhatsAppWidget() {
+  const raw = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || WHATSAPP_NUMBER;
+  const cleaned = raw.replace(/\D/g, "");
+  const international = cleaned.startsWith("0")
+    ? `32${cleaned.slice(1)}`
+    : cleaned || WHATSAPP_NUMBER;
+  const href = `https://wa.me/${international}`;
+
+  return (
+    <div className="pointer-events-none fixed bottom-6 left-4 z-50 md:bottom-8 md:left-6">
+      <div className="pointer-events-auto relative h-14 w-14 md:h-16 md:w-16">
+        <span
+          aria-hidden="true"
+          className="absolute inset-0 rounded-full bg-[#25D366]/40 blur-[1px] animate-ping"
+        />
+        <Link
+          href={href}
+          aria-label="Contacter Villant via WhatsApp"
+          className="group relative flex h-full w-full items-center justify-center rounded-full bg-[#25D366] shadow-lg shadow-black/25 transition-transform duration-300 hover:-translate-y-1.5"
+          target="_blank"
+        >
+          <span className="sr-only">WhatsApp</span>
+          <Image
+            src="/icons/plumbing-elements/whatsapp.svg"
+            alt=""
+            width={36}
+            height={36}
+            className="h-7 w-7 md:h-9 md:w-9"
+            style={{ filter: "brightness(0) invert(1)" }}
+            priority
+          />
+        </Link>
+      </div>
+    </div>
+  );
+}
+

@@ -40,28 +40,16 @@ export default function HomePage() {
 
       <section style={{ paddingTop: '1.25rem' }}>
         <div className="container">
-          <div
-            className="grid-4"
-            style={{
-              background: 'linear-gradient(180deg, #f8fffd 0%, #eef9f6 100%)',
-              border: '1px solid var(--border-light)',
-              borderRadius: 'var(--radius-lg)',
-              padding: '1rem',
-              boxShadow: 'var(--shadow-sm)',
-            }}
-          >
+          <div className="grid-4">
             {trustStrip.map((item, index) => {
               const icons = [Award, Zap, UserCheck, MapPin];
               const Icon = icons[index] ?? CheckCircle2;
               return (
                 <div
                   key={item.title}
-                  className="card"
                   style={{
                     textAlign: 'left',
-                    padding: '1rem',
-                    background: 'rgba(255,255,255,0.8)',
-                    border: '1px solid #d7eee7',
+                    padding: '0',
                   }}
                 >
                   <div

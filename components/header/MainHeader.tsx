@@ -26,7 +26,14 @@ export default function MainHeader({ lang }: MainHeaderProps) {
             href={lang === 'fr' ? '/fr' : '/nl'}
             className="shrink-0 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
           >
-            <Image src="/logo.png" alt="Vaillant Loodgieter" width={170} height={42} className="w-auto h-8 sm:h-9 object-contain" priority />
+            <Image
+              src="/logo-vaillant-loodgieter.png"
+              alt="Vaillant Loodgieter"
+              width={320}
+              height={72}
+              className="w-auto h-12 sm:h-[3.75rem] object-contain"
+              priority
+            />
           </Link>
 
           <nav className="hidden md:flex flex-1 items-center justify-center gap-2 lg:gap-3 min-w-0">

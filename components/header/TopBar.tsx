@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Phone } from 'lucide-react';
+import Image from 'next/image';
 import LanguageSwitcher from './LanguageSwitcher';
 import { SITE_NAVIGATION, SITE_PHONE } from '@/config/site-navigation';
 import type { Locale } from '@/config/locale-routes';
@@ -30,7 +30,16 @@ export default function TopBar({ lang }: TopBarProps) {
               href={SITE_PHONE.href}
               className="inline-flex items-center gap-1.5 text-xs font-semibold text-white hover:text-primary transition-colors rounded px-1 py-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             >
-              <Phone size={12} className="shrink-0" />
+              <span className="inline-flex h-3.5 w-3.5 items-center justify-center rounded-full bg-[#25D366]">
+                <Image
+                  src="/icons/plumbing-elements/whatsapp.svg"
+                  alt=""
+                  width={14}
+                  height={14}
+                  className="h-2.5 w-2.5"
+                  style={{ filter: 'brightness(0) invert(1)' }}
+                />
+              </span>
               {SITE_PHONE.display}
             </a>
 

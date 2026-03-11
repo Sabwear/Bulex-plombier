@@ -3,6 +3,7 @@ import "../globals.css";
 import SiteHeader from "@/components/header/SiteHeader";
 import Footer from "@/components/Footer";
 import Script from "next/script";
+import WhatsAppWidget from "@/components/WhatsAppWidget";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://villantloodgieter.com"),
@@ -87,6 +88,7 @@ export default function RootLayout({
         <SiteHeader lang="fr" />
         <main>{children}</main>
         <Footer />
+        <WhatsAppWidget />
       </body>
     </html>
   );
