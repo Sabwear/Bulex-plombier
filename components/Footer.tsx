@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import styles from './Footer.module.css';
 import { usePathname } from 'next/navigation';
-import { Mail, MapPin, Globe, CheckCircle2 } from 'lucide-react';
+import { Mail, MapPin, MessageCircle, CheckCircle2 } from 'lucide-react';
 
 export default function Footer() {
   const pathname = usePathname() || '/';
@@ -82,11 +82,14 @@ export default function Footer() {
               </div>
             </li>
             <li className={styles.contactItem}>
-              <div className={styles.contactIcon}><Globe size={18} /></div>
+              <div className={styles.contactIcon}><MessageCircle size={18} /></div>
               <div className={styles.contactText}>
-                <span className={styles.contactLabel}>{isNl ? "Website" : "Site web"}</span>
-                <a href="https://villant-loodgieter.be" className={styles.contactValue}>
-                  villant-loodgieter.be
+                <span className={styles.contactLabel}>WhatsApp</span>
+                <a
+                  href="https://wa.me/3223456789"
+                  className={styles.contactValue}
+                >
+                  +32 2 345 67 89
                 </a>
               </div>
             </li>
