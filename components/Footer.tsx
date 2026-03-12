@@ -41,12 +41,97 @@ export default function Footer() {
         <div className={styles.col}>
           <div className={styles.colTitle}>{isNl ? "Diensten" : "Services"}</div>
           <ul className={styles.linkList}>
-            <li><Link href={isNl ? "/nl/diensten" : "/fr/services"}>{isNl ? "Alle diensten" : "Tous les services"}</Link></li>
-            <li><Link href={isNl ? "/nl/diensten#vaillant-herstelling" : "/fr/services#vaillant-herstelling"}>{isNl ? "Vaillant herstelling" : "Réparation Vaillant"}</Link></li>
-            <li><Link href={isNl ? "/nl/diensten#boiler-vervangen" : "/fr/services#boiler-vervangen"}>{isNl ? "Boiler vervangen" : "Remplacement de chaudière"}</Link></li>
-            <li><Link href={isNl ? "/nl/diensten#waterlek" : "/fr/services#waterlek"}>{isNl ? "Waterlek herstellen" : "Réparation de fuite d'eau"}</Link></li>
-            <li><Link href={isNl ? "/nl/diensten#sanitair" : "/fr/services#sanitair"}>{isNl ? "Sanitair installatie" : "Installation sanitaire"}</Link></li>
-            <li><Link href={isNl ? "/nl/diensten#onderhoud" : "/fr/services#onderhoud"}>{isNl ? "Onderhoudscontract" : "Contrat d'entretien"}</Link></li>
+            <li>
+              <Link href={isNl ? "/nl/diensten" : "/fr/services"}>
+                {isNl ? "Alle diensten" : "Tous les services"}
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={
+                  isNl
+                    ? "/nl/diensten#vaillant-herstelling"
+                    : "/fr/services#vaillant-herstelling"
+                }
+              >
+                {isNl ? "Vaillant herstelling" : "Réparation Vaillant"}
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={
+                  isNl
+                    ? "/nl/diensten#boiler-vervangen"
+                    : "/fr/services#boiler-vervangen"
+                }
+              >
+                {isNl ? "Boiler vervangen" : "Remplacement de chaudière"}
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={
+                  isNl ? "/nl/diensten#waterlek" : "/fr/services#waterlek"
+                }
+              >
+                {isNl ? "Waterlek herstellen" : "Réparation de fuite d'eau"}
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={
+                  isNl ? "/nl/diensten#sanitair" : "/fr/services#sanitair"
+                }
+              >
+                {isNl ? "Sanitair installatie" : "Installation sanitaire"}
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={
+                  isNl ? "/nl/diensten#onderhoud" : "/fr/services#onderhoud"
+                }
+              >
+                {isNl ? "Onderhoudscontract" : "Contrat d'entretien"}
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Privacy / Legal column */}
+        <div className={styles.col}>
+          <div className={styles.colTitle}>
+            {isNl ? "Privacy" : "Confidentialité"}
+          </div>
+          <ul className={styles.linkList}>
+            <li>
+              <Link href={isNl ? "/nl/privacy" : "/fr/confidentialite"}>
+                {isNl ? "Privacybeleid" : "Politique de confidentialité"}
+              </Link>
+            </li>
+            <li>
+              <Link href={isNl ? "/nl/cookies" : "/fr/cookies"}>
+                {isNl ? "Cookiebeleid" : "Politique de cookies"}
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={
+                  isNl ? "/nl/juridische-vermelding" : "/fr/mentions-legales"
+                }
+              >
+                {isNl ? "Juridische vermelding" : "Mentions légales"}
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={
+                  isNl ? "/nl/gebruiksvoorwaarden" : "/fr/conditions-utilisation"
+                }
+              >
+                {isNl ? "Gebruiksvoorwaarden" : "Conditions d’utilisation"}
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -54,10 +139,26 @@ export default function Footer() {
         <div className={styles.col}>
           <div className={styles.colTitle}>{isNl ? "Navigatie" : "Navigation"}</div>
           <ul className={styles.linkList}>
-            <li><Link href={isNl ? "/nl" : "/fr"}>{isNl ? "Startpagina" : "Accueil"}</Link></li>
-            <li><Link href={isNl ? "/nl/over-ons" : "/fr/a-propos"}>{isNl ? "Over ons" : "À propos"}</Link></li>
-            <li><Link href={isNl ? "/nl/brussel" : "/fr/brussel"}>{isNl ? "Regio Brussel" : "Région de Bruxelles"}</Link></li>
-            <li><Link href={isNl ? "/nl/contact" : "/fr/contact"}>{isNl ? "Contact" : "Contact"}</Link></li>
+            <li>
+              <Link href={isNl ? "/nl" : "/fr"}>
+                {isNl ? "Startpagina" : "Accueil"}
+              </Link>
+            </li>
+            <li>
+              <Link href={isNl ? "/nl/over-ons" : "/fr/a-propos"}>
+                {isNl ? "Over ons" : "À propos"}
+              </Link>
+            </li>
+            <li>
+              <Link href={isNl ? "/nl/brussel" : "/fr/brussel"}>
+                {isNl ? "Regio Brussel" : "Région de Bruxelles"}
+              </Link>
+            </li>
+            <li>
+              <Link href={isNl ? "/nl/contact" : "/fr/contact"}>
+                {isNl ? "Contact" : "Contact"}
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -104,8 +205,36 @@ export default function Footer() {
       <div className={styles.bottom}>
         <div className={styles.bottomInner}>
           <p className={styles.copyright}>
-            © {new Date().getFullYear()} Villant Loodgieter. {isNl ? "Alle rechten voorbehouden." : "Tous droits réservés."}{' '}
-            <Link href={isNl ? "/nl/contact" : "/fr/contact"}>Contact</Link> · <Link href={isNl ? "/nl/over-ons" : "/fr/a-propos"}>{isNl ? "Over ons" : "À propos"}</Link>
+            © {new Date().getFullYear()} Villant Loodgieter.{" "}
+            {isNl ? "Alle rechten voorbehouden." : "Tous droits réservés."}{" "}
+            <Link href={isNl ? "/nl/contact" : "/fr/contact"}>Contact</Link> ·{" "}
+            <Link href={isNl ? "/nl/over-ons" : "/fr/a-propos"}>
+              {isNl ? "Over ons" : "À propos"}
+            </Link>{" "}
+            ·{" "}
+            <Link href={isNl ? "/nl/privacy" : "/fr/confidentialite"}>
+              {isNl ? "Privacybeleid" : "Politique de confidentialité"}
+            </Link>{" "}
+            ·{" "}
+            <Link href={isNl ? "/nl/cookies" : "/fr/cookies"}>
+              {isNl ? "Cookiebeleid" : "Politique de cookies"}
+            </Link>{" "}
+            ·{" "}
+            <Link
+              href={
+                isNl ? "/nl/juridische-vermelding" : "/fr/mentions-legales"
+              }
+            >
+              {isNl ? "Juridische vermelding" : "Mentions légales"}
+            </Link>{" "}
+            ·{" "}
+            <Link
+              href={
+                isNl ? "/nl/gebruiksvoorwaarden" : "/fr/conditions-utilisation"
+              }
+            >
+              {isNl ? "Gebruiksvoorwaarden" : "Conditions d’utilisation"}
+            </Link>
           </p>
           <span className={styles.serving}>
             {isNl ? "Trots werkzaam in Brussel en omstreken — uw gecertificeerde Vaillant loodgieter." : "Fier d'opérer à Bruxelles et environs — votre plombier Vaillant certifié."}

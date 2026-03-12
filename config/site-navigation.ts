@@ -40,10 +40,10 @@ export const SITE_NAVIGATION: Record<Locale, LocaleNavigation> = {
       { label: 'Accueil', href: '/fr' },
       { label: 'Services', href: '/fr/services' },
       {
-        label: 'Bruxelles',
+        label: 'Vaillant Plombier Belgique',
         href: '/fr/plombier',
         children: [
-          { label: 'Toutes les communes', href: '/fr/plombier' },
+          { label: 'Toutes les zones desservies', href: '/fr/plombier' },
           { label: 'Région Bruxelles', href: '/fr/brussel' },
           { label: 'Nos services', href: '/fr/services' },
           { label: 'Contact urgence', href: '/fr/contact' },
@@ -68,10 +68,10 @@ export const SITE_NAVIGATION: Record<Locale, LocaleNavigation> = {
       { label: 'Home', href: '/nl' },
       { label: 'Diensten', href: '/nl/diensten' },
       {
-        label: 'Brussel',
+        label: 'Vaillant Loodgieter België',
         href: '/nl/brussel',
         children: [
-          { label: 'Alle zones', href: '/nl/brussel' },
+          { label: 'Alle bediende zones', href: '/nl/brussel' },
           { label: 'Regio Brussel', href: '/nl/brussel' },
           { label: 'Onze diensten', href: '/nl/diensten' },
           { label: 'Spoed contact', href: '/nl/contact' },

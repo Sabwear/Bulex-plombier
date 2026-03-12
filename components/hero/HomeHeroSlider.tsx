@@ -84,7 +84,7 @@ export default function HomeHeroSlider({ lang }: HomeHeroSliderProps) {
 
   return (
     <section
-      className="hero-section relative isolate overflow-hidden"
+      className="hero-section relative isolate overflow-hidden min-h-screen"
       onPointerDown={onPointerDown}
       onPointerMove={onPointerMove}
       onPointerUp={onPointerUp}
@@ -97,7 +97,7 @@ export default function HomeHeroSlider({ lang }: HomeHeroSliderProps) {
         {slides.map((slide, slideIndex) => (
           <article
             key={slide.id}
-            className="relative min-h-[560px] w-full min-w-full md:min-h-[620px] lg:min-h-[680px]"
+            className="relative w-full min-w-full min-h-screen"
             aria-hidden={slideIndex !== currentIndex}
           >
             <Image

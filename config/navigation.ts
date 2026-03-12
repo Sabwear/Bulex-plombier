@@ -16,11 +16,11 @@ export const NAVIGATION = {
     { label: "Accueil", href: "/fr" },
     { label: "Services", href: "/fr/services" },
     {
-      label: "Bruxelles",
+      label: "Vaillant Plombier Belgique",
       href: "/fr/plombier",
       type: "dropdown",
       children: [
-        { label: "Voir toutes les communes", href: "/fr/plombier" },
+        { label: "Voir toutes les zones desservies", href: "/fr/plombier" },
         { label: "Ixelles", href: "/fr/plombier/ixelles" },
         { label: "Jette", href: "/fr/plombier/jette" },
         { label: "Schaerbeek", href: "/fr/plombier/schaerbeek" },
@@ -39,7 +39,7 @@ export const NAVIGATION = {
     { label: "Home", href: "/nl" },
     { label: "Diensten", href: "/nl/diensten" },
     {
-      label: "Brussel",
+      label: "Vaillant Loodgieter België",
       href: "/nl/loodgieter",
       type: "dropdown",
       children: [

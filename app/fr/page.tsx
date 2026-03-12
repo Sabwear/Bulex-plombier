@@ -277,42 +277,71 @@ export default function HomePage() {
       >
         <div className="container">
           <div className="section-header">
-            <span className="badge badge-green">Région</span>
-            <h2>Plombier dans tout Bruxelles</h2>
+            <span className="badge badge-green">Belgique</span>
+            <h2>Plombier dans plusieurs villes de Belgique</h2>
             <div className="divider" />
-            <p>En tant que plombier Vaillant certifié à Bruxelles, nous desservons l&apos;ensemble des 19 communes et la périphérie immédiate.</p>
+            <p>
+              Nous intervenons dans plusieurs villes et régions en Belgique selon la disponibilité
+              de nos équipes et la nature de l’intervention.
+            </p>
           </div>
 
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', justifyContent: 'center', marginBottom: '32px' }}>
+          <div
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: '10px',
+              justifyContent: 'center',
+              marginBottom: '32px',
+            }}
+          >
             {[
-              { name: 'Anderlecht', slug: 'anderlecht' },
-              { name: 'Auderghem', slug: 'auderghem' },
-              { name: 'Berchem-Sainte-Agathe', slug: 'berchem-sainte-agathe' },
-              { name: 'Bruxelles-Ville', slug: 'bruxelles-ville' },
-              { name: 'Etterbeek', slug: 'etterbeek' },
-              { name: 'Evere', slug: 'evere' },
-              { name: 'Forest', slug: 'forest' },
-              { name: 'Ganshoren', slug: 'ganshoren' },
-              { name: 'Ixelles', slug: 'ixelles' },
-              { name: 'Jette', slug: 'jette' },
-              { name: 'Koekelberg', slug: 'koekelberg' },
-              { name: 'Molenbeek', slug: 'molenbeek' },
-              { name: 'Saint-Gilles', slug: 'saint-gilles' },
-              { name: 'Saint-Josse-ten-Noode', slug: 'saint-josse-ten-noode' },
-              { name: 'Schaerbeek', slug: 'schaerbeek' },
-              { name: 'Uccle', slug: 'uccle' },
-              { name: 'Watermael-Boitsfort', slug: 'watermael-boitsfort' },
-              { name: 'Woluwe-Saint-Lambert', slug: 'woluwe-saint-lambert' },
-              { name: 'Woluwe-Saint-Pierre', slug: 'woluwe-saint-pierre' },
-            ].map((area) => (
-              <Link key={area.slug} href={`/fr/plombier/${area.slug}`} className="area-chip" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <MapPin size={14} /> {area.name}
+              // Tier 1 — grandes villes
+              { label: 'Bruxelles', slug: 'bruxelles' },
+              { label: 'Anvers', slug: 'anvers' },
+              { label: 'Gand', slug: 'gand' },
+              { label: 'Charleroi', slug: 'charleroi' },
+              { label: 'Liège', slug: 'liege' },
+              { label: 'Bruges', slug: 'bruges' },
+              { label: 'Namur', slug: 'namur' },
+              { label: 'Louvain', slug: 'louvain' },
+              // Tier 2 — villes moyennes fortes
+              { label: 'Malines', slug: 'malines' },
+              { label: 'Hasselt', slug: 'hasselt' },
+              { label: 'Courtrai', slug: 'courtrai' },
+              { label: 'Ostende', slug: 'ostende' },
+              { label: 'Alost', slug: 'alost' },
+              { label: 'Saint-Nicolas', slug: 'saint-nicolas' },
+              { label: 'Genk', slug: 'genk' },
+              { label: 'Roulers', slug: 'roulers' },
+              { label: 'Mons', slug: 'mons' },
+              // Tier 3 — plus petites mais intéressantes SEO
+              { label: 'Turnhout', slug: 'turnhout' },
+              { label: 'Tournai', slug: 'tournai' },
+              { label: 'La Louvière', slug: 'la-louviere' },
+              { label: 'Verviers', slug: 'verviers' },
+              { label: 'Seraing', slug: 'seraing' },
+              { label: 'Mouscron', slug: 'mouscron' },
+              { label: 'Termonde', slug: 'termonde' },
+              { label: 'Lokeren', slug: 'lokeren' },
+              { label: 'Waregem', slug: 'waregem' },
+              { label: 'Ypres', slug: 'ypres' },
+            ].map((city) => (
+              <Link
+                key={city.slug}
+                href={`/fr/plombier-${city.slug}`}
+                className="area-chip"
+                style={{ display: 'flex', alignItems: 'center', gap: '6px' }}
+              >
+                <MapPin size={14} /> {city.label}
               </Link>
             ))}
           </div>
 
           <div style={{ textAlign: 'center' }}>
-            <Link href="/fr/plombier" className="btn btn-outline">Voir toutes les communes desservies</Link>
+            <Link href="/fr/plombier" className="btn btn-outline">
+              Voir toutes les zones desservies
+            </Link>
           </div>
         </div>
       </section>

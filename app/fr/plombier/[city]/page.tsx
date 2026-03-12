@@ -48,12 +48,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: `Plombier Vaillant certifié à ${commune.name} | Vaillant-Loodgieter`,
     description: desc,
     alternates: {
-      canonical: `${baseUrl}/plombier/${commune.slug}`,
+      canonical: `${baseUrl}/fr/plombier/${commune.slug}`,
     },
     openGraph: {
       type: "website",
       locale: "fr_BE",
-      url: `${baseUrl}/plombier/${commune.slug}`,
+      url: `${baseUrl}/fr/plombier/${commune.slug}`,
       siteName: "Vaillant-Loodgieter",
       title: `Plombier Vaillant certifié à ${commune.name}`,
       description: desc,
@@ -100,7 +100,7 @@ function buildJsonLd(commune: Commune) {
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "Plumber"],
     name: "Vaillant-Loodgieter",
-    url: `${baseUrl}/plombier/${commune.slug}`,
+    url: `${baseUrl}/fr/plombier/${commune.slug}`,
     telephone: "+32-XXX-XX-XX-XX",
     description: `Plombier Vaillant certifié à ${commune.name}. Dépannage, entretien et installation de chauffage et plomberie.`,
     areaServed: {
@@ -182,7 +182,7 @@ export default async function CityPage({ params }: PageProps) {
             <a href="tel:+32XXXXXXXXXX" className="btn btn-primary">
               📞 Appeler
             </a>
-            <Link href="/contact" className="btn btn-outline">
+            <Link href="/fr/contact" className="btn btn-outline">
               📋 Demander un devis
             </Link>
           </div>
@@ -369,7 +369,7 @@ export default async function CityPage({ params }: PageProps) {
                 return (
                   <Link
                     key={slug}
-                    href={`/plombier/${slug}`}
+                    href={`/fr/plombier/${slug}`}
                     className={styles.nearbyCard}
                   >
                     <span className={styles.nearbyName}>{nearby.name}</span>
@@ -379,7 +379,7 @@ export default async function CityPage({ params }: PageProps) {
               })}
             </div>
             <p className={styles.hubLink}>
-              <Link href="/plombier">
+              <Link href="/fr/plombier">
                 ← Voir toutes les communes desservies
               </Link>
             </p>
@@ -641,7 +641,7 @@ export default async function CityPage({ params }: PageProps) {
           </div>
           <ul className={styles.relatedList}>
             <li className={styles.relatedItem}>
-              <Link href="/diensten">
+              <Link href="/fr/services">
                 🔥 Entretien chaudière Bruxelles
                 <span className={styles.relatedDesc}>
                   — Contrôle annuel et optimisation de votre installation
@@ -650,7 +650,7 @@ export default async function CityPage({ params }: PageProps) {
               </Link>
             </li>
             <li className={styles.relatedItem}>
-              <Link href="/diensten">
+              <Link href="/fr/services">
                 ⚡ Dépannage chauffage Bruxelles
                 <span className={styles.relatedDesc}>
                   — Intervention rapide pour toute panne de chauffage
@@ -658,7 +658,7 @@ export default async function CityPage({ params }: PageProps) {
               </Link>
             </li>
             <li className={styles.relatedItem}>
-              <Link href="/diensten">
+              <Link href="/fr/services">
                 🌡️ Installation thermostat intelligent
                 <span className={styles.relatedDesc}>
                   — Thermostat connecté compatible Vaillant pour plus
@@ -667,7 +667,7 @@ export default async function CityPage({ params }: PageProps) {
               </Link>
             </li>
             <li className={styles.relatedItem}>
-              <Link href="/diensten">
+              <Link href="/fr/services">
                 💧 Réparation fuite d&apos;eau
                 <span className={styles.relatedDesc}>
                   — Localisation et réparation de fuites dans tout Bruxelles
@@ -690,7 +690,7 @@ export default async function CityPage({ params }: PageProps) {
             <a href="tel:+32XXXXXXXXXX" className="btn btn-primary">
               📞 Appeler maintenant
             </a>
-            <Link href="/contact" className="btn btn-ghost-dark">
+            <Link href="/fr/contact" className="btn btn-ghost-dark">
               📋 Demander un devis
             </Link>
           </div>

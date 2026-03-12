@@ -18,7 +18,7 @@
       },
       "structure": {
         "h1_tag": {
-          "content_mask": "Action-Oriented Headline containing Vaillant loodgieter Brussel",
+          "content_mask": "Action-Oriented Headline containing Vaillant loodgieter belgique",
           "count_limit": 1,
           "intent_match": "Must align with Title Tag but use conversational tone"
         },
@@ -118,7 +118,7 @@
         "selection_rule": "For the Homepage, use the Benefits-first order; for specific service pages, use the Services-first order; for the About/Certified Partner page, use the Proof-first order; and for dedicated local area pages, use the Service Areas-first order."
       },
       "keyword_engineering": {
-        "primary_keyword": "Vaillant loodgieter Brussel",
+        "primary_keyword": "Vaillant loodgieter belgique",
         "placement_mandates": {
           "title_tag": "First 5 words",
           "h1_tag": "Exact match",
@@ -135,26 +135,26 @@
         "semantic_cluster": {
           "strategy": "Cycle variations to prevent stuffing",
           "lsi_keywords": [
-            "Vaillant herstelling Brussel",
-            "boiler vervangen Brussel",
-            "nieuwe verwarming plaatsen Brussel",
-            "loodgieter spoeddienst Brussel",
+            "Vaillant herstelling belgique",
+            "boiler vervangen belgique",
+            "nieuwe verwarming plaatsen belgique",
+            "loodgieter spoeddienst belgique",
             "gecertificeerd Vaillant partner België",
             "onderhoudscontract Vaillant",
-            "waterlek herstellen Brussel",
-            "sanitair installatie Brussel"
+            "waterlek herstellen belgique",
+            "sanitair installatie belgique"
           ],
           "synonyms": [
-            "Vaillant herstelling Brussel",
-            "boiler vervangen Brussel",
-            "nieuwe verwarming plaatsen Brussel",
-            "loodgieter spoeddienst Brussel",
+            "Vaillant herstelling belgique",
+            "boiler vervangen belgique",
+            "nieuwe verwarming plaatsen belgique",
+            "loodgieter spoeddienst belgique",
             "gecertificeerd Vaillant partner België",
             "onderhoudscontract Vaillant",
-            "waterlek herstellen Brussel",
-            "sanitair installatie Brussel",
+            "waterlek herstellen belgique",
+            "sanitair installatie belgique",
             "duurzame verwarming oplossingen",
-            "verwarmingsmonteur Brussel"
+            "verwarmingsmonteur belgique"
           ]
         }
       },
@@ -308,7 +308,7 @@
         },
         "required_disclaimers": [],
         "business_domain_fields": {},
-        "targeting_area": "Brussels, Belgium",
+        "targeting_area": "belgiques, Belgium",
         "targeting_region": "",
         "targeting_country": ""
       }
@@ -362,19 +362,19 @@
     ],
     "mental_entry_point": "",
     "niche": "Plumbing and heating systems (Vaillant partner). Plumbing and heating systems (Vaillant partner). Certified partner of Vaillant operating in Belgium",
-    "country": "Brussels, Belgium",
-    "primary_keyword": "Vaillant loodgieter Brussel",
+    "country": "belgiques, Belgium",
+    "primary_keyword": "Vaillant loodgieter belgique",
     "secondary_keywords": [
-      "Vaillant herstelling Brussel",
-      "boiler vervangen Brussel",
-      "nieuwe verwarming plaatsen Brussel",
-      "loodgieter spoeddienst Brussel",
+      "Vaillant herstelling belgique",
+      "boiler vervangen belgique",
+      "nieuwe verwarming plaatsen belgique",
+      "loodgieter spoeddienst belgique",
       "gecertificeerd Vaillant partner België",
       "onderhoudscontract Vaillant",
-      "waterlek herstellen Brussel",
-      "sanitair installatie Brussel",
+      "waterlek herstellen belgique",
+      "sanitair installatie belgique",
       "duurzame verwarming oplossingen",
-      "verwarmingsmonteur Brussel"
+      "verwarmingsmonteur belgique"
     ],
     "targeting_region": "",
     "targeting_country": ""

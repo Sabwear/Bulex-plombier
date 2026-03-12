@@ -257,47 +257,71 @@ export default function HomePage() {
       >
         <div className="container">
           <div className="section-header">
-            <span className="badge badge-green">Regio</span>
-            <h2>Loodgieter in heel Brussel</h2>
+            <span className="badge badge-green">België</span>
+            <h2>Loodgieter in meerdere steden in België</h2>
             <div className="divider" />
-            <p>Als gecertificeerde Vaillant loodgieter in Brussel bedienen wij alle 19 gemeenten en de directe omgeving.</p>
+            <p>
+              Wij werken in meerdere steden en regio’s in België, afhankelijk van de beschikbaarheid
+              van onze teams en het type interventie.
+            </p>
           </div>
 
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', justifyContent: 'center', marginBottom: '32px' }}>
+          <div
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: '10px',
+              justifyContent: 'center',
+              marginBottom: '32px',
+            }}
+          >
             {[
-              { name: 'Anderlecht', slug: 'anderlecht' },
-              { name: 'Brussel-Stad', slug: 'brussel-stad' },
-              { name: 'Elsene', slug: 'elsene' },
-              { name: 'Etterbeek', slug: 'etterbeek' },
-              { name: 'Evere', slug: 'evere' },
-              { name: 'Ganshoren', slug: 'ganshoren' },
-              { name: 'Jette', slug: 'jette' },
-              { name: 'Koekelberg', slug: 'koekelberg' },
-              { name: 'Sint-Jans-Molenbeek', slug: 'sint-jans-molenbeek' },
-              { name: 'Oudergem', slug: 'oudergem' },
-              { name: 'Schaarbeek', slug: 'schaarbeek' },
-              { name: 'Sint-Joost-ten-Node', slug: 'sint-joost-ten-node' },
-              { name: 'Sint-Agatha-Berchem', slug: 'sint-agatha-berchem' },
-              { name: 'Sint-Gillis', slug: 'sint-gillis' },
-              { name: 'Sint-Lambrechts-Woluwe', slug: 'sint-lambrechts-woluwe' },
-              { name: 'Sint-Pieters-Woluwe', slug: 'sint-pieters-woluwe' },
-              { name: 'Ukkel', slug: 'ukkel' },
-              { name: 'Vorst', slug: 'vorst' },
-              { name: 'Watermaal-Bosvoorde', slug: 'watermaal-bosvoorde' },
-            ].map((area) => (
+              // Tier 1 — grootste steden
+              { label: 'Brussel', slug: 'brussel' },
+              { label: 'Antwerpen', slug: 'antwerpen' },
+              { label: 'Gent', slug: 'gent' },
+              { label: 'Charleroi', slug: 'charleroi' },
+              { label: 'Luik', slug: 'luik' },
+              { label: 'Brugge', slug: 'brugge' },
+              { label: 'Namen', slug: 'namen' },
+              { label: 'Leuven', slug: 'leuven' },
+              // Tier 2 — sterke middelgrote steden
+              { label: 'Mechelen', slug: 'mechelen' },
+              { label: 'Hasselt', slug: 'hasselt' },
+              { label: 'Kortrijk', slug: 'kortrijk' },
+              { label: 'Oostende', slug: 'oostende' },
+              { label: 'Aalst', slug: 'aalst' },
+              { label: 'Sint-Niklaas', slug: 'sint-niklaas' },
+              { label: 'Genk', slug: 'genk' },
+              { label: 'Roeselare', slug: 'roeselare' },
+              { label: 'Bergen', slug: 'bergen' },
+              // Tier 3 — kleinere maar goede SEO-steden
+              { label: 'Turnhout', slug: 'turnhout' },
+              { label: 'Doornik', slug: 'doornik' },
+              { label: 'La Louvière', slug: 'la-louviere' },
+              { label: 'Verviers', slug: 'verviers' },
+              { label: 'Seraing', slug: 'seraing' },
+              { label: 'Moeskroen', slug: 'moeskroen' },
+              { label: 'Dendermonde', slug: 'dendermonde' },
+              { label: 'Lokeren', slug: 'lokeren' },
+              { label: 'Waregem', slug: 'waregem' },
+              { label: 'Ieper', slug: 'ieper' },
+            ].map((city) => (
               <Link
-                key={area.slug}
-                href={`/nl/brussel#${area.slug}`}
+                key={city.slug}
+                href={`/nl/loodgieter-${city.slug}`}
                 className="area-chip"
                 style={{ display: 'flex', alignItems: 'center', gap: '6px' }}
               >
-                <MapPin size={14} /> {area.name}
+                <MapPin size={14} /> {city.label}
               </Link>
             ))}
           </div>
 
           <div style={{ textAlign: 'center' }}>
-            <Link href="/nl/brussel" className="btn btn-outline">Meer info over onze regio</Link>
+            <Link href="/nl/brussel" className="btn btn-outline">
+              Bekijk alle bediende zones
+            </Link>
           </div>
         </div>
       </section>
