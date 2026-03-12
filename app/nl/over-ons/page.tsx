@@ -46,27 +46,42 @@ export default function OverOnsPage() {
         </div>
       </section>
 
-      {/* VALUE PROP */}
+      {/* IMAGE + VALUE PROP */}
       <section style={{ background: 'var(--bg-secondary)', padding: '3rem 1.5rem' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.25rem' }}>
-            {[
-              { icon: 'plumber-1.svg', label: 'Officieel Vaillant Gecertificeerd' },
-              { icon: 'wrench-2.svg', label: 'Gekwalificeerde Technici' },
-              { icon: 'pipes-7.svg', label: 'Actief in heel Brussel' },
-              { icon: 'flange.svg', label: 'Technische Verslagen' },
-            ].map((v) => (
-              <div key={v.label} style={{
-                display: 'flex', alignItems: 'center', gap: '0.75rem',
-                background: '#fff', borderRadius: 'var(--radius)', padding: '1rem 1.25rem',
-                border: '1px solid var(--border-light)', boxShadow: 'var(--shadow-sm)',
-              }}>
-                <span style={{ width: '24px', height: '24px', display: 'flex', alignItems: 'center' }}>
-                  <Image src={`/icons/plumbing-elements/${v.icon}`} alt={v.label} width={24} height={24} />
-                </span>
-                <span style={{ fontWeight: 600, fontSize: '0.92rem' }}>{v.label}</span>
+          <div className="grid-2" style={{ alignItems: 'center', gap: '1.75rem' }}>
+            <div>
+              <div className="card" style={{ padding: 0, overflow: 'hidden' }}>
+                <Image
+                  src="/images/slider-vaillant-2.png"
+                  alt="Vaillant technici aan het werk in Brussel"
+                  width={720}
+                  height={640}
+                  style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
+                />
               </div>
-            ))}
+            </div>
+            <div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.25rem' }}>
+                {[
+                  { icon: 'plumber-1.svg', label: 'Officieel Vaillant Gecertificeerd' },
+                  { icon: 'wrench-2.svg', label: 'Gekwalificeerde Technici' },
+                  { icon: 'pipes-7.svg', label: 'Actief in heel Brussel' },
+                  { icon: 'flange.svg', label: 'Technische Verslagen' },
+                ].map((v) => (
+                  <div key={v.label} style={{
+                    display: 'flex', alignItems: 'center', gap: '0.75rem',
+                    background: '#fff', borderRadius: 'var(--radius)', padding: '1rem 1.25rem',
+                    border: '1px solid var(--border-light)', boxShadow: 'var(--shadow-sm)',
+                  }}>
+                    <span style={{ width: '24px', height: '24px', display: 'flex', alignItems: 'center' }}>
+                      <Image src={`/icons/plumbing-elements/${v.icon}`} alt={v.label} width={24} height={24} />
+                    </span>
+                    <span style={{ fontWeight: 600, fontSize: '0.92rem' }}>{v.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>

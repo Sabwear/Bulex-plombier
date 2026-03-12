@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 const regions = [
   "Bruxelles-Capitale",
@@ -71,16 +72,153 @@ export default function DemandeDevisPage() {
           <h1 style={{ marginBottom: "1rem" }}>
             Obtenez un devis clair pour votre intervention a Bruxelles
           </h1>
-          <p style={{ fontSize: "1.1rem", maxWidth: "60ch", marginBottom: "2rem" }}>
+          <p style={{ fontSize: "1.1rem", maxWidth: "60ch", marginBottom: "1.5rem" }}>
             Remplissez ce formulaire pour recevoir une estimation rapide. Nous
             revenons vers vous avec un diagnostic initial et une proposition
             adaptee.
           </p>
+
+          <div style={{ marginBottom: "1.75rem", maxWidth: "70ch" }}>
+            <h2 style={{ fontSize: "1.25rem", marginBottom: "0.6rem" }}>
+              Une equipe Vaillant ancree a Bruxelles
+            </h2>
+            <p style={{ fontSize: "0.98rem", color: "var(--text-body)" }}>
+              Depuis plusieurs annees, Villant accompagne les habitants de
+              Bruxelles dans l&apos;entretien, la reparation et le remplacement
+              de chaudiere Vaillant. Notre objectif est simple :{" "}
+              <strong>vous proposer des interventions justes</strong>, basees sur
+              un diagnostic honnete et une explication transparente.
+            </p>
+            <p
+              style={{
+                marginTop: "0.55rem",
+                fontSize: "0.95rem",
+                color: "var(--text-body)",
+              }}
+            >
+              Nos missions quotidiennes : securiser vos installations, optimiser
+              vos consommations et vous laisser une installation propre, conforme
+              et facilement compréhensible.
+            </p>
+          </div>
+
+          <div className="grid-2" style={{ alignItems: "stretch" }}>
+            <div
+              className="card"
+              style={{
+                padding: "1.75rem",
+                background: "rgba(255,255,255,0.94)",
+                boxShadow:
+                  "0 18px 45px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.02)",
+              }}
+            >
+              <h2 style={{ marginBottom: "0.75rem" }}>
+                Un devis transparent, sans surprise
+              </h2>
+              <p style={{ marginBottom: "1.5rem" }}>
+                Que ce soit pour une panne urgente, un remplacement de chaudiere
+                ou un nouveau projet sanitaire, nous vous expliquons toujours{" "}
+                <strong>ce qui est vraiment necessaire</strong> et ce qui peut
+                attendre.
+              </p>
+              <ul
+                style={{
+                  display: "grid",
+                  gap: "0.6rem",
+                  fontSize: "0.95rem",
+                  color: "var(--text-body)",
+                }}
+              >
+                <li>
+                  <strong>Montant estime clair</strong> avant de deplacer un
+                  technicien
+                </li>
+                <li>
+                  <strong>Priorite aux urgences</strong> chauffage et eau chaude
+                </li>
+                <li>
+                  <strong>Pieces et main d&apos;oeuvre detaillees</strong> sur
+                  le devis
+                </li>
+                <li>
+                  <strong>Conseils de mise en conformite</strong> si necessaire
+                </li>
+              </ul>
+            </div>
+
+            <div className="card card-image" style={{ height: "auto" }}>
+              <Image
+                src="/images/hero-vaillant-brussels.jpg"
+                alt="Technicien Vaillant expliquant un devis a un client a Bruxelles"
+                width={600}
+                height={380}
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              />
+            </div>
+          </div>
         </div>
       </section>
 
       <section>
-        <div className="container" style={{ maxWidth: "820px" }}>
+        <div className="container">
+          <div className="grid-3-strict">
+            <div className="card">
+              <h3>Apres votre demande</h3>
+              <p>
+                Nous analysons votre formulaire et, si necessaire, nous vous
+                rappelons pour clarifier certains points techniques. Vous
+                recevez ensuite un devis <strong>structure et lisible</strong>,
+                avec les etapes prevues.
+              </p>
+            </div>
+            <div className="card">
+              <h3>Intervention sur place</h3>
+              <p>
+                Le jour de l&apos;intervention, le technicien confirme le
+                diagnostic sur place. Si un element non prevu apparait, nous
+                vous expliquons <strong>avant</strong> toute depense
+                supplementaire.
+              </p>
+            </div>
+            <div className="card">
+              <h3>Garantie & suivi</h3>
+              <p>
+                Toutes nos interventions Vaillant sont couvertes par{" "}
+                <strong>les garanties fabricant</strong> ainsi que notre suivi
+                client. En cas de question apres les travaux, vous pouvez nous
+                recontacter facilement.
+              </p>
+            </div>
+          </div>
+
+          <div
+            className="cta-band"
+            style={{
+              marginTop: "3rem",
+              backgroundImage:
+                "linear-gradient(rgba(0, 173, 171, 0.94), rgba(0, 173, 171, 0.94)), url('/images/slider-vaillant-1.png')",
+            }}
+          >
+            <h2>Besoin d&apos;un avis avant de demander un devis ?</h2>
+            <p>
+              Expliquez-nous votre situation par telephone : nous vous indiquons
+              si une simple intervention suffit ou s&apos;il vaut mieux prevoir
+              un projet plus large.
+            </p>
+            <div className="cta-actions">
+              <Link href="/fr/contact" className="btn btn-ghost-dark btn-sm">
+                Ecrire via le formulaire de contact
+              </Link>
+              <Link href="tel:+3223456789" className="btn btn-primary btn-sm">
+                Appeler maintenant
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="container" style={{ maxWidth: "960px" }}>
           <div className="card" style={{ padding: "2rem" }}>
             <form
               action="mailto:contact@villant-loodgieter.be"
@@ -155,12 +293,6 @@ export default function DemandeDevisPage() {
                 Envoyer la demande
               </button>
             </form>
-          </div>
-
-          <div style={{ marginTop: "1.5rem", textAlign: "center" }}>
-            <Link href="/contact" className="btn btn-outline">
-              Vous preferez contacter directement ?
-            </Link>
           </div>
         </div>
       </section>

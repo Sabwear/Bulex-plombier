@@ -20,8 +20,8 @@ export default function MainHeader({ lang }: MainHeaderProps) {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-200">
-      <div className="container">
-        <div className="h-16 flex items-center justify-between gap-4 md:grid md:grid-cols-[auto_1fr_auto]">
+        <div className="container">
+          <div className="h-16 flex items-center justify-between gap-4 md:grid md:grid-cols-[auto_1fr_auto]">
           <Link
             href={lang === 'fr' ? '/fr' : '/nl'}
             className="shrink-0 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"

@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { getAlternateLocalePath, getLocaleFromPathname, type Locale } from '@/config/locale-routes';
 
@@ -18,31 +19,47 @@ export default function LanguageSwitcher({ className = '', theme = 'dark' }: Lan
   const nlHref = currentLocale === 'nl' ? pathname : getAlternateLocalePath(pathname, 'nl');
 
   return (
-    <div className={`flex items-center gap-1 text-xs font-semibold ${className}`}>
+    <div className={`flex items-center gap-1.5 text-xs font-semibold ${className}`}>
       <Link
         href={frHref}
         aria-label="Français"
         aria-current={currentLocale === 'fr' ? 'page' : undefined}
-        className={`rounded px-1.5 py-0.5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
+        className={`inline-flex items-center justify-center rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
           currentLocale === 'fr'
-            ? isDark ? 'text-white' : 'text-gray-900'
-            : isDark ? 'text-gray-400 hover:text-white' : 'text-gray-500 hover:text-gray-900'
+            ? isDark
+              ? 'ring-1 ring-white/80'
+              : 'ring-1 ring-primary/80'
+            : 'opacity-80 hover:opacity-100'
         }`}
       >
-        FR
+        <Image
+          src="/images/flag/fr.svg"
+          alt="Français"
+          width={20}
+          height={14}
+          className={currentLocale === 'fr' ? 'opacity-100' : 'opacity-75'}
+        />
       </Link>
-      <span className={isDark ? 'text-gray-500' : 'text-gray-400'} aria-hidden="true">|</span>
+
       <Link
         href={nlHref}
         aria-label="Nederlands"
         aria-current={currentLocale === 'nl' ? 'page' : undefined}
-        className={`rounded px-1.5 py-0.5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
+        className={`inline-flex items-center justify-center rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
           currentLocale === 'nl'
-            ? isDark ? 'text-white' : 'text-gray-900'
-            : isDark ? 'text-gray-400 hover:text-white' : 'text-gray-500 hover:text-gray-900'
+            ? isDark
+              ? 'ring-1 ring-white/80'
+              : 'ring-1 ring-primary/80'
+            : 'opacity-80 hover:opacity-100'
         }`}
       >
-        NL
+        <Image
+          src="/images/flag/nl.svg"
+          alt="Nederlands"
+          width={20}
+          height={14}
+          className={currentLocale === 'nl' ? 'opacity-100' : 'opacity-75'}
+        />
       </Link>
     </div>
   );

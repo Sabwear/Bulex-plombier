@@ -38,37 +38,36 @@ export default function HomePage() {
     <>
       <HomeHeroSlider lang="fr" />
 
-      <section style={{ paddingTop: '1.25rem' }}>
+      <section className="bg-slate-50 py-10 shadow-[0_1px_0_rgba(15,23,42,0.04)]">
         <div className="container">
-          <div className="grid-4">
-            {trustStrip.map((item, index) => {
-              const icons = [Award, Zap, UserCheck, MapPin];
-              const Icon = icons[index] ?? CheckCircle2;
+          <div className="grid gap-6 md:grid-cols-3">
+            {trustStrip.slice(0, 3).map((item, index) => {
+              const iconSrc =
+                index === 0
+                  ? '/icons/plumbing-elements/water-heater-1.svg' // certification Vaillant
+                  : index === 1
+                    ? '/icons/plumbing-elements/wrench-3.svg' // service d'urgence / intervention
+                    : '/icons/plumbing-elements/plumber-1.svg'; // techniciens qualifies
+
               return (
-                <div
-                  key={item.title}
-                  style={{
-                    textAlign: 'left',
-                    padding: '0',
-                  }}
-                >
-                  <div
-                    style={{
-                      width: '36px',
-                      height: '36px',
-                      borderRadius: '10px',
-                      background: 'var(--color-primary-light)',
-                      color: 'var(--color-primary)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      marginBottom: '0.6rem',
-                    }}
-                  >
-                    <Icon size={18} />
+                <div key={item.title} className="card">
+                  <div className="icon-box">
+                    <NextImage
+                      src={iconSrc}
+                      alt=""
+                      width={22}
+                      height={22}
+                      className="h-5 w-5"
+                    />
                   </div>
-                  <h3 style={{ fontSize: 'var(--text-base)', marginBottom: '0.25rem' }}>{item.title}</h3>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-muted)' }}>{item.subtitle}</p>
+                  <div>
+                    <h3 className="text-base font-semibold text-slate-900">
+                      {item.title}
+                    </h3>
+                    <p className="mt-1 text-sm text-slate-600">
+                      {item.subtitle}
+                    </p>
+                  </div>
                 </div>
               );
             })}
@@ -76,8 +75,79 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── ABOUT TEASER ─────────────────────────────────────── */}
+      <section className="py-16 md:py-20">
+        <div className="container">
+          <div className="grid-2" style={{ alignItems: 'center' }}>
+            <div>
+              <div className="card" style={{ padding: 0, overflow: 'hidden' }}>
+                <NextImage
+                  src="/images/slider-vaillant-1.png"
+                  alt="Technicien Vaillant certifié à Bruxelles"
+                  width={640}
+                  height={640}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </div>
+            <div>
+              <span className="badge badge-green">À propos de nous</span>
+              <h2 style={{ marginTop: '1rem', marginBottom: '0.75rem' }}>
+                Villant Plombier en quelques mots
+              </h2>
+              <p style={{ marginBottom: '1rem' }}>
+                Basé à Bruxelles, Villant Plombier est un partenaire certifié Vaillant spécialisé
+                dans le chauffage et la plomberie résidentiels. Notre équipe intervient chaque jour
+                dans les appartements bruxellois pour l&apos;entretien, la réparation et le
+                remplacement de chaudières, ainsi que pour les fuites d&apos;eau et les
+                installations sanitaires.
+              </p>
+              <p style={{ marginBottom: '1.25rem' }}>
+                Nous privilégions un diagnostic clair avant toute intervention, une communication
+                honnête et des pièces d&apos;origine Vaillant pour que votre installation reste
+                fiable sur le long terme.
+              </p>
+              <div style={{ display: 'grid', rowGap: '0.65rem', marginBottom: '1.5rem' }}>
+                {[
+                  {
+                    icon: '/icons/plumbing-elements/plumber-1.svg',
+                    label: 'Partenaire officiellement certifié Vaillant en Belgique',
+                  },
+                  {
+                    icon: '/icons/plumbing-elements/wrench-2.svg',
+                    label: 'Techniciens expérimentés, formés directement par le fabricant',
+                  },
+                  {
+                    icon: '/icons/plumbing-elements/pipes-7.svg',
+                    label: 'Interventions rapides dans toutes les communes de Bruxelles',
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.label}
+                    style={{ display: 'flex', gap: '0.6rem', alignItems: 'flex-start' }}
+                  >
+                    <NextImage
+                      src={item.icon}
+                      alt=""
+                      width={20}
+                      height={20}
+                      className="h-5 w-5"
+                      style={{ marginTop: '2px' }}
+                    />
+                    <span style={{ fontSize: '0.95rem' }}>{item.label}</span>
+                  </div>
+                ))}
+              </div>
+              <Link href="/fr/a-propos" className="btn btn-primary">
+                En savoir plus
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── BENEFITS ───────────────────────────────────────── */}
-      <section>
+      <section className="py-16 md:py-20">
         <div className="container">
           <div className="section-header">
             <span className="badge badge-green">Pourquoi choisir Villant Plombier</span>
@@ -108,7 +178,10 @@ export default function HomePage() {
       </section>
 
       {/* ── SERVICES ───────────────────────────────────────── */}
-      <section style={{ background: 'var(--color-gray-50)' }}>
+      <section
+        style={{ background: 'var(--color-gray-50)' }}
+        className="py-16 md:py-20"
+      >
         <div className="container">
           <div className="section-header">
             <span className="badge badge-green">Nos Services</span>
@@ -119,12 +192,12 @@ export default function HomePage() {
 
           <div className="grid-3-strict">
             {[
-              { image: '/images/service/1.jpg', icon: <Wrench size={32} />, title: 'Réparation Vaillant Bruxelles', desc: "Problème avec votre chaudière Vaillant ? Nos techniciens certifiés diagnostiquent et réparent tous les modèles Vaillant avec rapidité et précision.", link: '/diensten#vaillant-herstelling' },
-              { image: '/images/service/2.jpg', icon: <Thermometer size={32} />, title: 'Remplacement Chaudière Bruxelles', desc: "Votre ancienne chaudière est en fin de vie ? Nous installons une nouvelle chaudière Vaillant économe en énergie avec mise en service complète.", link: '/diensten#boiler-vervangen' },
-              { image: '/images/service/3.jpg', icon: <Grid size={32} />, title: 'Installation d\'un Nouveau Chauffage', desc: "Des projets de nouveau chauffage à Bruxelles ? Nous concevons et installons un système adapté à votre domicile ou vos locaux professionnels.", link: '/diensten#verwarming' },
-              { image: '/images/service/4.jpg', icon: <Construction size={32} />, title: 'Réparation Fuite d\'Eau Bruxelles', desc: "Une fuite d'eau cause rapidement des dégâts. Notre équipe localise et répare les fuites immédiatement pour éviter de graves dommages à votre propriété.", link: '/diensten#waterlek' },
-              { image: '/images/service/5.jpg', icon: <Bath size={32} />, title: 'Installation Sanitaire Bruxelles', desc: "Rénovation de salle de bain ou appareils sanitaires ? Nous installons tout de manière experte : toilettes, douche, baignoire, lavabo et plus.", link: '/diensten#sanitair' },
-              { image: '/images/service/6.jpg', icon: <Gauge size={32} />, title: 'Contrat d\'Entretien Vaillant', desc: "Entretien annuel de votre installation Vaillant. Comprend l'inspection, le nettoyage et un rapport pour des performances et une durabilité garanties.", link: '/diensten#onderhoud' },
+              { image: '/images/service/1.jpg', icon: <Wrench size={32} />, title: 'Réparation Vaillant Bruxelles', desc: "Problème avec votre chaudière Vaillant ? Nos techniciens certifiés diagnostiquent et réparent tous les modèles Vaillant avec rapidité et précision.", link: '/fr/services#vaillant-herstelling' },
+              { image: '/images/service/2.jpg', icon: <Thermometer size={32} />, title: 'Remplacement Chaudière Bruxelles', desc: "Votre ancienne chaudière est en fin de vie ? Nous installons une nouvelle chaudière Vaillant économe en énergie avec mise en service complète.", link: '/fr/services#boiler-vervangen' },
+              { image: '/images/service/3.jpg', icon: <Grid size={32} />, title: 'Installation d\'un Nouveau Chauffage', desc: "Des projets de nouveau chauffage à Bruxelles ? Nous concevons et installons un système adapté à votre domicile ou vos locaux professionnels.", link: '/fr/services#verwarming' },
+              { image: '/images/service/4.jpg', icon: <Construction size={32} />, title: 'Réparation Fuite d\'Eau Bruxelles', desc: "Une fuite d'eau cause rapidement des dégâts. Notre équipe localise et répare les fuites immédiatement pour éviter de graves dommages à votre propriété.", link: '/fr/services#waterlek' },
+              { image: '/images/service/5.jpg', icon: <Bath size={32} />, title: 'Installation Sanitaire Bruxelles', desc: "Rénovation de salle de bain ou appareils sanitaires ? Nous installons tout de manière experte : toilettes, douche, baignoire, lavabo et plus.", link: '/fr/services#sanitair' },
+              { image: '/images/service/6.jpg', icon: <Gauge size={32} />, title: 'Contrat d\'Entretien Vaillant', desc: "Entretien annuel de votre installation Vaillant. Comprend l'inspection, le nettoyage et un rapport pour des performances et une durabilité garanties.", link: '/fr/services#onderhoud' },
             ].map((s) => (
               <div key={s.title} className="card">
                 <div className="card-image">
@@ -143,13 +216,13 @@ export default function HomePage() {
           </div>
 
           <div style={{ textAlign: 'center', marginTop: '40px' }}>
-            <Link href="/diensten" className="btn btn-primary">Voir tous les services</Link>
+            <Link href="/fr/services" className="btn btn-primary">Voir tous les services</Link>
           </div>
         </div>
       </section>
 
       {/* ── PROOF ──────────────────────────────────────────── */}
-      <section>
+      <section className="py-16 md:py-20">
         <div className="container">
           <div className="section-header">
             <span className="badge badge-green">Preuve &amp; Confiance</span>
@@ -198,7 +271,10 @@ export default function HomePage() {
       </section>
 
       {/* ── SERVICE AREAS ──────────────────────────────────── */}
-      <section style={{ background: 'var(--color-gray-50)' }}>
+      <section
+        style={{ background: 'var(--color-gray-50)' }}
+        className="py-16 md:py-20"
+      >
         <div className="container">
           <div className="section-header">
             <span className="badge badge-green">Région</span>
@@ -242,7 +318,7 @@ export default function HomePage() {
       </section>
 
       {/* ── HOW IT WORKS ───────────────────────────────────── */}
-      <section>
+      <section className="py-16 md:py-20">
         <div className="container">
           <div className="section-header">
             <span className="badge badge-green">Méthode de travail</span>
@@ -253,10 +329,26 @@ export default function HomePage() {
 
           <div className="steps-grid">
             {[
-              { n: '1', title: '', desc: "Envoyez un e-mail à contact@villant-loodgieter.be. Décrivez votre problème ou votre demande le plus précisément possible." },
-              { n: '2', title: 'Diagnostic et Devis', desc: "Notre technicien se rend sur place et pose un diagnostic transparent. Vous recevez un devis clair et précis avant de commencer les travaux." },
-              { n: '3', title: 'Intervention experte', desc: "Des techniciens certifiés effectuent la réparation ou l'installation en appliquant les normes rigoureuses et des pièces d'origine Vaillant." },
-              { n: '4', title: 'Suivi et Entretien', desc: "Après l'intervention, un bilan de fonctionnement. Nous vous conseillons sur l'entretien annuel recommandé pour votre installation Vaillant." },
+              {
+                n: '1',
+                title: 'Demande de devis',
+                desc: "Remplissez la page de demande de devis ou envoyez un e-mail à contact@villant-loodgieter.be. Décrivez votre problème ou votre projet le plus précisément possible.",
+              },
+              {
+                n: '2',
+                title: 'Diagnostic et Devis',
+                desc: "Notre technicien se rend sur place et pose un diagnostic transparent. Vous recevez un devis clair et précis avant de commencer les travaux.",
+              },
+              {
+                n: '3',
+                title: 'Intervention experte',
+                desc: "Des techniciens certifiés effectuent la réparation ou l'installation en appliquant les normes rigoureuses et des pièces d'origine Vaillant.",
+              },
+              {
+                n: '4',
+                title: 'Suivi et Entretien',
+                desc: "Après l'intervention, un bilan de fonctionnement. Nous vous conseillons sur l'entretien annuel recommandé pour votre installation Vaillant.",
+              },
             ].map((step) => (
               <div key={step.n} className="step-item">
                 <div className="step-number" style={{ margin: '0 auto' }}>{step.n}</div>
@@ -269,7 +361,10 @@ export default function HomePage() {
       </section>
 
       {/* ── FAQ ────────────────────────────────────────────── */}
-      <section style={{ background: 'var(--color-gray-50)' }}>
+      <section
+        style={{ background: 'var(--color-gray-50)' }}
+        className="py-16 md:py-20"
+      >
         <div className="container" style={{ maxWidth: '800px' }}>
           <div className="section-header">
             <span className="badge badge-green">FAQ</span>
@@ -293,7 +388,7 @@ export default function HomePage() {
       </section>
 
       {/* ── BLOG CAROUSEL ──────────────────────────────────── */}
-      <section>
+      <section className="py-16 md:py-20">
         <div className="container">
           <div className="section-header">
             <span className="badge badge-green">Blog & Conseils</span>
@@ -327,7 +422,7 @@ export default function HomePage() {
       </section>
 
       {/* ── CTA BAND ───────────────────────────────────────── */}
-      <section className="cta-band">
+      <section className="cta-band py-16 md:py-20">
         <div className="container">
           <span className="badge" style={{ background: 'rgba(255,255,255,0.15)', color: '#fff', border: '1px solid rgba(255,255,255,0.25)', marginBottom: '20px' }}>
             Fiers de travailler à Bruxelles et environs
@@ -338,7 +433,7 @@ export default function HomePage() {
             <a href="mailto:contact@villant-loodgieter.be" className="btn btn-ghost-dark" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <Mail size={18} /> contact@villant-loodgieter.be
             </a>
-            <Link href="/diensten" className="btn btn-ghost-dark">
+            <Link href="/fr/services" className="btn btn-ghost-dark">
               Voir nos services
             </Link>
           </div>

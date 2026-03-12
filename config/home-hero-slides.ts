@@ -22,8 +22,16 @@ export type HomeHeroSlide = {
   subtitle: string;
   primaryCta: HeroSlideCta;
   secondaryCta: HeroSlideCta;
-  trustLineItems: [string, string];
+  /**
+   * Short bullet points for the compact trust block in the hero.
+   * Typically three items like "Partenaire certifié", "Intervention rapide", etc.
+   */
   trustCards: [HeroTrustCard, HeroTrustCard, HeroTrustCard];
+  /**
+   * Segments used to build the trust line displayed under the trust block.
+   * Rendered as `a • b • c` in the UI.
+   */
+  trustLineItems: [string, string, string];
   image: {
     src: string;
     alt: string;
@@ -33,54 +41,57 @@ export type HomeHeroSlide = {
 export const HOME_HERO_SLIDES: Record<Locale, HomeHeroSlide[]> = {
   fr: [
     {
-      id: 'fr-slide-1',
-      eyebrow: 'PARTENAIRE CERTIFIE VAILLANT BELGIQUE',
-      title: 'Plombier Vaillant a Bruxelles - Intervention rapide et qualifiee',
+      id: 'fr-hero-main',
+      eyebrow: 'Partenaire certifié Vaillant',
+      title: 'Installez, entretenez et optimisez votre système Vaillant',
       subtitle:
-        'Votre specialiste certifie Vaillant a Bruxelles. Reparations, installations et depannages realises par des techniciens qualifies dans toute la region.',
+        'Réparation, entretien, dépannage et installation de systèmes Vaillant à Bruxelles par des techniciens qualifiés.',
       primaryCta: {
-        label: 'Contactez-nous',
+        label: 'Demander une intervention',
         href: '/fr/contact',
       },
       secondaryCta: {
         label: 'Appeler maintenant',
         href: 'tel:+3223456789',
       },
-      trustLineItems: ['20+ techniciens certifies', 'Disponible 6j/7'],
       trustCards: [
         {
-          title: 'Partenaire certifie Vaillant',
-          description: 'Officiellement reconnu par Vaillant en Belgique',
+          title: 'Partenaire certifié',
+          description: 'Reconnu officiellement par Vaillant pour Bruxelles',
         },
         {
-          title: 'Intervention rapide a Bruxelles',
-          description: 'Depannage express dans toute la region',
+          title: 'Intervention rapide',
+          description: 'Priorité aux pannes de chauffage et d’eau chaude',
         },
         {
-          title: 'Techniciens qualifies',
-          description: 'Expertise certifiee sur tous les systemes Vaillant',
+          title: 'Techniciens qualifiés',
+          description: 'Equipe formée sur les derniers systèmes Vaillant',
         },
       ],
       image: {
-        src: '/images/slider-1.jpg',
-        alt: 'Technicien Vaillant en intervention a Bruxelles',
+        src: '/images/hero-vaillant-brussels.jpg',
+        alt: 'Technicien Vaillant intervenant sur une chaudière à Bruxelles',
       },
+      trustLineItems: [
+        'Intervention rapide',
+        'Techniciens qualifiés',
+        'Service à Bruxelles',
+      ],
     },
     {
       id: 'fr-slide-2',
-      eyebrow: 'DEPANNAGE CHAUFFAGE ET PLOMBERIE',
+      eyebrow: 'DÉPANNAGE CHAUFFAGE & PLOMBERIE',
       title: 'Service rapide dans les 19 communes de Bruxelles',
       subtitle:
-        "Intervention sur chaudiere, chauffage et installations sanitaires avec un diagnostic clair et une execution professionnelle.",
+        'Intervention sur chaudière, chauffage et installations sanitaires avec un diagnostic clair et une exécution professionnelle.',
       primaryCta: {
-        label: 'Contactez-nous',
+        label: 'Demander une intervention',
         href: '/fr/contact',
       },
       secondaryCta: {
         label: 'Demander un devis',
         href: '/fr/demande-devis',
       },
-      trustLineItems: ['Intervention rapide', 'Devis transparent avant travaux'],
       trustCards: [
         {
           title: "Service d'urgence Bruxelles",
@@ -92,20 +103,25 @@ export const HOME_HERO_SLIDES: Record<Locale, HomeHeroSlide[]> = {
         },
         {
           title: 'Suivi complet',
-          description: 'Conseils et recommandations apres intervention',
+          description: 'Conseils et recommandations après intervention',
         },
       ],
       image: {
         src: '/images/img-7.jpg',
-        alt: 'Equipe Villant en intervention rapide a Bruxelles',
+        alt: 'Équipe Villant en intervention rapide à Bruxelles',
       },
+      trustLineItems: [
+        'Intervention rapide',
+        'Devis transparent',
+        'Service à Bruxelles',
+      ],
     },
     {
       id: 'fr-slide-3',
-      eyebrow: 'ENTRETIEN ET PERFORMANCE',
-      title: 'Installez, entretenez et optimisez votre systeme Vaillant',
+      eyebrow: 'ENTRETIEN & PERFORMANCE',
+      title: 'Prolongez la durée de vie de votre chaudière Vaillant',
       subtitle:
-        "De l'entretien annuel au remplacement de chaudiere, beneficiez d'un accompagnement technique fiable pour la duree.",
+        "De l'entretien annuel au remplacement de chaudière, bénéficiez d'un accompagnement technique fiable pour la durée.",
       primaryCta: {
         label: 'Voir nos services',
         href: '/fr/services',
@@ -114,77 +130,84 @@ export const HOME_HERO_SLIDES: Record<Locale, HomeHeroSlide[]> = {
         label: 'Appeler maintenant',
         href: 'tel:+3223456789',
       },
-      trustLineItems: ['Pieces d origine Vaillant', 'Interventions certifiees'],
       trustCards: [
         {
-          title: 'Entretien certifie',
-          description: 'Protocoles fabricant pour une fiabilite durable',
+          title: 'Entretien certifié',
+          description: 'Protocoles fabricant pour une fiabilité durable',
         },
         {
-          title: 'Pieces d origine',
-          description: 'Compatibilite et performance optimales garanties',
+          title: "Pièces d’origine Vaillant",
+          description: 'Compatibilité et performance optimales garanties',
         },
         {
           title: 'Techniciens experts Vaillant',
-          description: 'Formation continue sur tous les systemes recents',
+          description: 'Formation continue sur les systèmes les plus récents',
         },
       ],
       image: {
         src: '/images/service/6.jpg',
-        alt: 'Entretien professionnel Vaillant a Bruxelles',
+        alt: 'Entretien professionnel Vaillant à Bruxelles',
       },
+      trustLineItems: [
+        "Pièces d’origine Vaillant",
+        'Interventions certifiées',
+        'Suivi à long terme',
+      ],
     },
   ],
   nl: [
     {
-      id: 'nl-slide-1',
-      eyebrow: 'GECERTIFICEERDE VAILLANT PARTNER BELGIE',
-      title: 'Vaillant loodgieter in Brussel - Snelle en vakkundige interventie',
+      id: 'nl-hero-main',
+      eyebrow: 'Gecertificeerde Vaillant partner',
+      title: 'Installeer, onderhoud en optimaliseer uw Vaillant-systeem',
       subtitle:
-        'Uw gecertificeerde Vaillant specialist in Brussel. Herstellingen, installaties en depannages uitgevoerd door gekwalificeerde technici in de hele regio.',
+        'Herstelling, onderhoud, interventie en installatie van Vaillant-systemen in Brussel door gekwalificeerde techniekers.',
       primaryCta: {
-        label: 'Neem contact op',
+        label: 'Vraag een interventie aan',
         href: '/nl/contact',
       },
       secondaryCta: {
         label: 'Bel nu',
         href: 'tel:+3223456789',
       },
-      trustLineItems: ['20+ gecertificeerde technici', 'Beschikbaar 6d/7'],
       trustCards: [
         {
-          title: 'Gecertificeerde Vaillant partner',
-          description: 'Officieel erkend door Vaillant in Belgie',
+          title: 'Gecertificeerde partner',
+          description: 'Officieel erkend Vaillant-partner voor Brussel',
         },
         {
-          title: 'Snelle interventie in Brussel',
-          description: 'Express depannage in de hele regio',
+          title: 'Snelle interventie',
+          description: 'Prioriteit voor storingen in verwarming en warm water',
         },
         {
-          title: 'Gekwalificeerde technici',
-          description: 'Gecertificeerde expertise op alle Vaillant systemen',
+          title: 'Gekwalificeerde techniekers',
+          description: 'Team met actuele Vaillant-training en ervaring',
         },
       ],
       image: {
-        src: '/images/slider-1.jpg',
-        alt: 'Gecertificeerde Vaillant technieker in Brussel',
+        src: '/images/hero-vaillant-brussels.jpg',
+        alt: 'Vaillant technieker aan het werk in Brussel',
       },
+      trustLineItems: [
+        'Snelle interventie',
+        'Gekwalificeerde techniekers',
+        'Service in Brussel',
+      ],
     },
     {
       id: 'nl-slide-2',
-      eyebrow: 'DEPANNAGE VERWARMING EN LOODGIETERIJ',
+      eyebrow: 'DEPANNAGE VERWARMING & LOODGIETERIJ',
       title: 'Snelle service in alle 19 Brusselse gemeenten',
       subtitle:
         'Interventies voor ketel, verwarming en sanitair met een duidelijke diagnose en professionele uitvoering.',
       primaryCta: {
-        label: 'Neem contact op',
+        label: 'Vraag een interventie aan',
         href: '/nl/contact',
       },
       secondaryCta: {
         label: 'Vraag een offerte aan',
-        href: '/nl/contact',
+        href: '/nl/demande-offerte',
       },
-      trustLineItems: ['Snelle interventie', 'Transparante offerte vooraf'],
       trustCards: [
         {
           title: 'Spoeddienst Brussel',
@@ -192,7 +215,7 @@ export const HOME_HERO_SLIDES: Record<Locale, HomeHeroSlide[]> = {
         },
         {
           title: 'Professionele diagnose',
-          description: 'Heldere technische analyse voor de werken starten',
+          description: 'Heldere technische analyse vóór de werken',
         },
         {
           title: 'Volledige opvolging',
@@ -203,11 +226,16 @@ export const HOME_HERO_SLIDES: Record<Locale, HomeHeroSlide[]> = {
         src: '/images/img-7.jpg',
         alt: 'Snelle Villant interventie in Brussel',
       },
+      trustLineItems: [
+        'Snelle interventie',
+        'Transparante offerte',
+        'Regio Brussel',
+      ],
     },
     {
       id: 'nl-slide-3',
-      eyebrow: 'ONDERHOUD EN PRESTATIES',
-      title: 'Installeer, onderhoud en optimaliseer uw Vaillant systeem',
+      eyebrow: 'ONDERHOUD & PRESTATIES',
+      title: 'Verleng de levensduur van uw Vaillant-ketel',
       subtitle:
         'Van jaarlijks onderhoud tot ketelvervanging: betrouwbare technische begeleiding voor duurzame prestaties.',
       primaryCta: {
@@ -218,7 +246,6 @@ export const HOME_HERO_SLIDES: Record<Locale, HomeHeroSlide[]> = {
         label: 'Bel nu',
         href: 'tel:+3223456789',
       },
-      trustLineItems: ['Originele Vaillant onderdelen', 'Gecertificeerde interventies'],
       trustCards: [
         {
           title: 'Gecertificeerd onderhoud',
@@ -237,21 +264,50 @@ export const HOME_HERO_SLIDES: Record<Locale, HomeHeroSlide[]> = {
         src: '/images/service/6.jpg',
         alt: 'Professioneel Vaillant onderhoud in Brussel',
       },
+      trustLineItems: [
+        'Originele Vaillant onderdelen',
+        'Gecertificeerde interventies',
+        'Opvolging op lange termijn',
+      ],
     },
   ],
 };
 
 export const HOME_HERO_TRUST_STRIP: Record<Locale, HeroTrustStripItem[]> = {
   fr: [
-    { title: 'Partenaire certifie Vaillant', subtitle: 'Belgique' },
-    { title: "Service d'urgence Bruxelles", subtitle: 'Intervention rapide' },
-    { title: 'Techniciens qualifies', subtitle: 'Formation fabricant' },
-    { title: '19 communes desservies', subtitle: 'Toute la region' },
+    {
+      title: 'Partenaire certifie Vaillant',
+      subtitle: 'Plombier chauffage Vaillant a Bruxelles et en Belgique',
+    },
+    {
+      title: "Service d'urgence chaudiere Bruxelles",
+      subtitle: 'Depannage rapide de chaudiere et chauffage Vaillant',
+    },
+    {
+      title: 'Techniciens qualifies Vaillant',
+      subtitle: 'Formation fabricant et experience terrain a Bruxelles',
+    },
+    {
+      title: '19 communes de Bruxelles',
+      subtitle: 'Interventions plomberie et chauffage dans toute la region',
+    },
   ],
   nl: [
-    { title: 'Gecertificeerde Vaillant partner', subtitle: 'Belgie' },
-    { title: 'Spoeddienst Brussel', subtitle: 'Snelle interventie' },
-    { title: 'Gekwalificeerde technici', subtitle: 'Fabrieksopleiding' },
-    { title: '19 gemeenten bediend', subtitle: 'Hele regio' },
+    {
+      title: 'Gecertificeerde Vaillant partner',
+      subtitle: 'Vaillant loodgieter voor verwarming in Brussel en Belgie',
+    },
+    {
+      title: 'Vaillant spoeddienst Brussel',
+      subtitle: 'Snelle interventie voor ketel en verwarming',
+    },
+    {
+      title: 'Gekwalificeerde Vaillant technici',
+      subtitle: 'Rechtstreekse fabrieksopleiding en jarenlange ervaring',
+    },
+    {
+      title: '19 Brusselse gemeenten',
+      subtitle: 'Loodgieter en verwarming in heel de regio',
+    },
   ],
 };

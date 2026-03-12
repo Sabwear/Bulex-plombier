@@ -1,15 +1,13 @@
 'use client';
 
 import type { PointerEvent as ReactPointerEvent } from 'react';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
   ChevronLeft,
   ChevronRight,
   ShieldCheck,
-  Timer,
-  Wrench,
   Users,
   CalendarClock,
 } from 'lucide-react';
@@ -20,7 +18,7 @@ type HomeHeroSliderProps = {
   lang: Locale;
 };
 
-const AUTOPLAY_DELAY_MS = 5600;
+const AUTOPLAY_DELAY_MS = 9000;
 const SWIPE_THRESHOLD_PX = 45;
 
 export default function HomeHeroSlider({ lang }: HomeHeroSliderProps) {
@@ -29,11 +27,6 @@ export default function HomeHeroSlider({ lang }: HomeHeroSliderProps) {
   const [isAutoplayPaused, setIsAutoplayPaused] = useState(false);
   const pointerStartX = useRef<number | null>(null);
   const pointerDeltaX = useRef(0);
-
-  const trustIcons = useMemo(
-    () => [ShieldCheck, Timer, Wrench] as const,
-    [],
-  );
 
   const stopAutoplayAfterInteraction = () => {
     setIsAutoplayPaused(true);
@@ -76,7 +69,7 @@ export default function HomeHeroSlider({ lang }: HomeHeroSliderProps) {
   const onPointerUp = () => {
     if (pointerStartX.current === null) return;
 
-    if (Math.abs(pointerDeltaX.current) >= SWIPE_THRESHOLD_PX) {
+    if (Math.abs(pointerDeltaX.current) >= SWIPE_THRESHOLD_PX && slides.length > 1) {
       stopAutoplayAfterInteraction();
       if (pointerDeltaX.current < 0) {
         goToNext();
@@ -97,10 +90,8 @@ export default function HomeHeroSlider({ lang }: HomeHeroSliderProps) {
       onPointerUp={onPointerUp}
       onPointerCancel={onPointerUp}
     >
-      <div className="absolute inset-0 bg-white/10" aria-hidden="true" />
-
       <div
-        className="flex transition-transform duration-700 ease-out"
+        className="flex transition-transform duration-1000 ease-out"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
       >
         {slides.map((slide, slideIndex) => (
@@ -115,78 +106,37 @@ export default function HomeHeroSlider({ lang }: HomeHeroSliderProps) {
               fill
               priority={slideIndex === 0}
               sizes="100vw"
-              className="object-cover"
+              quality={95}
+              className="object-cover object-center"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/82 to-white/62" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/20" />
 
-            <div className="container relative z-10 flex h-full items-center py-20 md:py-24">
-              <div className="grid w-full gap-8 md:gap-10 lg:grid-cols-12 lg:gap-14">
-                <div className="lg:col-span-7">
-                  <span className="badge badge-green shadow-sm">
-                    {slide.eyebrow}
-                  </span>
+            <div className="container relative z-10 flex h-full items-center justify-center px-4 py-16 sm:py-20 md:py-24">
+              <div className="mx-auto w-full max-w-4xl text-center">
+                <span className="inline-flex items-center justify-center rounded-full bg-[#00adab]/25 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#ffffff] ring-1 ring-white/40 sm:text-xs">
+                  {slide.eyebrow}
+                </span>
 
-                  <h1 className="mt-4 max-w-2xl text-3xl font-bold leading-tight text-slate-900 sm:text-4xl md:text-5xl">
-                    {slide.title}
-                  </h1>
+                <h1 className="mt-4 text-2xl font-bold leading-snug text-[#ffffff] sm:text-3xl md:text-4xl">
+                  {slide.title}
+                </h1>
+                <p className="mt-3 flex w-full flex-wrap items-center justify-center text-center text-sm leading-relaxed text-white sm:text-base md:text-lg">
+                  {slide.subtitle}
+                </p>
 
-                  <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-700 md:text-lg">
-                    {slide.subtitle}
-                  </p>
-
-                  <div className="mt-7 flex flex-wrap gap-3 sm:gap-4">
-                    <Link
-                      href={slide.primaryCta.href}
-                      className="btn btn-primary shadow-md shadow-emerald-900/10"
-                    >
-                      {slide.primaryCta.label}
-                    </Link>
-                    <Link
-                      href={slide.secondaryCta.href}
-                      className="btn btn-outline border-slate-300 bg-white/80 backdrop-blur-sm"
-                    >
-                      {slide.secondaryCta.label}
-                    </Link>
-                  </div>
-
-                  <div className="mt-4 flex flex-wrap items-center gap-3 text-xs font-semibold text-slate-700 sm:text-sm">
-                    <span className="inline-flex items-center gap-1.5">
-                      <Users size={14} />
-                      {slide.trustLineItems[0]}
-                    </span>
-                    <span className="inline-flex items-center gap-1.5">
-                      <CalendarClock size={14} />
-                      {slide.trustLineItems[1]}
-                    </span>
-                  </div>
-                </div>
-
-                <div className="lg:col-span-5">
-                  <div className="grid gap-3 sm:gap-4">
-                    {slide.trustCards.map((card, pointIndex) => {
-                      const Icon = trustIcons[pointIndex];
-                      return (
-                        <div
-                          key={card.title}
-                          className="group rounded-2xl border border-white/70 bg-gradient-to-br from-white/95 to-emerald-50/55 p-4 shadow-[0_8px_30px_rgba(15,23,42,0.08)] backdrop-blur-sm transition-transform duration-300 hover:-translate-y-1"
-                        >
-                          <div className="flex items-start gap-3">
-                            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-100 text-emerald-700 ring-1 ring-emerald-200 transition-colors group-hover:bg-emerald-600 group-hover:text-white group-hover:ring-emerald-600">
-                              <Icon size={20} />
-                            </div>
-                            <div>
-                              <p className="max-w-none text-sm font-semibold text-slate-900 sm:text-base">
-                                {card.title}
-                              </p>
-                              <p className="mt-1 text-xs leading-relaxed text-slate-600 sm:text-sm">
-                                {card.description}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
+                <div className="mt-6 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+                  <Link
+                    href={slide.primaryCta.href}
+                    className="btn btn-primary rounded-full bg-[#00adab] px-6 py-2.5 text-sm font-semibold text-white shadow-lg hover:bg-[#009190]"
+                  >
+                    {slide.primaryCta.label}
+                  </Link>
+                  <Link
+                    href={slide.secondaryCta.href}
+                    className="btn rounded-full border border-white/50 bg-white/10 px-6 py-2.5 text-sm font-semibold text-white backdrop-blur-sm hover:bg-white/20"
+                  >
+                    {slide.secondaryCta.label}
+                  </Link>
                 </div>
               </div>
             </div>
@@ -194,55 +144,82 @@ export default function HomeHeroSlider({ lang }: HomeHeroSliderProps) {
         ))}
       </div>
 
-      <button
-        type="button"
-        onClick={() => {
-          stopAutoplayAfterInteraction();
-          goToPrevious();
-        }}
-        aria-label={lang === 'fr' ? 'Slide précédente' : 'Vorige slide'}
-        className="absolute left-3 top-1/2 z-20 -translate-y-1/2 rounded-full border border-gray-200 bg-white/90 p-2 text-slate-700 shadow-sm transition hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600/40 md:left-5 md:p-3"
-      >
-        <ChevronLeft size={22} />
-      </button>
-
-      <button
-        type="button"
-        onClick={() => {
-          stopAutoplayAfterInteraction();
-          goToNext();
-        }}
-        aria-label={lang === 'fr' ? 'Slide suivante' : 'Volgende slide'}
-        className="absolute right-3 top-1/2 z-20 -translate-y-1/2 rounded-full border border-gray-200 bg-white/90 p-2 text-slate-700 shadow-sm transition hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600/40 md:right-5 md:p-3"
-      >
-        <ChevronRight size={22} />
-      </button>
-
-      <div className="pointer-events-none absolute inset-x-0 bottom-6 z-20 flex justify-center">
-        <div className="pointer-events-auto flex items-center gap-2 rounded-full border border-gray-200 bg-white/90 px-3 py-2 shadow-sm backdrop-blur-sm">
-          {slides.map((slide, index) => (
-            <button
-              key={slide.id}
-              type="button"
-              onClick={() => {
-                stopAutoplayAfterInteraction();
-                goToSlide(index);
-              }}
-              aria-label={
-                lang === 'fr'
-                  ? `Aller au slide ${index + 1}`
-                  : `Ga naar slide ${index + 1}`
-              }
-              aria-current={index === currentIndex}
-              className={`h-2.5 rounded-full transition-all ${
-                index === currentIndex
-                  ? 'w-7 bg-emerald-600'
-                  : 'w-2.5 bg-gray-300 hover:bg-gray-400'
-              }`}
-            />
-          ))}
+      {/* Animated trust banner: all 9 items in a smooth looping marquee */}
+      <div className="group absolute inset-x-0 bottom-0 z-10 overflow-hidden border-t border-white/10 bg-[#00adab] py-3">
+        <div className="flex w-max animate-hero-trust-marquee items-center gap-6 sm:gap-10 text-[11px] font-medium uppercase tracking-[0.12em] text-white/95 sm:text-xs motion-reduce:animate-none group-hover:[animation-play-state:paused]">
+          {[
+            ...slides.flatMap((s) => s.trustLineItems),
+            ...slides.flatMap((s) => s.trustLineItems),
+          ].map((label, i) => {
+            const icons = [Users, CalendarClock, ShieldCheck];
+            const Icon = icons[i % 3];
+            return (
+              <span
+                key={i}
+                className="inline-flex shrink-0 items-center gap-2 whitespace-nowrap"
+              >
+                <Icon size={14} className="opacity-90" aria-hidden />
+                {label}
+                <span className="mx-3 text-white/40" aria-hidden>•</span>
+              </span>
+            );
+          })}
         </div>
       </div>
+
+      {slides.length > 1 && (
+        <>
+          <button
+            type="button"
+            onClick={() => {
+              stopAutoplayAfterInteraction();
+              goToPrevious();
+            }}
+            aria-label={lang === 'fr' ? 'Slide précédente' : 'Vorige slide'}
+            className="absolute left-3 top-1/2 z-20 -translate-y-1/2 rounded-full bg-slate-900/70 p-2 text-slate-100 shadow-sm transition hover:bg-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60 md:left-5 md:p-3"
+          >
+            <ChevronLeft size={22} />
+          </button>
+
+          <button
+            type="button"
+            onClick={() => {
+              stopAutoplayAfterInteraction();
+              goToNext();
+            }}
+            aria-label={lang === 'fr' ? 'Slide suivante' : 'Volgende slide'}
+            className="absolute right-3 top-1/2 z-20 -translate-y-1/2 rounded-full bg-slate-900/70 p-2 text-slate-100 shadow-sm transition hover:bg-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60 md:right-5 md:p-3"
+          >
+            <ChevronRight size={22} />
+          </button>
+
+          <div className="pointer-events-none absolute inset-x-0 bottom-14 z-20 flex justify-center">
+            <div className="pointer-events-auto flex items-center gap-2 rounded-full border border-slate-600/60 bg-[rgba(255,255,255,0.12)] px-3 py-2 shadow-sm backdrop-blur-sm">
+              {slides.map((slide, index) => (
+                <button
+                  key={slide.id}
+                  type="button"
+                  onClick={() => {
+                    stopAutoplayAfterInteraction();
+                    goToSlide(index);
+                  }}
+                  aria-label={
+                    lang === 'fr'
+                      ? `Aller au slide ${index + 1}`
+                      : `Ga naar slide ${index + 1}`
+                  }
+                  aria-current={index === currentIndex}
+                  className={`h-2.5 rounded-full transition-all ${
+                    index === currentIndex
+                      ? 'w-7 bg-emerald-500'
+                      : 'w-2.5 bg-slate-500 hover:bg-slate-400'
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+        </>
+      )}
     </section>
   );
 }

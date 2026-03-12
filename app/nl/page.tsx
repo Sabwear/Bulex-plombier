@@ -39,37 +39,36 @@ export default function HomePage() {
     <>
       <HomeHeroSlider lang="nl" />
 
-      <section style={{ paddingTop: '1.25rem' }}>
+      <section className="bg-slate-50 py-10 shadow-[0_1px_0_rgba(15,23,42,0.04)]">
         <div className="container">
-          <div className="grid-4">
-            {trustStrip.map((item, index) => {
-              const icons = [Award, Zap, UserCheck, MapPin];
-              const Icon = icons[index] ?? CheckCircle2;
+          <div className="grid gap-6 md:grid-cols-3">
+            {trustStrip.slice(0, 3).map((item, index) => {
+              const iconSrc =
+                index === 0
+                  ? '/icons/plumbing-elements/water-heater-1.svg' // Vaillant partner / ketel
+                  : index === 1
+                    ? '/icons/plumbing-elements/wrench-3.svg' // spoeddienst / interventie
+                    : '/icons/plumbing-elements/plumber-1.svg'; // technici
+
               return (
-                <div
-                  key={item.title}
-                  style={{
-                    textAlign: 'left',
-                    padding: '0',
-                  }}
-                >
-                  <div
-                    style={{
-                      width: '36px',
-                      height: '36px',
-                      borderRadius: '10px',
-                      background: 'var(--color-primary-light)',
-                      color: 'var(--color-primary)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      marginBottom: '0.6rem',
-                    }}
-                  >
-                    <Icon size={18} />
+                <div key={item.title} className="card">
+                  <div className="icon-box">
+                    <NextImage
+                      src={iconSrc}
+                      alt=""
+                      width={22}
+                      height={22}
+                      className="h-5 w-5"
+                    />
                   </div>
-                  <h3 style={{ fontSize: 'var(--text-base)', marginBottom: '0.25rem' }}>{item.title}</h3>
-                  <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-muted)' }}>{item.subtitle}</p>
+                  <div>
+                    <h3 className="text-base font-semibold text-slate-900">
+                      {item.title}
+                    </h3>
+                    <p className="mt-1 text-sm text-slate-600">
+                      {item.subtitle}
+                    </p>
+                  </div>
                 </div>
               );
             })}
@@ -77,8 +76,60 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── ABOUT TEASER ─────────────────────────────────────── */}
+      <section className="py-16 md:py-20">
+        <div className="container">
+          <div className="grid-2" style={{ alignItems: 'center' }}>
+            <div>
+              <div className="card" style={{ padding: 0, overflow: 'hidden' }}>
+                <NextImage
+                  src="/images/slider-vaillant-1.png"
+                  alt="Gecertificeerde Vaillant technicus in Brussel"
+                  width={640}
+                  height={640}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </div>
+            <div>
+              <span className="badge badge-green">Over ons</span>
+              <h2 style={{ marginTop: '1rem', marginBottom: '0.75rem' }}>
+                Villant Loodgieter in één oogopslag
+              </h2>
+              <p style={{ marginBottom: '1.5rem' }}>
+                Gecertificeerd Vaillant partner in Brussel, gespecialiseerd in residentiële
+                verwarming en loodgieterij met snelle interventie in alle gemeenten.
+              </p>
+              <div style={{ display: 'grid', rowGap: '0.75rem', marginBottom: '1.5rem' }}>
+                {[
+                  "Officieel gecertificeerd Vaillant partner in België",
+                  "Ervaren technici met directe fabrieksopleiding",
+                  "Interventies in alle Brusselse gemeenten",
+                  "Transparante diagnose en geen verborgen kosten",
+                ].map((point) => (
+                  <div
+                    key={point}
+                    style={{ display: 'flex', gap: '0.5rem', alignItems: 'flex-start' }}
+                  >
+                    <CheckCircle2
+                      size={18}
+                      color="var(--color-primary)"
+                      style={{ marginTop: '3px' }}
+                    />
+                    <span style={{ fontSize: '0.95rem' }}>{point}</span>
+                  </div>
+                ))}
+              </div>
+              <Link href="/nl/over-ons" className="btn btn-primary">
+                Meer over Villant Loodgieter
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── BENEFITS ───────────────────────────────────────── */}
-      <section>
+      <section className="py-16 md:py-20">
         <div className="container">
           <div className="section-header">
             <span className="badge badge-green">Waarom Villant Loodgieter kiezen</span>
@@ -109,7 +160,10 @@ export default function HomePage() {
       </section>
 
       {/* ── SERVICES ───────────────────────────────────────── */}
-      <section style={{ background: 'var(--color-gray-50)' }}>
+      <section
+        style={{ background: 'var(--color-gray-50)' }}
+        className="py-16 md:py-20"
+      >
         <div className="container">
           <div className="section-header">
             <span className="badge badge-green">Onze Diensten</span>
@@ -150,7 +204,7 @@ export default function HomePage() {
       </section>
 
       {/* ── PROOF ──────────────────────────────────────────── */}
-      <section>
+      <section className="py-16 md:py-20">
         <div className="container">
           <div className="section-header">
             <span className="badge badge-green">Bewijs &amp; Vertrouwen</span>
@@ -197,7 +251,10 @@ export default function HomePage() {
       </section>
 
       {/* ── SERVICE AREAS ──────────────────────────────────── */}
-      <section style={{ background: 'var(--color-gray-50)' }}>
+      <section
+        style={{ background: 'var(--color-gray-50)' }}
+        className="py-16 md:py-20"
+      >
         <div className="container">
           <div className="section-header">
             <span className="badge badge-green">Regio</span>
@@ -246,7 +303,7 @@ export default function HomePage() {
       </section>
 
       {/* ── HOW IT WORKS ───────────────────────────────────── */}
-      <section>
+      <section className="py-16 md:py-20">
         <div className="container">
           <div className="section-header">
             <span className="badge badge-green">Werkwijze</span>
@@ -273,7 +330,10 @@ export default function HomePage() {
       </section>
 
       {/* ── FAQ ────────────────────────────────────────────── */}
-      <section style={{ background: 'var(--color-gray-50)' }}>
+      <section
+        style={{ background: 'var(--color-gray-50)' }}
+        className="py-16 md:py-20"
+      >
         <div className="container" style={{ maxWidth: '800px' }}>
           <div className="section-header">
             <span className="badge badge-green">FAQ</span>
@@ -297,7 +357,7 @@ export default function HomePage() {
       </section>
 
       {/* ── BLOG CAROUSEL ──────────────────────────────────── */}
-      <section>
+      <section className="py-16 md:py-20">
         <div className="container">
           <div className="section-header">
             <span className="badge badge-green">Blog & Advies</span>
@@ -331,7 +391,7 @@ export default function HomePage() {
       </section>
 
       {/* ── CTA BAND ───────────────────────────────────────── */}
-      <section className="cta-band">
+      <section className="cta-band py-16 md:py-20">
         <div className="container">
           <span className="badge" style={{ background: 'rgba(255,255,255,0.15)', color: '#fff', border: '1px solid rgba(255,255,255,0.25)', marginBottom: '20px' }}>
             Trots werkzaam in Brussel en omstreken

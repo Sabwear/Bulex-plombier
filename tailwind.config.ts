@@ -10,10 +10,10 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#00917e',
-          hover: '#007465',
-          light: '#e6f5f3',
-          mid: '#c4e9e4',
+          DEFAULT: '#00adab',
+          hover: '#009190',
+          light: '#e6f8f8',
+          mid: '#c3ecec',
         },
         gray: {
           50: '#f8f9fa',
@@ -36,6 +36,15 @@ const config: Config = {
         screens: {
           '2xl': '1200px',
         },
+      },
+      keyframes: {
+        'hero-trust-marquee': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+      },
+      animation: {
+        'hero-trust-marquee': 'hero-trust-marquee 55s linear infinite',
       },
     },
   },

@@ -6,8 +6,8 @@ export default function Custom404() {
       <h1>404 - Page Non Trouvée / Pagina Niet Gevonden</h1>
       <p>La page que vous recherchez n'existe pas. / De pagina die u zoekt bestaat niet.</p>
       <div style={{ marginTop: '2rem' }}>
-        <a href="/" style={{ marginRight: '1rem', color: '#00917e' }}>Retour à l'accueil (FR)</a>
-        <a href="/nl" style={{ color: '#00917e' }}>Terug naar home (NL)</a>
+        <a href="/" style={{ marginRight: '1rem', color: '#00adab' }}>Retour à l'accueil (FR)</a>
+        <a href="/nl" style={{ color: '#00adab' }}>Terug naar home (NL)</a>
       </div>
     </div>
   );
