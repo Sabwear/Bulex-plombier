@@ -92,27 +92,44 @@ const interventionTemplates: Omit<InterventionExample, "zone">[] = [
   },
 ];
 
+const interventionTemplatesNl: Omit<InterventionExample, "zone">[] = [
+  { problem: "Vaillant ecoTEC ketel volledig defect", solution: "Vervanging circulatiepomp en heropstart", description: "Interventie in een appartement. Verwarming hersteld in de late ochtend." },
+  { problem: "Zichtbaar waterlek onder keukenwasbak", solution: "Vervanging sifon en afdichtingen", description: "Reparatie in minder dan een uur, zonder bijkomende schade." },
+  { problem: "Radiators koud ondanks werkende ketel", solution: "Ontluchting circuit en volledige spoeling radiatoren", description: "Verwarmingssysteem na interventie weer optimaal." },
+  { problem: "Foutcode F.28 op Vaillant ketel", solution: "Vervanging defecte ontstekingselektrode", description: "Diagnose en reparatie dezelfde dag." },
+  { problem: "Onvoldoende waterdruk in de woning", solution: "Vervanging drukverlager en controle circuit", description: "Druk weer optimaal in alle ruimtes." },
+  { problem: "Vaillant boiler zonder warm water", solution: "Vervanging temperatuursensor en kalibratie", description: "Warm water hersteld in de ochtend." },
+  { problem: "Verstopte leidingen met terugvloeiing", solution: "Mechanisch ontstoppen en hogedrukreiniging", description: "Doorstroming hersteld zonder schade." },
+  { problem: "Lek op radiatorkraan in woonkamer", solution: "Vervanging defecte thermostatische kraan", description: "Nette interventie, verwarming weer in orde." },
+  { problem: "Vaillant turboTEC ketel met abnormaal geluid", solution: "Vervanging ventilator en reiniging brander", description: "Stil weer. Volledige controle uitgevoerd." },
+  { problem: "Lek aan expansievat van ketel", solution: "Vervanging expansievat en druk bijvullen", description: "Preventieve actie, grote waterschade vermeden." },
+  { problem: "Defecte thermostaat stuurt ketel niet meer aan", solution: "Plaatsing nieuwe Vaillant-compatibele thermostaat", description: "Regeling verwarming weer functioneel." },
+];
+
 export function getInterventionExamples(
-  commune: Commune
+  commune: Commune,
+  locale: "fr" | "nl" = "fr"
 ): InterventionExample[] {
   const hash = slugHash(commune.slug);
+  const templates = locale === "nl" ? interventionTemplatesNl : interventionTemplates;
   const examples: InterventionExample[] = [];
 
   for (let i = 0; i < 3; i++) {
-    const tplIdx = (hash + i * 3 + i) % interventionTemplates.length;
+    const tplIdx = (hash + i * 3 + i) % templates.length;
     const lmkIdx =
       commune.nearby_landmarks.length > 0
         ? (hash + i * 2) % commune.nearby_landmarks.length
         : 0;
-
-    const tpl = interventionTemplates[tplIdx];
-    examples.push({
-      ...tpl,
-      zone:
-        commune.nearby_landmarks.length > 0
-          ? `Près de ${commune.nearby_landmarks[lmkIdx]}`
-          : `Centre de ${commune.name}`,
-    });
+    const tpl = templates[tplIdx];
+    const zone =
+      commune.nearby_landmarks.length > 0
+        ? locale === "nl"
+          ? `Nabij ${commune.nearby_landmarks[lmkIdx]}`
+          : `Près de ${commune.nearby_landmarks[lmkIdx]}`
+        : locale === "nl"
+          ? `Centrum ${commune.name}`
+          : `Centre de ${commune.name}`;
+    examples.push({ ...tpl, zone });
   }
 
   return examples;
@@ -143,9 +160,34 @@ const whyChooseSets: string[][] = [
   ],
 ];
 
-export function getWhyChooseBullets(commune: Commune): string[] {
+const whyChooseSetsNl: string[][] = [
+  [
+    "Gecertificeerd Vaillant technicus met fabrikantopleiding",
+    "Snelle interventie — doorgaans binnen het uur",
+    "Alleen originele Vaillant onderdelen",
+    "Nauwkeurige diagnose vóór elke offerte",
+    "Optimalisatie van het rendement van uw verwarmingssysteem",
+  ],
+  [
+    "Officiële Vaillant certificering — gegarandeerde expertise",
+    "Beschikbaarheid 7/7, inclusief feestdagen",
+    "Uitsluitend originele Vaillant onderdelen",
+    "Volledige transparantie: gedetailleerde offerte vóór interventie",
+    "Persoonlijk advies om uw energieverbruik te verlagen",
+  ],
+  [
+    "Erkend Vaillant loodgieter — professionele kwaliteit",
+    "Snelle reactietijd in de hele gemeente",
+    "Voorraad Vaillant onderdelen voor directe reparatie",
+    "Multisysteem expertise: verwarming, sanitair, warm water",
+    "Opvolging na interventie en garantie op het werk",
+  ],
+];
+
+export function getWhyChooseBullets(commune: Commune, locale: "fr" | "nl" = "fr"): string[] {
   const hash = slugHash(commune.slug);
-  return whyChooseSets[hash % whyChooseSets.length];
+  const sets = locale === "nl" ? whyChooseSetsNl : whyChooseSets;
+  return sets[hash % sets.length];
 }
 
 // ── Section 5: Testimonials ─────────────────────────────────────
@@ -168,15 +210,29 @@ const testimonialPool: string[] = [
   "Diagnostic rapide d'un code erreur sur ma chaudière Vaillant. Réparation effectuée dans la foulée.",
 ];
 
-export function getTestimonials(commune: Commune): Testimonial[] {
+const testimonialPoolNl: string[] = [
+  "Snelle en professionele service. De monteur had het probleem met mijn Vaillant-ketel in een paar minuten vastgesteld.",
+  "Zeer tevreden over de interventie. De loodgieter was op tijd en heeft het lek efficiënt verholpen.",
+  "Uitstekende ervaring. Vervanging van mijn oude ketel door een Vaillant ecoTEC in één dag.",
+  "Bekwame en stipte monteur. Het jaarlijkse onderhoud is met zorg uitgevoerd.",
+  "Spoedinterventie op zondagochtend. Lek snel verholpen. Ik beveel het ten zeerste aan.",
+  "Duidelijke offerte zonder verrassingen. De vervanging van de boiler is vlot verlopen.",
+  "Onze verwarming werkte niet meer midden in de winter. De monteur heeft alles dezelfde dag hersteld.",
+  "Zeer goede communicatie en nette afwerking. De radiatoren verwarmen sinds de interventie correct.",
+  "Serieuze professional die originele Vaillant onderdelen gebruikt. Mijn ketel werkt perfect.",
+  "Reactief team. Het ontstoppen van de leidingen is netjes en in minder dan een uur gedaan.",
+  "Vlekkeloze installatie van een slimme thermostaat. Het thermisch comfort is duidelijk verbeterd.",
+  "Snelle diagnose van een foutcode op mijn Vaillant-ketel. Reparatie direct uitgevoerd.",
+];
+
+export function getTestimonials(commune: Commune, locale: "fr" | "nl" = "fr"): Testimonial[] {
   const hash = slugHash(commune.slug);
+  const pool = locale === "nl" ? testimonialPoolNl : testimonialPool;
   const result: Testimonial[] = [];
-
   for (let i = 0; i < 3; i++) {
-    const idx = (hash + i * 4 + i) % testimonialPool.length;
-    result.push({ text: testimonialPool[idx] });
+    const idx = (hash + i * 4 + i) % pool.length;
+    result.push({ text: pool[idx] });
   }
-
   return result;
 }
 
@@ -192,22 +248,38 @@ const guideOpeners: ((c: Commune) => string)[] = [
     `Le patrimoine immobilier de ${c.name} combine différents types de constructions, chacun avec ses particularités en matière de plomberie et de chauffage.`,
 ];
 
-export function getLocalGuide(commune: Commune): string {
+const guideOpenersNl: ((c: Commune) => string)[] = [
+  (c) =>
+    `${c.name} heeft een gevarieerd woningbestand met specifieke uitdagingen voor loodgieterij en verwarming.`,
+  (c) =>
+    `De gemeente ${c.name} onderscheidt zich door eigen vastgoedkenmerken die de behoeften aan loodgieterij- en verwarmingsonderhoud beïnvloeden.`,
+  (c) =>
+    `In ${c.name} hebben woningen gevarieerde profielen die aangepaste technische expertise vereisen voor loodgieterij en verwarmingssystemen.`,
+  (c) =>
+    `Het vastgoedpatrimonium van ${c.name} combineert verschillende bouwtypes, elk met eigen specificiteiten voor loodgieterij en verwarming.`,
+];
+
+export function getLocalGuide(commune: Commune, locale: "fr" | "nl" = "fr"): string {
   const hash = slugHash(commune.slug);
-  let text = guideOpeners[hash % guideOpeners.length](commune);
+  const openers = locale === "nl" ? guideOpenersNl : guideOpeners;
+  let text = openers[hash % openers.length](commune);
 
   if (commune.building_profile) {
-    text += ` On y trouve principalement des ${commune.building_profile.toLowerCase()}.`;
+    text += locale === "nl"
+      ? ` Er zijn vooral ${commune.building_profile.toLowerCase()}.`
+      : ` On y trouve principalement des ${commune.building_profile.toLowerCase()}.`;
   }
 
   if (commune.common_issues.length > 0) {
-    const issues = commune.common_issues
-      .slice(0, 2)
-      .map((i) => i.toLowerCase());
-    text += ` Parmi les problèmes les plus courants : ${issues.join(" et ")}.`;
+    const issues = commune.common_issues.slice(0, 2).map((i) => i.toLowerCase());
+    text += locale === "nl"
+      ? ` Veelvoorkomende problemen: ${issues.join(" en ")}.`
+      : ` Parmi les problèmes les plus courants : ${issues.join(" et ")}.`;
   }
 
-  text += ` Pour les propriétaires et locataires de ${commune.name}, nous recommandons un entretien annuel de la chaudière et une vérification régulière des raccordements sanitaires afin de prévenir les pannes coûteuses et les fuites.`;
+  text += locale === "nl"
+    ? ` Voor eigenaars en huurders in ${commune.name} raden we jaarlijks ketelonderhoud en regelmatige controle van sanitair aan om storingen en lekken te voorkomen.`
+    : ` Pour les propriétaires et locataires de ${commune.name}, nous recommandons un entretien annuel de la chaudière et une vérification régulière des raccordements sanitaires afin de prévenir les pannes coûteuses et les fuites.`;
 
   return text;
 }

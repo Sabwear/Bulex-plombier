@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import NextImage from 'next/image';
+import StatsRow from '@/components/home/StatsRow';
+import TestimonialsCarousel from '@/components/home/TestimonialsCarousel';
 import blogStyles from '@/app/fr/blog/blog.module.css';
 import { getBlogPosts } from '@/data/types';
 import HomeHeroSlider from '@/components/hero/HomeHeroSlider';
@@ -89,6 +91,8 @@ export default function HomePage() {
                   className="w-full h-auto object-cover"
                 />
               </div>
+
+              <StatsRow />
             </div>
             <div>
               <span className="badge badge-green">À propos de nous</span>
@@ -96,18 +100,22 @@ export default function HomePage() {
                 Villant Plombier en quelques mots
               </h2>
               <p style={{ marginBottom: '1rem' }}>
-                Basé à Bruxelles, Villant Plombier est un partenaire certifié Vaillant spécialisé
-                dans le chauffage et la plomberie résidentiels. Notre équipe intervient chaque jour
-                dans les appartements bruxellois pour l&apos;entretien, la réparation et le
-                remplacement de chaudières, ainsi que pour les fuites d&apos;eau et les
-                installations sanitaires.
+                Basé à <strong>Bruxelles</strong>, <strong>Villant Plombier</strong> est un <strong>partenaire certifié Vaillant</strong> spécialisé
+                dans le <strong>chauffage</strong> et la <strong>plomberie résidentiels</strong>. Notre équipe intervient chaque jour
+                dans les <strong>appartements bruxellois</strong> pour <strong>l&apos;entretien</strong>, la <strong>réparation</strong> et le
+                <strong>remplacement de chaudières</strong>, ainsi que pour les <strong>fuites d&apos;eau</strong> et les
+                <strong> installations sanitaires</strong>.
               </p>
               <p style={{ marginBottom: '1.25rem' }}>
                 Nous privilégions un diagnostic clair avant toute intervention, une communication
                 honnête et des pièces d&apos;origine Vaillant pour que votre installation reste
                 fiable sur le long terme.
               </p>
-              <div style={{ display: 'grid', rowGap: '0.65rem', marginBottom: '1.5rem' }}>
+              <div style={{ marginBottom: '1.5rem' }}>
+                <p style={{ marginBottom: '0.9rem', fontSize: '0.95rem', color: 'rgb(71,85,105)' }}>
+                  En choisissant Villant Plombier, vous bénéficiez d&apos;un partenaire reconnu pour la qualité de son travail et la fiabilité de son accompagnement :
+                </p>
+                <div style={{ display: 'grid', rowGap: '0.65rem' }}>
                 {[
                   {
                     icon: '/icons/plumbing-elements/plumber-1.svg',
@@ -137,6 +145,7 @@ export default function HomePage() {
                     <span style={{ fontSize: '0.95rem' }}>{item.label}</span>
                   </div>
                 ))}
+                </div>
               </div>
               <Link href="/fr/a-propos" className="btn btn-primary">
                 En savoir plus
@@ -253,20 +262,7 @@ export default function HomePage() {
             ))}
           </div>
 
-          {/* Testimonials */}
-          <div className="grid-3">
-            {[
-              { name: 'Thomas V., Ixelles', text: "Ma chaudière Vaillant est tombée en panne un matin d'hiver froid. Villant a envoyé quelqu'un le jour même, le technicien a rapidement diagnostiqué le problème et remis le système en marche. Un service impressionnant." },
-              { name: 'Sophie M., Saint-Gilles', text: "Ils ont remplacé notre vieille chaudière par une nouvelle Vaillant. Travail soigné, communication très claire et aucun coût caché à la fin. À recommander absolument à Bruxelles." },
-              { name: 'Karim L., Anderlecht', text: "La fuite d'eau de la salle de bain a été rapidement localisée et réparée. Ils ont expliqué chaque étape et ont laissé l'endroit très propre. Une équipe de pros, ça se remarque." },
-            ].map((t) => (
-              <div key={t.name} className="testimonial-card">
-                <div className="stars">★★★★★</div>
-                <p style={{ fontStyle: 'italic', fontSize: 'var(--text-sm)', lineHeight: 'var(--leading-relaxed)' }}>&quot;{t.text}&quot;</p>
-                <div className="testimonial-author">— {t.name}</div>
-              </div>
-            ))}
-          </div>
+          <TestimonialsCarousel />
         </div>
       </section>
 

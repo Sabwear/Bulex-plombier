@@ -176,13 +176,6 @@ export default function Footer() {
               </div>
             </li>
             <li className={styles.contactItem}>
-              <div className={styles.contactIcon}><MapPin size={18} /></div>
-              <div className={styles.contactText}>
-                <span className={styles.contactLabel}>{isNl ? "Regio" : "Région"}</span>
-                <span className={styles.contactValue}>{isNl ? "Brussel, België" : "Bruxelles, Belgique"}</span>
-              </div>
-            </li>
-            <li className={styles.contactItem}>
               <div className={styles.contactIcon}><MessageCircle size={18} /></div>
               <div className={styles.contactText}>
                 <span className={styles.contactLabel}>WhatsApp</span>
@@ -207,33 +200,8 @@ export default function Footer() {
           <p className={styles.copyright}>
             © {new Date().getFullYear()} Villant Loodgieter.{" "}
             {isNl ? "Alle rechten voorbehouden." : "Tous droits réservés."}{" "}
-            <Link href={isNl ? "/nl/contact" : "/fr/contact"}>Contact</Link> ·{" "}
-            <Link href={isNl ? "/nl/over-ons" : "/fr/a-propos"}>
-              {isNl ? "Over ons" : "À propos"}
-            </Link>{" "}
-            ·{" "}
-            <Link href={isNl ? "/nl/privacy" : "/fr/confidentialite"}>
-              {isNl ? "Privacybeleid" : "Politique de confidentialité"}
-            </Link>{" "}
-            ·{" "}
-            <Link href={isNl ? "/nl/cookies" : "/fr/cookies"}>
-              {isNl ? "Cookiebeleid" : "Politique de cookies"}
-            </Link>{" "}
-            ·{" "}
-            <Link
-              href={
-                isNl ? "/nl/juridische-vermelding" : "/fr/mentions-legales"
-              }
-            >
+            <Link href={isNl ? "/nl/juridische-vermelding" : "/fr/mentions-legales"}>
               {isNl ? "Juridische vermelding" : "Mentions légales"}
-            </Link>{" "}
-            ·{" "}
-            <Link
-              href={
-                isNl ? "/nl/gebruiksvoorwaarden" : "/fr/conditions-utilisation"
-              }
-            >
-              {isNl ? "Gebruiksvoorwaarden" : "Conditions d’utilisation"}
             </Link>
           </p>
           <span className={styles.serving}>

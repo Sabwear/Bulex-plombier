@@ -1,13 +1,14 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { getCommunes } from "@/data/types";
+import { Phone, FileText } from "lucide-react";
+import { getCities } from "@/data/city-data";
 import styles from "./page.module.css";
 
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title:
-    "Plombier Vaillant en Belgique — Bruxelles et grandes villes | Vaillant-Loodgieter",
+    "Plombier Vaillant en Belgique — Bruxelles et grandes villes | Villant Loodgieter",
   description:
     "Trouvez votre plombier certifié Vaillant en Belgique : toutes les communes de Bruxelles et les grandes villes belges. Dépannage, entretien et installation de chauffage et plomberie.",
   alternates: {
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_BE",
     url: "https://villant-loodgieter.be/fr/plombier",
-    siteName: "Vaillant-Loodgieter",
+    siteName: "Villant Loodgieter",
     title: "Plombier Vaillant en Belgique — Bruxelles et grandes villes",
     description:
       "Plombier certifié Vaillant en Belgique : Bruxelles et principales villes belges.",
@@ -25,11 +26,10 @@ export const metadata: Metadata = {
 };
 
 export default function PlombierHubPage() {
-  const communes = getCommunes();
+  const cities = getCities("fr");
 
   return (
     <>
-      {/* ── Hero ─────────────────────────────────────────── */}
       <section className={styles.hero}>
         <div className={styles.heroInner}>
           <span className="badge badge-green">✓ Certifié Vaillant</span>
@@ -38,14 +38,12 @@ export default function PlombierHubPage() {
           </h1>
           <p className={styles.heroSub}>
             Nous intervenons en Belgique, avec une présence forte à Bruxelles et
-            dans les principales villes du pays. Retrouvez ci-dessous les 19
-            communes bruxelloises et nos pages dédiées aux grandes villes
-            belges.
+            dans les principales villes du pays. Retrouvez ci-dessous toutes nos
+            zones d&apos;intervention.
           </p>
         </div>
       </section>
 
-      {/* ── Communes Grid ────────────────────────────────── */}
       <section className={styles.section}>
         <div className="container">
           <div className="section-header">
@@ -53,13 +51,12 @@ export default function PlombierHubPage() {
             <h2>Nos zones d&apos;intervention</h2>
             <div className="divider" />
             <p>
-              Retrouvez ici les 19 communes de la Région de Bruxelles-Capitale dans lesquelles
-              nos plombiers Vaillant interviennent, ainsi qu&apos;un aperçu des grandes villes
-              belges que nous desservons.
+              Retrouvez ici les communes de Bruxelles-Capitale et les grandes villes
+              belges que nous desservons. Cliquez sur une ville pour accéder à la page dédiée.
             </p>
           </div>
           <div className={styles.grid}>
-            {communes.map((c) => (
+            {cities.map((c) => (
               <Link
                 key={c.slug}
                 href={`/fr/plombier/${c.slug}`}
@@ -84,41 +81,6 @@ export default function PlombierHubPage() {
               </Link>
             ))}
           </div>
-
-          {/* Aperçu des grandes villes belges */}
-          <div style={{ marginTop: "3rem" }}>
-            <h3 style={{ marginBottom: "0.75rem" }}>
-              Grandes villes desservies en Belgique
-            </h3>
-            <p style={{ marginBottom: "1rem", maxWidth: "60ch" }}>
-              En plus de Bruxelles, nos plombiers Vaillant interviennent également dans plusieurs
-              grandes villes belges. Sélectionnez une ville pour accéder à la page dédiée :
-            </p>
-            <div
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                gap: "10px",
-              }}
-            >
-              {[
-                { label: "Bruxelles", href: "/fr/plombier-bruxelles" },
-                { label: "Anvers", href: "/fr/plombier-anvers" },
-                { label: "Gand", href: "/fr/plombier-gand" },
-                { label: "Charleroi", href: "/fr/plombier-charleroi" },
-                { label: "Liège", href: "/fr/plombier-liege" },
-                { label: "Bruges", href: "/fr/plombier-bruges" },
-                { label: "Namur", href: "/fr/plombier-namur" },
-                { label: "Louvain", href: "/fr/plombier-louvain" },
-                { label: "Hasselt", href: "/fr/plombier-hasselt" },
-                { label: "Mons", href: "/fr/plombier-mons" },
-              ].map((city) => (
-                <Link key={city.href} href={city.href} className="area-chip">
-                  {city.label}
-                </Link>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 
@@ -133,10 +95,12 @@ export default function PlombierHubPage() {
           </p>
           <div className="cta-actions">
             <a href="tel:+32XXXXXXXXXX" className="btn btn-primary">
-              📞 Appeler
+              <Phone className="w-4 h-4 mr-2" />
+              <span>Appeler</span>
             </a>
             <Link href="/fr/contact" className="btn btn-ghost-dark">
-              📋 Demander un devis
+              <FileText className="w-4 h-4 mr-2" />
+              <span>Demander un devis</span>
             </Link>
           </div>
         </div>

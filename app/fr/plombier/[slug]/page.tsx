@@ -4,65 +4,30 @@ import Link from "next/link";
 import Script from "next/script";
 import Image from "next/image";
 import {
-  getCommunes,
-  getCommuneBySlug,
-  getAllSlugs,
-  type Commune,
-} from "@/data/types";
+  Phone,
+  FileText,
+  Wrench,
+  AlertTriangle,
+  Landmark,
+  MapPin,
+  CheckCircle2,
+  Flame,
+  Zap,
+  Thermometer,
+  Droplets,
+} from "lucide-react";
+import { getCityBySlug, getAllSlugsFr } from "@/data/city-data";
 import {
   getInterventionExamples,
   getWhyChooseBullets,
   getTestimonials,
   getLocalGuide,
 } from "@/data/content-helpers";
+import type { Commune } from "@/data/types";
 import styles from "./page.module.css";
 
-// ── ISR: revalidate every 24 h ──────────────────────────────────
 export const revalidate = 86400;
 
-// ── Static params ───────────────────────────────────────────────
-export function generateStaticParams() {
-  return getCommunes().map((c) => ({ city: c.slug }));
-}
-
-// ── SEO Metadata ────────────────────────────────────────────────
-type PageProps = { params: Promise<{ city: string }> };
-
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { city } = await params;
-  const commune = getCommuneBySlug(city);
-  if (!commune) return {};
-
-  const baseUrl = "https://villant-loodgieter.be";
-
-  // Build a location-specific description
-  let desc = `Plombier Vaillant certifié à ${commune.name}.`;
-  if (commune.nearby_landmarks.length > 0) {
-    desc += ` Intervention rapide près de ${commune.nearby_landmarks[0]}.`;
-  }
-  if (commune.common_issues.length > 0) {
-    desc += ` ${commune.common_issues[0]}.`;
-  }
-
-  return {
-    title: `Plombier Vaillant certifié à ${commune.name} | Vaillant-Loodgieter`,
-    description: desc,
-    alternates: {
-      canonical: `${baseUrl}/fr/plombier/${commune.slug}`,
-    },
-    openGraph: {
-      type: "website",
-      locale: "fr_BE",
-      url: `${baseUrl}/fr/plombier/${commune.slug}`,
-      siteName: "Vaillant-Loodgieter",
-      title: `Plombier Vaillant certifié à ${commune.name}`,
-      description: desc,
-    },
-  };
-}
-
-// ── Intro paragraph variants ────────────────────────────────────
-// Deterministic by slug so output is stable across builds.
 const introVariants: ((c: Commune) => string)[] = [
   (c) =>
     `Vous recherchez un plombier certifié Vaillant à ${c.name} ? Notre équipe intervient rapidement dans votre commune${c.nearby_landmarks.length ? `, à proximité de ${c.nearby_landmarks[0]}` : ""}, pour tous vos travaux de plomberie et de chauffage.`,
@@ -82,127 +47,109 @@ const introVariants: ((c: Commune) => string)[] = [
     `À ${c.name}, Vaillant-Loodgieter est votre référence en plomberie et chauffage. Nos techniciens interviennent pour le dépannage, la maintenance et les nouvelles installations.`,
 ];
 
-function getIntroForCommune(commune: Commune): string {
-  // Simple hash from slug to pick a variant deterministically
+function getIntro(commune: Commune): string {
   let hash = 0;
   for (let i = 0; i < commune.slug.length; i++) {
     hash = (hash * 31 + commune.slug.charCodeAt(i)) | 0;
   }
-  const idx = Math.abs(hash) % introVariants.length;
-  return introVariants[idx](commune);
+  return introVariants[Math.abs(hash) % introVariants.length](commune);
 }
 
-// ── JSON-LD ─────────────────────────────────────────────────────
-function buildJsonLd(commune: Commune) {
+function buildJsonLd(commune: Commune, basePath: string) {
   const baseUrl = "https://villant-loodgieter.be";
-
-  const localBusiness: Record<string, unknown> = {
-    "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "Plumber"],
-    name: "Vaillant-Loodgieter",
-    url: `${baseUrl}/fr/plombier/${commune.slug}`,
-    telephone: "+32-XXX-XX-XX-XX",
-    description: `Plombier Vaillant certifié à ${commune.name}. Dépannage, entretien et installation de chauffage et plomberie.`,
-    areaServed: {
-      "@type": "City",
-      name: commune.name,
-      containedInPlace: {
-        "@type": "AdministrativeArea",
-        name: "Bruxelles-Capitale",
-      },
-    },
-    serviceArea: {
-      "@type": "GeoCircle",
-      geoMidpoint: {
-        "@type": "GeoCoordinates",
-        addressCountry: "BE",
-      },
-    },
-  };
-
-  const service: Record<string, unknown> = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: `Plombier à ${commune.name}`,
-    provider: {
-      "@type": "LocalBusiness",
+  const url = `${baseUrl}${basePath}/${commune.slug}`;
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": ["LocalBusiness", "Plumber"],
       name: "Vaillant-Loodgieter",
+      url,
+      telephone: "+32-XXX-XX-XX-XX",
+      description: `Plombier Vaillant certifié à ${commune.name}. Dépannage, entretien et installation de chauffage et plomberie.`,
+      areaServed: { "@type": "City", name: commune.name },
+      serviceArea: { "@type": "GeoCircle", geoMidpoint: { "@type": "GeoCoordinates", addressCountry: "BE" } },
     },
-    areaServed: {
-      "@type": "City",
-      name: commune.name,
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: `Plombier à ${commune.name}`,
+      provider: { "@type": "LocalBusiness", name: "Vaillant-Loodgieter" },
+      areaServed: { "@type": "City", name: commune.name },
+      serviceType: "Plumbing",
     },
-    serviceType: "Plumbing",
-  };
-
-  return [localBusiness, service];
+  ];
 }
 
-// ── Page Component ──────────────────────────────────────────────
-export default async function CityPage({ params }: PageProps) {
-  const { city } = await params;
-  const commune = getCommuneBySlug(city);
+type PageProps = { params: Promise<{ slug: string }> };
+
+export async function generateStaticParams() {
+  return getAllSlugsFr().map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const commune = getCityBySlug("fr", slug);
+  if (!commune) return {};
+  const baseUrl = "https://villant-loodgieter.be";
+  let desc = `Plombier Vaillant certifié à ${commune.name}.`;
+  if (commune.nearby_landmarks.length > 0) desc += ` Intervention rapide près de ${commune.nearby_landmarks[0]}.`;
+  if (commune.common_issues.length > 0) desc += ` ${commune.common_issues[0]}.`;
+  return {
+    title: `Plombier Vaillant certifié à ${commune.name} | Villant Loodgieter`,
+    description: desc,
+    alternates: { canonical: `${baseUrl}/fr/plombier/${commune.slug}` },
+    openGraph: {
+      type: "website",
+      locale: "fr_BE",
+      url: `${baseUrl}/fr/plombier/${commune.slug}`,
+      siteName: "Villant Loodgieter",
+      title: `Plombier Vaillant certifié à ${commune.name}`,
+      description: desc,
+    },
+  };
+}
+
+export default async function PlombierSlugPage({ params }: PageProps) {
+  const { slug } = await params;
+  const commune = getCityBySlug("fr", slug);
   if (!commune) notFound();
 
-  const allSlugs = getAllSlugs();
-  const validNearbySlugs = commune.nearby_communes.filter((s) =>
-    allSlugs.includes(s)
-  );
-  const jsonLdItems = buildJsonLd(commune);
-
-  // New section data
-  const interventionExamples = getInterventionExamples(commune);
-  const whyChooseBullets = getWhyChooseBullets(commune);
-  const testimonials = getTestimonials(commune);
-  const localGuide = getLocalGuide(commune);
+  const allSlugs = getAllSlugsFr();
+  const validNearbySlugs = commune.nearby_communes.filter((s) => allSlugs.includes(s));
+  const jsonLdItems = buildJsonLd(commune, "/fr/plombier");
+  const interventionExamples = getInterventionExamples(commune, "fr");
+  const whyChooseBullets = getWhyChooseBullets(commune, "fr");
+  const testimonials = getTestimonials(commune, "fr");
+  const localGuide = getLocalGuide(commune, "fr");
 
   return (
     <>
-      {/* JSON-LD */}
       {jsonLdItems.map((item, i) => (
-        <Script
-          key={i}
-          id={`json-ld-${i}`}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(item) }}
-        />
+        <Script key={i} id={`json-ld-${i}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(item) }} />
       ))}
 
-      {/* ── Hero ─────────────────────────────────────────── */}
       <section className={styles.hero}>
         <div className={styles.heroInner}>
-          <span className="badge badge-green">
-            ✓ Certifié Vaillant
-          </span>
-          <h1 className={styles.heroTitle}>
-            Plombier Vaillant certifié à {commune.name}
-          </h1>
-          <p className={styles.heroIntro}>{getIntroForCommune(commune)}</p>
+          <span className="badge badge-green">✓ Certifié Vaillant</span>
+          <h1 className={styles.heroTitle}>Plombier Vaillant certifié à {commune.name}</h1>
+          <p className={styles.heroIntro}>{getIntro(commune)}</p>
           <div className={styles.heroActions}>
             <a href="tel:+32XXXXXXXXXX" className="btn btn-primary">
-              📞 Appeler
+              <Phone className="w-4 h-4 mr-2" />
+              <span>Appeler</span>
             </a>
             <Link href="/fr/contact" className="btn btn-outline">
-              📋 Demander un devis
+              <FileText className="w-4 h-4 mr-2" />
+              <span>Demander un devis</span>
             </Link>
           </div>
-
-          {/* Quick stats */}
           <div className={styles.quickStats}>
             <div className={styles.stat}>
-              <span className={styles.statValue}>
-                {commune.response_time_minutes
-                  ? `~${commune.response_time_minutes} min`
-                  : "À confirmer"}
-              </span>
-              <span className={styles.statLabel}>Temps d'intervention</span>
+              <span className={styles.statValue}>{commune.response_time_minutes ? `~${commune.response_time_minutes} min` : "À confirmer"}</span>
+              <span className={styles.statLabel}>Temps d&apos;intervention</span>
             </div>
             <div className={styles.stat}>
-              <span className={styles.statValue}>
-                {commune.distance_minutes
-                  ? `~${commune.distance_minutes} min`
-                  : "À confirmer"}
-              </span>
+              <span className={styles.statValue}>{commune.distance_minutes ? `~${commune.distance_minutes} min` : "À confirmer"}</span>
               <span className={styles.statLabel}>Distance</span>
             </div>
             <div className={styles.stat}>
@@ -213,7 +160,6 @@ export default async function CityPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* ── Services ─────────────────────────────────────── */}
       {commune.services.length > 0 && (
         <section className={styles.section}>
           <div className="container">
@@ -224,7 +170,9 @@ export default async function CityPage({ params }: PageProps) {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {commune.services.map((service) => (
                 <div key={service} className={styles.serviceCard}>
-                  <span className={styles.serviceIcon}>🔧</span>
+                  <span className={styles.serviceIcon}>
+                    <Wrench className="w-4 h-4" />
+                  </span>
                   <span>{service}</span>
                 </div>
               ))}
@@ -233,7 +181,6 @@ export default async function CityPage({ params }: PageProps) {
         </section>
       )}
 
-      {/* ── Common Issues ────────────────────────────────── */}
       {commune.common_issues.length > 0 && (
         <section className={`${styles.section} ${styles.sectionAlt}`}>
           <div className="container">
@@ -244,13 +191,12 @@ export default async function CityPage({ params }: PageProps) {
             <div className={styles.issuesList}>
               {commune.common_issues.map((issue) => (
                 <div key={issue} className={styles.issueItem}>
-                  <span className={styles.issueIcon}>⚠️</span>
+                  <span className={styles.issueIcon}>
+                    <AlertTriangle className="w-4 h-4" />
+                  </span>
                   <div>
                     <p className={styles.issueText}>{issue}</p>
-                    <p className={styles.issueCta}>
-                      Nos techniciens certifiés interviennent rapidement pour
-                      résoudre ce type de problème.
-                    </p>
+                    <p className={styles.issueCta}>Nos techniciens certifiés interviennent rapidement pour résoudre ce type de problème.</p>
                   </div>
                 </div>
               ))}
@@ -259,20 +205,19 @@ export default async function CityPage({ params }: PageProps) {
         </section>
       )}
 
-      {/* ── Combined Section: Building Profile & Response Time ── */}
       <section className={styles.section}>
         <div className="container">
-          <div className={`grid grid-cols-1 ${commune.building_profile ? 'lg:grid-cols-2' : 'max-w-[700px] mx-auto'} gap-8 items-stretch`}>
-
-            {/* Building Profile */}
+          <div className={`grid grid-cols-1 ${commune.building_profile ? "lg:grid-cols-2" : "max-w-[700px] mx-auto"} gap-8 items-stretch`}>
             {commune.building_profile && (
               <div className="bg-white border border-gray-200 rounded-xl p-8 shadow-sm flex flex-col h-full border-t-4 border-t-primary">
                 <div className="mb-6">
                   <h2 className="text-xl font-bold text-gray-900 mb-2">Profil des bâtiments</h2>
-                  <div className="w-12 h-1 bg-primary rounded-full"></div>
+                  <div className="w-12 h-1 bg-primary rounded-full" />
                 </div>
                 <div className="flex gap-6 items-start flex-1">
-                  <span className="text-4xl shrink-0">🏛️</span>
+                  <span className="text-4xl shrink-0 text-primary">
+                    <Landmark className="w-10 h-10" />
+                  </span>
                   <div>
                     <h3 className="font-semibold text-lg mb-2">Types de bâtiments à {commune.name}</h3>
                     <p className="text-gray-600 leading-relaxed">{commune.building_profile}</p>
@@ -280,19 +225,14 @@ export default async function CityPage({ params }: PageProps) {
                 </div>
               </div>
             )}
-
-            {/* Response Time */}
-            <div className={`bg-white border border-gray-200 rounded-xl p-8 shadow-sm flex flex-col h-full border-t-4 border-t-primary ${!commune.building_profile ? 'text-center items-center' : ''}`}>
-              <div className={`mb-6 ${!commune.building_profile ? 'flex flex-col items-center' : ''}`}>
+            <div className={`bg-white border border-gray-200 rounded-xl p-8 shadow-sm flex flex-col h-full border-t-4 border-t-primary ${!commune.building_profile ? "text-center items-center" : ""}`}>
+              <div className={`mb-6 ${!commune.building_profile ? "flex flex-col items-center" : ""}`}>
                 <h2 className="text-xl font-bold text-gray-900 mb-2">Temps d&apos;intervention estimé</h2>
-                <div className="w-12 h-1 bg-primary rounded-full"></div>
+                <div className="w-12 h-1 bg-primary rounded-full" />
               </div>
-
               <div className="flex flex-col justify-center flex-1">
-                <div className={`text-4xl font-bold text-primary mb-4 ${!commune.building_profile ? 'text-5xl' : ''}`}>
-                  {commune.response_time_minutes
-                    ? `~${commune.response_time_minutes} min`
-                    : "À confirmer"}
+                <div className={`text-4xl font-bold text-primary mb-4 ${!commune.building_profile ? "text-5xl" : ""}`}>
+                  {commune.response_time_minutes ? `~${commune.response_time_minutes} min` : "À confirmer"}
                 </div>
                 <p className="text-gray-600 leading-relaxed">
                   {commune.response_time_minutes
@@ -301,12 +241,10 @@ export default async function CityPage({ params }: PageProps) {
                 </p>
               </div>
             </div>
-
           </div>
         </div>
       </section>
 
-      {/* ── Landmarks ────────────────────────────────────── */}
       {commune.nearby_landmarks.length > 0 && (
         <section className={styles.section}>
           <div className="container">
@@ -315,13 +253,13 @@ export default async function CityPage({ params }: PageProps) {
               <div className="divider" />
             </div>
             <p className={styles.landmarksIntro}>
-              Nous intervenons dans tout {commune.name}, notamment à proximité
-              de :
+              Nous intervenons dans tout {commune.name}, notamment à proximité de :
             </p>
             <div className={styles.landmarksGrid}>
               {commune.nearby_landmarks.map((landmark) => (
                 <div key={landmark} className={styles.landmarkChip}>
-                  📍 {landmark}
+                  <MapPin className="w-3 h-3 mr-1" />
+                  <span>{landmark}</span>
                 </div>
               ))}
             </div>
@@ -329,7 +267,6 @@ export default async function CityPage({ params }: PageProps) {
         </section>
       )}
 
-      {/* ── FAQ ──────────────────────────────────────────── */}
       {commune.faq.length > 0 && (
         <section className={`${styles.section} ${styles.sectionAlt}`}>
           <div className="container">
@@ -341,9 +278,7 @@ export default async function CityPage({ params }: PageProps) {
               {commune.faq.map((item, i) => (
                 <details key={i} className="faq-item">
                   <summary>{item.q}</summary>
-                  <div className="faq-answer">
-                    <p>{item.a}</p>
-                  </div>
+                  <div className="faq-answer"><p>{item.a}</p></div>
                 </details>
               ))}
             </div>
@@ -351,7 +286,6 @@ export default async function CityPage({ params }: PageProps) {
         </section>
       )}
 
-      {/* ── Nearby Communes ──────────────────────────────── */}
       {validNearbySlugs.length > 0 && (
         <section className={styles.section}>
           <div className="container">
@@ -359,19 +293,13 @@ export default async function CityPage({ params }: PageProps) {
               <h2>Zones proches</h2>
               <div className="divider" />
             </div>
-            <p className={styles.nearbyIntro}>
-              Nous desservons également les communes voisines de {commune.name} :
-            </p>
+            <p className={styles.nearbyIntro}>Nous desservons également les communes voisines de {commune.name} :</p>
             <div className={styles.nearbyGrid}>
-              {validNearbySlugs.map((slug) => {
-                const nearby = getCommuneBySlug(slug);
+              {validNearbySlugs.map((s) => {
+                const nearby = getCityBySlug("fr", s);
                 if (!nearby) return null;
                 return (
-                  <Link
-                    key={slug}
-                    href={`/fr/plombier/${slug}`}
-                    className={styles.nearbyCard}
-                  >
+                  <Link key={s} href={`/fr/plombier/${s}`} className={styles.nearbyCard}>
                     <span className={styles.nearbyName}>{nearby.name}</span>
                     <span className={styles.nearbyArrow}>→</span>
                   </Link>
@@ -379,15 +307,35 @@ export default async function CityPage({ params }: PageProps) {
               })}
             </div>
             <p className={styles.hubLink}>
-              <Link href="/fr/plombier">
-                ← Voir toutes les communes desservies
-              </Link>
+              <Link href="/fr/plombier">← Voir toutes les communes desservies</Link>
             </p>
           </div>
         </section>
       )}
 
-      {/* ── Section 1: Interventions récentes ────────────── */}
+      {validNearbySlugs.length > 0 && (
+        <section className={`${styles.section} ${styles.sectionAlt}`}>
+          <div className="container">
+            <div className="section-header">
+              <h2>Plombier dans les villes voisines</h2>
+              <div className="divider" />
+            </div>
+            <div className={styles.quartiersChips}>
+              {validNearbySlugs.map((s) => {
+                const nearby = getCityBySlug("fr", s);
+                if (!nearby) return null;
+                return (
+                  <Link key={s} href={`/fr/plombier/${s}`} className={styles.quartiersChip}>
+                    <MapPin className="w-3 h-3 mr-1" />
+                    <span>Plombier à {nearby.name}</span>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
+
       <section className={`${styles.section} ${styles.sectionAlt}`}>
         <div className="container">
           <div className="section-header">
@@ -416,7 +364,6 @@ export default async function CityPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* ── Section 2: Pourquoi choisir ──────────────────── */}
       <section className={styles.section}>
         <div className="container">
           <div className="section-header">
@@ -426,7 +373,9 @@ export default async function CityPage({ params }: PageProps) {
           <ul className={styles.whyChooseList}>
             {whyChooseBullets.map((bullet, i) => (
               <li key={i} className={styles.whyChooseItem}>
-                <span className={styles.whyChooseIcon}>✓</span>
+                <span className={styles.whyChooseIcon}>
+                  <CheckCircle2 className="w-4 h-4" />
+                </span>
                 <span>{bullet}</span>
               </li>
             ))}
@@ -434,7 +383,6 @@ export default async function CityPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* ── Section 3: Expertise chaudières Vaillant ──────── */}
       <section className={`${styles.section} ${styles.sectionAlt}`}>
         <div className="container">
           <div className="section-header">
@@ -444,45 +392,22 @@ export default async function CityPage({ params }: PageProps) {
           <div className={styles.expertiseBlock}>
             <div className={styles.expertiseContent}>
               <p>
-                En tant que partenaire certifié Vaillant à {commune.name}, nous
-                maîtrisons l&apos;ensemble de la gamme : chaudières murales ecoTEC,
-                turboTEC, systèmes à condensation et pompes à chaleur. Notre
-                expertise couvre l&apos;intégralité du cycle de vie de votre
-                installation.
+                En tant que partenaire certifié Vaillant à {commune.name}, nous maîtrisons l&apos;ensemble de la gamme : chaudières murales ecoTEC, turboTEC, systèmes à condensation et pompes à chaleur.
               </p>
               <ul className={styles.expertiseList}>
-                <li>
-                  <strong>Installation</strong> — Mise en place et mise en service
-                  de chaudières Vaillant neuves
-                </li>
-                <li>
-                  <strong>Réparation</strong> — Diagnostic et résolution de pannes
-                  sur tous modèles Vaillant
-                </li>
-                <li>
-                  <strong>Entretien</strong> — Contrôle annuel obligatoire,
-                  nettoyage et optimisation des performances
-                </li>
-                <li>
-                  <strong>Codes erreur</strong> — Interprétation et résolution des
-                  codes F.XX spécifiques aux chaudières Vaillant
-                </li>
+                <li><strong>Installation</strong> — Mise en place et mise en service de chaudières Vaillant neuves</li>
+                <li><strong>Réparation</strong> — Diagnostic et résolution de pannes sur tous modèles Vaillant</li>
+                <li><strong>Entretien</strong> — Contrôle annuel obligatoire, nettoyage et optimisation des performances</li>
+                <li><strong>Codes erreur</strong> — Interprétation et résolution des codes F.XX spécifiques aux chaudières Vaillant</li>
               </ul>
             </div>
             <div className={styles.expertiseImage}>
-              <Image
-                src="https://images.unsplash.com/photo-1542013936693-884638332954?auto=format&fit=crop&q=80&w=800"
-                alt={`Installation chaudière Vaillant à ${commune.name}`}
-                fill
-                sizes="(max-width: 768px) 100vw, 400px"
-                className={styles.image}
-              />
+              <Image src="https://images.unsplash.com/photo-1542013936693-884638332954?auto=format&fit=crop&q=80&w=800" alt={`Installation chaudière Vaillant à ${commune.name}`} fill sizes="(max-width: 768px) 100vw, 400px" className={styles.image} />
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── Section 4: Guide plomberie local ─────────────── */}
       <section className={styles.section}>
         <div className="container">
           <div className="section-header">
@@ -490,23 +415,14 @@ export default async function CityPage({ params }: PageProps) {
             <div className="divider" />
           </div>
           <div className={styles.guideBlock}>
-            <div className={styles.guideContent}>
-              <p>{localGuide}</p>
-            </div>
+            <div className={styles.guideContent}><p>{localGuide}</p></div>
             <div className={styles.guideImage}>
-              <Image
-                src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&q=80&w=800"
-                alt={`Service de plomberie et chauffage à ${commune.name}`}
-                fill
-                sizes="(max-width: 768px) 100vw, 400px"
-                className={styles.image}
-              />
+              <Image src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&q=80&w=800" alt={`Service de plomberie et chauffage à ${commune.name}`} fill sizes="(max-width: 768px) 100vw, 400px" className={styles.image} />
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── Section 5: Avis clients ──────────────────────── */}
       <section className={`${styles.section} ${styles.sectionAlt}`}>
         <div className="container">
           <div className="section-header">
@@ -517,15 +433,7 @@ export default async function CityPage({ params }: PageProps) {
             {testimonials.map((t, i) => (
               <div key={i} className="testimonial-card">
                 <div className="stars">★★★★★</div>
-                <p
-                  style={{
-                    fontStyle: "italic",
-                    fontSize: "var(--text-sm)",
-                    lineHeight: "var(--leading-relaxed)",
-                  }}
-                >
-                  &quot;{t.text}&quot;
-                </p>
+                <p style={{ fontStyle: "italic", fontSize: "var(--text-sm)", lineHeight: "var(--leading-relaxed)" }}>&quot;{t.text}&quot;</p>
                 <div className="testimonial-author">— Client à {commune.name}</div>
               </div>
             ))}
@@ -533,59 +441,42 @@ export default async function CityPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* ── Section 6: Quand appeler un plombier ─────────── */}
       <section className={styles.section}>
         <div className="container">
           <div className="section-header">
             <h2>Quand appeler un plombier à {commune.name} ?</h2>
             <div className="divider" />
           </div>
-          <p className={styles.whenCallIntro}>
-            Certaines situations nécessitent l&apos;intervention immédiate d&apos;un
-            professionnel. Contactez-nous si vous constatez :
-          </p>
+          <p className={styles.whenCallIntro}>Certaines situations nécessitent l&apos;intervention immédiate d&apos;un professionnel. Contactez-nous si vous constatez :</p>
           <ul className={styles.whenCallList}>
             <li className={styles.whenCallItem}>
-              <span className={styles.whenCallIcon}>
-                <Image src="/icons/plumbing-elements/water-heater.svg" alt="Panne chaudière" width={24} height={24} />
-              </span>
+              <span className={styles.whenCallIcon}><Image src="/icons/plumbing-elements/water-heater.svg" alt="Panne chaudière" width={24} height={24} /></span>
               <span>Votre chaudière ne démarre plus ou s&apos;arrête de façon répétée</span>
             </li>
             <li className={styles.whenCallItem}>
-              <span className={styles.whenCallIcon}>
-                <Image src="/icons/plumbing-elements/water-1.svg" alt="Fuite d'eau" width={24} height={24} />
-              </span>
+              <span className={styles.whenCallIcon}><Image src="/icons/plumbing-elements/water-1.svg" alt="Fuite d'eau" width={24} height={24} /></span>
               <span>Une fuite d&apos;eau visible ou des traces d&apos;humidité anormales</span>
             </li>
             <li className={styles.whenCallItem}>
-              <span className={styles.whenCallIcon}>
-                <Image src="/icons/plumbing-elements/gauge.svg" alt="Pression basse" width={24} height={24} />
-              </span>
+              <span className={styles.whenCallIcon}><Image src="/icons/plumbing-elements/gauge.svg" alt="Pression basse" width={24} height={24} /></span>
               <span>La pression de votre chaudière chute en dessous de 1 bar</span>
             </li>
             <li className={styles.whenCallItem}>
-              <span className={styles.whenCallIcon}>
-                <Image src="/icons/plumbing-elements/radiator.svg" alt="Radiateur froid" width={24} height={24} />
-              </span>
+              <span className={styles.whenCallIcon}><Image src="/icons/plumbing-elements/radiator.svg" alt="Radiateur froid" width={24} height={24} /></span>
               <span>Des radiateurs restent froids malgré le chauffage en marche</span>
             </li>
             <li className={styles.whenCallItem}>
-              <span className={styles.whenCallIcon}>
-                <Image src="/icons/plumbing-elements/shower.svg" alt="Pas d'eau chaude" width={24} height={24} />
-              </span>
+              <span className={styles.whenCallIcon}><Image src="/icons/plumbing-elements/shower.svg" alt="Pas d'eau chaude" width={24} height={24} /></span>
               <span>Plus d&apos;eau chaude ou une eau chaude intermittente</span>
             </li>
             <li className={styles.whenCallItem}>
-              <span className={styles.whenCallIcon}>
-                <Image src="/icons/plumbing-elements/plunger.svg" alt="Débouchage" width={24} height={24} />
-              </span>
+              <span className={styles.whenCallIcon}><Image src="/icons/plumbing-elements/plunger.svg" alt="Débouchage" width={24} height={24} /></span>
               <span>Des canalisations bouchées ou un écoulement très lent</span>
             </li>
           </ul>
         </div>
       </section>
 
-      {/* ── Section 7: Quartiers desservis ────────────────── */}
       <section className={`${styles.section} ${styles.sectionAlt}`}>
         <div className="container">
           <div className="section-header">
@@ -594,17 +485,13 @@ export default async function CityPage({ params }: PageProps) {
           </div>
           <div className={styles.quartiersBlock}>
             <p>
-              Nos techniciens couvrent l&apos;intégralité de la commune de{" "}
-              {commune.name}, sans exception.
-              {commune.nearby_landmarks.length > 0 &&
-                ` Que vous habitiez à proximité de ${commune.nearby_landmarks.slice(0, 3).join(", ")} ou dans un autre quartier, nous intervenons rapidement.`}
+              Nos techniciens couvrent l&apos;intégralité de la commune de {commune.name}, sans exception.
+              {commune.nearby_landmarks.length > 0 && ` Que vous habitiez à proximité de ${commune.nearby_landmarks.slice(0, 3).join(", ")} ou dans un autre quartier, nous intervenons rapidement.`}
             </p>
             {commune.nearby_landmarks.length > 0 && (
               <div className={styles.quartiersChips}>
                 {commune.nearby_landmarks.map((lm) => (
-                  <span key={lm} className={styles.quartiersChip}>
-                    📍 {lm}
-                  </span>
+                  <span key={lm} className={styles.quartiersChip}>📍 {lm}</span>
                 ))}
               </div>
             )}
@@ -612,7 +499,6 @@ export default async function CityPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* ── Section 8: Zone d'intervention ────────────────── */}
       <section className={styles.section}>
         <div className="container">
           <div className="section-header">
@@ -621,18 +507,13 @@ export default async function CityPage({ params }: PageProps) {
           </div>
           <div className={styles.mapZoneBlock}>
             <p>
-              Vaillant-Loodgieter couvre l&apos;ensemble de {commune.name}
-              {commune.postal_code ? ` (${commune.postal_code})` : ""} et ses
-              environs.
-              {commune.distance_minutes
-                ? ` Notre base se situe à environ ${commune.distance_minutes} minutes de la commune, ce qui nous permet d'assurer des interventions rapides.`
-                : " Contactez-nous pour connaître le délai d'intervention dans votre quartier."}
+              Vaillant-Loodgieter couvre l&apos;ensemble de {commune.name}{commune.postal_code ? ` (${commune.postal_code})` : ""} et ses environs.
+              {commune.distance_minutes ? ` Notre base se situe à environ ${commune.distance_minutes} minutes de la commune.` : " Contactez-nous pour connaître le délai d'intervention dans votre quartier."}
             </p>
           </div>
         </div>
       </section>
 
-      {/* ── Section 9: Services liés ─────────────────────── */}
       <section className={`${styles.section} ${styles.sectionAlt}`}>
         <div className="container">
           <div className="section-header">
@@ -642,56 +523,56 @@ export default async function CityPage({ params }: PageProps) {
           <ul className={styles.relatedList}>
             <li className={styles.relatedItem}>
               <Link href="/fr/services">
-                🔥 Entretien chaudière Bruxelles
-                <span className={styles.relatedDesc}>
-                  — Contrôle annuel et optimisation de votre installation
-                  Vaillant
+                <span className="inline-flex items-center gap-2">
+                  <Flame className="w-4 h-4" />
+                  <span>Entretien chaudière Bruxelles</span>
                 </span>
+                <span className={styles.relatedDesc}> — Contrôle annuel et optimisation de votre installation Vaillant</span>
               </Link>
             </li>
             <li className={styles.relatedItem}>
               <Link href="/fr/services">
-                ⚡ Dépannage chauffage Bruxelles
-                <span className={styles.relatedDesc}>
-                  — Intervention rapide pour toute panne de chauffage
+                <span className="inline-flex items-center gap-2">
+                  <Zap className="w-4 h-4" />
+                  <span>Dépannage chauffage Bruxelles</span>
                 </span>
+                <span className={styles.relatedDesc}> — Intervention rapide pour toute panne de chauffage</span>
               </Link>
             </li>
             <li className={styles.relatedItem}>
               <Link href="/fr/services">
-                🌡️ Installation thermostat intelligent
-                <span className={styles.relatedDesc}>
-                  — Thermostat connecté compatible Vaillant pour plus
-                  d&apos;économies
+                <span className="inline-flex items-center gap-2">
+                  <Thermometer className="w-4 h-4" />
+                  <span>Installation thermostat intelligent</span>
                 </span>
+                <span className={styles.relatedDesc}> — Thermostat connecté compatible Vaillant</span>
               </Link>
             </li>
             <li className={styles.relatedItem}>
               <Link href="/fr/services">
-                💧 Réparation fuite d&apos;eau
-                <span className={styles.relatedDesc}>
-                  — Localisation et réparation de fuites dans tout Bruxelles
+                <span className="inline-flex items-center gap-2">
+                  <Droplets className="w-4 h-4" />
+                  <span>Réparation fuite d&apos;eau</span>
                 </span>
+                <span className={styles.relatedDesc}> — Localisation et réparation de fuites dans tout Bruxelles</span>
               </Link>
             </li>
           </ul>
         </div>
       </section>
 
-      {/* ── CTA Band ─────────────────────────────────────── */}
       <section className="cta-band">
         <div className="container">
           <h2>Besoin d&apos;un plombier à {commune.name} ?</h2>
-          <p>
-            Contactez-nous dès maintenant pour un dépannage rapide ou un devis
-            gratuit.
-          </p>
+          <p>Contactez-nous dès maintenant pour un dépannage rapide ou un devis gratuit.</p>
           <div className="cta-actions">
             <a href="tel:+32XXXXXXXXXX" className="btn btn-primary">
-              📞 Appeler maintenant
+              <Phone className="w-4 h-4 mr-2" />
+              <span>Appeler maintenant</span>
             </a>
             <Link href="/fr/contact" className="btn btn-ghost-dark">
-              📋 Demander un devis
+              <FileText className="w-4 h-4 mr-2" />
+              <span>Demander un devis</span>
             </Link>
           </div>
         </div>

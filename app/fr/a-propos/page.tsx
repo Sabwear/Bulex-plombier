@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+import StatsRow from '@/components/home/StatsRow';
 
 export const metadata: Metadata = {
   title: 'À Propos – Partenaire Vaillant Certifié Belgique | Villant Plombier',
@@ -62,6 +63,9 @@ export default function OverOnsPage() {
               </div>
             </div>
             <div>
+              <p style={{ marginBottom: '1rem', fontSize: '0.95rem', color: 'rgb(71,85,105)' }}>
+                Quelques points clés qui résument notre manière de travailler au quotidien à Bruxelles :
+              </p>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.25rem' }}>
                 {[
                   { icon: 'plumber-1.svg', label: 'Officiellement Certifié Vaillant' },
@@ -82,6 +86,10 @@ export default function OverOnsPage() {
                 ))}
               </div>
             </div>
+          </div>
+
+          <div className="mt-10 max-w-3xl mx-auto">
+            <StatsRow />
           </div>
         </div>
       </section>

@@ -39,7 +39,7 @@ export default function MobileMenu({ isOpen, onClose, navItems, cta }: MobileMen
       <div
         aria-hidden="true"
         onClick={onClose}
-        className={`fixed inset-0 bg-black/40 z-[60] transition-opacity md:hidden ${
+        className={`fixed inset-0 bg-black/40 z-[60] transition-opacity lg:hidden ${
           isOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
         }`}
       />
@@ -48,7 +48,7 @@ export default function MobileMenu({ isOpen, onClose, navItems, cta }: MobileMen
         role="dialog"
         aria-modal="true"
         aria-label="Mobile navigation"
-        className={`fixed top-0 right-0 h-dvh w-[86vw] max-w-[360px] bg-white z-[70] border-l border-gray-200 shadow-sm md:hidden transition-transform duration-200 ${
+        className={`fixed top-0 right-0 h-dvh w-[86vw] max-w-[360px] bg-white z-[70] border-l border-gray-200 shadow-sm lg:hidden transition-transform duration-200 ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >

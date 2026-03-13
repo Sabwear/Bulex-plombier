@@ -19,24 +19,24 @@ export default function MainHeader({ lang }: MainHeaderProps) {
   const data = useMemo(() => SITE_NAVIGATION[lang], [lang]);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-200">
-        <div className="container">
-          <div className="h-16 flex items-center justify-between gap-4 md:grid md:grid-cols-[auto_1fr_auto]">
+    <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-200 overflow-x-hidden">
+      <div className="container px-4 sm:px-6">
+        <div className="h-14 sm:h-16 flex items-center justify-between gap-2 sm:gap-4 min-w-0 lg:grid lg:grid-cols-[auto_1fr_auto]">
           <Link
             href={lang === 'fr' ? '/fr' : '/nl'}
-            className="shrink-0 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            className="min-w-0 shrink flex items-center rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
           >
             <Image
               src="/logo-vaillant-loodgieter.png"
               alt="Vaillant Loodgieter"
               width={320}
               height={72}
-              className="w-auto h-12 sm:h-[3.75rem] object-contain"
+              className="w-auto h-9 sm:h-12 lg:h-[3.75rem] object-contain object-left"
               priority
             />
           </Link>
 
-          <nav className="hidden md:flex flex-1 items-center justify-center gap-2 lg:gap-3 min-w-0">
+          <nav className="hidden lg:flex flex-1 items-center justify-center gap-2 xl:gap-3 min-w-0">
             {data.navItems.map((item) => {
               const isHomeItem = item.href === '/fr' || item.href === '/nl';
               const isActive = isHomeItem
@@ -87,18 +87,19 @@ export default function MainHeader({ lang }: MainHeaderProps) {
             })}
           </nav>
 
-          <div className="flex items-center gap-2 shrink-0 md:justify-self-end">
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0 lg:justify-self-end">
             <a
               href={SITE_PHONE.href}
-              aria-label="Call us"
-              className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-md border border-gray-200 text-gray-700 hover:text-primary hover:border-primary/40 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              aria-label={SITE_PHONE.display}
+              className="lg:hidden inline-flex items-center justify-center gap-1.5 px-3 h-9 sm:h-10 rounded-md border border-gray-200 text-gray-700 hover:text-primary hover:border-primary/40 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             >
               <Phone size={18} />
+              <span className="text-xs sm:text-sm font-semibold">{SITE_PHONE.display}</span>
             </a>
 
             <Link
               href={data.cta.href}
-              className="hidden md:inline-flex items-center justify-center gap-2 rounded-lg bg-primary hover:bg-primary-hover !text-white hover:!text-white text-sm font-semibold px-[15px] py-[10px] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary whitespace-nowrap"
+              className="hidden lg:inline-flex items-center justify-center gap-2 rounded-lg bg-primary hover:bg-primary-hover !text-white hover:!text-white text-sm font-semibold px-[15px] py-[10px] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary whitespace-nowrap"
             >
               <Phone size={16} />
               <span>{SITE_PHONE.display}</span>
@@ -109,7 +110,7 @@ export default function MainHeader({ lang }: MainHeaderProps) {
               aria-label="Open menu"
               aria-expanded={menuOpen}
               onClick={() => setMenuOpen(true)}
-              className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-md border border-gray-200 text-gray-700 hover:text-primary hover:border-primary/40 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              className="lg:hidden inline-flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-md border border-gray-200 text-gray-700 hover:text-primary hover:border-primary/40 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary shrink-0"
             >
               <Menu size={20} />
             </button>
