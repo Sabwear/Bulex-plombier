@@ -4,20 +4,20 @@ import Image from 'next/image';
 import StatsRow from '@/components/home/StatsRow';
 
 export const metadata: Metadata = {
-  title: 'À Propos – Partenaire Vaillant Certifié Belgique | Villant Plombier',
+  title: 'À Propos – Partenaire Vaillant Certifié Belgique | Vaillant Plombier',
   description:
-    'Villant Plombier est un partenaire certifié Vaillant en Belgique avec des techniciens qualifiés et expérimentés. Découvrez nos preuves d\'expertise et notre mission.',
+    'Vaillant Plombier est un partenaire certifié Vaillant en Belgique avec des techniciens qualifiés et expérimentés. Découvrez nos preuves d\'expertise et notre mission.',
   keywords: [
     'partenaire Vaillant certifié Belgique',
-    'plombier Vaillant Bruxelles',
-    'plombiers qualifiés Bruxelles',
-    'chauffagiste Bruxelles',
+    'plombier Vaillant Belgique',
+    'plombiers qualifiés Belgique',
+    'chauffagiste Belgique',
   ],
-  alternates: { canonical: 'https://villant-loodgieter.be/a-propos' },
+  alternates: { canonical: 'https://vaillant-loodgieter.be/a-propos' },
   openGraph: {
-    title: 'À Propos – Partenaire Vaillant Certifié Belgique | Villant Plombier',
-    description: 'Villant Plombier : partenaire certifié Vaillant avec des techniciens qualifiés travaillant à Bruxelles.',
-    url: 'https://villant-loodgieter.be/a-propos',
+    title: 'À Propos – Partenaire Vaillant Certifié Belgique | Vaillant Plombier',
+    description: 'Vaillant Plombier : partenaire certifié Vaillant avec des techniciens qualifiés travaillant en Belgique.',
+    url: 'https://vaillant-loodgieter.be/a-propos',
   },
 };
 
@@ -33,13 +33,13 @@ export default function OverOnsPage() {
         <div className="container">
           <span className="badge badge-green" style={{ marginBottom: '1rem' }}>Partenaire Certifié Vaillant Belgique</span>
           <h1 style={{ marginBottom: '1rem' }}>
-            Villant Plombier — votre partenaire certifié Vaillant à Bruxelles
+            Vaillant Plombier — votre partenaire certifié Vaillant en Belgique
           </h1>
           <p style={{ fontSize: '1.1rem', maxWidth: '60ch', marginBottom: '2rem' }}>
-            Nous sommes un partenaire certifié Vaillant à Bruxelles, en Belgique. Nos techniciens qualifiés combinent une formation officielle du fabricant avec une expérience de terrain éprouvée pour vos besoins en chauffage et sanitaires.
+            Nous sommes un partenaire certifié Vaillant en Belgique. Nos techniciens qualifiés combinent une formation officielle du fabricant avec une expérience de terrain éprouvée pour vos besoins en chauffage et sanitaires.
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <a href="mailto:contact@villant-loodgieter.be" className="btn btn-primary">Contactez-nous</a>
+            <a href="mailto:contact@vaillant-loodgieter.be" className="btn btn-primary">Contactez-nous</a>
             <Link href="/services" className="btn btn-outline">
               Nos services →
             </Link>
@@ -55,7 +55,7 @@ export default function OverOnsPage() {
               <div className="card" style={{ padding: 0, overflow: 'hidden' }}>
                 <Image
                   src="/images/slider-vaillant-2.png"
-                  alt="Techniciens Vaillant en intervention à Bruxelles"
+                  alt="Techniciens Vaillant en intervention en Belgique"
                   width={720}
                   height={640}
                   style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
@@ -64,13 +64,13 @@ export default function OverOnsPage() {
             </div>
             <div>
               <p style={{ marginBottom: '1rem', fontSize: '0.95rem', color: 'rgb(71,85,105)' }}>
-                Quelques points clés qui résument notre manière de travailler au quotidien à Bruxelles :
+                Quelques points clés qui résument notre manière de travailler au quotidien en Belgique :
               </p>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.25rem' }}>
                 {[
                   { icon: 'plumber-1.svg', label: 'Officiellement Certifié Vaillant' },
                   { icon: 'wrench-2.svg', label: 'Techniciens Qualifiés' },
-                  { icon: 'pipes-7.svg', label: 'Actif dans tout Bruxelles' },
+                  { icon: 'pipes-7.svg', label: 'Actif en Belgique' },
                   { icon: 'flange.svg', label: 'Rapports Techniques' },
                 ].map((v) => (
                   <div key={v.label} style={{
@@ -113,7 +113,7 @@ export default function OverOnsPage() {
                 Preuve 1 : Partenaire certifié Vaillant, actif en Belgique
               </h3>
               <p style={{ lineHeight: 1.75 }}>
-                Villant Plombier est officiellement certifié par Vaillant — l'un des principaux fabricants européens de systèmes de chauffage. Notre certification nécessite une formation directe du fabricant, des examens techniques et une expérience pratique démontrable. Ce n'est pas autoproclamé ; c'est une reconnaissance externe par Vaillant lui-même.
+                Vaillant Plombier est officiellement certifié par Vaillant — l'un des principaux fabricants européens de systèmes de chauffage. Notre certification nécessite une formation directe du fabricant, des examens techniques et une expérience pratique démontrable. Ce n'est pas autoproclamé ; c'est une reconnaissance externe par Vaillant lui-même.
               </p>
               <p style={{ marginTop: '1rem', fontSize: '0.9rem', color: 'var(--color-primary-hover)', fontWeight: 600 }}>
                 Ce que cela signifie pour vous : lorsque nous installons ou entretenons votre système Vaillant, votre garantie constructeur reste entièrement valide.
@@ -170,7 +170,7 @@ export default function OverOnsPage() {
         <div className="container">
           <div className="section-header">
             <span className="badge badge-gold">Ce que vous obtenez</span>
-            <h2 style={{ marginTop: '1rem' }}>Avantages de travailler avec Villant Plombier</h2>
+            <h2 style={{ marginTop: '1rem' }}>Avantages de travailler avec vaillant Plombier</h2>
             <div className="divider" />
           </div>
           <div className="grid-3-strict">
@@ -231,7 +231,7 @@ export default function OverOnsPage() {
           <h2 style={{ marginTop: '1rem', marginBottom: '0.75rem' }}>Fiers d'intervenir à Bruxelles et ses environs</h2>
           <div className="divider" />
           <p style={{ margin: '0 auto 2rem', maxWidth: '55ch' }}>
-            D'Anderlecht à Watermael-Boitsfort — Villant Plombier dessert l'ensemble des communes bruxelloises en tant que votre plombier Vaillant local à Bruxelles.
+            D'Anderlecht à Watermael-Boitsfort — vaillant Plombier dessert l'ensemble des communes bruxelloises en tant que votre plombier Vaillant local à Bruxelles.
           </p>
           <Link href="/brussel" className="btn btn-outline">Voir notre zone d'intervention →</Link>
         </div>
@@ -247,7 +247,7 @@ export default function OverOnsPage() {
           </div>
           <div className="grid-4">
             {[
-              { n: '1', title: 'Contact', desc: 'Envoyez un e-mail à contact@villant-loodgieter.be pour toute demande.' },
+              { n: '1', title: 'Contact', desc: 'Envoyez un e-mail à contact@vaillant-loodgieter.be pour toute demande.' },
               { n: '2', title: 'Diagnostic', desc: 'Diagnostic transparent et devis avant intervention.' },
               { n: '3', title: 'Intervention', desc: 'Technicien certifié travaillant avec des pièces d\'origine.' },
               { n: '4', title: 'Rapport', desc: 'Rapport technique écrit et complet après l\'intervention.' },
@@ -267,12 +267,12 @@ export default function OverOnsPage() {
         <div className="container" style={{ maxWidth: '750px' }}>
           <div className="section-header">
             <span className="badge badge-gold">FAQ</span>
-            <h2 style={{ marginTop: '1rem' }}>Questions concernant Villant Plombier</h2>
+            <h2 style={{ marginTop: '1rem' }}>Questions concernant vaillant Plombier</h2>
             <div className="divider" />
           </div>
           {[
             { q: 'Comment puis-je confirmer que vous êtes véritablement certifiés par Vaillant ?', a: 'Vous pouvez confirmer notre statut de partenaire certifié directement auprès de Vaillant Belgium. Nous sommes transparents quant à nos qualifications et nos techniciens présentent leurs certificats à chaque intervention.' },
-            { q: 'Dans quelles langues communiquez-vous ?', a: 'Nous communiquons en français. Pour toute question en néerlandais, veuillez contacter contact@villant-loodgieter.be et nous vous guiderons du mieux possible.' },
+            { q: 'Dans quelles langues communiquez-vous ?', a: 'Nous communiquons en français. Pour toute question en néerlandais, veuillez contacter contact@vaillant-loodgieter.be et nous vous guiderons du mieux possible.' },
             { q: 'Prenez-vous également en charge des projets commerciaux ?', a: 'Nos services sont actuellement principalement axés sur les habitations et les biens résidentiels à Bruxelles. Contactez-nous pour toute demande commerciale — nous en discuterons au cas par cas.' },
           ].map((faq, i) => (
             <details key={i} className="faq-item">
@@ -289,7 +289,7 @@ export default function OverOnsPage() {
           <h2>Prenez contact avec votre partenaire Vaillant certifié</h2>
           <p>Partenaire certifié Vaillant · Techniciens qualifiés · Tout Bruxelles</p>
           <div className="cta-actions">
-            <a href="mailto:contact@villant-loodgieter.be" className="btn btn-ghost-dark">📧 Envoyer un message</a>
+            <a href="mailto:contact@vaillant-loodgieter.be" className="btn btn-ghost-dark">📧 Envoyer un message</a>
             <Link href="/diensten" className="btn btn-ghost-dark">
               Nos services
             </Link>

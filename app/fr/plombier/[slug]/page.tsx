@@ -56,7 +56,7 @@ function getIntro(commune: Commune): string {
 }
 
 function buildJsonLd(commune: Commune, basePath: string) {
-  const baseUrl = "https://villant-loodgieter.be";
+  const baseUrl = "https://vaillant-loodgieter.be";
   const url = `${baseUrl}${basePath}/${commune.slug}`;
   return [
     {
@@ -90,19 +90,19 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const commune = getCityBySlug("fr", slug);
   if (!commune) return {};
-  const baseUrl = "https://villant-loodgieter.be";
+  const baseUrl = "https://vaillant-loodgieter.be";
   let desc = `Plombier Vaillant certifié à ${commune.name}.`;
   if (commune.nearby_landmarks.length > 0) desc += ` Intervention rapide près de ${commune.nearby_landmarks[0]}.`;
   if (commune.common_issues.length > 0) desc += ` ${commune.common_issues[0]}.`;
   return {
-    title: `Plombier Vaillant certifié à ${commune.name} | Villant Loodgieter`,
+    title: `Plombier Vaillant certifié à ${commune.name} | vaillant Loodgieter`,
     description: desc,
     alternates: { canonical: `${baseUrl}/fr/plombier/${commune.slug}` },
     openGraph: {
       type: "website",
       locale: "fr_BE",
       url: `${baseUrl}/fr/plombier/${commune.slug}`,
-      siteName: "Villant Loodgieter",
+      siteName: "vaillant Loodgieter",
       title: `Plombier Vaillant certifié à ${commune.name}`,
       description: desc,
     },

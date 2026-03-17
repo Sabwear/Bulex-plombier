@@ -19,7 +19,7 @@ export default function MainHeader({ lang }: MainHeaderProps) {
   const data = useMemo(() => SITE_NAVIGATION[lang], [lang]);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-200 overflow-x-hidden">
+    <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-200 overflow-visible">
       <div className="container px-4 sm:px-6">
         <div className="h-14 sm:h-16 flex items-center justify-between gap-2 sm:gap-4 min-w-0 lg:grid lg:grid-cols-[auto_1fr_auto]">
           <Link
@@ -34,6 +34,20 @@ export default function MainHeader({ lang }: MainHeaderProps) {
               className="w-auto h-9 sm:h-12 lg:h-[3.75rem] object-contain object-left"
               priority
             />
+            <span
+              className="ml-2 inline-flex items-center justify-center rounded-full border border-gray-200 bg-white shadow-sm"
+              style={{ width: 26, height: 26 }}
+              aria-hidden="true"
+            >
+              <Image
+                src="/Flemish%20Region%20The%20Lion%20of%20Flanders%20Flag%20of%20Flanders%20De%20Vlaamse%20Leeuw.png"
+                alt=""
+                width={18}
+                height={18}
+                className="h-[18px] w-[18px] object-contain"
+                priority={false}
+              />
+            </span>
           </Link>
 
           <nav className="hidden lg:flex flex-1 items-center justify-center gap-2 xl:gap-3 min-w-0">
@@ -56,8 +70,10 @@ export default function MainHeader({ lang }: MainHeaderProps) {
                       <ChevronDown size={14} className="text-gray-500 group-hover:text-primary transition-colors" />
                     </Link>
 
-                    <div className="absolute left-0 top-full pt-2 hidden group-hover:block group-focus-within:block z-50">
-                      <div className="min-w-[240px] rounded-md border border-gray-200 bg-white shadow-sm p-2 space-y-1">
+                    <div
+                      className="absolute left-0 top-full pt-2 z-50 opacity-0 translate-y-1 pointer-events-none transition-all duration-150 ease-out group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:translate-y-0 group-focus-within:pointer-events-auto"
+                    >
+                      <div className="min-w-[260px] rounded-md border border-gray-200 bg-white shadow-md p-2 space-y-1">
                         {item.children.map((child) => (
                           <Link
                             key={child.href + child.label}

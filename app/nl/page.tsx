@@ -5,6 +5,8 @@ import blogStyles from '@/app/fr/blog/blog.module.css';
 import { getBlogPosts } from '@/data/types';
 import HomeHeroSlider from '@/components/hero/HomeHeroSlider';
 import { HOME_HERO_TRUST_STRIP } from '@/config/home-hero-slides';
+import CertificationLogosMarquee from '@/components/CertificationLogosMarquee';
+import TestimonialsCarousel from '@/components/home/TestimonialsCarousel';
 import {
   Mail, Award, Zap, UserCheck,
   Wrench, Settings, Construction,
@@ -13,21 +15,21 @@ import {
 
 
 export const metadata: Metadata = {
-  title: 'Vaillant loodgieter Brussel | Villant Loodgieter',
+  title: 'Vaillant loodgieter België | Vaillant Loodgieter',
   description:
-    "Villant Loodgieter – gecertificeerd Vaillant partner in Brussel. Loodgieter spoeddienst, boiler vervangen, waterlek herstellen en sanitair installatie in Brussel.",
+    "Vaillant Loodgieter – gecertificeerd Vaillant partner in België. Loodgieter spoeddienst, boiler vervangen, waterlek herstellen en sanitair installatie.",
   keywords: [
-    'Vaillant loodgieter Brussel',
-    'loodgieter spoeddienst Brussel',
-    'boiler vervangen Brussel',
-    'waterlek herstellen Brussel',
+    'Vaillant loodgieter België',
+    'loodgieter spoeddienst België',
+    'boiler vervangen België',
+    'waterlek herstellen België',
     'gecertificeerd Vaillant partner België',
   ],
-  alternates: { canonical: 'https://villant-loodgieter.be/nl' },
+  alternates: { canonical: 'https://vaillant-loodgieter.be/nl' },
   openGraph: {
-    title: 'Vaillant loodgieter Brussel | Villant Loodgieter',
-    description: 'Gecertificeerd Vaillant partner in Brussel. Professioneel, snel en betrouwbaar.',
-    url: 'https://villant-loodgieter.be/nl',
+    title: 'Vaillant loodgieter België | Vaillant Loodgieter',
+    description: 'Gecertificeerd Vaillant partner in België. Professioneel, snel en betrouwbaar.',
+    url: 'https://vaillant-loodgieter.be/nl',
   },
 };
 
@@ -84,7 +86,7 @@ export default function HomePage() {
               <div className="card" style={{ padding: 0, overflow: 'hidden' }}>
                 <NextImage
                   src="/images/slider-vaillant-1.png"
-                  alt="Gecertificeerde Vaillant technicus in Brussel"
+                    alt="Gecertificeerde Vaillant technicus in België"
                   width={640}
                   height={640}
                   className="w-full h-auto object-cover"
@@ -94,21 +96,44 @@ export default function HomePage() {
             <div>
               <span className="badge badge-green">Over ons</span>
               <h2 style={{ marginTop: '1rem', marginBottom: '0.75rem' }}>
-                Villant Loodgieter in één oogopslag
+                Vaillant Loodgieter in één oogopslag
               </h2>
-              <p style={{ marginBottom: '1.5rem' }}>
-                Gecertificeerd Vaillant partner in Brussel, gespecialiseerd in residentiële
-                verwarming en loodgieterij met snelle interventie in alle gemeenten.
+              <p style={{ marginBottom: '1rem' }}>
+                <strong>Vaillant Loodgieter</strong> is gevestigd in <strong>België</strong> en is een <strong>gecertificeerde Vaillant-partner</strong>{' '}
+                gespecialiseerd in residentiële <strong>verwarming</strong> en <strong>sanitair</strong>. Ons team komt dagelijks tussen in heel{' '}
+                <strong>Vlaanderen</strong> voor het <strong>onderhoud</strong>, de <strong>herstelling</strong> en de{' '}
+                <strong>vervanging</strong> van verwarmingsketels, evenals voor <strong>waterlekken</strong> en{' '}
+                <strong>sanitaire installaties</strong>.
+              </p>
+              <p style={{ marginBottom: '1.25rem' }}>
+                Wij geven altijd voorrang aan een <strong>duidelijke diagnose</strong> vóór elke interventie, <strong>eerlijke communicatie</strong>{' '}
+                en het gebruik van <strong>originele Vaillant-onderdelen</strong>, zodat uw installatie op lange termijn <strong>betrouwbaar</strong>{' '}
+                blijft.
+              </p>
+              <p style={{ marginBottom: '1.1rem', fontSize: '0.95rem', color: 'rgb(71,85,105)' }}>
+                Door te kiezen voor <strong>Vaillant Loodgieter</strong> kiest u voor een partner die bekend staat om de <strong>kwaliteit</strong>{' '}
+                van zijn werk en de <strong>betrouwbaarheid</strong> van zijn service:
               </p>
               <div style={{ display: 'grid', rowGap: '0.75rem', marginBottom: '1.5rem' }}>
                 {[
-                  "Officieel gecertificeerd Vaillant partner in België",
-                  "Ervaren technici met directe fabrieksopleiding",
-                  "Interventies in alle Brusselse gemeenten",
-                  "Transparante diagnose en geen verborgen kosten",
-                ].map((point) => (
+                  (
+                    <>
+                      <strong>Officieel</strong> gecertificeerde <strong>Vaillant-partner</strong> in <strong>België</strong>
+                    </>
+                  ),
+                  (
+                    <>
+                      <strong>Ervaren</strong> technici, rechtstreeks opgeleid door de <strong>fabrikant</strong>
+                    </>
+                  ),
+                  (
+                    <>
+                      <strong>Snelle interventies</strong> in heel <strong>Vlaanderen</strong>
+                    </>
+                  ),
+                ].map((point, i) => (
                   <div
-                    key={point}
+                    key={i}
                     style={{ display: 'flex', gap: '0.5rem', alignItems: 'flex-start' }}
                   >
                     <CheckCircle2
@@ -121,7 +146,7 @@ export default function HomePage() {
                 ))}
               </div>
               <Link href="/nl/over-ons" className="btn btn-primary">
-                Meer over Villant Loodgieter
+                Meer over Vaillant Loodgieter
               </Link>
             </div>
           </div>
@@ -132,10 +157,10 @@ export default function HomePage() {
       <section className="py-16 md:py-20">
         <div className="container">
           <div className="section-header">
-            <span className="badge badge-green">Waarom Villant Loodgieter kiezen</span>
+            <span className="badge badge-green">Waarom vaillant Loodgieter kiezen</span>
             <h2>Uw voordelen als klant</h2>
             <div className="divider" />
-            <p>Als gecertificeerd Vaillant partner bieden wij meetbare kwaliteit — niet alleen beloftes. Onze technici combineren een fabrieksopleiding met jarenlange praktijkervaring in Brussel.</p>
+          <p>Als gecertificeerd Vaillant partner bieden wij meetbare kwaliteit — niet alleen beloftes. Onze technici combineren een fabrieksopleiding met jarenlange praktijkervaring in België.</p>
           </div>
 
           <div className="grid-3-strict">
@@ -144,7 +169,7 @@ export default function HomePage() {
               { icon: <Wrench size={32} />, title: 'Gekwalificeerde en ervaren technici', desc: "Elk lid van ons team is gekwalificeerd en heeft een solide ervaring in verwarming en sanitaire systemen. U werkt nooit met beginners — gecertificeerd vakwerk." },
               { icon: <Construction size={32} />, title: 'Transparante aanpak zonder verrassingen', desc: "We geven u een duidelijke diagnose voordat we beginnen. Geen verborgen kosten, geen verrassingen op de factuur. Elke interventie wordt gedocumenteerd en gedetailleerd." },
               { icon: <Settings size={32} />, title: 'Originele Vaillant onderdelen', desc: "Tijdens elke reparatie gebruiken we uitsluitend originele Vaillant onderdelen — zodat uw garantie geldig blijft en het systeem optimaal blijft werken." },
-              { icon: <MapPin size={32} />, title: 'Lokale kennis van Brussel', desc: "Wij kennen de specifieke uitdagingen van Brusselse woningen: oude leidingen, stedelijke waterkwaliteit en bouwnormen. Dit maakt ons snel en accuraat." },
+              { icon: <MapPin size={32} />, title: 'Lokale kennis in België', desc: "Wij kennen de specifieke uitdagingen van woningen: oude leidingen, waterkwaliteit en bouwnormen. Dit maakt ons snel en accuraat." },
               { icon: <Thermometer size={32} />, title: 'Onderhoudscontract beschikbaar', desc: "Bescherm uw investering met een Vaillant onderhoudscontract. Het jaarlijks onderhoud verlengt de levensduur van uw ketel en behoudt zijn energieprestaties." },
             ].map((b) => (
               <div key={b.title} className="card">
@@ -167,19 +192,19 @@ export default function HomePage() {
         <div className="container">
           <div className="section-header">
             <span className="badge badge-green">Onze Diensten</span>
-            <h2>Wat wij doen in Brussel</h2>
+            <h2>Wat wij doen in België</h2>
             <div className="divider" />
-            <p>Van nooddiensten tot complete installaties — wij dekken alle facetten van loodgieterij en verwarming in Brussel.</p>
+            <p>Van nooddiensten tot complete installaties — wij dekken alle facetten van loodgieterij en verwarming in België.</p>
           </div>
 
           <div className="grid-3-strict">
             {[
-              { image: '/images/service/1.jpg', icon: <Wrench size={32} />, title: 'Vaillant Herstelling Brussel', desc: "Probleem met uw Vaillant ketel? Onze gecertificeerde technici diagnosticeren en repareren alle Vaillant modellen snel en accuraat.", link: '/nl/diensten#vaillant-herstelling' },
-              { image: '/images/service/2.jpg', icon: <Thermometer size={32} />, title: 'Boiler Vervangen Brussel', desc: "Is uw oude boiler aan het einde van zijn levensduur? Wij installeren een nieuwe, energiezuinige Vaillant ketel met volledige inbedrijfstelling.", link: '/nl/diensten#boiler-vervangen' },
-              { image: '/images/projects/img-1.jpg', icon: <Grid size={32} />, title: 'Nieuwe Verwarming Plaatsen', desc: "Plannen voor nieuwe verwarming in Brussel? Wij ontwerpen en installeren een systeem op maat voor uw woning of bedrijfspand.", link: '/nl/diensten#verwarming' },
-              { image: '/images/service/3.jpg', icon: <Construction size={32} />, title: 'Waterlek Herstellen Brussel', desc: "Een waterlek veroorzaakt snel schade. Ons team lokaliseert en repereert lekken onmiddellijk om ernstige schade aan uw eigendom te voorkomen.", link: '/nl/diensten#waterlek' },
-              { image: '/images/service/5.jpg', icon: <Bath size={32} />, title: 'Sanitair Installatie Brussel', desc: "Badkamer renovatie of sanitaire toestellen? Wij installeren alles vakkundig: toiletten, douche, bad, wastafel en meer.", link: '/nl/diensten#sanitair' },
-              { image: '/images/projects/img-3.jpg', icon: <Gauge size={32} />, title: 'Vaillant Onderhoudscontract', desc: "Jaarlijks onderhoud van uw Vaillant installatie. Inclusief inspectie, reiniging en een rapport voor gegarandeerde prestaties en duurzaamheid.", link: '/nl/diensten#onderhoud' },
+              { image: '/images/service/1.jpg', icon: <Wrench size={32} />, title: 'Vaillant herstelling', desc: "Probleem met uw Vaillant ketel? Onze gecertificeerde technici diagnosticeren en repareren alle Vaillant modellen snel en accuraat.", link: '/nl/diensten#vaillant-herstelling' },
+              { image: '/images/service/2.jpg', icon: <Thermometer size={32} />, title: 'Boiler vervangen', desc: "Is uw oude boiler aan het einde van zijn levensduur? Wij installeren een nieuwe, energiezuinige Vaillant ketel met volledige inbedrijfstelling.", link: '/nl/diensten#boiler-vervangen' },
+              { image: '/images/service/3.jpg', icon: <Grid size={32} />, title: 'Nieuwe verwarming plaatsen', desc: "Plannen voor nieuwe verwarming? Wij ontwerpen en installeren een systeem op maat voor uw woning of bedrijfspand.", link: '/nl/diensten#verwarming' },
+              { image: '/images/service/4.jpg', icon: <Construction size={32} />, title: 'Waterlek herstellen', desc: "Een waterlek veroorzaakt snel schade. Ons team lokaliseert en repereert lekken onmiddellijk om ernstige schade aan uw eigendom te voorkomen.", link: '/nl/diensten#waterlek' },
+              { image: '/images/service/5.jpg', icon: <Bath size={32} />, title: 'Sanitair installatie', desc: "Badkamer renovatie of sanitaire toestellen? Wij installeren alles vakkundig: toiletten, douche, bad, wastafel en meer.", link: '/nl/diensten#sanitair' },
+              { image: '/images/service/6.jpg', icon: <Gauge size={32} />, title: 'Vaillant Onderhoudscontract', desc: "Jaarlijks onderhoud van uw Vaillant installatie. Inclusief inspectie, reiniging en een rapport voor gegarandeerde prestaties en duurzaamheid.", link: '/nl/diensten#onderhoud' },
             ].map((s) => (
               <div key={s.title} className="card">
                 <div className="card-image">
@@ -203,6 +228,62 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── CERTIFICERING ───────────────────────────────────── */}
+      <section className="py-16 md:py-20" style={{ background: 'var(--color-gray-50)' }}>
+        <div className="container">
+          <div
+            className="grid-2"
+            style={{
+              alignItems: 'center',
+              gap: '2rem',
+              background: '#fff',
+              border: '1px solid var(--border)',
+              borderRadius: 'var(--radius-lg)',
+              padding: '2.25rem',
+              boxShadow: 'var(--shadow-sm)',
+            }}
+          >
+            <div>
+              <span className="badge badge-green">Certificering</span>
+              <h2 style={{ marginTop: '1rem', marginBottom: '0.75rem' }}>
+                <strong>Gecertificeerde</strong> Vaillant-partner
+              </h2>
+              <p style={{ marginBottom: '1rem' }}>
+                Als <strong>officieel gecertificeerde</strong> partner volgen onze technici rechtstreekse fabrieksopleidingen en
+                werken we volgens Vaillant-procedures.
+              </p>
+              <p style={{ marginBottom: '1.25rem' }}>
+                Dat betekent: een <strong>duidelijke diagnose</strong>, <strong>originele onderdelen</strong> wanneer nodig en een
+                installatie die <strong>betrouwbaar</strong> blijft op lange termijn.
+              </p>
+              <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+                <a href="mailto:contact@vaillant-loodgieter.be" className="btn btn-primary">
+                  Vraag een interventie aan
+                </a>
+                <Link href="/nl/certificeringen" className="btn btn-outline">
+                  Bekijk onze certificering →
+                </Link>
+              </div>
+            </div>
+
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+              <NextImage
+                src="/RFID.png"
+                alt="Vaillant partnerkaart"
+                width={900}
+                height={520}
+                style={{ width: 'min(520px, 100%)', height: 'auto', objectFit: 'contain' }}
+                priority={false}
+              />
+            </div>
+          </div>
+
+          <div style={{ marginTop: '18px' }}>
+            <CertificationLogosMarquee />
+          </div>
+        </div>
+      </section>
+
       {/* ── PROOF ──────────────────────────────────────────── */}
       <section className="py-16 md:py-20">
         <div className="container">
@@ -210,15 +291,23 @@ export default function HomePage() {
             <span className="badge badge-green">Bewijs &amp; Vertrouwen</span>
             <h2>Waarom klanten ons vertrouwen</h2>
             <div className="divider" />
-            <p>Twee concrete en verifieerbare punten onderscheiden Villant Loodgieter van generieke loodgieters in Brussel.</p>
+            <p>Twee concrete en verifieerbare punten onderscheiden Vaillant Loodgieter van generieke loodgieters in België.</p>
           </div>
 
           <div className="grid-2" style={{ marginBottom: '40px' }}>
             {[
               {
-                icon: <Award size={48} color="var(--color-primary)" />,
+                icon: (
+                  <NextImage
+                    src="/vaillant-partner.png"
+                    alt="Gecertificeerd Vaillant partner"
+                    width={180}
+                    height={60}
+                    style={{ height: '48px', width: 'auto', objectFit: 'contain' }}
+                  />
+                ),
                 title: 'Gecertificeerd Vaillant partner',
-                body: "Villant Loodgieter is officieel gecertificeerd als partner door Vaillant, een van de toonaangevende Europese fabrikanten van verwarmingssystemen. Onze certificering wordt rechtstreeks door de fabrikant verleend en weerspiegelt een echte merkexpertise.",
+                body: "vaillant Loodgieter is officieel gecertificeerd als partner door Vaillant, een van de toonaangevende Europese fabrikanten van verwarmingssystemen. Onze certificering wordt rechtstreeks door de fabrikant verleend en weerspiegelt een echte merkexpertise.",
               },
               {
                 icon: <UserCheck size={48} color="var(--color-primary)" />,
@@ -234,18 +323,25 @@ export default function HomePage() {
             ))}
           </div>
 
-          <div className="grid-3">
-            {[
-              { name: 'Thomas V., Elsene', text: "Mijn Vaillant ketel begaf het op een koude winterochtend. Villant stuurde dezelfde dag nog iemand, de technicus stelde snel de diagnose en bracht het systeem weer aan de praat. Een indrukwekkende service." },
-              { name: 'Sophie M., Sint-Gillis', text: "Ze hebben onze oude ketel vervangen door een nieuwe Vaillant. Aan het eind netjes werk, zeer duidelijke communicatie en geen verborgen kosten. Een absolute aanrader in Brussel." },
-              { name: 'Karim L., Anderlecht', text: "Het waterlek in de badkamer was snel gelokaliseerd en gerepareerd. Ze legden elke stap uit en lieten de locatie erg schoon achter. Een team van professionals, dat merk je." },
-            ].map((t) => (
-              <div key={t.name} className="testimonial-card">
-                <div className="stars">★★★★★</div>
-                <p style={{ fontStyle: 'italic', fontSize: 'var(--text-sm)', lineHeight: 'var(--leading-relaxed)' }}>&quot;{t.text}&quot;</p>
-                <div className="testimonial-author">— {t.name}</div>
-              </div>
-            ))}
+          <TestimonialsCarousel />
+
+          <div style={{ marginTop: '28px', display: 'grid', gap: '14px', justifyItems: 'center' }}>
+            <NextImage
+              src="/google-avis.png"
+              alt="Google reviews"
+              width={520}
+              height={160}
+              style={{ height: '164px', maxWidth: '520px', width: '100%', objectFit: 'contain' }}
+              priority={false}
+            />
+            <a
+              href={process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL ?? 'https://www.google.com/search?q=Vaillant+Loodgieter+reviews'}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary"
+            >
+              Schrijf een Google review
+            </a>
           </div>
         </div>
       </section>
@@ -309,7 +405,7 @@ export default function HomePage() {
             ].map((city) => (
               <Link
                 key={city.slug}
-                href={`/nl/loodgieter-${city.slug}`}
+                href={`/nl/loodgieter/${city.slug}`}
                 className="area-chip"
                 style={{ display: 'flex', alignItems: 'center', gap: '6px' }}
               >
@@ -338,7 +434,7 @@ export default function HomePage() {
 
           <div className="steps-grid">
             {[
-              { n: '1', title: 'Neem contact op', desc: "Stuur een e-mail naar contact@villant-loodgieter.be. Beschrijf uw probleem of verzoek zo nauwkeurig mogelijk." },
+              { n: '1', title: 'Neem contact op', desc: "Stuur een e-mail naar contact@vaillant-loodgieter.be. Beschrijf uw probleem of verzoek zo nauwkeurig mogelijk." },
               { n: '2', title: 'Diagnose en Offerte', desc: "Onze technicus komt ter plaatse en stelt een transparante diagnose. U ontvangt een duidelijke en nauwkeurige offerte voordat we aan de werkzaamheden beginnen." },
               { n: '3', title: 'Deskundige Interventie', desc: "Gecertificeerde technici voeren de reparatie of installatie uit volgens strikte normen en met originele Vaillant onderdelen." },
               { n: '4', title: 'Opvolging en Onderhoud', desc: "Na de interventie volgt een functioneringstest. Wij adviseren u over het aanbevolen jaarlijkse onderhoud voor uw Vaillant installatie." },
@@ -365,12 +461,12 @@ export default function HomePage() {
             <div className="divider" />
           </div>
           {[
-            { q: 'Bent u een officieel gecertificeerd Vaillant partner?', a: "Ja. Villant Loodgieter is officieel gecertificeerd door het merk Vaillant. Onze technici nemen deel aan directe fabrieksopleidingen en zijn erkend voor de installatie, het onderhoud en de reparatie van Vaillant systemen in België." },
-            { q: 'Wat kost een Vaillant ketel reparatie in Brussel?', a: "De uiteindelijke kosten hangen af van het specifieke defect en de benodigde Vaillant onderdelen. We stellen altijd een diagnose ter plaatse en geven een duidelijke offerte. Geen verrassende extra kosten. Mail naar contact@villant-loodgieter.be voor een schatting." },
+            { q: 'Bent u een officieel gecertificeerd Vaillant partner?', a: "Ja. vaillant Loodgieter is officieel gecertificeerd door het merk Vaillant. Onze technici nemen deel aan directe fabrieksopleidingen en zijn erkend voor de installatie, het onderhoud en de reparatie van Vaillant systemen in België." },
+            { q: 'Wat kost een Vaillant ketel reparatie in België?', a: "De uiteindelijke kosten hangen af van het specifieke defect en de benodigde Vaillant onderdelen. We stellen altijd een diagnose ter plaatse en geven een duidelijke offerte. Geen verrassende extra kosten. Mail naar contact@vaillant-loodgieter.be voor een schatting." },
             { q: 'Hoe snel kunt u ingrijpen bij een noodgeval?', a: "We streven naar een zo snel mogelijke interventie bij volledige uitval van verwarming of water. Vermeld « SPOEDGEVAL » in de onderwerpregel van uw e-mail zodat wij uw verzoek prioriteit kunnen geven." },
             { q: 'Welke Vaillant toestellen repareert u?', a: "Wij repareren en onderhouden alle Vaillant modellen, waaronder wandgasketels (ecoTEC, turboTEC series), warmtepompen en andere thermodynamische oplossingen van het merk." },
             { q: 'Biedt u een onderhoudscontract aan voor Vaillant installaties?', a: "Ja, een compleet Vaillant onderhoudscontract voor verwarming inclusief de jaarlijkse revisie, reiniging en controle van de instellingen. Het verplichte onderhoud verlengt de levensduur en optimaliseert de werking van uw toestel." },
-            { q: 'Welke gemeenten in Brussel dekt Villant Loodgieter?', a: "Het volledige Brussels Hoofdstedelijk Gewest. Van Anderlecht, Elsene, Schaarbeek tot Ukkel via Woluwe of Sint-Gillis." },
+            { q: 'Welke zones dekt Vaillant Loodgieter?', a: "Wij werken in meerdere steden en regio’s in België, afhankelijk van de beschikbaarheid van onze teams en het type interventie." },
           ].map((faq, i) => (
             <details key={i} className="faq-item">
               <summary>{faq.q}</summary>
@@ -385,7 +481,7 @@ export default function HomePage() {
         <div className="container">
           <div className="section-header">
             <span className="badge badge-green">Blog & Advies</span>
-            <h2>Laatste nieuws van Villant Loodgieter</h2>
+            <h2>Laatste nieuws van vaillant Loodgieter</h2>
             <div className="divider" />
             <p>Ontdek ons deskundig advies voor het onderhoud en de optimalisatie van uw Vaillant-ketel.</p>
           </div>
@@ -414,24 +510,156 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── CONTACT (HOMEPAGE) ─────────────────────────────── */}
+      <section
+        className="py-16 md:py-20"
+        style={{
+          background:
+            "radial-gradient(1200px 600px at 20% -10%, rgba(0,173,171,0.22), transparent 60%), radial-gradient(900px 520px at 85% 10%, rgba(34,197,94,0.14), transparent 55%), linear-gradient(180deg, #062433 0%, #041A25 100%)",
+        }}
+      >
+        <div className="container">
+          <div className="section-header" style={{ color: '#EAF6F7' }}>
+            <span className="badge badge-gold">Contact</span>
+            <h2 style={{ marginTop: '1rem', color: '#fff' }}>Vraag een interventie aan</h2>
+            <div className="divider" />
+            <p style={{ color: 'rgba(234,246,247,0.80)' }}>
+              Stuur uw aanvraag door. Wij antwoorden snel met een duidelijke reactie.
+            </p>
+          </div>
+
+          <div
+            style={{
+              maxWidth: '760px',
+              margin: '0 auto',
+              borderRadius: '22px',
+              padding: '18px',
+              background:
+                'linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.06) 100%)',
+              border: '1px solid rgba(148,163,184,0.22)',
+              boxShadow: '0 22px 60px rgba(0,0,0,0.22)',
+            }}
+          >
+            <form
+              action="mailto:contact@vaillant-loodgieter.be"
+              method="post"
+              encType="text/plain"
+              style={{ display: 'grid', gap: '12px' }}
+            >
+              <input
+                name="Naam"
+                required
+                placeholder="Naam *"
+                style={{
+                  width: '100%',
+                  borderRadius: '999px',
+                  padding: '14px 16px',
+                  border: '1px solid rgba(148,163,184,0.40)',
+                  outline: 'none',
+                  background: 'rgba(255,255,255,0.96)',
+                }}
+              />
+              <input
+                name="Telefoonnummer"
+                required
+                inputMode="tel"
+                placeholder="Telefoonnummer *"
+                style={{
+                  width: '100%',
+                  borderRadius: '999px',
+                  padding: '14px 16px',
+                  border: '1px solid rgba(148,163,184,0.40)',
+                  outline: 'none',
+                  background: 'rgba(255,255,255,0.96)',
+                }}
+              />
+              <input
+                name="Type interventie"
+                placeholder="Type interventie"
+                style={{
+                  width: '100%',
+                  borderRadius: '999px',
+                  padding: '14px 16px',
+                  border: '1px solid rgba(148,163,184,0.40)',
+                  outline: 'none',
+                  background: 'rgba(255,255,255,0.96)',
+                }}
+              />
+              <input
+                name="Adres"
+                placeholder="Adres"
+                style={{
+                  width: '100%',
+                  borderRadius: '999px',
+                  padding: '14px 16px',
+                  border: '1px solid rgba(148,163,184,0.40)',
+                  outline: 'none',
+                  background: 'rgba(255,255,255,0.96)',
+                }}
+              />
+              <textarea
+                name="Bericht"
+                rows={7}
+                placeholder="Bericht"
+                style={{
+                  width: '100%',
+                  borderRadius: '18px',
+                  padding: '14px 16px',
+                  border: '1px solid rgba(148,163,184,0.40)',
+                  outline: 'none',
+                  background: 'rgba(255,255,255,0.96)',
+                  resize: 'vertical',
+                }}
+              />
+
+              <label
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px',
+                  fontSize: '0.9rem',
+                  color: 'rgba(234,246,247,0.84)',
+                  paddingLeft: '6px',
+                }}
+              >
+                <input type="checkbox" required />
+                <span>
+                  Door een bericht te versturen, gaat u akkoord met ons{' '}
+                  <Link href="/nl/privacy" style={{ color: 'rgba(234,246,247,0.92)', fontWeight: 700, textDecoration: 'underline' }}>
+                    privacybeleid
+                  </Link>
+                  .
+                </span>
+              </label>
+
+              <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '6px' }}>
+                <button type="submit" className="btn btn-primary" style={{ minWidth: '160px' }}>
+                  Verzenden
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
       {/* ── CTA BAND ───────────────────────────────────────── */}
       <section className="cta-band py-16 md:py-20">
         <div className="container">
           <span className="badge" style={{ background: 'rgba(255,255,255,0.15)', color: '#fff', border: '1px solid rgba(255,255,255,0.25)', marginBottom: '20px' }}>
-            Trots werkzaam in Brussel en omstreken
+            Trots werkzaam in België
           </span>
           <h2>Klaar om uw Vaillant installatie te repareren of te optimaliseren?</h2>
-          <p>Neem vandaag nog contact op met uw gecertificeerde Vaillant partner in Brussel. Wij analyseren uw verzoek snel.</p>
+          <p>Neem vandaag nog contact op met uw gecertificeerde Vaillant partner in België. Wij analyseren uw verzoek snel.</p>
           <div className="cta-actions">
-            <a href="mailto:contact@villant-loodgieter.be" className="btn btn-ghost-dark" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <Mail size={18} /> contact@villant-loodgieter.be
+            <a href="mailto:contact@vaillant-loodgieter.be" className="btn btn-ghost-dark" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <Mail size={18} /> contact@vaillant-loodgieter.be
             </a>
             <Link href="/nl/diensten" className="btn btn-ghost-dark">
               Bekijk onze diensten
             </Link>
           </div>
           <p style={{ marginTop: '24px', fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.55)', maxWidth: 'none' }}>
-            Gecertificeerd Vaillant partner · Gekwalificeerde technici · Heel Brussel
+            Gecertificeerd Vaillant partner · Gekwalificeerde technici · België
           </p>
         </div>
       </section>

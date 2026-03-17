@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Privacybeleid | Villant Loodgieter',
+  title: 'Privacybeleid | vaillant Loodgieter',
   description:
-    'Privacybeleid en bescherming van persoonsgegevens – Villant Loodgieter, Vaillant loodgieter en verwarming in Brussel.',
+    'Privacybeleid en bescherming van persoonsgegevens – vaillant Loodgieter, Vaillant loodgieter en verwarming in Brussel.',
 };
 
 export default function PrivacyPage() {
@@ -14,10 +14,10 @@ export default function PrivacyPage() {
       <section style={{ marginBottom: '2rem' }}>
         <h2 style={{ fontSize: '1.25rem', marginBottom: '0.75rem' }}>1. Verwerkingsverantwoordelijke</h2>
         <p>
-          Dit beleid beschrijft hoe Villant Loodgieter uw persoonsgegevens verwerkt in het kader van deze website voor loodgieterij- en verwarmingsdiensten (onderhoud en herstelling van Vaillant-ketels).
+          Dit beleid beschrijft hoe vaillant Loodgieter uw persoonsgegevens verwerkt in het kader van deze website voor loodgieterij- en verwarmingsdiensten (onderhoud en herstelling van Vaillant-ketels).
         </p>
         <p>
-          Voor vragen: <strong>contact@villant-loodgieter.be</strong> of telefonisch op het nummer op de site.
+          Voor vragen: <strong>contact@vaillant-loodgieter.be</strong> of telefonisch op het nummer op de site.
         </p>
       </section>
 
@@ -62,7 +62,7 @@ export default function PrivacyPage() {
         <h2 style={{ fontSize: '1.25rem', marginBottom: '0.75rem' }}>7. Uw rechten</h2>
         <p>Overeenkomstig de AVG hebt u recht op inzage, rectificatie, wissing, beperking, overdraagbaarheid en bezwaar, en op intrekking van uw toestemming.</p>
         <p>
-          Om ze uit te oefenen: <strong>contact@villant-loodgieter.be</strong> of per post naar ons hoofdkantoor. U kunt een klacht indienen bij de Gegevensbeschermingsautoriteit:{' '}
+          Om ze uit te oefenen: <strong>contact@vaillant-loodgieter.be</strong> of per post naar ons hoofdkantoor. U kunt een klacht indienen bij de Gegevensbeschermingsautoriteit:{' '}
           <a href="https://www.gegevensbeschermingsautoriteit.be/" target="_blank" rel="noopener noreferrer">gegevensbeschermingsautoriteit.be</a>.
         </p>
       </section>

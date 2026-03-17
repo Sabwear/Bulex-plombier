@@ -5,10 +5,10 @@ import { getBlogPosts } from '@/data/types';
 import styles from '@/app/fr/blog/blog.module.css';
 
 export const metadata: Metadata = {
-  title: 'Advies & Expertise Loodgieterij Vaillant | Blog Villant Loodgieter',
+  title: 'Advies & Expertise Loodgieterij Vaillant | Blog vaillant Loodgieter',
   description: 'Vind al ons deskundig advies, onderhoudsgidsen en reparatieoplossingen voor uw Vaillant-installatie in Brussel.',
   alternates: {
-    canonical: 'https://villant-loodgieter.be/nl/blog',
+    canonical: 'https://vaillant-loodgieter.be/nl/blog',
   },
 };
 

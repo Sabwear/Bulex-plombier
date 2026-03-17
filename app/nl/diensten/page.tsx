@@ -3,23 +3,23 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'Diensten – Vaillant Herstelling Brussel | Villant Loodgieter',
+  title: 'Diensten – Vaillant herstelling België | Vaillant Loodgieter',
   description:
-    'Alle loodgieters- en verwarmingsdiensten in Brussel: Vaillant herstelling, boiler vervangen, nieuwe verwarming, waterlek herstellen, sanitair installatie en onderhoudscontract.',
+    'Alle loodgieters- en verwarmingsdiensten in België: Vaillant herstelling, boiler vervangen, nieuwe verwarming, waterlek herstellen, sanitair installatie en onderhoudscontract.',
   keywords: [
-    'Vaillant herstelling Brussel',
-    'boiler vervangen Brussel',
-    'nieuwe verwarming Brussel',
-    'waterlek herstellen Brussel',
-    'sanitair installatie Brussel',
+    'Vaillant herstelling België',
+    'boiler vervangen België',
+    'nieuwe verwarming België',
+    'waterlek herstellen België',
+    'sanitair installatie België',
     'Vaillant onderhoudscontract',
-    'loodgieter spoed Brussel',
+    'loodgieter spoed België',
   ],
-  alternates: { canonical: 'https://villant-loodgieter.be/nl/diensten' },
+  alternates: { canonical: 'https://vaillant-loodgieter.be/nl/diensten' },
   openGraph: {
-    title: 'Diensten – Vaillant Herstelling Brussel | Villant Loodgieter',
-    description: 'Professionele loodgieters- en verwarmingsdiensten door een gecertificeerd Vaillant partner in Brussel.',
-    url: 'https://villant-loodgieter.be/nl/diensten',
+    title: 'Diensten – Vaillant herstelling België | Vaillant Loodgieter',
+    description: 'Professionele loodgieters- en verwarmingsdiensten door een gecertificeerd Vaillant partner in België.',
+    url: 'https://vaillant-loodgieter.be/nl/diensten',
   },
 };
 
@@ -27,7 +27,7 @@ const services = [
   {
     id: 'vaillant-herstelling',
     icon: 'wrench.svg',
-    title: 'Vaillant Herstelling Brussel',
+    title: 'Vaillant herstelling',
     keyword: 'Vaillant Herstelling',
     short: 'Een defect? Wij herstellen uw Vaillant ketel snel en correct.',
     body: [
@@ -40,11 +40,11 @@ const services = [
   {
     id: 'boiler-vervangen',
     icon: 'water-heater-1.svg',
-    title: 'Boiler Vervangen Brussel',
+    title: 'Boiler vervangen',
     keyword: 'Boiler vervangen',
     short: 'Oud toestel? Wij installeren uw nieuwe Vaillant ketel professioneel.',
     body: [
-      'Een ketel ouder dan 15 jaar verbruikt tot 30% meer gas dan een modern toestel. Uw ketel vervangen in Brussel is dus een investering met een meetbaar rendement — niet alleen in comfort, maar ook op uw energiefactuur.',
+      'Een ketel ouder dan 15 jaar verbruikt tot 30% meer gas dan een modern toestel. Uw ketel vervangen in België is dus een investering met een meetbaar rendement — niet alleen in comfort, maar ook op uw energiefactuur.',
       'Wij begeleiden u bij de keuze van het juiste Vaillant model op basis van uw woningtype, het aantal kamers en uw verwarmingsbehoeften. Vervolgens zorgen we voor een volledige installatie volgens de Belgische normen, inclusief inbedrijfstelling.',
       'Duurzame verwarmingsoplossingen zijn onze specialiteit: van de traditionele gaswandketel tot hybride warmpompcombinaties.',
     ],
@@ -53,12 +53,12 @@ const services = [
   {
     id: 'verwarming',
     icon: 'radiator.svg',
-    title: 'Nieuwe Verwarming Brussel',
+    title: 'Nieuwe verwarming',
     keyword: 'Nieuwe verwarming',
     short: 'Nieuwbouw of renovatie? Wij ontwerpen en installeren uw verwarmingssysteem.',
     body: [
       'Of het nu gaat om het verwarmen van een nieuwbouw of het vervangen van een compleet systeem in een bestaande woning — de juiste dimensionering bepaalt jarenlang uw comfort en energieverbruik. Wij maken een thermische analyse voordat we een systeem voorstellen.',
-      'Als gecertificeerd installateur in Brussel werken we met Vaillant producten die hun prestaties onder het Belgische klimaat hebben bewezen. Wij installeren vloerverwarming, radiatoren en thermostatische regelsystemen.',
+      'Als gecertificeerd installateur werken we met Vaillant producten die hun prestaties onder het Belgische klimaat hebben bewezen. Wij installeren vloerverwarming, radiatoren en thermostatische regelsystemen.',
       'Elk project wordt opgeleverd met volledige documentatie en een technisch dossier voor uw EPB-aangifte indien van toepassing.',
     ],
     highlights: ['Voorgaande thermische analyse', 'Volledige documentatie en EPB-dossier', 'Gecertificeerd Vaillant installateur'],
@@ -66,12 +66,12 @@ const services = [
   {
     id: 'waterlek',
     icon: 'pipes.svg',
-    title: 'Waterlek Herstellen Brussel',
+    title: 'Waterlek herstellen',
     keyword: 'Waterlek herstellen',
     short: 'Een waterlek veroorzaakt snel schade — wij lokaliseren en herstellen snel.',
     body: [
       'Een waterlek — zichtbaar of onzichtbaar — kan in korte tijd grote schade aanrichten aan uw structuur, vloeren en muren. Onze technici beschikken over de nodige apparatuur om onzichtbare lekken te detecteren zonder onnodig breekwerk.',
-      'Na lokalisatie geven we u een duidelijke uitleg over het probleem en de hersteloptie. We werken snel en efficiënt om waterschade in uw eigendom in Brussel te minimaliseren.',
+      'Na lokalisatie geven we u een duidelijke uitleg over het probleem en de hersteloptie. We werken snel en efficiënt om waterschade in uw eigendom te minimaliseren.',
       'Bezwaar: "Ik zie geen lek, dus er is niets?" — Verborgen lekken in leidingen achter muren of onder vloeren vallen op door een stijgende waterfactuur of vochtplekken. Wacht niet tot de schade zichtbaar is.',
     ],
     highlights: ['Lekdetectie zonder onnodig breekwerk', 'Snelle interventie', 'Duidelijke offerte vooraf'],
@@ -79,15 +79,15 @@ const services = [
   {
     id: 'sanitair',
     icon: 'bathtub.svg',
-    title: 'Sanitair Installatie Brussel',
+    title: 'Sanitair installatie',
     keyword: 'Sanitair installatie',
     short: 'Badkamerrenovatie of nieuwe toestellen — installatie door gecertificeerde loodgieters.',
     body: [
-      'Van een simpele kraan tot een volledige badkamerrenovatie in Brussel — onze gekwalificeerde loodgieters installeren alle sanitaire voorzieningen: WC, douche, bad, lavabo, bidet en meer.',
-      'Bij elke installatie respecteren we de Brusselse bouwvoorschriften. Elk project wordt afgewerkt met de nodige afdichtingen, veiligheidsventilatie en controle van de waterdruk.',
+      'Van een simpele kraan tot een volledige badkamerrenovatie — onze gekwalificeerde loodgieters installeren alle sanitaire voorzieningen: WC, douche, bad, lavabo, bidet en meer.',
+      'Bij elke installatie respecteren we de Belgische bouwvoorschriften. Elk project wordt afgewerkt met de nodige afdichtingen, veiligheidsventilatie en controle van de waterdruk.',
       'Twijfelt u over de keuze van uw toestellen? Onze technici adviseren u over waterbesparende configuraties die ook uw energieverbruik verlagen.',
     ],
-    highlights: ['Alle sanitaire voorzieningen', 'Conform Brusselse regelgeving', 'Advies voor waterbesparing'],
+    highlights: ['Alle sanitaire voorzieningen', 'Conform Belgische regelgeving', 'Advies voor waterbesparing'],
   },
   {
     id: 'onderhoud',
@@ -116,13 +116,13 @@ export default function DienstenPage() {
         <div className="container">
           <span className="badge badge-green" style={{ marginBottom: '1rem' }}>Services Certifiés Vaillant</span>
           <h1 style={{ marginBottom: '1rem' }}>
-            Réparation Vaillant Bruxelles &amp; tous les services de plomberie
+            Vaillant herstelling België &amp; alle loodgietersdiensten
           </h1>
           <p style={{ fontSize: '1.1rem', maxWidth: '60ch', marginBottom: '2rem' }}>
-            Villant Loodgieter est votre partenaire certifié pour tous les services de chauffage et de plomberie à Bruxelles. Du service d'urgence au contrat d'entretien annuel Vaillant.
+            Vaillant Loodgieter is uw gecertificeerde partner voor alle verwarmings- en loodgietersdiensten in België. Van spoedinterventies tot het jaarlijks Vaillant onderhoudscontract.
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <a href="mailto:contact@villant-loodgieter.be" className="btn btn-primary">Demander un devis</a>
+            <a href="mailto:contact@vaillant-loodgieter.be" className="btn btn-primary">Demander un devis</a>
             <Link href="/" className="btn btn-outline">← Retour à l'accueil</Link>
           </div>
         </div>
@@ -206,7 +206,7 @@ export default function DienstenPage() {
                     <p key={pi} style={{ marginBottom: pi < s.body.length - 1 ? '1rem' : 0, fontSize: '0.95rem', lineHeight: 1.75 }}>{para}</p>
                   ))}
                   <div style={{ marginTop: '1.5rem' }}>
-                    <a href="mailto:contact@villant-loodgieter.be" className="btn btn-primary" style={{ fontSize: '0.9rem' }}>
+                    <a href="mailto:contact@vaillant-loodgieter.be" className="btn btn-primary" style={{ fontSize: '0.9rem' }}>
                       Priez un devis
                     </a>
                   </div>
@@ -222,7 +222,7 @@ export default function DienstenPage() {
         <div className="container">
           <div className="section-header">
             <span className="badge badge-gold">Avantages</span>
-            <h2 style={{ marginTop: '1rem' }}>Pourquoi choisir Villant Plombier ?</h2>
+            <h2 style={{ marginTop: '1rem' }}>Pourquoi choisir vaillant Plombier ?</h2>
             <div className="divider" />
           </div>
           <div className="grid-3-strict">
@@ -254,7 +254,7 @@ export default function DienstenPage() {
           <div className="grid-3">
             {[
               { name: 'Marc D., Schaerbeek', text: 'La réparation Vaillant s\'est déroulée rapidement. Le technicien était professionnel, a expliqué chaque étape et a travaillé proprement. La chaudière fonctionne mieux que jamais.' },
-              { name: 'Amina B., Molenbeek', text: 'Remplacement de la chaudière suite aux conseils de Villant. Ils ont choisi le bon modèle pour mon appartement et l\'installation s\'est déroulée sans accroc. Je recommande !' },
+              { name: 'Amina B., Molenbeek', text: 'Remplacement de la chaudière suite aux conseils de vaillant. Ils ont choisi le bon modèle pour mon appartement et l\'installation s\'est déroulée sans accroc. Je recommande !' },
               { name: 'Lieve T., Uccle', text: 'J\'ai souscrit un contrat d\'entretien pour mon ecoTEC Vaillant. Ils sont ponctuels chaque année, le rapport est clair et la chaudière fonctionne parfaitement.' },
             ].map((t) => (
               <div key={t.name} className="testimonial-card">
@@ -271,18 +271,18 @@ export default function DienstenPage() {
       <section style={{ background: 'var(--bg-secondary)' }}>
         <div className="container" style={{ textAlign: 'center' }}>
           <span className="badge badge-gold">Région</span>
-          <h2 style={{ marginTop: '1rem', marginBottom: '1rem' }}>Actif dans tout Bruxelles</h2>
+          <h2 style={{ marginTop: '1rem', marginBottom: '1rem' }}>Actief in België</h2>
           <div className="divider" />
           <p style={{ margin: '0 auto 2rem', maxWidth: '55ch' }}>
-            Nous fournissons tous les services ci-dessus dans les 19 communes de Bruxelles. Fiers de travailler à Bruxelles et ses environs.
+            Wij leveren bovenstaande diensten in meerdere steden en regio’s in België, afhankelijk van de beschikbaarheid van onze teams en het type interventie.
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.6rem', justifyContent: 'center' }}>
-            {['Anderlecht', 'Bruxelles-Ville', 'Ixelles', 'Etterbeek', 'Evere', 'Ganshoren', 'Jette', 'Koekelberg', 'Molenbeek', 'Auderghem', 'Schaerbeek', 'Saint-Gilles', 'Saint-Josse', 'Uccle', 'Forest'].map((a) => (
+            {['Brussel', 'Antwerpen', 'Gent', 'Leuven', 'Brugge', 'Mechelen', 'Hasselt'].map((a) => (
               <span key={a} className="area-chip">📍 {a}</span>
             ))}
           </div>
           <div style={{ marginTop: '2rem' }}>
-            <Link href="/brussel" className="btn btn-outline">En savoir plus sur notre zone →</Link>
+            <Link href="/nl/loodgieter" className="btn btn-outline">Bekijk onze bediende zones →</Link>
           </div>
         </div>
       </section>
@@ -297,7 +297,7 @@ export default function DienstenPage() {
           </div>
           <div className="grid-4">
             {[
-              { n: '1', title: 'Contactez-nous', desc: 'E-mail à contact@villant-loodgieter.be avec votre problème et votre adresse à Bruxelles.' },
+              { n: '1', title: 'Contactez-nous', desc: 'E-mail naar contact@vaillant-loodgieter.be met uw probleem en uw adres.' },
               { n: '2', title: 'Diagnostic', desc: 'Notre technicien inspecte et établit un devis transparent avant toute intervention.' },
               { n: '3', title: 'Intervention', desc: 'Des professionnels certifiés effectuent le service avec des pièces Vaillant d\'origine.' },
               { n: '4', title: 'Rapport', desc: 'Vous recevez un rapport technique écrit et des recommandations d\'entretien.' },
@@ -321,8 +321,8 @@ export default function DienstenPage() {
             <div className="divider" />
           </div>
           {[
-            { q: 'Travaillez-vous exclusivement avec des appareils Vaillant ?', a: 'Notre spécialité et notre certification concernent les systèmes Vaillant. Nous sommes vos experts de référence pour la réparation, l\'entretien et l\'installation Vaillant à Bruxelles.' },
-            { q: 'Que faire si j\'ai besoin d\'une réparation d\'urgence ?', a: 'Envoyez un e-mail avec "URGENCE" en objet à contact@villant-loodgieter.be. Nous traitons les demandes d\'intervention urgente en priorité.' },
+            { q: 'Travaillez-vous exclusivement avec des appareils Vaillant ?', a: 'Notre spécialité et notre certification concernent les systèmes Vaillant. Nous sommes vos experts de référence pour la réparation, l\'entretien et l\'installation Vaillant en Belgique.' },
+            { q: 'Que faire si j\'ai besoin d\'une réparation d\'urgence ?', a: 'Envoyez un e-mail avec "URGENCE" en objet à contact@vaillant-loodgieter.be. Nous traitons les demandes d\'intervention urgente en priorité.' },
             { q: 'Le remplacement de la chaudière modifie-t-il ma facture d\'énergie ?', a: 'Une chaudière Vaillant moderne et économe en énergie peut réduire considérablement votre consommation de gaz par rapport à un appareil obsolète. Nous vous conseillons sur les économies réalistes pour votre situation spécifique.' },
             { q: 'Combien de temps dure un entretien ?', a: 'Un entretien annuel standard dure en moyenne 1 à 2 heures, selon le modèle et l\'état de l\'installation.' },
           ].map((faq, i) => (
@@ -338,9 +338,9 @@ export default function DienstenPage() {
       <section className="cta-band">
         <div className="container" style={{ maxWidth: '600px' }}>
           <h2>Prêt à optimiser votre installation Vaillant ?</h2>
-          <p>Contactez Villant Plombier — votre plombier certifié Vaillant à Bruxelles.</p>
+          <p>Contactez Vaillant Loodgieter — uw gecertificeerde Vaillant partner in België.</p>
           <div className="cta-actions">
-            <a href="mailto:contact@villant-loodgieter.be" className="btn btn-ghost-dark">📧 Envoyer un message</a>
+            <a href="mailto:contact@vaillant-loodgieter.be" className="btn btn-ghost-dark">📧 Envoyer un message</a>
             <Link href="/over-ons" className="btn btn-ghost-dark">
               À propos de nous →
             </Link>

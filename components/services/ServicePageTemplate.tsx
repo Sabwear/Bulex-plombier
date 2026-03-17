@@ -25,7 +25,7 @@ export default function ServicePageTemplate({
       >
         <div className="container">
           <span className="badge badge-green" style={{ marginBottom: "1rem" }}>
-            Service Vaillant Bruxelles
+            Service Vaillant Belgique
           </span>
           <h1 style={{ marginBottom: "1rem" }}>{service.title}</h1>
           <p style={{ fontSize: "1.1rem", maxWidth: "60ch", marginBottom: "2rem" }}>

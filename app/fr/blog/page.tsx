@@ -5,10 +5,10 @@ import { getBlogPosts } from '@/data/types';
 import styles from './blog.module.css';
 
 export const metadata: Metadata = {
-  title: 'Conseils & Expertise Plomberie Vaillant | Blog Villant Plombier',
+  title: 'Conseils & Expertise Plomberie Vaillant | Blog vaillant Plombier',
   description: 'Retrouvez tous nos conseils d\'experts, guides d\'entretien et solutions de dépannage pour votre installation Vaillant à Bruxelles.',
   alternates: {
-    canonical: 'https://villant-loodgieter.be/conseils',
+    canonical: 'https://vaillant-loodgieter.be/conseils',
   },
 };
 

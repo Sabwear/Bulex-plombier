@@ -14,7 +14,7 @@ export default function WhatsAppWidget() {
   const href = `https://wa.me/${international}`;
 
   return (
-    <div className="pointer-events-none fixed bottom-6 left-4 z-50 md:bottom-8 md:left-6">
+    <div className="pointer-events-none fixed bottom-24 left-4 z-50 md:bottom-8 md:left-6">
       <div className="pointer-events-auto relative h-14 w-14 md:h-16 md:w-16">
         <span
           aria-hidden="true"
@@ -22,7 +22,7 @@ export default function WhatsAppWidget() {
         />
         <Link
           href={href}
-          aria-label="Contacter Villant via WhatsApp"
+          aria-label="Contacter vaillant via WhatsApp"
           className="group relative flex h-full w-full items-center justify-center rounded-full bg-[#25D366] shadow-lg shadow-black/25 transition-transform duration-300 hover:-translate-y-1.5"
           target="_blank"
         >

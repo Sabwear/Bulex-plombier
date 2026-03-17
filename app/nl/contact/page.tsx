@@ -3,19 +3,19 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'Contact – Vaillant Loodgieter Brussel | Villant Loodgieter',
+  title: 'Contact – Vaillant Loodgieter België | Vaillant Loodgieter',
   description:
-    'Contacteer Villant Loodgieter – uw gecertificeerde Vaillant loodgieter in Brussel. Stuur een e-mail naar contact@villant-loodgieter.be voor een offerte of noodinterventie.',
+    'Contacteer Vaillant Loodgieter – uw gecertificeerde Vaillant loodgieter in België. Stuur een e-mail naar contact@vaillant-loodgieter.be voor een offerte of noodinterventie.',
   keywords: [
-    'contact Vaillant loodgieter Brussel',
-    'loodgieter spoed Brussel',
-    'aanvraag Vaillant herstelling Brussel',
+    'contact Vaillant loodgieter België',
+    'loodgieter spoed België',
+    'aanvraag Vaillant herstelling België',
   ],
-  alternates: { canonical: 'https://villant-loodgieter.be/nl/contact' },
+  alternates: { canonical: 'https://vaillant-loodgieter.be/nl/contact' },
   openGraph: {
-    title: 'Contact – Villant Loodgieter',
-    description: 'Contacteer uw gecertificeerde Vaillant loodgieter in Brussel.',
-    url: 'https://villant-loodgieter.be/nl/contact',
+    title: 'Contact – Vaillant Loodgieter',
+    description: 'Contacteer uw gecertificeerde Vaillant loodgieter in België.',
+    url: 'https://vaillant-loodgieter.be/nl/contact',
   },
 };
 
@@ -31,13 +31,13 @@ export default function ContactPage() {
         <div className="container">
           <span className="badge badge-green" style={{ marginBottom: '1rem' }}>Contact</span>
           <h1 style={{ marginBottom: '1rem' }}>
-            Contacteer uw Vaillant loodgieter in Brussel
+            Contacteer uw Vaillant loodgieter in België
           </h1>
           <p style={{ fontSize: '1.1rem', maxWidth: '55ch', marginBottom: '2rem' }}>
-            Heeft u een loodgietersprobleem, wilt u een offerte aanvragen of een onderhoudscontract bespreken? Villant Loodgieter staat voor u klaar.
+            Heeft u een loodgietersprobleem, wilt u een offerte aanvragen of een onderhoudscontract bespreken? Vaillant Loodgieter staat voor u klaar.
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <a href="mailto:contact@villant-loodgieter.be" className="btn btn-primary">📧 Stuur een bericht</a>
+            <a href="mailto:contact@vaillant-loodgieter.be" className="btn btn-primary">📧 Stuur een bericht</a>
             <Link href="/nl" className="btn btn-outline">
               ← Terug naar home
             </Link>
@@ -62,8 +62,8 @@ export default function ContactPage() {
                   </span>
                   <div>
                     <h4 style={{ marginBottom: '0.3rem' }}>E-mail</h4>
-                    <a href="mailto:contact@villant-loodgieter.be" style={{ fontWeight: 600, color: 'var(--color-primary)' }}>
-                      contact@villant-loodgieter.be
+                    <a href="mailto:contact@vaillant-loodgieter.be" style={{ fontWeight: 600, color: 'var(--color-primary)' }}>
+                      contact@vaillant-loodgieter.be
                     </a>
                     <p style={{ fontSize: '0.85rem', marginTop: '0.3rem' }}>
                       Stuur een e-mail met uw vraag, adres en een beschrijving van het probleem. Wij antwoorden u zo snel mogelijk.
@@ -90,7 +90,7 @@ export default function ContactPage() {
                   <div>
                     <h4 style={{ marginBottom: '0.3rem' }}>Interventiezone</h4>
                     <p style={{ fontSize: '0.9rem' }}>
-                      Brussel, België — alle 19 gemeenten van Brussel. Trots om in Brussel en omgeving te werken.
+                      België — interventies afhankelijk van de beschikbaarheid van onze teams en het type aanvraag.
                     </p>
                     <Link href="/nl/brussel" style={{ fontSize: '0.88rem', fontWeight: 600, color: 'var(--color-primary)', marginTop: '0.5rem', display: 'inline-block' }}>
                       Bekijk onze zone →
@@ -104,23 +104,143 @@ export default function ContactPage() {
                   </span>
                   <div>
                     <h4 style={{ marginBottom: '0.3rem' }}>Website</h4>
-                    <a href="https://villant-loodgieter.be" style={{ fontWeight: 600, color: 'var(--color-primary)' }}>
-                      villant-loodgieter.be
+                    <a href="https://vaillant-loodgieter.be" style={{ fontWeight: 600, color: 'var(--color-primary)' }}>
+                      vaillant-loodgieter.be
                     </a>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* What to include in your message */}
+            {/* What to include in your message + form */}
             <div>
               <span className="badge badge-gold" style={{ marginBottom: '1rem' }}>Votre message</span>
               <h2 style={{ marginTop: '0.75rem', marginBottom: '1.5rem' }}>Ce qu'il est préférable de mentionner</h2>
 
+              {/* Moved contact form here (no background section) */}
+              <div
+                style={{
+                  marginBottom: '1.75rem',
+                  borderRadius: '22px',
+                  padding: '18px',
+                  background:
+                    'linear-gradient(180deg, rgba(15,23,42,0.04) 0%, rgba(15,23,42,0.02) 100%)',
+                  border: '1px solid rgba(148,163,184,0.30)',
+                  boxShadow: '0 16px 40px rgba(15,23,42,0.07)',
+                }}
+              >
+                <h3 style={{ marginBottom: '0.75rem', fontSize: '1rem' }}>Vraag een interventie aan</h3>
+                <form
+                  action="mailto:contact@vaillant-loodgieter.be"
+                  method="post"
+                  encType="text/plain"
+                  style={{ display: 'grid', gap: '10px' }}
+                >
+                  <input
+                    name="Naam"
+                    required
+                    placeholder="Naam *"
+                    style={{
+                      width: '100%',
+                      borderRadius: '999px',
+                      padding: '12px 14px',
+                      border: '1px solid rgba(148,163,184,0.50)',
+                      outline: 'none',
+                      background: '#fff',
+                    }}
+                  />
+                  <input
+                    name="Telefoonnummer"
+                    required
+                    inputMode="tel"
+                    placeholder="Telefoonnummer *"
+                    style={{
+                      width: '100%',
+                      borderRadius: '999px',
+                      padding: '12px 14px',
+                      border: '1px solid rgba(148,163,184,0.50)',
+                      outline: 'none',
+                      background: '#fff',
+                    }}
+                  />
+                  <input
+                    name="Type interventie"
+                    placeholder="Type interventie"
+                    style={{
+                      width: '100%',
+                      borderRadius: '999px',
+                      padding: '12px 14px',
+                      border: '1px solid rgba(148,163,184,0.50)',
+                      outline: 'none',
+                      background: '#fff',
+                    }}
+                  />
+                  <input
+                    name="Adres"
+                    placeholder="Adres"
+                    style={{
+                      width: '100%',
+                      borderRadius: '999px',
+                      padding: '12px 14px',
+                      border: '1px solid rgba(148,163,184,0.50)',
+                      outline: 'none',
+                      background: '#fff',
+                    }}
+                  />
+                  <textarea
+                    name="Bericht"
+                    rows={5}
+                    placeholder="Bericht"
+                    style={{
+                      width: '100%',
+                      borderRadius: '16px',
+                      padding: '12px 14px',
+                      border: '1px solid rgba(148,163,184,0.50)',
+                      outline: 'none',
+                      background: '#fff',
+                      resize: 'vertical',
+                    }}
+                  />
+
+                  <label
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      fontSize: '0.86rem',
+                      color: 'var(--text-muted)',
+                      paddingLeft: '2px',
+                    }}
+                  >
+                    <input type="checkbox" required />
+                    <span>
+                      Door een bericht te versturen, gaat u akkoord met ons{' '}
+                      <Link
+                        href="/nl/privacy"
+                        style={{
+                          color: 'var(--color-primary)',
+                          fontWeight: 600,
+                          textDecoration: 'underline',
+                        }}
+                      >
+                        privacybeleid
+                      </Link>
+                      .
+                    </span>
+                  </label>
+
+                  <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '4px' }}>
+                    <button type="submit" className="btn btn-primary" style={{ minWidth: '150px' }}>
+                      Verzenden
+                    </button>
+                  </div>
+                </form>
+              </div>
+
               <div className="card" style={{ marginBottom: '1.5rem' }}>
                 <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                   {[
-                    { icon: 'plumber-1.svg', label: 'Uw adres', sub: 'Straat, huisnummer, gemeente in Brussel' },
+                    { icon: 'plumber-1.svg', label: 'Uw adres', sub: 'Straat, huisnummer, gemeente/stad' },
                     { icon: 'wrench-2.svg', label: 'Type probleem', sub: 'Ketel, waterlek, sanitair, verwarming...' },
                     { icon: 'boiler-1.svg', label: 'Merk en model', sub: 'Bijv. Vaillant ecoTEC VU 26/5-5 (indien bekend)' },
                     { icon: 'wrench-1.svg', label: 'Dringendheid', sub: '"SPOED" voor noodgevallen' },
@@ -145,7 +265,7 @@ export default function ContactPage() {
                 borderRadius: 'var(--radius-lg)',
                 padding: '1.75rem',
               }}>
-                <h3 style={{ color: '#fff', marginBottom: '1rem', fontSize: '1rem' }}>Waarom vertrouwen op Villant Loodgieter?</h3>
+                <h3 style={{ color: '#fff', marginBottom: '1rem', fontSize: '1rem' }}>Waarom vertrouwen op vaillant Loodgieter?</h3>
                 <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
                   {[
                     { icon: 'plumber-1.svg', text: 'Gecertificeerd Vaillant partner, actief in België' },
@@ -176,11 +296,11 @@ export default function ContactPage() {
           </div>
           <div className="grid-3-strict">
             {[
-              { icon: 'wrench.svg', title: 'Vaillant Herstelling Brussel' },
-              { icon: 'water-heater-1.svg', title: 'Boiler vervangen Brussel' },
-              { icon: 'pipes.svg', title: 'Waterlek herstellen Brussel' },
-              { icon: 'bathtub.svg', title: 'Sanitair installatie Brussel' },
-              { icon: 'radiator.svg', title: 'Nieuwe verwarming Brussel' },
+              { icon: 'wrench.svg', title: 'Vaillant herstelling' },
+              { icon: 'water-heater-1.svg', title: 'Boiler vervangen' },
+              { icon: 'pipes.svg', title: 'Waterlek herstellen' },
+              { icon: 'bathtub.svg', title: 'Sanitair installatie' },
+              { icon: 'radiator.svg', title: 'Nieuwe verwarming' },
               { icon: 'gauge.svg', title: 'Vaillant onderhoudscontract' },
             ].map((s) => (
               <div key={s.title} style={{
@@ -211,7 +331,7 @@ export default function ContactPage() {
           </div>
           {[
             { q: 'Binnen welke termijn antwoorden jullie op een e-mail?', a: 'Wij streven naar een snelle reactie. Bij noodgevallen, vermeld a.u.b. "SPOED" in het onderwerp van uw e-mail — dit geeft prioriteit aan uw bericht in onze planning.' },
-            { q: 'Kan ik u ook telefonisch bereiken?', a: 'Onze belangrijkste contactmethode is via e-mail op contact@villant-loodgieter.be. Telefoongegevens worden binnenkort toegevoegd. U kunt uw telefoonnummer vermelden in uw e-mail als u teruggebeld wilt worden.' },
+            { q: 'Kan ik u ook telefonisch bereiken?', a: 'Onze belangrijkste contactmethode is via e-mail op contact@vaillant-loodgieter.be. Telefoongegevens worden binnenkort toegevoegd. U kunt uw telefoonnummer vermelden in uw e-mail als u teruggebeld wilt worden.' },
             { q: 'Zorgen jullie voor een offerte voordat de werken beginnen?', a: 'Ja, altijd. Wij beginnen nooit een interventie zonder u vooraf een duidelijke diagnose en offerte te bezorgen. Geen verborgen kosten.' },
           ].map((faq, i) => (
             <details key={i} className="faq-item">
@@ -226,9 +346,9 @@ export default function ContactPage() {
       <section className="cta-band">
         <div className="container" style={{ maxWidth: '600px' }}>
           <h2>Prêt à nous contacter ?</h2>
-          <p>Envoyez un e-mail à <strong style={{ color: 'rgba(255,255,255,0.95)' }}>contact@villant-loodgieter.be</strong> — votre plombier certifié Vaillant à Bruxelles vous répondra dans les plus brefs délais.</p>
+          <p>Envoyez un e-mail à <strong style={{ color: 'rgba(255,255,255,0.95)' }}>contact@vaillant-loodgieter.be</strong> — votre plombier certifié Vaillant en Belgique vous répondra dans les plus brefs délais.</p>
           <div className="cta-actions">
-            <a href="mailto:contact@villant-loodgieter.be" className="btn btn-ghost-dark">📧 contact@villant-loodgieter.be</a>
+            <a href="mailto:contact@vaillant-loodgieter.be" className="btn btn-ghost-dark">📧 contact@vaillant-loodgieter.be</a>
             <Link href="/over-ons" className="btn btn-ghost-dark">
               À propos de nous →
             </Link>

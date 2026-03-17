@@ -4,36 +4,37 @@ import SiteHeader from "@/components/header/SiteHeader";
 import Footer from "@/components/Footer";
 import Script from "next/script";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
+import MobileCallBar from "@/components/MobileCallBar";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://villant-loodgieter.be"),
+  metadataBase: new URL("https://vaillant-loodgieter.be"),
   title: {
-    default: "Vaillant loodgieter Brussel | Villant Loodgieter",
-    template: "%s | Villant Loodgieter",
+    default: "Vaillant loodgieter België | Vaillant Loodgieter",
+    template: "%s | Vaillant Loodgieter",
   },
   description:
-    "Villant Loodgieter – gecertificeerd Vaillant partner in Brussel. Loodgieter spoeddienst Brussel, boiler vervangen, waterlek herstellen en sanitair installatie.",
+    "Vaillant Loodgieter – gecertificeerd Vaillant partner in België. Loodgieter spoeddienst, boiler vervangen, waterlek herstellen en sanitair installatie.",
   keywords: [
-    "Vaillant loodgieter Brussel",
-    "Vaillant herstelling Brussel",
-    "boiler vervangen Brussel",
-    "nieuwe verwarming plaatsen Brussel",
-    "loodgieter spoeddienst Brussel",
+    "Vaillant loodgieter België",
+    "Vaillant herstelling België",
+    "boiler vervangen België",
+    "nieuwe verwarming plaatsen België",
+    "loodgieter spoeddienst België",
     "gecertificeerd Vaillant partner België",
     "onderhoudscontract Vaillant",
-    "waterlek herstellen Brussel",
-    "sanitair installatie Brussel",
+    "waterlek herstellen België",
+    "sanitair installatie België",
     "duurzame verwarming oplossingen",
-    "verwarmingsmonteur Brussel",
+    "verwarmingsmonteur België",
   ],
   openGraph: {
     type: "website",
     locale: "nl_BE",
-    url: "https://villant-loodgieter.be",
-    siteName: "Villant Loodgieter",
-    title: "Vaillant loodgieter Brussel | Villant Loodgieter",
+    url: "https://vaillant-loodgieter.be",
+    siteName: "Vaillant Loodgieter",
+    title: "Vaillant loodgieter België | Vaillant Loodgieter",
     description:
-      "Gecertificeerd Vaillant partner in Brussel. Loodgieter spoeddienst, boiler vervangen, waterlek herstellen en professionele sanitair installatie.",
+      "Gecertificeerd Vaillant partner in België. Loodgieter spoeddienst, boiler vervangen, waterlek herstellen en professionele sanitair installatie.",
   },
   robots: {
     index: true,
@@ -41,31 +42,31 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true },
   },
   alternates: {
-    canonical: "https://villant-loodgieter.be",
+    canonical: "https://vaillant-loodgieter.be",
   },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Villant Loodgieter",
-  url: "https://villant-loodgieter.be",
-  email: "contact@villant-loodgieter.be",
+  name: "Vaillant Loodgieter",
+  url: "https://vaillant-loodgieter.be",
+  email: "contact@vaillant-loodgieter.be",
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Brussel",
+    addressLocality: "België",
     addressCountry: "BE",
   },
   areaServed: {
-    "@type": "City",
-    name: "Brussels",
+    "@type": "Country",
+    name: "Belgium",
   },
   description:
-    "Gecertificeerd Vaillant partner in Brussel. Professionele loodgieter, ketelreparatie en sanitair installatie.",
+    "Gecertificeerd Vaillant partner in België. Professionele loodgieter, ketelreparatie en sanitair installatie.",
   knowsAbout: [
-    "Vaillant loodgieter Brussel",
-    "boiler vervangen Brussel",
-    "sanitair installatie Brussel",
+    "Vaillant loodgieter België",
+    "boiler vervangen België",
+    "sanitair installatie België",
   ],
 };
 
@@ -86,9 +87,10 @@ export default function RootLayout({
       </head>
       <body>
         <SiteHeader lang="nl" />
-        <main>{children}</main>
+        <main className="pb-24 md:pb-0">{children}</main>
         <Footer />
         <WhatsAppWidget />
+        <MobileCallBar lang="nl" telHref="tel:023456789" />
       </body>
     </html>
   );

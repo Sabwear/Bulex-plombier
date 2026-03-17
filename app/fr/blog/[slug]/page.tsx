@@ -23,10 +23,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!post) return {};
 
   const content = post.languages.fr;
-  const baseUrl = 'https://villant-loodgieter.be';
+  const baseUrl = 'https://vaillant-loodgieter.be';
 
   return {
-    title: `${content.title} | Blog Villant Plombier`,
+    title: `${content.title} | Blog vaillant Plombier`,
     description: content.excerpt,
     alternates: {
       canonical: `${baseUrl}/conseils/${post.slug}`,
@@ -174,7 +174,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         <div className={`${styles.sidebarWidget} ${styles.sidebarCta}`}>
           <h3>Besoin d&apos;une intervention ?</h3>
           <p>Nos experts certifiés Vaillant interviennent en moins de 60 minutes à Bruxelles.</p>
-          <a href="mailto:contact@villant-loodgieter.be" className="btn btn-outline" style={{ color: '#fff', borderColor: '#fff' }}>
+          <a href="mailto:contact@vaillant-loodgieter.be" className="btn btn-outline" style={{ color: '#fff', borderColor: '#fff' }}>
             Contactez-nous
           </a>
         </div>

@@ -11,11 +11,11 @@ interface Testimonial {
 const TESTIMONIALS: Testimonial[] = [
   {
     name: 'Thomas V., Ixelles',
-    text: "Ma chaudière Vaillant est tombée en panne un matin d'hiver froid. Villant a envoyé quelqu'un le jour même, le technicien a rapidement diagnostiqué le problème et remis le système en marche. Un service impressionnant.",
+    text: "Ma chaudière Vaillant est tombée en panne un matin d'hiver froid. Vaillant a envoyé quelqu'un le jour même, le technicien a rapidement diagnostiqué le problème et remis le système en marche. Un service impressionnant.",
   },
   {
     name: 'Sophie M., Saint-Gilles',
-    text: "Ils ont remplacé notre vieille chaudière par une nouvelle Vaillant. Travail soigné, communication très claire et aucun coût caché à la fin. À recommander absolument à Bruxelles.",
+    text: "Ils ont remplacé notre vieille chaudière par une nouvelle Vaillant. Travail soigné, communication très claire et aucun coût caché à la fin. À recommander absolument en Belgique.",
   },
   {
     name: 'Karim L., Anderlecht',

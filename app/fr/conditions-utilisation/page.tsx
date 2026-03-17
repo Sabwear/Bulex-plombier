@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: "Conditions d'utilisation | Villant Loodgieter",
+  title: "Conditions d'utilisation | vaillant Loodgieter",
   description:
-    "Conditions d'utilisation du site – Villant Loodgieter. Usage du site, propriété intellectuelle et limitation de responsabilité.",
+    "Conditions d'utilisation du site – vaillant Loodgieter. Usage du site, propriété intellectuelle et limitation de responsabilité.",
 };
 
 export default function ConditionsUtilisationPage() {
@@ -41,7 +41,7 @@ export default function ConditionsUtilisationPage() {
       <section style={{ marginBottom: '2rem' }}>
         <h2 style={{ fontSize: '1.25rem', marginBottom: '0.75rem' }}>5. Limitation de responsabilité</h2>
         <p>
-          Villant Loodgieter ne peut être tenue responsable des dommages directs ou indirects résultant de l&apos;accès ou de l&apos;utilisation du site, de l&apos;indisponibilité du site, de l&apos;utilisation des informations qui y figurent ou de l&apos;utilisation de sites tiers accessibles par lien. Rien dans ces conditions n&apos;exclut les responsabilités qui ne peuvent être exclues par la loi.
+          vaillant Loodgieter ne peut être tenue responsable des dommages directs ou indirects résultant de l&apos;accès ou de l&apos;utilisation du site, de l&apos;indisponibilité du site, de l&apos;utilisation des informations qui y figurent ou de l&apos;utilisation de sites tiers accessibles par lien. Rien dans ces conditions n&apos;exclut les responsabilités qui ne peuvent être exclues par la loi.
         </p>
       </section>
 

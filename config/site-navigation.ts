@@ -32,7 +32,7 @@ export const SITE_PHONE = {
 export const SITE_NAVIGATION: Record<Locale, LocaleNavigation> = {
   fr: {
     topBar: {
-      urgencyText: 'Urgence plomberie & chauffage à Bruxelles',
+      urgencyText: 'Urgence plomberie & chauffage en Belgique',
       interventionLabel: 'Planifier une intervention',
       interventionHref: '/fr/demande-devis',
     },
@@ -60,7 +60,7 @@ export const SITE_NAVIGATION: Record<Locale, LocaleNavigation> = {
   },
   nl: {
     topBar: {
-      urgencyText: 'Spoed loodgieterij & verwarming in Brussel',
+      urgencyText: 'Spoed loodgieterij & verwarming in België',
       interventionLabel: 'Plan een interventie',
       interventionHref: '/nl/demande-offerte',
     },
@@ -69,9 +69,9 @@ export const SITE_NAVIGATION: Record<Locale, LocaleNavigation> = {
       { label: 'Diensten', href: '/nl/diensten' },
       {
         label: 'Vaillant Loodgieter België',
-        href: '/nl/brussel',
+        href: '/nl/loodgieter',
         children: [
-          { label: 'Alle bediende zones', href: '/nl/brussel' },
+          { label: 'Alle bediende zones', href: '/nl/loodgieter' },
           { label: 'Regio Brussel', href: '/nl/brussel' },
           { label: 'Onze diensten', href: '/nl/diensten' },
           { label: 'Spoed contact', href: '/nl/contact' },

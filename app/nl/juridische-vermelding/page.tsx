@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Juridische vermelding | Villant Loodgieter',
+  title: 'Juridische vermelding | vaillant Loodgieter',
   description:
-    'Juridische vermelding – Uitgever van de site, contact, hosting en intellectuele eigendom. Villant Loodgieter, Vaillant loodgieter Brussel.',
+    'Juridische vermelding – Uitgever van de site, contact, hosting en intellectuele eigendom. vaillant Loodgieter, Vaillant loodgieter Brussel.',
 };
 
 export default function JuridischeVermeldingPage() {
@@ -14,21 +14,21 @@ export default function JuridischeVermeldingPage() {
       <section style={{ marginBottom: '2rem' }}>
         <h2 style={{ fontSize: '1.25rem', marginBottom: '0.75rem' }}>1. Uitgever van de website</h2>
         <p>
-          De website wordt uitgegeven door <strong>Villant Loodgieter</strong>. Maatschappelijke zetel en identificatienummers (KBO, btw) op aanvraag beschikbaar via contact@villant-loodgieter.be.
+          De website wordt uitgegeven door <strong>vaillant Loodgieter</strong>. Maatschappelijke zetel en identificatienummers (KBO, btw) op aanvraag beschikbaar via contact@vaillant-loodgieter.be.
         </p>
       </section>
 
       <section style={{ marginBottom: '2rem' }}>
         <h2 style={{ fontSize: '1.25rem', marginBottom: '0.75rem' }}>2. Contact</h2>
         <p>
-          Voor alle vragen over de website of de diensten (loodgieterij, verwarming, herstelling en onderhoud van Vaillant-ketels): e-mail <strong>contact@villant-loodgieter.be</strong>, telefoon en adres op de Contactpagina.
+          Voor alle vragen over de website of de diensten (loodgieterij, verwarming, herstelling en onderhoud van Vaillant-ketels): e-mail <strong>contact@vaillant-loodgieter.be</strong>, telefoon en adres op de Contactpagina.
         </p>
       </section>
 
       <section style={{ marginBottom: '2rem' }}>
         <h2 style={{ fontSize: '1.25rem', marginBottom: '0.75rem' }}>3. Hosting</h2>
         <p>
-          De hosting van de website wordt verzorgd door een technische dienstverlener. De contactgegevens van de host zijn op aanvraag beschikbaar via contact@villant-loodgieter.be.
+          De hosting van de website wordt verzorgd door een technische dienstverlener. De contactgegevens van de host zijn op aanvraag beschikbaar via contact@vaillant-loodgieter.be.
         </p>
       </section>
 
@@ -42,14 +42,14 @@ export default function JuridischeVermeldingPage() {
       <section style={{ marginBottom: '2rem' }}>
         <h2 style={{ fontSize: '1.25rem', marginBottom: '0.75rem' }}>5. Hyperlinks</h2>
         <p>
-          De website kan links bevatten naar websites van derden. Deze links worden uitsluitend ter informatie verstrekt. Villant Loodgieter heeft geen controle over de inhoud van die sites en kan niet aansprakelijk worden gesteld voor hun beschikbaarheid of inhoud.
+          De website kan links bevatten naar websites van derden. Deze links worden uitsluitend ter informatie verstrekt. vaillant Loodgieter heeft geen controle over de inhoud van die sites en kan niet aansprakelijk worden gesteld voor hun beschikbaarheid of inhoud.
         </p>
       </section>
 
       <section>
         <h2 style={{ fontSize: '1.25rem', marginBottom: '0.75rem' }}>6. Aansprakelijkheid</h2>
         <p>
-          De informatie op de website wordt uitsluitend ter indicatie verstrekt. Wij doen ons best om ze actueel te houden maar garanderen niet hun volledigheid of foutloosheid. Villant Loodgieter kan niet aansprakelijk worden gesteld voor rechtstreekse of onrechtstreekse schade voortvloeiend uit het gebruik van de website of de daarop vermelde informatie. De gebruiker blijft verantwoordelijk voor het gebruik dat hij ervan maakt.
+          De informatie op de website wordt uitsluitend ter indicatie verstrekt. Wij doen ons best om ze actueel te houden maar garanderen niet hun volledigheid of foutloosheid. vaillant Loodgieter kan niet aansprakelijk worden gesteld voor rechtstreekse of onrechtstreekse schade voortvloeiend uit het gebruik van de website of de daarop vermelde informatie. De gebruiker blijft verantwoordelijk voor het gebruik dat hij ervan maakt.
         </p>
       </section>
     </main>

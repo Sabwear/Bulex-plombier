@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Politique de cookies | Villant Loodgieter',
+  title: 'Politique de cookies | vaillant Loodgieter',
   description:
-    'Politique de cookies – Villant Loodgieter. Types de cookies, gestion du consentement et paramètres du navigateur.',
+    'Politique de cookies – vaillant Loodgieter. Types de cookies, gestion du consentement et paramètres du navigateur.',
 };
 
 export default function CookiesPage() {

@@ -3,7 +3,7 @@
 @config "../tailwind.config.ts";
 
 /* ============================================================
-   Villant Loodgieter – Design System
+   vaillant Loodgieter – Design System
    Brand primary: #00adab | Hover: #009190
    ============================================================ */
 
@@ -122,6 +122,41 @@
   --bg-dark:      var(--surface-dark);
   --max-width:    1200px;
   --section-padding: var(--section-py) var(--section-px);
+}
+
+/* ── Mobile sticky call CTA (attention, but subtle) ─────────── */
+@keyframes mobileCallCtaFloat {
+  0% {
+    transform: translateY(0);
+  }
+  55% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes mobileCallCtaGlow {
+  0% {
+    box-shadow: 0 -10px 30px rgba(15, 23, 42, 0.14);
+  }
+  55% {
+    box-shadow:
+      0 -14px 34px rgba(15, 23, 42, 0.16),
+      0 0 0 6px rgba(0, 173, 171, 0.12);
+  }
+  100% {
+    box-shadow: 0 -10px 30px rgba(15, 23, 42, 0.14);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .mobile-call-cta {
+    animation: mobileCallCtaFloat 2.6s ease-in-out infinite,
+      mobileCallCtaGlow 2.6s ease-in-out infinite;
+    will-change: transform, box-shadow;
+  }
 }
 
 /* ── Reset & Base ───────────────────────────────────────────── */

@@ -8,7 +8,7 @@ export const SITE_CONFIG = {
     display: phoneDisplay,
     href: phoneHref,
   },
-  email: process.env.NEXT_PUBLIC_SUPPORT_EMAIL || "contact@villant-loodgieter.be",
+  email: process.env.NEXT_PUBLIC_SUPPORT_EMAIL || "contact@vaillant-loodgieter.be",
 };
 
 export const NAVIGATION = {

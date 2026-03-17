@@ -4,23 +4,23 @@ import Image from "next/image";
 import { frServices } from "@/data/fr-services";
 
 export const metadata: Metadata = {
-  title: "Services - Reparation Vaillant Bruxelles | Villant Plombier",
+  title: "Services - Réparation Vaillant Belgique | Vaillant Plombier",
   description:
-    "Tous les services de plomberie et de chauffage a Bruxelles : reparation Vaillant, remplacement de chaudiere, fuite d'eau, sanitaire et entretien.",
+    "Tous les services de plomberie et de chauffage en Belgique : réparation Vaillant, remplacement de chaudière, fuite d'eau, sanitaire et entretien.",
   keywords: [
-    "reparation Vaillant Bruxelles",
-    "remplacement chaudiere Bruxelles",
-    "installation chauffage Bruxelles",
-    "reparation fuite d'eau Bruxelles",
-    "installation sanitaire Bruxelles",
+    "réparation Vaillant Belgique",
+    "remplacement chaudière Belgique",
+    "installation chauffage Belgique",
+    "réparation fuite d'eau Belgique",
+    "installation sanitaire Belgique",
     "contrat d'entretien Vaillant",
   ],
-  alternates: { canonical: "https://villant-loodgieter.be/services" },
+  alternates: { canonical: "https://vaillant-loodgieter.be/services" },
   openGraph: {
-    title: "Services - Reparation Vaillant Bruxelles | Villant Plombier",
+    title: "Services - Réparation Vaillant Belgique | Vaillant Plombier",
     description:
-      "Decouvrez l'ensemble de nos services de plomberie et chauffage a Bruxelles.",
-    url: "https://villant-loodgieter.be/services",
+      "Découvrez l'ensemble de nos services de plomberie et chauffage en Belgique.",
+    url: "https://vaillant-loodgieter.be/services",
   },
 };
 
@@ -40,7 +40,7 @@ export default function ServicesPage() {
             Services certifies Vaillant
           </span>
           <h1 style={{ marginBottom: "1rem" }}>
-            Tous nos services plomberie et chauffage a Bruxelles
+            Tous nos services plomberie et chauffage en Belgique
           </h1>
           <p style={{ fontSize: "1.1rem", maxWidth: "60ch", marginBottom: "2rem" }}>
             Une page de service dediee est disponible pour chaque intervention.

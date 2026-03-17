@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Cookiebeleid | Villant Loodgieter',
+  title: 'Cookiebeleid | vaillant Loodgieter',
   description:
-    'Cookiebeleid – Villant Loodgieter. Soorten cookies, beheer van toestemming en browserinstellingen.',
+    'Cookiebeleid – vaillant Loodgieter. Soorten cookies, beheer van toestemming en browserinstellingen.',
 };
 
 export default function CookiesPage() {

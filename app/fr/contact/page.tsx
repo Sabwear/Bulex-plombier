@@ -3,19 +3,19 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'Contact – Plombier Vaillant Bruxelles | Villant Plombier',
+  title: 'Contact – Plombier Vaillant Belgique | Vaillant Plombier',
   description:
-    'Contactez Villant Plombier – votre plombier certifié Vaillant à Bruxelles. Envoyez un e-mail à contact@villant-loodgieter.be pour un devis ou un service d\'urgence.',
+    'Contactez Vaillant Plombier – votre plombier certifié Vaillant en Belgique. Envoyez un e-mail à contact@vaillant-loodgieter.be pour un devis ou un service d\'urgence.',
   keywords: [
-    'contact plombier Vaillant Bruxelles',
-    'plombier urgence Bruxelles',
-    'demande réparation Vaillant Bruxelles',
+    'contact plombier Vaillant Belgique',
+    'plombier urgence Belgique',
+    'demande réparation Vaillant Belgique',
   ],
-  alternates: { canonical: 'https://villant-loodgieter.be/contact' },
+  alternates: { canonical: 'https://vaillant-loodgieter.be/contact' },
   openGraph: {
-    title: 'Contact – Villant Plombier',
-    description: 'Contactez votre plombier certifié Vaillant à Bruxelles.',
-    url: 'https://villant-loodgieter.be/contact',
+    title: 'Contact – Vaillant Plombier',
+    description: 'Contactez votre plombier certifié Vaillant en Belgique.',
+    url: 'https://vaillant-loodgieter.be/contact',
   },
 };
 
@@ -31,10 +31,10 @@ export default function ContactPage() {
         <div className="container">
           <span className="badge badge-green" style={{ marginBottom: '1rem' }}>Contact</span>
           <h1 style={{ marginBottom: '1rem' }}>
-            Contactez votre plombier Vaillant à Bruxelles
+            Contactez votre plombier Vaillant en Belgique
           </h1>
           <p style={{ fontSize: '1.1rem', maxWidth: '55ch', marginBottom: '2rem' }}>
-            Vous avez un problème de plomberie, vous souhaitez demander un devis ou discuter d'un contrat d'entretien ? Villant Plombier est à votre disposition.
+            Vous avez un problème de plomberie, vous souhaitez demander un devis ou discuter d'un contrat d'entretien ? vaillant Plombier est à votre disposition.
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
             <Link href="/demande-devis" className="btn btn-primary">Demander un devis</Link>
@@ -62,8 +62,8 @@ export default function ContactPage() {
                   </span>
                   <div>
                     <h4 style={{ marginBottom: '0.3rem' }}>E-mail</h4>
-                    <a href="mailto:contact@villant-loodgieter.be" style={{ fontWeight: 600, color: 'var(--color-primary)' }}>
-                      contact@villant-loodgieter.be
+                    <a href="mailto:contact@vaillant-loodgieter.be" style={{ fontWeight: 600, color: 'var(--color-primary)' }}>
+                      contact@vaillant-loodgieter.be
                     </a>
                     <p style={{ fontSize: '0.85rem', marginTop: '0.3rem' }}>
                       Envoyez un e-mail avec votre question, votre adresse et une description du problème. Nous vous répondrons dans les plus brefs délais.
@@ -90,7 +90,7 @@ export default function ContactPage() {
                   <div>
                     <h4 style={{ marginBottom: '0.3rem' }}>Zone d'intervention</h4>
                     <p style={{ fontSize: '0.9rem' }}>
-                      Bruxelles, Belgique — les 19 communes de Bruxelles. Fiers de travailler à Bruxelles et ses environs.
+                      Belgique — interventions selon la disponibilité de nos équipes et la nature de l’intervention.
                     </p>
                     <Link href="/brussel" style={{ fontSize: '0.88rem', fontWeight: 600, color: 'var(--color-primary)', marginTop: '0.5rem', display: 'inline-block' }}>
                       Voir notre zone d'intervention →
@@ -104,8 +104,8 @@ export default function ContactPage() {
                   </span>
                   <div>
                     <h4 style={{ marginBottom: '0.3rem' }}>Site web</h4>
-                    <a href="https://villant-loodgieter.be" style={{ fontWeight: 600, color: 'var(--color-primary)' }}>
-                      villant-loodgieter.be
+                    <a href="https://vaillant-loodgieter.be" style={{ fontWeight: 600, color: 'var(--color-primary)' }}>
+                      vaillant-loodgieter.be
                     </a>
                   </div>
                 </div>
@@ -118,7 +118,7 @@ export default function ContactPage() {
               <h2 style={{ marginTop: '0.75rem', marginBottom: '1.5rem' }}>Envoyez votre demande</h2>
 
               <div className="card" style={{ marginBottom: '1.5rem' }}>
-                <form action="mailto:contact@villant-loodgieter.be" method="post" encType="text/plain" style={{ display: 'grid', gap: '0.85rem' }}>
+                <form action="mailto:contact@vaillant-loodgieter.be" method="post" encType="text/plain" style={{ display: 'grid', gap: '0.85rem' }}>
                   <input
                     name="Nom"
                     required
@@ -135,7 +135,7 @@ export default function ContactPage() {
                   <input
                     name="Adresse"
                     required
-                    placeholder="Adresse à Bruxelles"
+                    placeholder="Adresse (ville)"
                     style={{ width: '100%', border: '1px solid var(--border)', borderRadius: 'var(--radius)', padding: '0.7rem 0.8rem' }}
                   />
                   <textarea
@@ -156,7 +156,7 @@ export default function ContactPage() {
               <div className="card" style={{ marginBottom: '1.5rem' }}>
                 <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                   {[
-                    { icon: 'plumber-1.svg', label: 'Votre adresse', sub: 'Rue, numéro de maison, commune à Bruxelles' },
+                    { icon: 'plumber-1.svg', label: 'Votre adresse', sub: 'Rue, numéro, commune/ville' },
                     { icon: 'wrench-2.svg', label: 'Type de problème', sub: 'Chaudière, fuite d\'eau, sanitaire, chauffage...' },
                     { icon: 'boiler-1.svg', label: 'Marque et modèle', sub: 'Ex. Vaillant ecoTEC VU 26/5-5 (le cas échéant)' },
                     { icon: 'wrench-1.svg', label: 'Urgence', sub: '"URGENCE" pour les cas d\'urgence' },
@@ -181,7 +181,7 @@ export default function ContactPage() {
                 borderRadius: 'var(--radius-lg)',
                 padding: '1.75rem',
               }}>
-                <h3 style={{ color: '#fff', marginBottom: '1rem', fontSize: '1rem' }}>Pourquoi faire confiance à Villant Plombier ?</h3>
+                <h3 style={{ color: '#fff', marginBottom: '1rem', fontSize: '1rem' }}>Pourquoi faire confiance à vaillant Plombier ?</h3>
                 <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
                   {[
                     { icon: 'plumber-1.svg', text: 'Partenaire certifié Vaillant, travaillant en Belgique' },
@@ -212,11 +212,11 @@ export default function ContactPage() {
           </div>
           <div className="grid-3-strict">
             {[
-              { icon: 'wrench.svg', title: 'Réparation Vaillant Bruxelles' },
-              { icon: 'water-heater-1.svg', title: 'Remplacement de chaudière Bruxelles' },
-              { icon: 'pipes.svg', title: 'Réparation de fuite d\'eau Bruxelles' },
-              { icon: 'bathtub.svg', title: 'Installation sanitaire Bruxelles' },
-              { icon: 'radiator.svg', title: 'Nouveau chauffage Bruxelles' },
+              { icon: 'wrench.svg', title: 'Réparation Vaillant' },
+              { icon: 'water-heater-1.svg', title: 'Remplacement de chaudière' },
+              { icon: 'pipes.svg', title: 'Réparation de fuite d\'eau' },
+              { icon: 'bathtub.svg', title: 'Installation sanitaire' },
+              { icon: 'radiator.svg', title: 'Nouveau chauffage' },
               { icon: 'gauge.svg', title: 'Contrat d\'entretien Vaillant' },
             ].map((s) => (
               <div key={s.title} style={{
@@ -247,7 +247,7 @@ export default function ContactPage() {
           </div>
           {[
             { q: 'Dans quel délai répondez-vous à un e-mail ?', a: 'Nous visons une réponse rapide. En cas d\'urgence, veuillez indiquer « URGENCE » dans l\'objet de votre e-mail — cela donnera la priorité à votre message dans notre planification.' },
-            { q: 'Puis-je également vous contacter par téléphone ?', a: 'Notre principal moyen de contact est l\'e-mail via contact@villant-loodgieter.be. Les coordonnées téléphoniques seront ajoutées prochainement. Vous pouvez mentionner votre numéro de téléphone dans votre e-mail si vous souhaitez être rappelé.' },
+            { q: 'Puis-je également vous contacter par téléphone ?', a: 'Notre principal moyen de contact est l\'e-mail via contact@vaillant-loodgieter.be. Les coordonnées téléphoniques seront ajoutées prochainement. Vous pouvez mentionner votre numéro de téléphone dans votre e-mail si vous souhaitez être rappelé.' },
             { q: 'Fournissez-vous un devis avant de commencer les travaux ?', a: 'Oui, toujours. Nous ne commençons jamais une intervention sans vous fournir au préalable un diagnostic clair et un devis. Pas de frais cachés.' },
           ].map((faq, i) => (
             <details key={i} className="faq-item">
@@ -262,7 +262,7 @@ export default function ContactPage() {
       <section className="cta-band">
         <div className="container" style={{ maxWidth: '600px' }}>
           <h2>Prêt à nous contacter ?</h2>
-          <p>Envoyez un e-mail à <strong style={{ color: 'rgba(255,255,255,0.95)' }}>contact@villant-loodgieter.be</strong> — votre plombier certifié Vaillant à Bruxelles vous répondra dans les plus brefs délais.</p>
+          <p>Envoyez un e-mail à <strong style={{ color: 'rgba(255,255,255,0.95)' }}>contact@vaillant-loodgieter.be</strong> — votre plombier certifié Vaillant en Belgique vous répondra dans les plus brefs délais.</p>
           <div className="cta-actions">
             <Link href="/demande-devis" className="btn btn-ghost-dark">Demander un devis</Link>
             <Link href="/over-ons" className="btn btn-ghost-dark">

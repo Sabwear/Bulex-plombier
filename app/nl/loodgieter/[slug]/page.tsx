@@ -56,7 +56,7 @@ function getIntroNl(commune: Commune): string {
 }
 
 function buildJsonLd(commune: Commune, basePath: string) {
-  const baseUrl = "https://villant-loodgieter.be";
+  const baseUrl = "https://vaillant-loodgieter.be";
   const url = `${baseUrl}${basePath}/${commune.slug}`;
   return [
     {
@@ -90,19 +90,19 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const commune = getCityBySlug("nl", slug);
   if (!commune) return {};
-  const baseUrl = "https://villant-loodgieter.be";
+  const baseUrl = "https://vaillant-loodgieter.be";
   let desc = `Vaillant loodgieter in ${commune.name}.`;
   if (commune.nearby_landmarks.length > 0) desc += ` Snelle interventie nabij ${commune.nearby_landmarks[0]}.`;
   if (commune.common_issues.length > 0) desc += ` ${commune.common_issues[0]}.`;
   return {
-    title: `Vaillant loodgieter in ${commune.name} | Villant Loodgieter`,
+    title: `Vaillant loodgieter in ${commune.name} | vaillant Loodgieter`,
     description: desc,
     alternates: { canonical: `${baseUrl}/nl/loodgieter/${commune.slug}` },
     openGraph: {
       type: "website",
       locale: "nl_BE",
       url: `${baseUrl}/nl/loodgieter/${commune.slug}`,
-      siteName: "Villant Loodgieter",
+      siteName: "vaillant Loodgieter",
       title: `Vaillant loodgieter in ${commune.name}`,
       description: desc,
     },

@@ -7,6 +7,7 @@ import blogStyles from '@/app/fr/blog/blog.module.css';
 import { getBlogPosts } from '@/data/types';
 import HomeHeroSlider from '@/components/hero/HomeHeroSlider';
 import { HOME_HERO_TRUST_STRIP } from '@/config/home-hero-slides';
+import CertificationLogosMarquee from '@/components/CertificationLogosMarquee';
 import {
   Mail, Award, Zap, Globe, UserCheck,
   Wrench, Settings, Construction,
@@ -14,21 +15,21 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Plombier Vaillant Bruxelles | Villant Plombier',
+  title: 'Plombier Vaillant Belgique | Vaillant Plombier',
   description:
-    "Villant Plombier – votre plombier certifié Vaillant à Bruxelles. Dépannage urgence, remplacement de chaudière, réparation de fuite d'eau et installation sanitaire à Bruxelles.",
+    "Vaillant Plombier – votre plombier certifié Vaillant en Belgique. Dépannage urgence, remplacement de chaudière, réparation de fuite d'eau et installation sanitaire.",
   keywords: [
-    'plombier Vaillant Bruxelles',
-    'plombier urgence Bruxelles',
-    'remplacement chaudière Bruxelles',
-    'réparation fuite d\'eau Bruxelles',
+    'plombier Vaillant Belgique',
+    'plombier urgence Belgique',
+    'remplacement chaudière Belgique',
+    'réparation fuite d\'eau Belgique',
     'partenaire certifié Vaillant Belgique',
   ],
-  alternates: { canonical: 'https://villant-loodgieter.be' },
+  alternates: { canonical: 'https://vaillant-loodgieter.be' },
   openGraph: {
-    title: 'Plombier Vaillant Bruxelles | Villant Plombier',
-    description: 'Partenaire certifié Vaillant à Bruxelles. Professionnel, rapide et fiable.',
-    url: 'https://villant-loodgieter.be',
+    title: 'Plombier Vaillant Belgique | Vaillant Plombier',
+    description: 'Partenaire certifié Vaillant en Belgique. Professionnel, rapide et fiable.',
+    url: 'https://vaillant-loodgieter.be',
   },
 };
 
@@ -85,7 +86,7 @@ export default function HomePage() {
               <div className="card" style={{ padding: 0, overflow: 'hidden' }}>
                 <NextImage
                   src="/images/slider-vaillant-1.png"
-                  alt="Technicien Vaillant certifié à Bruxelles"
+                  alt="Technicien Vaillant certifié en Belgique"
                   width={640}
                   height={640}
                   className="w-full h-auto object-cover"
@@ -97,54 +98,67 @@ export default function HomePage() {
             <div>
               <span className="badge badge-green">À propos de nous</span>
               <h2 style={{ marginTop: '1rem', marginBottom: '0.75rem' }}>
-                Villant Plombier en quelques mots
+                Vaillant Plombier en quelques mots
               </h2>
               <p style={{ marginBottom: '1rem' }}>
-                Basé à <strong>Bruxelles</strong>, <strong>Villant Plombier</strong> est un <strong>partenaire certifié Vaillant</strong> spécialisé
-                dans le <strong>chauffage</strong> et la <strong>plomberie résidentiels</strong>. Notre équipe intervient chaque jour
-                dans les <strong>appartements bruxellois</strong> pour <strong>l&apos;entretien</strong>, la <strong>réparation</strong> et le
-                <strong>remplacement de chaudières</strong>, ainsi que pour les <strong>fuites d&apos;eau</strong> et les
+                Basé en <strong>Belgique</strong>, <strong>Vaillant Plombier</strong> est un <strong>partenaire certifié Vaillant</strong> spécialisé
+                dans le <strong>chauffage</strong> et la <strong>plomberie résidentiels</strong>. Notre équipe intervient chaque jour dans toute
+                <strong> Vlaanderen</strong> pour <strong>l&apos;entretien</strong>, la <strong>réparation</strong> et le
+                <strong> remplacement de chaudières</strong>, ainsi que pour les <strong>fuites d&apos;eau</strong> et les
                 <strong> installations sanitaires</strong>.
               </p>
               <p style={{ marginBottom: '1.25rem' }}>
-                Nous privilégions un diagnostic clair avant toute intervention, une communication
-                honnête et des pièces d&apos;origine Vaillant pour que votre installation reste
-                fiable sur le long terme.
+                Nous privilégions un <strong>diagnostic clair</strong> avant toute intervention, une <strong>communication honnête</strong> et
+                l&apos;utilisation de <strong>pièces d&apos;origine Vaillant</strong> afin de garantir la <strong>fiabilité</strong> de votre
+                installation sur le long terme.
               </p>
               <div style={{ marginBottom: '1.5rem' }}>
                 <p style={{ marginBottom: '0.9rem', fontSize: '0.95rem', color: 'rgb(71,85,105)' }}>
-                  En choisissant Villant Plombier, vous bénéficiez d&apos;un partenaire reconnu pour la qualité de son travail et la fiabilité de son accompagnement :
+                  En choisissant <strong>Vaillant Plombier</strong>, vous bénéficiez d&apos;un partenaire reconnu pour la <strong>qualité</strong>
+                  de son travail et la <strong>fiabilité</strong> de son accompagnement :
                 </p>
                 <div style={{ display: 'grid', rowGap: '0.65rem' }}>
-                {[
-                  {
-                    icon: '/icons/plumbing-elements/plumber-1.svg',
-                    label: 'Partenaire officiellement certifié Vaillant en Belgique',
-                  },
-                  {
-                    icon: '/icons/plumbing-elements/wrench-2.svg',
-                    label: 'Techniciens expérimentés, formés directement par le fabricant',
-                  },
-                  {
-                    icon: '/icons/plumbing-elements/pipes-7.svg',
-                    label: 'Interventions rapides dans toutes les communes de Bruxelles',
-                  },
-                ].map((item) => (
-                  <div
-                    key={item.label}
-                    style={{ display: 'flex', gap: '0.6rem', alignItems: 'flex-start' }}
-                  >
-                    <NextImage
-                      src={item.icon}
-                      alt=""
-                      width={20}
-                      height={20}
-                      className="h-5 w-5"
-                      style={{ marginTop: '2px' }}
-                    />
-                    <span style={{ fontSize: '0.95rem' }}>{item.label}</span>
-                  </div>
-                ))}
+                  {[
+                    {
+                      icon: '/icons/plumbing-elements/plumber-1.svg',
+                      label: (
+                        <>
+                          Partenaire officiellement <strong>certifié Vaillant</strong> en <strong>Belgique</strong>
+                        </>
+                      ),
+                    },
+                    {
+                      icon: '/icons/plumbing-elements/wrench-2.svg',
+                      label: (
+                        <>
+                          Techniciens <strong>expérimentés</strong>, formés directement par le <strong>fabricant</strong>
+                        </>
+                      ),
+                    },
+                    {
+                      icon: '/icons/plumbing-elements/pipes-7.svg',
+                      label: (
+                        <>
+                          <strong>Interventions rapides</strong> dans toute <strong>Vlaanderen</strong>
+                        </>
+                      ),
+                    },
+                  ].map((item) => (
+                    <div
+                      key={typeof item.label === 'string' ? item.label : item.icon}
+                      style={{ display: 'flex', gap: '0.6rem', alignItems: 'flex-start' }}
+                    >
+                      <NextImage
+                        src={item.icon}
+                        alt=""
+                        width={20}
+                        height={20}
+                        className="h-5 w-5"
+                        style={{ marginTop: '2px' }}
+                      />
+                      <span style={{ fontSize: '0.95rem' }}>{item.label}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
               <Link href="/fr/a-propos" className="btn btn-primary">
@@ -159,10 +173,10 @@ export default function HomePage() {
       <section className="py-16 md:py-20">
         <div className="container">
           <div className="section-header">
-            <span className="badge badge-green">Pourquoi choisir Villant Plombier</span>
+            <span className="badge badge-green">Pourquoi choisir vaillant Plombier</span>
             <h2>Vos avantages en tant que client</h2>
             <div className="divider" />
-            <p>En tant que partenaire certifié Vaillant, nous offrons une qualité mesurable — pas seulement des promesses. Nos techniciens combinent une formation du fabricant avec des années d'expérience pratique à Bruxelles.</p>
+            <p>En tant que partenaire certifié Vaillant, nous offrons une qualité mesurable — pas seulement des promesses. Nos techniciens combinent une formation du fabricant avec des années d'expérience pratique en Belgique.</p>
           </div>
 
           <div className="grid-3-strict">
@@ -171,7 +185,7 @@ export default function HomePage() {
               { icon: <Wrench size={32} />, title: 'Techniciens qualifiés et expérimentés', desc: "Chaque membre de notre équipe est qualifié et possède une solide expérience en systèmes de chauffage et sanitaires. Vous ne travaillerez jamais avec des novices — un travail d'artisan certifié." },
               { icon: <Construction size={32} />, title: 'Approche transparente sans surprise', desc: "Nous vous fournissons un diagnostic clair avant de commencer. Pas de coûts cachés, pas de surprises sur la facture. Chaque intervention est documentée et détaillée." },
               { icon: <Settings size={32} />, title: 'Pièces Vaillant originales', desc: "Lors de chaque réparation, nous utilisons exclusivement des pièces d'origine Vaillant — afin que votre garantie reste valide et que le système continue de fonctionner de manière optimale." },
-              { icon: <MapPin size={32} />, title: 'Connaissance locale de Bruxelles', desc: "Nous connaissons les défis spécifiques des logements bruxellois : vieilles canalisations, qualité de l'eau urbaine et normes de construction. Cela nous rend rapides et précis." },
+              { icon: <MapPin size={32} />, title: 'Connaissance locale en Belgique', desc: "Nous connaissons les défis spécifiques des logements : canalisations vieillissantes, qualité de l'eau et normes de construction. Cela nous rend rapides et précis." },
               { icon: <Thermometer size={32} />, title: 'Contrat d\'entretien disponible', desc: "Protégez votre investissement avec un contrat d'entretien Vaillant. L'entretien annuel prolonge la durée de vie de votre chaudière et maintient ses performances énergétiques." },
             ].map((b) => (
               <div key={b.title} className="card">
@@ -194,18 +208,18 @@ export default function HomePage() {
         <div className="container">
           <div className="section-header">
             <span className="badge badge-green">Nos Services</span>
-            <h2>Ce que nous faisons à Bruxelles</h2>
+            <h2>Ce que nous faisons en Belgique</h2>
             <div className="divider" />
-            <p>Des services d'urgence aux installations complètes — nous couvrons toutes les facettes de la plomberie et du chauffage à Bruxelles.</p>
+            <p>Des services d'urgence aux installations complètes — nous couvrons toutes les facettes de la plomberie et du chauffage en Belgique.</p>
           </div>
 
           <div className="grid-3-strict">
             {[
-              { image: '/images/service/1.jpg', icon: <Wrench size={32} />, title: 'Réparation Vaillant Bruxelles', desc: "Problème avec votre chaudière Vaillant ? Nos techniciens certifiés diagnostiquent et réparent tous les modèles Vaillant avec rapidité et précision.", link: '/fr/services#vaillant-herstelling' },
-              { image: '/images/service/2.jpg', icon: <Thermometer size={32} />, title: 'Remplacement Chaudière Bruxelles', desc: "Votre ancienne chaudière est en fin de vie ? Nous installons une nouvelle chaudière Vaillant économe en énergie avec mise en service complète.", link: '/fr/services#boiler-vervangen' },
-              { image: '/images/service/3.jpg', icon: <Grid size={32} />, title: 'Installation d\'un Nouveau Chauffage', desc: "Des projets de nouveau chauffage à Bruxelles ? Nous concevons et installons un système adapté à votre domicile ou vos locaux professionnels.", link: '/fr/services#verwarming' },
-              { image: '/images/service/4.jpg', icon: <Construction size={32} />, title: 'Réparation Fuite d\'Eau Bruxelles', desc: "Une fuite d'eau cause rapidement des dégâts. Notre équipe localise et répare les fuites immédiatement pour éviter de graves dommages à votre propriété.", link: '/fr/services#waterlek' },
-              { image: '/images/service/5.jpg', icon: <Bath size={32} />, title: 'Installation Sanitaire Bruxelles', desc: "Rénovation de salle de bain ou appareils sanitaires ? Nous installons tout de manière experte : toilettes, douche, baignoire, lavabo et plus.", link: '/fr/services#sanitair' },
+              { image: '/images/service/1.jpg', icon: <Wrench size={32} />, title: 'Réparation Vaillant', desc: "Problème avec votre chaudière Vaillant ? Nos techniciens certifiés diagnostiquent et réparent tous les modèles Vaillant avec rapidité et précision.", link: '/fr/services#vaillant-herstelling' },
+              { image: '/images/service/2.jpg', icon: <Thermometer size={32} />, title: 'Remplacement de chaudière', desc: "Votre ancienne chaudière est en fin de vie ? Nous installons une nouvelle chaudière Vaillant économe en énergie avec mise en service complète.", link: '/fr/services#boiler-vervangen' },
+              { image: '/images/service/3.jpg', icon: <Grid size={32} />, title: 'Installation d\'un nouveau chauffage', desc: "Des projets de nouveau chauffage ? Nous concevons et installons un système adapté à votre domicile ou vos locaux professionnels.", link: '/fr/services#verwarming' },
+              { image: '/images/service/4.jpg', icon: <Construction size={32} />, title: 'Réparation de fuite d\'eau', desc: "Une fuite d'eau cause rapidement des dégâts. Notre équipe localise et répare les fuites immédiatement pour éviter de graves dommages à votre propriété.", link: '/fr/services#waterlek' },
+              { image: '/images/service/5.jpg', icon: <Bath size={32} />, title: 'Installation sanitaire', desc: "Rénovation de salle de bain ou appareils sanitaires ? Nous installons tout de manière experte : toilettes, douche, baignoire, lavabo et plus.", link: '/fr/services#sanitair' },
               { image: '/images/service/6.jpg', icon: <Gauge size={32} />, title: 'Contrat d\'Entretien Vaillant', desc: "Entretien annuel de votre installation Vaillant. Comprend l'inspection, le nettoyage et un rapport pour des performances et une durabilité garanties.", link: '/fr/services#onderhoud' },
             ].map((s) => (
               <div key={s.title} className="card">
@@ -230,6 +244,62 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── CERTIFICATION ──────────────────────────────────── */}
+      <section className="py-16 md:py-20" style={{ background: 'var(--color-gray-50)' }}>
+        <div className="container">
+          <div
+            className="grid-2"
+            style={{
+              alignItems: 'center',
+              gap: '2rem',
+              background: '#fff',
+              border: '1px solid var(--border)',
+              borderRadius: 'var(--radius-lg)',
+              padding: '2.25rem',
+              boxShadow: 'var(--shadow-sm)',
+            }}
+          >
+            <div>
+              <span className="badge badge-green">Certification</span>
+              <h2 style={{ marginTop: '1rem', marginBottom: '0.75rem' }}>
+                Partenaire <strong>certifié Vaillant</strong>
+              </h2>
+              <p style={{ marginBottom: '1rem' }}>
+                En tant que <strong>partenaire officiellement certifié</strong>, nos techniciens suivent des formations directes du
+                fabricant et appliquent des procédures conformes aux standards Vaillant.
+              </p>
+              <p style={{ marginBottom: '1.25rem' }}>
+                Résultat : un <strong>diagnostic clair</strong>, des <strong>pièces d&apos;origine</strong> quand nécessaire et une
+                installation <strong>fiable</strong> sur le long terme.
+              </p>
+              <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+                <a href="mailto:contact@vaillant-loodgieter.be" className="btn btn-primary">
+                  Demander une intervention
+                </a>
+                <Link href="/fr/a-propos" className="btn btn-outline">
+                  Voir notre certification →
+                </Link>
+              </div>
+            </div>
+
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+              <NextImage
+                src="/RFID.png"
+                alt="Carte partenaire certifié Vaillant"
+                width={900}
+                height={520}
+                style={{ width: 'min(520px, 100%)', height: 'auto', objectFit: 'contain' }}
+                priority={false}
+              />
+            </div>
+          </div>
+
+          <div style={{ marginTop: '18px' }}>
+            <CertificationLogosMarquee />
+          </div>
+        </div>
+      </section>
+
       {/* ── PROOF ──────────────────────────────────────────── */}
       <section className="py-16 md:py-20">
         <div className="container">
@@ -237,16 +307,24 @@ export default function HomePage() {
             <span className="badge badge-green">Preuve &amp; Confiance</span>
             <h2>Pourquoi les clients nous font confiance</h2>
             <div className="divider" />
-            <p>Deux points concrets et vérifiables distinguent Villant Plombier des plombiers génériques à Bruxelles.</p>
+            <p>Deux points concrets et vérifiables distinguent Vaillant Plombier des plombiers génériques en Belgique.</p>
           </div>
 
           {/* Proof cards */}
           <div className="grid-2" style={{ marginBottom: '40px' }}>
             {[
               {
-                icon: <Award size={48} color="var(--color-primary)" />,
+                icon: (
+                  <NextImage
+                    src="/vaillant-partner.png"
+                    alt="Partenaire certifié Vaillant"
+                    width={180}
+                    height={60}
+                    style={{ height: '48px', width: 'auto', objectFit: 'contain' }}
+                  />
+                ),
                 title: 'Partenaire certifié Vaillant',
-                body: "Villant Plombier est officiellement certifié partenaire par Vaillant, l'un des principaux fabricants européens de systèmes de chauffage. Notre certification est accordée directement par le constructeur et reflète une réelle expertise de la marque.",
+                body: "vaillant Plombier est officiellement certifié partenaire par Vaillant, l'un des principaux fabricants européens de systèmes de chauffage. Notre certification est accordée directement par le constructeur et reflète une réelle expertise de la marque.",
               },
               {
                 icon: <UserCheck size={48} color="var(--color-primary)" />,
@@ -263,6 +341,25 @@ export default function HomePage() {
           </div>
 
           <TestimonialsCarousel />
+
+          <div style={{ marginTop: '28px', display: 'grid', gap: '14px', justifyItems: 'center' }}>
+            <NextImage
+              src="/google-avis.png"
+              alt="Avis Google"
+              width={520}
+              height={160}
+              style={{ height: '164px', maxWidth: '520px', width: '100%', objectFit: 'contain' }}
+              priority={false}
+            />
+            <a
+              href={process.env.NEXT_PUBLIC_GOOGLE_REVIEW_URL ?? 'https://www.google.com/search?q=Vaillant+Plombier+avis'}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary"
+            >
+              Laisser un avis Google
+            </a>
+          </div>
         </div>
       </section>
 
@@ -357,7 +454,7 @@ export default function HomePage() {
               {
                 n: '1',
                 title: 'Demande de devis',
-                desc: "Remplissez la page de demande de devis ou envoyez un e-mail à contact@villant-loodgieter.be. Décrivez votre problème ou votre projet le plus précisément possible.",
+                desc: "Remplissez la page de demande de devis ou envoyez un e-mail à contact@vaillant-loodgieter.be. Décrivez votre problème ou votre projet le plus précisément possible.",
               },
               {
                 n: '2',
@@ -397,12 +494,12 @@ export default function HomePage() {
             <div className="divider" />
           </div>
           {[
-            { q: 'Êtes-vous un partenaire officiel certifié Vaillant ?', a: "Oui. Villant Plombier est officiellement certifié par la marque Vaillant. Nos techniciens participent aux formations directes du fabricant et sont reconnus pour l'installation, l'entretien et la réparation des systèmes Vaillant en Belgique." },
-            { q: 'Combien coûte une réparation de chaudière Vaillant à Bruxelles ?', a: "Le coût final dépend du défaut spécifique et des pièces Vaillant nécessaires. Nous faisons toujours un diagnostic sur place et nous fournissons un devis clair. Pas de frais supplémentaires surprises. Écrivez à contact@villant-loodgieter.be pour une estimation." },
+            { q: 'Êtes-vous un partenaire officiel certifié Vaillant ?', a: "Oui. vaillant Plombier est officiellement certifié par la marque Vaillant. Nos techniciens participent aux formations directes du fabricant et sont reconnus pour l'installation, l'entretien et la réparation des systèmes Vaillant en Belgique." },
+            { q: 'Combien coûte une réparation de chaudière Vaillant en Belgique ?', a: "Le coût final dépend du défaut spécifique et des pièces Vaillant nécessaires. Nous faisons toujours un diagnostic sur place et nous fournissons un devis clair. Pas de frais supplémentaires surprises. Écrivez à contact@vaillant-loodgieter.be pour une estimation." },
             { q: 'À quelle vitesse pouvez-vous intervenir en cas d\'urgence ?', a: "Nous visons l'intervention la plus rapide possible pour les pannes totales de chauffage et de l'eau. Mentionnez « URGENCE » dans l'en-tête de votre e-mail pour que votre demande soit priorisée." },
             { q: 'Quels appareils Vaillant réparez-vous ?', a: "Nous réparons et entretenons tous les modèles Vaillant, en incluant les chaudières murales à gaz (série ecoTEC, turboTEC), ainsi que les différentes solutions thermodynamiques et les pompes à chaleur de la marque." },
             { q: 'Proposez-vous un contrat d\'entretien pour les installations Vaillant ?', a: "Oui, un contrat d'entretien de chauffage Vaillant complet incluant la révision annuelle, le nettoyage et la vérification des réglages. L'entretien obligatoire augmente la durabilité et optimise le fonctionnement de votre appareil." },
-            { q: 'Quelles communes sont couvertes par Villant Plombier à Bruxelles ?', a: "Toute la Région de Bruxelles-Capitale. De Anderlecht, Ixelles, Schaerbeek à Uccle en passant par Woluwe ou Saint-Gilles." },
+            { q: 'Quelles zones sont couvertes par Vaillant Plombier ?', a: "Nous intervenons dans plusieurs villes et régions en Belgique selon la disponibilité de nos équipes et la nature de l’intervention." },
           ].map((faq, i) => (
             <details key={i} className="faq-item">
               <summary>{faq.q}</summary>
@@ -417,7 +514,7 @@ export default function HomePage() {
         <div className="container">
           <div className="section-header">
             <span className="badge badge-green">Blog & Conseils</span>
-            <h2>Dernières actualités de Villant Plombier</h2>
+            <h2>Dernières actualités de vaillant Plombier</h2>
             <div className="divider" />
             <p>Découvrez nos conseils d&apos;experts pour l&apos;entretien et l&apos;optimisation de votre chaudière Vaillant.</p>
           </div>
@@ -446,24 +543,156 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── CONTACT (HOMEPAGE) ─────────────────────────────── */}
+      <section
+        className="py-16 md:py-20"
+        style={{
+          background:
+            "radial-gradient(1200px 600px at 20% -10%, rgba(0,173,171,0.22), transparent 60%), radial-gradient(900px 520px at 85% 10%, rgba(34,197,94,0.14), transparent 55%), linear-gradient(180deg, #062433 0%, #041A25 100%)",
+        }}
+      >
+        <div className="container">
+          <div className="section-header" style={{ color: '#EAF6F7' }}>
+            <span className="badge badge-gold">Contact</span>
+            <h2 style={{ marginTop: '1rem', color: '#fff' }}>Demander une intervention</h2>
+            <div className="divider" />
+            <p style={{ color: 'rgba(234,246,247,0.80)' }}>
+              Envoyez votre demande. Nous revenons vers vous rapidement avec une réponse claire.
+            </p>
+          </div>
+
+          <div
+            style={{
+              maxWidth: '760px',
+              margin: '0 auto',
+              borderRadius: '22px',
+              padding: '18px',
+              background:
+                'linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.06) 100%)',
+              border: '1px solid rgba(148,163,184,0.22)',
+              boxShadow: '0 22px 60px rgba(0,0,0,0.22)',
+            }}
+          >
+            <form
+              action="mailto:contact@vaillant-loodgieter.be"
+              method="post"
+              encType="text/plain"
+              style={{ display: 'grid', gap: '12px' }}
+            >
+              <input
+                name="Nom Prénom"
+                required
+                placeholder="Nom Prénom *"
+                style={{
+                  width: '100%',
+                  borderRadius: '999px',
+                  padding: '14px 16px',
+                  border: '1px solid rgba(148,163,184,0.40)',
+                  outline: 'none',
+                  background: 'rgba(255,255,255,0.96)',
+                }}
+              />
+              <input
+                name="Numéro de téléphone"
+                required
+                inputMode="tel"
+                placeholder="Numéro de téléphone *"
+                style={{
+                  width: '100%',
+                  borderRadius: '999px',
+                  padding: '14px 16px',
+                  border: '1px solid rgba(148,163,184,0.40)',
+                  outline: 'none',
+                  background: 'rgba(255,255,255,0.96)',
+                }}
+              />
+              <input
+                name="Type d'intervention"
+                placeholder="Type d'intervention"
+                style={{
+                  width: '100%',
+                  borderRadius: '999px',
+                  padding: '14px 16px',
+                  border: '1px solid rgba(148,163,184,0.40)',
+                  outline: 'none',
+                  background: 'rgba(255,255,255,0.96)',
+                }}
+              />
+              <input
+                name="Adresse"
+                placeholder="Adresse"
+                style={{
+                  width: '100%',
+                  borderRadius: '999px',
+                  padding: '14px 16px',
+                  border: '1px solid rgba(148,163,184,0.40)',
+                  outline: 'none',
+                  background: 'rgba(255,255,255,0.96)',
+                }}
+              />
+              <textarea
+                name="Message"
+                rows={7}
+                placeholder="Message"
+                style={{
+                  width: '100%',
+                  borderRadius: '18px',
+                  padding: '14px 16px',
+                  border: '1px solid rgba(148,163,184,0.40)',
+                  outline: 'none',
+                  background: 'rgba(255,255,255,0.96)',
+                  resize: 'vertical',
+                }}
+              />
+
+              <label
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px',
+                  fontSize: '0.9rem',
+                  color: 'rgba(234,246,247,0.84)',
+                  paddingLeft: '6px',
+                }}
+              >
+                <input type="checkbox" required />
+                <span>
+                  En envoyant un message, vous acceptez notre{' '}
+                  <Link href="/fr/confidentialite" style={{ color: 'rgba(234,246,247,0.92)', fontWeight: 700, textDecoration: 'underline' }}>
+                    politique de confidentialité
+                  </Link>
+                  .
+                </span>
+              </label>
+
+              <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '6px' }}>
+                <button type="submit" className="btn btn-primary" style={{ minWidth: '160px' }}>
+                  Envoyer
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
       {/* ── CTA BAND ───────────────────────────────────────── */}
       <section className="cta-band py-16 md:py-20">
         <div className="container">
           <span className="badge" style={{ background: 'rgba(255,255,255,0.15)', color: '#fff', border: '1px solid rgba(255,255,255,0.25)', marginBottom: '20px' }}>
-            Fiers de travailler à Bruxelles et environs
+            Fiers de travailler en Belgique
           </span>
           <h2>Prêt à réparer ou optimiser votre installation Vaillant ?</h2>
-          <p>Contactez dès aujourd'hui votre partenaire certifié Vaillant à Bruxelles. Nous analysons votre demande rapidement.</p>
+          <p>Contactez dès aujourd'hui votre partenaire certifié Vaillant en Belgique. Nous analysons votre demande rapidement.</p>
           <div className="cta-actions">
-            <a href="mailto:contact@villant-loodgieter.be" className="btn btn-ghost-dark" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <Mail size={18} /> contact@villant-loodgieter.be
+            <a href="mailto:contact@vaillant-loodgieter.be" className="btn btn-ghost-dark" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <Mail size={18} /> contact@vaillant-loodgieter.be
             </a>
             <Link href="/fr/services" className="btn btn-ghost-dark">
               Voir nos services
             </Link>
           </div>
           <p style={{ marginTop: '24px', fontSize: 'var(--text-xs)', color: 'rgba(255,255,255,0.55)', maxWidth: 'none' }}>
-            Partenaire certifié Vaillant · Techniciens qualifiés · Tout Bruxelles
+            Partenaire certifié Vaillant · Techniciens qualifiés · Belgique
           </p>
         </div>
       </section>

@@ -8,17 +8,17 @@ export const revalidate = 86400;
 
 export const metadata: Metadata = {
   title:
-    "Plombier Vaillant en Belgique — Bruxelles et grandes villes | Villant Loodgieter",
+    "Plombier Vaillant en Belgique — Bruxelles et grandes villes | vaillant Loodgieter",
   description:
     "Trouvez votre plombier certifié Vaillant en Belgique : toutes les communes de Bruxelles et les grandes villes belges. Dépannage, entretien et installation de chauffage et plomberie.",
   alternates: {
-    canonical: "https://villant-loodgieter.be/fr/plombier",
+    canonical: "https://vaillant-loodgieter.be/fr/plombier",
   },
   openGraph: {
     type: "website",
     locale: "fr_BE",
-    url: "https://villant-loodgieter.be/fr/plombier",
-    siteName: "Villant Loodgieter",
+    url: "https://vaillant-loodgieter.be/fr/plombier",
+    siteName: "vaillant Loodgieter",
     title: "Plombier Vaillant en Belgique — Bruxelles et grandes villes",
     description:
       "Plombier certifié Vaillant en Belgique : Bruxelles et principales villes belges.",

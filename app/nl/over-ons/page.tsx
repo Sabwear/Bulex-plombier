@@ -3,20 +3,20 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'Over Ons – Gecertificeerd Vaillant Partner België | Villant Loodgieter',
+  title: 'Over Ons – Gecertificeerd Vaillant Partner België | Vaillant Loodgieter',
   description:
-    'Villant Loodgieter is een gecertificeerd Vaillant partner in België met gekwalificeerde en ervaren technici. Ontdek onze expertise en onze missie.',
+    'Vaillant Loodgieter is een gecertificeerd Vaillant partner in België met gekwalificeerde en ervaren technici. Ontdek onze expertise en onze missie.',
   keywords: [
     'gecertificeerd Vaillant partner België',
-    'Vaillant loodgieter Brussel',
-    'gekwalificeerde loodgieters Brussel',
-    'verwarmingsinstallateur Brussel',
+    'Vaillant loodgieter België',
+    'gekwalificeerde loodgieters België',
+    'verwarmingsinstallateur België',
   ],
-  alternates: { canonical: 'https://villant-loodgieter.be/nl/over-ons' },
+  alternates: { canonical: 'https://vaillant-loodgieter.be/nl/over-ons' },
   openGraph: {
-    title: 'Over Ons – Gecertificeerd Vaillant Partner België | Villant Loodgieter',
-    description: 'Villant Loodgieter: gecertificeerd Vaillant partner met gekwalificeerde technici actief in Brussel.',
-    url: 'https://villant-loodgieter.be/nl/over-ons',
+    title: 'Over Ons – Gecertificeerd Vaillant Partner België | Vaillant Loodgieter',
+    description: 'Vaillant Loodgieter: gecertificeerd Vaillant partner met gekwalificeerde technici actief in België.',
+    url: 'https://vaillant-loodgieter.be/nl/over-ons',
   },
 };
 
@@ -32,13 +32,13 @@ export default function OverOnsPage() {
         <div className="container">
           <span className="badge badge-green" style={{ marginBottom: '1rem' }}>Gecertificeerd Vaillant Partner België</span>
           <h1 style={{ marginBottom: '1rem' }}>
-            Villant Loodgieter — uw gecertificeerde Vaillant partner in Brussel
+            Vaillant Loodgieter — uw gecertificeerde Vaillant partner in België
           </h1>
           <p style={{ fontSize: '1.1rem', maxWidth: '60ch', marginBottom: '2rem' }}>
-            Wij zijn een gecertificeerd Vaillant partner in Brussel, België. Onze gekwalificeerde technici combineren officiële fabrieksopleiding met bewezen praktijkervaring voor uw verwarmings- en sanitaire behoeften.
+            Wij zijn een gecertificeerd Vaillant partner in België. Onze gekwalificeerde technici combineren officiële fabrieksopleiding met bewezen praktijkervaring voor uw verwarmings- en sanitaire behoeften.
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <a href="mailto:contact@villant-loodgieter.be" className="btn btn-primary">Contacteer ons</a>
+            <a href="mailto:contact@vaillant-loodgieter.be" className="btn btn-primary">Contacteer ons</a>
             <Link href="/nl/diensten" className="btn btn-outline">
               Onze diensten →
             </Link>
@@ -54,7 +54,7 @@ export default function OverOnsPage() {
               <div className="card" style={{ padding: 0, overflow: 'hidden' }}>
                 <Image
                   src="/images/slider-vaillant-2.png"
-                  alt="Vaillant technici aan het werk in Brussel"
+                  alt="Vaillant technici aan het werk in België"
                   width={720}
                   height={640}
                   style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
@@ -66,7 +66,7 @@ export default function OverOnsPage() {
                 {[
                   { icon: 'plumber-1.svg', label: 'Officieel Vaillant Gecertificeerd' },
                   { icon: 'wrench-2.svg', label: 'Gekwalificeerde Technici' },
-                  { icon: 'pipes-7.svg', label: 'Actief in heel Brussel' },
+                  { icon: 'pipes-7.svg', label: 'Actief in België' },
                   { icon: 'flange.svg', label: 'Technische Verslagen' },
                 ].map((v) => (
                   <div key={v.label} style={{
@@ -105,7 +105,7 @@ export default function OverOnsPage() {
                 Bewijs 1: Gecertificeerd Vaillant partner, actief in België
               </h3>
               <p style={{ lineHeight: 1.75 }}>
-                Villant Loodgieter is officieel gecertificeerd door Vaillant — een van de toonaangevende Europese fabrikanten van verwarmingssystemen. Onze certificering vereist directe fabrieksopleiding, technische examens en aantoonbare praktijkervaring. Het is niet zelfverklaard; het is een externe erkenning door Vaillant zelf.
+                vaillant Loodgieter is officieel gecertificeerd door Vaillant — een van de toonaangevende Europese fabrikanten van verwarmingssystemen. Onze certificering vereist directe fabrieksopleiding, technische examens en aantoonbare praktijkervaring. Het is niet zelfverklaard; het is een externe erkenning door Vaillant zelf.
               </p>
               <p style={{ marginTop: '1rem', fontSize: '0.9rem', color: 'var(--color-primary-hover)', fontWeight: 600 }}>
                 Wat dit voor u betekent: wanneer wij uw Vaillant systeem installeren of onderhouden, blijft uw fabrieksgarantie volledig geldig.
@@ -162,14 +162,14 @@ export default function OverOnsPage() {
         <div className="container">
           <div className="section-header">
             <span className="badge badge-gold">Ce que vous obtenez</span>
-            <h2 style={{ marginTop: '1rem' }}>Avantages de travailler avec Villant Plombier</h2>
+            <h2 style={{ marginTop: '1rem' }}>Avantages de travailler avec vaillant Plombier</h2>
             <div className="divider" />
           </div>
           <div className="grid-3-strict">
             {[
               { icon: 'flange.svg', title: 'Originele Vaillant onderdelen', desc: 'Wij gebruiken nooit generieke onderdelen. Elke herstelling wordt uitgevoerd met originele Vaillant onderdelen voor maximale betrouwbaarheid.' },
               { icon: 'pipes-7.svg', title: 'Technische verslagen', desc: 'Na elke interventie ontvangt u een schriftelijk verslag — nuttig voor uw woningdossier en eventuele EPB-verplichtingen.' },
-              { icon: 'plumber-1.svg', title: 'Lokale expertise Brussel', desc: 'Wij kennen de Brusselse vastgoedmarkt: oude leidingen, stedelijke waterkwaliteit en Belgische bouwvoorschriften — dit maakt ons nauwkeuriger en efficiënter.' },
+              { icon: 'plumber-1.svg', title: 'Lokale expertise in België', desc: 'Wij kennen de lokale context: oude leidingen, waterkwaliteit en Belgische bouwvoorschriften — dit maakt ons nauwkeuriger en efficiënter.' },
             ].map((b) => (
               <div key={b.title} className="card">
                 <div className="icon-box">
@@ -223,7 +223,7 @@ export default function OverOnsPage() {
           <h2 style={{ marginTop: '1rem', marginBottom: '0.75rem' }}>Fiers d'intervenir à Bruxelles et ses environs</h2>
           <div className="divider" />
           <p style={{ margin: '0 auto 2rem', maxWidth: '55ch' }}>
-            D'Anderlecht à Watermael-Boitsfort — Villant Plombier dessert l'ensemble des communes bruxelloises en tant que votre plombier Vaillant local à Bruxelles.
+            D'Anderlecht à Watermael-Boitsfort — vaillant Plombier dessert l'ensemble des communes bruxelloises en tant que votre plombier Vaillant local à Bruxelles.
           </p>
           <Link href="/brussel" className="btn btn-outline">Voir notre zone d'intervention →</Link>
         </div>
@@ -239,7 +239,7 @@ export default function OverOnsPage() {
           </div>
           <div className="grid-4">
             {[
-              { n: '1', title: 'Contact', desc: 'Envoyez un e-mail à contact@villant-loodgieter.be pour toute demande.' },
+              { n: '1', title: 'Contact', desc: 'Envoyez un e-mail à contact@vaillant-loodgieter.be pour toute demande.' },
               { n: '2', title: 'Diagnostic', desc: 'Diagnostic transparent et devis avant intervention.' },
               { n: '3', title: 'Intervention', desc: 'Technicien certifié travaillant avec des pièces d\'origine.' },
               { n: '4', title: 'Rapport', desc: 'Rapport technique écrit et complet après l\'intervention.' },
@@ -259,13 +259,13 @@ export default function OverOnsPage() {
         <div className="container" style={{ maxWidth: '750px' }}>
           <div className="section-header">
             <span className="badge badge-gold">FAQ</span>
-            <h2 style={{ marginTop: '1rem' }}>Vragen over Villant Loodgieter</h2>
+            <h2 style={{ marginTop: '1rem' }}>Vragen over vaillant Loodgieter</h2>
             <div className="divider" />
           </div>
           {[
             { q: 'Hoe kan ik bevestigen dat jullie echt gecertificeerd zijn door Vaillant?', a: 'U kunt onze status als gecertificeerd partner rechtstreeks bevestigen bij Vaillant Belgium. Wij zijn transparant over onze kwalificaties en onze technici tonen hun certificaten bij elke interventie.' },
-            { q: 'In welke talen communiceren jullie?', a: 'Wij communiceren in het Frans en Nederlands. Voor alle vragen kunt u contact opnemen met contact@villant-loodgieter.be en wij zullen u zo goed mogelijk begeleiden.' },
-            { q: 'Behandelen jullie ook commerciële projecten?', a: 'Onze diensten zijn momenteel voornamelijk gericht op woningen en residentieel vastgoed in Brussel. Neem contact met ons op voor commerciële aanvragen — we bespreken dit per geval.' },
+            { q: 'In welke talen communiceren jullie?', a: 'Wij communiceren in het Frans en Nederlands. Voor alle vragen kunt u contact opnemen met contact@vaillant-loodgieter.be en wij zullen u zo goed mogelijk begeleiden.' },
+            { q: 'Behandelen jullie ook commerciële projecten?', a: 'Onze diensten zijn momenteel voornamelijk gericht op woningen en residentieel vastgoed in België. Neem contact met ons op voor commerciële aanvragen — we bespreken dit per geval.' },
           ].map((faq, i) => (
             <details key={i} className="faq-item">
               <summary>{faq.q}</summary>
@@ -281,7 +281,7 @@ export default function OverOnsPage() {
           <h2>Prenez contact avec votre partenaire Vaillant certifié</h2>
           <p>Partenaire certifié Vaillant · Techniciens qualifiés · Tout Bruxelles</p>
           <div className="cta-actions">
-            <a href="mailto:contact@villant-loodgieter.be" className="btn btn-ghost-dark">📧 Envoyer un message</a>
+            <a href="mailto:contact@vaillant-loodgieter.be" className="btn btn-ghost-dark">📧 Envoyer un message</a>
             <Link href="/diensten" className="btn btn-ghost-dark">
               Nos services
             </Link>

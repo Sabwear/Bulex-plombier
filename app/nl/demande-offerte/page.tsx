@@ -41,15 +41,15 @@ const fieldStyle = {
 };
 
 export const metadata: Metadata = {
-  title: "Offerte aanvragen | Villant Loodgieter",
+  title: "Offerte aanvragen | vaillant Loodgieter",
   description:
-    "Vraag een offerte aan voor uw loodgieter- of verwarmingsinterventie in Brussel. Villant Loodgieter, gecertificeerd Vaillant partner.",
-  alternates: { canonical: "https://villant-loodgieter.be/nl/demande-offerte" },
+    "Vraag een offerte aan voor uw loodgieter- of verwarmingsinterventie in Brussel. vaillant Loodgieter, gecertificeerd Vaillant partner.",
+  alternates: { canonical: "https://vaillant-loodgieter.be/nl/demande-offerte" },
   openGraph: {
-    title: "Offerte aanvragen | Villant Loodgieter",
+    title: "Offerte aanvragen | vaillant Loodgieter",
     description:
       "Ontvang een transparante offerte voor loodgieterij en verwarming in Brussel.",
-    url: "https://villant-loodgieter.be/nl/demande-offerte",
+    url: "https://vaillant-loodgieter.be/nl/demande-offerte",
   },
 };
 
@@ -82,7 +82,7 @@ export default function DemandeOffertePage() {
         <div className="container" style={{ maxWidth: "820px" }}>
           <div className="card" style={{ padding: "2rem" }}>
             <form
-              action="mailto:contact@villant-loodgieter.be"
+              action="mailto:contact@vaillant-loodgieter.be"
               method="post"
               encType="text/plain"
               style={{ display: "grid", gap: "1rem" }}

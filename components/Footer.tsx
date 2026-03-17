@@ -18,12 +18,12 @@ export default function Footer() {
           <div className={styles.logo}>
             <img
               src="/logo-vaillant-loodgieter.png"
-              alt="Villant Plombier"
+              alt="vaillant Plombier"
               className={styles.logoImage}
             />
           </div>
           <p className={styles.tagline}>
-            {isNl ? "Gecertificeerd Vaillant partner in Brussel. Gekwalificeerde technici voor al uw loodgieterij en verwarming." : "Partenaire certifié Vaillant à Bruxelles. Des techniciens qualifiés pour tous vos besoins en plomberie et chauffage."}
+            {isNl ? "Gecertificeerd Vaillant partner in België. Gekwalificeerde technici voor al uw loodgieterij en verwarming." : "Partenaire certifié Vaillant en Belgique. Des techniciens qualifiés pour tous vos besoins en plomberie et chauffage."}
           </p>
           <div className={styles.trust}>
             <span className={styles.trustBadge}>
@@ -170,8 +170,8 @@ export default function Footer() {
               <div className={styles.contactIcon}><Mail size={18} /></div>
               <div className={styles.contactText}>
                 <span className={styles.contactLabel}>{isNl ? "E-mail" : "E-mail"}</span>
-                <a href="mailto:contact@villant-loodgieter.be" className={styles.contactValue}>
-                  contact@villant-loodgieter.be
+                <a href="mailto:contact@vaillant-loodgieter.be" className={styles.contactValue}>
+                  contact@vaillant-loodgieter.be
                 </a>
               </div>
             </li>
@@ -188,7 +188,7 @@ export default function Footer() {
               </div>
             </li>
           </ul>
-          <a href="mailto:contact@villant-loodgieter.be" className="btn btn-primary btn-sm">
+          <a href="mailto:contact@vaillant-loodgieter.be" className="btn btn-primary btn-sm">
             {isNl ? "Stuur een bericht" : "Envoyer un message"}
           </a>
         </div>
@@ -198,14 +198,14 @@ export default function Footer() {
       <div className={styles.bottom}>
         <div className={styles.bottomInner}>
           <p className={styles.copyright}>
-            © {new Date().getFullYear()} Villant Loodgieter.{" "}
+            © {new Date().getFullYear()} vaillant Loodgieter.{" "}
             {isNl ? "Alle rechten voorbehouden." : "Tous droits réservés."}{" "}
             <Link href={isNl ? "/nl/juridische-vermelding" : "/fr/mentions-legales"}>
               {isNl ? "Juridische vermelding" : "Mentions légales"}
             </Link>
           </p>
           <span className={styles.serving}>
-            {isNl ? "Trots werkzaam in Brussel en omstreken — uw gecertificeerde Vaillant loodgieter." : "Fier d'opérer à Bruxelles et environs — votre plombier Vaillant certifié."}
+            {isNl ? "Trots werkzaam in België — uw gecertificeerde Vaillant loodgieter." : "Fier d'opérer en Belgique — votre plombier Vaillant certifié."}
           </span>
         </div>
       </div>

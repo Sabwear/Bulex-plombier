@@ -19,7 +19,7 @@ export async function generateMetadata({
 
   if (!service) {
     return {
-      title: "Service introuvable | Villant Plombier",
+      title: "Service introuvable | vaillant Plombier",
       description: "La page service demandee est introuvable.",
     };
   }
@@ -27,11 +27,11 @@ export async function generateMetadata({
   return {
     title: service.metaTitle,
     description: service.metaDescription,
-    alternates: { canonical: `https://villant-loodgieter.be/services/${service.slug}` },
+    alternates: { canonical: `https://vaillant-loodgieter.be/services/${service.slug}` },
     openGraph: {
       title: service.metaTitle,
       description: service.metaDescription,
-      url: `https://villant-loodgieter.be/services/${service.slug}`,
+      url: `https://vaillant-loodgieter.be/services/${service.slug}`,
     },
   };
 }

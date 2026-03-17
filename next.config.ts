@@ -1,6 +1,12 @@
 import type { NextConfig } from "next";
+import { getAllSlugsNl } from "./data/city-data";
 
 const nextConfig: NextConfig = {
+  eslint: {
+    // Next.js 15 + ESLint can throw "circular structure" during build in some setups.
+    // We keep linting available via `npm run lint`, but avoid blocking production builds.
+    ignoreDuringBuilds: true,
+  },
   images: {
     formats: ["image/webp"],
     // Ensure all quality values used in <Image> are declared here
@@ -25,14 +31,13 @@ const nextConfig: NextConfig = {
       destination: `/fr/plombier/${slug}`,
       permanent: true,
     }));
-    const nlCityRedirects = [
-      { source: "/nl/loodgieter-brussel", destination: "/nl/loodgieter/brussel", permanent: true },
-      { source: "/nl/loodgieter-antwerpen", destination: "/nl/loodgieter/antwerpen", permanent: true },
-      { source: "/nl/loodgieter-gent", destination: "/nl/loodgieter/gent", permanent: true },
-      { source: "/nl/loodgieter-leuven", destination: "/nl/loodgieter/leuven", permanent: true },
-    ];
+    const nlCityRedirects = getAllSlugsNl().map((slug) => ({
+      source: `/nl/loodgieter-${slug}`,
+      destination: `/nl/loodgieter/${slug}`,
+      permanent: true,
+    }));
     return [
-      { source: "/", destination: "/fr", permanent: true },
+      { source: "/", destination: "/nl", permanent: true },
       { source: "/contact", destination: "/fr/contact", permanent: true },
       { source: "/a-propos", destination: "/fr/a-propos", permanent: true },
       { source: "/services", destination: "/fr/services", permanent: true },

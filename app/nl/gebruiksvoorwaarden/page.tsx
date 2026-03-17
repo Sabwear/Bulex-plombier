@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Gebruiksvoorwaarden | Villant Loodgieter',
+  title: 'Gebruiksvoorwaarden | vaillant Loodgieter',
   description:
-    'Gebruiksvoorwaarden van de website – Villant Loodgieter. Gebruik van de site, intellectuele eigendom en beperking van aansprakelijkheid.',
+    'Gebruiksvoorwaarden van de website – vaillant Loodgieter. Gebruik van de site, intellectuele eigendom en beperking van aansprakelijkheid.',
 };
 
 export default function GebruiksvoorwaardenPage() {
@@ -41,7 +41,7 @@ export default function GebruiksvoorwaardenPage() {
       <section style={{ marginBottom: '2rem' }}>
         <h2 style={{ fontSize: '1.25rem', marginBottom: '0.75rem' }}>5. Beperking van aansprakelijkheid</h2>
         <p>
-          Villant Loodgieter kan niet aansprakelijk worden gesteld voor rechtstreekse of onrechtstreekse schade voortvloeiend uit de toegang tot of het gebruik van de website, de onbeschikbaarheid van de website, het gebruik van de daarop vermelde informatie of het gebruik van websites van derden die via een link bereikbaar zijn. Niets in deze voorwaarden sluit aansprakelijkheden uit die door de wet niet kunnen worden uitgesloten.
+          vaillant Loodgieter kan niet aansprakelijk worden gesteld voor rechtstreekse of onrechtstreekse schade voortvloeiend uit de toegang tot of het gebruik van de website, de onbeschikbaarheid van de website, het gebruik van de daarop vermelde informatie of het gebruik van websites van derden die via een link bereikbaar zijn. Niets in deze voorwaarden sluit aansprakelijkheden uit die door de wet niet kunnen worden uitgesloten.
         </p>
       </section>
 
