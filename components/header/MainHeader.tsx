@@ -34,20 +34,14 @@ export default function MainHeader({ lang }: MainHeaderProps) {
               className="w-auto h-9 sm:h-12 lg:h-[3.75rem] object-contain object-left"
               priority
             />
-            <span
-              className="ml-2 inline-flex items-center justify-center rounded-full border border-gray-200 bg-white shadow-sm"
-              style={{ width: 26, height: 26 }}
-              aria-hidden="true"
-            >
-              <Image
-                src="/Flemish%20Region%20The%20Lion%20of%20Flanders%20Flag%20of%20Flanders%20De%20Vlaamse%20Leeuw.png"
-                alt=""
-                width={18}
-                height={18}
-                className="h-[18px] w-[18px] object-contain"
-                priority={false}
-              />
-            </span>
+            <Image
+              src="/Flemish%20Region%20The%20Lion%20of%20Flanders%20Flag%20of%20Flanders%20De%20Vlaamse%20Leeuw.png"
+              alt=""
+              width={22}
+              height={22}
+              className="ml-2 h-[22px] w-[22px] object-contain"
+              priority={false}
+            />
           </Link>
 
           <nav className="hidden lg:flex flex-1 items-center justify-center gap-2 xl:gap-3 min-w-0">

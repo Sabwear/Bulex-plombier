@@ -1,9 +1,11 @@
 'use client';
 
+import { Suspense } from 'react';
 import Link from 'next/link';
 import styles from './Footer.module.css';
 import { usePathname } from 'next/navigation';
 import { Mail, MapPin, MessageCircle, CheckCircle2 } from 'lucide-react';
+import LanguageSwitcher from '@/components/header/LanguageSwitcher';
 
 export default function Footer() {
   const pathname = usePathname() || '/';
@@ -34,6 +36,12 @@ export default function Footer() {
               <CheckCircle2 size={14} style={{ marginRight: '6px', color: 'var(--color-primary)' }} />
               {isNl ? "Gekwalificeerde Technici" : "Techniciens Qualifiés"}
             </span>
+          </div>
+
+          <div style={{ marginTop: 'var(--space-6)' }}>
+            <Suspense fallback={null}>
+              <LanguageSwitcher theme="light" />
+            </Suspense>
           </div>
         </div>
 

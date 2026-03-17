@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { Suspense, useEffect } from 'react';
 import Link from 'next/link';
 import { X } from 'lucide-react';
 import type { Locale } from '@/config/locale-routes';
@@ -117,7 +117,9 @@ export default function MobileMenu({ isOpen, onClose, navItems, cta }: MobileMen
               {cta.label}
             </Link>
             <div className="pt-1">
-              <LanguageSwitcher theme="light" />
+              <Suspense fallback={null}>
+                <LanguageSwitcher theme="light" />
+              </Suspense>
             </div>
           </div>
         </div>

@@ -1,58 +1,76 @@
 export type Locale = 'fr' | 'nl';
 
-export const FR_TO_NL: Record<string, string> = {
-  '/fr': '/nl',
-  '/fr/services': '/nl/diensten',
-  '/fr/plombier': '/nl/brussel',
-  '/fr/blog': '/nl/blog',
-  '/fr/a-propos': '/nl/over-ons',
-  '/fr/contact': '/nl/contact',
-};
-
-export const NL_TO_FR: Record<string, string> = {
-  '/nl': '/fr',
-  '/nl/diensten': '/fr/services',
-  '/nl/brussel': '/fr/plombier',
-  '/nl/blog': '/fr/blog',
-  '/nl/over-ons': '/fr/a-propos',
-  '/nl/contact': '/fr/contact',
-};
-
-const HOME_BY_LOCALE: Record<Locale, string> = {
-  fr: '/fr',
-  nl: '/nl',
-};
-
-const NO_DYNAMIC_EQUIVALENT = new Set([
-  '/fr/plombier',
-  '/nl/brussel',
-]);
+export const SUPPORTED_LOCALES: Locale[] = ['fr', 'nl'];
 
 /**
- * Resolve the equivalent path in the requested locale.
- * Falls back to locale home if no mapping is found.
+ * Segment-level mapping between locales.
+ *
+ * This is intentionally defined at the segment level (not full paths)
+ * so it works for all current and future routes that reuse these slugs,
+ * including dynamic routes like /fr/services/[slug] -> /nl/diensten/[slug].
  */
-export function getAlternateLocalePath(pathname: string, targetLocale: Locale): string {
-  const map = targetLocale === 'nl' ? FR_TO_NL : NL_TO_FR;
-
-  if (map[pathname]) {
-    return map[pathname];
-  }
-
-  const keys = Object.keys(map).sort((a, b) => b.length - a.length);
-  for (const key of keys) {
-    if (key === '/fr' || key === '/nl') continue;
-    if (NO_DYNAMIC_EQUIVALENT.has(key)) continue;
-    if (pathname.startsWith(`${key}/`)) {
-      const rest = pathname.slice(key.length);
-      return `${map[key]}${rest}`;
-    }
-  }
-
-  return HOME_BY_LOCALE[targetLocale];
-}
+const SEGMENT_MAP: Record<Locale, Record<string, string>> = {
+  fr: {
+    services: 'diensten',
+    'a-propos': 'over-ons',
+    plombier: 'loodgieter',
+    brussel: 'brussel',
+    blog: 'blog',
+    contact: 'contact',
+    confidentialite: 'privacy',
+    cookies: 'cookies',
+    'conditions-utilisation': 'gebruiksvoorwaarden',
+    'demande-devis': 'demande-offerte',
+    certifications: 'certificeringen',
+  },
+  nl: {
+    diensten: 'services',
+    'over-ons': 'a-propos',
+    loodgieter: 'plombier',
+    brussel: 'brussel',
+    blog: 'blog',
+    contact: 'contact',
+    privacy: 'confidentialite',
+    cookies: 'cookies',
+    gebruiksvoorwaarden: 'conditions-utilisation',
+    'demande-offerte': 'demande-devis',
+    certificeringen: 'certifications',
+  },
+};
 
 export function getLocaleFromPathname(pathname: string): Locale {
-  return pathname.startsWith('/nl') ? 'nl' : 'fr';
+  if (pathname.startsWith('/nl/')) return 'nl';
+  if (pathname === '/nl') return 'nl';
+  return 'fr';
+}
+
+export function getAlternateLocalePath(pathname: string, targetLocale: Locale): string {
+  if (!pathname || pathname === '/') {
+    return `/${targetLocale}`;
+  }
+
+  const currentLocale = getLocaleFromPathname(pathname);
+
+  if (currentLocale === targetLocale) {
+    return pathname;
+  }
+
+  const fromLocale = currentLocale;
+  const toLocale = targetLocale;
+
+  const segments = pathname.split('/').filter(Boolean);
+
+  if (segments.length === 0) {
+    return `/${toLocale}`;
+  }
+
+  const [, ...rest] = segments;
+
+  const mappedRest = rest.map((segment) => {
+    const map = SEGMENT_MAP[fromLocale];
+    return map[segment] ?? segment;
+  });
+
+  return `/${toLocale}${mappedRest.length ? `/${mappedRest.join('/')}` : ''}`;
 }
 

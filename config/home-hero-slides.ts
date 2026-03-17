@@ -69,8 +69,8 @@ export const HOME_HERO_SLIDES: Record<Locale, HomeHeroSlide[]> = {
         },
       ],
       image: {
-        src: '/images/hero-vaillant-brussels.jpg',
-        alt: 'Technicien Vaillant intervenant sur une chaudière en Belgique',
+        src: '/images/slider-vaillant-1.png',
+        alt: 'Technicien Vaillant intervenant sur une chaudière Vaillant en Belgique',
       },
       trustLineItems: [
         'Intervention rapide',
@@ -107,7 +107,7 @@ export const HOME_HERO_SLIDES: Record<Locale, HomeHeroSlide[]> = {
         },
       ],
       image: {
-        src: '/images/img-7.jpg',
+        src: '/images/slider-vaillant-2.png',
         alt: 'Équipe Vaillant en intervention rapide en Belgique',
       },
       trustLineItems: [
@@ -145,7 +145,7 @@ export const HOME_HERO_SLIDES: Record<Locale, HomeHeroSlide[]> = {
         },
       ],
       image: {
-        src: '/images/service/6.jpg',
+        src: '/images/slider-vaillant-3.png',
         alt: 'Entretien professionnel Vaillant en Belgique',
       },
       trustLineItems: [
@@ -185,7 +185,7 @@ export const HOME_HERO_SLIDES: Record<Locale, HomeHeroSlide[]> = {
         },
       ],
       image: {
-        src: '/images/hero-vaillant-brussels.jpg',
+        src: '/images/slider-vaillant-1.png',
         alt: 'Vaillant technieker aan het werk in België',
       },
       trustLineItems: [
@@ -223,7 +223,7 @@ export const HOME_HERO_SLIDES: Record<Locale, HomeHeroSlide[]> = {
         },
       ],
       image: {
-        src: '/images/img-7.jpg',
+        src: '/images/slider-vaillant-2.png',
         alt: 'Snelle Vaillant interventie in België',
       },
       trustLineItems: [
@@ -261,7 +261,7 @@ export const HOME_HERO_SLIDES: Record<Locale, HomeHeroSlide[]> = {
         },
       ],
       image: {
-        src: '/images/service/6.jpg',
+        src: '/images/slider-vaillant-3.png',
         alt: 'Professioneel Vaillant onderhoud in België',
       },
       trustLineItems: [

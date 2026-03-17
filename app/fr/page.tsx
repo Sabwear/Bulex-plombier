@@ -85,10 +85,10 @@ export default function HomePage() {
             <div>
               <div className="card" style={{ padding: 0, overflow: 'hidden' }}>
                 <NextImage
-                  src="/images/slider-vaillant-1.png"
+                  src="/images/vaillant-2.png"
                   alt="Technicien Vaillant certifié en Belgique"
-                  width={640}
-                  height={640}
+                  width={1080}
+                  height={1080}
                   className="w-full h-auto object-cover"
                 />
               </div>
@@ -276,7 +276,7 @@ export default function HomePage() {
                 <a href="mailto:contact@vaillant-loodgieter.be" className="btn btn-primary">
                   Demander une intervention
                 </a>
-                <Link href="/fr/a-propos" className="btn btn-outline">
+                <Link href="/fr/certifications" className="btn btn-outline">
                   Voir notre certification →
                 </Link>
               </div>

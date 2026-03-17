@@ -151,25 +151,26 @@ export default function CertificationsPage() {
                   style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
                 />
               </div>
-              <div className="card" style={{ padding: '1.5rem' }}>
-                <h3 style={{ marginBottom: '0.75rem', fontSize: '1.05rem' }}>
-                  Exemples de marques sur lesquelles nous intervenons
-                </h3>
-                <p style={{ fontSize: '0.9rem', marginBottom: '0.75rem' }}>
-                  En plus de Vaillant, nous rencontrons régulièrement des chaudières et équipements
-                  des marques suivantes :
-                </p>
-                <p style={{ fontSize: '0.88rem', lineHeight: 1.8 }}>
-                  Atlantic, Saunier Duval, Frisquet, Chaffoteaux, De Dietrich, Viessmann, Ariston,
-                  Buderus, Elm Leblanc, Riello, Geminox, et d’autres références du marché.
-                </p>
-                <p style={{ fontSize: '0.85rem', marginTop: '0.75rem', color: 'var(--text-muted)' }}>
-                  Remarque : nous restons une entreprise indépendante. La majorité de nos
-                  interventions concerne des installations Vaillant, mais nos techniciens connaissent
-                  suffisamment les autres marques pour vous conseiller correctement.
-                </p>
-              </div>
             </div>
+          </div>
+
+          <div className="card" style={{ padding: '1.5rem', marginTop: '2rem' }}>
+            <h3 style={{ marginBottom: '0.75rem', fontSize: '1.05rem' }}>
+              Exemples de marques sur lesquelles nous intervenons
+            </h3>
+            <p style={{ fontSize: '0.9rem', marginBottom: '0.75rem' }}>
+              En plus de Vaillant, nous rencontrons régulièrement des chaudières et équipements des
+              marques suivantes :
+            </p>
+            <p style={{ fontSize: '0.88rem', lineHeight: 1.8, maxWidth: 'none' }}>
+              Atlantic, Saunier Duval, Frisquet, Chaffoteaux, De Dietrich, Viessmann, Ariston,
+              Buderus, Elm Leblanc, Riello, Geminox, et d’autres références du marché.
+            </p>
+            <p style={{ fontSize: '0.85rem', marginTop: '0.75rem', color: 'var(--text-muted)', maxWidth: 'none' }}>
+              Remarque : nous restons une entreprise indépendante. La majorité de nos interventions
+              concerne des installations Vaillant, mais nos techniciens connaissent suffisamment les
+              autres marques pour vous conseiller correctement.
+            </p>
           </div>
         </div>
       </section>

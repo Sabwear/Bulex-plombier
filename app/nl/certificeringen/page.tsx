@@ -144,25 +144,26 @@ export default function CertificeringenPage() {
                   style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
                 />
               </div>
-              <div className="card" style={{ padding: '1.5rem' }}>
-                <h3 style={{ marginBottom: '0.75rem', fontSize: '1.05rem' }}>
-                  Voorbeelden van merken waarmee we werken
-                </h3>
-                <p style={{ fontSize: '0.9rem', marginBottom: '0.75rem' }}>
-                  Naast Vaillant komen we regelmatig in aanraking met ketels en toestellen van onder
-                  andere:
-                </p>
-                <p style={{ fontSize: '0.88rem', lineHeight: 1.8 }}>
-                  Atlantic, Saunier Duval, Frisquet, Chaffoteaux, De Dietrich, Viessmann, Ariston,
-                  Buderus, Elm Leblanc, Riello, Geminox, en andere referenties op de markt.
-                </p>
-                <p style={{ fontSize: '0.85rem', marginTop: '0.75rem', color: 'var(--text-muted)' }}>
-                  Opmerking: wij zijn een onafhankelijk installateur en onderhoudspartner. De
-                  meeste interventies gebeuren op Vaillant-installaties, maar onze technici kennen
-                  ook andere merken goed genoeg om u correct te informeren.
-                </p>
-              </div>
             </div>
+          </div>
+
+          <div className="card" style={{ padding: '1.5rem', marginTop: '2rem' }}>
+            <h3 style={{ marginBottom: '0.75rem', fontSize: '1.05rem' }}>
+              Voorbeelden van merken waarmee we werken
+            </h3>
+            <p style={{ fontSize: '0.9rem', marginBottom: '0.75rem' }}>
+              Naast Vaillant komen we regelmatig in aanraking met ketels en toestellen van onder
+              andere:
+            </p>
+            <p style={{ fontSize: '0.88rem', lineHeight: 1.8, maxWidth: 'none' }}>
+              Atlantic, Saunier Duval, Frisquet, Chaffoteaux, De Dietrich, Viessmann, Ariston,
+              Buderus, Elm Leblanc, Riello, Geminox, en andere referenties op de markt.
+            </p>
+            <p style={{ fontSize: '0.85rem', marginTop: '0.75rem', color: 'var(--text-muted)', maxWidth: 'none' }}>
+              Opmerking: wij zijn een onafhankelijk installateur en onderhoudspartner. De meeste
+              interventies gebeuren op Vaillant-installaties, maar onze technici kennen ook andere
+              merken goed genoeg om u correct te informeren.
+            </p>
           </div>
         </div>
       </section>
@@ -176,7 +177,26 @@ export default function CertificeringenPage() {
             <div className="divider" />
           </div>
 
-          <div className="grid-2" style={{ gap: '1.75rem' }}>
+          <div className="grid-2" style={{ gap: '1.75rem', alignItems: 'flex-start' }}>
+            <div>
+              <div
+                style={{
+                  marginBottom: '1.5rem',
+                  borderRadius: '22px',
+                  overflow: 'hidden',
+                  boxShadow: '0 18px 40px rgba(15,23,42,0.22)',
+                }}
+              >
+                <Image
+                  src="/images/service-man-adjusting-house-heating-system (1).jpg"
+                  alt="Technicus die een verwarmingssysteem afstelt"
+                  width={680}
+                  height={420}
+                  style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
+                />
+              </div>
+            </div>
+
             <div>
               <h3 style={{ marginBottom: '0.5rem', fontSize: '1.02rem' }}>Gecertificeerd Vaillant partner</h3>
               <p style={{ fontSize: '0.95rem', lineHeight: 1.8 }}>
@@ -205,10 +225,8 @@ export default function CertificeringenPage() {
                 performante radiatoren of vloerverwarming maken deel uit van de oplossingen die wij
                 voorstellen, met respect voor uw budget.
               </p>
-            </div>
 
-            <div>
-              <div className="card" style={{ padding: '1.5rem' }}>
+              <div className="card" style={{ padding: '1.5rem', marginTop: '1.75rem' }}>
                 <h3 style={{ marginBottom: '0.75rem', fontSize: '1.05rem' }}>
                   Waarom certificeringen belangrijk zijn
                 </h3>

@@ -1,5 +1,6 @@
 'use client';
 
+import { Suspense } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import LanguageSwitcher from './LanguageSwitcher';
@@ -53,7 +54,9 @@ export default function TopBar({ lang }: TopBarProps) {
             <span className="w-px h-3 bg-white/30" aria-hidden="true" />
 
             <div className="[&_a]:!text-white [&_a:hover]:!text-white/90 [&_span]:!text-white">
-              <LanguageSwitcher theme="dark" />
+              <Suspense fallback={null}>
+                <LanguageSwitcher theme="dark" />
+              </Suspense>
             </div>
           </div>
         </div>
