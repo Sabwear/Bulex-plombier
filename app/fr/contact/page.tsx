@@ -1,25 +1,28 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+import ContactRequestForm from './ContactRequestForm';
 
 export const metadata: Metadata = {
   title: 'Contact – Plombier Vaillant Belgique | Vaillant Plombier',
   description:
-    'Contactez Vaillant Plombier – votre plombier certifié Vaillant en Belgique. Envoyez un e-mail à contact@vaillant-loodgieter.be pour un devis ou un service d\'urgence.',
+    'Contactez Vaillant Plombier – votre plombier certifié Vaillant en Belgique. Envoyez un e-mail à contact@vaillant-loodgieter.com pour un devis ou un service d\'urgence.',
   keywords: [
     'contact plombier Vaillant Belgique',
     'plombier urgence Belgique',
     'demande réparation Vaillant Belgique',
   ],
-  alternates: { canonical: 'https://vaillant-loodgieter.be/contact' },
+  alternates: { canonical: 'https://vaillant-loodgieter.com/contact' },
   openGraph: {
     title: 'Contact – Vaillant Plombier',
     description: 'Contactez votre plombier certifié Vaillant en Belgique.',
-    url: 'https://vaillant-loodgieter.be/contact',
+    url: 'https://vaillant-loodgieter.com/contact',
   },
 };
 
 export default function ContactPage() {
+  const supportEmail = process.env.NEXT_PUBLIC_SUPPORT_EMAIL || 'contact@vaillant-loodgieter.com';
+
   return (
     <>
       {/* HERO */}
@@ -62,8 +65,8 @@ export default function ContactPage() {
                   </span>
                   <div>
                     <h4 style={{ marginBottom: '0.3rem' }}>E-mail</h4>
-                    <a href="mailto:contact@vaillant-loodgieter.be" style={{ fontWeight: 600, color: 'var(--color-primary)' }}>
-                      contact@vaillant-loodgieter.be
+                    <a href="mailto:contact@vaillant-loodgieter.com" style={{ fontWeight: 600, color: 'var(--color-primary)' }}>
+                      contact@vaillant-loodgieter.com
                     </a>
                     <p style={{ fontSize: '0.85rem', marginTop: '0.3rem' }}>
                       Envoyez un e-mail avec votre question, votre adresse et une description du problème. Nous vous répondrons dans les plus brefs délais.
@@ -98,17 +101,6 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="card" style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                  <span style={{ width: '24px', height: '24px', flexShrink: 0, marginTop: '0.2rem' }}>
-                    <Image src="/icons/plumbing-elements/flange.svg" alt="Web" width={24} height={24} />
-                  </span>
-                  <div>
-                    <h4 style={{ marginBottom: '0.3rem' }}>Site web</h4>
-                    <a href="https://vaillant-loodgieter.be" style={{ fontWeight: 600, color: 'var(--color-primary)' }}>
-                      vaillant-loodgieter.be
-                    </a>
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -116,87 +108,8 @@ export default function ContactPage() {
             <div>
               <span className="badge badge-gold" style={{ marginBottom: '1rem' }}>Formulaire</span>
               <h2 style={{ marginTop: '0.75rem', marginBottom: '1.5rem' }}>Envoyez votre demande</h2>
+              <ContactRequestForm supportEmail={supportEmail} />
 
-              <div className="card" style={{ marginBottom: '1.5rem' }}>
-                <form action="mailto:contact@vaillant-loodgieter.be" method="post" encType="text/plain" style={{ display: 'grid', gap: '0.85rem' }}>
-                  <input
-                    name="Nom"
-                    required
-                    placeholder="Nom complet"
-                    style={{ width: '100%', border: '1px solid var(--border)', borderRadius: 'var(--radius)', padding: '0.7rem 0.8rem' }}
-                  />
-                  <input
-                    type="email"
-                    name="Email"
-                    required
-                    placeholder="Adresse e-mail"
-                    style={{ width: '100%', border: '1px solid var(--border)', borderRadius: 'var(--radius)', padding: '0.7rem 0.8rem' }}
-                  />
-                  <input
-                    name="Adresse"
-                    required
-                    placeholder="Adresse (ville)"
-                    style={{ width: '100%', border: '1px solid var(--border)', borderRadius: 'var(--radius)', padding: '0.7rem 0.8rem' }}
-                  />
-                  <textarea
-                    name="Message"
-                    rows={5}
-                    required
-                    placeholder="Décrivez votre demande..."
-                    style={{ width: '100%', border: '1px solid var(--border)', borderRadius: 'var(--radius)', padding: '0.7rem 0.8rem', resize: 'vertical' }}
-                  />
-                  <button type="submit" className="btn btn-primary">
-                    Envoyer la demande
-                  </button>
-                </form>
-              </div>
-
-              <h2 style={{ marginTop: '0.75rem', marginBottom: '1.5rem' }}>Informations utiles à mentionner</h2>
-
-              <div className="card" style={{ marginBottom: '1.5rem' }}>
-                <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                  {[
-                    { icon: 'plumber-1.svg', label: 'Votre adresse', sub: 'Rue, numéro, commune/ville' },
-                    { icon: 'wrench-2.svg', label: 'Type de problème', sub: 'Chaudière, fuite d\'eau, sanitaire, chauffage...' },
-                    { icon: 'boiler-1.svg', label: 'Marque et modèle', sub: 'Ex. Vaillant ecoTEC VU 26/5-5 (le cas échéant)' },
-                    { icon: 'wrench-1.svg', label: 'Urgence', sub: '"URGENCE" pour les cas d\'urgence' },
-                    { icon: 'flange.svg', label: 'Photo (facultatif)', sub: 'Une photo du problème accélère le diagnostic' },
-                  ].map((item) => (
-                    <li key={item.label} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
-                      <span style={{ width: '20px', height: '20px', flexShrink: 0, marginTop: '0.2rem' }}>
-                        <Image src={`/icons/plumbing-elements/${item.icon}`} alt={item.label} width={20} height={20} />
-                      </span>
-                      <div>
-                        <div style={{ fontWeight: 600, fontSize: '0.92rem', color: 'var(--text-primary)' }}>{item.label}</div>
-                        <div style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>{item.sub}</div>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Trust signals */}
-              <div style={{
-                background: 'var(--color-primary)',
-                borderRadius: 'var(--radius-lg)',
-                padding: '1.75rem',
-              }}>
-                <h3 style={{ color: '#fff', marginBottom: '1rem', fontSize: '1rem' }}>Pourquoi faire confiance à vaillant Plombier ?</h3>
-                <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-                  {[
-                    { icon: 'plumber-1.svg', text: 'Partenaire certifié Vaillant, travaillant en Belgique' },
-                    { icon: 'wrench-2.svg', text: 'Techniciens qualifiés et expérimentés' },
-                    { icon: 'pipes-7.svg', text: 'Devis transparent avant l\'intervention' },
-                    { icon: 'flange.svg', text: 'Rapport écrit après l\'intervention' },
-                    { icon: 'boiler-1.svg', text: 'Pièces d\'origine Vaillant' },
-                  ].map((t) => (
-                    <li key={t.text} style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.88rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <Image src={`/icons/plumbing-elements/${t.icon}`} alt="" width={16} height={16} style={{ filter: 'brightness(0) invert(1)' }} />
-                      {t.text}
-                    </li>
-                  ))}
-                </ul>
-              </div>
             </div>
           </div>
         </div>
@@ -247,7 +160,7 @@ export default function ContactPage() {
           </div>
           {[
             { q: 'Dans quel délai répondez-vous à un e-mail ?', a: 'Nous visons une réponse rapide. En cas d\'urgence, veuillez indiquer « URGENCE » dans l\'objet de votre e-mail — cela donnera la priorité à votre message dans notre planification.' },
-            { q: 'Puis-je également vous contacter par téléphone ?', a: 'Notre principal moyen de contact est l\'e-mail via contact@vaillant-loodgieter.be. Les coordonnées téléphoniques seront ajoutées prochainement. Vous pouvez mentionner votre numéro de téléphone dans votre e-mail si vous souhaitez être rappelé.' },
+            { q: 'Puis-je également vous contacter par téléphone ?', a: 'Notre principal moyen de contact est l\'e-mail via contact@vaillant-loodgieter.com. Les coordonnées téléphoniques seront ajoutées prochainement. Vous pouvez mentionner votre numéro de téléphone dans votre e-mail si vous souhaitez être rappelé.' },
             { q: 'Fournissez-vous un devis avant de commencer les travaux ?', a: 'Oui, toujours. Nous ne commençons jamais une intervention sans vous fournir au préalable un diagnostic clair et un devis. Pas de frais cachés.' },
           ].map((faq, i) => (
             <details key={i} className="faq-item">
@@ -262,7 +175,7 @@ export default function ContactPage() {
       <section className="cta-band">
         <div className="container" style={{ maxWidth: '600px' }}>
           <h2>Prêt à nous contacter ?</h2>
-          <p>Envoyez un e-mail à <strong style={{ color: 'rgba(255,255,255,0.95)' }}>contact@vaillant-loodgieter.be</strong> — votre plombier certifié Vaillant en Belgique vous répondra dans les plus brefs délais.</p>
+          <p>Envoyez un e-mail à <strong style={{ color: 'rgba(255,255,255,0.95)' }}>contact@vaillant-loodgieter.com</strong> — votre plombier certifié Vaillant en Belgique vous répondra dans les plus brefs délais.</p>
           <div className="cta-actions">
             <Link href="/demande-devis" className="btn btn-ghost-dark">Demander un devis</Link>
             <Link href="/over-ons" className="btn btn-ghost-dark">

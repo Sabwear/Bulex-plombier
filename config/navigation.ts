@@ -1,14 +1,11 @@
-const phoneDisplay = process.env.NEXT_PUBLIC_PHONE_DISPLAY || "02 345 67 89";
-const phoneDigits = phoneDisplay.replace(/\D/g, "");
-const phoneHref =
-  phoneDigits.length > 0 ? `tel:+${phoneDigits.padStart(11, "32")}` : "tel:+3223456789";
+import { getPublicPhoneDisplay, getPublicPhoneTelHref } from "./public-phone";
 
 export const SITE_CONFIG = {
   phone: {
-    display: phoneDisplay,
-    href: phoneHref,
+    display: getPublicPhoneDisplay(),
+    href: getPublicPhoneTelHref(),
   },
-  email: process.env.NEXT_PUBLIC_SUPPORT_EMAIL || "contact@vaillant-loodgieter.be",
+  email: process.env.NEXT_PUBLIC_SUPPORT_EMAIL || "contact@vaillant-loodgieter.com",
 };
 
 export const NAVIGATION = {

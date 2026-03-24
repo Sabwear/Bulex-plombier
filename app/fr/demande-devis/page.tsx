@@ -1,15 +1,16 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import InterventionSmtpForm from '@/components/forms/InterventionSmtpForm';
 
 export const metadata: Metadata = {
   title: 'Demande de devis – Vaillant Plombier Belgique',
   description:
     "Demandez un devis à Vaillant Plombier (partenaire certifié Vaillant en Belgique). Envoyez-nous votre demande, nous répondons rapidement avec une réponse claire.",
-  alternates: { canonical: 'https://vaillant-loodgieter.be/fr/demande-devis' },
+  alternates: { canonical: 'https://vaillant-loodgieter.com/fr/demande-devis' },
   openGraph: {
     title: 'Demande de devis – Vaillant Plombier',
     description: 'Demandez un devis en Belgique — réponse rapide et transparente.',
-    url: 'https://vaillant-loodgieter.be/fr/demande-devis',
+    url: 'https://vaillant-loodgieter.com/fr/demande-devis',
   },
 };
 
@@ -44,111 +45,42 @@ export default function QuoteRequestPage() {
             boxShadow: '0 22px 60px rgba(0,0,0,0.22)',
           }}
         >
-          <form
-            action="mailto:contact@vaillant-loodgieter.be"
-            method="post"
-            encType="text/plain"
-            style={{ display: 'grid', gap: '12px' }}
-          >
-            <input
-              name="Nom"
-              required
-              placeholder="Nom *"
-              style={{
-                width: '100%',
-                borderRadius: '999px',
-                padding: '14px 16px',
-                border: '1px solid rgba(148,163,184,0.40)',
-                outline: 'none',
-                background: 'rgba(255,255,255,0.96)',
-              }}
-            />
-            <input
-              name="Téléphone"
-              required
-              inputMode="tel"
-              placeholder="Téléphone *"
-              style={{
-                width: '100%',
-                borderRadius: '999px',
-                padding: '14px 16px',
-                border: '1px solid rgba(148,163,184,0.40)',
-                outline: 'none',
-                background: 'rgba(255,255,255,0.96)',
-              }}
-            />
-            <input
-              name="Type d'intervention"
-              placeholder="Type d'intervention"
-              style={{
-                width: '100%',
-                borderRadius: '999px',
-                padding: '14px 16px',
-                border: '1px solid rgba(148,163,184,0.40)',
-                outline: 'none',
-                background: 'rgba(255,255,255,0.96)',
-              }}
-            />
-            <input
-              name="Adresse"
-              placeholder="Adresse"
-              style={{
-                width: '100%',
-                borderRadius: '999px',
-                padding: '14px 16px',
-                border: '1px solid rgba(148,163,184,0.40)',
-                outline: 'none',
-                background: 'rgba(255,255,255,0.96)',
-              }}
-            />
-            <textarea
-              name="Message"
-              rows={7}
-              placeholder="Message"
-              style={{
-                width: '100%',
-                borderRadius: '18px',
-                padding: '14px 16px',
-                border: '1px solid rgba(148,163,184,0.40)',
-                outline: 'none',
-                background: 'rgba(255,255,255,0.96)',
-                resize: 'vertical',
-              }}
-            />
-
-            <div style={{ fontSize: '0.9rem', color: 'rgba(234,246,247,0.84)' }}>
-              En envoyant un message, vous acceptez notre{' '}
-              <Link
-                href="/fr/privacy"
-                style={{
-                  color: 'rgba(234,246,247,0.92)',
-                  fontWeight: 700,
-                  textDecoration: 'underline',
-                }}
-              >
-                politique de confidentialité
-              </Link>
-              .
-            </div>
+          <InterventionSmtpForm
+            formType="quote_fr"
+            source="demande-devis"
+            submitLabel="Envoyer"
+            privacyLabel={
+              <>
+                En envoyant un message, vous acceptez notre{' '}
+                <Link
+                  href="/fr/confidentialite"
+                  style={{
+                    color: 'rgba(234,246,247,0.92)',
+                    fontWeight: 700,
+                    textDecoration: 'underline',
+                  }}
+                >
+                  politique de confidentialité
+                </Link>
+                .
+              </>
+            }
+          />
 
             <div
               style={{
                 display: 'flex',
-                justifyContent: 'space-between',
+                justifyContent: 'flex-start',
                 alignItems: 'center',
                 gap: '12px',
-                marginTop: '6px',
+                marginTop: '12px',
                 flexWrap: 'wrap',
               }}
             >
               <Link href="/fr/contact" className="btn btn-outline">
                 Besoin d’aide ? Contact →
               </Link>
-              <button type="submit" className="btn btn-primary" style={{ minWidth: '160px' }}>
-                Envoyer
-              </button>
             </div>
-          </form>
         </div>
       </div>
     </section>

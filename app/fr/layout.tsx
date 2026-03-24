@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import "../globals.css";
 import SiteHeader from "@/components/header/SiteHeader";
 import Footer from "@/components/Footer";
+import { HtmlLang } from "@/components/HtmlLang";
 import Script from "next/script";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
 import MobileCallBar from "@/components/MobileCallBar";
@@ -50,8 +50,8 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Vaillant Plombier",
-  url: "https://vaillant-loodgieter.be",
-  email: "contact@vaillant-loodgieter.be",
+  url: "https://vaillant-loodgieter.com",
+  email: "contact@vaillant-loodgieter.com",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Belgique",
@@ -70,28 +70,24 @@ const jsonLd = {
   ],
 };
 
-export default function RootLayout({
+export default function FrLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr">
-      <head>
-        <link rel="icon" href="/flame.svg" />
-        <Script
-          id="json-ld-organization"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </head>
-      <body>
-        <SiteHeader lang="fr" />
-        <main className="pb-24 md:pb-0">{children}</main>
-        <Footer />
-        <WhatsAppWidget />
-        <MobileCallBar lang="fr" telHref="tel:023456789" />
-      </body>
-    </html>
+    <>
+      <HtmlLang lang="fr" />
+      <Script
+        id="json-ld-organization-fr"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <SiteHeader lang="fr" />
+      <main className="pb-24 md:pb-0">{children}</main>
+      <Footer />
+      <WhatsAppWidget />
+      <MobileCallBar lang="fr" />
+    </>
   );
 }

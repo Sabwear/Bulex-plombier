@@ -25,11 +25,11 @@ export const metadata: Metadata = {
     'waterlek herstellen België',
     'gecertificeerd Vaillant partner België',
   ],
-  alternates: { canonical: 'https://vaillant-loodgieter.be/nl' },
+  alternates: { canonical: 'https://vaillant-loodgieter.com/nl' },
   openGraph: {
     title: 'Vaillant loodgieter België | Vaillant Loodgieter',
     description: 'Gecertificeerd Vaillant partner in België. Professioneel, snel en betrouwbaar.',
-    url: 'https://vaillant-loodgieter.be/nl',
+    url: 'https://vaillant-loodgieter.com/nl',
   },
 };
 
@@ -257,7 +257,7 @@ export default function HomePage() {
                 installatie die <strong>betrouwbaar</strong> blijft op lange termijn.
               </p>
               <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-                <a href="mailto:contact@vaillant-loodgieter.be" className="btn btn-primary">
+                <a href="mailto:contact@vaillant-loodgieter.com" className="btn btn-primary">
                   Vraag een interventie aan
                 </a>
                 <Link href="/nl/certificeringen" className="btn btn-outline">
@@ -434,7 +434,7 @@ export default function HomePage() {
 
           <div className="steps-grid">
             {[
-              { n: '1', title: 'Neem contact op', desc: "Stuur een e-mail naar contact@vaillant-loodgieter.be. Beschrijf uw probleem of verzoek zo nauwkeurig mogelijk." },
+              { n: '1', title: 'Neem contact op', desc: "Stuur een e-mail naar contact@vaillant-loodgieter.com. Beschrijf uw probleem of verzoek zo nauwkeurig mogelijk." },
               { n: '2', title: 'Diagnose en Offerte', desc: "Onze technicus komt ter plaatse en stelt een transparante diagnose. U ontvangt een duidelijke en nauwkeurige offerte voordat we aan de werkzaamheden beginnen." },
               { n: '3', title: 'Deskundige Interventie', desc: "Gecertificeerde technici voeren de reparatie of installatie uit volgens strikte normen en met originele Vaillant onderdelen." },
               { n: '4', title: 'Opvolging en Onderhoud', desc: "Na de interventie volgt een functioneringstest. Wij adviseren u over het aanbevolen jaarlijkse onderhoud voor uw Vaillant installatie." },
@@ -462,7 +462,7 @@ export default function HomePage() {
           </div>
           {[
             { q: 'Bent u een officieel gecertificeerd Vaillant partner?', a: "Ja. vaillant Loodgieter is officieel gecertificeerd door het merk Vaillant. Onze technici nemen deel aan directe fabrieksopleidingen en zijn erkend voor de installatie, het onderhoud en de reparatie van Vaillant systemen in België." },
-            { q: 'Wat kost een Vaillant ketel reparatie in België?', a: "De uiteindelijke kosten hangen af van het specifieke defect en de benodigde Vaillant onderdelen. We stellen altijd een diagnose ter plaatse en geven een duidelijke offerte. Geen verrassende extra kosten. Mail naar contact@vaillant-loodgieter.be voor een schatting." },
+            { q: 'Wat kost een Vaillant ketel reparatie in België?', a: "De uiteindelijke kosten hangen af van het specifieke defect en de benodigde Vaillant onderdelen. We stellen altijd een diagnose ter plaatse en geven een duidelijke offerte. Geen verrassende extra kosten. Mail naar contact@vaillant-loodgieter.com voor een schatting." },
             { q: 'Hoe snel kunt u ingrijpen bij een noodgeval?', a: "We streven naar een zo snel mogelijke interventie bij volledige uitval van verwarming of water. Vermeld « SPOEDGEVAL » in de onderwerpregel van uw e-mail zodat wij uw verzoek prioriteit kunnen geven." },
             { q: 'Welke Vaillant toestellen repareert u?', a: "Wij repareren en onderhouden alle Vaillant modellen, waaronder wandgasketels (ecoTEC, turboTEC series), warmtepompen en andere thermodynamische oplossingen van het merk." },
             { q: 'Biedt u een onderhoudscontract aan voor Vaillant installaties?', a: "Ja, een compleet Vaillant onderhoudscontract voor verwarming inclusief de jaarlijkse revisie, reiniging en controle van de instellingen. Het verplichte onderhoud verlengt de levensduur en optimaliseert de werking van uw toestel." },
@@ -541,7 +541,7 @@ export default function HomePage() {
             }}
           >
             <form
-              action="mailto:contact@vaillant-loodgieter.be"
+              action="mailto:contact@vaillant-loodgieter.com"
               method="post"
               encType="text/plain"
               style={{ display: 'grid', gap: '12px' }}
@@ -651,8 +651,8 @@ export default function HomePage() {
           <h2>Klaar om uw Vaillant installatie te repareren of te optimaliseren?</h2>
           <p>Neem vandaag nog contact op met uw gecertificeerde Vaillant partner in België. Wij analyseren uw verzoek snel.</p>
           <div className="cta-actions">
-            <a href="mailto:contact@vaillant-loodgieter.be" className="btn btn-ghost-dark" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <Mail size={18} /> contact@vaillant-loodgieter.be
+            <a href="mailto:contact@vaillant-loodgieter.com" className="btn btn-ghost-dark" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <Mail size={18} /> contact@vaillant-loodgieter.com
             </a>
             <Link href="/nl/diensten" className="btn btn-ghost-dark">
               Bekijk onze diensten

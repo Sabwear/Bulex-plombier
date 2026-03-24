@@ -27,11 +27,11 @@ export async function generateMetadata({
   return {
     title: service.metaTitle,
     description: service.metaDescription,
-    alternates: { canonical: `https://vaillant-loodgieter.be/services/${service.slug}` },
+    alternates: { canonical: `https://vaillant-loodgieter.com/services/${service.slug}` },
     openGraph: {
       title: service.metaTitle,
       description: service.metaDescription,
-      url: `https://vaillant-loodgieter.be/services/${service.slug}`,
+      url: `https://vaillant-loodgieter.com/services/${service.slug}`,
     },
   };
 }

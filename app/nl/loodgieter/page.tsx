@@ -11,12 +11,12 @@ export const metadata: Metadata = {
   description:
     "Vind uw gecertificeerde Vaillant loodgieter in België: Brussel en grote Belgische steden. Herstelling, onderhoud en installatie van verwarming en loodgieterij.",
   alternates: {
-    canonical: "https://vaillant-loodgieter.be/nl/loodgieter",
+    canonical: "https://vaillant-loodgieter.com/nl/loodgieter",
   },
   openGraph: {
     type: "website",
     locale: "nl_BE",
-    url: "https://vaillant-loodgieter.be/nl/loodgieter",
+    url: "https://vaillant-loodgieter.com/nl/loodgieter",
     siteName: "vaillant Loodgieter",
     title: "Vaillant loodgieter in België — Brussel en grote steden",
     description:

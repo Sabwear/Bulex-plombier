@@ -23,18 +23,18 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!post) return {};
 
   const content = post.languages.fr;
-  const baseUrl = 'https://vaillant-loodgieter.be';
+  const baseUrl = 'https://vaillant-loodgieter.com';
 
   return {
     title: `${content.title} | Blog vaillant Plombier`,
     description: content.excerpt,
     alternates: {
-      canonical: `${baseUrl}/conseils/${post.slug}`,
+      canonical: `${baseUrl}/fr/blog/${post.slug}`,
     },
     openGraph: {
       title: content.title,
       description: content.excerpt,
-      url: `${baseUrl}/conseils/${post.slug}`,
+      url: `${baseUrl}/fr/blog/${post.slug}`,
       type: 'article',
       publishedTime: content.date,
       images: [{ url: post.image }],
@@ -139,7 +139,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             <h2 className="section-title">Articles similaires</h2>
             <div className={styles.relatedGrid}>
               {relatedPosts.map(rp => (
-                <Link key={rp.slug} href={`/conseils/${rp.slug}`} className={styles.blogCard}>
+                <Link key={rp.slug} href={`/fr/blog/${rp.slug}`} className={styles.blogCard}>
                   <div className={styles.cardImage}>
                     <Image src={rp.image} alt={rp.languages.fr.title} fill className="object-cover" />
                   </div>
@@ -174,7 +174,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         <div className={`${styles.sidebarWidget} ${styles.sidebarCta}`}>
           <h3>Besoin d&apos;une intervention ?</h3>
           <p>Nos experts certifiés Vaillant interviennent en moins de 60 minutes à Bruxelles.</p>
-          <a href="mailto:contact@vaillant-loodgieter.be" className="btn btn-outline" style={{ color: '#fff', borderColor: '#fff' }}>
+          <a href="mailto:contact@vaillant-loodgieter.com" className="btn btn-outline" style={{ color: '#fff', borderColor: '#fff' }}>
             Contactez-nous
           </a>
         </div>
@@ -184,7 +184,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           <h4 className={styles.widgetTitle}>Derniers articles</h4>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {allPosts.slice(0, 3).map(lp => (
-              <Link key={lp.slug} href={`/conseils/${lp.slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+              <Link key={lp.slug} href={`/fr/blog/${lp.slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                 <div style={{ fontWeight: 600, fontSize: '0.9rem', marginBottom: '0.25rem' }}>{lp.languages.fr.title}</div>
                 <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
                   {new Date(lp.languages.fr.date).toLocaleDateString('fr-BE')}

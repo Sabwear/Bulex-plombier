@@ -14,11 +14,11 @@ export const metadata: Metadata = {
     'sanitair installatie Brussel',
     'ketel vervangen Brussel',
   ],
-  alternates: { canonical: 'https://vaillant-loodgieter.be/nl/brussel' },
+  alternates: { canonical: 'https://vaillant-loodgieter.com/nl/brussel' },
   openGraph: {
     title: 'Vaillant Loodgieter Brussel – Alle Gemeenten | vaillant Loodgieter',
     description: 'Gecertificeerd Vaillant loodgieter actief in de 19 gemeenten van het Brussels Hoofdstedelijk Gewest.',
-    url: 'https://vaillant-loodgieter.be/nl/brussel',
+    url: 'https://vaillant-loodgieter.com/nl/brussel',
   },
 };
 
@@ -62,7 +62,7 @@ export default function BrusselPage() {
             vaillant Loodgieter is uw gecertificeerde Vaillant loodgieter in Brussel, actief in alle gemeenten van het Brussels Hoofdstedelijk Gewest. Van noodservice in loodgieterij tot het vervangen van ketels en sanitaire installaties.
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <a href="mailto:contact@vaillant-loodgieter.be" className="btn btn-primary">Offerte aanvragen</a>
+            <a href="mailto:contact@vaillant-loodgieter.com" className="btn btn-primary">Offerte aanvragen</a>
             <Link href="/nl/diensten" className="btn btn-outline">
               Onze diensten →
             </Link>
@@ -264,7 +264,7 @@ export default function BrusselPage() {
           </div>
           {[
             { q: 'Zijn jullie ook beschikbaar in mijn Brusselse gemeente?', a: 'Ja, we zijn actief in alle 19 gemeenten van het Brussels Hoofdstedelijk Gewest. Mocht uw gemeente of exacte locatie niet in onze lijst staan, neem dan gerust contact met ons op.' },
-            { q: 'Hoe snel kunnen jullie ter plaatse zijn voor een Vaillant herstelling?', a: 'De reactietijd hangt af van de planning en uw locatie. Voor dringende interventies, stuur een e-mail met "SPOED" in het onderwerp naar contact@vaillant-loodgieter.be.' },
+            { q: 'Hoe snel kunnen jullie ter plaatse zijn voor een Vaillant herstelling?', a: 'De reactietijd hangt af van de planning en uw locatie. Voor dringende interventies, stuur een e-mail met "SPOED" in het onderwerp naar contact@vaillant-loodgieter.com.' },
             { q: 'Werken jullie ook in oude panden in Brussel?', a: 'Absoluut. Onze gecertificeerde technici zijn gewend om in oude Brusselse woningen met verouderde leidingsystemen te werken, wat voor hen geen enkel probleem vormt.' },
           ].map((faq, i) => (
             <details key={i} className="faq-item">
@@ -281,7 +281,7 @@ export default function BrusselPage() {
           <h2>Loodgieter nodig in Brussel?</h2>
           <p>vaillant Loodgieter — een gecertificeerd Vaillant partner actief in alle Brusselse gemeenten.</p>
           <div className="cta-actions">
-            <a href="mailto:contact@vaillant-loodgieter.be" className="btn btn-ghost-dark">📧 Stuur een bericht</a>
+            <a href="mailto:contact@vaillant-loodgieter.com" className="btn btn-ghost-dark">📧 Stuur een bericht</a>
             <Link href="/nl/over-ons" className="btn btn-ghost-dark">
               Over ons →
             </Link>

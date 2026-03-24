@@ -7,12 +7,12 @@ export const metadata: Metadata = {
   title: 'Certificeringen & Merken – Vaillant Loodgieter België',
   description:
     'Ontdek de certificeringen en partnermerken van Vaillant Loodgieter: officieel Vaillant partner met erkende labels en expertise in heel Vlaanderen en België.',
-  alternates: { canonical: 'https://vaillant-loodgieter.be/nl/certificeringen' },
+  alternates: { canonical: 'https://vaillant-loodgieter.com/nl/certificeringen' },
   openGraph: {
     title: 'Onze certificeringen en partnermerken',
     description:
       'Vaillant Loodgieter – gecertificeerde Vaillant partner in België, met erkende labels en samenwerking met toonaangevende verwarmingsmerken.',
-    url: 'https://vaillant-loodgieter.be/nl/certificeringen',
+    url: 'https://vaillant-loodgieter.com/nl/certificeringen',
   },
 };
 
@@ -43,7 +43,7 @@ export default function CertificeringenPage() {
                 verwarmingsketels, boilers en sanitaire installaties.
               </p>
               <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginTop: '1.5rem' }}>
-                <a href="mailto:contact@vaillant-loodgieter.be" className="btn btn-primary">
+                <a href="mailto:contact@vaillant-loodgieter.com" className="btn btn-primary">
                   Vraag een interventie aan
                 </a>
                 <Link href="/nl/diensten" className="btn btn-outline">

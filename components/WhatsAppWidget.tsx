@@ -2,16 +2,10 @@
 
 import Link from "next/link";
 import Image from "next/image";
-
-const WHATSAPP_NUMBER = "3223456789"; // matches SITE_PHONE (+32 2 345 67 89)
+import { getPublicPhoneE164Digits } from "@/config/public-phone";
 
 export default function WhatsAppWidget() {
-  const raw = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || WHATSAPP_NUMBER;
-  const cleaned = raw.replace(/\D/g, "");
-  const international = cleaned.startsWith("0")
-    ? `32${cleaned.slice(1)}`
-    : cleaned || WHATSAPP_NUMBER;
-  const href = `https://wa.me/${international}`;
+  const href = `https://wa.me/${getPublicPhoneE164Digits()}`;
 
   return (
     <div className="pointer-events-none fixed bottom-24 left-4 z-50 md:bottom-8 md:left-6">

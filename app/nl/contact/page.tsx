@@ -5,17 +5,17 @@ import Image from 'next/image';
 export const metadata: Metadata = {
   title: 'Contact – Vaillant Loodgieter België | Vaillant Loodgieter',
   description:
-    'Contacteer Vaillant Loodgieter – uw gecertificeerde Vaillant loodgieter in België. Stuur een e-mail naar contact@vaillant-loodgieter.be voor een offerte of noodinterventie.',
+    'Contacteer Vaillant Loodgieter – uw gecertificeerde Vaillant loodgieter in België. Stuur een e-mail naar contact@vaillant-loodgieter.com voor een offerte of noodinterventie.',
   keywords: [
     'contact Vaillant loodgieter België',
     'loodgieter spoed België',
     'aanvraag Vaillant herstelling België',
   ],
-  alternates: { canonical: 'https://vaillant-loodgieter.be/nl/contact' },
+  alternates: { canonical: 'https://vaillant-loodgieter.com/nl/contact' },
   openGraph: {
     title: 'Contact – Vaillant Loodgieter',
     description: 'Contacteer uw gecertificeerde Vaillant loodgieter in België.',
-    url: 'https://vaillant-loodgieter.be/nl/contact',
+    url: 'https://vaillant-loodgieter.com/nl/contact',
   },
 };
 
@@ -37,7 +37,7 @@ export default function ContactPage() {
             Heeft u een loodgietersprobleem, wilt u een offerte aanvragen of een onderhoudscontract bespreken? Vaillant Loodgieter staat voor u klaar.
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <a href="mailto:contact@vaillant-loodgieter.be" className="btn btn-primary">📧 Stuur een bericht</a>
+            <a href="mailto:contact@vaillant-loodgieter.com" className="btn btn-primary">📧 Stuur een bericht</a>
             <Link href="/nl" className="btn btn-outline">
               ← Terug naar home
             </Link>
@@ -62,8 +62,8 @@ export default function ContactPage() {
                   </span>
                   <div>
                     <h4 style={{ marginBottom: '0.3rem' }}>E-mail</h4>
-                    <a href="mailto:contact@vaillant-loodgieter.be" style={{ fontWeight: 600, color: 'var(--color-primary)' }}>
-                      contact@vaillant-loodgieter.be
+                    <a href="mailto:contact@vaillant-loodgieter.com" style={{ fontWeight: 600, color: 'var(--color-primary)' }}>
+                      contact@vaillant-loodgieter.com
                     </a>
                     <p style={{ fontSize: '0.85rem', marginTop: '0.3rem' }}>
                       Stuur een e-mail met uw vraag, adres en een beschrijving van het probleem. Wij antwoorden u zo snel mogelijk.
@@ -104,8 +104,8 @@ export default function ContactPage() {
                   </span>
                   <div>
                     <h4 style={{ marginBottom: '0.3rem' }}>Website</h4>
-                    <a href="https://vaillant-loodgieter.be" style={{ fontWeight: 600, color: 'var(--color-primary)' }}>
-                      vaillant-loodgieter.be
+                    <a href="https://vaillant-loodgieter.com" style={{ fontWeight: 600, color: 'var(--color-primary)' }}>
+                      vaillant-loodgieter.com
                     </a>
                   </div>
                 </div>
@@ -131,7 +131,7 @@ export default function ContactPage() {
               >
                 <h3 style={{ marginBottom: '0.75rem', fontSize: '1rem' }}>Vraag een interventie aan</h3>
                 <form
-                  action="mailto:contact@vaillant-loodgieter.be"
+                  action="mailto:contact@vaillant-loodgieter.com"
                   method="post"
                   encType="text/plain"
                   style={{ display: 'grid', gap: '10px' }}
@@ -331,7 +331,7 @@ export default function ContactPage() {
           </div>
           {[
             { q: 'Binnen welke termijn antwoorden jullie op een e-mail?', a: 'Wij streven naar een snelle reactie. Bij noodgevallen, vermeld a.u.b. "SPOED" in het onderwerp van uw e-mail — dit geeft prioriteit aan uw bericht in onze planning.' },
-            { q: 'Kan ik u ook telefonisch bereiken?', a: 'Onze belangrijkste contactmethode is via e-mail op contact@vaillant-loodgieter.be. Telefoongegevens worden binnenkort toegevoegd. U kunt uw telefoonnummer vermelden in uw e-mail als u teruggebeld wilt worden.' },
+            { q: 'Kan ik u ook telefonisch bereiken?', a: 'Onze belangrijkste contactmethode is via e-mail op contact@vaillant-loodgieter.com. Telefoongegevens worden binnenkort toegevoegd. U kunt uw telefoonnummer vermelden in uw e-mail als u teruggebeld wilt worden.' },
             { q: 'Zorgen jullie voor een offerte voordat de werken beginnen?', a: 'Ja, altijd. Wij beginnen nooit een interventie zonder u vooraf een duidelijke diagnose en offerte te bezorgen. Geen verborgen kosten.' },
           ].map((faq, i) => (
             <details key={i} className="faq-item">
@@ -346,9 +346,9 @@ export default function ContactPage() {
       <section className="cta-band">
         <div className="container" style={{ maxWidth: '600px' }}>
           <h2>Prêt à nous contacter ?</h2>
-          <p>Envoyez un e-mail à <strong style={{ color: 'rgba(255,255,255,0.95)' }}>contact@vaillant-loodgieter.be</strong> — votre plombier certifié Vaillant en Belgique vous répondra dans les plus brefs délais.</p>
+          <p>Envoyez un e-mail à <strong style={{ color: 'rgba(255,255,255,0.95)' }}>contact@vaillant-loodgieter.com</strong> — votre plombier certifié Vaillant en Belgique vous répondra dans les plus brefs délais.</p>
           <div className="cta-actions">
-            <a href="mailto:contact@vaillant-loodgieter.be" className="btn btn-ghost-dark">📧 contact@vaillant-loodgieter.be</a>
+            <a href="mailto:contact@vaillant-loodgieter.com" className="btn btn-ghost-dark">📧 contact@vaillant-loodgieter.com</a>
             <Link href="/over-ons" className="btn btn-ghost-dark">
               À propos de nous →
             </Link>

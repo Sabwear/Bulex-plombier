@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: 'Conseils & Expertise Plomberie Vaillant | Blog vaillant Plombier',
   description: 'Retrouvez tous nos conseils d\'experts, guides d\'entretien et solutions de dépannage pour votre installation Vaillant à Bruxelles.',
   alternates: {
-    canonical: 'https://vaillant-loodgieter.be/conseils',
+    canonical: 'https://vaillant-loodgieter.com/fr/blog',
   },
 };
 
@@ -28,7 +28,7 @@ export default function BlogArchivePage() {
 
       <div className="grid-3-strict">
         {posts.map((post) => (
-          <Link key={post.slug} href={`/conseils/${post.slug}`} className={styles.blogCard}>
+          <Link key={post.slug} href={`/fr/blog/${post.slug}`} className={styles.blogCard}>
             <div className={styles.cardImage}>
               <Image
                 src={post.image}

@@ -17,7 +17,7 @@ export default function ConfidentialitePage() {
           La présente politique décrit comment vaillant Loodgieter traite vos données à caractère personnel dans le cadre de ce site dédié aux services de plomberie et de chauffage (entretien et réparation de chaudières Vaillant).
         </p>
         <p>
-          Pour toute question : <strong>contact@vaillant-loodgieter.be</strong> ou par téléphone au numéro indiqué sur le site.
+          Pour toute question : <strong>contact@vaillant-loodgieter.com</strong> ou par téléphone au numéro indiqué sur le site.
         </p>
       </section>
 
@@ -62,7 +62,7 @@ export default function ConfidentialitePage() {
         <h2 style={{ fontSize: '1.25rem', marginBottom: '0.75rem' }}>7. Vos droits</h2>
         <p>Conformément au RGPD, vous disposez des droits d&apos;accès, de rectification, d&apos;effacement, de limitation, de portabilité et d&apos;opposition, ainsi que du droit de retirer votre consentement.</p>
         <p>
-          Pour les exercer : <strong>contact@vaillant-loodgieter.be</strong> ou courrier à notre siège. Vous pouvez introduire une réclamation auprès de l&apos;Autorité de protection des données :{' '}
+          Pour les exercer : <strong>contact@vaillant-loodgieter.com</strong> ou courrier à notre siège. Vous pouvez introduire une réclamation auprès de l&apos;Autorité de protection des données :{' '}
           <a href="https://www.autoriteprotectiondonnees.be/" target="_blank" rel="noopener noreferrer">autoriteprotectiondonnees.be</a>.
         </p>
       </section>

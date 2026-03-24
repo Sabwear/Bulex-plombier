@@ -1,4 +1,7 @@
 import type { Locale } from './locale-routes';
+import { getPublicPhoneTelHref } from './public-phone';
+
+const HERO_TEL_HREF = getPublicPhoneTelHref();
 
 export type HeroSlideCta = {
   label: string;
@@ -52,7 +55,7 @@ export const HOME_HERO_SLIDES: Record<Locale, HomeHeroSlide[]> = {
       },
       secondaryCta: {
         label: 'Appeler maintenant',
-        href: 'tel:+3223456789',
+        href: HERO_TEL_HREF,
       },
       trustCards: [
         {
@@ -128,7 +131,7 @@ export const HOME_HERO_SLIDES: Record<Locale, HomeHeroSlide[]> = {
       },
       secondaryCta: {
         label: 'Appeler maintenant',
-        href: 'tel:+3223456789',
+        href: HERO_TEL_HREF,
       },
       trustCards: [
         {
@@ -168,7 +171,7 @@ export const HOME_HERO_SLIDES: Record<Locale, HomeHeroSlide[]> = {
       },
       secondaryCta: {
         label: 'Bel nu',
-        href: 'tel:+3223456789',
+        href: HERO_TEL_HREF,
       },
       trustCards: [
         {
@@ -244,7 +247,7 @@ export const HOME_HERO_SLIDES: Record<Locale, HomeHeroSlide[]> = {
       },
       secondaryCta: {
         label: 'Bel nu',
-        href: 'tel:+3223456789',
+        href: HERO_TEL_HREF,
       },
       trustCards: [
         {

@@ -14,21 +14,21 @@ export default function JuridischeVermeldingPage() {
       <section style={{ marginBottom: '2rem' }}>
         <h2 style={{ fontSize: '1.25rem', marginBottom: '0.75rem' }}>1. Uitgever van de website</h2>
         <p>
-          De website wordt uitgegeven door <strong>vaillant Loodgieter</strong>. Maatschappelijke zetel en identificatienummers (KBO, btw) op aanvraag beschikbaar via contact@vaillant-loodgieter.be.
+          De website wordt uitgegeven door <strong>vaillant Loodgieter</strong>. Maatschappelijke zetel en identificatienummers (KBO, btw) op aanvraag beschikbaar via contact@vaillant-loodgieter.com.
         </p>
       </section>
 
       <section style={{ marginBottom: '2rem' }}>
         <h2 style={{ fontSize: '1.25rem', marginBottom: '0.75rem' }}>2. Contact</h2>
         <p>
-          Voor alle vragen over de website of de diensten (loodgieterij, verwarming, herstelling en onderhoud van Vaillant-ketels): e-mail <strong>contact@vaillant-loodgieter.be</strong>, telefoon en adres op de Contactpagina.
+          Voor alle vragen over de website of de diensten (loodgieterij, verwarming, herstelling en onderhoud van Vaillant-ketels): e-mail <strong>contact@vaillant-loodgieter.com</strong>, telefoon en adres op de Contactpagina.
         </p>
       </section>
 
       <section style={{ marginBottom: '2rem' }}>
         <h2 style={{ fontSize: '1.25rem', marginBottom: '0.75rem' }}>3. Hosting</h2>
         <p>
-          De hosting van de website wordt verzorgd door een technische dienstverlener. De contactgegevens van de host zijn op aanvraag beschikbaar via contact@vaillant-loodgieter.be.
+          De hosting van de website wordt verzorgd door een technische dienstverlener. De contactgegevens van de host zijn op aanvraag beschikbaar via contact@vaillant-loodgieter.com.
         </p>
       </section>
 

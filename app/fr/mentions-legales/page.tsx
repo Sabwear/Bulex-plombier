@@ -14,21 +14,21 @@ export default function MentionsLegalesPage() {
       <section style={{ marginBottom: '2rem' }}>
         <h2 style={{ fontSize: '1.25rem', marginBottom: '0.75rem' }}>1. Éditeur du site</h2>
         <p>
-          Le site est édité par <strong>vaillant Loodgieter</strong>. Siège social et numéros d&apos;identification (BCE, TVA) disponibles sur demande à contact@vaillant-loodgieter.be.
+          Le site est édité par <strong>vaillant Loodgieter</strong>. Siège social et numéros d&apos;identification (BCE, TVA) disponibles sur demande à contact@vaillant-loodgieter.com.
         </p>
       </section>
 
       <section style={{ marginBottom: '2rem' }}>
         <h2 style={{ fontSize: '1.25rem', marginBottom: '0.75rem' }}>2. Contact</h2>
         <p>
-          Pour toute question relative au site ou aux services (plomberie, chauffage, réparation et entretien de chaudières Vaillant) : e-mail <strong>contact@vaillant-loodgieter.be</strong>, téléphone et adresse indiqués sur la page Contact.
+          Pour toute question relative au site ou aux services (plomberie, chauffage, réparation et entretien de chaudières Vaillant) : e-mail <strong>contact@vaillant-loodgieter.com</strong>, téléphone et adresse indiqués sur la page Contact.
         </p>
       </section>
 
       <section style={{ marginBottom: '2rem' }}>
         <h2 style={{ fontSize: '1.25rem', marginBottom: '0.75rem' }}>3. Hébergement</h2>
         <p>
-          L&apos;hébergement du site est assuré par un prestataire technique. Les coordonnées de l&apos;hébergeur sont disponibles sur demande à contact@vaillant-loodgieter.be.
+          L&apos;hébergement du site est assuré par un prestataire technique. Les coordonnées de l&apos;hébergeur sont disponibles sur demande à contact@vaillant-loodgieter.com.
         </p>
       </section>
 

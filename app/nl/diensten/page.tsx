@@ -15,11 +15,11 @@ export const metadata: Metadata = {
     'Vaillant onderhoudscontract',
     'loodgieter spoed België',
   ],
-  alternates: { canonical: 'https://vaillant-loodgieter.be/nl/diensten' },
+  alternates: { canonical: 'https://vaillant-loodgieter.com/nl/diensten' },
   openGraph: {
     title: 'Diensten – Vaillant herstelling België | Vaillant Loodgieter',
     description: 'Professionele loodgieters- en verwarmingsdiensten door een gecertificeerd Vaillant partner in België.',
-    url: 'https://vaillant-loodgieter.be/nl/diensten',
+    url: 'https://vaillant-loodgieter.com/nl/diensten',
   },
 };
 
@@ -122,7 +122,7 @@ export default function DienstenPage() {
             Vaillant Loodgieter is uw gecertificeerde partner voor alle verwarmings- en loodgietersdiensten in België. Van spoedinterventies tot het jaarlijks Vaillant onderhoudscontract.
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <a href="mailto:contact@vaillant-loodgieter.be" className="btn btn-primary">Demander un devis</a>
+            <a href="mailto:contact@vaillant-loodgieter.com" className="btn btn-primary">Demander un devis</a>
             <Link href="/" className="btn btn-outline">← Retour à l'accueil</Link>
           </div>
         </div>
@@ -206,7 +206,7 @@ export default function DienstenPage() {
                     <p key={pi} style={{ marginBottom: pi < s.body.length - 1 ? '1rem' : 0, fontSize: '0.95rem', lineHeight: 1.75 }}>{para}</p>
                   ))}
                   <div style={{ marginTop: '1.5rem' }}>
-                    <a href="mailto:contact@vaillant-loodgieter.be" className="btn btn-primary" style={{ fontSize: '0.9rem' }}>
+                    <a href="mailto:contact@vaillant-loodgieter.com" className="btn btn-primary" style={{ fontSize: '0.9rem' }}>
                       Priez un devis
                     </a>
                   </div>
@@ -297,7 +297,7 @@ export default function DienstenPage() {
           </div>
           <div className="grid-4">
             {[
-              { n: '1', title: 'Contactez-nous', desc: 'E-mail naar contact@vaillant-loodgieter.be met uw probleem en uw adres.' },
+              { n: '1', title: 'Contactez-nous', desc: 'E-mail naar contact@vaillant-loodgieter.com met uw probleem en uw adres.' },
               { n: '2', title: 'Diagnostic', desc: 'Notre technicien inspecte et établit un devis transparent avant toute intervention.' },
               { n: '3', title: 'Intervention', desc: 'Des professionnels certifiés effectuent le service avec des pièces Vaillant d\'origine.' },
               { n: '4', title: 'Rapport', desc: 'Vous recevez un rapport technique écrit et des recommandations d\'entretien.' },
@@ -322,7 +322,7 @@ export default function DienstenPage() {
           </div>
           {[
             { q: 'Travaillez-vous exclusivement avec des appareils Vaillant ?', a: 'Notre spécialité et notre certification concernent les systèmes Vaillant. Nous sommes vos experts de référence pour la réparation, l\'entretien et l\'installation Vaillant en Belgique.' },
-            { q: 'Que faire si j\'ai besoin d\'une réparation d\'urgence ?', a: 'Envoyez un e-mail avec "URGENCE" en objet à contact@vaillant-loodgieter.be. Nous traitons les demandes d\'intervention urgente en priorité.' },
+            { q: 'Que faire si j\'ai besoin d\'une réparation d\'urgence ?', a: 'Envoyez un e-mail avec "URGENCE" en objet à contact@vaillant-loodgieter.com. Nous traitons les demandes d\'intervention urgente en priorité.' },
             { q: 'Le remplacement de la chaudière modifie-t-il ma facture d\'énergie ?', a: 'Une chaudière Vaillant moderne et économe en énergie peut réduire considérablement votre consommation de gaz par rapport à un appareil obsolète. Nous vous conseillons sur les économies réalistes pour votre situation spécifique.' },
             { q: 'Combien de temps dure un entretien ?', a: 'Un entretien annuel standard dure en moyenne 1 à 2 heures, selon le modèle et l\'état de l\'installation.' },
           ].map((faq, i) => (
@@ -340,7 +340,7 @@ export default function DienstenPage() {
           <h2>Prêt à optimiser votre installation Vaillant ?</h2>
           <p>Contactez Vaillant Loodgieter — uw gecertificeerde Vaillant partner in België.</p>
           <div className="cta-actions">
-            <a href="mailto:contact@vaillant-loodgieter.be" className="btn btn-ghost-dark">📧 Envoyer un message</a>
+            <a href="mailto:contact@vaillant-loodgieter.com" className="btn btn-ghost-dark">📧 Envoyer un message</a>
             <Link href="/over-ons" className="btn btn-ghost-dark">
               À propos de nous →
             </Link>

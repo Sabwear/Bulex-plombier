@@ -1,13 +1,14 @@
 'use client';
 
 import { Phone } from 'lucide-react';
+import { getPublicPhoneTelHref } from '@/config/public-phone';
 
 type MobileCallBarProps = {
   lang: 'fr' | 'nl';
   telHref?: string;
 };
 
-export default function MobileCallBar({ lang, telHref = 'tel:023456789' }: MobileCallBarProps) {
+export default function MobileCallBar({ lang, telHref = getPublicPhoneTelHref() }: MobileCallBarProps) {
   const label = lang === 'nl' ? 'Bel ons' : 'Appelez-nous';
 
   return (

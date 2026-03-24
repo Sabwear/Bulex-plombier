@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!post) return {};
 
   const content = post.languages.nl;
-  const baseUrl = 'https://vaillant-loodgieter.be';
+  const baseUrl = 'https://vaillant-loodgieter.com';
 
   return {
     title: `${content.title} | Blog vaillant Loodgieter`,
@@ -174,7 +174,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         <div className={`${styles.sidebarWidget} ${styles.sidebarCta}`}>
           <h3>Interventie nodig?</h3>
           <p>Onze gecertificeerde Vaillant-experts zijn binnen 60 minuten ter plaatse in Brussel.</p>
-          <a href="mailto:contact@vaillant-loodgieter.be" className="btn btn-outline" style={{ color: '#fff', borderColor: '#fff' }}>
+          <a href="mailto:contact@vaillant-loodgieter.com" className="btn btn-outline" style={{ color: '#fff', borderColor: '#fff' }}>
             Contacteer ons
           </a>
         </div>

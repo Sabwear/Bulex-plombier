@@ -14,11 +14,11 @@ export const metadata: Metadata = {
     'installation sanitaire Bruxelles',
     'remplacement chaudière Bruxelles',
   ],
-  alternates: { canonical: 'https://vaillant-loodgieter.be/brussel' },
+  alternates: { canonical: 'https://vaillant-loodgieter.com/brussel' },
   openGraph: {
     title: 'Plombier Vaillant Bruxelles – Toutes les Communes | vaillant Plombier',
     description: 'Plombier certifié Vaillant actif dans les 19 communes de la Région de Bruxelles-Capitale.',
-    url: 'https://vaillant-loodgieter.be/brussel',
+    url: 'https://vaillant-loodgieter.com/brussel',
   },
 };
 
@@ -62,7 +62,7 @@ export default function BrusselPage() {
             vaillant Plombier est votre plombier certifié Vaillant à Bruxelles, actif dans toutes les communes de la Région de Bruxelles-Capitale. Du service d'urgence en plomberie au remplacement de chaudières et aux installations sanitaires.
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <a href="mailto:contact@vaillant-loodgieter.be" className="btn btn-primary">Demander un devis</a>
+            <a href="mailto:contact@vaillant-loodgieter.com" className="btn btn-primary">Demander un devis</a>
             <Link href="/diensten" className="btn btn-outline">
               Nos services →
             </Link>
@@ -259,7 +259,7 @@ export default function BrusselPage() {
           </div>
           {[
             { q: 'Êtes-vous également disponible dans ma commune bruxelloise ?', a: 'Oui, nous sommes actifs dans les 19 communes de la Région de Bruxelles-Capitale. Si votre commune ou votre localité exacte ne figure pas dans notre liste, n\'hésitez pas à nous contacter.' },
-            { q: 'En combien de temps pouvez-vous intervenir pour une réparation Vaillant ?', a: 'Le temps de réaction dépend du planning et de votre emplacement. Pour des interventions urgentes, envoyez un e-mail avec la mention "URGENCE" dans l\'objet à contact@vaillant-loodgieter.be.' },
+            { q: 'En combien de temps pouvez-vous intervenir pour une réparation Vaillant ?', a: 'Le temps de réaction dépend du planning et de votre emplacement. Pour des interventions urgentes, envoyez un e-mail avec la mention "URGENCE" dans l\'objet à contact@vaillant-loodgieter.com.' },
             { q: 'Intervenez-vous également dans des propriétés anciennes à Bruxelles ?', a: 'Absolument. Nos techniciens certifiés ont l\'habitude de travailler dans des habitations bruxelloises anciennes avec des systèmes de canalisation obsolètes, ce qui ne pose aucun problème pour eux.' },
           ].map((faq, i) => (
             <details key={i} className="faq-item">
@@ -276,7 +276,7 @@ export default function BrusselPage() {
           <h2>Besoin d'un plombier à Bruxelles ?</h2>
           <p>vaillant Plombier — un partenaire Vaillant certifié actif dans toutes les communes bruxelloises.</p>
           <div className="cta-actions">
-            <a href="mailto:contact@vaillant-loodgieter.be" className="btn btn-ghost-dark">📧 Envoyer un message</a>
+            <a href="mailto:contact@vaillant-loodgieter.com" className="btn btn-ghost-dark">📧 Envoyer un message</a>
             <Link href="/over-ons" className="btn btn-ghost-dark">
               À propos de nous →
             </Link>

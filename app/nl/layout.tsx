@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import "../globals.css";
 import SiteHeader from "@/components/header/SiteHeader";
 import Footer from "@/components/Footer";
+import { HtmlLang } from "@/components/HtmlLang";
 import Script from "next/script";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
 import MobileCallBar from "@/components/MobileCallBar";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://vaillant-loodgieter.be"),
+  metadataBase: new URL("https://vaillant-loodgieter.com"),
   title: {
     default: "Vaillant loodgieter België | Vaillant Loodgieter",
     template: "%s | Vaillant Loodgieter",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "nl_BE",
-    url: "https://vaillant-loodgieter.be",
+    url: "https://vaillant-loodgieter.com",
     siteName: "Vaillant Loodgieter",
     title: "Vaillant loodgieter België | Vaillant Loodgieter",
     description:
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true },
   },
   alternates: {
-    canonical: "https://vaillant-loodgieter.be",
+    canonical: "https://vaillant-loodgieter.com",
   },
 };
 
@@ -50,8 +50,8 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Vaillant Loodgieter",
-  url: "https://vaillant-loodgieter.be",
-  email: "contact@vaillant-loodgieter.be",
+  url: "https://vaillant-loodgieter.com",
+  email: "contact@vaillant-loodgieter.com",
   address: {
     "@type": "PostalAddress",
     addressLocality: "België",
@@ -70,28 +70,24 @@ const jsonLd = {
   ],
 };
 
-export default function RootLayout({
+export default function NlLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="nl">
-      <head>
-        <link rel="icon" href="/flame.svg" />
-        <Script
-          id="json-ld-organization"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </head>
-      <body>
-        <SiteHeader lang="nl" />
-        <main className="pb-24 md:pb-0">{children}</main>
-        <Footer />
-        <WhatsAppWidget />
-        <MobileCallBar lang="nl" telHref="tel:023456789" />
-      </body>
-    </html>
+    <>
+      <HtmlLang lang="nl" />
+      <Script
+        id="json-ld-organization-nl"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <SiteHeader lang="nl" />
+      <main className="pb-24 md:pb-0">{children}</main>
+      <Footer />
+      <WhatsAppWidget />
+      <MobileCallBar lang="nl" />
+    </>
   );
 }

@@ -56,7 +56,7 @@ function getIntroNl(commune: Commune): string {
 }
 
 function buildJsonLd(commune: Commune, basePath: string) {
-  const baseUrl = "https://vaillant-loodgieter.be";
+  const baseUrl = "https://vaillant-loodgieter.com";
   const url = `${baseUrl}${basePath}/${commune.slug}`;
   return [
     {
@@ -90,7 +90,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const commune = getCityBySlug("nl", slug);
   if (!commune) return {};
-  const baseUrl = "https://vaillant-loodgieter.be";
+  const baseUrl = "https://vaillant-loodgieter.com";
   let desc = `Vaillant loodgieter in ${commune.name}.`;
   if (commune.nearby_landmarks.length > 0) desc += ` Snelle interventie nabij ${commune.nearby_landmarks[0]}.`;
   if (commune.common_issues.length > 0) desc += ` ${commune.common_issues[0]}.`;

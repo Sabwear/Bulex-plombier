@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+import StatsRow from '@/components/home/StatsRow';
 
 export const metadata: Metadata = {
   title: 'Over Ons – Gecertificeerd Vaillant Partner België | Vaillant Loodgieter',
@@ -12,11 +13,11 @@ export const metadata: Metadata = {
     'gekwalificeerde loodgieters België',
     'verwarmingsinstallateur België',
   ],
-  alternates: { canonical: 'https://vaillant-loodgieter.be/nl/over-ons' },
+  alternates: { canonical: 'https://vaillant-loodgieter.com/nl/over-ons' },
   openGraph: {
     title: 'Over Ons – Gecertificeerd Vaillant Partner België | Vaillant Loodgieter',
     description: 'Vaillant Loodgieter: gecertificeerd Vaillant partner met gekwalificeerde technici actief in België.',
-    url: 'https://vaillant-loodgieter.be/nl/over-ons',
+    url: 'https://vaillant-loodgieter.com/nl/over-ons',
   },
 };
 
@@ -38,7 +39,7 @@ export default function OverOnsPage() {
             Wij zijn een gecertificeerd Vaillant partner in België. Onze gekwalificeerde technici combineren officiële fabrieksopleiding met bewezen praktijkervaring voor uw verwarmings- en sanitaire behoeften.
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <a href="mailto:contact@vaillant-loodgieter.be" className="btn btn-primary">Contacteer ons</a>
+            <a href="mailto:contact@vaillant-loodgieter.com" className="btn btn-primary">Contacteer ons</a>
             <Link href="/nl/diensten" className="btn btn-outline">
               Onze diensten →
             </Link>
@@ -54,7 +55,7 @@ export default function OverOnsPage() {
               <div className="card" style={{ padding: 0, overflow: 'hidden' }}>
                 <Image
                   src="/images/slider-vaillant-2.png"
-                  alt="Vaillant technici aan het werk in België"
+                  alt="Vaillant-technici bij een interventie in België"
                   width={720}
                   height={640}
                   style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
@@ -62,6 +63,9 @@ export default function OverOnsPage() {
               </div>
             </div>
             <div>
+              <p style={{ marginBottom: '1rem', fontSize: '0.95rem', color: 'rgb(71,85,105)' }}>
+                Enkele kernpunten die onze manier van werken in België samenvatten:
+              </p>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.25rem' }}>
                 {[
                   { icon: 'plumber-1.svg', label: 'Officieel Vaillant Gecertificeerd' },
@@ -82,6 +86,10 @@ export default function OverOnsPage() {
                 ))}
               </div>
             </div>
+          </div>
+
+          <div className="mt-10 max-w-3xl mx-auto">
+            <StatsRow locale="nl" />
           </div>
         </div>
       </section>
@@ -239,7 +247,7 @@ export default function OverOnsPage() {
           </div>
           <div className="grid-4">
             {[
-              { n: '1', title: 'Contact', desc: 'Envoyez un e-mail à contact@vaillant-loodgieter.be pour toute demande.' },
+              { n: '1', title: 'Contact', desc: 'Envoyez un e-mail à contact@vaillant-loodgieter.com pour toute demande.' },
               { n: '2', title: 'Diagnostic', desc: 'Diagnostic transparent et devis avant intervention.' },
               { n: '3', title: 'Intervention', desc: 'Technicien certifié travaillant avec des pièces d\'origine.' },
               { n: '4', title: 'Rapport', desc: 'Rapport technique écrit et complet après l\'intervention.' },
@@ -264,7 +272,7 @@ export default function OverOnsPage() {
           </div>
           {[
             { q: 'Hoe kan ik bevestigen dat jullie echt gecertificeerd zijn door Vaillant?', a: 'U kunt onze status als gecertificeerd partner rechtstreeks bevestigen bij Vaillant Belgium. Wij zijn transparant over onze kwalificaties en onze technici tonen hun certificaten bij elke interventie.' },
-            { q: 'In welke talen communiceren jullie?', a: 'Wij communiceren in het Frans en Nederlands. Voor alle vragen kunt u contact opnemen met contact@vaillant-loodgieter.be en wij zullen u zo goed mogelijk begeleiden.' },
+            { q: 'In welke talen communiceren jullie?', a: 'Wij communiceren in het Frans en Nederlands. Voor alle vragen kunt u contact opnemen met contact@vaillant-loodgieter.com en wij zullen u zo goed mogelijk begeleiden.' },
             { q: 'Behandelen jullie ook commerciële projecten?', a: 'Onze diensten zijn momenteel voornamelijk gericht op woningen en residentieel vastgoed in België. Neem contact met ons op voor commerciële aanvragen — we bespreken dit per geval.' },
           ].map((faq, i) => (
             <details key={i} className="faq-item">
@@ -281,7 +289,7 @@ export default function OverOnsPage() {
           <h2>Prenez contact avec votre partenaire Vaillant certifié</h2>
           <p>Partenaire certifié Vaillant · Techniciens qualifiés · Tout Bruxelles</p>
           <div className="cta-actions">
-            <a href="mailto:contact@vaillant-loodgieter.be" className="btn btn-ghost-dark">📧 Envoyer un message</a>
+            <a href="mailto:contact@vaillant-loodgieter.com" className="btn btn-ghost-dark">📧 Envoyer un message</a>
             <Link href="/diensten" className="btn btn-ghost-dark">
               Nos services
             </Link>

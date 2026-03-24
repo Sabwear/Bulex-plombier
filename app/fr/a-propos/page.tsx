@@ -13,11 +13,11 @@ export const metadata: Metadata = {
     'plombiers qualifiés Belgique',
     'chauffagiste Belgique',
   ],
-  alternates: { canonical: 'https://vaillant-loodgieter.be/a-propos' },
+  alternates: { canonical: 'https://vaillant-loodgieter.com/a-propos' },
   openGraph: {
     title: 'À Propos – Partenaire Vaillant Certifié Belgique | Vaillant Plombier',
     description: 'Vaillant Plombier : partenaire certifié Vaillant avec des techniciens qualifiés travaillant en Belgique.',
-    url: 'https://vaillant-loodgieter.be/a-propos',
+    url: 'https://vaillant-loodgieter.com/a-propos',
   },
 };
 
@@ -39,7 +39,7 @@ export default function OverOnsPage() {
             Nous sommes un partenaire certifié Vaillant en Belgique. Nos techniciens qualifiés combinent une formation officielle du fabricant avec une expérience de terrain éprouvée pour vos besoins en chauffage et sanitaires.
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <a href="mailto:contact@vaillant-loodgieter.be" className="btn btn-primary">Contactez-nous</a>
+            <a href="mailto:contact@vaillant-loodgieter.com" className="btn btn-primary">Contactez-nous</a>
             <Link href="/services" className="btn btn-outline">
               Nos services →
             </Link>
@@ -247,7 +247,7 @@ export default function OverOnsPage() {
           </div>
           <div className="grid-4">
             {[
-              { n: '1', title: 'Contact', desc: 'Envoyez un e-mail à contact@vaillant-loodgieter.be pour toute demande.' },
+              { n: '1', title: 'Contact', desc: 'Envoyez un e-mail à contact@vaillant-loodgieter.com pour toute demande.' },
               { n: '2', title: 'Diagnostic', desc: 'Diagnostic transparent et devis avant intervention.' },
               { n: '3', title: 'Intervention', desc: 'Technicien certifié travaillant avec des pièces d\'origine.' },
               { n: '4', title: 'Rapport', desc: 'Rapport technique écrit et complet après l\'intervention.' },
@@ -272,7 +272,7 @@ export default function OverOnsPage() {
           </div>
           {[
             { q: 'Comment puis-je confirmer que vous êtes véritablement certifiés par Vaillant ?', a: 'Vous pouvez confirmer notre statut de partenaire certifié directement auprès de Vaillant Belgium. Nous sommes transparents quant à nos qualifications et nos techniciens présentent leurs certificats à chaque intervention.' },
-            { q: 'Dans quelles langues communiquez-vous ?', a: 'Nous communiquons en français. Pour toute question en néerlandais, veuillez contacter contact@vaillant-loodgieter.be et nous vous guiderons du mieux possible.' },
+            { q: 'Dans quelles langues communiquez-vous ?', a: 'Nous communiquons en français. Pour toute question en néerlandais, veuillez contacter contact@vaillant-loodgieter.com et nous vous guiderons du mieux possible.' },
             { q: 'Prenez-vous également en charge des projets commerciaux ?', a: 'Nos services sont actuellement principalement axés sur les habitations et les biens résidentiels à Bruxelles. Contactez-nous pour toute demande commerciale — nous en discuterons au cas par cas.' },
           ].map((faq, i) => (
             <details key={i} className="faq-item">
@@ -289,7 +289,7 @@ export default function OverOnsPage() {
           <h2>Prenez contact avec votre partenaire Vaillant certifié</h2>
           <p>Partenaire certifié Vaillant · Techniciens qualifiés · Tout Bruxelles</p>
           <div className="cta-actions">
-            <a href="mailto:contact@vaillant-loodgieter.be" className="btn btn-ghost-dark">📧 Envoyer un message</a>
+            <a href="mailto:contact@vaillant-loodgieter.com" className="btn btn-ghost-dark">📧 Envoyer un message</a>
             <Link href="/diensten" className="btn btn-ghost-dark">
               Nos services
             </Link>

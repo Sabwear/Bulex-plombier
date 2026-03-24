@@ -7,12 +7,12 @@ export const metadata: Metadata = {
   title: 'Certifications & Marques – Vaillant Plombier Belgique',
   description:
     'Découvrez les certifications et marques partenaires de Vaillant Plombier : partenaire Vaillant certifié, reconnu pour son expertise en chauffage et sanitaire en Belgique.',
-  alternates: { canonical: 'https://vaillant-loodgieter.be/fr/certifications' },
+  alternates: { canonical: 'https://vaillant-loodgieter.com/fr/certifications' },
   openGraph: {
     title: 'Nos certifications et marques partenaires',
     description:
       'Vaillant Plombier – partenaire Vaillant certifié en Belgique, avec des labels reconnus et une expertise sur les grandes marques de chauffage.',
-    url: 'https://vaillant-loodgieter.be/fr/certifications',
+    url: 'https://vaillant-loodgieter.com/fr/certifications',
   },
 };
 
@@ -42,7 +42,7 @@ export default function CertificationsPage() {
                 chaudières gaz, boilers et installations sanitaires.
               </p>
               <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginTop: '1.5rem' }}>
-                <a href="mailto:contact@vaillant-loodgieter.be" className="btn btn-primary">
+                <a href="mailto:contact@vaillant-loodgieter.com" className="btn btn-primary">
                   Demander une intervention
                 </a>
                 <Link href="/fr/services" className="btn btn-outline">

@@ -8,6 +8,7 @@ import { getBlogPosts } from '@/data/types';
 import HomeHeroSlider from '@/components/hero/HomeHeroSlider';
 import { HOME_HERO_TRUST_STRIP } from '@/config/home-hero-slides';
 import CertificationLogosMarquee from '@/components/CertificationLogosMarquee';
+import InterventionSmtpForm from '@/components/forms/InterventionSmtpForm';
 import {
   Mail, Award, Zap, Globe, UserCheck,
   Wrench, Settings, Construction,
@@ -25,11 +26,11 @@ export const metadata: Metadata = {
     'réparation fuite d\'eau Belgique',
     'partenaire certifié Vaillant Belgique',
   ],
-  alternates: { canonical: 'https://vaillant-loodgieter.be' },
+  alternates: { canonical: 'https://vaillant-loodgieter.com' },
   openGraph: {
     title: 'Plombier Vaillant Belgique | Vaillant Plombier',
     description: 'Partenaire certifié Vaillant en Belgique. Professionnel, rapide et fiable.',
-    url: 'https://vaillant-loodgieter.be',
+    url: 'https://vaillant-loodgieter.com',
   },
 };
 
@@ -273,7 +274,7 @@ export default function HomePage() {
                 installation <strong>fiable</strong> sur le long terme.
               </p>
               <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-                <a href="mailto:contact@vaillant-loodgieter.be" className="btn btn-primary">
+                <a href="mailto:contact@vaillant-loodgieter.com" className="btn btn-primary">
                   Demander une intervention
                 </a>
                 <Link href="/fr/certifications" className="btn btn-outline">
@@ -454,7 +455,7 @@ export default function HomePage() {
               {
                 n: '1',
                 title: 'Demande de devis',
-                desc: "Remplissez la page de demande de devis ou envoyez un e-mail à contact@vaillant-loodgieter.be. Décrivez votre problème ou votre projet le plus précisément possible.",
+                desc: "Remplissez la page de demande de devis ou envoyez un e-mail à contact@vaillant-loodgieter.com. Décrivez votre problème ou votre projet le plus précisément possible.",
               },
               {
                 n: '2',
@@ -495,7 +496,7 @@ export default function HomePage() {
           </div>
           {[
             { q: 'Êtes-vous un partenaire officiel certifié Vaillant ?', a: "Oui. vaillant Plombier est officiellement certifié par la marque Vaillant. Nos techniciens participent aux formations directes du fabricant et sont reconnus pour l'installation, l'entretien et la réparation des systèmes Vaillant en Belgique." },
-            { q: 'Combien coûte une réparation de chaudière Vaillant en Belgique ?', a: "Le coût final dépend du défaut spécifique et des pièces Vaillant nécessaires. Nous faisons toujours un diagnostic sur place et nous fournissons un devis clair. Pas de frais supplémentaires surprises. Écrivez à contact@vaillant-loodgieter.be pour une estimation." },
+            { q: 'Combien coûte une réparation de chaudière Vaillant en Belgique ?', a: "Le coût final dépend du défaut spécifique et des pièces Vaillant nécessaires. Nous faisons toujours un diagnostic sur place et nous fournissons un devis clair. Pas de frais supplémentaires surprises. Écrivez à contact@vaillant-loodgieter.com pour une estimation." },
             { q: 'À quelle vitesse pouvez-vous intervenir en cas d\'urgence ?', a: "Nous visons l'intervention la plus rapide possible pour les pannes totales de chauffage et de l'eau. Mentionnez « URGENCE » dans l'en-tête de votre e-mail pour que votre demande soit priorisée." },
             { q: 'Quels appareils Vaillant réparez-vous ?', a: "Nous réparons et entretenons tous les modèles Vaillant, en incluant les chaudières murales à gaz (série ecoTEC, turboTEC), ainsi que les différentes solutions thermodynamiques et les pompes à chaleur de la marque." },
             { q: 'Proposez-vous un contrat d\'entretien pour les installations Vaillant ?', a: "Oui, un contrat d'entretien de chauffage Vaillant complet incluant la révision annuelle, le nettoyage et la vérification des réglages. L'entretien obligatoire augmente la durabilité et optimise le fonctionnement de votre appareil." },
@@ -573,104 +574,20 @@ export default function HomePage() {
               boxShadow: '0 22px 60px rgba(0,0,0,0.22)',
             }}
           >
-            <form
-              action="mailto:contact@vaillant-loodgieter.be"
-              method="post"
-              encType="text/plain"
-              style={{ display: 'grid', gap: '12px' }}
-            >
-              <input
-                name="Nom Prénom"
-                required
-                placeholder="Nom Prénom *"
-                style={{
-                  width: '100%',
-                  borderRadius: '999px',
-                  padding: '14px 16px',
-                  border: '1px solid rgba(148,163,184,0.40)',
-                  outline: 'none',
-                  background: 'rgba(255,255,255,0.96)',
-                }}
-              />
-              <input
-                name="Numéro de téléphone"
-                required
-                inputMode="tel"
-                placeholder="Numéro de téléphone *"
-                style={{
-                  width: '100%',
-                  borderRadius: '999px',
-                  padding: '14px 16px',
-                  border: '1px solid rgba(148,163,184,0.40)',
-                  outline: 'none',
-                  background: 'rgba(255,255,255,0.96)',
-                }}
-              />
-              <input
-                name="Type d'intervention"
-                placeholder="Type d'intervention"
-                style={{
-                  width: '100%',
-                  borderRadius: '999px',
-                  padding: '14px 16px',
-                  border: '1px solid rgba(148,163,184,0.40)',
-                  outline: 'none',
-                  background: 'rgba(255,255,255,0.96)',
-                }}
-              />
-              <input
-                name="Adresse"
-                placeholder="Adresse"
-                style={{
-                  width: '100%',
-                  borderRadius: '999px',
-                  padding: '14px 16px',
-                  border: '1px solid rgba(148,163,184,0.40)',
-                  outline: 'none',
-                  background: 'rgba(255,255,255,0.96)',
-                }}
-              />
-              <textarea
-                name="Message"
-                rows={7}
-                placeholder="Message"
-                style={{
-                  width: '100%',
-                  borderRadius: '18px',
-                  padding: '14px 16px',
-                  border: '1px solid rgba(148,163,184,0.40)',
-                  outline: 'none',
-                  background: 'rgba(255,255,255,0.96)',
-                  resize: 'vertical',
-                }}
-              />
-
-              <label
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '10px',
-                  fontSize: '0.9rem',
-                  color: 'rgba(234,246,247,0.84)',
-                  paddingLeft: '6px',
-                }}
-              >
-                <input type="checkbox" required />
-                <span>
+            <InterventionSmtpForm
+              formType="intervention"
+              source="accueil-fr"
+              submitLabel="Envoyer"
+              privacyLabel={
+                <>
                   En envoyant un message, vous acceptez notre{' '}
                   <Link href="/fr/confidentialite" style={{ color: 'rgba(234,246,247,0.92)', fontWeight: 700, textDecoration: 'underline' }}>
                     politique de confidentialité
                   </Link>
                   .
-                </span>
-              </label>
-
-              <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '6px' }}>
-                <button type="submit" className="btn btn-primary" style={{ minWidth: '160px' }}>
-                  Envoyer
-                </button>
-              </div>
-            </form>
+                </>
+              }
+            />
           </div>
         </div>
       </section>
@@ -684,8 +601,8 @@ export default function HomePage() {
           <h2>Prêt à réparer ou optimiser votre installation Vaillant ?</h2>
           <p>Contactez dès aujourd'hui votre partenaire certifié Vaillant en Belgique. Nous analysons votre demande rapidement.</p>
           <div className="cta-actions">
-            <a href="mailto:contact@vaillant-loodgieter.be" className="btn btn-ghost-dark" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <Mail size={18} /> contact@vaillant-loodgieter.be
+            <a href="mailto:contact@vaillant-loodgieter.com" className="btn btn-ghost-dark" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <Mail size={18} /> contact@vaillant-loodgieter.com
             </a>
             <Link href="/fr/services" className="btn btn-ghost-dark">
               Voir nos services

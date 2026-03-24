@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: 'Advies & Expertise Loodgieterij Vaillant | Blog vaillant Loodgieter',
   description: 'Vind al ons deskundig advies, onderhoudsgidsen en reparatieoplossingen voor uw Vaillant-installatie in Brussel.',
   alternates: {
-    canonical: 'https://vaillant-loodgieter.be/nl/blog',
+    canonical: 'https://vaillant-loodgieter.com/nl/blog',
   },
 };
 

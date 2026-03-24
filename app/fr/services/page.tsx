@@ -15,12 +15,12 @@ export const metadata: Metadata = {
     "installation sanitaire Belgique",
     "contrat d'entretien Vaillant",
   ],
-  alternates: { canonical: "https://vaillant-loodgieter.be/services" },
+  alternates: { canonical: "https://vaillant-loodgieter.com/services" },
   openGraph: {
     title: "Services - Réparation Vaillant Belgique | Vaillant Plombier",
     description:
       "Découvrez l'ensemble de nos services de plomberie et chauffage en Belgique.",
-    url: "https://vaillant-loodgieter.be/services",
+    url: "https://vaillant-loodgieter.com/services",
   },
 };
 
