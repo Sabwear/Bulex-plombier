@@ -50,8 +50,8 @@ export const SITE_NAVIGATION: Record<Locale, LocaleNavigation> = {
       { label: 'Contact', href: '/fr/contact' },
     ],
     cta: {
-      label: 'Contactez-nous',
-      href: '/fr/contact',
+      label: 'Appelez-nous',
+      href: getPublicPhoneTelHref(),
     },
   },
   nl: {
@@ -78,8 +78,8 @@ export const SITE_NAVIGATION: Record<Locale, LocaleNavigation> = {
       { label: 'Contact', href: '/nl/contact' },
     ],
     cta: {
-      label: 'Neem contact op',
-      href: '/nl/contact',
+      label: 'Bel ons',
+      href: getPublicPhoneTelHref(),
     },
   },
 };

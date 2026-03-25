@@ -18,6 +18,11 @@ export default function MainHeader({ lang }: MainHeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const data = useMemo(() => SITE_NAVIGATION[lang], [lang]);
 
+  const mobileMenuCta =
+    lang === 'nl'
+      ? { label: 'Plan een interventie', href: '/nl/demande-offerte' }
+      : { label: 'Planifier une intervention', href: '/fr/demande-devis' };
+
   return (
     <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-200 overflow-visible">
       <div className="container px-4 sm:px-6">
@@ -101,6 +106,8 @@ export default function MainHeader({ lang }: MainHeaderProps) {
             <a
               href={SITE_PHONE.href}
               aria-label={SITE_PHONE.display}
+              target="_blank"
+              rel="noreferrer"
               className="lg:hidden inline-flex items-center justify-center gap-1.5 px-3 h-9 sm:h-10 rounded-md border border-gray-200 text-gray-700 hover:text-primary hover:border-primary/40 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             >
               <Phone size={18} />
@@ -109,6 +116,8 @@ export default function MainHeader({ lang }: MainHeaderProps) {
 
             <Link
               href={data.cta.href}
+              target="_blank"
+              rel="noreferrer"
               className="hidden lg:inline-flex items-center justify-center gap-2 rounded-lg bg-primary hover:bg-primary-hover !text-white hover:!text-white text-sm font-semibold px-[15px] py-[10px] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary whitespace-nowrap"
             >
               <Phone size={16} />
@@ -133,7 +142,7 @@ export default function MainHeader({ lang }: MainHeaderProps) {
         onClose={() => setMenuOpen(false)}
         lang={lang}
         navItems={data.navItems}
-        cta={data.cta}
+        cta={mobileMenuCta}
       />
     </header>
   );

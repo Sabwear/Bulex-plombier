@@ -134,7 +134,12 @@ export default async function PlombierSlugPage({ params }: PageProps) {
           <h1 className={styles.heroTitle}>Plombier Vaillant certifié à {commune.name}</h1>
           <p className={styles.heroIntro}>{getIntro(commune)}</p>
           <div className={styles.heroActions}>
-            <a href="tel:+32XXXXXXXXXX" className="btn btn-primary">
+            <a
+              href="tel:+32XXXXXXXXXX"
+              className="btn btn-primary"
+              target="_blank"
+              rel="noreferrer"
+            >
               <Phone className="w-4 h-4 mr-2" />
               <span>Appeler</span>
             </a>
@@ -566,7 +571,7 @@ export default async function PlombierSlugPage({ params }: PageProps) {
           <h2>Besoin d&apos;un plombier à {commune.name} ?</h2>
           <p>Contactez-nous dès maintenant pour un dépannage rapide ou un devis gratuit.</p>
           <div className="cta-actions">
-            <a href="tel:+32XXXXXXXXXX" className="btn btn-primary">
+            <a href="tel:+32XXXXXXXXXX" className="btn btn-primary" target="_blank" rel="noreferrer">
               <Phone className="w-4 h-4 mr-2" />
               <span>Appeler maintenant</span>
             </a>

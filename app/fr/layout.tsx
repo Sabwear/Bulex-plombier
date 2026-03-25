@@ -7,7 +7,7 @@ import WhatsAppWidget from "@/components/WhatsAppWidget";
 import MobileCallBar from "@/components/MobileCallBar";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://vaillantloodgieter.com"),
+  metadataBase: new URL("https://vaillant-loodgieter.com"),
   title: {
     default: "Plombier Vaillant Belgique | Vaillant Plombier",
     template: "%s | Vaillant Plombier",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "fr_BE",
-    url: "https://vaillantloodgieter.com/fr",
+    url: "https://vaillant-loodgieter.com/fr",
     siteName: "Vaillant Plombier",
     title: "Plombier Vaillant Belgique | Vaillant Plombier",
     description:
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true },
   },
   alternates: {
-    canonical: "https://vaillantloodgieter.com/fr",
+    canonical: "https://vaillant-loodgieter.com/fr",
   },
 };
 

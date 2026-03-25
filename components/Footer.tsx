@@ -6,10 +6,13 @@ import styles from './Footer.module.css';
 import { usePathname } from 'next/navigation';
 import { Mail, MapPin, MessageCircle, CheckCircle2 } from 'lucide-react';
 import LanguageSwitcher from '@/components/header/LanguageSwitcher';
+import { getPublicPhoneE164Digits } from '@/config/public-phone';
+import { SITE_PHONE } from '@/config/site-navigation';
 
 export default function Footer() {
   const pathname = usePathname() || '/';
   const isNl = pathname.startsWith('/nl');
+  const waHref = `https://wa.me/${getPublicPhoneE164Digits()}`;
 
   return (
     <footer className={styles.footer}>
@@ -187,11 +190,8 @@ export default function Footer() {
               <div className={styles.contactIcon}><MessageCircle size={18} /></div>
               <div className={styles.contactText}>
                 <span className={styles.contactLabel}>WhatsApp</span>
-                <a
-                  href="https://wa.me/3223456789"
-                  className={styles.contactValue}
-                >
-                  +32 2 345 67 89
+                <a href={waHref} className={styles.contactValue}>
+                  {SITE_PHONE.display}
                 </a>
               </div>
             </li>

@@ -18,6 +18,8 @@ export default function MobileCallBar({ lang, telHref = getPublicPhoneTelHref() 
     >
       <a
         href={telHref}
+        target="_blank"
+        rel="noreferrer"
         className="mobile-call-cta btn btn-primary w-full flex items-center justify-center gap-3 rounded-none"
         style={{
           paddingTop: '1.05rem',

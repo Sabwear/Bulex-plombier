@@ -134,7 +134,12 @@ export default async function LoodgieterSlugPage({ params }: PageProps) {
           <h1 className={styles.heroTitle}>Vaillant loodgieter in {commune.name}</h1>
           <p className={styles.heroIntro}>{getIntroNl(commune)}</p>
           <div className={styles.heroActions}>
-            <a href="tel:+32XXXXXXXXXX" className="btn btn-primary">
+            <a
+              href="tel:+32XXXXXXXXXX"
+              className="btn btn-primary"
+              target="_blank"
+              rel="noreferrer"
+            >
               <Phone className="w-4 h-4 mr-2" />
               <span>Bellen</span>
             </a>
@@ -566,7 +571,7 @@ export default async function LoodgieterSlugPage({ params }: PageProps) {
           <h2>Een loodgieter nodig in {commune.name}?</h2>
           <p>Neem nu contact op voor een snelle herstelling of een gratis offerte.</p>
           <div className="cta-actions">
-            <a href="tel:+32XXXXXXXXXX" className="btn btn-primary">
+            <a href="tel:+32XXXXXXXXXX" className="btn btn-primary" target="_blank" rel="noreferrer">
               <Phone className="w-4 h-4 mr-2" />
               <span>Nu bellen</span>
             </a>

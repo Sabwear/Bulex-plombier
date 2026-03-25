@@ -21,7 +21,8 @@ function getPreferredLocale(request: NextRequest): Locale {
     if (lang.startsWith('fr')) return 'fr';
   }
 
-  return 'fr';
+  // Default locale preference when no cookie or accepted language.
+  return 'nl';
 }
 
 export function middleware(request: NextRequest) {

@@ -28,6 +28,11 @@ export default function HomeHeroSlider({ lang }: HomeHeroSliderProps) {
   const pointerStartX = useRef<number | null>(null);
   const pointerDeltaX = useRef(0);
 
+  const telLinkProps = (href: string) =>
+    href.startsWith('tel:')
+      ? { target: '_blank', rel: 'noreferrer' }
+      : {};
+
   const stopAutoplayAfterInteraction = () => {
     setIsAutoplayPaused(true);
   };
@@ -127,12 +132,14 @@ export default function HomeHeroSlider({ lang }: HomeHeroSliderProps) {
                 <div className="mt-6 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
                   <Link
                     href={slide.primaryCta.href}
+                    {...telLinkProps(slide.primaryCta.href)}
                     className="btn btn-primary rounded-full bg-[#00adab] px-6 py-2.5 text-sm font-semibold text-white shadow-lg hover:bg-[#009190]"
                   >
                     {slide.primaryCta.label}
                   </Link>
                   <Link
                     href={slide.secondaryCta.href}
+                    {...telLinkProps(slide.secondaryCta.href)}
                     className="btn rounded-full border border-white/50 bg-white/10 px-6 py-2.5 text-sm font-semibold text-white backdrop-blur-sm hover:bg-white/20"
                   >
                     {slide.secondaryCta.label}

@@ -7,6 +7,7 @@ import HomeHeroSlider from '@/components/hero/HomeHeroSlider';
 import { HOME_HERO_TRUST_STRIP } from '@/config/home-hero-slides';
 import CertificationLogosMarquee from '@/components/CertificationLogosMarquee';
 import TestimonialsCarousel from '@/components/home/TestimonialsCarousel';
+import StatsRow from '@/components/home/StatsRow';
 import {
   Mail, Award, Zap, UserCheck,
   Wrench, Settings, Construction,
@@ -85,13 +86,14 @@ export default function HomePage() {
             <div>
               <div className="card" style={{ padding: 0, overflow: 'hidden' }}>
                 <NextImage
-                  src="/images/slider-vaillant-1.png"
-                    alt="Gecertificeerde Vaillant technicus in België"
-                  width={640}
-                  height={640}
+                  src="/images/vaillant-2.png"
+                  alt="Gecertificeerde Vaillant technicus in België"
+                  width={1080}
+                  height={1080}
                   className="w-full h-auto object-cover"
                 />
               </div>
+              <StatsRow locale="nl" />
             </div>
             <div>
               <span className="badge badge-green">Over ons</span>
@@ -100,50 +102,69 @@ export default function HomePage() {
               </h2>
               <p style={{ marginBottom: '1rem' }}>
                 <strong>Vaillant Loodgieter</strong> is gevestigd in <strong>België</strong> en is een <strong>gecertificeerde Vaillant-partner</strong>{' '}
-                gespecialiseerd in residentiële <strong>verwarming</strong> en <strong>sanitair</strong>. Ons team komt dagelijks tussen in heel{' '}
+                gespecialiseerd in <strong>verwarming</strong> en <strong>residentiële sanitair</strong>. Ons team komt dagelijks tussen in heel{' '}
                 <strong>Vlaanderen</strong> voor het <strong>onderhoud</strong>, de <strong>herstelling</strong> en de{' '}
-                <strong>vervanging</strong> van verwarmingsketels, evenals voor <strong>waterlekken</strong> en{' '}
-                <strong>sanitaire installaties</strong>.
+                <strong>vervanging</strong> van verwarmingsketels, evenals voor <strong>waterlekken</strong> en <strong>sanitaire installaties</strong>.
               </p>
               <p style={{ marginBottom: '1.25rem' }}>
                 Wij geven altijd voorrang aan een <strong>duidelijke diagnose</strong> vóór elke interventie, <strong>eerlijke communicatie</strong>{' '}
                 en het gebruik van <strong>originele Vaillant-onderdelen</strong>, zodat uw installatie op lange termijn <strong>betrouwbaar</strong>{' '}
                 blijft.
               </p>
-              <p style={{ marginBottom: '1.1rem', fontSize: '0.95rem', color: 'rgb(71,85,105)' }}>
-                Door te kiezen voor <strong>Vaillant Loodgieter</strong> kiest u voor een partner die bekend staat om de <strong>kwaliteit</strong>{' '}
-                van zijn werk en de <strong>betrouwbaarheid</strong> van zijn service:
-              </p>
-              <div style={{ display: 'grid', rowGap: '0.75rem', marginBottom: '1.5rem' }}>
-                {[
-                  (
-                    <>
-                      <strong>Officieel</strong> gecertificeerde <strong>Vaillant-partner</strong> in <strong>België</strong>
-                    </>
-                  ),
-                  (
-                    <>
-                      <strong>Ervaren</strong> technici, rechtstreeks opgeleid door de <strong>fabrikant</strong>
-                    </>
-                  ),
-                  (
-                    <>
-                      <strong>Snelle interventies</strong> in heel <strong>Vlaanderen</strong>
-                    </>
-                  ),
-                ].map((point, i) => (
-                  <div
-                    key={i}
-                    style={{ display: 'flex', gap: '0.5rem', alignItems: 'flex-start' }}
-                  >
-                    <CheckCircle2
-                      size={18}
-                      color="var(--color-primary)"
-                      style={{ marginTop: '3px' }}
-                    />
-                    <span style={{ fontSize: '0.95rem' }}>{point}</span>
-                  </div>
-                ))}
+              <div style={{ marginBottom: '1.5rem' }}>
+                <p
+                  style={{
+                    marginBottom: '0.9rem',
+                    fontSize: '0.95rem',
+                    color: 'rgb(71,85,105)',
+                  }}
+                >
+                  Door te kiezen voor <strong>Vaillant Loodgieter</strong> kiest u voor een partner die bekend staat om de <strong>kwaliteit</strong>
+                  van zijn werk en de <strong>betrouwbaarheid</strong> van zijn service:
+                </p>
+                <div style={{ display: 'grid', rowGap: '0.65rem' }}>
+                  {[
+                    {
+                      icon: '/icons/plumbing-elements/plumber-1.svg',
+                      label: (
+                        <>
+                          Officieel <strong>gecertificeerde Vaillant-partner</strong> in <strong>België</strong>
+                        </>
+                      ),
+                    },
+                    {
+                      icon: '/icons/plumbing-elements/wrench-2.svg',
+                      label: (
+                        <>
+                          Techniciens <strong>ervaren</strong>, rechtstreeks opgeleid door de <strong>fabrikant</strong>
+                        </>
+                      ),
+                    },
+                    {
+                      icon: '/icons/plumbing-elements/pipes-7.svg',
+                      label: (
+                        <>
+                          <strong>Snelle interventies</strong> in heel <strong>Vlaanderen</strong>
+                        </>
+                      ),
+                    },
+                  ].map((item) => (
+                    <div
+                      key={item.icon}
+                      style={{ display: 'flex', gap: '0.6rem', alignItems: 'flex-start' }}
+                    >
+                      <NextImage
+                        src={item.icon}
+                        alt=""
+                        width={20}
+                        height={20}
+                        className="h-5 w-5"
+                        style={{ marginTop: '2px' }}
+                      />
+                      <span style={{ fontSize: '0.95rem' }}>{item.label}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
               <Link href="/nl/over-ons" className="btn btn-primary">
                 Meer over Vaillant Loodgieter

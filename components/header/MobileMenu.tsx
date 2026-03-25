@@ -2,10 +2,13 @@
 
 import { Suspense, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import { Facebook, Instagram, Linkedin, Twitter, Send } from 'lucide-react';
 import { X } from 'lucide-react';
 import type { Locale } from '@/config/locale-routes';
 import type { NavItem } from '@/config/site-navigation';
 import LanguageSwitcher from './LanguageSwitcher';
+import { SOCIAL_LINKS } from '@/config/social-links';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -18,7 +21,7 @@ interface MobileMenuProps {
   };
 }
 
-export default function MobileMenu({ isOpen, onClose, navItems, cta }: MobileMenuProps) {
+export default function MobileMenu({ isOpen, onClose, navItems, cta, lang }: MobileMenuProps) {
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : '';
     return () => {
@@ -54,7 +57,17 @@ export default function MobileMenu({ isOpen, onClose, navItems, cta }: MobileMen
       >
         <div className="h-full flex flex-col">
           <div className="h-14 px-4 border-b border-gray-100 flex items-center justify-between">
-            <span className="text-sm font-semibold text-gray-900">Menu</span>
+            <div className="flex items-center gap-2">
+              <span className="sr-only">Menu</span>
+              <Image
+                src="/logo-vaillant-loodgieter.png"
+                alt="Vaillant Loodgieter"
+                width={170}
+                height={40}
+                className="h-8 w-auto object-contain"
+                priority={false}
+              />
+            </div>
             <button
               type="button"
               onClick={onClose}
@@ -63,6 +76,72 @@ export default function MobileMenu({ isOpen, onClose, navItems, cta }: MobileMen
             >
               <X size={18} />
             </button>
+          </div>
+
+          <div className="px-4 py-4 border-b border-gray-100">
+            <p className="mt-2 text-xs leading-relaxed text-gray-600">
+              {lang === 'nl'
+                ? 'Gecertificeerd Vaillant partner in België. Gekwalificeerde technici voor al uw loodgieterij en verwarming.'
+                : 'Partenaire certifié Vaillant en Belgique. Techniciens qualifiés pour tous vos besoins en plomberie et chauffage.'}
+            </p>
+
+            <div className="mt-3 flex items-center gap-2">
+              {SOCIAL_LINKS.twitter && (
+                <a
+                  href={SOCIAL_LINKS.twitter}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Twitter"
+                  className="h-9 w-9 inline-flex items-center justify-center rounded-md border border-gray-200 text-gray-700 hover:text-primary hover:bg-primary/5 transition-colors"
+                >
+                  <Twitter size={16} />
+                </a>
+              )}
+              {SOCIAL_LINKS.facebook && (
+                <a
+                  href={SOCIAL_LINKS.facebook}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Facebook"
+                  className="h-9 w-9 inline-flex items-center justify-center rounded-md border border-gray-200 text-gray-700 hover:text-primary hover:bg-primary/5 transition-colors"
+                >
+                  <Facebook size={16} />
+                </a>
+              )}
+              {SOCIAL_LINKS.instagram && (
+                <a
+                  href={SOCIAL_LINKS.instagram}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Instagram"
+                  className="h-9 w-9 inline-flex items-center justify-center rounded-md border border-gray-200 text-gray-700 hover:text-primary hover:bg-primary/5 transition-colors"
+                >
+                  <Instagram size={16} />
+                </a>
+              )}
+              {SOCIAL_LINKS.linkedin && (
+                <a
+                  href={SOCIAL_LINKS.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="LinkedIn"
+                  className="h-9 w-9 inline-flex items-center justify-center rounded-md border border-gray-200 text-gray-700 hover:text-primary hover:bg-primary/5 transition-colors"
+                >
+                  <Linkedin size={16} />
+                </a>
+              )}
+              {SOCIAL_LINKS.telegram && (
+                <a
+                  href={SOCIAL_LINKS.telegram}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Telegram"
+                  className="h-9 w-9 inline-flex items-center justify-center rounded-md border border-gray-200 text-gray-700 hover:text-primary hover:bg-primary/5 transition-colors"
+                >
+                  <Send size={16} />
+                </a>
+              )}
+            </div>
           </div>
 
           <nav className="flex-1 overflow-y-auto px-4 py-4">

@@ -93,7 +93,7 @@ export default function LoodgieterHubPage() {
             pagina staan.
           </p>
           <div className="cta-actions">
-            <a href="tel:+32XXXXXXXXXX" className="btn btn-primary">
+            <a href="tel:+32XXXXXXXXXX" className="btn btn-primary" target="_blank" rel="noreferrer">
               📞 Bellen
             </a>
             <Link href="/nl/contact" className="btn btn-ghost-dark">

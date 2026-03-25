@@ -1,17 +1,25 @@
 /**
  * Single env: NEXT_PUBLIC_PHONE_NUMBER
- * Human-readable (e.g. "02 345 67 89") or digits; drives header display, tel: links, and WhatsApp.
+ * NEXT_PUBLIC_PHONE_NUMBER can be human-readable (e.g. "02 345 67 89"), digits, or include "+".
+ * This module normalizes it for:
+ * - frontend display: "+324..." (no spaces)
+ * - tel: links: tel:+324...
+ * - WhatsApp links (wa.me): digits only (no "+", no spaces)
  */
 
 const DEFAULT_DISPLAY = "02 345 67 89";
 
-export function getPublicPhoneDisplay(): string {
+function getPublicPhoneRaw(): string {
   return process.env.NEXT_PUBLIC_PHONE_NUMBER?.trim() || DEFAULT_DISPLAY;
+}
+
+export function getPublicPhoneDisplay(): string {
+  return `+${getPublicPhoneE164Digits()}`;
 }
 
 /** E.164 digits without leading + (e.g. 3223456789). */
 export function getPublicPhoneE164Digits(): string {
-  const raw = getPublicPhoneDisplay();
+  const raw = getPublicPhoneRaw();
   const cleaned = raw.replace(/\D/g, "");
   if (!cleaned) return "3223456789";
   if (cleaned.startsWith("32")) return cleaned;

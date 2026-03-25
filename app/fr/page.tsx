@@ -274,9 +274,9 @@ export default function HomePage() {
                 installation <strong>fiable</strong> sur le long terme.
               </p>
               <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-                <a href="mailto:contact@vaillant-loodgieter.com" className="btn btn-primary">
+                <Link href="/fr/demande-devis" className="btn btn-primary">
                   Demander une intervention
-                </a>
+                </Link>
                 <Link href="/fr/certifications" className="btn btn-outline">
                   Voir notre certification →
                 </Link>

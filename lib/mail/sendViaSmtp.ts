@@ -26,9 +26,15 @@ export async function sendViaSmtp(
     },
   });
 
+  // Ensure business contact mailbox receives the form submissions too.
+  // If `MAIL_TO` is an admin inbox, we still include `MAIL_FROM` (e.g. contact@...) as recipient.
+  const recipients = Array.from(
+    new Set([config.mailTo, config.mailFrom].map((v) => v.trim()).filter(Boolean))
+  );
+
   await transporter.sendMail({
     from: `"Vaillant Loodgieter" <${config.mailFrom}>`,
-    to: config.mailTo,
+    to: recipients.join(", "),
     replyTo: options.replyTo || config.mailFrom,
     subject: options.subject,
     text: options.text,

@@ -94,7 +94,7 @@ export default function PlombierHubPage() {
             encore sur cette page.
           </p>
           <div className="cta-actions">
-            <a href="tel:+32XXXXXXXXXX" className="btn btn-primary">
+            <a href="tel:+32XXXXXXXXXX" className="btn btn-primary" target="_blank" rel="noreferrer">
               <Phone className="w-4 h-4 mr-2" />
               <span>Appeler</span>
             </a>

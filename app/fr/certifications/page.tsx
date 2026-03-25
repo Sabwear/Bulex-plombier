@@ -42,9 +42,9 @@ export default function CertificationsPage() {
                 chaudières gaz, boilers et installations sanitaires.
               </p>
               <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginTop: '1.5rem' }}>
-                <a href="mailto:contact@vaillant-loodgieter.com" className="btn btn-primary">
+                <Link href="/fr/demande-devis" className="btn btn-primary">
                   Demander une intervention
-                </a>
+                </Link>
                 <Link href="/fr/services" className="btn btn-outline">
                   Voir nos services →
                 </Link>
