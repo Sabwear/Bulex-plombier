@@ -301,7 +301,7 @@ export async function POST(req: Request) {
   }
 
   try {
-    const { subject: subjC, text: textC, html: htmlC } = buildCustomerConfirmationEmail({
+    const { subject: subjC, text: textC } = buildCustomerConfirmationEmail({
       locale: confirmLocale,
       visitorFirstNameOrNom: visitorName,
       submittedCopy: body,
@@ -310,7 +310,6 @@ export async function POST(req: Request) {
       to: [replyTo],
       subject: subjC,
       text: textC,
-      html: htmlC,
       replyTo: config.mailFrom,
     });
   } catch (e) {
