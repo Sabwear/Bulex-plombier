@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import ContactRequestForm from './ContactRequestForm';
+import ContactRequestForm from '@/components/forms/ContactRequestForm';
 import { buildLocaleAlternates } from '@/lib/seoAlternates';
 
 export const metadata: Metadata = {

@@ -15,162 +15,168 @@ export const metadata: Metadata = {
   },
 };
 
+const tips = [
+  {
+    title: "Type d’intervention",
+    desc: "Réparation, remplacement, fuite d’eau, sanitaire, chauffage ou entretien.",
+  },
+  {
+    title: "Adresse",
+    desc: "Rue + commune/ville (Belgique) pour situer l’intervention.",
+  },
+  {
+    title: "Appareil (si applicable)",
+    desc: "Marque/modèle (ex. Vaillant ecoTEC) + code erreur ou symptôme.",
+  },
+  {
+    title: "Urgence",
+    desc: "Indiquez « URGENCE » si vous n’avez plus de chauffage ou d’eau chaude.",
+  },
+];
+
+const steps = [
+  { n: '1', title: 'Lecture & tri', desc: 'Nous analysons votre message et posons une question si nécessaire.' },
+  { n: '2', title: 'Estimation', desc: 'Vous recevez une estimation claire et/ou une proposition de planning.' },
+  { n: '3', title: 'Intervention', desc: 'Un technicien qualifié intervient avec un diagnostic transparent.' },
+];
+
 export default function QuoteRequestPage() {
   return (
-    <section
-      className="py-16 md:py-20"
-      style={{
-        background:
-          "radial-gradient(1200px 600px at 20% -10%, rgba(0,173,171,0.22), transparent 60%), radial-gradient(900px 520px at 85% 10%, rgba(34,197,94,0.14), transparent 55%), linear-gradient(180deg, #062433 0%, #041A25 100%)",
-      }}
-    >
-      <div className="container">
-        <div className="section-header" style={{ color: '#EAF6F7' }}>
-          <span className="badge badge-gold">Devis</span>
-          <h1 style={{ marginTop: '1rem', color: '#fff' }}>Demande de devis</h1>
-          <div className="divider" />
-          <p style={{ color: 'rgba(234,246,247,0.80)' }}>
+    <>
+      <section
+        style={{
+          background:
+            "linear-gradient(90deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.55) 100%), url('/images/contact.jpg') center/cover no-repeat",
+          padding: '5rem 1.5rem 3rem',
+          borderBottom: '1px solid var(--border)',
+        }}
+      >
+        <div className="container">
+          <span className="badge badge-green" style={{ marginBottom: '1rem' }}>
+            Devis
+          </span>
+          <h1 style={{ marginBottom: '1rem' }}>Demande de devis</h1>
+          <p style={{ fontSize: '1.1rem', maxWidth: '60ch', marginBottom: 0 }}>
             Envoyez votre demande. Nous répondons rapidement avec une réponse claire.
           </p>
         </div>
+      </section>
 
-        {/* Details (above form) */}
-        <div
-          className="card"
-          style={{
-            maxWidth: '760px',
-            margin: '0 auto 18px',
-            borderRadius: '22px',
-            padding: '18px',
-            background:
-              'linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.06) 100%)',
-            border: '1px solid rgba(148,163,184,0.22)',
-            boxShadow: '0 22px 60px rgba(0,0,0,0.22)',
-            color: '#EAF6F7',
-          }}
-        >
-          <span className="badge badge-blue" style={{ marginBottom: '0.75rem' }}>
-            Comment ça marche ?
-          </span>
-          <h2 style={{ marginBottom: '0.75rem', color: '#fff' }}>
-            Informations utiles pour une réponse rapide
-          </h2>
-          <p style={{ fontSize: '0.95rem', color: 'rgba(234,246,247,0.80)', marginBottom: '1rem', maxWidth: 'none' }}>
-            Plus votre demande est précise, plus nous pouvons vous répondre vite avec une estimation cohérente et une proposition adaptée.
-          </p>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {[
-              { title: "Type d’intervention", desc: "Réparation, remplacement, fuite d’eau, sanitaire, chauffage ou entretien." },
-              { title: "Adresse", desc: "Rue + commune/ville (Belgique) pour situer l’intervention." },
-              { title: "Appareil (si applicable)", desc: "Marque/modèle (ex. Vaillant ecoTEC) + code erreur ou symptôme." },
-              { title: "Urgence", desc: "Indiquez « URGENCE » si vous n’avez plus de chauffage ou d’eau chaude." },
-            ].map((item) => (
+      <section className="py-14 md:py-16" style={{ background: 'var(--bg-secondary)' }}>
+        <div className="container">
+          <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-12">
+            {/* Left: informational blocks (no nested card boxes) */}
+            <div className="flex flex-col gap-10">
               <div
-                key={item.title}
-                className="rounded-[var(--radius)] border border-[rgba(148,163,184,0.22)] bg-white/5 p-4"
+                className="rounded-xl border p-6 shadow-sm"
+                style={{
+                  borderColor: 'var(--border)',
+                  background: '#fff',
+                }}
               >
-                <div className="text-sm font-semibold text-white">{item.title}</div>
-                <div className="mt-1 text-sm text-[rgba(234,246,247,0.80)]">{item.desc}</div>
-              </div>
-            ))}
-          </div>
-          <p style={{ fontSize: '0.9rem', marginTop: '1rem', color: 'rgba(234,246,247,0.70)', maxWidth: 'none' }}>
-            Prix final = diagnostic + pièces nécessaires. Nous privilégions la transparence (pas de mauvaise surprise).
-          </p>
-        </div>
-
-        <div
-          style={{
-            maxWidth: '760px',
-            margin: '0 auto',
-            borderRadius: '22px',
-            padding: '18px',
-            background:
-              'linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.06) 100%)',
-            border: '1px solid rgba(148,163,184,0.22)',
-            boxShadow: '0 22px 60px rgba(0,0,0,0.22)',
-          }}
-        >
-          <InterventionSmtpForm
-            formType="quote_fr"
-            source="demande-devis"
-            submitLabel="Envoyer"
-            privacyLabel={
-              <>
-                En envoyant un message, vous acceptez notre{' '}
-                <Link
-                  href="/fr/confidentialite"
-                  style={{
-                    color: 'rgba(234,246,247,0.92)',
-                    fontWeight: 700,
-                    textDecoration: 'underline',
-                  }}
-                >
-                  politique de confidentialité
-                </Link>
-                .
-              </>
-            }
-          />
-
-          {/* Details (below form) */}
-          <div
-            className="card"
-            style={{
-              marginTop: '18px',
-              padding: '18px',
-              borderRadius: '18px',
-              background: 'rgba(255,255,255,0.06)',
-              border: '1px solid rgba(148,163,184,0.22)',
-              color: '#EAF6F7',
-            }}
-          >
-            <span className="badge badge-gold" style={{ marginBottom: '0.75rem' }}>
-              Et ensuite ?
-            </span>
-            <h2 style={{ marginBottom: '0.75rem', color: '#fff' }}>
-              De la demande à l’intervention
-            </h2>
-            <div className="grid gap-4 sm:grid-cols-3">
-              {[
-                { n: '1', title: 'Lecture & tri', desc: 'Nous analysons votre message et posons une question si nécessaire.' },
-                { n: '2', title: 'Estimation', desc: 'Vous recevez une estimation claire et/ou une proposition de planning.' },
-                { n: '3', title: 'Intervention', desc: 'Un technicien qualifié intervient avec un diagnostic transparent.' },
-              ].map((step) => (
-                <div
-                  key={step.n}
-                  className="rounded-[var(--radius)] border border-[rgba(148,163,184,0.22)] bg-white/5 p-4"
-                >
-                  <div className="text-xs font-semibold uppercase tracking-[0.08em] text-[rgba(234,246,247,0.70)]">
-                    Étape {step.n}
-                  </div>
-                  <div className="mt-2 text-sm font-semibold text-white">{step.title}</div>
-                  <div className="mt-1 text-sm text-[rgba(234,246,247,0.80)]">{step.desc}</div>
+                <span className="badge badge-blue" style={{ marginBottom: '0.75rem' }}>
+                  Comment ça marche ?
+                </span>
+                <h2 className="text-lg font-semibold" style={{ color: 'var(--text-heading)', marginBottom: '0.5rem' }}>
+                  Informations utiles pour une réponse rapide
+                </h2>
+                <p style={{ fontSize: '0.95rem', color: 'var(--text-body)', marginBottom: '1.25rem', maxWidth: 'none' }}>
+                  Plus votre demande est précise, plus nous pouvons vous répondre vite avec une estimation cohérente et une proposition adaptée.
+                </p>
+                <div className="divide-y divide-[var(--border)]">
+                  {tips.map((item) => (
+                    <div key={item.title} className="py-3 first:pt-0">
+                      <div className="text-sm font-semibold" style={{ color: 'var(--text-heading)' }}>
+                        {item.title}
+                      </div>
+                      <div className="mt-1 text-sm" style={{ color: 'var(--text-body)' }}>
+                        {item.desc}
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-            <p style={{ fontSize: '0.9rem', marginTop: '1rem', color: 'rgba(234,246,247,0.70)', maxWidth: 'none' }}>
-              Urgence ? Ajoutez « URGENCE » dans votre message et précisez si votre chauffage/eau chaude est totalement en panne.
-            </p>
-          </div>
+                <p style={{ fontSize: '0.9rem', marginTop: '1rem', color: 'var(--text-muted)', maxWidth: 'none' }}>
+                  Prix final = diagnostic + pièces nécessaires. Nous privilégions la transparence (pas de mauvaise surprise).
+                </p>
+              </div>
 
+              <div
+                className="rounded-xl border p-6 shadow-sm"
+                style={{
+                  borderColor: 'var(--border)',
+                  background: '#fff',
+                }}
+              >
+                <span className="badge badge-gold" style={{ marginBottom: '0.75rem' }}>
+                  Et ensuite ?
+                </span>
+                <h2 className="text-lg font-semibold" style={{ color: 'var(--text-heading)', marginBottom: '1rem' }}>
+                  De la demande à l’intervention
+                </h2>
+                <div className="divide-y divide-[var(--border)]">
+                  {steps.map((step) => (
+                    <div key={step.n} className="py-3 first:pt-0">
+                      <div className="text-xs font-semibold uppercase tracking-wide" style={{ color: 'var(--text-muted)' }}>
+                        Étape {step.n}
+                      </div>
+                      <div className="mt-1 text-sm font-semibold" style={{ color: 'var(--text-heading)' }}>
+                        {step.title}
+                      </div>
+                      <div className="mt-1 text-sm" style={{ color: 'var(--text-body)' }}>
+                        {step.desc}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <p style={{ fontSize: '0.9rem', marginTop: '1rem', color: 'var(--text-muted)', maxWidth: 'none' }}>
+                  Urgence ? Ajoutez « URGENCE » dans votre message et précisez si votre chauffage/eau chaude est totalement en panne.
+                </p>
+              </div>
+
+              <div>
+                <Link href="/fr/contact" className="btn btn-outline">
+                  Besoin d’aide ? Contact →
+                </Link>
+              </div>
+            </div>
+
+            {/* Right: single form panel */}
             <div
+              className="lg:sticky lg:top-24 rounded-xl border p-6 shadow-sm"
               style={{
-                display: 'flex',
-                justifyContent: 'flex-start',
-                alignItems: 'center',
-                gap: '12px',
-                marginTop: '12px',
-                flexWrap: 'wrap',
+                borderColor: 'var(--border)',
+                background: '#fff',
               }}
             >
-              <Link href="/fr/contact" className="btn btn-outline">
-                Besoin d’aide ? Contact →
-              </Link>
+              <h2 className="text-lg font-semibold" style={{ color: 'var(--text-heading)', marginBottom: '1rem' }}>
+                Votre demande
+              </h2>
+              <InterventionSmtpForm
+                formType="quote_fr"
+                source="demande-devis"
+                surface="light"
+                submitLabel="Envoyer"
+                privacyLabel={
+                  <>
+                    En envoyant un message, vous acceptez notre{' '}
+                    <Link
+                      href="/fr/confidentialite"
+                      style={{
+                        color: 'var(--color-primary)',
+                        fontWeight: 700,
+                        textDecoration: 'underline',
+                      }}
+                    >
+                      politique de confidentialité
+                    </Link>
+                    .
+                  </>
+                }
+              />
             </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
-

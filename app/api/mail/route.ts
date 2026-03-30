@@ -82,49 +82,94 @@ export async function POST(req: Request) {
     case "contact": {
       const nom = str(formData, "nom");
       const email = str(formData, "email");
+      const localeTag = str(formData, "locale");
+      const isNl = localeTag === "nl";
       if (nom.length < 2 || !email.includes("@")) {
-        return NextResponse.json({ error: "Nom ou e-mail invalide." }, { status: 400 });
+        return NextResponse.json(
+          {
+            error: isNl ? "Naam of e-mail ongeldig." : "Nom ou e-mail invalide.",
+          },
+          { status: 400 }
+        );
       }
       const urgent = isTruthy(str(formData, "urgence"));
-      subject = `${urgent ? "[URGENCE] " : ""}[Contact FR] ${nom}`;
-      body = [
-        "Formulaire: Contact (FR)",
-        "",
-        `Nom: ${nom}`,
-        `E-mail: ${email}`,
-        `Téléphone: ${str(formData, "telephone") || "—"}`,
-        `Adresse: ${str(formData, "adresse")}`,
-        `Urgence: ${urgent ? "Oui" : "Non"}`,
-        "",
-        "Message:",
-        str(formData, "message"),
-      ].join("\n");
+      if (isNl) {
+        subject = `${urgent ? "[SPOED] " : ""}[Contact NL] ${nom}`;
+        body = [
+          "Formulier: Contact (NL)",
+          "",
+          `Naam: ${nom}`,
+          `E-mail: ${email}`,
+          `Telefoon: ${str(formData, "telephone") || "—"}`,
+          `Adres: ${str(formData, "adresse")}`,
+          `Spoed: ${urgent ? "Ja" : "Nee"}`,
+          "",
+          "Bericht:",
+          str(formData, "message"),
+        ].join("\n");
+      } else {
+        subject = `${urgent ? "[URGENCE] " : ""}[Contact FR] ${nom}`;
+        body = [
+          "Formulaire: Contact (FR)",
+          "",
+          `Nom: ${nom}`,
+          `E-mail: ${email}`,
+          `Téléphone: ${str(formData, "telephone") || "—"}`,
+          `Adresse: ${str(formData, "adresse")}`,
+          `Urgence: ${urgent ? "Oui" : "Non"}`,
+          "",
+          "Message:",
+          str(formData, "message"),
+        ].join("\n");
+      }
       break;
     }
     case "intervention": {
       const nom = str(formData, "nom");
       const email = str(formData, "email");
       const tel = str(formData, "telephone");
+      const localeTag = str(formData, "locale");
+      const isNl = localeTag === "nl";
       if (nom.length < 2 || !email.includes("@") || tel.length < 5) {
         return NextResponse.json(
-          { error: "Nom, e-mail ou téléphone invalide." },
+          {
+            error: isNl
+              ? "Naam, e-mail of telefoon ongeldig."
+              : "Nom, e-mail ou téléphone invalide.",
+          },
           { status: 400 }
         );
       }
       const source = str(formData, "source") || "fr";
-      subject = `[Intervention FR - ${source}] ${nom}`;
-      body = [
-        `Formulaire: Demande d'intervention (FR) — ${source}`,
-        "",
-        `Nom: ${nom}`,
-        `E-mail: ${email}`,
-        `Téléphone: ${tel}`,
-        `Type d'intervention: ${str(formData, "typeIntervention") || "—"}`,
-        `Adresse: ${str(formData, "adresse") || "—"}`,
-        "",
-        "Message:",
-        str(formData, "message") || "—",
-      ].join("\n");
+      if (isNl) {
+        subject = `[Intervention NL - ${source}] ${nom}`;
+        body = [
+          `Formulier: Interventieaanvraag (NL) — ${source}`,
+          "",
+          `Naam: ${nom}`,
+          `E-mail: ${email}`,
+          `Telefoon: ${tel}`,
+          `Type interventie: ${str(formData, "typeIntervention") || "—"}`,
+          `Adres: ${str(formData, "adresse") || "—"}`,
+          "",
+          "Bericht:",
+          str(formData, "message") || "—",
+        ].join("\n");
+      } else {
+        subject = `[Intervention FR - ${source}] ${nom}`;
+        body = [
+          `Formulaire: Demande d'intervention (FR) — ${source}`,
+          "",
+          `Nom: ${nom}`,
+          `E-mail: ${email}`,
+          `Téléphone: ${tel}`,
+          `Type d'intervention: ${str(formData, "typeIntervention") || "—"}`,
+          `Adresse: ${str(formData, "adresse") || "—"}`,
+          "",
+          "Message:",
+          str(formData, "message") || "—",
+        ].join("\n");
+      }
       break;
     }
     case "quote_fr": {

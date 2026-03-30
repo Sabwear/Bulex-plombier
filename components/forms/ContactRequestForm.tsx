@@ -25,14 +25,59 @@ const initialState: FormState = {
 
 interface ContactRequestFormProps {
   supportEmail: string;
+  locale?: "fr" | "nl";
 }
 
-export default function ContactRequestForm({ supportEmail }: ContactRequestFormProps) {
+export default function ContactRequestForm({
+  supportEmail,
+  locale = "fr",
+}: ContactRequestFormProps) {
   const [form, setForm] = useState<FormState>(initialState);
   const [files, setFiles] = useState<File[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [hint, setHint] = useState<string | null>(null);
+
+  const t =
+    locale === "nl"
+      ? {
+          errIncomplete: "Vul de verplichte velden correct in.",
+          errSend: "Verzenden mislukt. Probeer het later opnieuw.",
+          hintOk: "Uw bericht is verzonden. We antwoorden snel.",
+          errNetwork: "Netwerkfout. Controleer uw verbinding.",
+          sending: "Bezig met verzenden…",
+          submit: "Verstuur aanvraag",
+          phName: "Volledige naam",
+          phEmail: "E-mailadres",
+          phPhone: "Telefoon (optioneel)",
+          phAddr: "Adres (stad)",
+          urgentLabel: "Deze aanvraag als spoed markeren",
+          phMsg: "Beschrijf uw vraag…",
+          fileTitle: "Foto’s en documenten (optioneel)",
+          fileDrop: "Sleep bestanden hierheen of klik in het vak",
+          fileFormats:
+            "JPG, PNG, GIF, WebP of PDF · max. 5 bestanden · max. 5 MB per bestand",
+          footer: `Berichten worden verzonden via ${supportEmail}; u ontvangt een antwoord op uw e-mailadres.`,
+        }
+      : {
+          errIncomplete: "Veuillez compléter correctement les champs obligatoires.",
+          errSend: "Envoi impossible. Réessayez plus tard.",
+          hintOk: "Votre message a été envoyé. Nous vous répondrons rapidement.",
+          errNetwork: "Erreur réseau. Vérifiez votre connexion.",
+          sending: "Envoi en cours…",
+          submit: "Envoyer la demande",
+          phName: "Nom complet",
+          phEmail: "Adresse e-mail",
+          phPhone: "Telephone (facultatif)",
+          phAddr: "Adresse (ville)",
+          urgentLabel: "Marquer cette demande comme urgente",
+          phMsg: "Décrivez votre demande...",
+          fileTitle: "Photos et documents (facultatif)",
+          fileDrop: "Glissez-déposez vos fichiers ici ou cliquez dans la zone",
+          fileFormats:
+            "JPG, PNG, GIF, WebP ou PDF · jusqu’à 5 fichiers · 5 Mo maximum par fichier",
+          footer: `Les messages sont envoyés depuis ${supportEmail} ; réponse directe à votre adresse e-mail.`,
+        };
 
   const canSubmit = useMemo(() => {
     return (
@@ -53,12 +98,15 @@ export default function ContactRequestForm({ supportEmail }: ContactRequestFormP
     setHint(null);
 
     if (!canSubmit) {
-      setError("Veuillez compléter correctement les champs obligatoires.");
+      setError(t.errIncomplete);
       return;
     }
 
     const fd = new FormData();
     fd.append("formType", "contact");
+    if (locale === "nl") {
+      fd.append("locale", "nl");
+    }
     fd.append("nom", form.nom.trim());
     fd.append("email", form.email.trim());
     fd.append("telephone", form.telephone.trim());
@@ -72,15 +120,15 @@ export default function ContactRequestForm({ supportEmail }: ContactRequestFormP
       const res = await fetch("/api/mail", { method: "POST", body: fd });
       const data = (await res.json().catch(() => ({}))) as { error?: string };
       if (!res.ok) {
-        setError(data.error || "Envoi impossible. Réessayez plus tard.");
+        setError(data.error || t.errSend);
         return;
       }
-      setHint("Votre message a été envoyé. Nous vous répondrons rapidement.");
+      setHint(t.hintOk);
       setForm(initialState);
       setFiles([]);
       (event.target as HTMLFormElement).reset();
     } catch {
-      setError("Erreur réseau. Vérifiez votre connexion.");
+      setError(t.errNetwork);
     } finally {
       setIsSubmitting(false);
     }
@@ -102,7 +150,7 @@ export default function ContactRequestForm({ supportEmail }: ContactRequestFormP
           required
           value={form.nom}
           onChange={(e) => updateField("nom", e.target.value)}
-          placeholder="Nom complet"
+          placeholder={t.phName}
           style={{ width: "100%", border: "1px solid var(--border)", borderRadius: "var(--radius)", padding: "0.7rem 0.8rem" }}
         />
         <input
@@ -111,7 +159,7 @@ export default function ContactRequestForm({ supportEmail }: ContactRequestFormP
           required
           value={form.email}
           onChange={(e) => updateField("email", e.target.value)}
-          placeholder="Adresse e-mail"
+          placeholder={t.phEmail}
           style={{ width: "100%", border: "1px solid var(--border)", borderRadius: "var(--radius)", padding: "0.7rem 0.8rem" }}
         />
         <input
@@ -119,7 +167,7 @@ export default function ContactRequestForm({ supportEmail }: ContactRequestFormP
           name="Telephone"
           value={form.telephone}
           onChange={(e) => updateField("telephone", e.target.value)}
-          placeholder="Telephone (facultatif)"
+          placeholder={t.phPhone}
           style={{ width: "100%", border: "1px solid var(--border)", borderRadius: "var(--radius)", padding: "0.7rem 0.8rem" }}
         />
         <input
@@ -127,7 +175,7 @@ export default function ContactRequestForm({ supportEmail }: ContactRequestFormP
           required
           value={form.adresse}
           onChange={(e) => updateField("adresse", e.target.value)}
-          placeholder="Adresse (ville)"
+          placeholder={t.phAddr}
           style={{ width: "100%", border: "1px solid var(--border)", borderRadius: "var(--radius)", padding: "0.7rem 0.8rem" }}
         />
         <label
@@ -140,7 +188,7 @@ export default function ContactRequestForm({ supportEmail }: ContactRequestFormP
           }}
         >
           <input type="checkbox" checked={form.urgence} onChange={(e) => updateField("urgence", e.target.checked)} />
-          Marquer cette demande comme urgente
+          {t.urgentLabel}
         </label>
         <textarea
           name="Message"
@@ -148,25 +196,25 @@ export default function ContactRequestForm({ supportEmail }: ContactRequestFormP
           required
           value={form.message}
           onChange={(e) => updateField("message", e.target.value)}
-          placeholder="Décrivez votre demande..."
+          placeholder={t.phMsg}
           style={{ width: "100%", border: "1px solid var(--border)", borderRadius: "var(--radius)", padding: "0.7rem 0.8rem", resize: "vertical" }}
         />
         <FileUploadField
           variant="light"
-          language="fr"
+          language={locale}
           files={files}
           onFilesChange={setFiles}
-          title="Photos et documents (facultatif)"
-          dropHint="Glissez-déposez vos fichiers ici ou cliquez dans la zone"
-          formatsHint="JPG, PNG, GIF, WebP ou PDF · jusqu’à 5 fichiers · 5 Mo maximum par fichier"
+          title={t.fileTitle}
+          dropHint={t.fileDrop}
+          formatsHint={t.fileFormats}
         />
         <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
-          {isSubmitting ? "Envoi en cours…" : "Envoyer la demande"}
+          {isSubmitting ? t.sending : t.submit}
         </button>
       </form>
 
       <p style={{ marginTop: "0.75rem", fontSize: "0.8rem", color: "var(--text-muted)" }}>
-        Les messages sont envoyés depuis {supportEmail} ; réponse directe à votre adresse e-mail.
+        {t.footer}
       </p>
       {error ? <p style={{ marginTop: "0.5rem", fontSize: "0.85rem", color: "#b42318" }}>{error}</p> : null}
       {hint ? <p style={{ marginTop: "0.5rem", fontSize: "0.85rem", color: "var(--color-primary)" }}>{hint}</p> : null}

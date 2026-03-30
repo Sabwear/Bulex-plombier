@@ -9,6 +9,7 @@ import CertificationLogosMarquee from '@/components/CertificationLogosMarquee';
 import TestimonialsCarousel from '@/components/home/TestimonialsCarousel';
 import StatsRow from '@/components/home/StatsRow';
 import { buildLocaleAlternates } from '@/lib/seoAlternates';
+import InterventionSmtpForm from '@/components/forms/InterventionSmtpForm';
 import {
   Mail, Award, Zap, UserCheck,
   Wrench, Settings, Construction,
@@ -563,104 +564,22 @@ export default function HomePage() {
               boxShadow: '0 22px 60px rgba(0,0,0,0.22)',
             }}
           >
-            <form
-              action="mailto:contact@vaillant-loodgieter.com"
-              method="post"
-              encType="text/plain"
-              style={{ display: 'grid', gap: '12px' }}
-            >
-              <input
-                name="Naam"
-                required
-                placeholder="Naam *"
-                style={{
-                  width: '100%',
-                  borderRadius: '999px',
-                  padding: '14px 16px',
-                  border: '1px solid rgba(148,163,184,0.40)',
-                  outline: 'none',
-                  background: 'rgba(255,255,255,0.96)',
-                }}
-              />
-              <input
-                name="Telefoonnummer"
-                required
-                inputMode="tel"
-                placeholder="Telefoonnummer *"
-                style={{
-                  width: '100%',
-                  borderRadius: '999px',
-                  padding: '14px 16px',
-                  border: '1px solid rgba(148,163,184,0.40)',
-                  outline: 'none',
-                  background: 'rgba(255,255,255,0.96)',
-                }}
-              />
-              <input
-                name="Type interventie"
-                placeholder="Type interventie"
-                style={{
-                  width: '100%',
-                  borderRadius: '999px',
-                  padding: '14px 16px',
-                  border: '1px solid rgba(148,163,184,0.40)',
-                  outline: 'none',
-                  background: 'rgba(255,255,255,0.96)',
-                }}
-              />
-              <input
-                name="Adres"
-                placeholder="Adres"
-                style={{
-                  width: '100%',
-                  borderRadius: '999px',
-                  padding: '14px 16px',
-                  border: '1px solid rgba(148,163,184,0.40)',
-                  outline: 'none',
-                  background: 'rgba(255,255,255,0.96)',
-                }}
-              />
-              <textarea
-                name="Bericht"
-                rows={7}
-                placeholder="Bericht"
-                style={{
-                  width: '100%',
-                  borderRadius: '18px',
-                  padding: '14px 16px',
-                  border: '1px solid rgba(148,163,184,0.40)',
-                  outline: 'none',
-                  background: 'rgba(255,255,255,0.96)',
-                  resize: 'vertical',
-                }}
-              />
-
-              <label
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '10px',
-                  fontSize: '0.9rem',
-                  color: 'rgba(234,246,247,0.84)',
-                  paddingLeft: '6px',
-                }}
-              >
-                <input type="checkbox" required />
-                <span>
+            <InterventionSmtpForm
+              formType="intervention"
+              source="accueil-nl"
+              locale="nl"
+              surface="dark"
+              submitLabel="Verzenden"
+              privacyLabel={
+                <>
                   Door een bericht te versturen, gaat u akkoord met ons{' '}
                   <Link href="/nl/privacy" style={{ color: 'rgba(234,246,247,0.92)', fontWeight: 700, textDecoration: 'underline' }}>
                     privacybeleid
                   </Link>
                   .
-                </span>
-              </label>
-
-              <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '6px' }}>
-                <button type="submit" className="btn btn-primary" style={{ minWidth: '160px' }}>
-                  Verzenden
-                </button>
-              </div>
-            </form>
+                </>
+              }
+            />
           </div>
         </div>
       </section>
