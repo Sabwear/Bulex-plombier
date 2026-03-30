@@ -591,6 +591,7 @@ section:not(.hero-section) {
 /* ── Responsive ─────────────────────────────────────────────── */
 @media (max-width: 768px) {
   :root { --section-py: 56px; }
+  .grid-2 { grid-template-columns: 1fr; }
   .grid-3 { grid-template-columns: 1fr; }
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
   h1 { font-size: var(--text-3xl); }
@@ -599,4 +600,5 @@ section:not(.hero-section) {
 
 @media (max-width: 480px) {
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .btn { white-space: normal; }
 }

@@ -66,7 +66,7 @@ export default function OverOnsPage() {
               <p style={{ marginBottom: '1rem', fontSize: '0.95rem', color: 'rgb(71,85,105)' }}>
                 Quelques points clés qui résument notre manière de travailler au quotidien en Belgique :
               </p>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.25rem' }}>
+              <div className="grid gap-5 sm:grid-cols-2">
                 {[
                   { icon: 'plumber-1.svg', label: 'Officiellement Certifié Vaillant' },
                   { icon: 'wrench-2.svg', label: 'Techniciens Qualifiés' },

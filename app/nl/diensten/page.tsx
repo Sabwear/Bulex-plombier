@@ -131,7 +131,7 @@ export default function DienstenPage() {
       {/* VALUE PROP */}
       <section style={{ background: 'var(--bg-secondary)', padding: '3rem 1.5rem' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.25rem' }}>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {[
               { icon: 'plumber-1.svg', text: 'Gecertificeerd Vaillant partner' },
               { icon: 'wrench-2.svg', text: 'Gekwalificeerde technici' },
@@ -162,23 +162,19 @@ export default function DienstenPage() {
             <p>Chacun de nos services est effectué par des techniciens certifiés avec des pièces d'origine Vaillant.</p>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+          <div className="flex flex-col gap-8">
             {services.map((s, i) => (
               <div
                 key={s.id}
                 id={s.id}
+                className="grid grid-cols-1 items-center gap-10 rounded-[var(--radius-lg)] border border-[var(--border)] p-6 md:grid-cols-3 md:p-10"
                 style={{
-                  display: 'grid',
-                  gridTemplateColumns: i % 2 === 0 ? '1fr 2fr' : '2fr 1fr',
-                  gap: '2.5rem',
                   background: i % 2 === 0 ? 'var(--bg-primary)' : 'var(--bg-secondary)',
-                  borderRadius: 'var(--radius-lg)',
-                  padding: '2.5rem',
-                  border: '1px solid var(--border)',
-                  alignItems: 'center',
                 }}
               >
-                <div style={{ order: i % 2 === 0 ? 0 : 1 }}>
+                <div
+                  className={`md:col-span-1 ${i % 2 === 0 ? 'md:order-1' : 'md:order-2'}`}
+                >
                   <div style={{
                     width: '80px', height: '80px',
                     background: 'var(--color-primary-light)',
@@ -201,7 +197,9 @@ export default function DienstenPage() {
                     ))}
                   </ul>
                 </div>
-                <div style={{ order: i % 2 === 0 ? 1 : 0 }}>
+                <div
+                  className={`min-w-0 md:col-span-2 ${i % 2 === 0 ? 'md:order-2' : 'md:order-1'}`}
+                >
                   {s.body.map((para, pi) => (
                     <p key={pi} style={{ marginBottom: pi < s.body.length - 1 ? '1rem' : 0, fontSize: '0.95rem', lineHeight: 1.75 }}>{para}</p>
                   ))}
@@ -277,8 +275,18 @@ export default function DienstenPage() {
             Wij leveren bovenstaande diensten in meerdere steden en regio’s in België, afhankelijk van de beschikbaarheid van onze teams en het type interventie.
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.6rem', justifyContent: 'center' }}>
-            {['Brussel', 'Antwerpen', 'Gent', 'Leuven', 'Brugge', 'Mechelen', 'Hasselt'].map((a) => (
-              <span key={a} className="area-chip">📍 {a}</span>
+            {[
+              { label: 'Brussel', slug: 'brussel' },
+              { label: 'Antwerpen', slug: 'antwerpen' },
+              { label: 'Gent', slug: 'gent' },
+              { label: 'Leuven', slug: 'leuven' },
+              { label: 'Brugge', slug: 'brugge' },
+              { label: 'Mechelen', slug: 'mechelen' },
+              { label: 'Hasselt', slug: 'hasselt' },
+            ].map((city) => (
+              <Link key={city.slug} href={`/nl/loodgieter/${city.slug}`} className="area-chip">
+                📍 {city.label}
+              </Link>
             ))}
           </div>
           <div style={{ marginTop: '2rem' }}>

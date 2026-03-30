@@ -51,7 +51,7 @@ export default function ContactPage() {
       {/* CONTACT INFO */}
       <section>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', alignItems: 'start' }}>
+          <div className="grid items-start gap-8 lg:grid-cols-2">
 
             {/* Contact details */}
             <div>
