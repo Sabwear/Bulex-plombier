@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Phone, FileText } from "lucide-react";
 import { getCities } from "@/data/city-data";
 import styles from "./page.module.css";
+import { buildLocaleAlternates } from "@/lib/seoAlternates";
 
 export const revalidate = 86400;
 
@@ -11,9 +12,7 @@ export const metadata: Metadata = {
     "Plombier Vaillant en Belgique — Bruxelles et grandes villes | vaillant Loodgieter",
   description:
     "Trouvez votre plombier certifié Vaillant en Belgique : toutes les communes de Bruxelles et les grandes villes belges. Dépannage, entretien et installation de chauffage et plomberie.",
-  alternates: {
-    canonical: "https://vaillant-loodgieter.com/fr/plombier",
-  },
+  alternates: buildLocaleAlternates("/fr/plombier"),
   openGraph: {
     type: "website",
     locale: "fr_BE",

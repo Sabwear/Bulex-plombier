@@ -2,12 +2,13 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import CertificationLogosMarquee from '@/components/CertificationLogosMarquee';
+import { buildLocaleAlternates } from '@/lib/seoAlternates';
 
 export const metadata: Metadata = {
   title: 'Certifications & Marques – Vaillant Plombier Belgique',
   description:
     'Découvrez les certifications et marques partenaires de Vaillant Plombier : partenaire Vaillant certifié, reconnu pour son expertise en chauffage et sanitaire en Belgique.',
-  alternates: { canonical: 'https://vaillant-loodgieter.com/fr/certifications' },
+  alternates: buildLocaleAlternates('/fr/certifications'),
   openGraph: {
     title: 'Nos certifications et marques partenaires',
     description:

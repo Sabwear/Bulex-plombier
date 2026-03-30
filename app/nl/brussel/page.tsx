@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+import { buildLocaleAlternates } from '@/lib/seoAlternates';
 
 export const metadata: Metadata = {
   title: 'Vaillant Loodgieter Brussel – Alle Gemeenten | vaillant Loodgieter',
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     'sanitair installatie Brussel',
     'ketel vervangen Brussel',
   ],
-  alternates: { canonical: 'https://vaillant-loodgieter.com/nl/brussel' },
+  alternates: buildLocaleAlternates('/nl/brussel'),
   openGraph: {
     title: 'Vaillant Loodgieter Brussel – Alle Gemeenten | vaillant Loodgieter',
     description: 'Gecertificeerd Vaillant loodgieter actief in de 19 gemeenten van het Brussels Hoofdstedelijk Gewest.',

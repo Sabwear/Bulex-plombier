@@ -9,6 +9,7 @@ import HomeHeroSlider from '@/components/hero/HomeHeroSlider';
 import { HOME_HERO_TRUST_STRIP } from '@/config/home-hero-slides';
 import CertificationLogosMarquee from '@/components/CertificationLogosMarquee';
 import InterventionSmtpForm from '@/components/forms/InterventionSmtpForm';
+import { buildLocaleAlternates } from '@/lib/seoAlternates';
 import {
   Mail, Award, Zap, Globe, UserCheck,
   Wrench, Settings, Construction,
@@ -16,9 +17,9 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Plombier Vaillant Belgique | Vaillant Plombier',
+  title: "Plombier Vaillant en Belgique | Dépannage & Installation Chauffage",
   description:
-    "Vaillant Plombier – votre plombier certifié Vaillant en Belgique. Dépannage urgence, remplacement de chaudière, réparation de fuite d'eau et installation sanitaire.",
+    "Plombier Vaillant certifié en Belgique. Intervention rapide, dépannage chaudière, installation et entretien. Devis gratuit.",
   keywords: [
     'plombier Vaillant Belgique',
     'plombier urgence Belgique',
@@ -26,11 +27,12 @@ export const metadata: Metadata = {
     'réparation fuite d\'eau Belgique',
     'partenaire certifié Vaillant Belgique',
   ],
-  alternates: { canonical: 'https://vaillant-loodgieter.com' },
+  alternates: buildLocaleAlternates('/fr'),
   openGraph: {
-    title: 'Plombier Vaillant Belgique | Vaillant Plombier',
-    description: 'Partenaire certifié Vaillant en Belgique. Professionnel, rapide et fiable.',
-    url: 'https://vaillant-loodgieter.com',
+    title: "Plombier Vaillant en Belgique | Dépannage & Installation Chauffage",
+    description:
+      "Plombier Vaillant certifié en Belgique. Intervention rapide, dépannage chaudière, installation et entretien. Devis gratuit.",
+    url: 'https://vaillant-loodgieter.com/fr',
   },
 };
 

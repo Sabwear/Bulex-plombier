@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { frServices } from "@/data/fr-services";
+import { buildLocaleAlternates } from "@/lib/seoAlternates";
 
 export const metadata: Metadata = {
   title: "Services - Réparation Vaillant Belgique | Vaillant Plombier",
@@ -15,12 +16,12 @@ export const metadata: Metadata = {
     "installation sanitaire Belgique",
     "contrat d'entretien Vaillant",
   ],
-  alternates: { canonical: "https://vaillant-loodgieter.com/services" },
+  alternates: buildLocaleAlternates("/fr/services"),
   openGraph: {
     title: "Services - Réparation Vaillant Belgique | Vaillant Plombier",
     description:
       "Découvrez l'ensemble de nos services de plomberie et chauffage en Belgique.",
-    url: "https://vaillant-loodgieter.com/services",
+    url: "https://vaillant-loodgieter.com/fr/services",
   },
 };
 

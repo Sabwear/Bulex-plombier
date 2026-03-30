@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
+import { buildLocaleAlternates } from '@/lib/seoAlternates';
 
 export const metadata: Metadata = {
   title: 'Mentions légales | vaillant Loodgieter',
   description:
     'Mentions légales – Éditeur du site, contact, hébergement et propriété intellectuelle. vaillant Loodgieter, plombier Vaillant Bruxelles.',
+  alternates: buildLocaleAlternates('/fr/mentions-legales'),
 };
 
 export default function MentionsLegalesPage() {

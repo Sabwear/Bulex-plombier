@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { buildLocaleAlternates } from '@/lib/seoAlternates';
 
 export const metadata: Metadata = {
   title: 'Politique de cookies | vaillant Loodgieter',
   description:
     'Politique de cookies – vaillant Loodgieter. Types de cookies, gestion du consentement et paramètres du navigateur.',
+  alternates: buildLocaleAlternates('/fr/cookies'),
 };
 
 export default function CookiesPage() {

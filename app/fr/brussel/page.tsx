@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+import { buildLocaleAlternates } from '@/lib/seoAlternates';
 
 export const metadata: Metadata = {
   title: 'Plombier Vaillant Bruxelles – Toutes les Communes | vaillant Plombier',
@@ -14,11 +15,11 @@ export const metadata: Metadata = {
     'installation sanitaire Bruxelles',
     'remplacement chaudière Bruxelles',
   ],
-  alternates: { canonical: 'https://vaillant-loodgieter.com/brussel' },
+  alternates: buildLocaleAlternates('/fr/brussel'),
   openGraph: {
     title: 'Plombier Vaillant Bruxelles – Toutes les Communes | vaillant Plombier',
     description: 'Plombier certifié Vaillant actif dans les 19 communes de la Région de Bruxelles-Capitale.',
-    url: 'https://vaillant-loodgieter.com/brussel',
+    url: 'https://vaillant-loodgieter.com/fr/brussel',
   },
 };
 

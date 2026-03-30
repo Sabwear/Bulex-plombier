@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
+import { buildLocaleAlternates } from '@/lib/seoAlternates';
 
 export const metadata: Metadata = {
   title: 'Politique de confidentialité | vaillant Loodgieter',
   description:
     'Politique de confidentialité et protection des données personnelles – vaillant Loodgieter, plombier et chauffage Vaillant à Bruxelles.',
+  alternates: buildLocaleAlternates('/fr/confidentialite'),
 };
 
 export default function ConfidentialitePage() {

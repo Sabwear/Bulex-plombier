@@ -3,13 +3,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { getBlogPosts } from '@/data/types';
 import styles from './blog.module.css';
+import { buildLocaleAlternates } from '@/lib/seoAlternates';
 
 export const metadata: Metadata = {
   title: 'Conseils & Expertise Plomberie Vaillant | Blog vaillant Plombier',
   description: 'Retrouvez tous nos conseils d\'experts, guides d\'entretien et solutions de dépannage pour votre installation Vaillant à Bruxelles.',
-  alternates: {
-    canonical: 'https://vaillant-loodgieter.com/fr/blog',
-  },
+  alternates: buildLocaleAlternates('/fr/blog'),
 };
 
 export default function BlogArchivePage() {

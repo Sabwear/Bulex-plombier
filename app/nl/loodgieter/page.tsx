@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { getCities } from "@/data/city-data";
 import styles from "@/app/fr/plombier/page.module.css";
+import { buildLocaleAlternates } from "@/lib/seoAlternates";
 
 export const revalidate = 86400;
 
@@ -10,9 +11,7 @@ export const metadata: Metadata = {
     "Vaillant loodgieter in België — Brussel en grote steden | vaillant Loodgieter",
   description:
     "Vind uw gecertificeerde Vaillant loodgieter in België: Brussel en grote Belgische steden. Herstelling, onderhoud en installatie van verwarming en loodgieterij.",
-  alternates: {
-    canonical: "https://vaillant-loodgieter.com/nl/loodgieter",
-  },
+  alternates: buildLocaleAlternates("/nl/loodgieter"),
   openGraph: {
     type: "website",
     locale: "nl_BE",

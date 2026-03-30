@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import QuoteNlSmtpForm from "@/components/forms/QuoteNlSmtpForm";
+import { buildLocaleAlternates } from "@/lib/seoAlternates";
 
 const regions = [
   "Brussels Hoofdstedelijk Gewest",
@@ -44,7 +45,7 @@ export const metadata: Metadata = {
   title: "Offerte aanvragen | vaillant Loodgieter",
   description:
     "Vraag een offerte aan voor uw loodgieter- of verwarmingsinterventie in Brussel. vaillant Loodgieter, gecertificeerd Vaillant partner.",
-  alternates: { canonical: "https://vaillant-loodgieter.com/nl/demande-offerte" },
+  alternates: buildLocaleAlternates("/nl/demande-offerte"),
   openGraph: {
     title: "Offerte aanvragen | vaillant Loodgieter",
     description:

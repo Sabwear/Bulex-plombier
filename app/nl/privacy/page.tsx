@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
+import { buildLocaleAlternates } from '@/lib/seoAlternates';
 
 export const metadata: Metadata = {
   title: 'Privacybeleid | vaillant Loodgieter',
   description:
     'Privacybeleid en bescherming van persoonsgegevens – vaillant Loodgieter, Vaillant loodgieter en verwarming in Brussel.',
+  alternates: buildLocaleAlternates('/nl/privacy'),
 };
 
 export default function PrivacyPage() {

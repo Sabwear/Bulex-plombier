@@ -5,6 +5,7 @@ import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
 import { getBlogPostBySlug, getBlogPosts, type BlogPost } from '@/data/types';
 import styles from '../blog.module.css';
+import { buildLocaleAlternates } from '@/lib/seoAlternates';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -24,17 +25,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const content = post.languages.fr;
   const baseUrl = 'https://vaillant-loodgieter.com';
+  const pathname = `/fr/blog/${post.slug}`;
 
   return {
     title: `${content.title} | Blog vaillant Plombier`,
     description: content.excerpt,
-    alternates: {
-      canonical: `${baseUrl}/fr/blog/${post.slug}`,
-    },
+    alternates: buildLocaleAlternates(pathname),
     openGraph: {
       title: content.title,
       description: content.excerpt,
-      url: `${baseUrl}/fr/blog/${post.slug}`,
+      url: `${baseUrl}${pathname}`,
       type: 'article',
       publishedTime: content.date,
       images: [{ url: post.image }],

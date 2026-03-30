@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
+import { buildLocaleAlternates } from '@/lib/seoAlternates';
 
 export const metadata: Metadata = {
   title: 'Juridische vermelding | vaillant Loodgieter',
   description:
     'Juridische vermelding – Uitgever van de site, contact, hosting en intellectuele eigendom. vaillant Loodgieter, Vaillant loodgieter Brussel.',
+  alternates: buildLocaleAlternates('/nl/juridische-vermelding'),
 };
 
 export default function JuridischeVermeldingPage() {

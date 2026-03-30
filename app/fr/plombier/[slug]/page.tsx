@@ -25,6 +25,7 @@ import {
 } from "@/data/content-helpers";
 import type { Commune } from "@/data/types";
 import styles from "./page.module.css";
+import { buildLocaleAlternates } from "@/lib/seoAlternates";
 
 export const revalidate = 86400;
 
@@ -91,17 +92,18 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const commune = getCityBySlug("fr", slug);
   if (!commune) return {};
   const baseUrl = "https://vaillant-loodgieter.com";
+  const pathname = `/fr/plombier/${commune.slug}`;
   let desc = `Plombier Vaillant certifié à ${commune.name}.`;
   if (commune.nearby_landmarks.length > 0) desc += ` Intervention rapide près de ${commune.nearby_landmarks[0]}.`;
   if (commune.common_issues.length > 0) desc += ` ${commune.common_issues[0]}.`;
   return {
     title: `Plombier Vaillant certifié à ${commune.name} | vaillant Loodgieter`,
     description: desc,
-    alternates: { canonical: `${baseUrl}/fr/plombier/${commune.slug}` },
+    alternates: buildLocaleAlternates(pathname),
     openGraph: {
       type: "website",
       locale: "fr_BE",
-      url: `${baseUrl}/fr/plombier/${commune.slug}`,
+      url: `${baseUrl}${pathname}`,
       siteName: "vaillant Loodgieter",
       title: `Plombier Vaillant certifié à ${commune.name}`,
       description: desc,

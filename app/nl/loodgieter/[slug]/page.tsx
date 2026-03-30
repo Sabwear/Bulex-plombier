@@ -25,6 +25,7 @@ import {
 } from "@/data/content-helpers";
 import type { Commune } from "@/data/types";
 import styles from "@/app/fr/plombier/[slug]/page.module.css";
+import { buildLocaleAlternates } from "@/lib/seoAlternates";
 
 export const revalidate = 86400;
 
@@ -91,17 +92,18 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const commune = getCityBySlug("nl", slug);
   if (!commune) return {};
   const baseUrl = "https://vaillant-loodgieter.com";
+  const pathname = `/nl/loodgieter/${commune.slug}`;
   let desc = `Vaillant loodgieter in ${commune.name}.`;
   if (commune.nearby_landmarks.length > 0) desc += ` Snelle interventie nabij ${commune.nearby_landmarks[0]}.`;
   if (commune.common_issues.length > 0) desc += ` ${commune.common_issues[0]}.`;
   return {
     title: `Vaillant loodgieter in ${commune.name} | vaillant Loodgieter`,
     description: desc,
-    alternates: { canonical: `${baseUrl}/nl/loodgieter/${commune.slug}` },
+    alternates: buildLocaleAlternates(pathname),
     openGraph: {
       type: "website",
       locale: "nl_BE",
-      url: `${baseUrl}/nl/loodgieter/${commune.slug}`,
+      url: `${baseUrl}${pathname}`,
       siteName: "vaillant Loodgieter",
       title: `Vaillant loodgieter in ${commune.name}`,
       description: desc,

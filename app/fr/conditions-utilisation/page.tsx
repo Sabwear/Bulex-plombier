@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { buildLocaleAlternates } from '@/lib/seoAlternates';
 
 export const metadata: Metadata = {
   title: "Conditions d'utilisation | vaillant Loodgieter",
   description:
     "Conditions d'utilisation du site – vaillant Loodgieter. Usage du site, propriété intellectuelle et limitation de responsabilité.",
+  alternates: buildLocaleAlternates('/fr/conditions-utilisation'),
 };
 
 export default function ConditionsUtilisationPage() {

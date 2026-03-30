@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import StatsRow from '@/components/home/StatsRow';
+import { buildLocaleAlternates } from '@/lib/seoAlternates';
 
 export const metadata: Metadata = {
   title: 'Over Ons – Gecertificeerd Vaillant Partner België | Vaillant Loodgieter',
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
     'gekwalificeerde loodgieters België',
     'verwarmingsinstallateur België',
   ],
-  alternates: { canonical: 'https://vaillant-loodgieter.com/nl/over-ons' },
+  alternates: buildLocaleAlternates('/nl/over-ons'),
   openGraph: {
     title: 'Over Ons – Gecertificeerd Vaillant Partner België | Vaillant Loodgieter',
     description: 'Vaillant Loodgieter: gecertificeerd Vaillant partner met gekwalificeerde technici actief in België.',

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import StatsRow from '@/components/home/StatsRow';
+import { buildLocaleAlternates } from '@/lib/seoAlternates';
 
 export const metadata: Metadata = {
   title: 'À Propos – Partenaire Vaillant Certifié Belgique | Vaillant Plombier',
@@ -13,11 +14,11 @@ export const metadata: Metadata = {
     'plombiers qualifiés Belgique',
     'chauffagiste Belgique',
   ],
-  alternates: { canonical: 'https://vaillant-loodgieter.com/a-propos' },
+  alternates: buildLocaleAlternates('/fr/a-propos'),
   openGraph: {
     title: 'À Propos – Partenaire Vaillant Certifié Belgique | Vaillant Plombier',
     description: 'Vaillant Plombier : partenaire certifié Vaillant avec des techniciens qualifiés travaillant en Belgique.',
-    url: 'https://vaillant-loodgieter.com/a-propos',
+    url: 'https://vaillant-loodgieter.com/fr/a-propos',
   },
 };
 

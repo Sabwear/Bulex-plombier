@@ -8,6 +8,7 @@ import { HOME_HERO_TRUST_STRIP } from '@/config/home-hero-slides';
 import CertificationLogosMarquee from '@/components/CertificationLogosMarquee';
 import TestimonialsCarousel from '@/components/home/TestimonialsCarousel';
 import StatsRow from '@/components/home/StatsRow';
+import { buildLocaleAlternates } from '@/lib/seoAlternates';
 import {
   Mail, Award, Zap, UserCheck,
   Wrench, Settings, Construction,
@@ -16,9 +17,9 @@ import {
 
 
 export const metadata: Metadata = {
-  title: 'Vaillant loodgieter België | Vaillant Loodgieter',
+  title: "Vaillant Loodgieter België | Herstelling & Installatie Verwarming",
   description:
-    "Vaillant Loodgieter – gecertificeerd Vaillant partner in België. Loodgieter spoeddienst, boiler vervangen, waterlek herstellen en sanitair installatie.",
+    "Gecertificeerde Vaillant loodgieter in België. Snelle interventie, ketelherstelling, installatie en onderhoud. Gratis offerte.",
   keywords: [
     'Vaillant loodgieter België',
     'loodgieter spoeddienst België',
@@ -26,10 +27,11 @@ export const metadata: Metadata = {
     'waterlek herstellen België',
     'gecertificeerd Vaillant partner België',
   ],
-  alternates: { canonical: 'https://vaillant-loodgieter.com/nl' },
+  alternates: buildLocaleAlternates('/nl'),
   openGraph: {
-    title: 'Vaillant loodgieter België | Vaillant Loodgieter',
-    description: 'Gecertificeerd Vaillant partner in België. Professioneel, snel en betrouwbaar.',
+    title: "Vaillant Loodgieter België | Herstelling & Installatie Verwarming",
+    description:
+      "Gecertificeerde Vaillant loodgieter in België. Snelle interventie, ketelherstelling, installatie en onderhoud. Gratis offerte.",
     url: 'https://vaillant-loodgieter.com/nl',
   },
 };

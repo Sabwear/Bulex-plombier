@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { buildLocaleAlternates } from '@/lib/seoAlternates';
 
 export const metadata: Metadata = {
   title: 'Gebruiksvoorwaarden | vaillant Loodgieter',
   description:
     'Gebruiksvoorwaarden van de website – vaillant Loodgieter. Gebruik van de site, intellectuele eigendom en beperking van aansprakelijkheid.',
+  alternates: buildLocaleAlternates('/nl/gebruiksvoorwaarden'),
 };
 
 export default function GebruiksvoorwaardenPage() {

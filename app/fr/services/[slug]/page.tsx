@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ServicePageTemplate from "@/components/services/ServicePageTemplate";
 import { frServices, frServicesBySlug } from "@/data/fr-services";
+import { buildLocaleAlternates } from "@/lib/seoAlternates";
 
 type ServicePageProps = {
   params: Promise<{ slug: string }>;
@@ -24,14 +25,16 @@ export async function generateMetadata({
     };
   }
 
+  const pathname = `/fr/services/${service.slug}`;
+
   return {
     title: service.metaTitle,
     description: service.metaDescription,
-    alternates: { canonical: `https://vaillant-loodgieter.com/services/${service.slug}` },
+    alternates: buildLocaleAlternates(pathname),
     openGraph: {
       title: service.metaTitle,
       description: service.metaDescription,
-      url: `https://vaillant-loodgieter.com/services/${service.slug}`,
+      url: `https://vaillant-loodgieter.com${pathname}`,
     },
   };
 }

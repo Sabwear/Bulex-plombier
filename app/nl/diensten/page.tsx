@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+import { buildLocaleAlternates } from '@/lib/seoAlternates';
 
 export const metadata: Metadata = {
   title: 'Diensten – Vaillant herstelling België | Vaillant Loodgieter',
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
     'Vaillant onderhoudscontract',
     'loodgieter spoed België',
   ],
-  alternates: { canonical: 'https://vaillant-loodgieter.com/nl/diensten' },
+  alternates: buildLocaleAlternates('/nl/diensten'),
   openGraph: {
     title: 'Diensten – Vaillant herstelling België | Vaillant Loodgieter',
     description: 'Professionele loodgieters- en verwarmingsdiensten door een gecertificeerd Vaillant partner in België.',

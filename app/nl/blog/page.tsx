@@ -3,13 +3,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { getBlogPosts } from '@/data/types';
 import styles from '@/app/fr/blog/blog.module.css';
+import { buildLocaleAlternates } from '@/lib/seoAlternates';
 
 export const metadata: Metadata = {
   title: 'Advies & Expertise Loodgieterij Vaillant | Blog vaillant Loodgieter',
   description: 'Vind al ons deskundig advies, onderhoudsgidsen en reparatieoplossingen voor uw Vaillant-installatie in Brussel.',
-  alternates: {
-    canonical: 'https://vaillant-loodgieter.com/nl/blog',
-  },
+  alternates: buildLocaleAlternates('/nl/blog'),
 };
 
 export default function BlogArchivePage() {

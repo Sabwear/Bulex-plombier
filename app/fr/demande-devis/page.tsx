@@ -1,12 +1,13 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import InterventionSmtpForm from '@/components/forms/InterventionSmtpForm';
+import { buildLocaleAlternates } from '@/lib/seoAlternates';
 
 export const metadata: Metadata = {
   title: 'Demande de devis – Vaillant Plombier Belgique',
   description:
     "Demandez un devis à Vaillant Plombier (partenaire certifié Vaillant en Belgique). Envoyez-nous votre demande, nous répondons rapidement avec une réponse claire.",
-  alternates: { canonical: 'https://vaillant-loodgieter.com/fr/demande-devis' },
+  alternates: buildLocaleAlternates('/fr/demande-devis'),
   openGraph: {
     title: 'Demande de devis – Vaillant Plombier',
     description: 'Demandez un devis en Belgique — réponse rapide et transparente.',

@@ -33,7 +33,7 @@ export default function HreflangLinks() {
     upsertAlternateLink('fr-BE', `${BASE_URL}${frPath}`);
 
     // Default locale preference (x-default).
-    upsertAlternateLink('x-default', `${BASE_URL}${nlPath}`);
+    upsertAlternateLink('x-default', `${BASE_URL}${frPath}`);
   }, [pathname]);
 
   return null;

@@ -2,12 +2,13 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import CertificationLogosMarquee from '@/components/CertificationLogosMarquee';
+import { buildLocaleAlternates } from '@/lib/seoAlternates';
 
 export const metadata: Metadata = {
   title: 'Certificeringen & Merken – Vaillant Loodgieter België',
   description:
     'Ontdek de certificeringen en partnermerken van Vaillant Loodgieter: officieel Vaillant partner met erkende labels en expertise in heel Vlaanderen en België.',
-  alternates: { canonical: 'https://vaillant-loodgieter.com/nl/certificeringen' },
+  alternates: buildLocaleAlternates('/nl/certificeringen'),
   openGraph: {
     title: 'Onze certificeringen en partnermerken',
     description:

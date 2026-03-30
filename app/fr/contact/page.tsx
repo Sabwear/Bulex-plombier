@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import ContactRequestForm from './ContactRequestForm';
+import { buildLocaleAlternates } from '@/lib/seoAlternates';
 
 export const metadata: Metadata = {
   title: 'Contact – Plombier Vaillant Belgique | Vaillant Plombier',
@@ -12,11 +13,11 @@ export const metadata: Metadata = {
     'plombier urgence Belgique',
     'demande réparation Vaillant Belgique',
   ],
-  alternates: { canonical: 'https://vaillant-loodgieter.com/contact' },
+  alternates: buildLocaleAlternates('/fr/contact'),
   openGraph: {
     title: 'Contact – Vaillant Plombier',
     description: 'Contactez votre plombier certifié Vaillant en Belgique.',
-    url: 'https://vaillant-loodgieter.com/contact',
+    url: 'https://vaillant-loodgieter.com/fr/contact',
   },
 };
 
