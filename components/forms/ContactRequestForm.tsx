@@ -2,6 +2,8 @@
 
 import { FormEvent, useMemo, useState } from "react";
 import FileUploadField from "@/components/forms/FileUploadField";
+import FormSuccessModal from "@/components/forms/FormSuccessModal";
+import { contactPrefillText } from "@/lib/whatsappPrefill";
 
 type FormState = {
   nom: string;
@@ -36,23 +38,31 @@ export default function ContactRequestForm({
   const [files, setFiles] = useState<File[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [hint, setHint] = useState<string | null>(null);
+  const [successOpen, setSuccessOpen] = useState(false);
+  const [successEmail, setSuccessEmail] = useState("");
+  const [whatsappPrefill, setWhatsappPrefill] = useState("");
+
+  const id = `contact-${locale}`;
 
   const t =
     locale === "nl"
       ? {
           errIncomplete: "Vul de verplichte velden correct in.",
           errSend: "Verzenden mislukt. Probeer het later opnieuw.",
-          hintOk: "Uw bericht is verzonden. We antwoorden snel.",
           errNetwork: "Netwerkfout. Controleer uw verbinding.",
           sending: "Bezig met verzenden…",
           submit: "Verstuur aanvraag",
-          phName: "Volledige naam",
-          phEmail: "E-mailadres",
-          phPhone: "Telefoon (optioneel)",
-          phAddr: "Adres (stad)",
+          lblName: "Volledige naam *",
+          lblEmail: "E-mail *",
+          lblPhone: "Telefoon *",
+          lblAddr: "Adres *",
+          lblMsg: "Bericht *",
+          phName: "Jan Janssen",
+          phEmail: "jan@voorbeeld.be",
+          phPhone: "+32 …",
+          phAddr: "Straat, nr., postcode, stad",
           urgentLabel: "Deze aanvraag als spoed markeren",
-          phMsg: "Beschrijf uw vraag…",
+          phMsg: "Beschrijf uw situatie…",
           fileTitle: "Foto’s en documenten (optioneel)",
           fileDrop: "Sleep bestanden hierheen of klik in het vak",
           fileFormats:
@@ -62,16 +72,20 @@ export default function ContactRequestForm({
       : {
           errIncomplete: "Veuillez compléter correctement les champs obligatoires.",
           errSend: "Envoi impossible. Réessayez plus tard.",
-          hintOk: "Votre message a été envoyé. Nous vous répondrons rapidement.",
           errNetwork: "Erreur réseau. Vérifiez votre connexion.",
           sending: "Envoi en cours…",
           submit: "Envoyer la demande",
-          phName: "Nom complet",
-          phEmail: "Adresse e-mail",
-          phPhone: "Telephone (facultatif)",
-          phAddr: "Adresse (ville)",
+          lblName: "Nom et prénom *",
+          lblEmail: "Adresse e-mail *",
+          lblPhone: "Téléphone *",
+          lblAddr: "Adresse *",
+          lblMsg: "Message *",
+          phName: "Jean Dupont",
+          phEmail: "jean@exemple.be",
+          phPhone: "+32 …",
+          phAddr: "Rue, n°, code postal, ville",
           urgentLabel: "Marquer cette demande comme urgente",
-          phMsg: "Décrivez votre demande...",
+          phMsg: "Décrivez votre situation…",
           fileTitle: "Photos et documents (facultatif)",
           fileDrop: "Glissez-déposez vos fichiers ici ou cliquez dans la zone",
           fileFormats:
@@ -83,6 +97,7 @@ export default function ContactRequestForm({
     return (
       form.nom.trim().length > 1 &&
       EMAIL_REGEX.test(form.email) &&
+      form.telephone.trim().length >= 5 &&
       form.adresse.trim().length > 2 &&
       form.message.trim().length > 8
     );
@@ -95,7 +110,6 @@ export default function ContactRequestForm({
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setError(null);
-    setHint(null);
 
     if (!canSubmit) {
       setError(t.errIncomplete);
@@ -123,7 +137,8 @@ export default function ContactRequestForm({
         setError(data.error || t.errSend);
         return;
       }
-      setHint(t.hintOk);
+      setSuccessEmail(form.email.trim());
+      setSuccessOpen(true);
       setForm(initialState);
       setFiles([]);
       (event.target as HTMLFormElement).reset();
@@ -135,6 +150,7 @@ export default function ContactRequestForm({
   };
 
   return (
+    <>
     <div className="card" style={{ marginBottom: "1.5rem" }}>
       <form onSubmit={handleSubmit} noValidate style={{ display: "grid", gap: "0.85rem" }}>
         <input
@@ -145,39 +161,66 @@ export default function ContactRequestForm({
           style={{ position: "absolute", left: "-9999px", height: 0, width: 0, opacity: 0 }}
           aria-hidden
         />
-        <input
-          name="Nom"
-          required
-          value={form.nom}
-          onChange={(e) => updateField("nom", e.target.value)}
-          placeholder={t.phName}
-          style={{ width: "100%", border: "1px solid var(--border)", borderRadius: "var(--radius)", padding: "0.7rem 0.8rem" }}
-        />
-        <input
-          type="email"
-          name="Email"
-          required
-          value={form.email}
-          onChange={(e) => updateField("email", e.target.value)}
-          placeholder={t.phEmail}
-          style={{ width: "100%", border: "1px solid var(--border)", borderRadius: "var(--radius)", padding: "0.7rem 0.8rem" }}
-        />
-        <input
-          type="tel"
-          name="Telephone"
-          value={form.telephone}
-          onChange={(e) => updateField("telephone", e.target.value)}
-          placeholder={t.phPhone}
-          style={{ width: "100%", border: "1px solid var(--border)", borderRadius: "var(--radius)", padding: "0.7rem 0.8rem" }}
-        />
-        <input
-          name="Adresse"
-          required
-          value={form.adresse}
-          onChange={(e) => updateField("adresse", e.target.value)}
-          placeholder={t.phAddr}
-          style={{ width: "100%", border: "1px solid var(--border)", borderRadius: "var(--radius)", padding: "0.7rem 0.8rem" }}
-        />
+        <div style={{ display: "grid", gap: "0.4rem" }}>
+          <label htmlFor={`${id}-name`} style={{ fontSize: "0.9rem", fontWeight: 600, color: "var(--text-heading)" }}>
+            {t.lblName}
+          </label>
+          <input
+            id={`${id}-name`}
+            name="Nom"
+            required
+            value={form.nom}
+            onChange={(e) => updateField("nom", e.target.value)}
+            placeholder={t.phName}
+            style={{ width: "100%", border: "1px solid var(--border)", borderRadius: "var(--radius)", padding: "0.7rem 0.8rem" }}
+          />
+        </div>
+        <div style={{ display: "grid", gap: "0.4rem" }}>
+          <label htmlFor={`${id}-email`} style={{ fontSize: "0.9rem", fontWeight: 600, color: "var(--text-heading)" }}>
+            {t.lblEmail}
+          </label>
+          <input
+            id={`${id}-email`}
+            type="email"
+            name="Email"
+            required
+            value={form.email}
+            onChange={(e) => updateField("email", e.target.value)}
+            placeholder={t.phEmail}
+            style={{ width: "100%", border: "1px solid var(--border)", borderRadius: "var(--radius)", padding: "0.7rem 0.8rem" }}
+          />
+        </div>
+        <div style={{ display: "grid", gap: "0.4rem" }}>
+          <label htmlFor={`${id}-phone`} style={{ fontSize: "0.9rem", fontWeight: 600, color: "var(--text-heading)" }}>
+            {t.lblPhone}
+          </label>
+          <input
+            id={`${id}-phone`}
+            type="tel"
+            name="Telephone"
+            required
+            inputMode="tel"
+            autoComplete="tel"
+            value={form.telephone}
+            onChange={(e) => updateField("telephone", e.target.value)}
+            placeholder={t.phPhone}
+            style={{ width: "100%", border: "1px solid var(--border)", borderRadius: "var(--radius)", padding: "0.7rem 0.8rem" }}
+          />
+        </div>
+        <div style={{ display: "grid", gap: "0.4rem" }}>
+          <label htmlFor={`${id}-addr`} style={{ fontSize: "0.9rem", fontWeight: 600, color: "var(--text-heading)" }}>
+            {t.lblAddr}
+          </label>
+          <input
+            id={`${id}-addr`}
+            name="Adresse"
+            required
+            value={form.adresse}
+            onChange={(e) => updateField("adresse", e.target.value)}
+            placeholder={t.phAddr}
+            style={{ width: "100%", border: "1px solid var(--border)", borderRadius: "var(--radius)", padding: "0.7rem 0.8rem" }}
+          />
+        </div>
         <label
           style={{
             display: "flex",
@@ -190,15 +233,21 @@ export default function ContactRequestForm({
           <input type="checkbox" checked={form.urgence} onChange={(e) => updateField("urgence", e.target.checked)} />
           {t.urgentLabel}
         </label>
-        <textarea
-          name="Message"
-          rows={5}
-          required
-          value={form.message}
-          onChange={(e) => updateField("message", e.target.value)}
-          placeholder={t.phMsg}
-          style={{ width: "100%", border: "1px solid var(--border)", borderRadius: "var(--radius)", padding: "0.7rem 0.8rem", resize: "vertical" }}
-        />
+        <div style={{ display: "grid", gap: "0.4rem" }}>
+          <label htmlFor={`${id}-msg`} style={{ fontSize: "0.9rem", fontWeight: 600, color: "var(--text-heading)" }}>
+            {t.lblMsg}
+          </label>
+          <textarea
+            id={`${id}-msg`}
+            name="Message"
+            rows={5}
+            required
+            value={form.message}
+            onChange={(e) => updateField("message", e.target.value)}
+            placeholder={t.phMsg}
+            style={{ width: "100%", border: "1px solid var(--border)", borderRadius: "var(--radius)", padding: "0.7rem 0.8rem", resize: "vertical" }}
+          />
+        </div>
         <FileUploadField
           variant="light"
           language={locale}
@@ -217,7 +266,17 @@ export default function ContactRequestForm({
         {t.footer}
       </p>
       {error ? <p style={{ marginTop: "0.5rem", fontSize: "0.85rem", color: "#b42318" }}>{error}</p> : null}
-      {hint ? <p style={{ marginTop: "0.5rem", fontSize: "0.85rem", color: "var(--color-primary)" }}>{hint}</p> : null}
     </div>
+    <FormSuccessModal
+      open={successOpen}
+      onClose={() => {
+        setSuccessOpen(false);
+        setWhatsappPrefill("");
+      }}
+      locale={locale}
+      userEmail={successEmail}
+      whatsappPrefillText={whatsappPrefill}
+    />
+    </>
   );
 }

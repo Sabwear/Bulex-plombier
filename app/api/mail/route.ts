@@ -4,6 +4,10 @@ import {
   MAIL_ATTACHMENT_LIMITS,
 } from "@/lib/mail/smtp-config";
 import { sendViaSmtp } from "@/lib/mail/sendViaSmtp";
+import {
+  buildCustomerConfirmationEmail,
+  type ConfirmationLocale,
+} from "@/lib/mail/buildCustomerConfirmation";
 
 export const runtime = "nodejs";
 
@@ -14,6 +18,12 @@ function str(formData: FormData, key: string): string {
 
 function isTruthy(v: string): boolean {
   return v === "true" || v === "1" || v === "on" || v === "yes";
+}
+
+const SIMPLE_EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function validEmail(s: string): boolean {
+  return SIMPLE_EMAIL.test(s.trim());
 }
 
 export async function POST(req: Request) {
@@ -82,12 +92,21 @@ export async function POST(req: Request) {
     case "contact": {
       const nom = str(formData, "nom");
       const email = str(formData, "email");
+      const tel = str(formData, "telephone");
       const localeTag = str(formData, "locale");
       const isNl = localeTag === "nl";
-      if (nom.length < 2 || !email.includes("@")) {
+      if (nom.length < 2 || !validEmail(email)) {
         return NextResponse.json(
           {
             error: isNl ? "Naam of e-mail ongeldig." : "Nom ou e-mail invalide.",
+          },
+          { status: 400 }
+        );
+      }
+      if (tel.length < 5) {
+        return NextResponse.json(
+          {
+            error: isNl ? "Telefoonnummer ongeldig." : "Numéro de téléphone invalide.",
           },
           { status: 400 }
         );
@@ -100,7 +119,7 @@ export async function POST(req: Request) {
           "",
           `Naam: ${nom}`,
           `E-mail: ${email}`,
-          `Telefoon: ${str(formData, "telephone") || "—"}`,
+          `Telefoon: ${tel}`,
           `Adres: ${str(formData, "adresse")}`,
           `Spoed: ${urgent ? "Ja" : "Nee"}`,
           "",
@@ -114,7 +133,7 @@ export async function POST(req: Request) {
           "",
           `Nom: ${nom}`,
           `E-mail: ${email}`,
-          `Téléphone: ${str(formData, "telephone") || "—"}`,
+          `Téléphone: ${tel}`,
           `Adresse: ${str(formData, "adresse")}`,
           `Urgence: ${urgent ? "Oui" : "Non"}`,
           "",
@@ -130,12 +149,22 @@ export async function POST(req: Request) {
       const tel = str(formData, "telephone");
       const localeTag = str(formData, "locale");
       const isNl = localeTag === "nl";
-      if (nom.length < 2 || !email.includes("@") || tel.length < 5) {
+      if (nom.length < 2 || !validEmail(email)) {
         return NextResponse.json(
           {
             error: isNl
-              ? "Naam, e-mail of telefoon ongeldig."
-              : "Nom, e-mail ou téléphone invalide.",
+              ? "Naam of e-mail ongeldig."
+              : "Nom ou e-mail invalide.",
+          },
+          { status: 400 }
+        );
+      }
+      if (tel.length < 5) {
+        return NextResponse.json(
+          {
+            error: isNl
+              ? "Telefoonnummer ongeldig."
+              : "Numéro de téléphone invalide.",
           },
           { status: 400 }
         );
@@ -173,35 +202,52 @@ export async function POST(req: Request) {
       break;
     }
     case "quote_fr": {
-      const nom = str(formData, "nom");
+      const naam = str(formData, "naam");
       const email = str(formData, "email");
       const tel = str(formData, "telephone");
-      if (nom.length < 2 || !email.includes("@") || tel.length < 5) {
+      if (naam.length < 2 || !validEmail(email)) {
+        return NextResponse.json({ error: "Nom ou e-mail invalide." }, { status: 400 });
+      }
+      if (tel.length < 5) {
+        return NextResponse.json({ error: "Numéro de téléphone invalide." }, { status: 400 });
+      }
+      const adres = str(formData, "adres");
+      const regio = str(formData, "regio");
+      const stad = str(formData, "stad");
+      const dienst = str(formData, "dienst");
+      const beschrijving = str(formData, "beschrijving");
+      if (adres.length < 3 || !regio || !stad || !dienst || beschrijving.length < 5) {
         return NextResponse.json(
-          { error: "Nom, e-mail ou téléphone invalide." },
+          { error: "Veuillez compléter tous les champs obligatoires." },
           { status: 400 }
         );
       }
-      subject = `[Devis FR] ${nom}`;
+      subject = `[Devis FR] ${naam}`;
       body = [
         "Formulaire: Demande de devis (FR)",
         "",
-        `Nom: ${nom}`,
+        `Nom: ${naam}`,
         `E-mail: ${email}`,
         `Téléphone: ${tel}`,
-        `Type d'intervention: ${str(formData, "typeIntervention") || "—"}`,
-        `Adresse: ${str(formData, "adresse") || "—"}`,
+        `Adresse: ${adres}`,
+        `Région / province: ${regio}`,
+        `Commune / ville: ${stad}`,
+        `Service: ${dienst}`,
         "",
-        "Message:",
-        str(formData, "message") || "—",
+        "Description:",
+        beschrijving,
       ].join("\n");
       break;
     }
     case "quote_nl": {
       const naam = str(formData, "naam");
       const email = str(formData, "email");
-      if (naam.length < 2 || !email.includes("@")) {
+      const tel = str(formData, "telephone");
+      if (naam.length < 2 || !validEmail(email)) {
         return NextResponse.json({ error: "Naam of e-mail ongeldig." }, { status: 400 });
+      }
+      if (tel.length < 5) {
+        return NextResponse.json({ error: "Telefoonnummer ongeldig." }, { status: 400 });
       }
       subject = `[Offerte NL] ${naam}`;
       body = [
@@ -209,6 +255,7 @@ export async function POST(req: Request) {
         "",
         `Naam: ${naam}`,
         `E-mail: ${email}`,
+        `Telefoon: ${tel}`,
         `Adres: ${str(formData, "adres")}`,
         `Regio: ${str(formData, "regio")}`,
         `Stad / gemeente: ${str(formData, "stad")}`,
@@ -240,6 +287,34 @@ export async function POST(req: Request) {
       { error: "Envoi impossible pour le moment. Réessayez plus tard." },
       { status: 502 }
     );
+  }
+
+  let confirmLocale: ConfirmationLocale = "fr";
+  let visitorName = str(formData, "nom");
+  if (formType === "quote_nl") {
+    confirmLocale = "nl";
+    visitorName = str(formData, "naam");
+  } else if (formType === "quote_fr") {
+    visitorName = str(formData, "naam");
+  } else if (str(formData, "locale") === "nl") {
+    confirmLocale = "nl";
+  }
+
+  try {
+    const { subject: subjC, text: textC, html: htmlC } = buildCustomerConfirmationEmail({
+      locale: confirmLocale,
+      visitorFirstNameOrNom: visitorName,
+      submittedCopy: body,
+    });
+    await sendViaSmtp(config, {
+      to: [replyTo],
+      subject: subjC,
+      text: textC,
+      html: htmlC,
+      replyTo: config.mailFrom,
+    });
+  } catch (e) {
+    console.error("[api/mail] customer confirmation", e);
   }
 
   return NextResponse.json({ ok: true }, { status: 200 });

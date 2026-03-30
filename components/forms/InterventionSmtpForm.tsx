@@ -2,11 +2,13 @@
 
 import { type FormEvent, type ReactNode, useMemo, useState } from "react";
 import FileUploadField from "@/components/forms/FileUploadField";
+import FormSuccessModal from "@/components/forms/FormSuccessModal";
+import { interventionPrefillText } from "@/lib/whatsappPrefill";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 type Props = {
-  formType: "intervention" | "quote_fr";
+  formType: "intervention";
   source: string;
   privacyLabel: ReactNode;
   submitLabel: string;
@@ -34,7 +36,11 @@ export default function InterventionSmtpForm({
   const [files, setFiles] = useState<File[]>([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [success, setSuccess] = useState<string | null>(null);
+  const [successModalOpen, setSuccessModalOpen] = useState(false);
+  const [successModalEmail, setSuccessModalEmail] = useState("");
+  const [whatsappPrefill, setWhatsappPrefill] = useState("");
+
+  const fieldId = `iv-${source.replace(/[^a-z0-9-]/gi, "-")}-${locale}`;
 
   const t =
     locale === "nl"
@@ -42,15 +48,20 @@ export default function InterventionSmtpForm({
           errIncomplete:
             "Vul de verplichte velden in en aanvaard het privacybeleid.",
           errSend: "Verzenden mislukt. Probeer het later opnieuw.",
-          success: "Uw aanvraag is verzonden. We nemen snel contact met u op.",
           errNetwork: "Netwerkfout. Controleer uw verbinding.",
           sending: "Verzenden…",
-          phName: "Naam voornaam *",
-          phEmail: "E-mail *",
-          phPhone: "Telefoonnummer *",
-          phType: "Type interventie",
-          phAddr: "Adres",
-          phMsg: "Bericht",
+          lblName: "Naam en voornaam *",
+          lblEmail: "E-mail *",
+          lblPhone: "Telefoon *",
+          lblType: "Type interventie",
+          lblAddr: "Adres",
+          lblMsg: "Bericht",
+          phName: "Jan Janssen",
+          phEmail: "jan@voorbeeld.be",
+          phPhone: "+32 …",
+          phType: "Ketelstoring, lek, …",
+          phAddr: "Straat, stad",
+          phMsg: "Uw vraag of symptomen…",
           fileTitle: "Foto’s en documenten (optioneel)",
           fileDrop: "Sleep bestanden hierheen of klik in het vak",
           fileFormats: "JPG, PNG, GIF, WebP of PDF · max. 5 bestanden · max. 5 MB per bestand",
@@ -59,16 +70,20 @@ export default function InterventionSmtpForm({
           errIncomplete:
             "Veuillez compléter les champs obligatoires et accepter la politique de confidentialité.",
           errSend: "Envoi impossible. Réessayez plus tard.",
-          success:
-            "Votre demande a été envoyée. Nous vous recontactons rapidement.",
           errNetwork: "Erreur réseau. Vérifiez votre connexion.",
           sending: "Envoi…",
-          phName: "Nom Prénom *",
-          phEmail: "E-mail *",
-          phPhone: "Numéro de téléphone *",
-          phType: "Type d'intervention",
-          phAddr: "Adresse",
-          phMsg: "Message",
+          lblName: "Nom et prénom *",
+          lblEmail: "Adresse e-mail *",
+          lblPhone: "Téléphone *",
+          lblType: "Type d'intervention",
+          lblAddr: "Adresse",
+          lblMsg: "Message",
+          phName: "Jean Dupont",
+          phEmail: "jean@exemple.be",
+          phPhone: "+32 …",
+          phType: "Panne, fuite, …",
+          phAddr: "Rue, ville",
+          phMsg: "Votre demande ou symptômes…",
           fileTitle: "Photos et documents (facultatif)",
           fileDrop: "Glissez-déposez vos fichiers ici ou cliquez dans la zone",
           fileFormats:
@@ -87,7 +102,6 @@ export default function InterventionSmtpForm({
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError(null);
-    setSuccess(null);
     if (!canSubmit) {
       setError(t.errIncomplete);
       return;
@@ -115,7 +129,21 @@ export default function InterventionSmtpForm({
         setError(data.error || t.errSend);
         return;
       }
-      setSuccess(t.success);
+      const sentTo = email.trim();
+      setWhatsappPrefill(
+        interventionPrefillText(locale, {
+          nom: nom.trim(),
+          email: email.trim(),
+          telephone: telephone.trim(),
+          typeIntervention: typeIntervention.trim(),
+          adresse: adresse.trim(),
+          message: message.trim(),
+          source,
+          attachmentCount: files.length,
+        })
+      );
+      setSuccessModalEmail(sentTo);
+      setSuccessModalOpen(true);
       setNom("");
       setEmail("");
       setTelephone("");
@@ -160,59 +188,90 @@ export default function InterventionSmtpForm({
   const labelColor =
     surface === "light" ? "var(--text-muted)" : "rgba(234,246,247,0.84)";
   const errColor = surface === "light" ? "#b42318" : "#fecaca";
-  const okColor = surface === "light" ? "var(--color-primary)" : "#86efac";
+  const lblHeading: React.CSSProperties = {
+    fontSize: surface === "light" ? "0.88rem" : "0.9rem",
+    fontWeight: 600,
+    color: surface === "light" ? "var(--text-heading)" : "rgba(234,246,247,0.96)",
+  };
 
   return (
+    <>
     <form onSubmit={handleSubmit} style={{ display: "grid", gap: "12px" }}>
       <input type="text" name="website" tabIndex={-1} autoComplete="off" style={{ position: "absolute", left: "-9999px", height: 0, width: 0, opacity: 0 }} aria-hidden />
-      <input
-        name="nom"
-        required
-        value={nom}
-        onChange={(e) => setNom(e.target.value)}
-        placeholder={t.phName}
-        style={inputStyle}
-      />
-      <input
-        type="email"
-        name="email"
-        required
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder={t.phEmail}
-        style={inputStyle}
-      />
-      <input
-        name="telephone"
-        required
-        inputMode="tel"
-        value={telephone}
-        onChange={(e) => setTelephone(e.target.value)}
-        placeholder={t.phPhone}
-        style={inputStyle}
-      />
-      <input
-        name="typeIntervention"
-        value={typeIntervention}
-        onChange={(e) => setTypeIntervention(e.target.value)}
-        placeholder={t.phType}
-        style={inputStyle}
-      />
-      <input
-        name="adresse"
-        value={adresse}
-        onChange={(e) => setAdresse(e.target.value)}
-        placeholder={t.phAddr}
-        style={inputStyle}
-      />
-      <textarea
-        name="message"
-        rows={7}
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
-        placeholder={t.phMsg}
-        style={textareaStyle}
-      />
+      <div style={{ display: "grid", gap: "0.35rem" }}>
+        <label htmlFor={`${fieldId}-nom`} style={lblHeading}>{t.lblName}</label>
+        <input
+          id={`${fieldId}-nom`}
+          name="nom"
+          required
+          value={nom}
+          onChange={(e) => setNom(e.target.value)}
+          placeholder={t.phName}
+          style={inputStyle}
+        />
+      </div>
+      <div style={{ display: "grid", gap: "0.35rem" }}>
+        <label htmlFor={`${fieldId}-email`} style={lblHeading}>{t.lblEmail}</label>
+        <input
+          id={`${fieldId}-email`}
+          type="email"
+          name="email"
+          required
+          autoComplete="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder={t.phEmail}
+          style={inputStyle}
+        />
+      </div>
+      <div style={{ display: "grid", gap: "0.35rem" }}>
+        <label htmlFor={`${fieldId}-tel`} style={lblHeading}>{t.lblPhone}</label>
+        <input
+          id={`${fieldId}-tel`}
+          name="telephone"
+          required
+          inputMode="tel"
+          autoComplete="tel"
+          value={telephone}
+          onChange={(e) => setTelephone(e.target.value)}
+          placeholder={t.phPhone}
+          style={inputStyle}
+        />
+      </div>
+      <div style={{ display: "grid", gap: "0.35rem" }}>
+        <label htmlFor={`${fieldId}-type`} style={lblHeading}>{t.lblType}</label>
+        <input
+          id={`${fieldId}-type`}
+          name="typeIntervention"
+          value={typeIntervention}
+          onChange={(e) => setTypeIntervention(e.target.value)}
+          placeholder={t.phType}
+          style={inputStyle}
+        />
+      </div>
+      <div style={{ display: "grid", gap: "0.35rem" }}>
+        <label htmlFor={`${fieldId}-addr`} style={lblHeading}>{t.lblAddr}</label>
+        <input
+          id={`${fieldId}-addr`}
+          name="adresse"
+          value={adresse}
+          onChange={(e) => setAdresse(e.target.value)}
+          placeholder={t.phAddr}
+          style={inputStyle}
+        />
+      </div>
+      <div style={{ display: "grid", gap: "0.35rem" }}>
+        <label htmlFor={`${fieldId}-msg`} style={lblHeading}>{t.lblMsg}</label>
+        <textarea
+          id={`${fieldId}-msg`}
+          name="message"
+          rows={7}
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          placeholder={t.phMsg}
+          style={textareaStyle}
+        />
+      </div>
       <FileUploadField
         variant={surface === "light" ? "light" : "dark"}
         language={locale}
@@ -236,12 +295,22 @@ export default function InterventionSmtpForm({
         <span>{privacyLabel}</span>
       </label>
       {error ? <p style={{ color: errColor, fontSize: "0.9rem", margin: 0 }}>{error}</p> : null}
-      {success ? <p style={{ color: okColor, fontSize: "0.9rem", margin: 0 }}>{success}</p> : null}
       <div style={{ display: "flex", justifyContent: "flex-end", marginTop: "6px" }}>
         <button type="submit" className="btn btn-primary" style={{ minWidth: "160px" }} disabled={isSubmitting}>
           {isSubmitting ? t.sending : submitLabel}
         </button>
       </div>
     </form>
+    <FormSuccessModal
+      open={successModalOpen}
+      onClose={() => {
+        setSuccessModalOpen(false);
+        setWhatsappPrefill("");
+      }}
+      locale={locale}
+      userEmail={successModalEmail}
+      whatsappPrefillText={whatsappPrefill}
+    />
+    </>
   );
 }

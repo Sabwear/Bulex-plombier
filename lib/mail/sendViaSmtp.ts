@@ -12,8 +12,12 @@ export async function sendViaSmtp(
   options: {
     subject: string;
     text: string;
+    /** HTML body (multipart/alternative with text). */
+    html?: string;
     replyTo?: string;
     attachments?: MailAttachment[];
+    /** When set, sends only to these addresses (e.g. customer confirmation). Otherwise admin + from. */
+    to?: string[];
   }
 ): Promise<void> {
   const transporter = nodemailer.createTransport({
@@ -26,11 +30,11 @@ export async function sendViaSmtp(
     },
   });
 
-  // Ensure business contact mailbox receives the form submissions too.
-  // If `MAIL_TO` is an admin inbox, we still include `MAIL_FROM` (e.g. contact@...) as recipient.
-  const recipients = Array.from(
-    new Set([config.mailTo, config.mailFrom].map((v) => v.trim()).filter(Boolean))
-  );
+  const recipients = options.to?.length
+    ? options.to.map((v) => v.trim()).filter(Boolean)
+    : Array.from(
+        new Set([config.mailTo, config.mailFrom].map((v) => v.trim()).filter(Boolean))
+      );
 
   await transporter.sendMail({
     from: `"Vaillant Loodgieter" <${config.mailFrom}>`,
@@ -38,6 +42,7 @@ export async function sendViaSmtp(
     replyTo: options.replyTo || config.mailFrom,
     subject: options.subject,
     text: options.text,
+    ...(options.html ? { html: options.html } : {}),
     attachments: options.attachments?.map((a) => ({
       filename: a.filename,
       content: a.content,

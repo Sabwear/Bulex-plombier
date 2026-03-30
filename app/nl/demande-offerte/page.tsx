@@ -1,49 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import QuoteNlSmtpForm from "@/components/forms/QuoteNlSmtpForm";
+import QuoteRequestSmtpForm from "@/components/forms/QuoteRequestSmtpForm";
+import {
+  quoteCitiesNl,
+  quoteRegionsNl,
+  quoteServicesNl,
+} from "@/config/quote-form-options";
 import { buildLocaleAlternates } from "@/lib/seoAlternates";
-
-const regions = [
-  "Brussels Hoofdstedelijk Gewest",
-  "Vlaams-Brabant",
-  "Waals-Brabant",
-  "Andere",
-];
-
-const nlServices = [
-  "Vaillant herstelling Brussel",
-  "Boiler vervangen Brussel",
-  "Nieuwe verwarming Brussel",
-  "Waterlek herstellen Brussel",
-  "Sanitair installatie Brussel",
-  "Vaillant onderhoudscontract",
-];
-
-const brusselsCities = [
-  "Anderlecht",
-  "Oudergem",
-  "Sint-Agatha-Berchem",
-  "Brussel-Stad",
-  "Etterbeek",
-  "Evere",
-  "Vorst",
-  "Ganshoren",
-  "Elsene",
-  "Jette",
-  "Koekelberg",
-  "Sint-Jans-Molenbeek",
-  "Sint-Gillis",
-  "Sint-Joost-ten-Node",
-  "Schaarbeek",
-  "Ukkel",
-  "Watermaal-Bosvoorde",
-  "Sint-Lambrechts-Woluwe",
-  "Sint-Pieters-Woluwe",
-];
 
 const tips = [
   { title: "Type interventie", desc: "Herstelling, vervanging, waterlek, sanitair, verwarming of onderhoud." },
-  { title: "Adres & gemeente", desc: "Straat, huisnummer en gemeente/stad in Brussel of omgeving." },
+  { title: "Adres & gemeente", desc: "Straat, huisnummer en gemeente/stad in België." },
   { title: "Toestel (indien van toepassing)", desc: "Merk/model (bv. Vaillant ecoTEC) + foutcode of symptoom." },
   { title: "Urgentie", desc: "Vermeld ‘SPOED’ als u geen verwarming of warm water heeft." },
 ];
@@ -57,12 +24,12 @@ const steps = [
 export const metadata: Metadata = {
   title: "Offerte aanvragen | vaillant Loodgieter",
   description:
-    "Vraag een offerte aan voor uw loodgieter- of verwarmingsinterventie in Brussel. vaillant Loodgieter, gecertificeerd Vaillant partner.",
+    "Vraag een offerte aan voor loodgieterij of verwarming in België. vaillant Loodgieter, gecertificeerd Vaillant partner.",
   alternates: buildLocaleAlternates("/nl/demande-offerte"),
   openGraph: {
     title: "Offerte aanvragen | vaillant Loodgieter",
     description:
-      "Ontvang een transparante offerte voor loodgieterij en verwarming in Brussel.",
+      "Ontvang een transparante offerte voor loodgieterij en verwarming in België.",
     url: "https://vaillant-loodgieter.com/nl/demande-offerte",
   },
 };
@@ -83,7 +50,7 @@ export default function DemandeOffertePage() {
             Offerte aanvragen
           </span>
           <h1 style={{ marginBottom: "1rem" }}>
-            Vraag een duidelijke offerte voor uw interventie in Brussel
+            Vraag een duidelijke offerte voor uw interventie in België
           </h1>
           <p style={{ fontSize: "1.1rem", maxWidth: "60ch", marginBottom: 0 }}>
             Vul het formulier in. We antwoorden snel met een eerste inschatting en een voorstel op maat.
@@ -178,7 +145,19 @@ export default function DemandeOffertePage() {
               <h2 className="text-lg font-semibold" style={{ color: "var(--text-heading)", marginBottom: "1rem" }}>
                 Uw aanvraag
               </h2>
-              <QuoteNlSmtpForm regions={regions} cities={brusselsCities} services={nlServices} />
+              <p style={{ fontSize: "0.88rem", color: "var(--text-muted)", marginBottom: "1rem", marginTop: "-0.25rem" }}>
+                Door dit formulier te versturen, aanvaardt u ons{" "}
+                <Link href="/nl/privacy" style={{ color: "var(--color-primary)", fontWeight: 600, textDecoration: "underline" }}>
+                  privacybeleid
+                </Link>
+                .
+              </p>
+              <QuoteRequestSmtpForm
+                locale="nl"
+                regions={quoteRegionsNl}
+                cities={quoteCitiesNl}
+                services={quoteServicesNl}
+              />
             </div>
           </div>
         </div>

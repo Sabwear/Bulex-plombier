@@ -1,6 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import InterventionSmtpForm from '@/components/forms/InterventionSmtpForm';
+import QuoteRequestSmtpForm from '@/components/forms/QuoteRequestSmtpForm';
+import {
+  quoteCitiesFr,
+  quoteRegionsFr,
+  quoteServicesFr,
+} from '@/config/quote-form-options';
 import { buildLocaleAlternates } from '@/lib/seoAlternates';
 
 export const metadata: Metadata = {
@@ -151,27 +156,18 @@ export default function QuoteRequestPage() {
               <h2 className="text-lg font-semibold" style={{ color: 'var(--text-heading)', marginBottom: '1rem' }}>
                 Votre demande
               </h2>
-              <InterventionSmtpForm
-                formType="quote_fr"
-                source="demande-devis"
-                surface="light"
-                submitLabel="Envoyer"
-                privacyLabel={
-                  <>
-                    En envoyant un message, vous acceptez notre{' '}
-                    <Link
-                      href="/fr/confidentialite"
-                      style={{
-                        color: 'var(--color-primary)',
-                        fontWeight: 700,
-                        textDecoration: 'underline',
-                      }}
-                    >
-                      politique de confidentialité
-                    </Link>
-                    .
-                  </>
-                }
+              <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', marginBottom: '1rem', marginTop: '-0.25rem' }}>
+                En envoyant ce formulaire, vous acceptez notre{' '}
+                <Link href="/fr/confidentialite" style={{ color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'underline' }}>
+                  politique de confidentialité
+                </Link>
+                .
+              </p>
+              <QuoteRequestSmtpForm
+                locale="fr"
+                regions={quoteRegionsFr}
+                cities={quoteCitiesFr}
+                services={quoteServicesFr}
               />
             </div>
           </div>
