@@ -291,8 +291,8 @@ export default function ContactPage() {
       <section style={{ background: 'var(--bg-secondary)' }}>
         <div className="container">
           <div className="section-header">
-            <span className="badge badge-blue">Nos Services</span>
-            <h2 style={{ marginTop: '1rem' }}>Pourquoi pouvez-vous nous contacter ?</h2>
+            <span className="badge badge-blue">Onze diensten</span>
+            <h2 style={{ marginTop: '1rem' }}>Waarom kunt u ons contacteren?</h2>
             <div className="divider" />
           </div>
           <div className="grid-3-strict">
@@ -317,7 +317,7 @@ export default function ContactPage() {
             ))}
           </div>
           <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-            <Link href="/diensten" className="btn btn-primary">Voir tous les services →</Link>
+            <Link href="/nl/diensten" className="btn btn-primary">Bekijk alle diensten →</Link>
           </div>
         </div>
       </section>
@@ -346,12 +346,12 @@ export default function ContactPage() {
       {/* CTA */}
       <section className="cta-band">
         <div className="container" style={{ maxWidth: '600px' }}>
-          <h2>Prêt à nous contacter ?</h2>
-          <p>Envoyez un e-mail à <strong style={{ color: 'rgba(255,255,255,0.95)' }}>contact@vaillant-loodgieter.com</strong> — votre plombier certifié Vaillant en Belgique vous répondra dans les plus brefs délais.</p>
+          <h2>Klaar om contact op te nemen?</h2>
+          <p>Stuur een e-mail naar <strong style={{ color: 'rgba(255,255,255,0.95)' }}>contact@vaillant-loodgieter.com</strong> — uw gecertificeerde Vaillant loodgieter in België antwoordt zo snel mogelijk.</p>
           <div className="cta-actions">
             <a href="mailto:contact@vaillant-loodgieter.com" className="btn btn-ghost-dark">📧 contact@vaillant-loodgieter.com</a>
-            <Link href="/over-ons" className="btn btn-ghost-dark">
-              À propos de nous →
+            <Link href="/nl/over-ons" className="btn btn-ghost-dark">
+              Over ons →
             </Link>
           </div>
         </div>

@@ -41,8 +41,8 @@ export default function ContactPage() {
             Vous avez un problème de plomberie, vous souhaitez demander un devis ou discuter d'un contrat d'entretien ? vaillant Plombier est à votre disposition.
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <Link href="/demande-devis" className="btn btn-primary">Demander un devis</Link>
-            <Link href="/" className="btn btn-outline">
+            <Link href="/fr/demande-devis" className="btn btn-primary">Demander un devis</Link>
+            <Link href="/fr" className="btn btn-outline">
               ← Retour à l'accueil
             </Link>
           </div>
@@ -96,7 +96,7 @@ export default function ContactPage() {
                     <p style={{ fontSize: '0.9rem' }}>
                       Belgique — interventions selon la disponibilité de nos équipes et la nature de l’intervention.
                     </p>
-                    <Link href="/brussel" style={{ fontSize: '0.88rem', fontWeight: 600, color: 'var(--color-primary)', marginTop: '0.5rem', display: 'inline-block' }}>
+                    <Link href="/fr/brussel" style={{ fontSize: '0.88rem', fontWeight: 600, color: 'var(--color-primary)', marginTop: '0.5rem', display: 'inline-block' }}>
                       Voir notre zone d'intervention →
                     </Link>
                   </div>
@@ -146,7 +146,7 @@ export default function ContactPage() {
             ))}
           </div>
           <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-            <Link href="/services" className="btn btn-primary">Voir tous les services →</Link>
+            <Link href="/fr/services" className="btn btn-primary">Voir tous les services →</Link>
           </div>
         </div>
       </section>
@@ -178,8 +178,8 @@ export default function ContactPage() {
           <h2>Prêt à nous contacter ?</h2>
           <p>Envoyez un e-mail à <strong style={{ color: 'rgba(255,255,255,0.95)' }}>contact@vaillant-loodgieter.com</strong> — votre plombier certifié Vaillant en Belgique vous répondra dans les plus brefs délais.</p>
           <div className="cta-actions">
-            <Link href="/demande-devis" className="btn btn-ghost-dark">Demander un devis</Link>
-            <Link href="/over-ons" className="btn btn-ghost-dark">
+            <Link href="/fr/demande-devis" className="btn btn-ghost-dark">Demander un devis</Link>
+            <Link href="/fr/a-propos" className="btn btn-ghost-dark">
               À propos de nous →
             </Link>
           </div>
