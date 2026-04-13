@@ -44,9 +44,9 @@ export default function CertificeringenPage() {
                 verwarmingsketels, boilers en sanitaire installaties.
               </p>
               <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginTop: '1.5rem' }}>
-                <a href="mailto:contact@vaillant-loodgieter.com" className="btn btn-primary">
+                <Link href="/nl/demande-offerte" className="btn btn-primary">
                   Vraag een interventie aan
-                </a>
+                </Link>
                 <Link href="/nl/diensten" className="btn btn-outline">
                   Bekijk onze diensten →
                 </Link>

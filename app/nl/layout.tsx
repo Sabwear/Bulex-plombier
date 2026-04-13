@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import SiteHeader from "@/components/header/SiteHeader";
 import Footer from "@/components/Footer";
 import { HtmlLang } from "@/components/HtmlLang";
-import Script from "next/script";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
 import MobileCallBar from "@/components/MobileCallBar";
 import { buildLocaleJsonLdGraph } from "@/lib/schema-org";
@@ -69,8 +68,7 @@ export default function NlLayout({
   return (
     <>
       <HtmlLang lang="nl" />
-      <Script
-        id="json-ld-organization-nl"
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />

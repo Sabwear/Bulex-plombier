@@ -181,9 +181,12 @@ export default function Footer() {
               <div className={styles.contactIcon}><Mail size={18} /></div>
               <div className={styles.contactText}>
                 <span className={styles.contactLabel}>{isNl ? "E-mail" : "E-mail"}</span>
-                <a href="mailto:contact@vaillant-loodgieter.com" className={styles.contactValue}>
+                <Link
+                  href={isNl ? "/nl/contact" : "/fr/contact"}
+                  className={styles.contactValue}
+                >
                   contact@vaillant-loodgieter.com
-                </a>
+                </Link>
               </div>
             </li>
             <li className={styles.contactItem}>
@@ -196,9 +199,12 @@ export default function Footer() {
               </div>
             </li>
           </ul>
-          <a href="mailto:contact@vaillant-loodgieter.com" className="btn btn-primary btn-sm">
+          <Link
+            href={isNl ? "/nl/contact" : "/fr/contact"}
+            className="btn btn-primary btn-sm"
+          >
             {isNl ? "Stuur een bericht" : "Envoyer un message"}
-          </a>
+          </Link>
         </div>
       </div>
 

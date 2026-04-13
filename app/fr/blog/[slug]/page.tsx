@@ -174,9 +174,9 @@ export default async function BlogPostPage({ params }: PageProps) {
         <div className={`${styles.sidebarWidget} ${styles.sidebarCta}`}>
           <h3>Besoin d&apos;une intervention ?</h3>
           <p>Nos experts certifiés Vaillant interviennent en moins de 60 minutes à Bruxelles.</p>
-          <a href="mailto:contact@vaillant-loodgieter.com" className="btn btn-outline" style={{ color: '#fff', borderColor: '#fff' }}>
+          <Link href="/fr/contact" className="btn btn-outline" style={{ color: '#fff', borderColor: '#fff' }}>
             Contactez-nous
-          </a>
+          </Link>
         </div>
 
         {/* Latest Posts Widget */}

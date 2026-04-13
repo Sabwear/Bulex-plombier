@@ -63,7 +63,7 @@ export default function BrusselPage() {
             vaillant Loodgieter is uw gecertificeerde Vaillant loodgieter in Brussel, actief in alle gemeenten van het Brussels Hoofdstedelijk Gewest. Van noodservice in loodgieterij tot het vervangen van ketels en sanitaire installaties.
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <a href="mailto:contact@vaillant-loodgieter.com" className="btn btn-primary">Offerte aanvragen</a>
+            <Link href="/nl/demande-offerte" className="btn btn-primary">Offerte aanvragen</Link>
             <Link href="/nl/diensten" className="btn btn-outline">
               Onze diensten →
             </Link>
@@ -282,7 +282,7 @@ export default function BrusselPage() {
           <h2>Loodgieter nodig in Brussel?</h2>
           <p>vaillant Loodgieter — een gecertificeerd Vaillant partner actief in alle Brusselse gemeenten.</p>
           <div className="cta-actions">
-            <a href="mailto:contact@vaillant-loodgieter.com" className="btn btn-ghost-dark">📧 Stuur een bericht</a>
+            <Link href="/nl/contact" className="btn btn-ghost-dark">📧 Stuur een bericht</Link>
             <Link href="/nl/over-ons" className="btn btn-ghost-dark">
               Over ons →
             </Link>

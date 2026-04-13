@@ -63,7 +63,7 @@ export default function BrusselPage() {
             vaillant Plombier est votre plombier certifié Vaillant à Bruxelles, actif dans toutes les communes de la Région de Bruxelles-Capitale. Du service d'urgence en plomberie au remplacement de chaudières et aux installations sanitaires.
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <a href="mailto:contact@vaillant-loodgieter.com" className="btn btn-primary">Demander un devis</a>
+            <Link href="/fr/demande-devis" className="btn btn-primary">Demander un devis</Link>
             <Link href="/diensten" className="btn btn-outline">
               Nos services →
             </Link>
@@ -277,7 +277,7 @@ export default function BrusselPage() {
           <h2>Besoin d'un plombier à Bruxelles ?</h2>
           <p>vaillant Plombier — un partenaire Vaillant certifié actif dans toutes les communes bruxelloises.</p>
           <div className="cta-actions">
-            <a href="mailto:contact@vaillant-loodgieter.com" className="btn btn-ghost-dark">📧 Envoyer un message</a>
+            <Link href="/fr/contact" className="btn btn-ghost-dark">📧 Envoyer un message</Link>
             <Link href="/over-ons" className="btn btn-ghost-dark">
               À propos de nous →
             </Link>

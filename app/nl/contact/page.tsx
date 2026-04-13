@@ -66,9 +66,9 @@ export default function ContactPage() {
                   </span>
                   <div>
                     <h4 style={{ marginBottom: '0.3rem' }}>E-mail</h4>
-                    <a href="mailto:contact@vaillant-loodgieter.com" style={{ fontWeight: 600, color: 'var(--color-primary)' }}>
+                    <span style={{ fontWeight: 600, color: 'var(--color-primary)' }}>
                       contact@vaillant-loodgieter.com
-                    </a>
+                    </span>
                     <p style={{ fontSize: '0.85rem', marginTop: '0.3rem' }}>
                       Stuur een e-mail met uw vraag, adres en een beschrijving van het probleem. Wij antwoorden u zo snel mogelijk.
                     </p>

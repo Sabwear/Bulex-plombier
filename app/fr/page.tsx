@@ -16,8 +16,10 @@ import {
   Thermometer, Grid, Bath, Gauge, CheckCircle2, MapPin
 } from 'lucide-react';
 
+const homeTitle = "Plombier Vaillant Belgique | Dépannage & installation";
+
 export const metadata: Metadata = {
-  title: "Plombier Vaillant en Belgique | Dépannage & Installation Chauffage",
+  title: homeTitle,
   description:
     "Plombier Vaillant certifié en Belgique. Intervention rapide, dépannage chaudière, installation et entretien. Devis gratuit.",
   keywords: [
@@ -30,7 +32,8 @@ export const metadata: Metadata = {
   alternates: buildLocaleAlternates('/fr'),
   openGraph: {
     type: 'website',
-    title: "Plombier Vaillant en Belgique | Dépannage & Installation Chauffage",
+    siteName: 'Vaillant Plombier',
+    title: homeTitle,
     description:
       "Plombier Vaillant certifié en Belgique. Intervention rapide, dépannage chaudière, installation et entretien. Devis gratuit.",
     url: 'https://vaillant-loodgieter.com/fr',
@@ -45,7 +48,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Plombier Vaillant en Belgique | Dépannage & Installation Chauffage",
+    title: homeTitle,
     description:
       "Plombier Vaillant certifié en Belgique. Intervention rapide, dépannage chaudière, installation et entretien. Devis gratuit.",
     images: ['/images/slider-vaillant-1.png'],
@@ -619,9 +622,9 @@ export default function HomePage() {
           <h2>Prêt à réparer ou optimiser votre installation Vaillant ?</h2>
           <p>Contactez dès aujourd'hui votre partenaire certifié Vaillant en Belgique. Nous analysons votre demande rapidement.</p>
           <div className="cta-actions">
-            <a href="mailto:contact@vaillant-loodgieter.com" className="btn btn-ghost-dark" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <Link href="/fr/contact" className="btn btn-ghost-dark" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <Mail size={18} /> contact@vaillant-loodgieter.com
-            </a>
+            </Link>
             <Link href="/fr/services" className="btn btn-ghost-dark">
               Voir nos services
             </Link>

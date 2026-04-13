@@ -94,7 +94,8 @@ export default function MobileMenu({ isOpen, onClose, navItems, cta, lang }: Mob
                   aria-label="Twitter"
                   className="h-9 w-9 inline-flex items-center justify-center rounded-md border border-gray-200 text-gray-700 hover:text-primary hover:bg-primary/5 transition-colors"
                 >
-                  <Twitter size={16} />
+                  <span className="sr-only">Twitter</span>
+                  <Twitter size={16} aria-hidden />
                 </a>
               )}
               {SOCIAL_LINKS.facebook && (
@@ -105,7 +106,8 @@ export default function MobileMenu({ isOpen, onClose, navItems, cta, lang }: Mob
                   aria-label="Facebook"
                   className="h-9 w-9 inline-flex items-center justify-center rounded-md border border-gray-200 text-gray-700 hover:text-primary hover:bg-primary/5 transition-colors"
                 >
-                  <Facebook size={16} />
+                  <span className="sr-only">Facebook</span>
+                  <Facebook size={16} aria-hidden />
                 </a>
               )}
               {SOCIAL_LINKS.instagram && (
@@ -116,7 +118,8 @@ export default function MobileMenu({ isOpen, onClose, navItems, cta, lang }: Mob
                   aria-label="Instagram"
                   className="h-9 w-9 inline-flex items-center justify-center rounded-md border border-gray-200 text-gray-700 hover:text-primary hover:bg-primary/5 transition-colors"
                 >
-                  <Instagram size={16} />
+                  <span className="sr-only">Instagram</span>
+                  <Instagram size={16} aria-hidden />
                 </a>
               )}
               {SOCIAL_LINKS.linkedin && (
@@ -127,7 +130,8 @@ export default function MobileMenu({ isOpen, onClose, navItems, cta, lang }: Mob
                   aria-label="LinkedIn"
                   className="h-9 w-9 inline-flex items-center justify-center rounded-md border border-gray-200 text-gray-700 hover:text-primary hover:bg-primary/5 transition-colors"
                 >
-                  <Linkedin size={16} />
+                  <span className="sr-only">LinkedIn</span>
+                  <Linkedin size={16} aria-hidden />
                 </a>
               )}
               {SOCIAL_LINKS.telegram && (
@@ -138,7 +142,8 @@ export default function MobileMenu({ isOpen, onClose, navItems, cta, lang }: Mob
                   aria-label="Telegram"
                   className="h-9 w-9 inline-flex items-center justify-center rounded-md border border-gray-200 text-gray-700 hover:text-primary hover:bg-primary/5 transition-colors"
                 >
-                  <Send size={16} />
+                  <span className="sr-only">Telegram</span>
+                  <Send size={16} aria-hidden />
                 </a>
               )}
             </div>

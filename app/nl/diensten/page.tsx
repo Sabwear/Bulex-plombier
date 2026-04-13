@@ -123,8 +123,8 @@ export default function DienstenPage() {
             Vaillant Loodgieter is uw gecertificeerde partner voor alle verwarmings- en loodgietersdiensten in België. Van spoedinterventies tot het jaarlijks Vaillant onderhoudscontract.
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <a href="mailto:contact@vaillant-loodgieter.com" className="btn btn-primary">Demander un devis</a>
-            <Link href="/" className="btn btn-outline">← Retour à l'accueil</Link>
+            <Link href="/nl/demande-offerte" className="btn btn-primary">Offerte aanvragen</Link>
+            <Link href="/nl" className="btn btn-outline">← Naar home</Link>
           </div>
         </div>
       </section>
@@ -205,9 +205,9 @@ export default function DienstenPage() {
                     <p key={pi} style={{ marginBottom: pi < s.body.length - 1 ? '1rem' : 0, fontSize: '0.95rem', lineHeight: 1.75 }}>{para}</p>
                   ))}
                   <div style={{ marginTop: '1.5rem' }}>
-                    <a href="mailto:contact@vaillant-loodgieter.com" className="btn btn-primary" style={{ fontSize: '0.9rem' }}>
-                      Priez un devis
-                    </a>
+                    <Link href="/nl/demande-offerte" className="btn btn-primary" style={{ fontSize: '0.9rem' }}>
+                      Vraag een offerte
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -349,9 +349,9 @@ export default function DienstenPage() {
           <h2>Prêt à optimiser votre installation Vaillant ?</h2>
           <p>Contactez Vaillant Loodgieter — uw gecertificeerde Vaillant partner in België.</p>
           <div className="cta-actions">
-            <a href="mailto:contact@vaillant-loodgieter.com" className="btn btn-ghost-dark">📧 Envoyer un message</a>
-            <Link href="/over-ons" className="btn btn-ghost-dark">
-              À propos de nous →
+            <Link href="/nl/contact" className="btn btn-ghost-dark">📧 Contact</Link>
+            <Link href="/nl/over-ons" className="btn btn-ghost-dark">
+              Over ons →
             </Link>
           </div>
         </div>

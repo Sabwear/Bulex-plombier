@@ -47,9 +47,10 @@ export default function LanguageSwitcher({ className = '', theme = 'dark' }: Lan
             : 'opacity-80 hover:opacity-100'
         }`}
       >
+        <span className="sr-only">Français</span>
         <Image
           src="/images/flag/fr.svg"
-          alt="Français"
+          alt=""
           width={20}
           height={14}
           className={currentLocale === 'fr' ? 'opacity-100' : 'opacity-75'}
@@ -69,9 +70,10 @@ export default function LanguageSwitcher({ className = '', theme = 'dark' }: Lan
             : 'opacity-80 hover:opacity-100'
         }`}
       >
+        <span className="sr-only">Nederlands</span>
         <Image
           src="/images/flag/nl.svg"
-          alt="Nederlands"
+          alt=""
           width={20}
           height={14}
           className={currentLocale === 'nl' ? 'opacity-100' : 'opacity-75'}

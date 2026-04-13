@@ -40,7 +40,7 @@ export default function OverOnsPage() {
             Nous sommes un partenaire certifié Vaillant en Belgique. Nos techniciens qualifiés combinent une formation officielle du fabricant avec une expérience de terrain éprouvée pour vos besoins en chauffage et sanitaires.
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <a href="mailto:contact@vaillant-loodgieter.com" className="btn btn-primary">Contactez-nous</a>
+            <Link href="/fr/contact" className="btn btn-primary">Contactez-nous</Link>
             <Link href="/services" className="btn btn-outline">
               Nos services →
             </Link>
@@ -290,7 +290,7 @@ export default function OverOnsPage() {
           <h2>Prenez contact avec votre partenaire Vaillant certifié</h2>
           <p>Partenaire certifié Vaillant · Techniciens qualifiés · Tout Bruxelles</p>
           <div className="cta-actions">
-            <a href="mailto:contact@vaillant-loodgieter.com" className="btn btn-ghost-dark">📧 Envoyer un message</a>
+            <Link href="/fr/contact" className="btn btn-ghost-dark">📧 Envoyer un message</Link>
             <Link href="/diensten" className="btn btn-ghost-dark">
               Nos services
             </Link>

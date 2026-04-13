@@ -17,8 +17,11 @@ import {
 } from 'lucide-react';
 
 
+const homeTitle =
+  "Vaillant Loodgieter België | Herstelling & installatie";
+
 export const metadata: Metadata = {
-  title: "Vaillant Loodgieter België | Herstelling & Installatie Verwarming",
+  title: homeTitle,
   description:
     "Gecertificeerde Vaillant loodgieter in België. Snelle interventie, ketelherstelling, installatie en onderhoud. Gratis offerte.",
   keywords: [
@@ -31,7 +34,8 @@ export const metadata: Metadata = {
   alternates: buildLocaleAlternates('/nl'),
   openGraph: {
     type: 'website',
-    title: "Vaillant Loodgieter België | Herstelling & Installatie Verwarming",
+    siteName: 'Vaillant Loodgieter',
+    title: homeTitle,
     description:
       "Gecertificeerde Vaillant loodgieter in België. Snelle interventie, ketelherstelling, installatie en onderhoud. Gratis offerte.",
     url: 'https://vaillant-loodgieter.com/nl',
@@ -46,7 +50,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Vaillant Loodgieter België | Herstelling & Installatie Verwarming",
+    title: homeTitle,
     description:
       "Gecertificeerde Vaillant loodgieter in België. Snelle interventie, ketelherstelling, installatie en onderhoud. Gratis offerte.",
     images: ['/images/slider-vaillant-1.png'],
@@ -297,9 +301,9 @@ export default function HomePage() {
                 installatie die <strong>betrouwbaar</strong> blijft op lange termijn.
               </p>
               <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-                <a href="mailto:contact@vaillant-loodgieter.com" className="btn btn-primary">
+                <Link href="/nl/demande-offerte" className="btn btn-primary">
                   Vraag een interventie aan
-                </a>
+                </Link>
                 <Link href="/nl/certificeringen" className="btn btn-outline">
                   Bekijk onze certificering →
                 </Link>
@@ -609,9 +613,9 @@ export default function HomePage() {
           <h2>Klaar om uw Vaillant installatie te repareren of te optimaliseren?</h2>
           <p>Neem vandaag nog contact op met uw gecertificeerde Vaillant partner in België. Wij analyseren uw verzoek snel.</p>
           <div className="cta-actions">
-            <a href="mailto:contact@vaillant-loodgieter.com" className="btn btn-ghost-dark" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <Link href="/nl/contact" className="btn btn-ghost-dark" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <Mail size={18} /> contact@vaillant-loodgieter.com
-            </a>
+            </Link>
             <Link href="/nl/diensten" className="btn btn-ghost-dark">
               Bekijk onze diensten
             </Link>
