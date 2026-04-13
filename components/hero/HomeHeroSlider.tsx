@@ -122,7 +122,7 @@ export default function HomeHeroSlider({ lang }: HomeHeroSliderProps) {
                   {slide.eyebrow}
                 </span>
 
-                               {slideIndex === currentIndex ? (
+                {slideIndex === 0 ? (
                   <h1 className="mt-4 text-2xl font-bold leading-snug text-[#ffffff] sm:text-3xl md:text-4xl">
                     {slide.title}
                   </h1>
