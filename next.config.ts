@@ -2,6 +2,29 @@ import type { NextConfig } from "next";
 import { getAllSlugsNl } from "./data/city-data";
 
 const nextConfig: NextConfig = {
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          {
+            key: "Strict-Transport-Security",
+            value: "max-age=31536000; includeSubDomains; preload",
+          },
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          {
+            key: "Referrer-Policy",
+            value: "strict-origin-when-cross-origin",
+          },
+          {
+            key: "Permissions-Policy",
+            value: "camera=(), microphone=(), geolocation=()",
+          },
+        ],
+      },
+    ];
+  },
   eslint: {
     // Next.js 15 + ESLint can throw "circular structure" during build in some setups.
     // We keep linting available via `npm run lint`, but avoid blocking production builds.

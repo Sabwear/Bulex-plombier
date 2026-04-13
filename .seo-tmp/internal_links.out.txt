@@ -1,0 +1,39 @@
+﻿Internal Link Analysis ΓÇö vaillant-loodgieter.com
+==================================================
+Pages crawled: 21
+Unique pages found: 67
+Total internal links: 398
+Max depth reached: 1
+
+Links per page: min=13, max=58, avg=19.9
+
+ΓÜá∩╕Å Potential Orphan Pages (19):
+  ΓÇó https://vaillant-loodgieter.com/ (1 incoming)
+  ΓÇó https://vaillant-loodgieter.com/over-ons (1 incoming)
+  ΓÇó https://vaillant-loodgieter.com/nl/loodgieter/anderlecht (1 incoming)
+  ΓÇó https://vaillant-loodgieter.com/nl/loodgieter/auderghem (1 incoming)
+  ΓÇó https://vaillant-loodgieter.com/nl/loodgieter/berchem-sainte-agathe (1 incoming)
+  ΓÇó https://vaillant-loodgieter.com/nl/loodgieter/etterbeek (1 incoming)
+  ΓÇó https://vaillant-loodgieter.com/nl/loodgieter/evere (1 incoming)
+  ΓÇó https://vaillant-loodgieter.com/nl/loodgieter/forest (1 incoming)
+  ΓÇó https://vaillant-loodgieter.com/nl/loodgieter/ganshoren (1 incoming)
+  ΓÇó https://vaillant-loodgieter.com/nl/loodgieter/jette (1 incoming)
+
+Top Anchor Texts:
+  [20x] "Plan een interventie"
+  [20x] "Diensten"
+  [20x] "Vaillant Loodgieter Belgi├½"
+  [20x] "Regio Brussel"
+  [20x] "Spoed contact"
+  [20x] "Blogs"
+  [20x] "Over ons"
+  [20x] "Cookiebeleid"
+  [20x] "Juridische vermelding"
+  [20x] "Gebruiksvoorwaarden"
+
+Issues:
+  ΓÜá∩╕Å 19 potential orphan page(s) (Γëñ1 internal link pointing to them)
+  ΓÜá∩╕Å 20 link(s) have no anchor text
+
+Recommendations:
+  ≡ƒÆí Add internal links pointing to orphan pages from related content

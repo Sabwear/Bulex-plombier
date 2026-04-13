@@ -44,7 +44,7 @@ export function middleware(request: NextRequest) {
     const url = request.nextUrl.clone();
     url.pathname = locale === 'fr' ? `/fr${pathname === '/' ? '' : pathname}` : `/nl${pathname === '/' ? '' : pathname}`;
 
-    const response = NextResponse.redirect(url);
+    const response = NextResponse.redirect(url, 308);
     response.cookies.set(LOCALE_COOKIE_NAME, locale, {
       path: '/',
       maxAge: 60 * 60 * 24 * 365,

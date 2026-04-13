@@ -30,10 +30,26 @@ export const metadata: Metadata = {
   ],
   alternates: buildLocaleAlternates('/nl'),
   openGraph: {
+    type: 'website',
     title: "Vaillant Loodgieter België | Herstelling & Installatie Verwarming",
     description:
       "Gecertificeerde Vaillant loodgieter in België. Snelle interventie, ketelherstelling, installatie en onderhoud. Gratis offerte.",
     url: 'https://vaillant-loodgieter.com/nl',
+    images: [
+      {
+        url: '/images/slider-vaillant-1.png',
+        width: 1920,
+        height: 1080,
+        alt: 'Vaillant technieker aan het werk in België',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Vaillant Loodgieter België | Herstelling & Installatie Verwarming",
+    description:
+      "Gecertificeerde Vaillant loodgieter in België. Snelle interventie, ketelherstelling, installatie en onderhoud. Gratis offerte.",
+    images: ['/images/slider-vaillant-1.png'],
   },
 };
 

@@ -122,9 +122,15 @@ export default function HomeHeroSlider({ lang }: HomeHeroSliderProps) {
                   {slide.eyebrow}
                 </span>
 
-                <h1 className="mt-4 text-2xl font-bold leading-snug text-[#ffffff] sm:text-3xl md:text-4xl">
-                  {slide.title}
-                </h1>
+                               {slideIndex === currentIndex ? (
+                  <h1 className="mt-4 text-2xl font-bold leading-snug text-[#ffffff] sm:text-3xl md:text-4xl">
+                    {slide.title}
+                  </h1>
+                ) : (
+                  <h2 className="mt-4 text-2xl font-bold leading-snug text-[#ffffff] sm:text-3xl md:text-4xl">
+                    {slide.title}
+                  </h2>
+                )}
                 <p className="mt-3 flex w-full flex-wrap items-center justify-center text-center text-sm leading-relaxed text-white sm:text-base md:text-lg">
                   {slide.subtitle}
                 </p>

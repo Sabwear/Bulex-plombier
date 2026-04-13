@@ -29,10 +29,26 @@ export const metadata: Metadata = {
   ],
   alternates: buildLocaleAlternates('/fr'),
   openGraph: {
+    type: 'website',
     title: "Plombier Vaillant en Belgique | Dépannage & Installation Chauffage",
     description:
       "Plombier Vaillant certifié en Belgique. Intervention rapide, dépannage chaudière, installation et entretien. Devis gratuit.",
     url: 'https://vaillant-loodgieter.com/fr',
+    images: [
+      {
+        url: '/images/slider-vaillant-1.png',
+        width: 1920,
+        height: 1080,
+        alt: 'Technicien Vaillant en intervention en Belgique',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Plombier Vaillant en Belgique | Dépannage & Installation Chauffage",
+    description:
+      "Plombier Vaillant certifié en Belgique. Intervention rapide, dépannage chaudière, installation et entretien. Devis gratuit.",
+    images: ['/images/slider-vaillant-1.png'],
   },
 };
 

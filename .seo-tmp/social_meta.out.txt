@@ -1,0 +1,30 @@
+﻿Social Meta Tags ΓÇö https://vaillant-loodgieter.com
+==================================================
+Score: 46/100
+
+Open Graph (3/7):
+  Γ£à og:title: Vaillant Loodgieter Belgi├½ | Herstelling & Installatie Verwa...
+  Γ£à og:description: Gecertificeerde Vaillant loodgieter in Belgi├½. Snelle interv...
+  ≡ƒö┤ og:image: missing (required)
+  Γ£à og:url: https://vaillant-loodgieter.com/nl
+  ≡ƒö┤ og:type: missing (required)
+  Γä╣∩╕Å og:site_name: missing (optional)
+  Γä╣∩╕Å og:locale: missing (optional)
+
+Twitter Card (3/6):
+  Γ£à twitter:card: summary
+  Γ£à twitter:title: Vaillant Loodgieter Belgi├½ | Herstelling & Installatie Verwa
+  Γ£à twitter:description: Gecertificeerde Vaillant loodgieter in Belgi├½. Snelle interv
+  Γä╣∩╕Å twitter:image: missing (optional)
+  Γä╣∩╕Å twitter:site: missing (optional)
+  Γä╣∩╕Å twitter:creator: missing (optional)
+
+Social Preview:
+  Title: Vaillant Loodgieter Belgi├½ | Herstelling & Installatie Verwarming
+  Description: Gecertificeerde Vaillant loodgieter in Belgi├½. Snelle interventie, ketelherstell
+  Image: None
+
+Issues:
+  ΓÜá∩╕Å og:title is too long (65 chars, max 60)
+  ≡ƒö┤ Missing required: og:image
+  ≡ƒö┤ Missing required: og:type

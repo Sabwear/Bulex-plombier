@@ -5,6 +5,14 @@ import { HtmlLang } from "@/components/HtmlLang";
 import Script from "next/script";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
 import MobileCallBar from "@/components/MobileCallBar";
+import { buildLocaleJsonLdGraph } from "@/lib/schema-org";
+
+const ogImage = {
+  url: "/images/slider-vaillant-1.png",
+  width: 1920,
+  height: 1080,
+  alt: "Technicien Vaillant en intervention en Belgique",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://vaillant-loodgieter.com"),
@@ -35,6 +43,14 @@ export const metadata: Metadata = {
     title: "Plombier Vaillant Belgique | Vaillant Plombier",
     description:
       "Partenaire certifié Vaillant en Belgique. Dépannage plombier urgence, remplacement de chaudière, réparation de fuite d'eau et installation sanitaire professionnelle.",
+    images: [ogImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Plombier Vaillant Belgique | Vaillant Plombier",
+    description:
+      "Partenaire certifié Vaillant en Belgique. Dépannage plombier urgence, remplacement de chaudière, réparation de fuite d'eau et installation sanitaire professionnelle.",
+    images: [ogImage.url],
   },
   robots: {
     index: true,
@@ -43,29 +59,7 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "Vaillant Plombier",
-  url: "https://vaillant-loodgieter.com",
-  email: "contact@vaillant-loodgieter.com",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Belgique",
-    addressCountry: "BE",
-  },
-  areaServed: {
-    "@type": "Country",
-    name: "Belgium",
-  },
-  description:
-    "Partenaire certifié Vaillant en Belgique. Plombier professionnel, réparation de chaudière et installation sanitaire.",
-  knowsAbout: [
-    "plombier Vaillant Belgique",
-    "remplacement chaudière Belgique",
-    "installation sanitaire Belgique",
-  ],
-};
+const jsonLd = buildLocaleJsonLdGraph("fr");
 
 export default function FrLayout({
   children,
