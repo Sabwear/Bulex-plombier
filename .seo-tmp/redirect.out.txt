@@ -1,8 +1,0 @@
-﻿Redirect Chain ΓÇö https://vaillant-loodgieter.com
-==================================================
-  Γå¬∩╕Å [307] https://vaillant-loodgieter.com (688ms)
-       ΓåÆ https://vaillant-loodgieter.com/nl (temporary (307))
-  Γ£à [200] https://vaillant-loodgieter.com/nl (633ms) ΓÇö FINAL
-
-Total hops: 1 | Total time: 1321ms
-

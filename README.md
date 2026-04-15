@@ -131,3 +131,4 @@ Do **not** commit secrets. Local configuration is expected through environment v
   - Update the client form component(s) to POST `multipart/form-data` to `/api/mail`.
   - Add a new `formType` case in `app/api/mail/route.ts` and keep validation + reply-to rules explicit.
 
+**Credit github.com/sabwear**
