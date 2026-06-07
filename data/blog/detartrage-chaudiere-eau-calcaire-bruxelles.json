@@ -1,0 +1,36 @@
+{
+  "slug": "detartrage-chaudiere-eau-calcaire-bruxelles",
+  "categories": [
+    "Entretien"
+  ],
+  "tags": [
+    "Calcaire",
+    "Détartrage",
+    "Bruxelles",
+    "Vaillant"
+  ],
+  "image": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800&auto=format&fit=crop",
+  "author": {
+    "name": "L'équipe vaillant",
+    "avatar": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=100&auto=format&fit=crop",
+    "bio": "Experts certifiés Vaillant actifs dans les 19 communes de Bruxelles."
+  },
+  "languages": {
+    "fr": {
+      "title": "Eau calcaire à Bruxelles : protéger sa chaudière du tartre",
+      "excerpt": "L'eau bruxelloise est dure et favorise le tartre. Découvrez comment protéger votre chaudière Vaillant et prolonger sa durée de vie.",
+      "date": "2026-08-24",
+      "content": "### Pourquoi le calcaire est un problème à Bruxelles\n\nL'eau distribuée à Bruxelles est moyennement à fortement calcaire. Au fil du temps, le tartre se dépose sur l'échangeur de chaleur et les conduites, réduisant le rendement de votre chaudière.\n\n#### Les conséquences du tartre\n- Surconsommation de gaz pour la même chaleur.\n- Bruits de bouilloire et surchauffe localisée.\n- Usure prématurée de l'échangeur et du ballon d'eau chaude.\n\n### Comment s'en protéger\n\n1. **Adoucisseur d'eau** : il réduit la dureté de l'eau et protège toute l'installation.\n2. **Détartrage périodique** : intégré à l'entretien, il élimine les dépôts existants.\n3. **Réglage de la température** : éviter les températures trop élevées limite la formation de tartre.\n\n### L'entretien préventif\n\nLors de l'entretien annuel, nous contrôlons l'état de l'échangeur et procédons à un détartrage si nécessaire. C'est le meilleur moyen de conserver les performances d'origine de votre appareil Vaillant."
+    },
+    "nl": {
+      "title": "Kalkrijk water in Brussel: bescherm uw ketel tegen kalkaanslag",
+      "excerpt": "Het Brusselse water is hard en bevordert kalkaanslag. Ontdek hoe u uw Vaillant-ketel beschermt en zijn levensduur verlengt.",
+      "date": "2026-08-24",
+      "content": "### Waarom kalk een probleem is in Brussel\n\nHet leidingwater in Brussel is matig tot sterk kalkhoudend. Na verloop van tijd zet kalk zich af op de warmtewisselaar en de leidingen, wat het rendement van uw ketel vermindert.\n\n#### De gevolgen van kalkaanslag\n- Overmatig gasverbruik voor dezelfde warmte.\n- Ketelgeluiden en plaatselijke oververhitting.\n- Voortijdige slijtage van de warmtewisselaar en de boiler.\n\n### Hoe u zich beschermt\n\n1. **Waterontharder**: vermindert de hardheid van het water en beschermt de hele installatie.\n2. **Periodieke ontkalking**: opgenomen in het onderhoud, verwijdert ze bestaande afzettingen.\n3. **Temperatuurinstelling**: te hoge temperaturen vermijden beperkt de kalkvorming.\n\n### Preventief onderhoud\n\nTijdens het jaarlijkse onderhoud controleren wij de staat van de warmtewisselaar en ontkalken we indien nodig. Dat is de beste manier om de oorspronkelijke prestaties van uw Vaillant-toestel te behouden."
+    }
+  },
+  "related_slugs": [
+    "entretien-chaudiere-vaillant-importance",
+    "bruits-chaudiere-vaillant-diagnostic"
+  ]
+}

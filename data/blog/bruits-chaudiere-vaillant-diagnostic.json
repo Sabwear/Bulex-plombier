@@ -1,0 +1,36 @@
+{
+  "slug": "bruits-chaudiere-vaillant-diagnostic",
+  "categories": [
+    "Dépannage"
+  ],
+  "tags": [
+    "Bruit",
+    "Diagnostic",
+    "Entretien",
+    "Vaillant"
+  ],
+  "image": "https://images.unsplash.com/photo-1504148455328-c376907d081c?q=80&w=800&auto=format&fit=crop",
+  "author": {
+    "name": "L'équipe vaillant",
+    "avatar": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=100&auto=format&fit=crop",
+    "bio": "Experts certifiés Vaillant actifs dans les 19 communes de Bruxelles."
+  },
+  "languages": {
+    "fr": {
+      "title": "Chaudière Vaillant bruyante : identifier l'origine du bruit",
+      "excerpt": "Sifflements, claquements ou grondements ? Chaque bruit de chaudière a une cause. Voici comment les interpréter.",
+      "date": "2026-08-10",
+      "content": "### Une chaudière ne devrait pas faire de bruit\n\nUn fonctionnement sain est discret. Lorsque des bruits inhabituels apparaissent, ils signalent souvent un problème à traiter rapidement pour éviter une panne.\n\n#### Un grondement sourd (effet bouilloire)\nSouvent dû à des dépôts de calcaire ou de boue sur l'échangeur. La chaleur s'accumule et provoque ce bruit caractéristique. Un détartrage ou un désembouage est généralement nécessaire.\n\n#### Des sifflements\nIls indiquent fréquemment un problème de pression ou de circulation d'eau, voire un encrassement du brûleur.\n\n#### Des claquements à l'allumage\nUn léger retard d'allumage peut faire claquer la chaudière. Cela peut venir d'une électrode encrassée ou d'un mauvais réglage de la combustion.\n\n### Notre intervention\n\nNous réalisons un diagnostic complet : analyse de combustion, contrôle de la pompe et de l'échangeur. Nous traitons la cause, pas seulement le symptôme."
+    },
+    "nl": {
+      "title": "Lawaaierige Vaillant-ketel: de oorzaak van het geluid vinden",
+      "excerpt": "Gefluit, getik of gerommel ? Elk ketelgeluid heeft een oorzaak. Zo interpreteert u ze.",
+      "date": "2026-08-10",
+      "content": "### Een ketel hoort geen lawaai te maken\n\nEen gezonde werking is stil. Wanneer ongewone geluiden opduiken, wijzen ze vaak op een probleem dat u snel moet aanpakken om een defect te vermijden.\n\n#### Een dof gerommel (keteleffect)\nVaak veroorzaakt door kalk- of slibafzetting op de warmtewisselaar. De warmte stapelt zich op en veroorzaakt dit typische geluid. Een ontkalking of spoeling is meestal nodig.\n\n#### Gefluit\nDit wijst vaak op een druk- of waterdoorstromingsprobleem, of zelfs op een vervuilde brander.\n\n#### Getik bij ontsteking\nEen lichte vertraging bij de ontsteking kan de ketel doen tikken. Dat kan komen door een vuile elektrode of een verkeerde verbrandingsafstelling.\n\n### Onze tussenkomst\n\nWij voeren een volledige diagnose uit: verbrandingsanalyse, controle van de pomp en de warmtewisselaar. Wij pakken de oorzaak aan, niet alleen het symptoom."
+    }
+  },
+  "related_slugs": [
+    "codes-erreur-vaillant-frequents",
+    "detartrage-chaudiere-eau-calcaire-bruxelles"
+  ]
+}

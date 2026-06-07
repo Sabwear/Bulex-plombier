@@ -1,0 +1,36 @@
+{
+  "slug": "pression-chaudiere-vaillant-regler",
+  "categories": [
+    "Dépannage"
+  ],
+  "tags": [
+    "Pression",
+    "F.22",
+    "Entretien",
+    "Vaillant"
+  ],
+  "image": "https://images.unsplash.com/photo-1504148455328-c376907d081c?q=80&w=800&auto=format&fit=crop",
+  "author": {
+    "name": "L'équipe vaillant",
+    "avatar": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=100&auto=format&fit=crop",
+    "bio": "Experts certifiés Vaillant actifs dans les 19 communes de Bruxelles."
+  },
+  "languages": {
+    "fr": {
+      "title": "Pression de chaudière Vaillant : comment la régler vous-même",
+      "excerpt": "Votre chaudière affiche une pression trop basse ou trop haute ? Voici comment la ramener au bon niveau en toute sécurité.",
+      "date": "2026-06-29",
+      "content": "### Quelle est la bonne pression ?\n\nUne chaudière Vaillant fonctionne correctement avec une pression d'eau comprise entre 1,2 et 1,5 bar à froid. En dessous de 1 bar, la chaudière peut se mettre en sécurité et afficher le code F.22.\n\n#### La pression est trop basse\nC'est le cas le plus fréquent. Repérez la vanne de remplissage (souvent bleue, sous l'appareil) et ouvrez-la doucement jusqu'à atteindre 1,5 bar, puis refermez-la bien.\n\n#### La pression est trop haute\nAu-delà de 2,5 bar, purgez un radiateur pour libérer le surplus d'eau. Si la pression remonte sans cesse, le vase d'expansion est peut-être en cause.\n\n### Les bons réflexes\n\n- Vérifiez la pression une fois par mois en période de chauffe.\n- Purgez vos radiateurs avant l'hiver.\n- Ne forcez jamais une vanne grippée.\n\n### Quand nous appeler ?\n\nSi la pression chute régulièrement, il y a probablement une fuite sur le circuit ou un vase d'expansion défectueux. Nos techniciens localisent et réparent l'origine du problème."
+    },
+    "nl": {
+      "title": "Druk van uw Vaillant-ketel: zo stelt u die zelf af",
+      "excerpt": "Toont uw ketel een te lage of te hoge druk ? Zo brengt u die veilig terug naar het juiste niveau.",
+      "date": "2026-06-29",
+      "content": "### Wat is de juiste druk ?\n\nEen Vaillant-ketel werkt correct met een waterdruk tussen 1,2 en 1,5 bar in koude toestand. Onder 1 bar kan de ketel in beveiliging gaan en de code F.22 tonen.\n\n#### De druk is te laag\nDit komt het vaakst voor. Zoek de vulkraan (vaak blauw, onder het toestel) en open ze voorzichtig tot u 1,5 bar bereikt, sluit ze daarna goed.\n\n#### De druk is te hoog\nBoven 2,5 bar ontlucht u een radiator om het teveel aan water af te voeren. Als de druk blijft stijgen, is het expansievat mogelijk de oorzaak.\n\n### De juiste gewoontes\n\n- Controleer de druk maandelijks tijdens het stookseizoen.\n- Ontlucht uw radiatoren voor de winter.\n- Forceer nooit een vastzittende kraan.\n\n### Wanneer ons bellen ?\n\nAls de druk regelmatig daalt, is er waarschijnlijk een lek in het circuit of een defect expansievat. Onze technici lokaliseren en herstellen de oorzaak van het probleem."
+    }
+  },
+  "related_slugs": [
+    "codes-erreur-vaillant-frequents",
+    "entretien-chaudiere-vaillant-importance"
+  ]
+}

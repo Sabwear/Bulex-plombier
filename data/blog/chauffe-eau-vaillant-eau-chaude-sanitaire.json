@@ -1,0 +1,36 @@
+{
+  "slug": "chauffe-eau-vaillant-eau-chaude-sanitaire",
+  "categories": [
+    "Conseils"
+  ],
+  "tags": [
+    "Eau chaude",
+    "Sanitaire",
+    "Confort",
+    "Vaillant"
+  ],
+  "image": "https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?q=80&w=800&auto=format&fit=crop",
+  "author": {
+    "name": "L'équipe vaillant",
+    "avatar": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=100&auto=format&fit=crop",
+    "bio": "Experts certifiés Vaillant actifs dans les 19 communes de Bruxelles."
+  },
+  "languages": {
+    "fr": {
+      "title": "Eau chaude sanitaire : bien choisir sa solution Vaillant",
+      "excerpt": "Chaudière mixte, ballon ou chauffe-eau dédié ? Voici comment garantir une eau chaude confortable et économique chez vous.",
+      "date": "2026-07-27",
+      "content": "### Comprendre vos besoins en eau chaude\n\nLe bon équipement dépend de la taille de votre foyer et de vos habitudes. Une famille de quatre personnes n'a pas les mêmes besoins qu'un studio bruxellois.\n\n#### La chaudière mixte (instantanée)\nIdéale pour les petits logements : l'eau est chauffée à la demande, sans stockage. Compacte et économique, elle convient à un ou deux points d'eau.\n\n#### Le ballon d'eau chaude (accumulation)\nRecommandé pour les familles : un réservoir maintient une réserve d'eau chaude disponible immédiatement, même en cas de puisages simultanés (douche et cuisine).\n\n### Astuces pour économiser\n\n- Réglez la température de l'eau autour de 55 à 60 °C : assez chaud pour éviter les bactéries, sans excès.\n- Isolez les conduites d'eau chaude exposées.\n- Détartrez régulièrement, l'eau bruxelloise étant calcaire.\n\n### Notre accompagnement\n\nNous évaluons votre installation et vous recommandons la solution Vaillant la plus adaptée, puis nous assurons l'installation et la mise en service dans les règles."
+    },
+    "nl": {
+      "title": "Sanitair warm water: de juiste Vaillant-oplossing kiezen",
+      "excerpt": "Combiketel, boiler of aparte waterverwarmer ? Zo verzekert u comfortabel en zuinig warm water bij u thuis.",
+      "date": "2026-07-27",
+      "content": "### Uw behoefte aan warm water begrijpen\n\nDe juiste uitrusting hangt af van de grootte van uw gezin en uw gewoonten. Een gezin van vier heeft niet dezelfde behoeften als een Brusselse studio.\n\n#### De combiketel (doorstroom)\nIdeaal voor kleine woningen: het water wordt op vraag verwarmd, zonder opslag. Compact en zuinig, geschikt voor één of twee tappunten.\n\n#### De boiler (accumulatie)\nAanbevolen voor gezinnen: een reservoir houdt een voorraad warm water onmiddellijk beschikbaar, zelfs bij gelijktijdig gebruik (douche en keuken).\n\n### Tips om te besparen\n\n- Stel de watertemperatuur in op ongeveer 55 tot 60 °C: warm genoeg om bacteriën te vermijden, zonder overdaad.\n- Isoleer blootliggende warmwaterleidingen.\n- Ontkalk regelmatig, want het Brusselse water is kalkrijk.\n\n### Onze begeleiding\n\nWij beoordelen uw installatie en raden de best passende Vaillant-oplossing aan, waarna we de installatie en inbedrijfstelling volgens de regels verzorgen."
+    }
+  },
+  "related_slugs": [
+    "detartrage-chaudiere-eau-calcaire-bruxelles",
+    "remplacement-chaudiere-condensation"
+  ]
+}

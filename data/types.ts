@@ -105,11 +105,29 @@ function loadBlogPosts(): BlogPost[] {
 
 let _blogCache: BlogPost[] | null = null;
 
+/** Today's date as YYYY-MM-DD (UTC) for scheduling comparisons. */
+function todayIso(): string {
+  return new Date().toISOString().slice(0, 10);
+}
+
+/**
+ * A post is "published" once its date is today or earlier. Posts with a future
+ * date act as scheduled drafts: they are hidden from listings, static params and
+ * direct slug access until that date arrives (and the site is rebuilt).
+ */
+function isPublished(post: BlogPost): boolean {
+  return post.languages.fr.date <= todayIso();
+}
+
+/**
+ * Published blog posts only (future-dated posts are excluded so they can be
+ * scheduled ahead of time). Sorted by date descending.
+ */
 export function getBlogPosts(): BlogPost[] {
   if (!_blogCache) {
     _blogCache = loadBlogPosts();
   }
-  return _blogCache;
+  return _blogCache.filter(isPublished);
 }
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {

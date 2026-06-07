@@ -1,0 +1,36 @@
+{
+  "slug": "preparer-chaudiere-hiver-bruxelles",
+  "categories": [
+    "Entretien"
+  ],
+  "tags": [
+    "Hiver",
+    "Préparation",
+    "Chauffage",
+    "Vaillant"
+  ],
+  "image": "https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?q=80&w=800&auto=format&fit=crop",
+  "author": {
+    "name": "L'équipe vaillant",
+    "avatar": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=100&auto=format&fit=crop",
+    "bio": "Experts certifiés Vaillant actifs dans les 19 communes de Bruxelles."
+  },
+  "languages": {
+    "fr": {
+      "title": "Préparer sa chaudière Vaillant pour l'hiver à Bruxelles",
+      "excerpt": "Évitez la panne au premier coup de froid. Voici la checklist pour remettre votre chauffage en route en toute sérénité.",
+      "date": "2026-09-21",
+      "content": "### Anticiper plutôt que subir\n\nChaque automne, les demandes de dépannage explosent dès les premières gelées. Une vérification avant l'hiver vous évite de vous retrouver sans chauffage au pire moment.\n\n### La checklist avant l'hiver\n\n1. **Rallumez progressivement** votre chauffage avant les grands froids pour repérer tout dysfonctionnement.\n2. **Vérifiez la pression** : elle doit se situer entre 1,2 et 1,5 bar à froid.\n3. **Purgez les radiateurs** pour évacuer l'air accumulé pendant l'été.\n4. **Contrôlez le thermostat** et changez les piles si nécessaire.\n5. **Dégagez les évacuations** et la ventilation autour de la chaudière.\n\n### L'entretien, le bon réflexe\n\nProfitez de l'avant-saison pour planifier votre entretien annuel. En période creuse, les rendez-vous sont plus rapides à obtenir et votre chaudière repart pour l'hiver dans des conditions optimales.\n\n### Besoin d'un coup de main ?\n\nNos techniciens certifiés Vaillant interviennent dans les 19 communes de Bruxelles pour préparer ou réparer votre installation avant les premiers froids."
+    },
+    "nl": {
+      "title": "Uw Vaillant-ketel klaarmaken voor de winter in Brussel",
+      "excerpt": "Vermijd een defect bij de eerste koude. Hier is de checklist om uw verwarming zorgeloos opnieuw op te starten.",
+      "date": "2026-09-21",
+      "content": "### Anticiperen in plaats van ondergaan\n\nElke herfst pieken de pannehulpaanvragen zodra de eerste vorst toeslaat. Een controle vóór de winter voorkomt dat u zonder verwarming valt op het slechtste moment.\n\n### De checklist voor de winter\n\n1. **Start geleidelijk op**: zet uw verwarming aan vóór de strenge koude om eventuele storingen op te sporen.\n2. **Controleer de druk**: die moet tussen 1,2 en 1,5 bar liggen in koude toestand.\n3. **Ontlucht de radiatoren** om de in de zomer opgehoopte lucht af te voeren.\n4. **Controleer de thermostaat** en vervang de batterijen indien nodig.\n5. **Houd de afvoeren** en de ventilatie rond de ketel vrij.\n\n### Onderhoud, de juiste reflex\n\nMaak gebruik van het voorseizoen om uw jaarlijks onderhoud in te plannen. In de rustige periode zijn afspraken sneller te verkrijgen en vertrekt uw ketel in optimale omstandigheden de winter in.\n\n### Hulp nodig ?\n\nOnze gecertificeerde Vaillant-technici komen langs in de 19 gemeenten van Brussel om uw installatie voor te bereiden of te herstellen vóór de eerste koude."
+    }
+  },
+  "related_slugs": [
+    "entretien-chaudiere-vaillant-importance",
+    "purger-radiateurs-guide-chauffage"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "primes-energie-chaudiere-bruxelles",
+  "categories": [
+    "Conseils"
+  ],
+  "tags": [
+    "Primes",
+    "Energie",
+    "Bruxelles",
+    "Vaillant"
+  ],
+  "image": "https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?q=80&w=800&auto=format&fit=crop",
+  "author": {
+    "name": "L'équipe vaillant",
+    "avatar": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=100&auto=format&fit=crop",
+    "bio": "Experts certifiés Vaillant actifs dans les 19 communes de Bruxelles."
+  },
+  "languages": {
+    "fr": {
+      "title": "Primes énergie à Bruxelles : financer son chauffage Vaillant",
+      "excerpt": "Remplacement de chaudière, pompe à chaleur, thermostat… plusieurs aides existent à Bruxelles. Voici comment en profiter.",
+      "date": "2026-10-05",
+      "content": "### Des aides pour réduire la facture\n\nLa Région bruxelloise encourage les rénovations énergétiques via des primes. Selon votre projet, le remplacement d'une vieille chaudière ou l'installation d'une pompe à chaleur peut ouvrir droit à un soutien financier intéressant.\n\n#### Les travaux souvent concernés\n- Remplacement d'une chaudière par un modèle à condensation performant.\n- Installation d'une pompe à chaleur ou d'un système hybride.\n- Pose d'un thermostat connecté ou de vannes thermostatiques.\n\n### Les conditions à connaître\n\n1. Les montants varient selon vos revenus et la nature des travaux.\n2. L'intervention doit être réalisée par un professionnel qualifié.\n3. Les factures détaillées et les attestations sont indispensables au dossier.\n\nLes barèmes étant mis à jour régulièrement, vérifiez toujours les conditions en vigueur auprès des sources officielles de la Région avant de lancer votre projet.\n\n### Comment nous vous aidons\n\nNous vous orientons vers les solutions Vaillant éligibles et fournissons des factures et attestations conformes, pour faciliter le montage de votre dossier de prime."
+    },
+    "nl": {
+      "title": "Energiepremies in Brussel: uw Vaillant-verwarming financieren",
+      "excerpt": "Ketelvervanging, warmtepomp, thermostaat… er bestaan verschillende premies in Brussel. Zo profiteert u ervan.",
+      "date": "2026-10-05",
+      "content": "### Steun om de factuur te verlagen\n\nHet Brussels Gewest moedigt energierenovaties aan via premies. Afhankelijk van uw project kan de vervanging van een oude ketel of de installatie van een warmtepomp recht geven op interessante financiële steun.\n\n#### Vaak in aanmerking komende werken\n- Vervanging van een ketel door een performant condensatiemodel.\n- Installatie van een warmtepomp of een hybride systeem.\n- Plaatsing van een slimme thermostaat of thermostatische kranen.\n\n### De voorwaarden om te kennen\n\n1. De bedragen variëren volgens uw inkomen en de aard van de werken.\n2. De tussenkomst moet worden uitgevoerd door een gekwalificeerde vakman.\n3. Gedetailleerde facturen en attesten zijn onmisbaar voor het dossier.\n\nAangezien de tarieven regelmatig worden bijgewerkt, controleert u best altijd de geldende voorwaarden bij de officiële bronnen van het Gewest vóór u uw project start.\n\n### Hoe wij u helpen\n\nWij wijzen u de in aanmerking komende Vaillant-oplossingen aan en bezorgen conforme facturen en attesten, om het opstellen van uw premiedossier te vergemakkelijken."
+    }
+  },
+  "related_slugs": [
+    "pompe-a-chaleur-vaillant-arotherm",
+    "remplacement-chaudiere-condensation"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "purger-radiateurs-guide-chauffage",
+  "categories": [
+    "Entretien"
+  ],
+  "tags": [
+    "Radiateurs",
+    "Purge",
+    "Chauffage",
+    "Vaillant"
+  ],
+  "image": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800&auto=format&fit=crop",
+  "author": {
+    "name": "L'équipe vaillant",
+    "avatar": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=100&auto=format&fit=crop",
+    "bio": "Experts certifiés Vaillant actifs dans les 19 communes de Bruxelles."
+  },
+  "languages": {
+    "fr": {
+      "title": "Purger ses radiateurs : le guide simple pour un chauffage efficace",
+      "excerpt": "Des radiateurs froids en haut et chauds en bas ? De l'air est emprisonné dans le circuit. Voici comment purger correctement.",
+      "date": "2026-07-13",
+      "content": "### Pourquoi purger ses radiateurs ?\n\nAvec le temps, de l'air s'accumule dans le circuit de chauffage. Résultat : vos radiateurs chauffent mal, font du bruit et votre chaudière Vaillant consomme davantage pour le même confort.\n\n#### Les signes qui ne trompent pas\n- Le radiateur est froid en haut et chaud en bas.\n- Des gargouillis se font entendre.\n- Certaines pièces chauffent moins vite que d'autres.\n\n### La méthode étape par étape\n\n1. Coupez le chauffage et laissez refroidir les radiateurs.\n2. Munissez-vous d'une clé de purge et d'un récipient.\n3. Ouvrez doucement la vis de purge jusqu'à entendre l'air s'échapper.\n4. Refermez dès que l'eau coule de façon régulière.\n5. Vérifiez ensuite la pression de la chaudière et rajoutez de l'eau si besoin.\n\n### Le conseil en plus\n\nPurgez vos radiateurs au début de chaque saison de chauffe, en commençant par ceux du bas de l'habitation. Si le problème persiste, un désembouage du circuit peut être nécessaire."
+    },
+    "nl": {
+      "title": "Radiatoren ontluchten: de eenvoudige gids voor efficiënte verwarming",
+      "excerpt": "Radiatoren koud bovenaan en warm onderaan ? Er zit lucht in het circuit. Zo ontlucht u correct.",
+      "date": "2026-07-13",
+      "content": "### Waarom radiatoren ontluchten ?\n\nNa verloop van tijd hoopt lucht zich op in het verwarmingscircuit. Het gevolg: uw radiatoren verwarmen slecht, maken lawaai en uw Vaillant-ketel verbruikt meer voor hetzelfde comfort.\n\n#### De duidelijke signalen\n- De radiator is koud bovenaan en warm onderaan.\n- U hoort een borrelend geluid.\n- Sommige kamers warmen trager op dan andere.\n\n### De methode stap voor stap\n\n1. Zet de verwarming uit en laat de radiatoren afkoelen.\n2. Voorzie een ontluchtingssleutel en een opvangbakje.\n3. Open voorzichtig de ontluchtingsschroef tot u de lucht hoort ontsnappen.\n4. Sluit zodra het water regelmatig stroomt.\n5. Controleer daarna de keteldruk en vul water bij indien nodig.\n\n### Extra tip\n\nOntlucht uw radiatoren aan het begin van elk stookseizoen, te beginnen met die onderaan in de woning. Blijft het probleem bestaan, dan kan een spoeling van het circuit nodig zijn."
+    }
+  },
+  "related_slugs": [
+    "pression-chaudiere-vaillant-regler",
+    "entretien-chaudiere-vaillant-importance"
+  ]
+}

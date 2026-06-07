@@ -1,0 +1,37 @@
+{
+  "slug": "thermostat-connecte-vaillant-economies",
+  "categories": [
+    "Conseils"
+  ],
+  "tags": [
+    "Thermostat",
+    "myVAILLANT",
+    "sensoHOME",
+    "Economies",
+    "Vaillant"
+  ],
+  "image": "https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?q=80&w=800&auto=format&fit=crop",
+  "author": {
+    "name": "L'équipe vaillant",
+    "avatar": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=100&auto=format&fit=crop",
+    "bio": "Experts certifiés Vaillant actifs dans les 19 communes de Bruxelles."
+  },
+  "languages": {
+    "fr": {
+      "title": "Thermostat connecté Vaillant : réglages et économies d'énergie",
+      "excerpt": "Le thermostat connecté sensoHOME et l'application myVAILLANT vous aident à réduire votre facture. Voici comment bien les régler.",
+      "date": "2026-06-15",
+      "content": "### Pourquoi passer à un thermostat connecté ?\n\nUn thermostat connecté Vaillant (sensoHOME ou sensoCOMFORT) vous permet de piloter votre chauffage au degré près, même à distance. À Bruxelles, où les hivers sont humides, un bon réglage évite le gaspillage tout en gardant votre logement confortable.\n\n#### Programmation horaire\nAdaptez la température à votre rythme de vie : 19 à 20 °C en journée et 16 à 17 °C la nuit ou en cas d'absence. La chaudière ne chauffe que lorsque c'est nécessaire.\n\n#### Pilotage via l'application myVAILLANT\nAllumez le chauffage avant de rentrer, suivez votre consommation en temps réel et recevez des rappels d'entretien directement sur votre smartphone.\n\n### Combien peut-on économiser ?\n\nBaisser le thermostat d'un seul degré réduit la consommation d'environ 7 %. Couplé à une programmation intelligente, vous pouvez économiser jusqu'à 15 % sur votre facture annuelle de chauffage.\n\n### Notre conseil d'expert\n\nNous configurons votre thermostat lors de l'installation ou de l'entretien, et nous vous formons à l'application pour en tirer le meilleur parti dès le premier jour."
+    },
+    "nl": {
+      "title": "Slimme Vaillant-thermostaat: instellingen en energiebesparing",
+      "excerpt": "De slimme sensoHOME-thermostaat en de myVAILLANT-app helpen u uw factuur te verlagen. Zo stelt u ze correct in.",
+      "date": "2026-06-15",
+      "content": "### Waarom overstappen op een slimme thermostaat ?\n\nMet een slimme Vaillant-thermostaat (sensoHOME of sensoCOMFORT) regelt u uw verwarming tot op de graad nauwkeurig, zelfs van op afstand. In Brussel, met zijn vochtige winters, vermijdt een goede instelling verspilling terwijl uw woning comfortabel blijft.\n\n#### Tijdsprogrammering\nStem de temperatuur af op uw levensritme: 19 tot 20 °C overdag en 16 tot 17 °C 's nachts of bij afwezigheid. De ketel verwarmt enkel wanneer nodig.\n\n#### Bediening via de myVAILLANT-app\nZet de verwarming aan voor u thuiskomt, volg uw verbruik in realtime en ontvang onderhoudsherinneringen rechtstreeks op uw smartphone.\n\n### Hoeveel kunt u besparen ?\n\nDe thermostaat één graad lager zetten vermindert het verbruik met ongeveer 7 %. Gecombineerd met een slimme programmering kunt u tot 15 % besparen op uw jaarlijkse verwarmingsfactuur.\n\n### Ons expertadvies\n\nWij configureren uw thermostaat tijdens de installatie of het onderhoud en leiden u op in de app zodat u er vanaf dag één het meeste uithaalt."
+    }
+  },
+  "related_slugs": [
+    "vaillant-pourquoi-choisir-bruxelles",
+    "entretien-chaudiere-vaillant-importance"
+  ]
+}

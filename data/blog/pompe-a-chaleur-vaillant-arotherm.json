@@ -1,0 +1,37 @@
+{
+  "slug": "pompe-a-chaleur-vaillant-arotherm",
+  "categories": [
+    "Installation",
+    "Conseils"
+  ],
+  "tags": [
+    "Pompe à chaleur",
+    "aroTHERM",
+    "Renovation",
+    "Vaillant"
+  ],
+  "image": "https://images.unsplash.com/photo-1542037104857-ffbb0b9155fb?q=80&w=800&auto=format&fit=crop",
+  "author": {
+    "name": "L'équipe vaillant",
+    "avatar": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=100&auto=format&fit=crop",
+    "bio": "Experts certifiés Vaillant actifs dans les 19 communes de Bruxelles."
+  },
+  "languages": {
+    "fr": {
+      "title": "Pompe à chaleur Vaillant aroTHERM : une alternative au gaz ?",
+      "excerpt": "La pompe à chaleur air-eau séduit de plus en plus de foyers bruxellois. Est-elle adaptée à votre logement ? Faisons le point.",
+      "date": "2026-09-07",
+      "content": "### Comment fonctionne une pompe à chaleur air-eau\n\nLa pompe à chaleur Vaillant aroTHERM capte les calories présentes dans l'air extérieur pour chauffer votre eau de chauffage et votre eau sanitaire. Même par temps froid, elle reste performante et bien plus économe qu'une résistance électrique.\n\n#### Les avantages\n- **Énergie renouvelable** : jusqu'à 3 à 4 kWh de chaleur pour 1 kWh d'électricité consommé.\n- **Réduction des émissions** : une solution bas carbone, idéale en rénovation énergétique.\n- **Confort en été** : certains modèles assurent aussi le rafraîchissement.\n\n### Est-ce adapté à votre logement ?\n\nLa pompe à chaleur donne le meilleur d'elle-même dans un logement bien isolé et avec des émetteurs adaptés (planchers chauffants ou radiateurs basse température). Pour les habitations bruxelloises anciennes, une solution hybride (pompe à chaleur + chaudière) est souvent le meilleur compromis.\n\n### Notre étude personnalisée\n\nNous analysons votre isolation, vos radiateurs et votre budget pour déterminer la solution Vaillant la plus rentable, puis nous vous accompagnons jusqu'à la mise en service."
+    },
+    "nl": {
+      "title": "Vaillant aroTHERM-warmtepomp: een alternatief voor gas ?",
+      "excerpt": "De lucht-waterwarmtepomp wint terrein bij Brusselse gezinnen. Is ze geschikt voor uw woning ? We zetten het op een rij.",
+      "date": "2026-09-07",
+      "content": "### Hoe een lucht-waterwarmtepomp werkt\n\nDe Vaillant aroTHERM-warmtepomp haalt warmte uit de buitenlucht om uw verwarmingswater en sanitair water op te warmen. Zelfs bij koud weer blijft ze efficiënt en veel zuiniger dan een elektrische weerstand.\n\n#### De voordelen\n- **Hernieuwbare energie**: tot 3 à 4 kWh warmte voor 1 kWh verbruikte elektriciteit.\n- **Lagere uitstoot**: een koolstofarme oplossing, ideaal bij energierenovatie.\n- **Comfort in de zomer**: sommige modellen zorgen ook voor koeling.\n\n### Is het geschikt voor uw woning ?\n\nDe warmtepomp presteert het best in een goed geïsoleerde woning met geschikte afgiftesystemen (vloerverwarming of lagetemperatuurradiatoren). Voor oudere Brusselse woningen is een hybride oplossing (warmtepomp + ketel) vaak het beste compromis.\n\n### Onze persoonlijke studie\n\nWij analyseren uw isolatie, uw radiatoren en uw budget om de meest rendabele Vaillant-oplossing te bepalen, en begeleiden u tot de inbedrijfstelling."
+    }
+  },
+  "related_slugs": [
+    "remplacement-chaudiere-condensation",
+    "primes-energie-chaudiere-bruxelles"
+  ]
+}
