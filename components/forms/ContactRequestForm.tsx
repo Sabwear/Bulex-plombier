@@ -4,6 +4,7 @@ import { FormEvent, useMemo, useState } from "react";
 import FileUploadField from "@/components/forms/FileUploadField";
 import FormSuccessModal from "@/components/forms/FormSuccessModal";
 import { contactPrefillText } from "@/lib/whatsappPrefill";
+import { trackFormSubmitConversion } from "@/lib/gtagConversions";
 
 type FormState = {
   nom: string;
@@ -139,6 +140,7 @@ export default function ContactRequestForm({
       }
       setSuccessEmail(form.email.trim());
       setSuccessOpen(true);
+      trackFormSubmitConversion();
       setForm(initialState);
       setFiles([]);
       (event.target as HTMLFormElement).reset();

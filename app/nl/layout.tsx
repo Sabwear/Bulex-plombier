@@ -5,6 +5,7 @@ import { HtmlLang } from "@/components/HtmlLang";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
 import MobileCallBar from "@/components/MobileCallBar";
 import { buildLocaleJsonLdGraph } from "@/lib/schema-org";
+import { getTwitterHandle } from "@/config/social-links";
 
 const ogImage = {
   url: "/images/slider-vaillant-1.png",
@@ -12,6 +13,8 @@ const ogImage = {
   height: 1080,
   alt: "Vaillant technieker aan het werk in België",
 };
+
+const twitterHandle = getTwitterHandle();
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://vaillant-loodgieter.com"),
@@ -37,6 +40,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "nl_BE",
+    alternateLocale: ["fr_BE"],
     url: "https://vaillant-loodgieter.com/nl",
     siteName: "Vaillant Loodgieter",
     title: "Vaillant loodgieter België | Vaillant Loodgieter",
@@ -46,6 +50,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    ...(twitterHandle ? { site: twitterHandle, creator: twitterHandle } : {}),
     title: "Vaillant loodgieter België | Vaillant Loodgieter",
     description:
       "Gecertificeerd Vaillant partner in België. Loodgieter spoeddienst, boiler vervangen, waterlek herstellen en professionele sanitair installatie.",

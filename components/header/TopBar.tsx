@@ -7,6 +7,7 @@ import LanguageSwitcher from './LanguageSwitcher';
 import { SITE_NAVIGATION, SITE_PHONE } from '@/config/site-navigation';
 import type { Locale } from '@/config/locale-routes';
 import { getPublicPhoneE164Digits } from '@/config/public-phone';
+import { trackWhatsAppClickConversion } from '@/lib/gtagConversions';
 
 interface TopBarProps {
   lang: Locale;
@@ -30,6 +31,7 @@ export default function TopBar({ lang }: TopBarProps) {
           <div className="flex items-center gap-2 xl:gap-3">
             <a
               href={`https://wa.me/${getPublicPhoneE164Digits()}`}
+              onClick={trackWhatsAppClickConversion}
               className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#ffffff] hover:opacity-90 transition-opacity rounded px-1 py-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
               <Image

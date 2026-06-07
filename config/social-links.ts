@@ -9,6 +9,18 @@ export function getTelegramUrl(): string {
   return `https://t.me/${username.replace(/^@/, "")}`;
 }
 
+/**
+ * Twitter/X handle in "@name" form, derived from NEXT_PUBLIC_TWITTER_URL.
+ * Returns "" when not configured.
+ */
+export function getTwitterHandle(): string {
+  const url = process.env.NEXT_PUBLIC_TWITTER_URL?.trim();
+  if (!url) return "";
+  const match = url.match(/(?:twitter\.com|x\.com)\/+([^/?#]+)/i);
+  const name = (match?.[1] || "").replace(/^@/, "");
+  return name ? `@${name}` : "";
+}
+
 export const SOCIAL_LINKS = {
   twitter: process.env.NEXT_PUBLIC_TWITTER_URL?.trim() || "",
   facebook: process.env.NEXT_PUBLIC_FACEBOOK_URL?.trim() || "",

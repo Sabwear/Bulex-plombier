@@ -26,6 +26,7 @@ import {
 import type { Commune } from "@/data/types";
 import styles from "./page.module.css";
 import { buildLocaleAlternates } from "@/lib/seoAlternates";
+import { getPublicPhoneDisplay, getPublicPhoneTelHref } from "@/config/public-phone";
 
 export const revalidate = 86400;
 
@@ -65,7 +66,7 @@ function buildJsonLd(commune: Commune, basePath: string) {
       "@type": ["LocalBusiness", "Plumber"],
       name: "Vaillant-Loodgieter",
       url,
-      telephone: "+32-XXX-XX-XX-XX",
+      telephone: getPublicPhoneDisplay(),
       description: `Plombier Vaillant certifié à ${commune.name}. Dépannage, entretien et installation de chauffage et plomberie.`,
       areaServed: { "@type": "City", name: commune.name },
       serviceArea: { "@type": "GeoCircle", geoMidpoint: { "@type": "GeoCoordinates", addressCountry: "BE" } },
@@ -137,7 +138,7 @@ export default async function PlombierSlugPage({ params }: PageProps) {
           <p className={styles.heroIntro}>{getIntro(commune)}</p>
           <div className={styles.heroActions}>
             <a
-              href="tel:+32XXXXXXXXXX"
+              href={getPublicPhoneTelHref()}
               className="btn btn-primary"
               target="_blank"
               rel="noreferrer"
@@ -573,7 +574,7 @@ export default async function PlombierSlugPage({ params }: PageProps) {
           <h2>Besoin d&apos;un plombier à {commune.name} ?</h2>
           <p>Contactez-nous dès maintenant pour un dépannage rapide ou un devis gratuit.</p>
           <div className="cta-actions">
-            <a href="tel:+32XXXXXXXXXX" className="btn btn-primary" target="_blank" rel="noreferrer">
+            <a href={getPublicPhoneTelHref()} className="btn btn-primary" target="_blank" rel="noreferrer">
               <Phone className="w-4 h-4 mr-2" />
               <span>Appeler maintenant</span>
             </a>

@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
+import Script from 'next/script';
 import ReactMarkdown from 'react-markdown';
 import { getBlogPostBySlug, getBlogPosts, type BlogPost } from '@/data/types';
 import styles from '../blog.module.css';
@@ -52,6 +53,28 @@ export default async function BlogPostPage({ params }: PageProps) {
   const allPosts = getBlogPosts();
   const relatedPosts = allPosts.filter((p) => post.related_slugs.includes(p.slug));
 
+  const baseUrl = 'https://vaillant-loodgieter.com';
+  const pageUrl = `${baseUrl}/fr/blog/${post.slug}`;
+  const blogJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
+    headline: content.title,
+    description: content.excerpt,
+    image: post.image,
+    datePublished: content.date,
+    dateModified: content.date,
+    inLanguage: 'fr-BE',
+    author: { '@type': 'Person', name: post.author.name },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Vaillant Plombier',
+      logo: { '@type': 'ImageObject', url: `${baseUrl}/logo-vaillant-loodgieter.png` },
+    },
+    ...(post.categories.length ? { articleSection: post.categories[0] } : {}),
+    ...(post.tags.length ? { keywords: post.tags.join(', ') } : {}),
+  };
+
   // Extract headings for TOC (simple regex for markdown H3)
   const headings = content.content
     .split('\n')
@@ -60,6 +83,11 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   return (
     <div className={styles.blogContainer}>
+      <Script
+        id="blog-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogJsonLd) }}
+      />
       <article>
         {/* Header */}
         <header className={styles.blogHeader}>

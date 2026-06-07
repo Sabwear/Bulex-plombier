@@ -8,6 +8,7 @@ import { Mail, MapPin, MessageCircle, CheckCircle2 } from 'lucide-react';
 import LanguageSwitcher from '@/components/header/LanguageSwitcher';
 import { getPublicPhoneE164Digits } from '@/config/public-phone';
 import { SITE_PHONE } from '@/config/site-navigation';
+import { trackWhatsAppClickConversion } from '@/lib/gtagConversions';
 
 export default function Footer() {
   const pathname = usePathname() || '/';
@@ -193,7 +194,7 @@ export default function Footer() {
               <div className={styles.contactIcon}><MessageCircle size={18} /></div>
               <div className={styles.contactText}>
                 <span className={styles.contactLabel}>WhatsApp</span>
-                <a href={waHref} className={styles.contactValue}>
+                <a href={waHref} className={styles.contactValue} onClick={trackWhatsAppClickConversion}>
                   {SITE_PHONE.display}
                 </a>
               </div>

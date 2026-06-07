@@ -5,6 +5,7 @@ import { HtmlLang } from "@/components/HtmlLang";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
 import MobileCallBar from "@/components/MobileCallBar";
 import { buildLocaleJsonLdGraph } from "@/lib/schema-org";
+import { getTwitterHandle } from "@/config/social-links";
 
 const ogImage = {
   url: "/images/slider-vaillant-1.png",
@@ -12,6 +13,8 @@ const ogImage = {
   height: 1080,
   alt: "Technicien Vaillant en intervention en Belgique",
 };
+
+const twitterHandle = getTwitterHandle();
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://vaillant-loodgieter.com"),
@@ -37,6 +40,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "fr_BE",
+    alternateLocale: ["nl_BE"],
     url: "https://vaillant-loodgieter.com/fr",
     siteName: "Vaillant Plombier",
     title: "Plombier Vaillant Belgique | Vaillant Plombier",
@@ -46,6 +50,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    ...(twitterHandle ? { site: twitterHandle, creator: twitterHandle } : {}),
     title: "Plombier Vaillant Belgique | Vaillant Plombier",
     description:
       "Partenaire certifié Vaillant en Belgique. Dépannage plombier urgence, remplacement de chaudière, réparation de fuite d'eau et installation sanitaire professionnelle.",

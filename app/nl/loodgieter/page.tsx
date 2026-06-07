@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getCities } from "@/data/city-data";
 import styles from "@/app/fr/plombier/page.module.css";
 import { buildLocaleAlternates } from "@/lib/seoAlternates";
+import { getPublicPhoneTelHref } from "@/config/public-phone";
 
 export const revalidate = 86400;
 
@@ -92,7 +93,7 @@ export default function LoodgieterHubPage() {
             pagina staan.
           </p>
           <div className="cta-actions">
-            <a href="tel:+32XXXXXXXXXX" className="btn btn-primary" target="_blank" rel="noreferrer">
+            <a href={getPublicPhoneTelHref()} className="btn btn-primary" target="_blank" rel="noreferrer">
               📞 Bellen
             </a>
             <Link href="/nl/contact" className="btn btn-ghost-dark">

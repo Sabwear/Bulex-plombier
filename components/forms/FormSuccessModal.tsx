@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useMemo } from "react";
 import { getPublicPhoneE164Digits } from "@/config/public-phone";
 import { buildWhatsAppHref } from "@/lib/whatsappPrefill";
+import { trackWhatsAppClickConversion } from "@/lib/gtagConversions";
 
 export type FormSuccessModalProps = {
   open: boolean;
@@ -119,7 +120,7 @@ export default function FormSuccessModal({
           <p style={{ fontSize: "0.88rem", color: "var(--text-heading)", marginBottom: "0.75rem", fontWeight: 600 }}>
             {t.waLabel}
           </p>
-          <Link href={waHref} target="_blank" rel="noopener noreferrer" className="btn btn-primary" style={{ width: "100%", justifyContent: "center", background: "#25D366", borderColor: "#25D366" }}>
+          <Link href={waHref} target="_blank" rel="noopener noreferrer" onClick={trackWhatsAppClickConversion} className="btn btn-primary" style={{ width: "100%", justifyContent: "center", background: "#25D366", borderColor: "#25D366" }}>
             {t.waBtn}
           </Link>
         </div>

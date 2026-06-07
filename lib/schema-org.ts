@@ -33,6 +33,8 @@ export function buildLocaleJsonLdGraph(locale: "nl" | "fr"): Record<string, unkn
   const sameAs = publicSameAs();
   const tel = schemaTelephone();
 
+  const email = process.env.NEXT_PUBLIC_SUPPORT_EMAIL?.trim() || "contact@vaillant-loodgieter.com";
+
   const organization: Record<string, unknown> = {
     "@type": "Organization",
     "@id": orgId,
@@ -42,7 +44,16 @@ export function buildLocaleJsonLdGraph(locale: "nl" | "fr"): Record<string, unkn
       "@type": "ImageObject",
       url: `${BASE}/logo-vaillant-loodgieter.png`,
     },
-    email: "contact@vaillant-loodgieter.com",
+    email,
+    ...(tel ? { telephone: tel } : {}),
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer service",
+      email,
+      ...(tel ? { telephone: tel } : {}),
+      areaServed: "BE",
+      availableLanguage: ["nl", "fr"],
+    },
     ...(sameAs.length ? { sameAs } : {}),
   };
 
@@ -61,6 +72,7 @@ export function buildLocaleJsonLdGraph(locale: "nl" | "fr"): Record<string, unkn
     name: orgName,
     image: `${BASE}/images/slider-vaillant-1.png`,
     url: primaryUrl,
+    email,
     ...(tel ? { telephone: tel } : {}),
     address: {
       "@type": "PostalAddress",
@@ -68,6 +80,21 @@ export function buildLocaleJsonLdGraph(locale: "nl" | "fr"): Record<string, unkn
       addressCountry: "BE",
     },
     areaServed: { "@type": "Country", name: "Belgium" },
+    availableLanguage: ["nl", "fr"],
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ],
+      opens: "00:00",
+      closes: "23:59",
+    },
     parentOrganization: { "@id": orgId },
   };
 

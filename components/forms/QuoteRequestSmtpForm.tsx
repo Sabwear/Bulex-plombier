@@ -4,6 +4,7 @@ import { FormEvent, useMemo, useState } from "react";
 import FileUploadField from "@/components/forms/FileUploadField";
 import FormSuccessModal from "@/components/forms/FormSuccessModal";
 import { quotePrefillText } from "@/lib/whatsappPrefill";
+import { trackFormSubmitConversion } from "@/lib/gtagConversions";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -145,6 +146,7 @@ export default function QuoteRequestSmtpForm({ locale, regions, cities, services
       );
       setSuccessEmail(email.trim());
       setSuccessOpen(true);
+      trackFormSubmitConversion();
       setNaam("");
       setEmail("");
       setTelefoon("");

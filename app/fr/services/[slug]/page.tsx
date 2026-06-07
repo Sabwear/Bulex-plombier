@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Script from "next/script";
 import ServicePageTemplate from "@/components/services/ServicePageTemplate";
 import { frServices, frServicesBySlug } from "@/data/fr-services";
 import { buildLocaleAlternates } from "@/lib/seoAlternates";
@@ -47,5 +48,31 @@ export default async function ServicePage({ params }: ServicePageProps) {
     notFound();
   }
 
-  return <ServicePageTemplate service={service} allServices={frServices} />;
+  const baseUrl = "https://vaillant-loodgieter.com";
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: service.title,
+    serviceType: service.keyword,
+    description: service.metaDescription || service.short,
+    url: `${baseUrl}/fr/services/${service.slug}`,
+    inLanguage: "fr-BE",
+    provider: {
+      "@type": "LocalBusiness",
+      "@id": `${baseUrl}/#localbusiness`,
+      name: "Vaillant Plombier",
+    },
+    areaServed: { "@type": "Country", name: "Belgium" },
+  };
+
+  return (
+    <>
+      <Script
+        id="service-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+      <ServicePageTemplate service={service} allServices={frServices} />
+    </>
+  );
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { getPublicPhoneDisplay } from "@/config/public-phone";
 
 const siteVerificationGoogle =
   process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION?.trim() || undefined;
@@ -16,8 +17,11 @@ const measurementId =
 const googleAdsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID?.trim();
 const phoneConversionLabel =
   process.env.NEXT_PUBLIC_GOOGLE_ADS_PHONE_CONVERSION_LABEL?.trim();
+// Falls back to the single source of truth (NEXT_PUBLIC_PHONE_NUMBER) so the
+// call-conversion number stays in sync with the rest of the site.
 const phoneConversionNumber =
-  process.env.NEXT_PUBLIC_GOOGLE_ADS_PHONE_CONVERSION_NUMBER?.trim();
+  process.env.NEXT_PUBLIC_GOOGLE_ADS_PHONE_CONVERSION_NUMBER?.trim() ||
+  getPublicPhoneDisplay();
 const gtagScriptId = measurementId || googleAdsId;
 
 export default function RootLayout({
