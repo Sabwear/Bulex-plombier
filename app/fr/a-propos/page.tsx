@@ -41,7 +41,7 @@ export default function OverOnsPage() {
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
             <Link href="/fr/contact" className="btn btn-primary">Contactez-nous</Link>
-            <Link href="/services" className="btn btn-outline">
+            <Link href="/fr/services" className="btn btn-outline">
               Nos services →
             </Link>
           </div>
@@ -202,12 +202,12 @@ export default function OverOnsPage() {
           </div>
           <div className="grid-3-strict">
             {[
-              { icon: 'wrench.svg', title: 'Réparation Vaillant', href: '/diensten#vaillant-herstelling' },
-              { icon: 'water-heater-1.svg', title: 'Remplacement Chaudière', href: '/diensten#boiler-vervangen' },
-              { icon: 'radiator.svg', title: 'Nouveau Chauffage', href: '/diensten#verwarming' },
-              { icon: 'pipes.svg', title: 'Réparation Fuite d\'Eau', href: '/diensten#waterlek' },
-              { icon: 'bathtub.svg', title: 'Installation Sanitaire', href: '/diensten#sanitair' },
-              { icon: 'gauge.svg', title: 'Contrat d\'Entretien', href: '/diensten#onderhoud' },
+              { icon: 'wrench.svg', title: 'Réparation Vaillant', href: '/fr/services/reparation-vaillant-bruxelles' },
+              { icon: 'water-heater-1.svg', title: 'Remplacement Chaudière', href: '/fr/services/remplacement-chaudiere-bruxelles' },
+              { icon: 'radiator.svg', title: 'Nouveau Chauffage', href: '/fr/services/nouveau-chauffage-bruxelles' },
+              { icon: 'pipes.svg', title: 'Réparation Fuite d\'Eau', href: '/fr/services/reparation-fuite-eau-bruxelles' },
+              { icon: 'bathtub.svg', title: 'Installation Sanitaire', href: '/fr/services/installation-sanitaire-bruxelles' },
+              { icon: 'gauge.svg', title: 'Contrat d\'Entretien', href: '/fr/services/contrat-entretien-vaillant' },
             ].map((s) => (
               <Link key={s.title} href={s.href} style={{ textDecoration: 'none' }}>
                 <div className="card" style={{ textAlign: 'center' }}>
@@ -220,7 +220,7 @@ export default function OverOnsPage() {
             ))}
           </div>
           <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-            <Link href="/diensten" className="btn btn-primary">Voir tous les services →</Link>
+            <Link href="/fr/services" className="btn btn-primary">Voir tous les services →</Link>
           </div>
         </div>
       </section>
@@ -234,7 +234,7 @@ export default function OverOnsPage() {
           <p style={{ margin: '0 auto 2rem', maxWidth: '55ch' }}>
             D'Anderlecht à Watermael-Boitsfort — vaillant Plombier dessert l'ensemble des communes bruxelloises en tant que votre plombier Vaillant local à Bruxelles.
           </p>
-          <Link href="/brussel" className="btn btn-outline">Voir notre zone d'intervention →</Link>
+          <Link href="/fr/brussel" className="btn btn-outline">Voir notre zone d'intervention →</Link>
         </div>
       </section>
 
@@ -291,7 +291,7 @@ export default function OverOnsPage() {
           <p>Partenaire certifié Vaillant · Techniciens qualifiés · Tout Bruxelles</p>
           <div className="cta-actions">
             <Link href="/fr/contact" className="btn btn-ghost-dark">📧 Envoyer un message</Link>
-            <Link href="/diensten" className="btn btn-ghost-dark">
+            <Link href="/fr/services" className="btn btn-ghost-dark">
               Nos services
             </Link>
           </div>

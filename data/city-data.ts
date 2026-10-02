@@ -35,8 +35,37 @@ export interface CityEntry {
 
 const COMMUNES_DIR = path.join(process.cwd(), "data", "communes");
 
+const COMMUNES_NL_FILE = path.join(process.cwd(), "data", "communes-nl.json");
+
+/** Dutch translations of the (French) Brussels commune JSON files, keyed by slug. */
+type CommuneNl = {
+  building_profile?: string;
+  common_issues?: string[];
+  faq?: CommuneFaq[];
+};
+
+const SERVICE_LABELS_NL: Record<string, string> = {
+  "Débouchage canalisations": "Ontstoppen van afvoeren",
+  "Dépannage plomberie urgence": "Spoedherstelling loodgieterij",
+  "Détartrage chauffe-eau": "Ontkalken van boilers",
+  "Entretien chaudière annuel": "Jaarlijks ketelonderhoud",
+  "Installation chauffage central": "Installatie centrale verwarming",
+  "Installation sanitaire complète": "Volledige sanitaire installatie",
+  "Installation thermostat intelligent": "Installatie slimme thermostaat",
+  "Remplacement chaudière Vaillant": "Vervanging Vaillant-ketel",
+  "Remplacement tuyauterie vétuste": "Vervanging verouderde leidingen",
+  "Réparation et remplacement radiateurs": "Herstelling en vervanging van radiatoren",
+  "Réparation fuite d'eau": "Waterlek herstellen",
+};
+
+function loadCommunesNl(): Record<string, CommuneNl> {
+  if (!fs.existsSync(COMMUNES_NL_FILE)) return {};
+  return JSON.parse(fs.readFileSync(COMMUNES_NL_FILE, "utf-8")) as Record<string, CommuneNl>;
+}
+
 function loadBrusselsCommunes(): CityEntry[] {
   if (!fs.existsSync(COMMUNES_DIR)) return [];
+  const nlData = loadCommunesNl();
   const files = fs.readdirSync(COMMUNES_DIR).filter((f) => f.endsWith(".json"));
   return files.map((file) => {
     const raw = fs.readFileSync(path.join(COMMUNES_DIR, file), "utf-8");
@@ -56,6 +85,8 @@ function loadBrusselsCommunes(): CityEntry[] {
       last_updated?: string;
     };
     const isBruxellesVille = c.slug === "bruxelles-ville";
+    const nl = nlData[c.slug];
+    const servicesNl = (c.services ?? []).map((x) => SERVICE_LABELS_NL[x] ?? x);
     return {
       slugFr: c.slug,
       slugNl: isBruxellesVille ? "brussel" : c.slug,
@@ -67,17 +98,17 @@ function loadBrusselsCommunes(): CityEntry[] {
       distance_minutes: c.distance_minutes ?? null,
       response_time_minutes: c.response_time_minutes ?? null,
       building_profile: c.building_profile ?? null,
-      building_profile_nl: null,
+      building_profile_nl: nl?.building_profile ?? null,
       nearby_landmarks: c.nearby_landmarks ?? [],
       nearby_landmarks_nl: null,
       common_issues: c.common_issues ?? [],
-      common_issues_nl: null,
+      common_issues_nl: nl?.common_issues ?? null,
       services: c.services ?? [],
-      services_nl: null,
+      services_nl: servicesNl.length ? servicesNl : null,
       nearby_communes_fr: c.nearby_communes ?? [],
       nearby_communes_nl: c.nearby_communes ?? [],
       faq: c.faq ?? [],
-      faq_nl: null,
+      faq_nl: nl?.faq ?? null,
       last_updated: c.last_updated ?? new Date().toISOString(),
     };
   });

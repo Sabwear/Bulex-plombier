@@ -62,8 +62,8 @@ export default function Footer() {
               <Link
                 href={
                   isNl
-                    ? "/nl/diensten#vaillant-herstelling"
-                    : "/fr/services#vaillant-herstelling"
+                    ? "/nl/diensten/vaillant-herstelling-belgie"
+                    : "/fr/services/reparation-vaillant-bruxelles"
                 }
               >
                 {isNl ? "Vaillant herstelling" : "Réparation Vaillant"}
@@ -73,8 +73,8 @@ export default function Footer() {
               <Link
                 href={
                   isNl
-                    ? "/nl/diensten#boiler-vervangen"
-                    : "/fr/services#boiler-vervangen"
+                    ? "/nl/diensten/boiler-vervangen-belgie"
+                    : "/fr/services/remplacement-chaudiere-bruxelles"
                 }
               >
                 {isNl ? "Boiler vervangen" : "Remplacement de chaudière"}
@@ -83,7 +83,7 @@ export default function Footer() {
             <li>
               <Link
                 href={
-                  isNl ? "/nl/diensten#waterlek" : "/fr/services#waterlek"
+                  isNl ? "/nl/diensten/waterlek-herstellen-belgie" : "/fr/services/reparation-fuite-eau-bruxelles"
                 }
               >
                 {isNl ? "Waterlek herstellen" : "Réparation de fuite d'eau"}
@@ -92,7 +92,7 @@ export default function Footer() {
             <li>
               <Link
                 href={
-                  isNl ? "/nl/diensten#sanitair" : "/fr/services#sanitair"
+                  isNl ? "/nl/diensten/sanitair-installatie-belgie" : "/fr/services/installation-sanitaire-bruxelles"
                 }
               >
                 {isNl ? "Sanitair installatie" : "Installation sanitaire"}
@@ -101,7 +101,7 @@ export default function Footer() {
             <li>
               <Link
                 href={
-                  isNl ? "/nl/diensten#onderhoud" : "/fr/services#onderhoud"
+                  isNl ? "/nl/diensten/vaillant-onderhoudscontract" : "/fr/services/contrat-entretien-vaillant"
                 }
               >
                 {isNl ? "Onderhoudscontract" : "Contrat d'entretien"}

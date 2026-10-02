@@ -1,0 +1,253 @@
+{
+  "anderlecht": {
+    "building_profile": "Arbeiderswoningen in rijbebouwing, gerenoveerde sociale woningen, nieuwe residentiële nieuwbouw",
+    "common_issues": [
+      "Verouderde leidingen in arbeiderswoningen",
+      "Lekken op oude centrale-verwarmingsinstallaties",
+      "Vervanging van ketels aan het einde van hun levensduur in sociale woningen",
+      "Waterdrukproblemen in recente gebouwen"
+    ],
+    "faq": [
+      { "q": "Komt u snel langs in Anderlecht?", "a": "Ja, wij komen in heel Anderlecht langs, van de Erasmuswijk tot het centrum, doorgaans binnen 30 minuten." },
+      { "q": "Kunt u mijn ketel vervangen in Anderlecht?", "a": "Zeker. Wij installeren Vaillant condensatieketels ter vervanging van uw oude toestellen." }
+    ]
+  },
+  "auderghem": {
+    "building_profile": "Residentiële villa's, eengezinswoningen, recente appartementen aan de rand van het bos",
+    "common_issues": [
+      "Onderhoud van ketels in grote villa's",
+      "Vochtproblemen door de nabijheid van het bos",
+      "Vervanging van verwarmingssystemen in woningen uit de jaren 70",
+      "Lekken op verouderde sanitaire installaties"
+    ],
+    "faq": [
+      { "q": "Bedient u heel Oudergem?", "a": "Ja, wij komen in heel Oudergem langs, ook in de wijken nabij het Zoniënwoud en het Rood Klooster." },
+      { "q": "Binnen welke termijn komt u langs in Oudergem?", "a": "Gemiddeld komen wij binnen 35 minuten langs in Oudergem, afhankelijk van de beschikbaarheid van onze teams." }
+    ]
+  },
+  "berchem-sainte-agathe": {
+    "building_profile": "Eengezinswoningen, rustige residentiële verkavelingen, enkele appartementsgebouwen",
+    "common_issues": [
+      "Vervanging van oude ketels in eengezinswoningen",
+      "Problemen met thermostaat en verwarmingsregeling",
+      "Lekken op verouderde koperen leidingen",
+      "Ontstoppen van afvoeren in oudere woningen"
+    ],
+    "faq": [
+      { "q": "Komt u langs in Sint-Agatha-Berchem?", "a": "Ja, Sint-Agatha-Berchem behoort tot onze vaste interventiezones. Gemiddeld zijn wij er binnen 30 minuten." },
+      { "q": "Biedt u ketelonderhoud aan in Sint-Agatha-Berchem?", "a": "Ja, wij bieden jaarlijkse onderhoudscontracten aan voor alle Vaillant-ketels in Sint-Agatha-Berchem." }
+    ]
+  },
+  "bruxelles-ville": {
+    "building_profile": "Kantoorgebouwen, oude appartementen in de Vijfhoek, gerenoveerde lofts, standingresidenties",
+    "common_issues": [
+      "Lekken op stijgleidingen in oude gebouwen in het centrum",
+      "Waterdrukproblemen in hoogbouw",
+      "Vervanging van ketels in gerenoveerde appartementen",
+      "Verwarmingspannes in historische gebouwen"
+    ],
+    "faq": [
+      { "q": "Komt u langs in het centrum van Brussel?", "a": "Ja, wij zijn actief in de hele Vijfhoek, evenals in de Europese wijk, de Louizawijk en de Marollen." },
+      { "q": "Wat is de interventietijd in Brussel-Stad?", "a": "Gemiddeld komen wij binnen 25 minuten langs in Brussel-Stad, afhankelijk van het verkeer." },
+      { "q": "Werkt u in oude gebouwen in het centrum?", "a": "Ja, onze technici hebben ervaring met historische Brusselse gebouwen en hun eigenaardigheden (stijgleidingen, loden leidingen, enz.)." }
+    ]
+  },
+  "etterbeek": {
+    "building_profile": "Appartementsgebouwen, herenhuizen, residenties in de Europese wijk",
+    "common_issues": [
+      "Lekken in appartementsgebouwen in de Europese wijk",
+      "Vervanging van ketels in herenhuizen",
+      "Leidingproblemen in oude gebouwen",
+      "Ontkalken in zones met hard water"
+    ],
+    "faq": [
+      { "q": "Komt u langs in de buurt van het Jubelpark in Etterbeek?", "a": "Ja, wij komen in heel Etterbeek langs, ook in de Jubelparkwijk en rond het Jourdanplein." },
+      { "q": "Kunt u werken in appartementsgebouwen in Etterbeek?", "a": "Ja, onze technici zijn gewend aan interventies in mede-eigendommen en appartementsgebouwen in Etterbeek." }
+    ]
+  },
+  "evere": {
+    "building_profile": "Rijwoningen, residentiële gebouwen, woonwijken uit de jaren 60-80",
+    "common_issues": [
+      "Vervanging van verouderde ketels in rijwoningen",
+      "Ontstoppen van afvoeren in oudere constructies",
+      "Lekken op centrale-verwarmingsinstallaties",
+      "Radiatorproblemen in appartementen"
+    ],
+    "faq": [
+      { "q": "Komt u langs in Evere?", "a": "Ja, Evere ligt in onze prioritaire interventiezone. Gemiddeld zijn wij er binnen 25 minuten." },
+      { "q": "Vervangt u ketels in Evere?", "a": "Ja, wij vervangen oude ketels door Vaillant condensatiemodellen die geschikt zijn voor de woningen van Evere." }
+    ]
+  },
+  "forest": {
+    "building_profile": "Art-decorijwoningen, appartementsgebouwen, groene woonwijken",
+    "common_issues": [
+      "Lekken in art-decowoningen met oude leidingen",
+      "Vervanging van ketels in rijwoningen",
+      "Afvoerproblemen in kelders",
+      "Verwarmingspannes in de winter"
+    ],
+    "faq": [
+      { "q": "Komt u in heel Vorst langs?", "a": "Ja, wij bedienen heel Vorst, van de wijk Altitude 100 tot het Vorstpark." },
+      { "q": "Wat is de termijn voor een loodgieterspoedgeval in Vorst?", "a": "Bij spoedgevallen in Vorst zijn wij gemiddeld binnen 30 minuten ter plaatse." }
+    ]
+  },
+  "ganshoren": {
+    "building_profile": "Eengezinswoningen, residentiële villa's, enkele kleine appartementsgebouwen",
+    "common_issues": [
+      "Vervanging van ketels in eengezinswoningen",
+      "Onderhoud van verouderende verwarmingssystemen",
+      "Lekken op koperen leidingen",
+      "Thermostaatproblemen"
+    ],
+    "faq": [
+      { "q": "Bent u beschikbaar in Ganshoren?", "a": "Ja, Ganshoren ligt in onze interventiezone. Wij zijn er in ongeveer 25 minuten." },
+      { "q": "Installeert u slimme thermostaten in Ganshoren?", "a": "Ja, wij plaatsen verbonden thermostaten die compatibel zijn met Vaillant-ketels om uw verbruik te optimaliseren." }
+    ]
+  },
+  "ixelles": {
+    "building_profile": "Art-nouveauherenhuizen, oude appartementen met verouderde stijgleidingen, gerenoveerde mede-eigendommen",
+    "common_issues": [
+      "Lekken op stijgleidingen in oude gebouwen",
+      "Vervanging van Vaillant-ketels in appartementen",
+      "Waterdrukproblemen in gebouwen met meerdere verdiepingen",
+      "Ontkalken van boilers in zones met hard water"
+    ],
+    "faq": [
+      { "q": "Wat is de interventietermijn in Elsene?", "a": "Wij komen doorgaans binnen 30 minuten langs in Elsene, afhankelijk van de beschikbaarheid van onze technici." },
+      { "q": "Werkt u aan stijgleidingen van gebouwen in Elsene?", "a": "Ja, onze loodgieters werken regelmatig aan de stijgleidingen van oude gebouwen in de Flageywijk en rond de Vijvers van Elsene." },
+      { "q": "Biedt u onderhoudscontracten voor Vaillant-ketels aan in Elsene?", "a": "Ja, wij bieden jaarlijkse onderhoudscontracten aan voor alle Vaillant-ketels, inclusief volledige controle en reiniging." }
+    ]
+  },
+  "jette": {
+    "building_profile": "Eengezinswoningen, rijwoningen uit de jaren 60–80, enkele nieuwbouwwoningen",
+    "common_issues": [
+      "Vervanging van oude gasketels in rijwoningen",
+      "Ontstoppen van afvoeren in oudere woningen",
+      "Radiatorlekken in centrale-verwarmingsinstallaties",
+      "Thermostaatproblemen bij Vaillant-ketels"
+    ],
+    "faq": [
+      { "q": "Komt u snel langs in Jette?", "a": "Ja, Jette behoort tot onze prioritaire interventiezones. Gemiddeld komen wij binnen 25 minuten langs." },
+      { "q": "Kunt u mijn oude ketel vervangen in Jette?", "a": "Zeker. Wij zijn gespecialiseerd in het vervangen van oude ketels door zuinigere en milieuvriendelijkere Vaillant condensatiemodellen." },
+      { "q": "Ontstopt u afvoeren in Jette?", "a": "Ja, wij ontstoppen mechanisch en met hogedrukspuiten in heel Jette." }
+    ]
+  },
+  "koekelberg": {
+    "building_profile": "Rijwoningen, kleine appartementsgebouwen, woonwijken rond de Basiliek",
+    "common_issues": [
+      "Vervanging van ketels in rijwoningen",
+      "Lekken op oude loden leidingen",
+      "Verwarmingsproblemen in appartementen",
+      "Ontstoppen van afvoeren"
+    ],
+    "faq": [
+      { "q": "Komt u langs in Koekelberg?", "a": "Ja, Koekelberg ligt in onze interventiezone. Dankzij de nabijheid van onze teams zijn wij er snel." },
+      { "q": "Kunt u loden leidingen vervangen in Koekelberg?", "a": "Ja, wij vervangen oude loden leidingen door moderne materialen die voldoen aan de huidige normen." }
+    ]
+  },
+  "molenbeek": {
+    "building_profile": "Gerenoveerde arbeiderswoningen, appartementsgebouwen, nieuwbouw langs het kanaal",
+    "common_issues": [
+      "Verouderde leidingen in arbeiderswoningen",
+      "Vervanging van oude ketels",
+      "Vochtproblemen en lekken in kelders",
+      "Verwarmingspannes in appartementsgebouwen"
+    ],
+    "faq": [
+      { "q": "Bedient u Sint-Jans-Molenbeek?", "a": "Ja, wij komen in heel Molenbeek langs, van de kanaalwijken tot de residentiële zones." },
+      { "q": "Wat is de interventietermijn in Molenbeek?", "a": "Gemiddeld komen wij binnen 25 minuten langs in Sint-Jans-Molenbeek." }
+    ]
+  },
+  "saint-gilles": {
+    "building_profile": "Art-nouveauherenhuizen, oude appartementsgebouwen, lofts en hedendaagse renovaties",
+    "common_issues": [
+      "Lekken op oude leidingen in art-nouveauwoningen",
+      "Problemen met stijgleidingen in appartementsgebouwen",
+      "Vervanging van ketels in gerenoveerde woningen",
+      "Ontkalken in zones met hard water"
+    ],
+    "faq": [
+      { "q": "Komt u langs in Sint-Gillis?", "a": "Ja, wij komen in heel Sint-Gillis langs, van het Voorplein tot de Barrière, langs de Zuidwijk." },
+      { "q": "Kent u de eigenaardigheden van art-nouveauwoningen?", "a": "Ja, onze technici hebben ervaring met art-nouveaugebouwen in Sint-Gillis en hun specifieke leidingen en configuraties." }
+    ]
+  },
+  "saint-josse-ten-noode": {
+    "building_profile": "Oude appartementsgebouwen, handelspanden met woningen op de verdiepingen, recente renovaties",
+    "common_issues": [
+      "Lekken in oude gebouwen met hoge bevolkingsdichtheid",
+      "Verouderde leidingen in gebouwen met handel en wonen",
+      "Vervanging van ketels in appartementen",
+      "Waterdrukproblemen"
+    ],
+    "faq": [
+      { "q": "Komt u langs in Sint-Joost-ten-Node?", "a": "Ja, Sint-Joost is een van de gemeenten die het dichtst bij onze basis liggen. Wij zijn er in ongeveer 20 minuten." },
+      { "q": "Kunt u werken in appartementsgebouwen in Sint-Joost?", "a": "Ja, onze technici zijn gewend aan interventies in appartementsgebouwen en mede-eigendommen in Sint-Joost." }
+    ]
+  },
+  "schaerbeek": {
+    "building_profile": "Art-decoburgerhuizen, appartementsgebouwen, gerenoveerde sociale woningen",
+    "common_issues": [
+      "Lekken in platte daken en goten van burgerhuizen",
+      "Vervanging van ketels in appartementsgebouwen",
+      "Problemen met loden leidingen in oude wijken",
+      "Verwarmingspannes in de winter in sociale woningen"
+    ],
+    "faq": [
+      { "q": "Komt u in heel Schaarbeek langs?", "a": "Ja, wij bedienen heel Schaarbeek, van de Helmetwijk tot het Colignonplein, langs het Josaphatpark." },
+      { "q": "Kunt u loden leidingen vervangen in Schaarbeek?", "a": "Ja, wij vervangen loden leidingen door moderne materialen die voldoen aan de huidige sanitaire normen." },
+      { "q": "Wat kost het onderhoud van een Vaillant-ketel in Schaarbeek?", "a": "Het tarief voor een jaarlijks onderhoud hangt af van het model. Neem contact met ons op voor een vrijblijvende offerte op maat." }
+    ]
+  },
+  "uccle": {
+    "building_profile": "Residentiële villa's, eengezinswoningen met tuin, standingwoningen, enkele recente appartementen",
+    "common_issues": [
+      "Onderhoud van verwarmingssystemen in grote villa's",
+      "Vervanging van ketels in standingwoningen",
+      "Lekken op sanitaire installaties in oudere eigendommen",
+      "Afvoerproblemen op hellende terreinen"
+    ],
+    "faq": [
+      { "q": "Bedient u heel Ukkel?", "a": "Ja, wij komen in heel Ukkel langs, van Fort Jaco tot de Diesdelle, langs Wolvendael." },
+      { "q": "Wat is de interventietermijn in Ukkel?", "a": "Gemiddeld 35 minuten voor Ukkel, afhankelijk van de beschikbaarheid van onze teams en het verkeer." }
+    ]
+  },
+  "watermael-boitsfort": {
+    "building_profile": "Tuinwijken, eengezinswoningen, villa's aan de rand van het bos, erfgoedwoningen van Le Logis-Floréal",
+    "common_issues": [
+      "Onderhoud van ketels in erfgoedtuinwijken",
+      "Vochtproblemen door de nabijheid van het bos",
+      "Vervanging van verwarmingssystemen in woningen uit de jaren 20-30",
+      "Lekken op verouderde sanitaire installaties"
+    ],
+    "faq": [
+      { "q": "Komt u langs in Watermaal-Bosvoorde?", "a": "Ja, wij komen in heel Watermaal-Bosvoorde langs, ook in de tuinwijken van Le Logis-Floréal." },
+      { "q": "Kent u de eigenaardigheden van het erfgoed van Le Logis?", "a": "Ja, onze technici zijn vertrouwd met de beperkingen van de erfgoedgebouwen in Watermaal-Bosvoorde." }
+    ]
+  },
+  "woluwe-saint-lambert": {
+    "building_profile": "Residentiële eengezinswoningen, standingappartementen, groene en luchtige wijken",
+    "common_issues": [
+      "Vervanging van ketels in residentiële woningen",
+      "Onderhoud van verwarmingssystemen in standingappartementen",
+      "Lekken op sanitaire installaties",
+      "Problemen met thermostaat en regeling"
+    ],
+    "faq": [
+      { "q": "Komt u langs in Sint-Lambrechts-Woluwe?", "a": "Ja, wij bedienen heel Sint-Lambrechts-Woluwe, ook de wijken rond het Woluwe Shopping Center en het Sint-Lucasziekenhuis." },
+      { "q": "Biedt u verbonden thermostaten aan in Sint-Lambrechts-Woluwe?", "a": "Ja, wij installeren slimme thermostaten die compatibel zijn met Vaillant-ketels om uw energieverbruik te optimaliseren." }
+    ]
+  },
+  "woluwe-saint-pierre": {
+    "building_profile": "Standingvilla's, residentiële eigendommen met tuin, kwaliteitsappartementen, diplomatieke wijken",
+    "common_issues": [
+      "Onderhoud van verwarmingssystemen in standingvilla's",
+      "Vervanging van hoogwaardige ketels",
+      "Lekken op oude sanitaire installaties",
+      "Afvoerproblemen in eigendommen met tuin"
+    ],
+    "faq": [
+      { "q": "Bedient u Sint-Pieters-Woluwe?", "a": "Ja, wij komen in heel Sint-Pieters-Woluwe langs, van Stokkel tot het Kasteel Malou." },
+      { "q": "Wat is de termijn voor Sint-Pieters-Woluwe?", "a": "Gemiddeld komen wij binnen 30 minuten langs in Sint-Pieters-Woluwe." }
+    ]
+  }
+}

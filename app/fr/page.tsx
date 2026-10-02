@@ -237,12 +237,12 @@ export default function HomePage() {
 
           <div className="grid-3-strict">
             {[
-              { image: '/images/service/1.jpg', icon: <Wrench size={32} />, title: 'Réparation Vaillant', desc: "Problème avec votre chaudière Vaillant ? Nos techniciens certifiés diagnostiquent et réparent tous les modèles Vaillant avec rapidité et précision.", link: '/fr/services#vaillant-herstelling' },
-              { image: '/images/service/2.jpg', icon: <Thermometer size={32} />, title: 'Remplacement de chaudière', desc: "Votre ancienne chaudière est en fin de vie ? Nous installons une nouvelle chaudière Vaillant économe en énergie avec mise en service complète.", link: '/fr/services#boiler-vervangen' },
-              { image: '/images/service/3.jpg', icon: <Grid size={32} />, title: 'Installation d\'un nouveau chauffage', desc: "Des projets de nouveau chauffage ? Nous concevons et installons un système adapté à votre domicile ou vos locaux professionnels.", link: '/fr/services#verwarming' },
-              { image: '/images/service/4.jpg', icon: <Construction size={32} />, title: 'Réparation de fuite d\'eau', desc: "Une fuite d'eau cause rapidement des dégâts. Notre équipe localise et répare les fuites immédiatement pour éviter de graves dommages à votre propriété.", link: '/fr/services#waterlek' },
-              { image: '/images/service/5.jpg', icon: <Bath size={32} />, title: 'Installation sanitaire', desc: "Rénovation de salle de bain ou appareils sanitaires ? Nous installons tout de manière experte : toilettes, douche, baignoire, lavabo et plus.", link: '/fr/services#sanitair' },
-              { image: '/images/service/6.jpg', icon: <Gauge size={32} />, title: 'Contrat d\'Entretien Vaillant', desc: "Entretien annuel de votre installation Vaillant. Comprend l'inspection, le nettoyage et un rapport pour des performances et une durabilité garanties.", link: '/fr/services#onderhoud' },
+              { image: '/images/service/1.jpg', icon: <Wrench size={32} />, title: 'Réparation Vaillant', desc: "Problème avec votre chaudière Vaillant ? Nos techniciens certifiés diagnostiquent et réparent tous les modèles Vaillant avec rapidité et précision.", link: '/fr/services/reparation-vaillant-bruxelles' },
+              { image: '/images/service/2.jpg', icon: <Thermometer size={32} />, title: 'Remplacement de chaudière', desc: "Votre ancienne chaudière est en fin de vie ? Nous installons une nouvelle chaudière Vaillant économe en énergie avec mise en service complète.", link: '/fr/services/remplacement-chaudiere-bruxelles' },
+              { image: '/images/service/3.jpg', icon: <Grid size={32} />, title: 'Installation d\'un nouveau chauffage', desc: "Des projets de nouveau chauffage ? Nous concevons et installons un système adapté à votre domicile ou vos locaux professionnels.", link: '/fr/services/nouveau-chauffage-bruxelles' },
+              { image: '/images/service/4.jpg', icon: <Construction size={32} />, title: 'Réparation de fuite d\'eau', desc: "Une fuite d'eau cause rapidement des dégâts. Notre équipe localise et répare les fuites immédiatement pour éviter de graves dommages à votre propriété.", link: '/fr/services/reparation-fuite-eau-bruxelles' },
+              { image: '/images/service/5.jpg', icon: <Bath size={32} />, title: 'Installation sanitaire', desc: "Rénovation de salle de bain ou appareils sanitaires ? Nous installons tout de manière experte : toilettes, douche, baignoire, lavabo et plus.", link: '/fr/services/installation-sanitaire-bruxelles' },
+              { image: '/images/service/6.jpg', icon: <Gauge size={32} />, title: 'Contrat d\'Entretien Vaillant', desc: "Entretien annuel de votre installation Vaillant. Comprend l'inspection, le nettoyage et un rapport pour des performances et une durabilité garanties.", link: '/fr/services/contrat-entretien-vaillant' },
             ].map((s) => (
               <div key={s.title} className="card">
                 <div className="card-image">
@@ -543,7 +543,7 @@ export default function HomePage() {
 
           <div className="grid-3-strict">
             {posts.slice(0, 3).map((post) => (
-              <Link key={post.slug} href={`/blog/${post.slug}`} className={blogStyles.blogCard}>
+              <Link key={post.slug} href={`/fr/blog/${post.slug}`} className={blogStyles.blogCard}>
                 <div className={blogStyles.cardImage}>
                   <NextImage src={post.image} alt={post.languages.fr.title} fill className="object-cover" />
                 </div>
@@ -560,7 +560,7 @@ export default function HomePage() {
           </div>
 
           <div style={{ textAlign: 'center', marginTop: '40px' }}>
-            <Link href="/blog" className="btn btn-outline" style={{ display: 'none' }}>Voir tous les articles</Link>
+            <Link href="/fr/blog" className="btn btn-outline" style={{ display: 'none' }}>Voir tous les articles</Link>
           </div>
         </div>
       </section>

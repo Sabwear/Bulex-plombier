@@ -2,15 +2,45 @@ import Image from "next/image";
 import Link from "next/link";
 import type { FrService } from "@/data/fr-services";
 
+type Locale = "fr" | "nl";
+
 type ServicePageTemplateProps = {
   service: FrService;
   allServices: FrService[];
+  locale?: Locale;
 };
+
+const COPY = {
+  fr: {
+    badge: "Service Vaillant Belgique",
+    quote: "Demander un devis",
+    allServices: "Voir tous les services",
+    highlightsBadge: "Points forts",
+    highlightsTitle: "Ce que ce service inclut",
+    othersBadge: "Autres services",
+    othersTitle: "Explorer d'autres interventions",
+    quotePath: "/fr/demande-devis",
+    servicesPath: "/fr/services",
+  },
+  nl: {
+    badge: "Vaillant dienst België",
+    quote: "Offerte aanvragen",
+    allServices: "Alle diensten bekijken",
+    highlightsBadge: "Sterke punten",
+    highlightsTitle: "Wat deze dienst omvat",
+    othersBadge: "Andere diensten",
+    othersTitle: "Ontdek onze andere interventies",
+    quotePath: "/nl/demande-offerte",
+    servicesPath: "/nl/diensten",
+  },
+} as const;
 
 export default function ServicePageTemplate({
   service,
   allServices,
+  locale = "fr",
 }: ServicePageTemplateProps) {
+  const t = COPY[locale];
   const relatedServices = allServices.filter((item) => item.slug !== service.slug);
 
   return (
@@ -25,18 +55,18 @@ export default function ServicePageTemplate({
       >
         <div className="container">
           <span className="badge badge-green" style={{ marginBottom: "1rem" }}>
-            Service Vaillant Belgique
+            {t.badge}
           </span>
           <h1 style={{ marginBottom: "1rem" }}>{service.title}</h1>
           <p style={{ fontSize: "1.1rem", maxWidth: "60ch", marginBottom: "2rem" }}>
             {service.short}
           </p>
           <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-            <Link href="/demande-devis" className="btn btn-primary">
-              Demander un devis
+            <Link href={t.quotePath} className="btn btn-primary">
+              {t.quote}
             </Link>
-            <Link href="/services" className="btn btn-outline">
-              Voir tous les services
+            <Link href={t.servicesPath} className="btn btn-outline">
+              {t.allServices}
             </Link>
           </div>
         </div>
@@ -89,8 +119,8 @@ export default function ServicePageTemplate({
       <section style={{ background: "var(--bg-secondary)" }}>
         <div className="container" style={{ maxWidth: "920px" }}>
           <div className="section-header">
-            <span className="badge badge-gold">Points forts</span>
-            <h2 style={{ marginTop: "1rem" }}>Ce que ce service inclut</h2>
+            <span className="badge badge-gold">{t.highlightsBadge}</span>
+            <h2 style={{ marginTop: "1rem" }}>{t.highlightsTitle}</h2>
             <div className="divider" />
           </div>
           <div className="grid-3-strict">
@@ -107,15 +137,15 @@ export default function ServicePageTemplate({
       <section>
         <div className="container" style={{ maxWidth: "980px" }}>
           <div className="section-header">
-            <span className="badge badge-blue">Autres services</span>
-            <h2 style={{ marginTop: "1rem" }}>Explorer d'autres interventions</h2>
+            <span className="badge badge-blue">{t.othersBadge}</span>
+            <h2 style={{ marginTop: "1rem" }}>{t.othersTitle}</h2>
             <div className="divider" />
           </div>
           <div className="grid-3-strict">
             {relatedServices.map((item) => (
               <Link
                 key={item.slug}
-                href={`/services/${item.slug}`}
+                href={`${t.servicesPath}/${item.slug}`}
                 className="card"
                 style={{ textDecoration: "none" }}
               >
@@ -133,8 +163,8 @@ export default function ServicePageTemplate({
             ))}
           </div>
           <div style={{ marginTop: "2rem", textAlign: "center" }}>
-            <Link href="/demande-devis" className="btn btn-primary">
-              Demander un devis
+            <Link href={t.quotePath} className="btn btn-primary">
+              {t.quote}
             </Link>
           </div>
         </div>

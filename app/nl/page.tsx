@@ -243,12 +243,12 @@ export default function HomePage() {
 
           <div className="grid-3-strict">
             {[
-              { image: '/images/service/1.jpg', icon: <Wrench size={32} />, title: 'Vaillant herstelling', desc: "Probleem met uw Vaillant ketel? Onze gecertificeerde technici diagnosticeren en repareren alle Vaillant modellen snel en accuraat.", link: '/nl/diensten#vaillant-herstelling' },
-              { image: '/images/service/2.jpg', icon: <Thermometer size={32} />, title: 'Boiler vervangen', desc: "Is uw oude boiler aan het einde van zijn levensduur? Wij installeren een nieuwe, energiezuinige Vaillant ketel met volledige inbedrijfstelling.", link: '/nl/diensten#boiler-vervangen' },
-              { image: '/images/service/3.jpg', icon: <Grid size={32} />, title: 'Nieuwe verwarming plaatsen', desc: "Plannen voor nieuwe verwarming? Wij ontwerpen en installeren een systeem op maat voor uw woning of bedrijfspand.", link: '/nl/diensten#verwarming' },
-              { image: '/images/service/4.jpg', icon: <Construction size={32} />, title: 'Waterlek herstellen', desc: "Een waterlek veroorzaakt snel schade. Ons team lokaliseert en repereert lekken onmiddellijk om ernstige schade aan uw eigendom te voorkomen.", link: '/nl/diensten#waterlek' },
-              { image: '/images/service/5.jpg', icon: <Bath size={32} />, title: 'Sanitair installatie', desc: "Badkamer renovatie of sanitaire toestellen? Wij installeren alles vakkundig: toiletten, douche, bad, wastafel en meer.", link: '/nl/diensten#sanitair' },
-              { image: '/images/service/6.jpg', icon: <Gauge size={32} />, title: 'Vaillant Onderhoudscontract', desc: "Jaarlijks onderhoud van uw Vaillant installatie. Inclusief inspectie, reiniging en een rapport voor gegarandeerde prestaties en duurzaamheid.", link: '/nl/diensten#onderhoud' },
+              { image: '/images/service/1.jpg', icon: <Wrench size={32} />, title: 'Vaillant herstelling', desc: "Probleem met uw Vaillant ketel? Onze gecertificeerde technici diagnosticeren en repareren alle Vaillant modellen snel en accuraat.", link: '/nl/diensten/vaillant-herstelling-belgie' },
+              { image: '/images/service/2.jpg', icon: <Thermometer size={32} />, title: 'Boiler vervangen', desc: "Is uw oude boiler aan het einde van zijn levensduur? Wij installeren een nieuwe, energiezuinige Vaillant ketel met volledige inbedrijfstelling.", link: '/nl/diensten/boiler-vervangen-belgie' },
+              { image: '/images/service/3.jpg', icon: <Grid size={32} />, title: 'Nieuwe verwarming plaatsen', desc: "Plannen voor nieuwe verwarming? Wij ontwerpen en installeren een systeem op maat voor uw woning of bedrijfspand.", link: '/nl/diensten/nieuwe-verwarming-belgie' },
+              { image: '/images/service/4.jpg', icon: <Construction size={32} />, title: 'Waterlek herstellen', desc: "Een waterlek veroorzaakt snel schade. Ons team lokaliseert en repereert lekken onmiddellijk om ernstige schade aan uw eigendom te voorkomen.", link: '/nl/diensten/waterlek-herstellen-belgie' },
+              { image: '/images/service/5.jpg', icon: <Bath size={32} />, title: 'Sanitair installatie', desc: "Badkamer renovatie of sanitaire toestellen? Wij installeren alles vakkundig: toiletten, douche, bad, wastafel en meer.", link: '/nl/diensten/sanitair-installatie-belgie' },
+              { image: '/images/service/6.jpg', icon: <Gauge size={32} />, title: 'Vaillant Onderhoudscontract', desc: "Jaarlijks onderhoud van uw Vaillant installatie. Inclusief inspectie, reiniging en een rapport voor gegarandeerde prestaties en duurzaamheid.", link: '/nl/diensten/vaillant-onderhoudscontract' },
             ].map((s) => (
               <div key={s.title} className="card">
                 <div className="card-image">

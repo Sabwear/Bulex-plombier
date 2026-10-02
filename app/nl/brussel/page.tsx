@@ -156,12 +156,12 @@ export default function BrusselPage() {
           </div>
           <div className="grid-3-strict">
             {[
-              { icon: 'wrench.svg', title: 'Vaillant Herstelling', href: '/nl/diensten#vaillant-herstelling', desc: 'Snelle herstelling van Vaillant ketels door gecertificeerde technici.' },
-              { icon: 'water-heater-1.svg', title: 'Ketel Vervangen', href: '/nl/diensten#boiler-vervangen', desc: 'Professionele vervanging met het juiste Vaillant model voor uw woning.' },
-              { icon: 'pipes.svg', title: 'Waterlek Herstellen', href: '/nl/diensten#waterlek', desc: 'Lekdetectie en herstelling zonder onnodig kap- en breekwerk.' },
-              { icon: 'bathtub.svg', title: 'Sanitair Installatie', href: '/nl/diensten#sanitair', desc: 'Badkamerrenovatie door gecertificeerde loodgieters.' },
-              { icon: 'radiator.svg', title: 'Nieuwe Verwarming', href: '/nl/diensten#verwarming', desc: 'Nieuw verwarmingssysteem op maat voor uw woning in Brussel.' },
-              { icon: 'gauge.svg', title: 'Onderhoudscontract', href: '/nl/diensten#onderhoud', desc: 'Jaarlijks Vaillant onderhoud voor optimale prestaties en een langere levensduur.' },
+              { icon: 'wrench.svg', title: 'Vaillant Herstelling', href: '/nl/diensten/vaillant-herstelling-belgie', desc: 'Snelle herstelling van Vaillant ketels door gecertificeerde technici.' },
+              { icon: 'water-heater-1.svg', title: 'Ketel Vervangen', href: '/nl/diensten/boiler-vervangen-belgie', desc: 'Professionele vervanging met het juiste Vaillant model voor uw woning.' },
+              { icon: 'pipes.svg', title: 'Waterlek Herstellen', href: '/nl/diensten/waterlek-herstellen-belgie', desc: 'Lekdetectie en herstelling zonder onnodig kap- en breekwerk.' },
+              { icon: 'bathtub.svg', title: 'Sanitair Installatie', href: '/nl/diensten/sanitair-installatie-belgie', desc: 'Badkamerrenovatie door gecertificeerde loodgieters.' },
+              { icon: 'radiator.svg', title: 'Nieuwe Verwarming', href: '/nl/diensten/nieuwe-verwarming-belgie', desc: 'Nieuw verwarmingssysteem op maat voor uw woning in Brussel.' },
+              { icon: 'gauge.svg', title: 'Onderhoudscontract', href: '/nl/diensten/vaillant-onderhoudscontract', desc: 'Jaarlijks Vaillant onderhoud voor optimale prestaties en een langere levensduur.' },
             ].map((s) => (
               <Link key={s.title} href={s.href} style={{ textDecoration: 'none' }}>
                 <div className="card">

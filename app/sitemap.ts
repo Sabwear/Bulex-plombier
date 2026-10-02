@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { getAllSlugsFr, getAllSlugsNl } from "@/data/city-data";
 import { getBlogPosts } from "@/data/types";
 import { frServices } from "@/data/fr-services";
+import { nlServices } from "@/data/nl-services";
 
 const base = "https://vaillant-loodgieter.com";
 
@@ -63,6 +64,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const s of frServices) {
     entries.push({
       url: `${base}/fr/services/${s.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.75,
+    });
+  }
+
+  for (const s of nlServices) {
+    entries.push({
+      url: `${base}/nl/diensten/${s.slug}`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.75,

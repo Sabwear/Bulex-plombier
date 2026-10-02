@@ -49,10 +49,10 @@ export default function ServicesPage() {
             a la demande de devis.
           </p>
           <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-            <Link href="/demande-devis" className="btn btn-primary">
+            <Link href="/fr/demande-devis" className="btn btn-primary">
               Demander un devis
             </Link>
-            <Link href="/contact" className="btn btn-outline">
+            <Link href="/fr/contact" className="btn btn-outline">
               Contacter un technicien
             </Link>
           </div>
@@ -71,7 +71,7 @@ export default function ServicesPage() {
             {frServices.map((service) => (
               <Link
                 key={service.slug}
-                href={`/services/${service.slug}`}
+                href={`/fr/services/${service.slug}`}
                 className="card"
                 style={{ textDecoration: "none" }}
               >

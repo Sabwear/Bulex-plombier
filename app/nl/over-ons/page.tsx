@@ -99,10 +99,10 @@ export default function OverOnsPage() {
       <section>
         <div className="container">
           <div className="section-header">
-            <span className="badge badge-blue">Nos Preuves</span>
-            <h2 style={{ marginTop: '1rem' }}>Deux preuves concrètes de notre expertise</h2>
+            <span className="badge badge-blue">Onze bewijzen</span>
+            <h2 style={{ marginTop: '1rem' }}>Twee concrete bewijzen van onze expertise</h2>
             <div className="divider" />
-            <p>Nous ne faisons pas de fausses promesses. Voici les deux preuves concrètes et vérifiables sur lesquelles vous pouvez nous juger.</p>
+            <p>Wij doen geen valse beloftes. Hier zijn de twee concrete en verifieerbare bewijzen waarop u ons kunt beoordelen.</p>
           </div>
 
           <div className="grid-2" style={{ marginBottom: '3rem' }}>
@@ -143,16 +143,16 @@ export default function OverOnsPage() {
             borderRadius: 'var(--radius-lg)', padding: '2.5rem',
             border: '1px solid var(--border)',
           }}>
-            <h3 style={{ marginBottom: '1.5rem', textAlign: 'center' }}>Objections fréquentes des clients — et nos réponses honnêtes</h3>
+            <h3 style={{ marginBottom: '1.5rem', textAlign: 'center' }}>Veelgehoorde bezwaren van klanten — en onze eerlijke antwoorden</h3>
             <div className="grid-2">
               {[
                 {
-                  q: '&quot;Êtes-vous vraiment certifiés ou dites-vous simplement cela ?&quot;',
-                  a: 'Réponse honnête : notre certification Vaillant est délivrée de manière externe par Vaillant Belgium. Elle n\'est pas autoproclamée. Vous pouvez confirmer auprès de Vaillant que nous sommes un partenaire certifié.',
+                  q: '&quot;Bent u echt gecertificeerd of beweert u dat alleen maar?&quot;',
+                  a: 'Eerlijk antwoord: onze Vaillant-certificering wordt extern uitgereikt door Vaillant Belgium. Ze is niet zelfverklaard. U kunt bij Vaillant bevestigen dat wij een gecertificeerd partner zijn.',
                 },
                 {
-                  q: '&quot;Êtes-vous plus chers que les plombiers ordinaires ?&quot;',
-                  a: 'Réponse honnête : les partenaires certifiés travaillent avec des pièces d\'origine et des procédures documentées. Cela a un coût. Mais cela évite des visites répétées et préserve votre garantie — ce qui s\'avère moins cher à long terme.',
+                  q: '&quot;Bent u duurder dan gewone loodgieters?&quot;',
+                  a: 'Eerlijk antwoord: gecertificeerde partners werken met originele onderdelen en gedocumenteerde procedures. Dat heeft een kostprijs. Maar het voorkomt herhaalde bezoeken en behoudt uw garantie — wat op lange termijn goedkoper uitkomt.',
                 },
               ].map((obj, i) => (
                 <div key={i} style={{ padding: '1.5rem', background: '#fff', borderRadius: 'var(--radius)', border: '1px solid var(--border)' }}>
@@ -170,8 +170,8 @@ export default function OverOnsPage() {
       <section style={{ background: 'var(--bg-secondary)' }}>
         <div className="container">
           <div className="section-header">
-            <span className="badge badge-gold">Ce que vous obtenez</span>
-            <h2 style={{ marginTop: '1rem' }}>Avantages de travailler avec vaillant Plombier</h2>
+            <span className="badge badge-gold">Wat u krijgt</span>
+            <h2 style={{ marginTop: '1rem' }}>Voordelen van werken met Vaillant Loodgieter</h2>
             <div className="divider" />
           </div>
           <div className="grid-3-strict">
@@ -196,18 +196,18 @@ export default function OverOnsPage() {
       <section>
         <div className="container">
           <div className="section-header">
-            <span className="badge badge-blue">Nos Services</span>
-            <h2 style={{ marginTop: '1rem' }}>Ce que nous offrons à Bruxelles</h2>
+            <span className="badge badge-blue">Onze diensten</span>
+            <h2 style={{ marginTop: '1rem' }}>Wat wij aanbieden in Brussel</h2>
             <div className="divider" />
           </div>
           <div className="grid-3-strict">
             {[
-              { icon: 'wrench.svg', title: 'Vaillant Herstelling', href: '/nl/diensten#vaillant-herstelling' },
-              { icon: 'water-heater-1.svg', title: 'Boiler Vervangen', href: '/nl/diensten#boiler-vervangen' },
-              { icon: 'radiator.svg', title: 'Nieuwe Verwarming', href: '/nl/diensten#verwarming' },
-              { icon: 'pipes.svg', title: 'Waterlek Herstellen', href: '/nl/diensten#waterlek' },
-              { icon: 'bathtub.svg', title: 'Sanitair Installatie', href: '/nl/diensten#sanitair' },
-              { icon: 'gauge.svg', title: 'Onderhoudscontract', href: '/nl/diensten#onderhoud' },
+              { icon: 'wrench.svg', title: 'Vaillant Herstelling', href: '/nl/diensten/vaillant-herstelling-belgie' },
+              { icon: 'water-heater-1.svg', title: 'Boiler Vervangen', href: '/nl/diensten/boiler-vervangen-belgie' },
+              { icon: 'radiator.svg', title: 'Nieuwe Verwarming', href: '/nl/diensten/nieuwe-verwarming-belgie' },
+              { icon: 'pipes.svg', title: 'Waterlek Herstellen', href: '/nl/diensten/waterlek-herstellen-belgie' },
+              { icon: 'bathtub.svg', title: 'Sanitair Installatie', href: '/nl/diensten/sanitair-installatie-belgie' },
+              { icon: 'gauge.svg', title: 'Onderhoudscontract', href: '/nl/diensten/vaillant-onderhoudscontract' },
             ].map((s) => (
               <Link key={s.title} href={s.href} style={{ textDecoration: 'none' }}>
                 <div className="card" style={{ textAlign: 'center' }}>
@@ -220,7 +220,7 @@ export default function OverOnsPage() {
             ))}
           </div>
           <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-            <Link href="/diensten" className="btn btn-primary">Voir tous les services →</Link>
+            <Link href="/nl/diensten" className="btn btn-primary">Alle diensten bekijken →</Link>
           </div>
         </div>
       </section>
@@ -228,13 +228,13 @@ export default function OverOnsPage() {
       {/* SERVICE AREAS */}
       <section style={{ background: 'var(--bg-secondary)' }}>
         <div className="container" style={{ textAlign: 'center' }}>
-          <span className="badge badge-gold">Zone d'Intervention</span>
-          <h2 style={{ marginTop: '1rem', marginBottom: '0.75rem' }}>Fiers d'intervenir à Bruxelles et ses environs</h2>
+          <span className="badge badge-gold">Interventiegebied</span>
+          <h2 style={{ marginTop: '1rem', marginBottom: '0.75rem' }}>Trots om actief te zijn in Brussel en omgeving</h2>
           <div className="divider" />
           <p style={{ margin: '0 auto 2rem', maxWidth: '55ch' }}>
-            D'Anderlecht à Watermael-Boitsfort — vaillant Plombier dessert l'ensemble des communes bruxelloises en tant que votre plombier Vaillant local à Bruxelles.
+            Van Anderlecht tot Watermaal-Bosvoorde — Vaillant Loodgieter bedient alle Brusselse gemeenten als uw lokale Vaillant loodgieter in Brussel.
           </p>
-          <Link href="/brussel" className="btn btn-outline">Voir notre zone d'intervention →</Link>
+          <Link href="/nl/brussel" className="btn btn-outline">Bekijk ons interventiegebied →</Link>
         </div>
       </section>
 
@@ -242,16 +242,16 @@ export default function OverOnsPage() {
       <section>
         <div className="container">
           <div className="section-header">
-            <span className="badge badge-blue">Méthode de Travail</span>
-            <h2 style={{ marginTop: '1rem' }}>Comment nous travaillons</h2>
+            <span className="badge badge-blue">Werkwijze</span>
+            <h2 style={{ marginTop: '1rem' }}>Hoe wij werken</h2>
             <div className="divider" />
           </div>
           <div className="grid-4">
             {[
-              { n: '1', title: 'Contact', desc: 'Envoyez un e-mail à contact@vaillant-loodgieter.com pour toute demande.' },
-              { n: '2', title: 'Diagnostic', desc: 'Diagnostic transparent et devis avant intervention.' },
-              { n: '3', title: 'Intervention', desc: 'Technicien certifié travaillant avec des pièces d\'origine.' },
-              { n: '4', title: 'Rapport', desc: 'Rapport technique écrit et complet après l\'intervention.' },
+              { n: '1', title: 'Contact', desc: 'Stuur voor elke aanvraag een e-mail naar contact@vaillant-loodgieter.com.' },
+              { n: '2', title: 'Diagnose', desc: 'Transparante diagnose en offerte vóór de interventie.' },
+              { n: '3', title: 'Interventie', desc: 'Gecertificeerde technicus die met originele onderdelen werkt.' },
+              { n: '4', title: 'Verslag', desc: 'Volledig schriftelijk technisch verslag na de interventie.' },
             ].map((step) => (
               <div key={step.n} style={{ textAlign: 'center' }}>
                 <div className="step-number" style={{ margin: '0 auto 1rem' }}>{step.n}</div>
@@ -287,12 +287,12 @@ export default function OverOnsPage() {
       {/* CTA */}
       <section className="cta-band">
         <div className="container" style={{ maxWidth: '600px' }}>
-          <h2>Prenez contact avec votre partenaire Vaillant certifié</h2>
-          <p>Partenaire certifié Vaillant · Techniciens qualifiés · Tout Bruxelles</p>
+          <h2>Neem contact op met uw gecertificeerde Vaillant partner</h2>
+          <p>Gecertificeerd Vaillant partner · Gekwalificeerde technici · Heel Brussel</p>
           <div className="cta-actions">
             <Link href="/nl/contact" className="btn btn-ghost-dark">📧 Stuur een bericht</Link>
-            <Link href="/diensten" className="btn btn-ghost-dark">
-              Nos services
+            <Link href="/nl/diensten" className="btn btn-ghost-dark">
+              Onze diensten
             </Link>
           </div>
         </div>

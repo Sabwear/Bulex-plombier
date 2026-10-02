@@ -64,7 +64,7 @@ export default function BrusselPage() {
           </p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
             <Link href="/fr/demande-devis" className="btn btn-primary">Demander un devis</Link>
-            <Link href="/diensten" className="btn btn-outline">
+            <Link href="/fr/services" className="btn btn-outline">
               Nos services →
             </Link>
           </div>
@@ -151,12 +151,12 @@ export default function BrusselPage() {
           </div>
           <div className="grid-3-strict">
             {[
-              { icon: 'wrench.svg', title: 'Réparation Vaillant', href: '/diensten#vaillant-herstelling', desc: 'Réparation rapide des chaudières Vaillant par des techniciens certifiés.' },
-              { icon: 'water-heater-1.svg', title: 'Remplacement de Chaudière', href: '/diensten#boiler-vervangen', desc: 'Remplacement professionnel avec le modèle Vaillant adapté à votre logement.' },
-              { icon: 'pipes.svg', title: 'Réparation de Fuite d\'Eau', href: '/diensten#waterlek', desc: 'Détection des fuites et réparation sans démolition inutile.' },
-              { icon: 'bathtub.svg', title: 'Installation Sanitaire', href: '/diensten#sanitair', desc: 'Rénovation de salle de bain par des plombiers certifiés.' },
-              { icon: 'radiator.svg', title: 'Nouveau Chauffage', href: '/diensten#verwarming', desc: 'Nouveau système de chauffage sur mesure pour votre habitation à Bruxelles.' },
-              { icon: 'gauge.svg', title: 'Contrat d\'Entretien', href: '/diensten#onderhoud', desc: 'Entretien annuel Vaillant pour des performances optimales et une durée de vie plus longue.' },
+              { icon: 'wrench.svg', title: 'Réparation Vaillant', href: '/fr/services/reparation-vaillant-bruxelles', desc: 'Réparation rapide des chaudières Vaillant par des techniciens certifiés.' },
+              { icon: 'water-heater-1.svg', title: 'Remplacement de Chaudière', href: '/fr/services/remplacement-chaudiere-bruxelles', desc: 'Remplacement professionnel avec le modèle Vaillant adapté à votre logement.' },
+              { icon: 'pipes.svg', title: 'Réparation de Fuite d\'Eau', href: '/fr/services/reparation-fuite-eau-bruxelles', desc: 'Détection des fuites et réparation sans démolition inutile.' },
+              { icon: 'bathtub.svg', title: 'Installation Sanitaire', href: '/fr/services/installation-sanitaire-bruxelles', desc: 'Rénovation de salle de bain par des plombiers certifiés.' },
+              { icon: 'radiator.svg', title: 'Nouveau Chauffage', href: '/fr/services/nouveau-chauffage-bruxelles', desc: 'Nouveau système de chauffage sur mesure pour votre habitation à Bruxelles.' },
+              { icon: 'gauge.svg', title: 'Contrat d\'Entretien', href: '/fr/services/contrat-entretien-vaillant', desc: 'Entretien annuel Vaillant pour des performances optimales et une durée de vie plus longue.' },
             ].map((s) => (
               <Link key={s.title} href={s.href} style={{ textDecoration: 'none' }}>
                 <div className="card">
@@ -170,7 +170,7 @@ export default function BrusselPage() {
             ))}
           </div>
           <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-            <Link href="/diensten" className="btn btn-primary">Voir tous les services</Link>
+            <Link href="/fr/services" className="btn btn-primary">Voir tous les services</Link>
           </div>
         </div>
       </section>
@@ -278,7 +278,7 @@ export default function BrusselPage() {
           <p>vaillant Plombier — un partenaire Vaillant certifié actif dans toutes les communes bruxelloises.</p>
           <div className="cta-actions">
             <Link href="/fr/contact" className="btn btn-ghost-dark">📧 Envoyer un message</Link>
-            <Link href="/over-ons" className="btn btn-ghost-dark">
+            <Link href="/fr/a-propos" className="btn btn-ghost-dark">
               À propos de nous →
             </Link>
           </div>

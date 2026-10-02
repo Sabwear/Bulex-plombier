@@ -72,7 +72,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
-      <ServicePageTemplate service={service} allServices={frServices} />
+      <ServicePageTemplate service={service} allServices={frServices} locale="fr" />
     </>
   );
 }
