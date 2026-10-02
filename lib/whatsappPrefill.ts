@@ -1,10 +1,10 @@
-import { getPublicPhoneE164Digits } from "@/config/public-phone";
+import { getWhatsAppE164Digits } from "@/config/public-phone";
 
 /** WhatsApp `text` URL param is limited; stay under ~4k to be safe across clients. */
 export const WHATSAPP_TEXT_MAX = 3800;
 
 export function buildWhatsAppHref(prefillText: string): string {
-  const digits = getPublicPhoneE164Digits();
+  const digits = getWhatsAppE164Digits();
   const base = `https://wa.me/${digits}`;
   const trimmed = prefillText.trim();
   if (!trimmed) return base;

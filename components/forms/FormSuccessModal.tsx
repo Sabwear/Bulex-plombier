@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useMemo } from "react";
-import { getPublicPhoneE164Digits } from "@/config/public-phone";
+import { getWhatsAppE164Digits } from "@/config/public-phone";
 import { buildWhatsAppHref } from "@/lib/whatsappPrefill";
 import { trackWhatsAppClickConversion } from "@/lib/gtagConversions";
 
@@ -27,7 +27,7 @@ export default function FormSuccessModal({
     if (whatsappPrefillText?.trim()) {
       return buildWhatsAppHref(whatsappPrefillText);
     }
-    return `https://wa.me/${getPublicPhoneE164Digits()}`;
+    return `https://wa.me/${getWhatsAppE164Digits()}`;
   }, [whatsappPrefillText]);
 
   const onKeyDown = useCallback(

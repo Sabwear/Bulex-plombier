@@ -6,14 +6,14 @@ import styles from './Footer.module.css';
 import { usePathname } from 'next/navigation';
 import { Mail, MapPin, MessageCircle, CheckCircle2 } from 'lucide-react';
 import LanguageSwitcher from '@/components/header/LanguageSwitcher';
-import { getPublicPhoneE164Digits } from '@/config/public-phone';
+import { getWhatsAppE164Digits } from '@/config/public-phone';
 import { SITE_PHONE } from '@/config/site-navigation';
 import { trackWhatsAppClickConversion } from '@/lib/gtagConversions';
 
 export default function Footer() {
   const pathname = usePathname() || '/';
   const isNl = pathname.startsWith('/nl');
-  const waHref = `https://wa.me/${getPublicPhoneE164Digits()}`;
+  const waHref = `https://wa.me/${getWhatsAppE164Digits()}`;
 
   return (
     <footer className={styles.footer}>

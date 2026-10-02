@@ -2,11 +2,11 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { getPublicPhoneE164Digits } from "@/config/public-phone";
+import { getWhatsAppE164Digits } from "@/config/public-phone";
 import { trackWhatsAppClickConversion } from "@/lib/gtagConversions";
 
 export default function WhatsAppWidget() {
-  const href = `https://wa.me/${getPublicPhoneE164Digits()}`;
+  const href = `https://wa.me/${getWhatsAppE164Digits()}`;
 
   return (
     <div className="pointer-events-none fixed bottom-24 left-4 z-50 md:bottom-8 md:left-6">
