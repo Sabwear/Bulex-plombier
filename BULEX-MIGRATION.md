@@ -1,15 +1,13 @@
-# Bulex migration audit and implementation
+# Bulex Plombier implementation and launch notes
 
 ## Architecture and baseline
 Next.js 15 App Router, React 19, TypeScript, Tailwind 4 plus global/module CSS. Existing /fr and /nl trees each provide home, services/details, city index/details, Brussels, about, contact, quote, certifications, advice/details and four legal pages. Components cover headers/mobile navigation, footer, hero, service templates, upload fields and SMTP forms. City relationships are in data/city-data.ts and commune JSON; scheduled blog records in data/blog. No database, admin application or separate authentication layer found. The only API is POST /api/mail with Nodemailer, environment-based SMTP, attachments, honeypot and customer confirmations. Analytics/Ads are injected by root layout. SEO uses Next metadata, locale alternates, JSON-LD, robots, sitemap and legacy city redirects.
 
-Baseline has extensive uncommitted user changes. None are reverted. No push, publication or deployment is performed.
-
 ## Current deployment behavior
-Updated at the user's request: this checkout serves Bulex exclusively; no brand flag is required. `npm run dev`, `build` and `start` use Bulex and `.next-bulex`. English is the default; a deliberate Dutch language preference is retained. Old French and Vaillant URLs are compatibility redirects only. Historical source/data with pre-existing edits is retained rather than destructively deleted. No live site is modified or deployed.
+This checkout serves Bulex exclusively. `npm run dev`, `build` and `start` use Bulex and `.next-bulex`. English is the default; Dutch is the only alternate language. Legacy French URLs redirect to their English equivalents, while older source and data remain in the repository for compatibility and reuse. Source is pushed to GitHub. No production deployment has been performed.
 
 ## Reuse and redesign
-Reuse Next routing, city source/relationships, mail transport/attachment rules and conversion helper. Replace the public layout, hero, cards, service/solution content, city presentation, about, FAQ, advice, legal and enquiry presentation with bilingual shared templates. Do not carry over generated testimonials/intervention stories, response-time promises, ratings, Vaillant product model names or unsupported certifications.
+The public Bulex pages reuse Next routing, city relationships, mail transport, attachment rules and conversion helpers. The Bulex layout, service and solution content, city pages, advice, legal information and enquiry forms are implemented in `app/bulex`, `components/bulex` and `config/bulex`. Do not add fabricated testimonials, response-time promises, ratings or unsupported certifications.
 
 ## Redirect strategy
 / defaults to EN. FR segments map to existing NL equivalents. Legacy service slugs map explicitly to Bulex service slugs. Old blog slugs map to corresponding new advice topics; city slugs use existing locale maps. Existing Next city redirects remain. Unknown pages return 404. Language switching preserves page type and service/solution identity. No domain-wide live redirects are installed.
@@ -24,11 +22,11 @@ Official logo and photographs sourced from bulex.be via the supplied official br
 - `npm run dev:bulex`: run the Bulex development preview.
 - `npm run build:bulex` / `npm run start:bulex`: isolated Bulex production output in `.next-bulex`.
 - Default `npm run dev`, `build`, `start`: Bulex, English default, output in `.next-bulex`.
-- `npm run test:bulex`: 16 passing automated checks, including actual API handler with mocked SMTP. No external messages sent. All 172 migrated EN/NL page variants render in server-side checks without Vaillant branding.
-- Bulex and original Vaillant production builds and TypeScript validation passed. Build retains the original global CSS font-import and Tailwind module-type warnings.
+- `npm run test:bulex`: 16 passing automated checks, including the actual API handler with mocked SMTP. No external messages are sent. All 172 EN/NL page variants render in server-side checks without legacy-brand content.
+- The Bulex production build and TypeScript validation passed. The build retains the existing global CSS font-import and Tailwind module-type warnings.
 - Visual QA is blocked: local listeners fail with EPERM on both wildcard and loopback addresses. See design-qa.md. No rendered fidelity, browser interaction or Core Web Vitals pass is claimed.
 - All 16 legacy advice topics have concise EN/NL Bulex-safe replacements. Original full articles remain in source for editorial review; manufacturer-specific fault codes/models are not mechanically relabeled.
-- No source push or deployment performed. No real email sent. The preview remains noindex pending final domain, company details, asset approval and end-to-end delivery verification.
+- No production deployment has been performed. No real email has been sent. The preview remains noindex pending a final domain, verified company details, asset approval and end-to-end delivery verification.
 
 ## Homepage follow-up
 Three slides pair localized text with corresponding independent image panels. Text fades over 550ms, images over 900ms; both share the same active slide index. Automatic rotation every 6.5 seconds pauses for focus, hover, hidden tabs and user pause. Manual selection pauses rotation. Reduced-motion preference disables autoplay and animation. Persistent CTAs stay usable during transitions.

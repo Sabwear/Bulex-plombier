@@ -1,39 +1,19 @@
-# Vaillant Loodgieter / Vaillant Plombier
+# Bulex Plombier
 
-> Gecertificeerde Vaillant-partner voor verwarming, ketelherstel en sanitair in België. / Partenaire certifié Vaillant pour le chauffage, le dépannage de chaudière et le sanitaire en Belgique.
+Bulex Plombier provides heating and plumbing services in Belgium as an authorized Bulex partner.
 
-Bilingual (NL/FR) plumbing and heating service operating across Belgium, with a focus on Vaillant boiler repair, replacement, new heating installation, water-leak repair and sanitary installation. Emergency service available 7 days a week.
+The public website is available in English and Dutch. The default language is English.
 
-## Primary URLs
+## Main pages
 
-- https://vaillant-loodgieter.com/nl
-- https://vaillant-loodgieter.com/fr
+- English home: `/en`
+- Dutch home: `/nl`
+- Services: `/en/services` and `/nl/diensten`
+- Heating solutions: `/en/solutions` and `/nl/oplossingen`
+- Service areas: `/en/service-areas` and `/nl/loodgieter`
+- Advice: `/en/advice` and `/nl/blog`
+- Contact: `/en/contact` and `/nl/contact`
 
-## Contact
+Services include boiler repair and maintenance, heating installation, water heaters, plumbing installation and water-leak repair. Availability is confirmed for each address when an enquiry is reviewed.
 
-- Email: contact@vaillant-loodgieter.com
-- Site: https://vaillant-loodgieter.com
-- Area served: Belgium (Brussels and surrounding communes)
-- Languages: Nederlands (nl), Français (fr)
-
-## Services (FR)
-
-- Réparation Vaillant: https://vaillant-loodgieter.com/fr/services/reparation-vaillant-bruxelles
-- Remplacement de chaudière: https://vaillant-loodgieter.com/fr/services/remplacement-chaudiere-bruxelles
-- Nouveau chauffage: https://vaillant-loodgieter.com/fr/services/nouveau-chauffage-bruxelles
-- Réparation de fuite d'eau: https://vaillant-loodgieter.com/fr/services/reparation-fuite-eau-bruxelles
-- Installation sanitaire: https://vaillant-loodgieter.com/fr/services/installation-sanitaire-bruxelles
-- Contrat d'Entretien Vaillant: https://vaillant-loodgieter.com/fr/services/contrat-entretien-vaillant
-
-## Key pages
-
-- NL diensten (overzicht): https://vaillant-loodgieter.com/nl/diensten
-- FR services (aperçu): https://vaillant-loodgieter.com/fr/services
-- NL loodgieter per stad: https://vaillant-loodgieter.com/nl/loodgieter
-- FR plombier par ville: https://vaillant-loodgieter.com/fr/plombier
-- NL blog: https://vaillant-loodgieter.com/nl/blog
-- FR blog: https://vaillant-loodgieter.com/fr/blog
-
-## Sitemap
-
-- https://vaillant-loodgieter.com/sitemap.xml
+The production URL and sitemap are enabled only after launch configuration is complete. Do not infer a production domain or contact address from this file.
