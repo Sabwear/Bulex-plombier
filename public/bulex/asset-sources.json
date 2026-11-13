@@ -1,0 +1,53 @@
+{
+  "retrieved": "2026-11-13",
+  "assets": [
+    {
+      "file": "logo.png",
+      "source": "https://www.bulex.be/media-master/global-media/layout/logos/sdbg-logos-2022/blx-2379256.png"
+    },
+    {
+      "file": "hero.webp",
+      "source": "https://www.bulex.be/pictures/bulex-2020-fotoshoot/service21-211189-01-2276360-format-16-9@3200@retina.jpg"
+    },
+    {
+      "file": "lifestyle.webp",
+      "source": "https://www.bulex.be/pictures/bulex-2020-fotoshoot/service21-211160-01-2276314-format-16-9@3200@retina.jpg"
+    },
+    {
+      "file": "technician.webp",
+      "source": "https://www.bulex.be/pictures/professional/whbc21-210840-01-2-2270333-format-16-9@345@retina.jpg"
+    },
+    {
+      "file": "heat-pump.webp",
+      "source": "https://www.bulex.be/pictures/products/warmtepompen/hp21-210587-01-2549995-format-16-9@345@retina.jpg"
+    },
+    {
+      "file": "water-heater.webp",
+      "source": "https://www.bulex.be/pictures/bulex-brand-campaign-2021/vaillant-beeldenwebsite-boiler-2-2023412-format-16-9@431@retina.jpg"
+    },
+    {
+      "file": "boiler.webp",
+      "source": "https://www.bulex.be/pictures/products/ketels/themaplus-h-condens-bathroom-012-2336624-format-3-4@570@retina.jpg"
+    },
+    {
+      "file": "hero-consultation.webp",
+      "source": "AI-generated illustrative photography, commissioned for this website from the approved design reference. Not a documented customer or staff photograph."
+    },
+    {
+      "file": "hero-service.webp",
+      "source": "AI-generated illustrative photography, commissioned for this website from the approved design reference. Not a documented customer or staff photograph."
+    },
+    {
+      "file": "hero-comfort.webp",
+      "source": "AI-generated illustrative photography, commissioned for this website from the approved design reference. Not a documented customer or staff photograph."
+    },
+    {
+      "file": "plombier-logo.webp",
+      "source": "User-supplied Bulex Plombier Roof Logo.png, read from Downloads; resized without design changes."
+    },
+    {
+      "file": "plombier-logo-light.webp",
+      "source": "AI-edited light lettering variant of user-supplied roof logo, requested for dark footer."
+    }
+  ]
+}

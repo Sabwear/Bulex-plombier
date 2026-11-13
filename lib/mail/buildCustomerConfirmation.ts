@@ -16,11 +16,11 @@ export function buildCustomerConfirmationEmail(args: {
   const name = args.visitorFirstNameOrNom.trim() || (args.locale === "nl" ? "klant" : "client");
 
   if (args.locale === "nl") {
-    const subject = "Bevestiging – we hebben uw aanvraag ontvangen | Vaillant Loodgieter";
+    const subject = "Bevestiging – we hebben uw aanvraag ontvangen | Bulex Plombier";
     const text = [
       `Beste ${name},`,
       "",
-      "Bedankt dat u Vaillant Loodgieter heeft gecontacteerd.",
+      "Bedankt dat u Bulex Plombier heeft gecontacteerd.",
       "",
       "We hebben uw bericht goed ontvangen. Ons team bekijkt uw aanvraag en neemt zo snel mogelijk contact met u op.",
       "",
@@ -36,17 +36,17 @@ export function buildCustomerConfirmationEmail(args: {
       "—",
       "",
       "Met vriendelijke groeten,",
-      "Vaillant Loodgieter · België",
+      "Bulex Plombier · België",
     ].join("\n");
 
     return { subject, text };
   }
 
-  const subject = "Accusé de réception – Vaillant Plombier / Loodgieter";
+  const subject = "Accusé de réception – Bulex Plombier";
   const text = [
     `Bonjour ${name},`,
     "",
-    "Nous vous remercions d’avoir contacté Vaillant Plombier.",
+    "Nous vous remercions d’avoir contacté Bulex Plombier.",
     "",
     "Nous avons bien reçu votre message. Notre équipe en prend connaissance et vous recontacte dans les meilleurs délais.",
     "",
@@ -62,7 +62,7 @@ export function buildCustomerConfirmationEmail(args: {
     "—",
     "",
     "Cordialement,",
-    "Vaillant Plombier · Belgique",
+    "Bulex Plombier · Belgique",
   ].join("\n");
 
   return { subject, text };

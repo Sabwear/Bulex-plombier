@@ -1,3 +1,5 @@
+import {validateBulexRequest,bulexConfirmation} from '@/lib/mail/bulex-request';
+import {isBulex} from '@/config/bulex/brand';
 import { NextResponse } from "next/server";
 import {
   getSmtpConfig,
@@ -89,6 +91,14 @@ export async function POST(req: Request) {
   let body: string;
 
   switch (formType) {
+    case "bulex": {
+      if (!isBulex) return NextResponse.json({ error: "Unknown form." }, { status: 400 });
+      const result = validateBulexRequest(formData);
+      if ('error' in result) return NextResponse.json(result, { status: 400 });
+      subject = result.subject;
+      body = result.body;
+      break;
+    }
     case "contact": {
       const nom = str(formData, "nom");
       const email = str(formData, "email");
@@ -276,6 +286,7 @@ export async function POST(req: Request) {
 
   try {
     await sendViaSmtp(config, {
+      senderName: formType === "bulex" ? "Bulex Plombier" : undefined,
       subject,
       text: body,
       replyTo,
@@ -301,12 +312,13 @@ export async function POST(req: Request) {
   }
 
   try {
-    const { subject: subjC, text: textC } = buildCustomerConfirmationEmail({
+    const { subject: subjC, text: textC } = formType === "bulex" ? bulexConfirmation(str(formData,"locale"), visitorName, body) : buildCustomerConfirmationEmail({
       locale: confirmLocale,
       visitorFirstNameOrNom: visitorName,
       submittedCopy: body,
     });
     await sendViaSmtp(config, {
+      senderName: formType === "bulex" ? "Bulex Plombier" : undefined,
       to: [replyTo],
       subject: subjC,
       text: textC,

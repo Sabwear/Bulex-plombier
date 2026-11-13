@@ -1,7 +1,16 @@
+import {headers} from 'next/headers';
+import {isBulex} from '@/config/bulex/brand';
+import Header from '@/components/bulex/Header';
+import {Footer} from '@/components/bulex/Shared';
+import '@/components/bulex/bulex.css';
 import Link from "next/link";
 import styles from "./not-found.module.css";
 
-export default function NotFound() {
+export default async function NotFound() {
+  if (isBulex) {
+    const locale = (await headers()).get('x-bulex-locale')==='nl'?'nl':'en';
+    return <div className="bulex-site"><Header locale={locale}/><main id="main-content" className="bx-not-found"><span className="bx-eyebrow">404</span><h1>{locale==='nl'?'Pagina niet gevonden':'Page not found'}</h1><p>{locale==='nl'?'Deze pagina bestaat niet of is verplaatst.':'This page does not exist or has moved.'}</p><Link href={`/${locale}`} className="bx-button">{locale==='nl'?'Terug naar home':'Back to home'}</Link></main><Footer locale={locale}/></div>;
+  }
   return (
     <main className={styles.wrapper}>
       <section className={styles.card}>

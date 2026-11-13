@@ -1,0 +1,173 @@
+{
+  "anderlecht": {
+    "profile": "Terraced workers’ houses, renovated social housing and new residential developments",
+    "issues": [
+      "Ageing pipes in terraced homes",
+      "Leaks in older central heating",
+      "End-of-life boilers in social housing",
+      "Water-pressure issues in newer buildings"
+    ]
+  },
+  "auderghem": {
+    "profile": "Residential villas, family homes and recent apartments near the forest",
+    "issues": [
+      "Boiler maintenance in larger villas",
+      "Damp in properties near the forest",
+      "Replacement heating in 1970s homes",
+      "Leaks in ageing sanitary installations"
+    ]
+  },
+  "berchem-sainte-agathe": {
+    "profile": "Family homes, quiet residential developments and smaller apartment buildings",
+    "issues": [
+      "Older boilers in family homes",
+      "Thermostat and heating-control problems",
+      "Leaks in ageing copper pipes",
+      "Blocked drains in older homes"
+    ]
+  },
+  "bruxelles-ville": {
+    "profile": "Offices, older city-centre apartments, renovated lofts and residential buildings",
+    "issues": [
+      "Leaks in older communal risers",
+      "Water pressure in tall buildings",
+      "Boiler replacement in renovated apartments",
+      "Heating faults in historic buildings"
+    ]
+  },
+  "etterbeek": {
+    "profile": "Apartment buildings, townhouses and homes in the European quarter",
+    "issues": [
+      "Leaks in apartment buildings",
+      "Boiler replacement in townhouses",
+      "Ageing pipework",
+      "Scale in hot-water equipment"
+    ]
+  },
+  "evere": {
+    "profile": "Terraced houses, apartment buildings and residential districts built in the 1960s–1980s",
+    "issues": [
+      "Ageing boilers in terraced homes",
+      "Blocked drains in older buildings",
+      "Central-heating leaks",
+      "Radiator problems in apartments"
+    ]
+  },
+  "forest": {
+    "profile": "Art Deco terraced houses, apartments and leafy residential neighbourhoods",
+    "issues": [
+      "Leaks in older Art Deco pipework",
+      "Boiler replacement in terraced homes",
+      "Basement drainage problems",
+      "Winter heating faults"
+    ]
+  },
+  "ganshoren": {
+    "profile": "Family homes, residential villas and small apartment buildings",
+    "issues": [
+      "Boiler replacement in family homes",
+      "Ageing heating systems",
+      "Copper-pipe leaks",
+      "Thermostat problems"
+    ]
+  },
+  "ixelles": {
+    "profile": "Art Nouveau townhouses, older apartments with ageing risers and renovated shared buildings",
+    "issues": [
+      "Leaks in communal risers",
+      "Boiler replacement in apartments",
+      "Water pressure across multiple floors",
+      "Scale in water heaters"
+    ]
+  },
+  "jette": {
+    "profile": "Family homes, terraced houses from the 1960s–1980s and newer properties",
+    "issues": [
+      "Replacement of older gas boilers",
+      "Blocked drains in older homes",
+      "Radiator leaks",
+      "Boiler thermostat problems"
+    ]
+  },
+  "koekelberg": {
+    "profile": "Terraced houses, smaller apartment buildings and neighbourhoods around the Basilica",
+    "issues": [
+      "Boiler replacement",
+      "Leaks in older lead pipes",
+      "Apartment heating problems",
+      "Blocked drains"
+    ]
+  },
+  "molenbeek": {
+    "profile": "Renovated workers’ houses, apartment buildings and canal-side developments",
+    "issues": [
+      "Ageing pipework",
+      "Older boiler replacement",
+      "Damp and basement leaks",
+      "Heating faults in apartments"
+    ]
+  },
+  "saint-gilles": {
+    "profile": "Art Nouveau townhouses, older apartment buildings, lofts and contemporary renovations",
+    "issues": [
+      "Leaks in older townhouse pipework",
+      "Communal riser problems",
+      "Boiler replacement in renovated homes",
+      "Scale in hot-water systems"
+    ]
+  },
+  "saint-josse-ten-noode": {
+    "profile": "Older apartments, mixed retail and residential buildings, and recent renovations",
+    "issues": [
+      "Leaks in densely occupied buildings",
+      "Ageing pipes in mixed-use buildings",
+      "Apartment boiler replacement",
+      "Water-pressure problems"
+    ]
+  },
+  "schaerbeek": {
+    "profile": "Art Deco townhouses, apartment buildings and renovated social housing",
+    "issues": [
+      "Leaks around flat roofs and gutters",
+      "Boiler replacement in apartments",
+      "Older lead pipework",
+      "Winter heating faults in social housing"
+    ]
+  },
+  "uccle": {
+    "profile": "Residential villas, family homes with gardens and newer apartments",
+    "issues": [
+      "Heating maintenance in larger villas",
+      "Boiler replacement",
+      "Leaks in older sanitary installations",
+      "Drainage on sloping plots"
+    ]
+  },
+  "watermael-boitsfort": {
+    "profile": "Garden suburbs, family houses, forest-edge villas and Le Logis–Floréal heritage housing",
+    "issues": [
+      "Boiler maintenance in heritage housing",
+      "Damp near the forest",
+      "Replacement heating in 1920s–1930s homes",
+      "Ageing sanitary pipework"
+    ]
+  },
+  "woluwe-saint-lambert": {
+    "profile": "Family houses, residential apartments and green neighbourhoods",
+    "issues": [
+      "Boiler replacement in family homes",
+      "Apartment heating maintenance",
+      "Sanitary leaks",
+      "Thermostat and control problems"
+    ]
+  },
+  "woluwe-saint-pierre": {
+    "profile": "Villas, homes with gardens, apartments and diplomatic neighbourhoods",
+    "issues": [
+      "Villa heating maintenance",
+      "Boiler replacement",
+      "Leaks in older sanitary systems",
+      "Garden-property drainage problems"
+    ]
+  }
+}

@@ -42,3 +42,6 @@ next-env.d.ts
 SEO-REPORT.html
 FULL-AUDIT-REPORT.md    
 ACTION-PLAN.md
+
+# Isolated Bulex build output
+/.next-bulex/

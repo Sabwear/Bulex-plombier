@@ -1,3 +1,7 @@
+import {isBulex,bulexOrigin,bulexIndexable} from '@/config/bulex/brand';
+import {href,pageSegments,type PageKey} from '@/config/bulex/routes';
+import {getServices,getSolutions} from '@/config/bulex/content';
+import {getAdvice} from '@/config/bulex/advice';
 import type { MetadataRoute } from "next";
 import { getAllSlugsFr, getAllSlugsNl } from "@/data/city-data";
 import { getBlogPosts } from "@/data/types";
@@ -36,6 +40,14 @@ const staticPaths = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  if (isBulex) {
+    if (!bulexIndexable) return [];
+    return (['nl','en'] as const).flatMap(locale => {
+      const paths = (Object.keys(pageSegments) as PageKey[]).map(key => href(locale,key));
+      paths.push(...getServices(locale).map(s=>href(locale,'services',s.slug)),...getSolutions(locale).map(s=>href(locale,'solutions',s.slug)),...getAllSlugsNl().map(slug=>href(locale,'areas',slug)),...getAdvice(locale).map(a=>href(locale,'blog',a.slug)));
+      return paths.map(path=>({url:bulexOrigin+path,changeFrequency:'monthly' as const}));
+    });
+  }
   const entries: MetadataRoute.Sitemap = staticPaths.map((path) => ({
     url: `${base}${path}`,
     lastModified: new Date(),

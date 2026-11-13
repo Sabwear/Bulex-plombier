@@ -10,6 +10,7 @@ export type MailAttachment = {
 export async function sendViaSmtp(
   config: SmtpEnv,
   options: {
+    senderName?: string;
     subject: string;
     text: string;
     /** HTML body (multipart/alternative with text). */
@@ -37,7 +38,7 @@ export async function sendViaSmtp(
       );
 
   await transporter.sendMail({
-    from: `"Vaillant Loodgieter" <${config.mailFrom}>`,
+    from: { name: options.senderName || "Bulex Plombier", address: config.mailFrom },
     to: recipients.join(", "),
     replyTo: options.replyTo || config.mailFrom,
     subject: options.subject,

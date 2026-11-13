@@ -1,12 +1,14 @@
+import { headers } from 'next/headers';
+import {isBulex,bulexOrigin} from '@/config/bulex/brand';
 import type { Metadata } from "next";
 import "./globals.css";
 import { getPublicPhoneDisplay } from "@/config/public-phone";
 
 const siteVerificationGoogle =
-  process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION?.trim() || undefined;
+  (isBulex ? process.env.BULEX_GOOGLE_SITE_VERIFICATION : process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION)?.trim() || undefined;
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://vaillant-loodgieter.com"),
+  metadataBase: new URL(isBulex ? bulexOrigin : "https://vaillant-loodgieter.com"),
   ...(siteVerificationGoogle
     ? { verification: { google: siteVerificationGoogle } }
     : {}),
@@ -24,15 +26,16 @@ const phoneConversionNumber =
   getPublicPhoneDisplay();
 const gtagScriptId = measurementId || googleAdsId;
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const locale = isBulex ? (await headers()).get("x-bulex-locale") || "en" : "nl";
   return (
-    <html lang="nl" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <head>
-        {gtagScriptId ? (
+        {!isBulex && gtagScriptId ? (
           <>
             <script
               async
@@ -50,7 +53,7 @@ ${phoneConversionLabel ? `gtag('config', '${phoneConversionLabel}', {${phoneConv
             />
           </>
         ) : null}
-        <link rel="icon" href="/flame.svg" />
+        <link rel="icon" href={isBulex ? "/bulex/logo.png" : "/flame.svg"} />
       </head>
       <body>
         {children}

@@ -1,5 +1,5 @@
 {
-  "name": "vaillant-loodgieter",
+  "name": "bulex-plombier",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,7 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "validate:data": "npx tsx scripts/validate-communes.ts"
+    "validate:data": "npx tsx scripts/validate-communes.ts",
+    "dev:bulex": "SITE_BRAND=bulex next dev",
+    "build:bulex": "SITE_BRAND=bulex next build",
+    "start:bulex": "SITE_BRAND=bulex next start",
+    "test:bulex": "node --test tests/bulex.test.cjs"
   },
   "dependencies": {
     "lucide-react": "^0.577.0",
