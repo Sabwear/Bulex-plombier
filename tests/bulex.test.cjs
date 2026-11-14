@@ -150,3 +150,17 @@ test('Application mode replaces the separate launch flag',()=>{
  assert.equal(resolveAppMode(undefined,'production'),'production');
  assert.equal(resolveAppMode(undefined,'development'),'development');
 });
+test('Public contact numbers use env values without hardcoded fallbacks',()=>{
+ const phone=require('../config/public-phone.ts'),React=require('react'),{renderToStaticMarkup}=require('react-dom/server');
+ const Widget=require('../components/WhatsAppWidget.tsx').default;
+ const savedPhone=process.env.NEXT_PUBLIC_PHONE_NUMBER,savedWhatsApp=process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
+ try{
+  delete process.env.NEXT_PUBLIC_PHONE_NUMBER;delete process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
+  assert.equal(phone.getPublicPhoneTelHref(),'');assert.equal(phone.getWhatsAppE164Digits(),'');assert.equal(renderToStaticMarkup(React.createElement(Widget,{})),'');
+  process.env.NEXT_PUBLIC_PHONE_NUMBER='02 123 45 67';process.env.NEXT_PUBLIC_WHATSAPP_NUMBER='0032 470 12 34 56';
+  assert.equal(phone.getPublicPhoneTelHref(),'tel:+3221234567');assert.equal(phone.getWhatsAppE164Digits(),'32470123456');
+  const html=renderToStaticMarkup(React.createElement(Widget,{locale:'en'}));
+  assert.match(html,/https:\/\/wa.me\/32470123456/);assert.match(html,/Do you need help/);assert.doesNotMatch(html,/vaillant/i);
+  assert.match(renderToStaticMarkup(React.createElement(Widget,{locale:'nl'})),/Kunnen we u helpen/);
+ }finally{if(savedPhone===undefined)delete process.env.NEXT_PUBLIC_PHONE_NUMBER;else process.env.NEXT_PUBLIC_PHONE_NUMBER=savedPhone;if(savedWhatsApp===undefined)delete process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;else process.env.NEXT_PUBLIC_WHATSAPP_NUMBER=savedWhatsApp}
+});

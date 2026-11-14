@@ -75,3 +75,7 @@ Public social and Google review links use a single `NEXT_PUBLIC_*` naming scheme
 French URLs are legacy-only and redirect to the corresponding English page when available. The public site supports English and Dutch; older source files remain in the repository for compatibility and shared data.
 
 See [BULEX-MIGRATION.md](./BULEX-MIGRATION.md) for deployment notes and [design-qa.md](./design-qa.md) for the visual QA record.
+
+## Contact widget
+
+The floating WhatsApp widget uses `NEXT_PUBLIC_WHATSAPP_NUMBER`. The call buttons use `NEXT_PUBLIC_PHONE_NUMBER`, and public email uses `NEXT_PUBLIC_SUPPORT_EMAIL`. Set each independently in your environment. Belgian local numbers, +32 and 0032 formats are supported; links use international digits. Missing phone/WhatsApp settings hide their actions. Rebuild after changing public environment values. Hover or keyboard focus expands the help label; reduced-motion disables the pulse.
