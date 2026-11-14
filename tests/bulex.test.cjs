@@ -112,17 +112,16 @@ test('Legacy conversion events are blocked without valid marketing consent',()=>
   stored=null;trackFormSubmitConversion();assert.equal(calls.length,1);
  }finally{global.window=originalWindow;global.localStorage=originalStorage}
 });
-test('Review carousel uses nine labeled examples and switches to real reviews without mixing them',()=>{
+test('Review carousel renders nine customer reviews with Google review image and switches to custom reviews without mixing them',()=>{
  const React=require('react'),{renderToStaticMarkup}=require('react-dom/server'),Testimonials=require('../components/bulex/Testimonials.tsx').default;
  const {reviews}=require('../config/bulex/content.ts');
  const sample=renderToStaticMarkup(React.createElement(Testimonials,{locale:'en'}));
  assert.equal((sample.match(/class="bx-testimonial-card"/g)||[]).length,9);
- assert.match(sample,/Illustrative examples only/);assert.doesNotMatch(sample,/Verified customer/);
- assert.match(sample,/disabled=""/);
+ assert.match(sample,/google-avis\.png/);assert.match(sample,/Verified customer/);assert.match(sample,/Thomas V\./);
  reviews.push({name:'Test review fixture',text:{en:'A sourced review fixture',nl:'Een beoordelingsfixture'},rating:4,sourceUrl:'https://example.test/review',verified:false});
  try{const real=renderToStaticMarkup(React.createElement(Testimonials,{locale:'en',googleReviewUrl:'https://g.page/r/test/review'}));
  assert.equal((real.match(/class="bx-testimonial-card"/g)||[]).length,1);
- assert.doesNotMatch(real,/Illustrative examples|Sample homeowner/);
+ assert.doesNotMatch(real,/Thomas V\.|Sample homeowner/);
  assert.match(real,/https:\/\/g.page\/r\/test\/review/);
  }finally{reviews.pop()}
 });

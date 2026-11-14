@@ -11,8 +11,8 @@ export default function WhatsAppWidget({locale='en'}:{locale?:BulexLocale}){
  const help=locale==='nl'?'Kunnen we u helpen?':'Do you need help?';
  return <aside className={styles.widget} aria-label={locale==='nl'?'Contact via WhatsApp':'Contact via WhatsApp'}>
  <a className={styles.button} href={'https://wa.me/'+digits} target="_blank" rel="noopener noreferrer" aria-label={locale==='nl'?'Hulp nodig? Contacteer Bulex Plombier via WhatsApp':'Need help? Contact Bulex Plombier on WhatsApp'} onClick={trackWhatsAppClickConversion}>
- <span className={styles.label}><strong>{help}</strong><span>{locale==='nl'?'Stuur ons een bericht':'Send us a message'}</span></span>
  <span className={styles.icon}><Image src="/icons/plumbing-elements/whatsapp.svg" alt="" width={29} height={29}/></span>
+ <span className={styles.label}><strong>{help}</strong><span>{locale==='nl'?'Stuur ons een bericht':'Send us a message'}</span></span>
  </a>
  </aside>;
 }

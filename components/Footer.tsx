@@ -215,6 +215,10 @@ export default function Footer() {
           <p className={styles.copyright}>
             © {new Date().getFullYear()} vaillant Loodgieter.{" "}
             {isNl ? "Alle rechten voorbehouden." : "Tous droits réservés."}{" "}
+            · created by{" "}
+            <a href="https://ranber.com" target="_blank" rel="noopener noreferrer">
+              Ranber Agency (ranber.com)
+            </a>{" "}
             <Link href={isNl ? "/nl/juridische-vermelding" : "/fr/mentions-legales"}>
               {isNl ? "Juridische vermelding" : "Mentions légales"}
             </Link>
