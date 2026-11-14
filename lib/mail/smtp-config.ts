@@ -15,8 +15,8 @@ export function getSmtpConfig(): SmtpEnv | null {
   if (!host || !user || !pass) return null;
 
   const portRaw = process.env.SMTP_PORT?.trim();
-  const port = portRaw ? Number.parseInt(portRaw, 10) : 587;
-  if (Number.isNaN(port)) return null;
+  const port = portRaw ? Number(portRaw) : 587;
+  if (!Number.isInteger(port) || port < 1 || port > 65535) return null;
 
   const secure =
     process.env.SMTP_SECURE === "true" ||
@@ -26,11 +26,11 @@ export function getSmtpConfig(): SmtpEnv | null {
   const mailFrom =
     process.env.MAIL_FROM?.trim() ||
     process.env.NEXT_PUBLIC_SUPPORT_EMAIL?.trim() ||
-    "";
+    user;
   const mailTo =
     process.env.MAIL_TO?.trim() ||
-    process.env.ADMIN_EMAIL?.trim() ||
-    "";
+    process.env.NEXT_PUBLIC_SUPPORT_EMAIL?.trim() ||
+    mailFrom;
   if (!mailFrom || !mailTo) return null;
 
   return { host, port, secure, user, pass, mailFrom, mailTo };

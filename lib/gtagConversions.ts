@@ -1,7 +1,9 @@
+import {hasMarketingConsent} from '@/config/bulex/consent';
 /**
  * Google Ads conversion helpers (gtag).
  *
- * The global gtag + AW-11417443258 tag is loaded in `app/layout.tsx`.
+ * No Google tag is loaded by the current Bulex layout. These legacy actions
+ * are additionally gated on explicit, unexpired marketing consent.
  * These helpers fire individual conversion events at the right moments:
  * - Lead form successfully submitted (contact + request-quote pages)
  * - WhatsApp button clicked (wa.me links)
@@ -26,7 +28,7 @@ export const FORM_SUBMIT_SEND_TO = "AW-11417443258/IMM4CN_KgbocELq3ocQq";
 export const WHATSAPP_CLICK_SEND_TO = "AW-11417443258/zlYWCMzh-bkcELq3ocQq";
 
 function fireConversion(sendTo: string): void {
-  if (typeof window === "undefined") return;
+  if (typeof window === "undefined" || !hasMarketingConsent()) return;
   const gtag = window.gtag;
   if (typeof gtag !== "function") return;
   gtag("event", "conversion", { send_to: sendTo });

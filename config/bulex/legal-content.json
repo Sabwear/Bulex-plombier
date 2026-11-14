@@ -1,0 +1,240 @@
+{
+  "privacy": {
+    "en": [
+      {
+        "title": "Who is responsible for your data?",
+        "text": "The business identified on our Legal information page is responsible for personal data processed through this website. Use the contact form or the published business email to ask about this notice or exercise your rights. Bulex Plombier is the service website; the appliance manufacturer is a separate organisation."
+      },
+      {
+        "title": "Data received and why it is needed",
+        "text": "When you request a visit, we receive your name, email, telephone, address and postcode, selected service, message, urgency preference and optional attachments. We use these to assess the request, contact you and arrange any agreed work. Processing necessary to respond to your request or prepare a service contract is based on steps at your request before a contract, or performance of that contract. Fields marked required are needed to handle the request; photographs are optional."
+      },
+      {
+        "title": "Security and website operation",
+        "text": "The mail endpoint validates submitted fields and attachments and uses a hidden anti-spam field. Hosting and communications systems may process technical connection data for delivery, reliability and security, based on legitimate interests in operating and protecting the service. We do not use the enquiry form for automated decisions about you or for a marketing subscription."
+      },
+      {
+        "title": "Who receives the information?",
+        "text": "Enquiries are delivered to the service team through the configured email provider. Hosting and email providers may process information as service providers. Access should be limited to people handling your request and resulting work. Information may also be provided to authorities where a legal obligation requires it. We do not sell enquiry data."
+      },
+      {
+        "title": "Retention and international processing",
+        "text": "Enquiry correspondence is kept while needed to assess and follow up the request. Contract, invoice and dispute records may need longer retention under applicable obligations. A precise schedule and any provider-specific international transfers depend on the operating business and its hosting/email agreements; contact the controller for these details. Where processing outside the EEA occurs, an appropriate legal transfer mechanism is required."
+      },
+      {
+        "title": "Your data-protection rights",
+        "text": "Depending on the processing and applicable conditions, you may request access, correction, erasure, restriction or portability, and object to processing based on legitimate interests. You can withdraw consent where consent is the basis, without affecting earlier lawful processing. Send a request through Contact, explaining what you need. Identification may be requested only where necessary to verify the request."
+      },
+      {
+        "title": "Complaints and independent advice",
+        "text": "You may complain to the Belgian Data Protection Authority (APD/GBA), including if you believe a request has not been properly handled. Its website explains the complaint process. Contacting us first can help resolve an issue, but does not remove your right to complain directly."
+      },
+      {
+        "title": "Cookies and external websites",
+        "text": "Our cookie policy describes the consent-choice storage. This version loads no optional analytics or advertising tags. Manufacturer documentation and social links open external services governed by their own notices. Clicking a link is different from this website embedding their tracking tools."
+      }
+    ],
+    "nl": [
+      {
+        "title": "Wie is verantwoordelijk voor uw gegevens?",
+        "text": "De onderneming op onze pagina Juridische informatie is verantwoordelijk voor persoonsgegevens via deze website. Gebruik het contactformulier of het gepubliceerde zakelijke e-mailadres voor vragen of om uw rechten uit te oefenen. Bulex Plombier is de dienstenwebsite; de toestelfabrikant is een afzonderlijke organisatie."
+      },
+      {
+        "title": "Welke gegevens ontvangen we en waarom?",
+        "text": "Bij een aanvraag ontvangen we naam, e-mail, telefoon, adres en postcode, gekozen dienst, bericht, dringendheidskeuze en optionele bijlagen. Hiermee beoordelen we de aanvraag, contacteren we u en plannen we overeengekomen werken. Noodzakelijke verwerking berust op stappen op uw verzoek vóór een overeenkomst of de uitvoering ervan. Verplichte velden zijn nodig voor behandeling; foto’s zijn optioneel."
+      },
+      {
+        "title": "Beveiliging en websitewerking",
+        "text": "Het e-mailendpoint controleert velden en bijlagen en gebruikt een verborgen antispamveld. Hosting- en communicatiesystemen kunnen technische verbindingsgegevens verwerken voor bezorging, betrouwbaarheid en beveiliging, op basis van het gerechtvaardigde belang om de dienst te beheren en beschermen. Het formulier dient niet voor geautomatiseerde beslissingen over u of een marketinginschrijving."
+      },
+      {
+        "title": "Wie ontvangt de informatie?",
+        "text": "Aanvragen gaan via de ingestelde e-mailprovider naar het serviceteam. Hosting- en e-mailproviders kunnen als dienstverlener gegevens verwerken. Toegang hoort beperkt te zijn tot personen die uw aanvraag en werken behandelen. Bij een wettelijke verplichting kunnen gegevens aan bevoegde instanties worden verstrekt. We verkopen geen aanvraaggegevens."
+      },
+      {
+        "title": "Bewaring en internationale verwerking",
+        "text": "Correspondentie blijft bewaard zolang nodig voor beoordeling en opvolging. Contract-, factuur- en geschillendossiers kunnen op grond van toepasselijke verplichtingen langer nodig zijn. Een precies schema en eventuele internationale doorgiften hangen af van onderneming en hosting- en e-mailafspraken; vraag de verantwoordelijke naar die details. Verwerking buiten de EER vereist een passend juridisch doorgiftemechanisme."
+      },
+      {
+        "title": "Uw privacyrechten",
+        "text": "Afhankelijk van verwerking en toepasselijke voorwaarden kunt u inzage, correctie, wissing, beperking of overdraagbaarheid vragen en bezwaar maken tegen verwerking op grond van gerechtvaardigd belang. Toestemming kunt u intrekken wanneer zij de grondslag is, zonder eerdere rechtmatige verwerking te wijzigen. Licht uw verzoek toe via Contact. Identificatie kan uitsluitend worden gevraagd voor zover nodig voor verificatie."
+      },
+      {
+        "title": "Klachten en onafhankelijk advies",
+        "text": "U kunt een klacht indienen bij de Belgische Gegevensbeschermingsautoriteit (GBA/APD), ook wanneer een verzoek volgens u niet correct is behandeld. De autoriteit legt de procedure op haar website uit. Eerst contact met ons kan helpen, maar beperkt uw recht op een rechtstreekse klacht niet."
+      },
+      {
+        "title": "Cookies en externe websites",
+        "text": "Ons cookiebeleid beschrijft de opslag van uw toestemmingskeuze. Deze versie laadt geen optionele analytics- of advertentietags. Fabrikantdocumentatie en sociale links leiden naar externe diensten met eigen beleid. Een link aanklikken verschilt van het insluiten van hun trackingtools op deze website."
+      }
+    ]
+  },
+  "cookies": {
+    "en": [
+      {
+        "title": "What this website stores",
+        "text": "The first-party localStorage entry bulex-cookie-choice remembers your cookie preference, a policy version and the time of your choice. It is necessary to remember your privacy choice and is valid for up to six months. It is stored in your browser, rather than sent as an enquiry attachment or sold to a third party."
+      },
+      {
+        "title": "No optional tracking is active",
+        "text": "This version does not install Google Analytics, Google Ads tags, advertising pixels or embedded social-media trackers. Analytics and advertising are shown as unavailable in the preferences panel. Accepting all and rejecting optional cookies currently produce the same result: necessary choice storage only. Optional services will require an updated notice and fresh consent before activation."
+      },
+      {
+        "title": "Change or withdraw your choice",
+        "text": "Open Cookie settings at the bottom of any page. You can reject optional storage or withdraw optional consent with one action. Your enquiry form remains available. Clearing browser storage removes the saved choice and the notice may appear again. If your browser prevents storage, optional tracking remains off."
+      },
+      {
+        "title": "Languages and third-party services",
+        "text": "English is the default and the language is identified by the page URL. This version does not need a language-preference cookie. Hosting or security infrastructure may use essential mechanisms outside the application; the operator must keep this inventory aligned with its deployed providers. External links follow the destination’s policies when you choose to visit them."
+      },
+      {
+        "title": "Google services",
+        "text": "A Google site-verification meta tag, when configured, proves site ownership and does not itself load advertising or analytics. No consent-based Google tag is enabled by this banner. If measurement or advertising is later introduced, the operator must configure its consent controls, purposes and disclosures before enabling that service."
+      }
+    ],
+    "nl": [
+      {
+        "title": "Wat bewaart deze website?",
+        "text": "Het first-party localStorage-item bulex-cookie-choice onthoudt uw cookievoorkeur, beleidsversie en keuzetijdstip. Dit is nodig om uw privacykeuze te bewaren en is maximaal zes maanden geldig. De gegevens blijven in uw browser en worden niet als aanvraagbijlage verzonden of aan derden verkocht."
+      },
+      {
+        "title": "Geen optionele tracking actief",
+        "text": "Deze versie installeert geen Google Analytics, Google Ads-tags, advertentiepixels of ingesloten sociale trackers. Analytics en advertenties zijn in het voorkeurenvenster niet beschikbaar. Alles accepteren en optionele cookies weigeren hebben momenteel hetzelfde resultaat: uitsluitend noodzakelijke keuzeopslag. Nieuwe optionele diensten vragen bijgewerkte informatie en nieuwe toestemming vóór activering."
+      },
+      {
+        "title": "Uw keuze wijzigen of intrekken",
+        "text": "Open Cookie-instellingen onderaan elke pagina. U kunt met één handeling optionele opslag weigeren of toestemming intrekken. Het aanvraagformulier blijft beschikbaar. Wis browseropslag om de bewaarde keuze te verwijderen; de melding kan dan opnieuw verschijnen. Als opslag niet mogelijk is, blijft optionele tracking uit."
+      },
+      {
+        "title": "Talen en externe diensten",
+        "text": "Engels is de standaardtaal; de pagina-URL identificeert de taal. Deze versie heeft geen taalvoorkeurcookie nodig. Hosting- of beveiligingsinfrastructuur kan buiten de applicatie noodzakelijke mechanismen gebruiken; de exploitant moet de inventaris met de ingezette providers afstemmen. Bij een externe link geldt het beleid van de bestemming."
+      },
+      {
+        "title": "Google-diensten",
+        "text": "Een ingestelde Google-verificatiemeta-tag bewijst eigendom van de site en laadt zelf geen advertenties of analytics. Deze banner activeert geen Google-tag op basis van toestemming. Bij latere meting of advertenties moet de exploitant toestemmingsbeheer, doeleinden en informatie vooraf configureren."
+      }
+    ]
+  },
+  "terms": {
+    "en": [
+      {
+        "title": "Use of the website and requests",
+        "text": "This website provides information and lets you request heating and plumbing services. Sending a form is not a purchase, accepted quotation, guaranteed arrival time or confirmed appointment. Do not use the form for an immediate danger requiring public emergency services."
+      },
+      {
+        "title": "Quotations and agreed services",
+        "text": "Before you commission work, the proposed scope, price or price-calculation method, applicable VAT, travel or diagnostic charges and execution arrangements must be clarified. Additional work requires discussion and agreement. Specific service terms are supplied with the quotation or contract; this website notice does not replace them."
+      },
+      {
+        "title": "Information and product references",
+        "text": "Product families and fault-code summaries are general guidance. Exact compatibility, stock, dimensions, performance and installation requirements must be checked against the correct manufacturer documentation. Generated campaign images are illustrative and do not establish a model specification."
+      },
+      {
+        "title": "Intellectual property and external links",
+        "text": "Bulex names and manufacturer marks belong to their respective owners. This service website is distinct from the manufacturer’s own customer service. External documentation is provided for reference. Do not reuse protected website text, photography or branding without the appropriate permission."
+      },
+      {
+        "title": "Consumer rights and disputes",
+        "text": "Nothing in these website terms removes mandatory consumer rights. Read Consumer information for the enquiry process, complaints and withdrawal information. If a provision conflicts with mandatory law, that law takes precedence. Contact the operating business about a service issue with the quotation or invoice reference."
+      }
+    ],
+    "nl": [
+      {
+        "title": "Websitegebruik en aanvragen",
+        "text": "Deze website geeft informatie en laat aanvragen voor verwarming en sanitair toe. Een formulier is geen aankoop, aanvaarde offerte, gegarandeerde aankomsttijd of bevestigde afspraak. Gebruik het formulier niet bij direct gevaar waarvoor een hulpdienst nodig is."
+      },
+      {
+        "title": "Offertes en overeengekomen diensten",
+        "text": "Vóór opdracht moeten omvang, prijs of berekeningsmethode, toepasselijke btw, verplaatsings- of diagnosekosten en uitvoering duidelijk zijn. Bijkomende werken vragen overleg en akkoord. Specifieke dienstvoorwaarden volgen bij de offerte of overeenkomst; deze websitevoorwaarden vervangen ze niet."
+      },
+      {
+        "title": "Informatie en productreferenties",
+        "text": "Productreeksen en foutcodesamenvattingen zijn algemene informatie. Exacte compatibiliteit, voorraad, afmetingen, prestaties en installatievereisten worden met de juiste fabrikantdocumentatie gecontroleerd. Gegenereerde campagnebeelden zijn illustratief en bepalen geen modelspecificatie."
+      },
+      {
+        "title": "Intellectuele eigendom en externe links",
+        "text": "Bulex-namen en fabrikantmerken behoren toe aan hun rechthebbenden. Deze dienstenwebsite is onderscheiden van de eigen klantendienst van de fabrikant. Externe documentatie dient als referentie. Hergebruik beschermde tekst, fotografie of merken niet zonder passende toestemming."
+      },
+      {
+        "title": "Consumentenrechten en geschillen",
+        "text": "Deze websitevoorwaarden beperken geen dwingende consumentenrechten. Lees Consumenteninformatie over aanvragen, klachten en herroeping. Dwingend recht gaat voor bij tegenstrijdigheid. Contacteer de exploitant over een dienstprobleem met de offerte- of factuurreferentie."
+      }
+    ]
+  },
+  "consumer": {
+    "en": [
+      {
+        "title": "Before you agree to a paid intervention",
+        "text": "The form on this site requests contact; it does not conclude a paid contract. Before agreeing to work, ask for the business identity, scope, total price including applicable taxes or a calculation method, extra charges and expected execution arrangements. Keep the quotation and the information received."
+      },
+      {
+        "title": "Withdrawal for distance or off-premises contracts",
+        "text": "Where the statutory right applies, consumers generally have 14 days to withdraw from a service contract concluded at a distance or away from business premises. The relevant start date and instructions must be supplied with the contract. To withdraw, send the business an unambiguous statement identifying you and the contract; a model withdrawal form should also be supplied where required."
+      },
+      {
+        "title": "Starting work during a withdrawal period",
+        "text": "If you want services to begin during an applicable withdrawal period, the business must obtain the required express request and provide the relevant information. Depending on the circumstances, proportionate payment can be due for services already performed. Loss of a right after full performance requires the conditions laid down by law; submitting this website form does not waive it."
+      },
+      {
+        "title": "Urgent repairs and additional work",
+        "text": "A specific exception can apply where you expressly ask for a visit to carry out urgent repairs or maintenance. It does not automatically cover additional services or goods beyond what was specifically requested and necessary replacement parts. The actual contract and circumstances matter; an urgent checkbox alone is not a general waiver."
+      },
+      {
+        "title": "Complaints and out-of-court resolution",
+        "text": "Contact the operating business with your name, service address, quotation or invoice reference, date and a description of the issue and requested resolution. Attach relevant photographs if appropriate. If the dispute cannot be resolved directly, the Belgian Consumer Mediation Service provides information on out-of-court procedures. Mandatory rights and access to competent courts remain available."
+      }
+    ],
+    "nl": [
+      {
+        "title": "Voordat u een betaalde interventie overeenkomt",
+        "text": "Het formulier vraagt contact en sluit geen betaalde overeenkomst. Vraag vóór akkoord naar bedrijfsidentiteit, omvang, totaalprijs inclusief belastingen of berekeningsmethode, bijkomende kosten en uitvoeringsafspraken. Bewaar de offerte en ontvangen informatie."
+      },
+      {
+        "title": "Herroeping bij afstands- of buiten verkoopruimten gesloten overeenkomsten",
+        "text": "Wanneer het wettelijke recht geldt, hebben consumenten doorgaans 14 dagen om een dienstenovereenkomst op afstand of buiten de verkoopruimte te herroepen. Startdatum en instructies moeten bij de overeenkomst worden meegedeeld. Stuur een ondubbelzinnige verklaring met uw identiteit en de overeenkomst; waar vereist moet ook een modelformulier worden verstrekt."
+      },
+      {
+        "title": "Werken starten tijdens een herroepingstermijn",
+        "text": "Wilt u tijdens een toepasselijke herroepingstermijn starten, dan moet de onderneming het vereiste uitdrukkelijke verzoek verkrijgen en de nodige informatie geven. Afhankelijk van de omstandigheden kan een evenredige betaling voor uitgevoerde diensten verschuldigd zijn. Verlies van het recht na volledige uitvoering vereist wettelijke voorwaarden; dit websiteformulier doet geen afstand van rechten."
+      },
+      {
+        "title": "Dringende herstellingen en bijkomende werken",
+        "text": "Een specifieke uitzondering kan gelden wanneer u uitdrukkelijk een bezoek vraagt voor dringend onderhoud of herstelling. Zij geldt niet automatisch voor aanvullende diensten of goederen buiten de specifiek gevraagde werken en noodzakelijke vervangstukken. De overeenkomst en omstandigheden bepalen dit; het vakje dringend vormt geen algemene afstand."
+      },
+      {
+        "title": "Klachten en buitengerechtelijke oplossing",
+        "text": "Contacteer de exploitant met naam, dienstadres, offerte- of factuurreferentie, datum, probleemomschrijving en gewenste oplossing. Voeg zo nodig foto’s toe. Lukt een rechtstreekse oplossing niet, dan geeft de Belgische Consumentenombudsdienst informatie over buitengerechtelijke procedures. Dwingende rechten en toegang tot bevoegde rechtbanken blijven behouden."
+      }
+    ]
+  },
+  "accessibility": {
+    "en": [
+      {
+        "title": "Using the website",
+        "text": "We aim to make the service information and enquiry forms usable with a keyboard, readable labels and responsive layouts. The navigation includes a skip link, forms have labels and required-field messages, and animation respects the reduced-motion preference. This is a practical accessibility statement, not a claim of independently certified conformance."
+      },
+      {
+        "title": "If something prevents access",
+        "text": "Contact the team by telephone or the contact form and describe the page, the task you were trying to complete and any assistive technology involved. If the form itself is the problem, use the published telephone contact. We can discuss another way to receive your enquiry."
+      },
+      {
+        "title": "Ongoing improvements",
+        "text": "Accessibility is considered when content and components are changed. Automated checks alone do not establish full conformance. Feedback about keyboard use, contrast, text size or document accessibility helps identify barriers that need further testing."
+      }
+    ],
+    "nl": [
+      {
+        "title": "De website gebruiken",
+        "text": "We streven naar bruikbare dienstinformatie en formulieren met toetsenbordbediening, leesbare labels en aangepaste schermindelingen. De navigatie heeft een overslaanlink, formulieren hebben labels en meldingen, en animatie respecteert verminderde beweging. Dit is een praktische toegankelijkheidsverklaring en geen onafhankelijk gecertificeerde conformiteitsclaim."
+      },
+      {
+        "title": "Als toegang niet lukt",
+        "text": "Contacteer het team telefonisch of via het formulier en vermeld pagina, gewenste handeling en eventueel gebruikte hulptechnologie. Werkt het formulier niet, gebruik dan het gepubliceerde telefoonnummer. We kunnen een andere manier bespreken om uw aanvraag te ontvangen."
+      },
+      {
+        "title": "Voortdurende verbetering",
+        "text": "Bij wijzigingen aan inhoud en componenten houden we rekening met toegankelijkheid. Automatische controles bewijzen geen volledige conformiteit. Feedback over toetsenbord, contrast, tekstgrootte of documenten helpt barrières vinden die nader getest moeten worden."
+      }
+    ]
+  }
+}

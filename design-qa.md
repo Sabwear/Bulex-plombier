@@ -36,3 +36,16 @@ No visual comparison iterations claimed. Automated tests found and resolved a wa
 Bulex is now the default and only public brand, with English default routing. Hero now has three synchronized slides, separate text/image fades, navigation dots/arrows, autoplay without a play/pause button, and reduced-motion support. All three generated service/lifestyle photographs are integrated and optimized as WebP. Production build and all 16 tests pass after these changes. Verify actual autoplay timing, focus pause, mobile crops and no layout shift when the preview can run.
 
 Header updated after inspecting the official Bulex site: grey utility strip, white navigation row, understated navigation and blue booking CTA. Main roof logo uses the user-supplied Downloads asset; the dark footer uses a generated transparent light variant. Three explicitly labeled illustrative review cards are shown only while the genuine reviews array is empty. Browser verification remains blocked by the local server permission restriction described above.
+
+## Approved internal section revision — 2026-11-14
+final result: blocked
+Reworked partner/solutions/benefits/area/review composition to match the supplied cropped reference. Added generated red-accent technician, boiler, water-heater and decorative map assets; retained existing heat-pump and lifestyle photography. Sample reviews remain explicitly labeled.
+18 automated checks and production build pass. A production preview now starts on port 3001, but /en returns a plain-text routing 404 in the browser; screenshot comparison remains blocked. Exact visual fidelity has not been verified.
+
+Latest bottom revision follows the new white-footer reference, superseding the earlier dark-footer request: compact review cards, red contact strip with pale bird motif, five footer columns, vertical separators and legal row. Verified social links render only when BULEX_INSTAGRAM_URL, BULEX_FACEBOOK_URL or BULEX_LINKEDIN_URL are configured. Root / now always redirects to /en; explicit Dutch URLs remain available. All 18 tests pass. Visual comparison remains unverified due to the preview routing issue recorded above.
+
+Editorial/policy update: expanded EN/NL main and detail pages; unique metadata and main headings; linked privacy/cookies/terms/legal/consumer/accessibility pages. Native consent dialog, same-level accept/reject, six-month necessary preference storage and marketing-event gate added. Build and 22 checks pass. Visual cookie-banner review remains blocked by local EMFILE watcher failures; no legal certification or visual pass is claimed.
+
+CTA refinement: red calendar booking button restored in the header; bottom contact strip now uses explicit copy/action columns, larger heading, matched action sizes, white booking button, white outlined call button with inset keyline, and responsive stacking. Shared CTA has an accessible section label. Visual comparison remains blocked as recorded above.
+
+Review carousel revision: nine labeled examples; mouse drag, native touch swipe, automatic paging and dot navigation, with reduced-motion and interaction pauses. Google review action requires the verified business URL. Server-rendered tests check example/real-review separation. Production build passes; interactive browser verification remains outstanding due to the previously recorded preview issues.

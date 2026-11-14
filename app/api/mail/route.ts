@@ -34,7 +34,7 @@ export async function POST(req: Request) {
     return NextResponse.json(
       {
         error:
-          "SMTP non configuré. Définissez SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, MAIL_FROM et MAIL_TO (ou ADMIN_EMAIL) dans .env.local.",
+          "Email delivery is temporarily unavailable. Please contact the team by telephone.",
       },
       { status: 503 }
     );

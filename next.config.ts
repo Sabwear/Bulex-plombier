@@ -2,7 +2,6 @@ import type { NextConfig } from "next";
 import { getAllSlugsNl } from "./data/city-data";
 
 const nextConfig: NextConfig = {
-  distDir: ".next-bulex",
   outputFileTracingRoot: process.cwd(),
   async headers() {
     return [

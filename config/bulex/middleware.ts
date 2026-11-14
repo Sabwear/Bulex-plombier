@@ -7,9 +7,9 @@ export function bulexMiddleware(request:NextRequest){const path=request.nextUrl.
  if(path.startsWith('/api/')||path.startsWith('/_next/')||/\.[a-zA-Z0-9]+$/.test(path))return NextResponse.next();
  if(path.startsWith('/bulex/'))return new NextResponse('Not found',{status:404});
  const url=request.nextUrl.clone();const parts=path.split('/').filter(Boolean);
- if(!parts.length){url.pathname=request.cookies.get('BULEX_LOCALE')?.value==='nl'?'/nl':'/en';return NextResponse.redirect(url,307);}
+ if(!parts.length){url.pathname='/en';return NextResponse.redirect(url,307);}
  if(parts[0]==='fr'){let target=getAlternateLocalePath(path,'nl');target=target.replace('vaillant-herstelling-belgie','bulex-herstelling-belgie').replace('vaillant-onderhoudscontract','bulex-onderhoudscontract');if(parts[1]==='blog'&&parts[2]){const slug=adviceAlternate(parts[2],'nl');if(slug)target='/nl/blog/'+slug;}if(target==='/nl/brussel')target='/nl/loodgieter/brussel';url.pathname=alternatePath(target,'en');return NextResponse.redirect(url,308);}
  if(parts[0]==='nl'){let target=path.replace('vaillant-herstelling-belgie','bulex-herstelling-belgie').replace('vaillant-onderhoudscontract','bulex-onderhoudscontract');if(path==='/nl/brussel')target='/nl/loodgieter/brussel';if(parts[1]==='blog'&&parts[2]){const slug=adviceAlternate(parts[2],'nl');if(slug)target='/nl/blog/'+slug;}if(target!==path){url.pathname=target;return NextResponse.redirect(url,308);}}
  if(!['nl','en'].includes(parts[0])){url.pathname='/en'+path;return NextResponse.redirect(url,307);}
- url.pathname='/bulex'+path;const headers=new Headers(request.headers);headers.set('x-bulex-locale',parts[0]);const response=NextResponse.rewrite(url,{request:{headers}});response.cookies.set('BULEX_LOCALE',parts[0],{path:'/',maxAge:31536000,sameSite:'lax'});return response;
+ url.pathname='/bulex'+path;const headers=new Headers(request.headers);headers.set('x-bulex-locale',parts[0]);const response=NextResponse.rewrite(url,{request:{headers}});return response;
 }
