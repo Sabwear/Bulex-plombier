@@ -92,3 +92,7 @@ Six new full bilingual guides replace the matching legacy article content; six a
 | 2026-12-13 09:00 | MiGo or MiPro Sense in Leuven: which Bulex control fits? |
 | 2026-12-20 09:00 | A noisy Bulex boiler in Anderlecht: what should you report? |
 | 2026-12-27 09:00 | Water heater too small in Antwerp? Compare demand before replacing |
+
+## 15 November 2026 — requester confirmation and success scrolling
+
+Updated shared components/bulex/EnquiryForm.tsx for both EN/NL contact and booking pages: scroll and keyboard focus move to the success panel after the request resolves, with reduced-motion support. Success feedback identifies the requester confirmation address when confirmationSent is explicitly true; otherwise the existing partial-delivery warning remains. No backend recipient changes. Regression checks exercise both languages and both request types with distinct visitor recipients.

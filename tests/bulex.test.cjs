@@ -43,6 +43,15 @@ const transport=require('../lib/mail/sendViaSmtp.ts');const actualSendViaSmtp=tr
 const {POST}=require('../app/api/mail/route.ts');
 const {resetMailLimits}=require('../lib/mail/protection.ts');test.beforeEach(()=>resetMailLimits());
 test('Real mail route sends enquiry and localized confirmation through existing transport',async()=>{sent.length=0;const data=validData();data.append('attachments',new File([Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aZusAAAAASUVORK5CYII=','base64')],'photo.png',{type:'image/png'}));const result=await POST(new Request('http://localhost/api/mail',{method:'POST',body:data}));assert.equal(result.status,200);assert.equal(sent.length,2);assert.match(sent[0].subject,/Bulex Booking EN/);assert.equal(sent[0].attachments.length,1);assert.equal(sent[1].to,'visitor@example.test');assert.match(sent[1].text,/Your appointment is not yet confirmed/)});
+test('Contact and booking confirmations go to the submitted requester in both languages',async()=>{
+ for(const locale of ['en','nl'])for(const requestType of ['contact','booking']){
+  resetMailLimits();sent.length=0;const data=validData();data.set('locale',locale);data.set('requestType',requestType);data.set('email',`${locale}-${requestType}@example.test`);
+  const response=await POST(new Request('http://localhost/api/mail',{method:'POST',body:data}));
+  assert.equal(response.status,200);assert.equal((await response.json()).confirmationSent,true);assert.equal(sent.length,2);
+  assert.equal(sent[1].to,`${locale}-${requestType}@example.test`);assert.equal(sent[1].replyTo,'team@example.test');
+  assert.match(sent[1].text,/Test enquiry for automated validation only/);assert.match(sent[1].subject,locale==='nl'?/Uw aanvraag is ontvangen/:/Your request has been received/);
+ }
+});
 test('Honeypot and invalid inputs never send email',async()=>{sent.length=0;const data=validData();data.set('website','spam');assert.equal((await POST(new Request('http://localhost/api/mail',{method:'POST',body:data}))).status,200);assert.equal(sent.length,0);data.set('website','');data.delete('consent');assert.equal((await POST(new Request('http://localhost/api/mail',{method:'POST',body:data}))).status,400);assert.equal(sent.length,0)});
 test('Disallowed attachments are rejected before transport',async()=>{sent.length=0;const data=validData();data.append('attachments',new File(['test'],'run.exe',{type:'application/octet-stream'}));assert.equal((await POST(new Request('http://localhost/api/mail',{method:'POST',body:data}))).status,400);assert.equal(sent.length,0)});
 test('Existing NL contact form remains supported',async()=>{sent.length=0;const data=validData();data.set('formType','contact');data.set('locale','nl');assert.equal((await POST(new Request('http://localhost/api/mail',{method:'POST',body:data}))).status,200);assert.equal(sent.length,2);assert.match(sent[0].subject,/Contact NL/)});

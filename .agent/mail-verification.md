@@ -27,3 +27,7 @@ A Hostinger filter named “Website Bulex enquiries to Inbox” was created with
 All six labelled verification messages were manually moved from Spam to Inbox using Hostinger Mail. Their presence in Inbox is manual recovery, not proof that future messages land there automatically. No messages were deleted. Mailbox-provider remediation remains outstanding; Hostinger support must investigate the false-positive classification. No support message was sent. Application code and credentials were unchanged.
 
 Evidence: qa/production-contact-success.jpg and qa/production-contact-inbox.jpg. Browser testing is now complete for the Dutch contact page; English/booking browser flows and external customer confirmation delivery remain untested.
+
+## Requester confirmation UX update
+
+Shared EN/NL contact and booking success feedback now focuses and scrolls the success panel into view, respects reduced motion, and displays the submitted recipient when confirmationSent is explicitly true. API tests check localized confirmation routing separately from the business enquiry for all four locale/request-type combinations. Hostinger spam classification remains a separate known limitation.

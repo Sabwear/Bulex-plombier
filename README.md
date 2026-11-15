@@ -105,3 +105,7 @@ The endpoint refuses cross-site browser submissions and header-injection/duplica
 ### Dutch default URLs
 
 Dutch pages use `/`, `/diensten`, `/oplossingen`, `/loodgieter`, `/blog` and other unprefixed routes. English stays under `/en`. Old `/nl/...` URLs permanently redirect to their Dutch equivalent, preserving query strings; the language switcher maps the current page and article slug. Canonicals, hreflang (including Dutch x-default), sitemap and structured data use these public URLs. Browser-language detection on the homepage remains available with Dutch as the fallback and explicit language choices taking precedence.
+
+### Requester confirmations and success navigation
+
+Contact and booking requests send a separate localized confirmation, including the submitted request, to the visitor's email address. After success the shared EN/NL form scrolls to and focuses its success panel. Reduced-motion users get immediate scrolling. The panel shows the submitted email address only when the API confirms SMTP acceptance; confirmation failure keeps the accepted enquiry successful and explains that no resubmission is needed. Provider spam filtering can still affect delivery.
