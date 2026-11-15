@@ -163,3 +163,37 @@ test('Public contact numbers use env values without hardcoded fallbacks',()=>{
   assert.match(renderToStaticMarkup(React.createElement(Widget,{locale:'nl'})),/Kunnen we u helpen/);
  }finally{if(savedPhone===undefined)delete process.env.NEXT_PUBLIC_PHONE_NUMBER;else process.env.NEXT_PUBLIC_PHONE_NUMBER=savedPhone;if(savedWhatsApp===undefined)delete process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;else process.env.NEXT_PUBLIC_WHATSAPP_NUMBER=savedWhatsApp}
 });
+test('Six blog posts are live and six release weekly with future routes excluded',async()=>{
+ const {blogPosts,getPublishedBlogPosts,getScheduledBlogPosts}=require('../config/bulex/blog.ts');
+ const now=new Date('2026-11-15T12:00:00Z');
+ assert.equal(blogPosts.length,12);assert.equal(getPublishedBlogPosts(now).length,6);
+ const scheduled=getScheduledBlogPosts(now);assert.equal(scheduled.length,6);
+ for(let i=1;i<scheduled.length;i++)assert.equal(Date.parse(scheduled[i].publishAt)-Date.parse(scheduled[i-1].publishAt),7*86400000);
+ for(const post of scheduled){
+  const before=new Date(Date.parse(post.publishAt)-1),at=new Date(post.publishAt);
+  for(const locale of ['en','nl']){
+   assert.ok(!getAdvice(locale,before).some(p=>p.slug===post.slug[locale]),post.id);
+   assert.ok(getAdvice(locale,at).some(p=>p.slug===post.slug[locale]),post.id);
+   assert.equal(alternatePath(href('en','blog',post.slug.en),locale),href(locale,'blog',post.slug[locale]));
+  }
+ }
+ const {generateMetadata}=require('../app/bulex/[locale]/[[...path]]/page.tsx');
+ const next=getScheduledBlogPosts()[0];if(next){const future=await generateMetadata({params:Promise.resolve({locale:'en',path:['advice',next.slug.en]})});
+ assert.equal(future.robots.index,false);assert.match(future.title,/404/);}
+});
+test('All twelve posts contain translated original sections and valid local/service relationships',()=>{
+ const {blogPosts}=require('../config/bulex/blog.ts');
+ for(const p of blogPosts){assert.ok(getCities('nl').some(c=>c.slug===p.area),p.area);assert.ok(getServices('en')[p.service]);
+  for(const locale of ['en','nl']){assert.ok(p.answer[locale].length>150);assert.ok(p.sections.length>=3);assert.ok(p.sections.every(s=>s.heading[locale]&&s.body[locale].length>180));assert.ok(p.takeaways[locale].length>=3)}
+  assert.ok(p.sources.every(s=>s.startsWith('https://www.bulex.be/')));
+ }
+});
+test('Dutch logo appears only in Dutch pages and new header blog link is present',async()=>{
+ const {renderToStaticMarkup}=require('react-dom/server'),Page=require('../app/bulex/[locale]/[[...path]]/page.tsx').default;
+ const saved=process.env.NEXT_PUBLIC_PHONE_NUMBER;process.env.NEXT_PUBLIC_PHONE_NUMBER='0467802090';
+ try{for(const locale of ['en','nl']){
+  const html=renderToStaticMarkup(await Page({params:Promise.resolve({locale,path:[]})}));
+  if(locale==='nl')assert.match(html,/loodgieter-logo/);else assert.doesNotMatch(html,/loodgieter-logo/);
+  assert.match(html,/flanders.webp/);assert.ok(html.includes(href(locale,'blog')));assert.match(html,/bx-mobile-call-bar/);
+ }}finally{if(saved===undefined)delete process.env.NEXT_PUBLIC_PHONE_NUMBER;else process.env.NEXT_PUBLIC_PHONE_NUMBER=saved}
+});

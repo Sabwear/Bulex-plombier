@@ -5,6 +5,8 @@ import { href, pageSegments, type PageKey } from "@/config/bulex/routes";
 import { getAllSlugsNl } from "@/data/city-data";
 import type { MetadataRoute } from "next";
 
+export const dynamic='force-dynamic';
+
 export default function sitemap(): MetadataRoute.Sitemap {
   if (!bulexIndexable) return [];
 
@@ -25,8 +27,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       ),
     );
 
+    const articles=getAdvice(locale);
     return paths.map((path) => ({
       url: bulexOrigin + path,
+      ...(articles.find(a=>href(locale,'blog',a.slug)===path)?.blogPost?{lastModified:new Date(articles.find(a=>href(locale,'blog',a.slug)===path)!.blogPost!.publishAt)}:{}),
       changeFrequency: "monthly" as const,
     }));
   });

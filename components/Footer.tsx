@@ -217,7 +217,7 @@ export default function Footer() {
             {isNl ? "Alle rechten voorbehouden." : "Tous droits réservés."}{" "}
             · created by{" "}
             <a href="https://ranber.com" target="_blank" rel="noopener noreferrer">
-              Ranber Agency (ranber.com)
+              Ranber Agency
             </a>{" "}
             <Link href={isNl ? "/nl/juridische-vermelding" : "/fr/mentions-legales"}>
               {isNl ? "Juridische vermelding" : "Mentions légales"}

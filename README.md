@@ -79,3 +79,11 @@ See [BULEX-MIGRATION.md](./BULEX-MIGRATION.md) for deployment notes and [design-
 ## Contact widget
 
 The floating WhatsApp widget uses `NEXT_PUBLIC_WHATSAPP_NUMBER`. The call buttons use `NEXT_PUBLIC_PHONE_NUMBER`, and public email uses `NEXT_PUBLIC_SUPPORT_EMAIL`. Set each independently in your environment. Belgian local numbers, +32 and 0032 formats are supported; links use international digits. Missing phone/WhatsApp settings hide their actions. Rebuild after changing public environment values. Hover or keyboard focus expands the help label; reduced-motion disables the pulse.
+
+## Blog publication schedule
+
+The new blog hub has six published EN/NL guides and six fully written weekly articles in `config/bulex/blog-posts.json`. Each entry has one `publishAt` timestamp with a Belgian timezone offset. The scheduled posts release on 22 and 29 November, then 6, 13, 20 and 27 December 2026 at 09:00 Belgian time.
+
+The hub, article resolution and sitemap check these dates on the server. Future article URLs return 404 and stay out of public lists and sitemap until publication. Pages and sitemap render dynamically, so no weekly rebuild or cron job is required on the Node.js deployment. Existing advice URLs remain available for compatibility. To change a release date, edit `publishAt` and redeploy the source.
+
+The Dutch logo is `public/bulex/loodgieter-logo.webp`; English retains `plombier-logo.webp`. The Flanders header badge is `public/bulex/flanders.webp`. Both phone settings are configured as `0467802090`; update the same env values on your production host and rebuild to apply them there.

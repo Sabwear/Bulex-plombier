@@ -1,4 +1,4 @@
-import {adviceAlternate} from './advice';
+import {adviceAlternate} from './advice-routes';
 export type BulexLocale = 'nl' | 'en';
 export const pageSegments = {
   home: ['', ''], services: ['diensten', 'services'], solutions: ['oplossingen', 'solutions'],

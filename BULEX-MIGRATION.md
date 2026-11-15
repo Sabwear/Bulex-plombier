@@ -66,3 +66,23 @@ The current local environment was reduced from 18 configured keys to 12, preserv
 
 ## Environment correction
 The full environment template is restored, grouped by application, company/contact, mail, social and Google settings. APP_MODE=development or production replaces the separate launch-ready flag. Existing local values were preserved and MAIL_FROM restored from the identical public email. Previously removed tracking fields are present again but their deleted values were not recoverable from the ignored local file; fill them only if needed for an integration. No tracking scripts are enabled by restoring configuration fields.
+
+## Logo, call-first UX and editorial calendar — 2026-11-15
+Both local and example public call/WhatsApp settings are now 0467802090. Production host variables must be changed separately and rebuilt. NL header/footer use the supplied Dutch logo; EN keeps its existing logo. A compact Flanders badge appears next to the header brand on both screen sizes. Main navigation replaces About with Blog; About remains accessible in utility/footer navigation. Calls are primary in the header, hero/shared actions, sidebars and blog. A mobile call bar appears after 240px of scrolling, with safe-area spacing and reduced-motion support.
+
+Six new full bilingual guides replace the matching legacy article content; six additional articles publish automatically at 09:00 Belgian time on the dates below. Other legacy advice routes remain available. The blog hub and sitemap are dynamic. Future article bodies are kept out of client navigation bundles; only slug mappings are used for language switching.
+
+| Publication (Belgian time) | English guide |
+| --- | --- |
+| 2026-11-15 — available | Bulex F.28 or F.75 in Brussels: what should you do? |
+| 2026-11-15 — available | Bulex boiler maintenance in Antwerp: prepare the visit |
+| 2026-11-15 — available | No hot water in Ghent: boiler, Opalia or tap problem? |
+| 2026-11-15 — available | Bulex pressure keeps dropping in Anderlecht: what to record |
+| 2026-11-15 — available | GeniaAir in Leuven: can a heat pump work with your radiators? |
+| 2026-11-15 — available | Water leak in Brussels: what information helps a plumber? |
+| 2026-11-22 09:00 | Bulex F.29 in Antwerp: why does the flame stop? |
+| 2026-11-29 09:00 | Replacing a Bulex ThemaFast in Brussels: what must be checked? |
+| 2026-12-06 09:00 | Cold radiators in Ghent while hot water works: where to start |
+| 2026-12-13 09:00 | MiGo or MiPro Sense in Leuven: which Bulex control fits? |
+| 2026-12-20 09:00 | A noisy Bulex boiler in Anderlecht: what should you report? |
+| 2026-12-27 09:00 | Water heater too small in Antwerp? Compare demand before replacing |

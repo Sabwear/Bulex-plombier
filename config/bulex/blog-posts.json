@@ -1,0 +1,887 @@
+[
+  {
+    "id": "faults",
+    "slug": {
+      "en": "boiler-error-code",
+      "nl": "foutcode-ketel"
+    },
+    "title": {
+      "en": "Bulex F.28 or F.75 in Brussels: what should you do?",
+      "nl": "Bulex F.28 of F.75 in Brussel: wat doet u?"
+    },
+    "category": "faults",
+    "image": "brand-boiler",
+    "area": "brussel",
+    "service": 0,
+    "publishAt": "2026-11-15T00:00:00+01:00",
+    "answer": {
+      "en": "Record the exact code and the full appliance model before requesting a repair. In Bulex’s general reference, F.28 concerns ignition failure and F.75 concerns an insufficient pressure change at pump start. They are different diagnostic starting points, not instructions to replace a particular part. The manual for your exact generation takes precedence.",
+      "nl": "Noteer de exacte code en het volledige toestelmodel voordat u een herstelling aanvraagt. In het algemene Bulex-overzicht gaat F.28 over een mislukte ontsteking en F.75 over onvoldoende drukverandering bij de pompstart. Dit zijn verschillende aanknopingspunten voor diagnose, geen opdracht om een bepaald onderdeel te vervangen. De handleiding van uw generatie gaat voor."
+    },
+    "sections": [
+      {
+        "heading": {
+          "en": "Why the code alone is not the diagnosis",
+          "nl": "Waarom de code niet de volledige diagnose is"
+        },
+        "body": {
+          "en": "A code records what the controls detected, rather than proving which component has failed. Tell the technician whether the fault occurs during a heating demand, while opening a hot tap, or after a period without use. Also mention a recent power interruption or work on the building’s installation. These observations help prepare the visit without turning a remote description into a confirmed diagnosis.",
+          "nl": "Een code beschrijft wat de regeling vaststelde, niet welk onderdeel zeker defect is. Vermeld of de storing bij warmtevraag, bij een warme kraan of na een stilstand verschijnt. Geef ook een stroomonderbreking of recente werken aan de installatie door. Zo kan de technieker voorbereiden zonder een beschrijving op afstand als zekere diagnose te behandelen."
+        }
+      },
+      {
+        "heading": {
+          "en": "The model and suffix matter",
+          "nl": "Model en toevoeging zijn belangrijk"
+        },
+        "body": {
+          "en": "Thema Condens and ThemaFast Condens are product families, not interchangeable model references. Copy the complete model designation from documentation or an accessible label, including any suffix. A clear photograph of the display is useful. Do not remove a casing to find a label: the existing service report or appliance booklet may already identify the variant.",
+          "nl": "Thema Condens en ThemaFast Condens zijn reeksen, geen onderling uitwisselbare modelreferenties. Neem de volledige aanduiding uit documenten of een bereikbaar etiket over, inclusief toevoegingen. Een duidelijke schermfoto helpt. Open geen toestelmantel om een etiket te zoeken: het onderhoudsattest of toestelboekje kan de uitvoering al vermelden."
+        }
+      },
+      {
+        "heading": {
+          "en": "A Brussels apartment may involve shared equipment",
+          "nl": "Een Brussels appartement kan gedeelde delen hebben"
+        },
+        "body": {
+          "en": "If several apartments lose heating together, say so when calling. Shared flues, communal heating and access through a building manager require different preparation from a fault affecting one privately installed boiler. Include the floor, lift access and who can authorise work. A code on your appliance does not establish that shared infrastructure is the cause.",
+          "nl": "Vermeld bij het bellen of meerdere appartementen tegelijk zonder verwarming zitten. Gedeelde rookgasafvoer, collectieve verwarming en toegang via een syndicus vragen andere voorbereiding dan een storing aan één privatieve ketel. Geef verdieping, lift en de persoon die toestemming kan geven door. Een code bewijst niet dat de oorzaak in een gemeenschappelijk deel zit."
+        }
+      },
+      {
+        "heading": {
+          "en": "What to send before the repair visit",
+          "nl": "Wat bezorgt u vóór het bezoek?"
+        },
+        "body": {
+          "en": "Send the full code, model, service address and a short timeline. State whether heating and hot water are both affected and whether the code returns after normal operation. Follow only the user instructions for that appliance; repeated resets are not a substitute for investigating a recurring fault. For immediate danger, contact the appropriate emergency service rather than waiting for an online enquiry.",
+          "nl": "Stuur volledige code, model, dienstadres en een korte tijdlijn. Vermeld of verwarming én warm water getroffen zijn en of de code na normale bediening terugkeert. Volg alleen de gebruikersinstructies van het toestel; herhaald resetten vervangt geen onderzoek van een terugkerende storing. Neem bij direct gevaar contact op met de hulpdienst en wacht niet op een online aanvraag."
+        }
+      }
+    ],
+    "takeaways": {
+      "en": [
+        "Photograph the exact display.",
+        "Identify the complete model.",
+        "Describe heating and hot water separately.",
+        "Mention shared building equipment."
+      ],
+      "nl": [
+        "Fotografeer het volledige scherm.",
+        "Identificeer het volledige model.",
+        "Beschrijf verwarming en warm water apart.",
+        "Vermeld gedeelde installatieonderdelen."
+      ]
+    },
+    "sources": [
+      "https://www.bulex.be/particulier/diensten/foutcodes/",
+      "https://www.bulex.be/particulier/documentatie/technische-documentaties/handleidingen/"
+    ]
+  },
+  {
+    "id": "maintenance",
+    "slug": {
+      "en": "boiler-maintenance",
+      "nl": "ketelonderhoud"
+    },
+    "title": {
+      "en": "Bulex boiler maintenance in Antwerp: prepare the visit",
+      "nl": "Bulex-ketelonderhoud in Antwerpen: bereid uw bezoek voor"
+    },
+    "category": "maintenance",
+    "image": "brand-technician",
+    "area": "antwerpen",
+    "service": 1,
+    "publishAt": "2026-11-15T00:00:00+01:00",
+    "answer": {
+      "en": "Prepare the previous service report, appliance model and a list of changes in operation. Maintenance checks a working installation; a boiler that is repeatedly locking out needs the fault described as part of the request. Ask what the proposed visit includes instead of assuming all repairs and parts are covered.",
+      "nl": "Leg het vorige onderhoudsattest, toestelmodel en veranderingen in de werking klaar. Onderhoud controleert een werkende installatie; bij herhaalde vergrendeling moet de storing deel van de aanvraag zijn. Vraag wat het voorgestelde bezoek omvat in plaats van aan te nemen dat alle herstellingen en onderdelen inbegrepen zijn."
+    },
+    "sections": [
+      {
+        "heading": {
+          "en": "Documents worth keeping together",
+          "nl": "Documenten die u samen bewaart"
+        },
+        "body": {
+          "en": "Keep the appliance booklet, previous maintenance record and invoices for earlier repairs in one place. They help identify the generation, work already done and recurring symptoms. If documents are missing, send an accessible label photograph. Give the team the precise address in Antwerp and say whether this is a house, a private apartment boiler or shared equipment.",
+          "nl": "Bewaar toestelboekje, vorig onderhoudsattest en eerdere herstelfacturen samen. Daarmee zijn generatie, uitgevoerde werken en terugkerende klachten beter te herkennen. Ontbreken documenten, stuur dan een foto van een bereikbaar etiket. Geef het exacte adres in Antwerpen en vermeld woning, privatieve appartementsketel of gemeenschappelijke installatie."
+        }
+      },
+      {
+        "heading": {
+          "en": "A fault should not disappear into an “annual service” request",
+          "nl": "Laat een storing niet verdwijnen in een onderhoudsaanvraag"
+        },
+        "body": {
+          "en": "A change in noise, regular pressure loss or hot water that no longer stays warm deserves a specific description. Note when it happens and how long it has been happening. The maintenance visit may reveal that diagnosis or replacement parts are needed. Ask how additional work will be quoted and authorised before the technician begins it.",
+          "nl": "Veranderd geluid, regelmatig drukverlies of warm water dat niet warm blijft vraagt een aparte beschrijving. Noteer wanneer het gebeurt en sinds wanneer. Bij het onderhoud kan blijken dat diagnose of vervangstukken nodig zijn. Vraag vooraf hoe bijkomende werken worden geoffreerd en goedgekeurd."
+        }
+      },
+      {
+        "heading": {
+          "en": "Make the installation accessible",
+          "nl": "Zorg voor toegang tot de installatie"
+        },
+        "body": {
+          "en": "Keep the route to the appliance clear and arrange access with the occupant or owner. In a building with communal systems, check who holds the keys to technical rooms. Tell the team about parking or loading restrictions before the appointment. Do not dismantle covers or move fixed connections to make room.",
+          "nl": "Houd de route naar het toestel vrij en stem toegang af met bewoner of eigenaar. Controleer bij collectieve installaties wie sleutels van technische ruimtes heeft. Meld parkeer- en laadbeperkingen vóór de afspraak. Demonteer geen kappen en verplaats geen vaste aansluitingen om plaats te maken."
+        }
+      },
+      {
+        "heading": {
+          "en": "Ask about the schedule for your installation",
+          "nl": "Vraag naar het schema voor uw installatie"
+        },
+        "body": {
+          "en": "The appropriate maintenance and any legal inspection depend on the equipment, fuel and region. A manufacturer maintenance offer is not automatically the service contract of this plumbing business. Ask which work, documents and follow-up are included in your quotation, and confirm the applicable schedule with the professional handling your installation.",
+          "nl": "Passend onderhoud en eventuele wettelijke controles hangen af van toestel, brandstof en gewest. Een onderhoudsaanbod van de fabrikant is niet automatisch het contract van dit loodgietersbedrijf. Vraag welke werken, documenten en opvolging in uw offerte zitten en bevestig het toepasselijke schema met de vakman voor uw installatie."
+        }
+      }
+    ],
+    "takeaways": {
+      "en": [
+        "Keep previous reports available.",
+        "Report faults before the appointment.",
+        "Confirm access to technical rooms.",
+        "Check the scope of the quotation."
+      ],
+      "nl": [
+        "Houd eerdere attesten klaar.",
+        "Meld storingen vóór de afspraak.",
+        "Regel toegang tot technische ruimtes.",
+        "Controleer de omvang van de offerte."
+      ]
+    },
+    "sources": [
+      "https://www.bulex.be/particulier/diensten/onderhoud/",
+      "https://www.bulex.be/particulier/documentatie/technische-documentaties/handleidingen/"
+    ]
+  },
+  {
+    "id": "hotwater",
+    "slug": {
+      "en": "choosing-hot-water",
+      "nl": "warm-water-kiezen"
+    },
+    "title": {
+      "en": "No hot water in Ghent: boiler, Opalia or tap problem?",
+      "nl": "Geen warm water in Gent: ketel, Opalia of kraan?"
+    },
+    "category": "hot-water",
+    "image": "brand-water-heater",
+    "area": "gent",
+    "service": 4,
+    "publishAt": "2026-11-15T00:00:00+01:00",
+    "answer": {
+      "en": "First describe whether the problem affects one outlet or every hot-water tap. Then identify the appliance: a combi boiler, an Opalia gas water heater and a storage cylinder do not provide hot water in the same way. These two observations help prepare the right assessment without guessing at a failed part.",
+      "nl": "Beschrijf eerst of één tappunt of alle warmwaterkranen getroffen zijn. Identificeer daarna het toestel: combiketel, Opalia-gasbadverwarmer en voorraadboiler leveren niet op dezelfde manier warm water. Met die twee observaties kan de juiste beoordeling worden voorbereid zonder een defect onderdeel te raden."
+    },
+    "sections": [
+      {
+        "heading": {
+          "en": "One tap or the whole property?",
+          "nl": "Eén kraan of de hele woning?"
+        },
+        "body": {
+          "en": "A shower that changes temperature while other taps work normally needs a different description from a home with no hot water anywhere. Note which outlets are affected and whether water flow also changed. Tell the technician if the issue began after replacing a tap, renovating a bathroom or work on the supply. Those details are more useful than a broad “water heater broken” message.",
+          "nl": "Een douche met wisselende temperatuur terwijl andere kranen normaal werken vraagt een andere omschrijving dan overal ontbrekend warm water. Noteer tappunten en veranderd debiet. Meld of het na kraanvervanging, badkamerrenovatie of werken aan de toevoer begon. Dat helpt meer dan alleen “boiler stuk”."
+        }
+      },
+      {
+        "heading": {
+          "en": "Read the exact Opalia reference",
+          "nl": "Lees de exacte Opalia-referentie"
+        },
+        "body": {
+          "en": "Opalia identifies a family of gas water heaters with different variants. Copy the full suffix from available documents rather than requesting a replacement simply called “Opalia”. Connections, ventilation and flue arrangements need professional assessment for the actual appliance. The variant also helps locate the correct operating manual and prepare an enquiry about parts.",
+          "nl": "Opalia is een reeks gasbadverwarmers met verschillende uitvoeringen. Neem de volledige modeltoevoeging uit beschikbare documenten over in plaats van alleen “Opalia” te vragen. Aansluitingen, ventilatie en rookgasafvoer worden voor het echte toestel professioneel beoordeeld. Met de variant vindt u ook de juiste handleiding en kunt u onderdelen gerichter bespreken."
+        }
+      },
+      {
+        "heading": {
+          "en": "A storage cylinder and simultaneous use",
+          "nl": "Een voorraadboiler en gelijktijdig gebruik"
+        },
+        "body": {
+          "en": "With stored hot water, describe the cylinder capacity and household routine. Does the temperature fall after several showers, or is the water already cool after a long period without use? For a combi boiler, mention simultaneous taps and any displayed fault. These patterns help distinguish capacity questions from a change in the appliance’s usual performance.",
+          "nl": "Beschrijf bij opgeslagen warm water de inhoud en het gebruikspatroon. Daalt de temperatuur na meerdere douches of is het water al koel na lange stilstand? Vermeld bij een combiketel gelijktijdige kranen en een eventuele foutcode. Zo onderscheidt u een capaciteitsvraag van veranderd toestelgedrag."
+        }
+      },
+      {
+        "heading": {
+          "en": "Preparing a visit in Ghent",
+          "nl": "Een bezoek in Gent voorbereiden"
+        },
+        "body": {
+          "en": "For an apartment, say whether hot water is private or supplied collectively and who can access the equipment. Send your address, floor, model and photographs of visible connections without opening the appliance. If replacement is being considered, also describe available wall or floor space: the proposed heater must fit both your needs and the installation.",
+          "nl": "Vermeld bij een appartement of warm water privatief of collectief geleverd wordt en wie bij de installatie kan. Stuur adres, verdieping, model en foto’s van zichtbare aansluitingen zonder het toestel te openen. Bij mogelijke vervanging vermeldt u ook wand- of vloerruimte: het toestel moet passen bij behoefte én installatie."
+        }
+      }
+    ],
+    "takeaways": {
+      "en": [
+        "Compare several hot-water outlets.",
+        "Copy the complete model suffix.",
+        "Describe simultaneous water use.",
+        "Say whether equipment is shared."
+      ],
+      "nl": [
+        "Vergelijk meerdere warmwaterpunten.",
+        "Noteer de volledige modeltoevoeging.",
+        "Beschrijf gelijktijdig watergebruik.",
+        "Vermeld gemeenschappelijke toestellen."
+      ]
+    },
+    "sources": [
+      "https://www.bulex.be/particuliers/produits/opalia-1797.html",
+      "https://www.bulex.be/particulier/documentatie/technische-documentaties/handleidingen/"
+    ]
+  },
+  {
+    "id": "pressure",
+    "slug": {
+      "en": "boiler-pressure",
+      "nl": "keteldruk"
+    },
+    "title": {
+      "en": "Bulex pressure keeps dropping in Anderlecht: what to record",
+      "nl": "Bulex-druk daalt in Anderlecht: wat noteert u?"
+    },
+    "category": "faults",
+    "image": "boiler",
+    "area": "anderlecht",
+    "service": 0,
+    "publishAt": "2026-11-15T00:00:00+01:00",
+    "answer": {
+      "en": "Recurring heating pressure loss needs assessment of the installation, not just another top-up. Note the reading when the system is cool and after ordinary heating use, and whether there is visible water at radiators or pipework. Use the recommended range in your exact appliance manual; there is no single pressure target for every installation.",
+      "nl": "Terugkerend drukverlies vraagt beoordeling van de installatie en niet alleen opnieuw bijvullen. Noteer de stand bij een afgekoeld systeem en na normaal verwarmen, en zichtbaar water aan radiatoren of leidingen. Gebruik het aanbevolen bereik uit de juiste handleiding; er is geen universele drukwaarde voor elke installatie."
+    },
+    "sections": [
+      {
+        "heading": {
+          "en": "Make a short pressure timeline",
+          "nl": "Maak een korte druktijdlijn"
+        },
+        "body": {
+          "en": "Write down when the pressure changes: over days, immediately after heating, or after work on a radiator. Record any fault code with the time it appears. Comparing a few ordinary readings can help the technician understand the pattern; do not keep changing settings or repeatedly filling the system just to gather data.",
+          "nl": "Noteer wanneer druk verandert: over meerdere dagen, direct na verwarmen of na radiatorwerken. Schrijf een foutcode en het tijdstip op. Enkele normale metingen helpen het patroon begrijpen; verander niet voortdurend instellingen en vul niet herhaald bij om gegevens te verzamelen."
+        }
+      },
+      {
+        "heading": {
+          "en": "Look only at accessible, visible areas",
+          "nl": "Bekijk uitsluitend bereikbare, zichtbare delen"
+        },
+        "body": {
+          "en": "Without removing covers or disturbing connections, note drips, damp around radiator valves and water under visible pipework. A concealed source may not be directly above a stain. No visible leak does not rule out an installation issue. Send photographs only where safe and explain whether damp is new or longstanding.",
+          "nl": "Noteer druppels, vocht bij radiatorkranen en water onder zichtbare leidingen zonder kappen of verbindingen los te maken. Een verborgen bron hoeft niet recht boven een vlek te liggen. Geen zichtbaar lek sluit een installatieprobleem niet uit. Fotografeer alleen veilig en vermeld of vocht nieuw is."
+        }
+      },
+      {
+        "heading": {
+          "en": "Older property does not identify the cause",
+          "nl": "Een oudere woning bepaalt de oorzaak niet"
+        },
+        "body": {
+          "en": "Anderlecht includes older terraced homes, renovated housing and newer apartments. Existing pipe routes and access differ between them, so describe the actual property rather than assuming the age explains the fault. Tell us about recent renovations and whether heating pipes cross communal areas or concealed spaces.",
+          "nl": "Anderlecht kent oudere rijwoningen, gerenoveerde woningen en recente appartementen. Leidingen en toegang verschillen; beschrijf de werkelijke situatie in plaats van de ouderdom als oorzaak te nemen. Vermeld recente renovaties en leidingen door gemeenschappelijke of verborgen ruimtes."
+        }
+      },
+      {
+        "heading": {
+          "en": "Discuss diagnosis before replacement",
+          "nl": "Bespreek diagnose vóór vervanging"
+        },
+        "body": {
+          "en": "Pressure loss alone does not establish that an entire boiler needs replacing. The proposed assessment may cover the heating circuit and appliance together. Ask what the diagnostic visit includes, how findings are reported and whether further access may be needed. If you rent, arrange approval with the owner where required before work is commissioned.",
+          "nl": "Drukverlies alleen bewijst niet dat de volledige ketel moet worden vervangen. De beoordeling kan verwarmingscircuit en toestel samen omvatten. Vraag wat het diagnosebezoek inhoudt, hoe vaststellingen worden gemeld en of bijkomende toegang nodig kan zijn. Stem als huurder waar nodig toestemming af met de eigenaar."
+        }
+      }
+    ],
+    "takeaways": {
+      "en": [
+        "Use your model’s manual for the target range.",
+        "Record the timing of pressure changes.",
+        "Mention recent radiator or renovation work.",
+        "Include visible leak photographs if safe."
+      ],
+      "nl": [
+        "Gebruik de juiste handleiding voor het drukbereik.",
+        "Noteer wanneer de druk verandert.",
+        "Vermeld recente radiator- of renovatiewerken.",
+        "Voeg veilige foto’s van zichtbare lekken toe."
+      ]
+    },
+    "sources": [
+      "https://www.bulex.be/particulier/documentatie/technische-documentaties/handleidingen/",
+      "https://www.bulex.be/particulier/diensten/foutcodes/"
+    ]
+  },
+  {
+    "id": "heatpump",
+    "slug": {
+      "en": "heat-pump-home",
+      "nl": "warmtepomp-woning"
+    },
+    "title": {
+      "en": "GeniaAir in Leuven: can a heat pump work with your radiators?",
+      "nl": "GeniaAir in Leuven: kan een warmtepomp met uw radiatoren?"
+    },
+    "category": "equipment",
+    "image": "heat-pump",
+    "area": "leuven",
+    "service": 3,
+    "publishAt": "2026-11-15T00:00:00+01:00",
+    "answer": {
+      "en": "Existing radiators do not provide a yes-or-no answer on their own. A GeniaAir proposal should consider the home’s heat demand, the temperatures needed by its emitters, hot-water needs and installation space. A boiler’s rated power is not a heat-pump sizing calculation. Start with a property assessment before selecting a model.",
+      "nl": "Bestaande radiatoren geven op zichzelf geen ja-of-neeantwoord. Een GeniaAir-voorstel hoort warmtebehoefte, benodigde afgiftetemperaturen, warm water en plaatsingsruimte te beoordelen. Het nominale ketelvermogen is geen warmtepompberekening. Begin met een woningbeoordeling voordat u een model kiest."
+    },
+    "sections": [
+      {
+        "heading": {
+          "en": "Describe the building and planned insulation",
+          "nl": "Beschrijf gebouw en geplande isolatie"
+        },
+        "body": {
+          "en": "For a Leuven renovation, explain what has already changed and what is planned: roof or wall insulation, glazing and any extension. Changes to the building can alter heat demand. Bring available plans or energy documents, but do not assume a single certificate selects the appliance. The proposed design should explain the property assumptions being used.",
+          "nl": "Leg bij een renovatie in Leuven uit wat veranderd is en wat gepland staat: dak- of muurisolatie, beglazing en uitbreiding. Dat kan de warmtebehoefte veranderen. Neem plannen of energiedocumenten mee, maar verwacht niet dat één attest de toestelkeuze bepaalt. Het ontwerp hoort de gebruikte woningaannames uit te leggen."
+        }
+      },
+      {
+        "heading": {
+          "en": "Consider the radiators as a system",
+          "nl": "Bekijk radiatoren als één systeem"
+        },
+        "body": {
+          "en": "Provide room use, radiator locations and any rooms that are difficult to heat. Discuss whether emitter changes or controls are part of the project. The aim is a suitable design for the whole home rather than replacing the boiler with a heat pump while ignoring the distribution system. Ask what assessment underpins the proposal.",
+          "nl": "Vermeld kamergebruik, radiatorplaatsen en moeilijk verwarmde kamers. Bespreek wijzigingen aan afgifte of regeling als onderdeel van het project. Doel is een passend ontwerp voor de woning, niet alleen de ketel vervangen terwijl de warmteverdeling onbesproken blijft. Vraag waarop de beoordeling berust."
+        }
+      },
+      {
+        "heading": {
+          "en": "Compare the actual GeniaAir families",
+          "nl": "Vergelijk de echte GeniaAir-reeksen"
+        },
+        "body": {
+          "en": "GeniaAir Max, Classic and Split R32 are different product families. Consult current manufacturer documentation for the exact variant, connection arrangement and compatible indoor components. A photograph of an outdoor unit cannot confirm the whole system. Keep the product selection connected to cylinder space, access for installation and the proposed controls.",
+          "nl": "GeniaAir Max, Classic en Split R32 zijn verschillende reeksen. Controleer actuele fabrikantdocumentatie voor uitvoering, aansluitconcept en passende binnendelen. Een foto van een buitenunit bepaalt niet het hele systeem. Koppel toestelkeuze aan boilerruimte, toegang voor installatie en voorgestelde regeling."
+        }
+      },
+      {
+        "heading": {
+          "en": "Do not leave hot water until the end",
+          "nl": "Stel de warmwaterkeuze niet uit"
+        },
+        "body": {
+          "en": "Explain household size and simultaneous shower or bath use. A system that heats rooms also needs an appropriate arrangement for domestic hot water. Ask where the cylinder and indoor equipment will go, how maintenance access is retained and which electrical work is included. These practical details should be in the discussion before equipment is ordered.",
+          "nl": "Beschrijf gezinsgrootte en gelijktijdig douche- of badgebruik. Een systeem voor ruimteverwarming vraagt ook een passende warmwateroplossing. Vraag waar boiler en binnendelen komen, hoe onderhoudstoegang behouden blijft en welk elektrisch werk inbegrepen is. Bespreek dit vóór de bestelling."
+        }
+      }
+    ],
+    "takeaways": {
+      "en": [
+        "Describe insulation already done and planned.",
+        "Discuss radiator performance room by room.",
+        "Identify the exact GeniaAir family.",
+        "Include cylinder space and hot-water demand."
+      ],
+      "nl": [
+        "Beschrijf bestaande en geplande isolatie.",
+        "Bespreek radiatorwerking per kamer.",
+        "Identificeer de exacte GeniaAir-reeks.",
+        "Neem boilerruimte en watergebruik mee."
+      ]
+    },
+    "sources": [
+      "https://www.bulex.be/particulier/producten/alle-producten/",
+      "https://www.bulex.be/particulier/documentatie/technische-documentaties/handleidingen/"
+    ]
+  },
+  {
+    "id": "leak",
+    "slug": {
+      "en": "water-leak",
+      "nl": "waterlek"
+    },
+    "title": {
+      "en": "Water leak in Brussels: what information helps a plumber?",
+      "nl": "Waterlek in Brussel: welke informatie helpt de loodgieter?"
+    },
+    "category": "plumbing",
+    "image": "brand-technician",
+    "area": "brussel",
+    "service": 6,
+    "publishAt": "2026-11-15T00:00:00+01:00",
+    "answer": {
+      "en": "Tell the plumber where water is visible, whether it is still escaping and when it began. A photograph can show the damage, but not necessarily the source. In an apartment, state whether another flat or shared pipework may need access. A clear description helps prepare a visit without promising a diagnosis from an image.",
+      "nl": "Vermeld waar water zichtbaar is, of het nog ontsnapt en wanneer het begon. Een foto toont schade, maar niet noodzakelijk de bron. Geef in een appartement aan of toegang tot een andere woning of gedeelde leiding nodig kan zijn. Een duidelijke omschrijving helpt voorbereiden zonder diagnose op basis van een beeld te beloven."
+    },
+    "sections": [
+      {
+        "heading": {
+          "en": "A visible connection and a damp ceiling are different enquiries",
+          "nl": "Een zichtbare verbinding en vochtig plafond zijn verschillende aanvragen"
+        },
+        "body": {
+          "en": "For a dripping tap, radiator valve or visible joint, identify the location and whether normal use changes the drip. For a ceiling stain, describe the room above and any relationship to showers, taps or heating. Avoid opening ceilings or disturbing pipework simply to provide a photograph. Investigation and access can be part of the proposed work.",
+          "nl": "Identificeer bij een druppelende kraan, radiatorkraan of verbinding de plaats en invloed van normaal gebruik. Beschrijf bij plafondvocht de ruimte erboven en verband met douche, kraan of verwarming. Open geen plafonds of leidingen alleen voor een foto. Onderzoek en toegang kunnen deel van de opdracht zijn."
+        }
+      },
+      {
+        "heading": {
+          "en": "Explain what has changed in the building",
+          "nl": "Leg veranderingen in het gebouw uit"
+        },
+        "body": {
+          "en": "Recent plumbing work, a bathroom renovation or a new appliance connection may be relevant to the timeline. Tell the team what was done and by whom if known. Keep invoices or plans available. Do not assume recent work proves responsibility; the source and cause need to be assessed on the actual installation.",
+          "nl": "Recente sanitaire werken, badkamerrenovatie of een nieuwe aansluiting kunnen belangrijk zijn voor de tijdlijn. Vermeld wat gedaan werd en zo mogelijk door wie. Houd facturen of plannen klaar. Recente werken bewijzen niet automatisch verantwoordelijkheid; bron en oorzaak worden aan de installatie beoordeeld."
+        }
+      },
+      {
+        "heading": {
+          "en": "Coordinate access in a Brussels apartment",
+          "nl": "Regel toegang in een Brussels appartement"
+        },
+        "body": {
+          "en": "A leak affecting more than one dwelling may involve an owner, neighbour or building manager. Say who can open communal spaces and authorise any investigation there. Provide the floor and access arrangements when calling. Building age and neighbourhood give context, but they do not establish which pipe is leaking.",
+          "nl": "Bij meerdere getroffen woningen kunnen eigenaar, buur of syndicus betrokken zijn. Vermeld wie gemeenschappelijke ruimtes kan openen en daar onderzoek kan toestaan. Geef verdieping en toegangsafspraken bij het bellen door. Bouwjaar en buurt geven context, maar bepalen niet welke leiding lekt."
+        }
+      },
+      {
+        "heading": {
+          "en": "Ask how investigation and reinstatement are priced",
+          "nl": "Vraag hoe onderzoek en herstel van afwerking worden geprijsd"
+        },
+        "body": {
+          "en": "The plumbing repair may be only one part of the work. Ask whether opening finishes, access, replacement parts and reinstatement are included or need separate trades. Keep the agreed scope and photographs for your own records. If there is immediate danger or water near live electrical equipment, use the appropriate emergency assistance rather than waiting for a web-form reply.",
+          "nl": "De sanitaire herstelling kan één deel van het werk zijn. Vraag of openmaken, toegang, vervangstukken en herstel van afwerking inbegrepen zijn of andere vakmensen vragen. Bewaar scope en foto’s voor uw dossier. Gebruik passende noodhulp bij direct gevaar of water bij elektrische toestellen en wacht niet op een formulierantwoord."
+        }
+      }
+    ],
+    "takeaways": {
+      "en": [
+        "Describe active water escape first.",
+        "Record when the problem appears.",
+        "Arrange owner or building-manager access.",
+        "Clarify repair and finishing work separately."
+      ],
+      "nl": [
+        "Meld eerst actief waterverlies.",
+        "Noteer wanneer het probleem verschijnt.",
+        "Regel toegang met eigenaar of syndicus.",
+        "Verduidelijk leidingwerk en afwerking apart."
+      ]
+    },
+    "sources": [
+      "https://www.bulex.be/particulier/documentatie/technische-documentaties/handleidingen/"
+    ]
+  },
+  {
+    "id": "f29",
+    "slug": {
+      "en": "bulex-f29-antwerp",
+      "nl": "bulex-f29-antwerpen"
+    },
+    "title": {
+      "en": "Bulex F.29 in Antwerp: why does the flame stop?",
+      "nl": "Bulex F.29 in Antwerpen: waarom valt de vlam uit?"
+    },
+    "category": "faults",
+    "image": "brand-boiler",
+    "area": "antwerpen",
+    "service": 0,
+    "publishAt": "2026-11-22T09:00:00+01:00",
+    "answer": {
+      "en": "Bulex’s general fault reference describes F.29 as an interruption during operation followed by failed re-ignition. It does not identify one guaranteed failed component. Record the exact model and when the code occurs, then request assessment if the fault persists. Do not change gas or combustion settings yourself.",
+      "nl": "Het algemene Bulex-overzicht beschrijft F.29 als uitval tijdens werking gevolgd door mislukte herontsteking. Dat wijst niet één zeker defect onderdeel aan. Noteer model en het moment waarop de code verschijnt en vraag beoordeling bij een aanhoudende storing. Wijzig zelf geen gas- of verbrandingsinstellingen."
+    },
+    "sections": [
+      {
+        "heading": {
+          "en": "F.29 and F.28 are not the same description",
+          "nl": "F.29 en F.28 zijn niet dezelfde omschrijving"
+        },
+        "body": {
+          "en": "F.28 concerns ignition failure; F.29 refers to a failure after operation has begun. Copy exactly what is displayed, including punctuation and any alternating message. A video or photograph can help the technician distinguish messages that appear briefly. Consult the matching user manual, as model generations can differ.",
+          "nl": "F.28 betreft mislukte ontsteking; F.29 betreft uitval nadat werking begon. Neem het scherm exact over, inclusief punten en afwisselende meldingen. Een video of foto helpt bij kort zichtbare meldingen. Raadpleeg de passende gebruikershandleiding: generaties kunnen verschillen."
+        }
+      },
+      {
+        "heading": {
+          "en": "Describe the pattern before arranging the visit",
+          "nl": "Beschrijf het patroon vóór de afspraak"
+        },
+        "body": {
+          "en": "Does it happen during heating, domestic hot-water use or after a long idle period? Does it affect the whole property? Mention recent interruptions and previous repairs. The answer can help prepare a diagnostic visit in Antwerp, but a remote description does not confirm a gas supply, electrical or appliance fault.",
+          "nl": "Gebeurt het bij verwarming, warmwatergebruik of na lange stilstand? Is de hele woning getroffen? Vermeld onderbrekingen en eerdere herstellingen. Zo kan een diagnosebezoek in Antwerpen worden voorbereid, zonder op afstand een gas-, elektrisch of toestelprobleem te bevestigen."
+        }
+      },
+      {
+        "heading": {
+          "en": "Keep access and authorisation ready",
+          "nl": "Regel toegang en toestemming"
+        },
+        "body": {
+          "en": "For a rented apartment, tell the owner about a recurring fault and agree who will authorise work. Include the address, floor, access restrictions and any shared heating infrastructure. Avoid repeated resets as a workaround. If you suspect an immediate danger, contact the relevant emergency service instead of waiting for a routine repair appointment.",
+          "nl": "Meld als huurder een terugkerende storing aan de eigenaar en spreek af wie werken kan toestaan. Geef adres, verdieping, toegangsbeperkingen en gedeelde verwarming door. Gebruik voortdurend resetten niet als oplossing. Contacteer bij vermoed direct gevaar de hulpdienst en wacht niet op een gewone afspraak."
+        }
+      }
+    ],
+    "takeaways": {
+      "en": [
+        "Copy the exact F.29 display.",
+        "Describe when it occurs.",
+        "Include earlier repairs and the model."
+      ],
+      "nl": [
+        "Noteer de exacte F.29-melding.",
+        "Beschrijf wanneer ze verschijnt.",
+        "Vermeld eerdere herstellingen en model."
+      ]
+    },
+    "sources": [
+      "https://www.bulex.be/particulier/diensten/foutcodes/",
+      "https://www.bulex.be/particulier/documentatie/technische-documentaties/handleidingen/"
+    ]
+  },
+  {
+    "id": "replacement",
+    "slug": {
+      "en": "themafast-replacement-brussels",
+      "nl": "themafast-vervangen-brussel"
+    },
+    "title": {
+      "en": "Replacing a Bulex ThemaFast in Brussels: what must be checked?",
+      "nl": "Bulex ThemaFast vervangen in Brussel: wat controleren?"
+    },
+    "category": "equipment",
+    "image": "brand-boiler",
+    "area": "brussel",
+    "service": 2,
+    "publishAt": "2026-11-29T09:00:00+01:00",
+    "answer": {
+      "en": "Before ordering a replacement, check the full existing model, flue arrangement, connections and simultaneous hot-water demand. A new boiler from the same family is not automatically a direct swap. In Brussels apartments, shared infrastructure and building-manager access can be as important as the product choice.",
+      "nl": "Controleer vóór bestelling het volledige model, rookgasafvoer, aansluitingen en gelijktijdige warmwaterbehoefte. Een nieuwe ketel uit dezelfde reeks is niet automatisch rechtstreeks uitwisselbaar. In Brusselse appartementen kunnen gedeelde delen en toegang via de syndicus even belangrijk zijn als de toestelkeuze."
+    },
+    "sections": [
+      {
+        "heading": {
+          "en": "Use complete model references",
+          "nl": "Gebruik volledige modelreferenties"
+        },
+        "body": {
+          "en": "ThemaFast Condens models appear with different output references and suffixes in manufacturer documentation. Keep the appliance label and previous quotation available rather than relying on a casing photograph. The final reference should be checked against the actual installation and current documentation before a purchase is agreed.",
+          "nl": "ThemaFast Condens-modellen hebben verschillende vermogensreferenties en toevoegingen in de fabrikantdocumentatie. Houd typeplaatje en vorige offerte klaar in plaats van alleen een mantelfoto te gebruiken. Controleer de uiteindelijke referentie met de installatie en actuele documentatie vóór aankoop."
+        }
+      },
+      {
+        "heading": {
+          "en": "Ask about the shared flue and removal route",
+          "nl": "Vraag naar gedeelde rookgasafvoer en verwijderroute"
+        },
+        "body": {
+          "en": "Find out whether the flue is private or collective, and who may provide access to shared areas. Describe where condensate and water connections run. Include the floor, stairs and lift so removal and delivery can be planned. These questions belong in the assessment; the name on the boiler cannot answer them.",
+          "nl": "Ga na of rookgasafvoer privatief of collectief is en wie toegang geeft tot gemeenschappelijke delen. Beschrijf condensafvoer en wateraansluitingen. Vermeld verdieping, trap en lift voor verwijdering en levering. Dit hoort bij de beoordeling; de naam op de ketel beantwoordt het niet."
+        }
+      },
+      {
+        "heading": {
+          "en": "Compare the complete quotation",
+          "nl": "Vergelijk de volledige offerte"
+        },
+        "body": {
+          "en": "Ask whether controls, adaptation of connections, removal, commissioning and applicable taxes are included. Describe any new bathroom or household change affecting hot-water demand. A lower appliance-only price cannot be compared directly with a complete installation proposal. Keep the accepted scope so later changes can be discussed clearly.",
+          "nl": "Vraag of regeling, aangepaste aansluitingen, verwijdering, ingebruikname en belastingen inbegrepen zijn. Vermeld een nieuwe badkamer of veranderd gezinspatroon. Een toestelprijs alleen is niet rechtstreeks vergelijkbaar met een volledig installatievoorstel. Bewaar de aanvaarde scope om wijzigingen duidelijk te bespreken."
+        }
+      }
+    ],
+    "takeaways": {
+      "en": [
+        "Identify the full old model.",
+        "Check private versus collective flue.",
+        "Compare installation scope as well as equipment."
+      ],
+      "nl": [
+        "Identificeer het volledige oude model.",
+        "Controleer privatieve of collectieve afvoer.",
+        "Vergelijk werkingssfeer naast toestelprijs."
+      ]
+    },
+    "sources": [
+      "https://www.bulex.be/professioneel/technische-fiches/",
+      "https://www.bulex.be/particuliers/produits/themafast-condens-85568.html"
+    ]
+  },
+  {
+    "id": "radiators",
+    "slug": {
+      "en": "cold-radiators-ghent",
+      "nl": "koude-radiatoren-gent"
+    },
+    "title": {
+      "en": "Cold radiators in Ghent while hot water works: where to start",
+      "nl": "Koude radiatoren in Gent terwijl warm water werkt: waar beginnen?"
+    },
+    "category": "heating",
+    "image": "hero-comfort",
+    "area": "gent",
+    "service": 3,
+    "publishAt": "2026-12-06T09:00:00+01:00",
+    "answer": {
+      "en": "Describe whether one radiator, one floor or every room is affected. Hot water still working is a useful observation, but it does not prove that the boiler or controls are fault-free. A heating request should describe room temperatures, normal thermostat behaviour and when the problem began.",
+      "nl": "Beschrijf of één radiator, één verdieping of alle kamers getroffen zijn. Werkend warm water is een nuttige observatie, maar bewijst niet dat ketel of regeling foutloos zijn. Vermeld kamertemperaturen, normale thermostaatwerking en wanneer het begon."
+    },
+    "sections": [
+      {
+        "heading": {
+          "en": "Make a room-by-room description",
+          "nl": "Beschrijf de situatie per kamer"
+        },
+        "body": {
+          "en": "List the rooms that remain cold and those that heat normally. Say whether the issue is new or has always occurred, and whether radiators were recently replaced. A pattern across an entire floor differs from a problem at one emitter. It helps the professional assess the system rather than assuming each cold radiator has the same cause.",
+          "nl": "Noteer welke kamers koud blijven en welke normaal opwarmen. Vermeld of het nieuw of altijd zo is en of radiatoren recent vervangen zijn. Een hele verdieping verschilt van één getroffen afgiftetoestel. Zo wordt het systeem beoordeeld zonder bij elke koude radiator dezelfde oorzaak te veronderstellen."
+        }
+      },
+      {
+        "heading": {
+          "en": "What to note about the controls",
+          "nl": "Wat noteert u over de regeling?"
+        },
+        "body": {
+          "en": "Write down the thermostat model and whether the heating request appears on its normal user display. Tell the team about schedule changes, a new controller or work on wiring. Do not alter installer settings to test theories. If the home is rented, keep the owner informed and locate the available control documentation.",
+          "nl": "Noteer thermostaatmodel en of het normale scherm een warmtevraag toont. Vermeld gewijzigde programma’s, een nieuwe regeling of bedradingswerken. Verander geen installateursinstellingen om iets te testen. Houd als huurder de eigenaar op de hoogte en zoek de beschikbare regeldocumentatie."
+        }
+      },
+      {
+        "heading": {
+          "en": "Preparing an assessment in Ghent",
+          "nl": "Een beoordeling in Gent voorbereiden"
+        },
+        "body": {
+          "en": "In an apartment, state whether the radiators are connected to a private boiler or collective heating. Arrange access to relevant shared spaces and describe building-manager involvement. Send a concise room list, the boiler model and any displayed error with your enquiry. A useful visit begins with identifying which parts of the system can actually be inspected.",
+          "nl": "Vermeld bij een appartement of radiatoren aan een privatieve ketel of collectieve verwarming hangen. Regel toegang tot relevante gedeelde ruimtes en overleg met de syndicus. Stuur een korte kamerlijst, ketelmodel en foutcode. Een nuttig bezoek begint bij welke delen werkelijk toegankelijk zijn."
+        }
+      }
+    ],
+    "takeaways": {
+      "en": [
+        "Map the affected rooms.",
+        "Identify the heating controls.",
+        "Mention private or collective heating."
+      ],
+      "nl": [
+        "Breng getroffen kamers in kaart.",
+        "Identificeer de verwarmingsregeling.",
+        "Vermeld privatieve of collectieve verwarming."
+      ]
+    },
+    "sources": [
+      "https://www.bulex.be/particulier/documentatie/technische-documentaties/handleidingen/"
+    ]
+  },
+  {
+    "id": "controls",
+    "slug": {
+      "en": "bulex-thermostat-leuven",
+      "nl": "bulex-thermostaat-leuven"
+    },
+    "title": {
+      "en": "MiGo or MiPro Sense in Leuven: which Bulex control fits?",
+      "nl": "MiGo of MiPro Sense in Leuven: welke Bulex-regeling past?"
+    },
+    "category": "equipment",
+    "image": "boiler",
+    "area": "leuven",
+    "service": 3,
+    "publishAt": "2026-12-13T09:00:00+01:00",
+    "answer": {
+      "en": "Choose controls by compatibility and the heating system, not by the appearance of the thermostat. MiPro Sense, MiGo Select and the MiGo Link connection have different roles and requirements. Check the exact boiler or heat-pump model and desired control functions before ordering a replacement.",
+      "nl": "Kies regeling op basis van compatibiliteit en verwarmingssysteem, niet alleen uiterlijk. MiPro Sense, MiGo Select en MiGo Link hebben verschillende rollen en vereisten. Controleer ketel- of warmtepompmodel en gewenste functies vóór u een vervangregeling bestelt."
+    },
+    "sections": [
+      {
+        "heading": {
+          "en": "Start with the existing system",
+          "nl": "Begin bij het bestaande systeem"
+        },
+        "body": {
+          "en": "Bring the appliance model, controller name and any information about multiple heating circuits. Tell the team if the system includes a heat pump or separate cylinder. A controller described as “smart” is not automatically compatible with every Bulex appliance. The connection arrangement and required modules need to be checked together.",
+          "nl": "Neem toestelmodel, regelingsnaam en informatie over meerdere verwarmingscircuits mee. Vermeld warmtepomp of afzonderlijke boiler. Een “slimme” thermostaat werkt niet automatisch met elk Bulex-toestel. Aansluitconcept en vereiste modules moeten samen worden gecontroleerd."
+        }
+      },
+      {
+        "heading": {
+          "en": "Separate remote access from heating operation",
+          "nl": "Onderscheid afstandsbediening en verwarmingswerking"
+        },
+        "body": {
+          "en": "Explain whether you want phone-app access, room scheduling or a change to the way heat is regulated. If an app connection fails, state whether local heating controls still work. Network access and appliance operation are different observations. Describe the issue without opening controls or changing wiring.",
+          "nl": "Leg uit of u appbediening, kamerprogramma’s of een andere warmteregeling wilt. Werkt een appverbinding niet, vermeld dan of lokale bediening nog werkt. Netwerktoegang en toestelwerking zijn verschillende observaties. Beschrijf het probleem zonder regelingen te openen of bedrading te veranderen."
+        }
+      },
+      {
+        "heading": {
+          "en": "Ask for the whole controls proposal",
+          "nl": "Vraag een volledig regelingsvoorstel"
+        },
+        "body": {
+          "en": "For a Leuven renovation, mention planned emitter changes and household routines. Ask which thermostat, connection module and commissioning are included, and where controls will be installed. Manufacturer documentation should match the exact variants in the proposal. Do not assume a generic percentage energy saving: results depend on the building, system and use.",
+          "nl": "Vermeld bij een Leuvense renovatie geplande afgiftewijzigingen en gezinspatroon. Vraag welke thermostaat, verbindingsmodule en ingebruikname inbegrepen zijn en waar bediening komt. Fabrikantdocumentatie hoort bij de exacte varianten te passen. Veronderstel geen vast besparingspercentage: resultaat hangt af van gebouw, installatie en gebruik."
+        }
+      }
+    ],
+    "takeaways": {
+      "en": [
+        "Identify the appliance and existing control.",
+        "Describe the functions you need.",
+        "Confirm required modules and commissioning."
+      ],
+      "nl": [
+        "Identificeer toestel en bestaande regeling.",
+        "Beschrijf de gewenste functies.",
+        "Bevestig modules en ingebruikname."
+      ]
+    },
+    "sources": [
+      "https://www.bulex.be/particulier/producten/alle-producten/",
+      "https://www.bulex.be/particulier/documentatie/technische-documentaties/handleidingen/"
+    ]
+  },
+  {
+    "id": "noise",
+    "slug": {
+      "en": "bulex-noise-anderlecht",
+      "nl": "bulex-geluid-anderlecht"
+    },
+    "title": {
+      "en": "A noisy Bulex boiler in Anderlecht: what should you report?",
+      "nl": "Een luidruchtige Bulex-ketel in Anderlecht: wat meldt u?"
+    },
+    "category": "faults",
+    "image": "brand-technician",
+    "area": "anderlecht",
+    "service": 0,
+    "publishAt": "2026-12-20T09:00:00+01:00",
+    "answer": {
+      "en": "Describe when the noise occurs and whether heating, hot water or pressure has changed. A sound alone is not a reliable diagnosis of a pump, fan or heat exchanger. A short recording made from a safe position can help a technician prepare, especially when the noise is intermittent.",
+      "nl": "Beschrijf wanneer het geluid verschijnt en of verwarming, warm water of druk veranderde. Alleen geluid bepaalt niet betrouwbaar of pomp, ventilator of warmtewisselaar defect is. Een korte opname vanaf een veilige plaats helpt voorbereiden, vooral bij een onregelmatig geluid."
+    },
+    "sections": [
+      {
+        "heading": {
+          "en": "Record the operating moment",
+          "nl": "Noteer het werkingsmoment"
+        },
+        "body": {
+          "en": "Does the noise begin when heating starts, when a hot tap opens, or after the demand ends? Is it heard at the boiler, a pipe or a radiator? A short timeline and location are more useful than trying to name the internal part. Keep appliance covers closed and use normal user controls only.",
+          "nl": "Begint het bij verwarmingsstart, een warme kraan of na het einde van de vraag? Komt het van ketel, leiding of radiator? Een korte tijdlijn en plaats helpen meer dan zelf een binnendeel benoemen. Laat kappen gesloten en gebruik alleen normale bediening."
+        }
+      },
+      {
+        "heading": {
+          "en": "Include changes elsewhere in the installation",
+          "nl": "Vermeld veranderingen elders in de installatie"
+        },
+        "body": {
+          "en": "Tell the team about recurring pressure loss, new fault messages or uneven radiator heat. Mention recent work, maintenance or renovation in the property. In an older Anderlecht house, pipe routes may cross several rooms; in an apartment, transmission through shared structures can make the perceived source misleading. Describe observations without assuming age establishes the cause.",
+          "nl": "Meld terugkerend drukverlies, nieuwe foutmeldingen of ongelijke radiatorwarmte. Vermeld recente werken, onderhoud of renovatie. In een oudere Anderlechtse woning kunnen leidingen door meerdere kamers lopen; in een appartement kan geluidsoverdracht de bron moeilijk herkenbaar maken. Beschrijf observaties zonder bouwjaar als oorzaak te nemen."
+        }
+      },
+      {
+        "heading": {
+          "en": "Prepare documents for the diagnostic visit",
+          "nl": "Bereid documenten voor de diagnose voor"
+        },
+        "body": {
+          "en": "Send the model, previous service report, a short description and a safe recording if available. Ask whether the planned visit is diagnostic and how any additional repair will be agreed. A noisy appliance does not automatically need replacement. If there are signs of immediate danger, use the appropriate emergency service instead of waiting for a recording to be reviewed.",
+          "nl": "Stuur model, vorig onderhoudsattest, beschrijving en eventueel veilige opname. Vraag of het bezoek voor diagnose dient en hoe bijkomende herstelling wordt afgesproken. Geluid betekent niet automatisch vervanging. Gebruik bij direct gevaar de hulpdienst en wacht niet tot een opname beoordeeld is."
+        }
+      }
+    ],
+    "takeaways": {
+      "en": [
+        "Note when and where the sound occurs.",
+        "Report related pressure or heating changes.",
+        "Keep covers closed."
+      ],
+      "nl": [
+        "Noteer wanneer en waar u het hoort.",
+        "Meld veranderde druk of verwarming.",
+        "Laat kappen gesloten."
+      ]
+    },
+    "sources": [
+      "https://www.bulex.be/particulier/documentatie/technische-documentaties/handleidingen/"
+    ]
+  },
+  {
+    "id": "capacity",
+    "slug": {
+      "en": "hot-water-capacity-antwerp",
+      "nl": "warmwatercapaciteit-antwerpen"
+    },
+    "title": {
+      "en": "Water heater too small in Antwerp? Compare demand before replacing",
+      "nl": "Boiler te klein in Antwerpen? Vergelijk eerst het watergebruik"
+    },
+    "category": "hot-water",
+    "image": "brand-water-heater",
+    "area": "antwerpen",
+    "service": 4,
+    "publishAt": "2026-12-27T09:00:00+01:00",
+    "answer": {
+      "en": "Hot water running out can be a capacity question, a change in household use or an appliance problem. Describe how the system used to perform and how demand has changed before choosing a larger cylinder. A new bathroom or simultaneous showers may change the design brief, but the existing connections and space still matter.",
+      "nl": "Warm water dat opraakt kan met capaciteit, veranderd gezinspatroon of een toestelprobleem samenhangen. Beschrijf eerdere werking en veranderd gebruik voordat u een grotere boiler kiest. Een nieuwe badkamer of gelijktijdige douches verandert de vraag, maar aansluitingen en ruimte blijven belangrijk."
+    },
+    "sections": [
+      {
+        "heading": {
+          "en": "Write down the household routine",
+          "nl": "Noteer het gezinspatroon"
+        },
+        "body": {
+          "en": "Explain the number of users, which showers or baths run together and when the water becomes cooler. Compare this with a period when the installation met your needs. Avoid selecting equipment from household size alone: the usage pattern and type of heater need to be considered together.",
+          "nl": "Beschrijf aantal gebruikers, gelijktijdige douches of baden en wanneer het water koeler wordt. Vergelijk dit met een periode waarin de installatie voldeed. Kies niet alleen op gezinsgrootte: gebruikspatroon en toesteltype horen samen beoordeeld te worden."
+        }
+      },
+      {
+        "heading": {
+          "en": "Identify what produces the hot water",
+          "nl": "Identificeer de warmwaterbron"
+        },
+        "body": {
+          "en": "A combi boiler, gas water heater and storage cylinder have different arrangements. Include the complete model reference and cylinder capacity if applicable. If the water turns cold at only one outlet, tell the team before assuming the central equipment is undersized. Changes at a shower or tap may need their own assessment.",
+          "nl": "Combiketel, gasbadverwarmer en voorraadboiler hebben verschillende opstellingen. Vermeld volledig model en zo nodig boilerinhoud. Wordt het water maar op één tappunt koud, meld dat dan voordat u de centrale installatie te klein noemt. Een gewijzigde douche of kraan kan afzonderlijk onderzocht moeten worden."
+        }
+      },
+      {
+        "heading": {
+          "en": "Compare installation requirements as well as capacity",
+          "nl": "Vergelijk aansluitingen naast inhoud"
+        },
+        "body": {
+          "en": "For an Antwerp apartment, describe wall space, access and shared services before ordering. Ask how the proposed replacement connects, what controls are included and whether other work is required. A larger appliance must be assessed for the actual location. The quotation should describe removal, installation and commissioning, not just the cylinder itself.",
+          "nl": "Beschrijf bij een Antwerps appartement wandruimte, toegang en gedeelde diensten vóór bestelling. Vraag naar aansluitingen, regeling en andere vereiste werken. Een groter toestel moet op de echte plaats worden beoordeeld. De offerte hoort verwijdering, plaatsing en ingebruikname te beschrijven, niet alleen de boiler."
+        }
+      }
+    ],
+    "takeaways": {
+      "en": [
+        "Compare present and previous performance.",
+        "Describe simultaneous use.",
+        "Check exact model, capacity and available space."
+      ],
+      "nl": [
+        "Vergelijk huidige en vroegere werking.",
+        "Beschrijf gelijktijdig gebruik.",
+        "Controleer model, inhoud en beschikbare ruimte."
+      ]
+    },
+    "sources": [
+      "https://www.bulex.be/particulier/producten/alle-producten/",
+      "https://www.bulex.be/particulier/documentatie/technische-documentaties/handleidingen/"
+    ]
+  }
+]

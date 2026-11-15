@@ -1,3 +1,4 @@
+import {getPublishedBlogPosts,type BlogPost} from './blog';
 import type {BulexLocale} from './routes';
 // Brand-neutral editorial replacements: never relabel Vaillant fault codes or models as Bulex.
 const articles=[
@@ -18,5 +19,10 @@ const articles=[
  ['canalisation-bouchee-debouchage-bruxelles','verstopte-afvoer','blocked-drain','Een afvoer die niet goed doorloopt','A drain that is not flowing properly','Noteer welke afvoeren getroffen zijn en of er terugstroming optreedt. Meng geen ontstoppingsproducten. Geef door welke producten al gebruikt zijn voordat een technieker de afvoer onderzoekt.','Note which drains are affected and whether water is backing up. Do not mix drain-cleaning products. Tell the technician which products have already been used before they investigate.'],
  ['fuite-eau-urgence-bruxelles-que-faire','waterlek','water-leak','Een waterlek melden','Reporting a water leak','Beschrijf de plaats van het lek en eventuele zichtbare schade. Maak alleen foto’s als dat veilig kan. Contacteer ons om de beschikbaarheid te bespreken en vermijd contact met elektrische toestellen in een natte omgeving.','Describe the location and any visible damage. Take photographs only if it is safe. Contact us to discuss availability and avoid electrical equipment in wet surroundings.']
 ];
-export function getAdvice(locale:BulexLocale){return articles.map((a,i)=>({legacy:a[0],slug:a[locale==='nl'?1:2],title:a[locale==='nl'?3:4],body:a[locale==='nl'?5:6],image:['technician','boiler','lifestyle','heat-pump'][i%4]}));}
-export function adviceAlternate(slug:string,locale:BulexLocale){const row=articles.find(a=>a.slice(0,3).includes(slug));return row?.[locale==='nl'?1:2];}
+export type AdviceArticle={legacy:string;slug:string;title:string;body:string;image:string;blogPost?:BlogPost};
+export function getAdvice(locale:BulexLocale,now:Date=new Date()):AdviceArticle[]{
+ const published=getPublishedBlogPosts(now);
+ const existing:AdviceArticle[]=articles.map((a,i)=>{const slug=a[locale==='nl'?1:2],post=published.find(p=>p.slug[locale]===slug);return{legacy:a[0],slug,title:post?.title[locale]||a[locale==='nl'?3:4],body:post?.answer[locale]||a[locale==='nl'?5:6],image:post?.image||['technician','boiler','lifestyle','heat-pump'][i%4],blogPost:post}});
+ return [...existing,...published.filter(p=>!existing.some(a=>a.slug===p.slug[locale])).map(p=>({legacy:p.slug.en,slug:p.slug[locale],title:p.title[locale],body:p.answer[locale],image:p.image,blogPost:p}))];
+}
+export {adviceAlternate} from './advice-routes';

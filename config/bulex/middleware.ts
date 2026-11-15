@@ -1,6 +1,6 @@
 import {NextResponse,type NextRequest} from 'next/server';
 import {getAlternateLocalePath} from '../locale-routes';
-import {adviceAlternate} from './advice';
+import {adviceAlternate} from './advice-routes';
 import {alternatePath} from './routes';
 export function bulexMiddleware(request:NextRequest){const path=request.nextUrl.pathname;
  if(path==='/llms.txt'){const url=request.nextUrl.clone();url.pathname='/bulex-meta';return NextResponse.rewrite(url);}

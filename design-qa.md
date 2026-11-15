@@ -51,3 +51,15 @@ CTA refinement: red calendar booking button restored in the header; bottom conta
 Review carousel revision: nine labeled examples; mouse drag, native touch swipe, automatic paging and dot navigation, with reduced-motion and interaction pauses. Google review action requires the verified business URL. Server-rendered tests check example/real-review separation. Production build passes; interactive browser verification remains outstanding due to the previously recorded preview issues.
 
 WhatsApp widget: bottom-right floating official WhatsApp icon, green pulse ring and hover/focus expansion with EN/NL help label. Animation respects reduced-motion and hover expansion is suppressed on touch-only devices. Uses NEXT_PUBLIC_WHATSAPP_NUMBER; no hardcoded number fallback. Call links and public email continue to use their independent existing env settings. Contact/footer WhatsApp links added. Browser visual verification remains outstanding as described above.
+
+## Focused responsive verification — 2026-11-15
+Status: passed for this change scope (not a new pixel-fidelity claim for the whole site).
+Local preview succeeds when Next starts with --hostname localhost (the earlier 127.0.0.1 binding caused an external rewrite/404 due to hostname normalization). Tested http://localhost:3011.
+- EN desktop blog renders six published guides; search for Opalia reduces it to one result and opens the correct article.
+- Language switch preserves the article and displays the supplied Dutch logo on NL.
+- At 390px the logo, Flanders badge, menu and article remain within the viewport; DOM width equals client width.
+- Mobile menu includes Blog & advies and a direct call CTA.
+- Scroll reveals the mobile call bar with tel:+32467802090; WhatsApp sits above the bar.
+- At 1440px no horizontal overflow or unloaded images; inspected browser console has no errors.
+- Screenshots: qa/mobile-nl-header.png and qa/blog-desktop.png.
+- Build and 29 checks pass, including exact weekly publication boundaries and translated local/service relationships.
