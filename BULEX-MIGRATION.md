@@ -1,3 +1,5 @@
+> Live email verification (15 November 2026): production /api/mail delivered an enquiry and confirmation to contact@bulex-loodgieter.com. Both landed in Junk despite passing SPF/DKIM/DMARC; Inbox placement remains unresolved. See `.agent/mail-verification.md`.
+
 > Current routing and mail policy (15 November 2026): Dutch is the default with unprefixed public URLs; English uses /en. Old /nl URLs redirect permanently. Application forwarding and MAIL_TO have been removed; enquiries go to the configured sending mailbox and forwarding is managed in Hostinger Mail. Earlier entries below document historical migration decisions.
 
 # Bulex Plombier implementation and launch notes
