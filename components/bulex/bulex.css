@@ -308,3 +308,8 @@
 @media(max-width:700px){.bx-mobile-nav{width:calc(100% - 40px)}.bx-main-header .bx-menu-button{margin-left:0}.bx-main-header .bx-header-cta{display:inline-flex!important;margin-left:auto;width:40px;min-width:40px;min-height:40px;height:40px;padding:10px!important}.bx-header .bx-main-header{gap:9px}.bx-brand-lockup{gap:10px}.bx-flanders-badge{width:36px;height:36px}.bx-brand-lockup .bx-logo,.bx-brand-lockup .bx-logo img{width:clamp(135px,40vw,195px)}}
 @media(prefers-reduced-motion:reduce){.bx-menu-glyph span,.bx-menu-button,.bx-mobile-menu-shell,.bx-mobile-nav{transition:none}}
 @media(max-width:360px){.bx-header .bx-main-header{gap:7px}.bx-brand-lockup{gap:6px}.bx-brand-lockup .bx-logo,.bx-brand-lockup .bx-logo img{width:120px}.bx-flanders-badge{width:30px;height:30px}}
+
+/* Environment-driven number labels; keep the mobile call bar compact. */
+.bulex-site .bx-header-cta{width:auto;min-width:46px;gap:8px;flex-shrink:0}
+.bx-mobile-call-copy strong{font-variant-numeric:tabular-nums;letter-spacing:.02em}
+@media(max-width:700px){.bx-header .bx-main-header{display:grid;grid-template-columns:minmax(0,1fr) auto;height:auto;min-height:94px;padding-block:12px;row-gap:12px}.bx-main-header .bx-brand-lockup{grid-column:1;grid-row:1}.bx-main-header .bx-menu-button{grid-column:2;grid-row:1}.bx-main-header .bx-header-cta{grid-column:1/-1;grid-row:2;width:100%;min-width:0;height:40px}.bx-brand-lockup .bx-logo,.bx-brand-lockup .bx-logo img{width:clamp(150px,46vw,220px)}}

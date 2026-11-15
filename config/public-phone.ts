@@ -8,6 +8,7 @@ export function normalizePhoneDigits(raw:string|undefined):string{
  return /^\d{8,15}$/.test(digits)?digits:'';
 }
 export function getPublicPhoneE164Digits(){return normalizePhoneDigits(process.env.NEXT_PUBLIC_PHONE_NUMBER)}
-export function getPublicPhoneDisplay(){const digits=getPublicPhoneE164Digits();return digits?'+'+digits:''}
+export function formatPublicPhone(raw:string|undefined){const digits=normalizePhoneDigits(raw);if(/^324\d{8}$/.test(digits)){return ('0'+digits.slice(2)).match(/.{2}/g)!.join(' ')}return digits?'+'+digits:''}
+export function getPublicPhoneDisplay(){return formatPublicPhone(process.env.NEXT_PUBLIC_PHONE_NUMBER)}
 export function getPublicPhoneTelHref(){const digits=getPublicPhoneE164Digits();return digits?'tel:+'+digits:''}
 export function getWhatsAppE164Digits(){return normalizePhoneDigits(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER)}

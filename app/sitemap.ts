@@ -1,4 +1,5 @@
-import { bulexOrigin, bulexIndexable } from "@/config/bulex/brand";
+import {getBulexOrigin} from '@/config/bulex/request-origin';
+import { bulexIndexable } from "@/config/bulex/brand";
 import { getAdvice } from "@/config/bulex/advice";
 import { getServices, getSolutions } from "@/config/bulex/content";
 import { alternatePath, href, pageSegments, type PageKey } from "@/config/bulex/routes";
@@ -7,7 +8,8 @@ import type { MetadataRoute } from "next";
 
 export const dynamic='force-dynamic';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const bulexOrigin=await getBulexOrigin();
   if (!bulexIndexable) return [];
 
   return (["nl", "en"] as const).flatMap((locale) => {

@@ -40,3 +40,5 @@ export function mainMeta(locale:BulexLocale,key:PageKey){
  };
  return entries[key]!;
 }
+
+export function metaSummary(text:string,max=160){const clean=text.replace(/\s+/g,' ').trim();if(clean.length<=max)return clean;const excerpt=clean.slice(0,max-1);return excerpt.slice(0,excerpt.lastIndexOf(' ')>max*0.6?excerpt.lastIndexOf(' '):excerpt.length).replace(/[ ,;:.]+$/,'')+'…';}

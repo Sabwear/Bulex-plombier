@@ -6,5 +6,4 @@ export function resolveAppMode(value:string|undefined,nodeEnv:string|undefined):
     nodeEnv==='production'?'production':'development';
 }
 export const appMode=resolveAppMode(process.env.APP_MODE,process.env.NODE_ENV);
-export const bulexOrigin = process.env.BULEX_SITE_URL?.trim().replace(/\/$/, '') || 'http://localhost:3000';
 export const bulexIndexable = appMode === 'production';

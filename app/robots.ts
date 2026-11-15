@@ -1,7 +1,11 @@
-import { bulexOrigin, bulexIndexable } from "@/config/bulex/brand";
+import {getBulexOrigin} from '@/config/bulex/request-origin';
+import { bulexIndexable } from "@/config/bulex/brand";
 import type { MetadataRoute } from "next";
 
-export default function robots(): MetadataRoute.Robots {
+export const dynamic='force-dynamic';
+
+export default async function robots(): Promise<MetadataRoute.Robots> {
+  const bulexOrigin=await getBulexOrigin();
   return {
     rules: {
       userAgent: "*",

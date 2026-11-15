@@ -22,7 +22,7 @@ Open [http://localhost:3000](http://localhost:3000). The default route opens Eng
 Copy [.env.example](./.env.example) to `.env.local` for local development, or enter the same values in your production host's environment settings. Never upload secrets into the public directory or commit them.
 
 The configuration is grouped in `.env.example`: application mode, company/contact details, SMTP, social media and Google settings. The production essentials are:
-- `BULEX_SITE_URL`: your final HTTPS origin.
+- `BULEX_SITE_URL`: optional fallback origin when request headers are unavailable. Public canonical, hreflang, social, schema, sitemap and robots URLs normally detect the current domain automatically. Leave this blank for automatic detection.
 - `APP_MODE`: `development` for testing, `production` for the live website.
 - `NEXT_PUBLIC_SUPPORT_EMAIL`, `NEXT_PUBLIC_PHONE_NUMBER`: public contact details.
 - `BULEX_COMPANY_NAME`, `BULEX_COMPANY_NUMBER`, `BULEX_COMPANY_ADDRESS`: registered operator details.
@@ -37,7 +37,7 @@ Public social and Google review links use a single `NEXT_PUBLIC_*` naming scheme
 1. Configure the variables before running `npm run build`; `NEXT_PUBLIC_*` values are included at build time, so rebuild when they change.
 2. Run `npm ci`, `npm run test:bulex`, then `npm run build`.
 3. Select the host’s **Next.js** framework preset, build command `npm run build`, and output directory `.next` (or leave the framework default). Run `npm run start` using the host's assigned `PORT`. This Next.js application needs a Node.js server; uploading only static files will not run the enquiry API.
-4. Set `APP_MODE=production` and the real `BULEX_SITE_URL` for the live deployment. Use `APP_MODE=development` for staging. Rebuild after changing these settings.
+4. Set `APP_MODE=production` for the live deployment. The public domain is detected from the request; `BULEX_SITE_URL` is only an optional fallback. Use `APP_MODE=development` for staging. Rebuild after changing these settings.
 
 ### Removed duplicates
 
@@ -87,3 +87,7 @@ The new blog hub has six published EN/NL guides and six fully written weekly art
 The hub, article resolution and sitemap check these dates on the server. Future article URLs return 404 and stay out of public lists and sitemap until publication. Pages and sitemap render dynamically, so no weekly rebuild or cron job is required on the Node.js deployment. Existing advice URLs remain available for compatibility. To change a release date, edit `publishAt` and redeploy the source.
 
 The Dutch logo is `public/bulex/loodgieter-logo.webp`; English retains `plombier-logo.webp`. The Flanders header badge is `public/bulex/flanders.webp`. Both phone settings are configured as `0467802090`; update the same env values on your production host and rebuild to apply them there.
+
+### Automatic SEO origin
+
+SEO URLs are resolved per request on the server. A public `Host` takes precedence; when the application receives an internal host, the proxy's single `X-Forwarded-Host` value supplies the public host. `X-Forwarded-Proto` supplies HTTP/HTTPS, with HTTPS as the public-domain default and HTTP for local development. Configure the hosting proxy to overwrite these headers rather than pass arbitrary client-supplied values through. Host values containing paths, credentials, query strings or multiple authorities are rejected. Request paths come from the public EN/NL route, so tracking parameters and internal `/bulex` rewrites do not enter canonical URLs. Preview environments should use `APP_MODE=development` to remain non-indexable.

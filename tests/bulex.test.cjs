@@ -11,6 +11,8 @@ require.extensions['.ts'] = (module, filename) => module._compile(ts.transpileMo
 require.extensions['.tsx']=require.extensions['.ts'];
 require.extensions['.css']=()=>{};
 const {NextRequest}=require('next/server');
+let seoRequestHeaders=new Headers({host:'localhost:3001'});
+require('next/headers').headers=async()=>seoRequestHeaders;
 const {bulexMiddleware}=require('../config/bulex/middleware.ts');
 const {href,alternatePath}=require('../config/bulex/routes.ts');
 const {getServices,getSolutions}=require('../config/bulex/content.ts');
@@ -209,7 +211,45 @@ test('Dutch logo appears only in Dutch pages and new header blog link is present
  const {renderToStaticMarkup}=require('react-dom/server');const {Footer}=require('../components/bulex/Shared.tsx');
  for(const locale of ['en','nl']){const html=renderToStaticMarkup(Footer({locale}));assert.doesNotMatch(html,/href="[^" ]*(?:localhost|127\.0\.0\.1|#)/);assert.ok(html.includes(`href="${href(locale,'reviews')}"`));assert.ok(html.includes(`href="${href(locale,'contact')}"`));for(const service of getServices(locale))assert.ok(html.includes(`href="${href(locale,'services',service.slug)}"`));}
 });
- test('Each published sitemap entry has reciprocal EN/NL and fallback alternates',()=>{
+ test('Each published sitemap entry has reciprocal EN/NL and fallback alternates',async()=>{
  const brand=require('../config/bulex/brand.ts');const previous=brand.bulexIndexable;brand.bulexIndexable=true;
- try{const entries=require('../app/sitemap.ts').default();const urls=new Map(entries.map(e=>[e.url,e]));for(const entry of entries){const langs=entry.alternates.languages;assert.ok(Object.values(langs).includes(entry.url));assert.equal(langs['x-default'],langs['en-BE']);for(const target of Object.values(langs)){assert.ok(urls.has(target),target);assert.deepEqual(urls.get(target).alternates.languages,langs);}}}finally{brand.bulexIndexable=previous;}
+ try{const entries=await require('../app/sitemap.ts').default();const urls=new Map(entries.map(e=>[e.url,e]));for(const entry of entries){const langs=entry.alternates.languages;assert.ok(Object.values(langs).includes(entry.url));assert.equal(langs['x-default'],langs['en-BE']);for(const target of Object.values(langs)){assert.ok(urls.has(target),target);assert.deepEqual(urls.get(target).alternates.languages,langs);}}}finally{brand.bulexIndexable=previous;}
+});
+
+test('Public origin follows the request domain, protocol and local port with validated proxy fallback',()=>{
+ const {resolvePublicOrigin}=require('../config/bulex/origin.ts');
+ for(const [headers,expected] of [
+  [{host:'localhost:3012'},'http://localhost:3012'],
+  [{host:'127.0.0.1:3012'},'http://127.0.0.1:3012'],
+  [{host:'[::1]:3012'},'http://[::1]:3012'],
+  [{host:'bulex.example'},'https://bulex.example'],
+  [{host:'bulex.example','x-forwarded-proto':'https'},'https://bulex.example'],
+  [{host:'bulex.example','x-forwarded-proto':'http'},'http://bulex.example'],
+  [{host:'localhost:3000','x-forwarded-host':'bulex.example','x-forwarded-proto':'https'},'https://bulex.example'],
+  [{host:'10.0.0.2:3000','x-forwarded-host':'www.bulex.example','x-forwarded-proto':'https'},'https://www.bulex.example'],
+  [{host:'bulex.example','x-forwarded-host':'untrusted.example'},'https://bulex.example'],
+  [{host:'localhost:3012','x-forwarded-host':'evil.example/path'},'http://localhost:3012'],
+  [{host:'localhost:3012','x-forwarded-host':'one.example,two.example'},'http://localhost:3012'],
+  [{host:'bulex.example','x-forwarded-proto':'javascript:'},'https://bulex.example'],
+ ])assert.equal(resolvePublicOrigin(new Headers(headers),'http://localhost:3000'),expected,JSON.stringify(headers));
+ assert.equal(resolvePublicOrigin(new Headers(), 'https://bulex.example/en?x=1'),'https://bulex.example');
+ for(const host of ['bad.example/path','bad.example?query','user@bad.example','-bad.example','bad..example','bad.example:99999'])assert.throws(()=>resolvePublicOrigin(new Headers({host})));
+ assert.throws(()=>resolvePublicOrigin(new Headers(),'javascript:alert(1)'));
+});
+test('Canonical, hreflang, social URLs, schema, sitemap, robots and llms use one detected origin',async()=>{
+ const brand=require('../config/bulex/brand.ts'),previousIndexable=brand.bulexIndexable,previousHeaders=seoRequestHeaders;
+ const {generateMetadata,default:Page}=require('../app/bulex/[locale]/[[...path]]/page.tsx');
+ const {renderToStaticMarkup}=require('react-dom/server');
+ brand.bulexIndexable=true;
+ try{
+  for(const domain of ['first.example','second.example']){
+   seoRequestHeaders=new Headers({host:'localhost:3000','x-forwarded-host':domain,'x-forwarded-proto':'https'});
+   const origin='https://'+domain,props={params:Promise.resolve({locale:'en',path:['advice','water-leak']})};
+   const meta=await generateMetadata(props);assert.equal(meta.metadataBase.origin,origin);assert.equal(meta.alternates.canonical,'/en/advice/water-leak');assert.equal(meta.openGraph.url,'/en/advice/water-leak');assert.equal(meta.openGraph.type,'article');assert.equal(meta.openGraph.images[0].url,'/bulex/'+getAdvice('en').find(a=>a.slug==='water-leak').image+'.webp');
+   const html=renderToStaticMarkup(await Page(props));assert.ok(html.includes(origin+'/en/advice/water-leak'));assert.doesNotMatch(html,/http:\/\/localhost:3000/);
+   const sitemap=await require('../app/sitemap.ts').default();assert.ok(sitemap.every(entry=>entry.url.startsWith(origin+'/')));
+   const robots=await require('../app/robots.ts').default();assert.equal(robots.sitemap,origin+'/sitemap.xml');
+   const llms=await require('../app/bulex-meta/route.ts').GET();assert.ok((await llms.text()).includes(origin+'/en'));
+  }
+ }finally{brand.bulexIndexable=previousIndexable;seoRequestHeaders=previousHeaders;}
 });
