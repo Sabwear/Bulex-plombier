@@ -93,7 +93,7 @@
       },
       {
         "title": "Your language choice",
-        "text": "When you choose EN or NL, the first-party BULEX_LOCALE cookie remembers that choice for up to 180 days. It contains only the selected language and is used to provide the language preference you requested. On the main website address, we otherwise use the browser language setting, with English as the fallback. You can change language using the header or remove the cookie in your browser settings."
+        "text": "When you choose EN or NL, the first-party BULEX_LOCALE cookie remembers that choice for up to 180 days. It contains only the selected language and is used to provide the language preference you requested. Dutch is the default language at the main website address. English pages use the /en prefix. Browser-language detection may direct homepage visits to English unless you have selected Dutch. You can change language using the header or remove the cookie in your browser settings."
       }
     ],
     "nl": [
@@ -119,7 +119,7 @@
       },
       {
         "title": "Uw taalkeuze",
-        "text": "Wanneer u EN of NL kiest, onthoudt de first-partycookie BULEX_LOCALE deze keuze maximaal 180 dagen. De cookie bevat alleen de gekozen taal en dient om uw aangevraagde taalvoorkeur toe te passen. Op het algemene websiteadres gebruiken wij anders de browsertaal, met Engels als terugvaltaal. U kunt de taal via de koptekst wijzigen of de cookie verwijderen in uw browserinstellingen."
+        "text": "Wanneer u EN of NL kiest, onthoudt de first-partycookie BULEX_LOCALE deze keuze maximaal 180 dagen. De cookie bevat alleen de gekozen taal en dient om uw aangevraagde taalvoorkeur toe te passen. Nederlands is de standaardtaal op het algemene websiteadres. Engelse pagina’s gebruiken het voorvoegsel /en. Detectie van de browsertaal kan bezoekers van de startpagina naar Engels leiden, tenzij u Nederlands heeft gekozen. U kunt de taal via de koptekst wijzigen of de cookie verwijderen in uw browserinstellingen."
       }
     ]
   },

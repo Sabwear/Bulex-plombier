@@ -18,7 +18,7 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const locale = (await headers()).get("x-bulex-locale") || "en";
+  const locale = (await headers()).get("x-bulex-locale") || "nl";
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>

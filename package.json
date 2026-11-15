@@ -11,7 +11,8 @@
     "dev:bulex": "npm run dev --",
     "build:bulex": "npm run build --",
     "start:bulex": "npm run start --",
-    "test:bulex": "node --test tests/bulex.test.cjs"
+    "test:bulex": "node --test tests/bulex.test.cjs",
+    "check:mail": "node scripts/check-mail.cjs"
   },
   "dependencies": {
     "lucide-react": "^0.577.0",

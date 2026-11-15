@@ -14,20 +14,20 @@ const {NextRequest}=require('next/server');
 let seoRequestHeaders=new Headers({host:'localhost:3001'});
 require('next/headers').headers=async()=>seoRequestHeaders;
 const {bulexMiddleware}=require('../config/bulex/middleware.ts');
-const {href,alternatePath}=require('../config/bulex/routes.ts');
+const {href,alternatePath,parsePublicPath}=require('../config/bulex/routes.ts');
 const {getServices,getSolutions}=require('../config/bulex/content.ts');
 const {getAdvice,adviceAlternate}=require('../config/bulex/advice.ts');
 const {getCities}=require('../data/city-data.ts');
 const {validateBulexRequest,bulexConfirmation}=require('../lib/mail/bulex-request.ts');
 function request(p,cookie){return new NextRequest('http://localhost:3001'+p,{headers:cookie?{cookie}:undefined})}
 function destination(response){return new URL(response.headers.get('location')||response.headers.get('x-middleware-rewrite')).pathname}
-test('Root detects browser language, honours saved choice and keeps explicit locale routes',()=>{
- const detect=(url,headers={})=>bulexMiddleware(new NextRequest('http://localhost:3001'+url,{headers}));
- for(const [headers,expected] of [[{},'/en'],[{'accept-language':'nl-BE,nl;q=0.9,en;q=0.8'},'/nl'],[{'accept-language':'en-GB,en;q=0.9,nl;q=0.7'},'/en'],[{'accept-language':'fr-BE,fr;q=0.9'},'/en'],[{'accept-language':'nl;q=0,en;q=0.8'},'/en'],[{'accept-language':'nl;q=bad,en;q=0.5'},'/en'],[{cookie:'BULEX_LOCALE=en','accept-language':'nl'},'/en'],[{cookie:'BULEX_LOCALE=nl','accept-language':'en'},'/nl']]){
-  const result=detect('/',headers);assert.equal(destination(result),expected);assert.equal(result.status,307);assert.match(result.headers.get('vary'),/Accept-Language/);assert.match(result.headers.get('cache-control'),/no-store/);
- }
- assert.equal(destination(detect('/?utm_source=test',{'accept-language':'nl'})),'/nl');assert.equal(new URL(detect('/?utm_source=test',{'accept-language':'nl'}).headers.get('location')).search,'?utm_source=test');
- assert.equal(destination(detect('/nl',{cookie:'BULEX_LOCALE=en','accept-language':'en'})),'/bulex/nl');assert.equal(destination(detect('/en/services/boiler-repair',{'accept-language':'nl'})),'/bulex/en/services/boiler-repair');
+test('Dutch is the unprefixed default and old Dutch links redirect permanently',()=>{
+ for(const headers of [{},{'accept-language':'nl-BE'},{cookie:'BULEX_LOCALE=nl','accept-language':'en'}]){const result=bulexMiddleware(new NextRequest('http://localhost:3001/',{headers}));assert.equal(destination(result),'/bulex/nl');assert.equal(result.headers.get('x-middleware-request-x-bulex-locale'),'nl');}
+ for(const [old,target] of [['/nl','/'],['/nl/contact','/contact'],['/nl/diensten/bulex-herstelling-belgie','/diensten/bulex-herstelling-belgie'],['/nl/loodgieter-antwerpen','/loodgieter/antwerpen']]){const result=bulexMiddleware(request(old));assert.equal(result.status,308);assert.equal(destination(result),target);}
+ assert.equal(destination(bulexMiddleware(new NextRequest('http://localhost:3001/',{headers:{'accept-language':'en'}}))),'/en');
+ assert.equal(destination(bulexMiddleware(new NextRequest('http://localhost:3001/',{headers:{'accept-language':'fr'}}))),'/bulex/nl');
+ assert.equal(destination(bulexMiddleware(request('/en/services/boiler-repair'))),'/bulex/en/services/boiler-repair');
+ assert.equal(new URL(bulexMiddleware(request('/nl/contact?ref=test')).headers.get('location')).search,'?ref=test');
 });
 test('Legacy French URLs redirect to English equivalents and preserve query strings',()=>{for(const [from,to] of [['/fr','/en'],['/fr/contact','/en/contact'],['/fr/services/reparation-vaillant-bruxelles','/en/services/boiler-repair'],['/fr/services/contrat-entretien-vaillant','/en/services/boiler-maintenance'],['/fr/plombier/anvers','/en/service-areas/antwerpen'],['/fr/brussel','/en/service-areas/brussel'],['/fr/demande-devis','/en/book-a-technician']])assert.equal(destination(bulexMiddleware(request(from))),to);assert.equal(new URL(bulexMiddleware(request('/fr/contact?ref=test')).headers.get('location')).search,'?ref=test')});
 test('All service, solution and advice language links round-trip',()=>{for(const key of ['services','solutions','blog']){const getter={services:getServices,solutions:getSolutions,blog:getAdvice}[key];for(const record of getter('nl')){const dutch=href('nl',key,record.slug);const english=alternatePath(dutch,'en');assert.ok(getter('en').some(s=>href('en',key,s.slug)===english),english);assert.equal(alternatePath(english,'nl'),dutch)}}});
@@ -41,14 +41,15 @@ test('Confirmations are localized and contain only the new brand',()=>{for(const
 const smtp=require('../lib/mail/smtp-config.ts');const actualGetSmtpConfig=smtp.getSmtpConfig;smtp.getSmtpConfig=()=>({mailFrom:'team@example.test',mailTo:'admin@example.test'});
 const transport=require('../lib/mail/sendViaSmtp.ts');const actualSendViaSmtp=transport.sendViaSmtp;const sent=[];transport.sendViaSmtp=async(_,mail)=>{sent.push(mail)};
 const {POST}=require('../app/api/mail/route.ts');
-test('Real mail route sends enquiry and localized confirmation through existing transport',async()=>{sent.length=0;const data=validData();data.append('attachments',new File(['test'],'photo.png',{type:'image/png'}));const result=await POST(new Request('http://localhost/api/mail',{method:'POST',body:data}));assert.equal(result.status,200);assert.equal(sent.length,2);assert.match(sent[0].subject,/Bulex Booking EN/);assert.equal(sent[0].attachments.length,1);assert.deepEqual(sent[1].to,['visitor@example.test']);assert.match(sent[1].text,/Your appointment is not yet confirmed/)});
+const {resetMailLimits}=require('../lib/mail/protection.ts');test.beforeEach(()=>resetMailLimits());
+test('Real mail route sends enquiry and localized confirmation through existing transport',async()=>{sent.length=0;const data=validData();data.append('attachments',new File([Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aZusAAAAASUVORK5CYII=','base64')],'photo.png',{type:'image/png'}));const result=await POST(new Request('http://localhost/api/mail',{method:'POST',body:data}));assert.equal(result.status,200);assert.equal(sent.length,2);assert.match(sent[0].subject,/Bulex Booking EN/);assert.equal(sent[0].attachments.length,1);assert.equal(sent[1].to,'visitor@example.test');assert.match(sent[1].text,/Your appointment is not yet confirmed/)});
 test('Honeypot and invalid inputs never send email',async()=>{sent.length=0;const data=validData();data.set('website','spam');assert.equal((await POST(new Request('http://localhost/api/mail',{method:'POST',body:data}))).status,200);assert.equal(sent.length,0);data.set('website','');data.delete('consent');assert.equal((await POST(new Request('http://localhost/api/mail',{method:'POST',body:data}))).status,400);assert.equal(sent.length,0)});
 test('Disallowed attachments are rejected before transport',async()=>{sent.length=0;const data=validData();data.append('attachments',new File(['test'],'run.exe',{type:'application/octet-stream'}));assert.equal((await POST(new Request('http://localhost/api/mail',{method:'POST',body:data}))).status,400);assert.equal(sent.length,0)});
 test('Existing NL contact form remains supported',async()=>{sent.length=0;const data=validData();data.set('formType','contact');data.set('locale','nl');assert.equal((await POST(new Request('http://localhost/api/mail',{method:'POST',body:data}))).status,200);assert.equal(sent.length,2);assert.match(sent[0].subject,/Contact NL/)});
-test('Bulex is the only public brand and French is not a public language',()=>{const {middleware}=require('../middleware.ts');assert.equal(destination(middleware(request('/'))),'/en');assert.equal(destination(middleware(request('/nl/contact'))),'/bulex/nl/contact');assert.equal(destination(middleware(request('/fr/contact'))),'/en/contact')});
+test('Bulex is the only public brand and French is not a public language',()=>{const {middleware}=require('../middleware.ts');assert.equal(destination(middleware(request('/'))),'/bulex/nl');assert.equal(destination(middleware(request('/nl/contact'))),'/contact');assert.equal(destination(middleware(request('/fr/contact'))),'/en/contact')});
 test('Legacy AI-discovery document is replaced only in Bulex mode',()=>{assert.equal(destination(bulexMiddleware(request('/llms.txt'))),'/bulex-meta')});
-test('SMTP envelope always uses Bulex display name',async()=>{const nodemailer=require('nodemailer');const original=nodemailer.createTransport;const envelopes=[];nodemailer.createTransport=()=>({sendMail:async mail=>envelopes.push(mail)});try{const cfg={mailFrom:'team@example.test',mailTo:'admin@example.test'};await actualSendViaSmtp(cfg,{senderName:'Bulex Plombier',subject:'Test',text:'Test'});await actualSendViaSmtp(cfg,{subject:'Test',text:'Test'});assert.equal(envelopes[0].from.name,'Bulex Plombier');assert.equal(envelopes[1].from.name,'Bulex Plombier');}finally{nodemailer.createTransport=original}});
-test('Every migrated page renders without old branding or invalid internal links',async()=>{const {renderToStaticMarkup}=require('react-dom/server');const Page=require('../app/bulex/[locale]/[[...path]]/page.tsx').default;const {pageSegments}=require('../config/bulex/routes.ts');let count=0;for(const locale of ['nl','en']){const paths=Object.keys(pageSegments).map(key=>href(locale,key));paths.push(...getServices(locale).map(s=>href(locale,'services',s.slug)),...getSolutions(locale).map(s=>href(locale,'solutions',s.slug)),...getAdvice(locale).map(s=>href(locale,'blog',s.slug)),...getCities('nl').map(c=>href(locale,'areas',c.slug)));for(const url of paths){const segments=url.split('/').filter(Boolean);const element=await Page({params:Promise.resolve({locale,path:segments.slice(1)})});const html=renderToStaticMarkup(element);assert.ok(html.includes('id="main-content"'),url);assert.doesNotMatch(html,/vaillant|href="#"|\/fr\//i,url); for(const match of html.matchAll(/href="(\/(?:nl|en)(?:\/[^"]*)?)"/g)){ const link=match[1].split('#')[0]; const target=link.split('/').filter(Boolean); const key=require('../config/bulex/routes.ts').pageKey(target[0],target[1]); assert.ok(key,link); if(target[2]){const records=key==='services'?getServices(target[0]):key==='solutions'?getSolutions(target[0]):key==='blog'?getAdvice(target[0]):key==='areas'?getCities('nl'):[];assert.ok(records.some(record=>record.slug===target[2]),link);}}assert.match(html,/<h1[ >]/,url);count++;}}assert.ok(count>150,`Rendered ${count} routes`)});
+test('SMTP envelope always uses Bulex display name',async()=>{const nodemailer=require('nodemailer');const original=nodemailer.createTransport;const envelopes=[];nodemailer.createTransport=()=>({sendMail:async mail=>{envelopes.push(mail);return {accepted:mail.to.split(", ")}}});try{const cfg={mailFrom:'team@example.test',mailTo:'admin@example.test'};await actualSendViaSmtp(cfg,{senderName:'Bulex Plombier',subject:'Test',text:'Test'});await actualSendViaSmtp(cfg,{subject:'Test',text:'Test'});assert.equal(envelopes[0].from.name,'Bulex Plombier');assert.equal(envelopes[1].from.name,'Bulex Plombier');}finally{nodemailer.createTransport=original}});
+test('Every migrated page renders without old branding or invalid internal links',async()=>{const {renderToStaticMarkup}=require('react-dom/server');const Page=require('../app/bulex/[locale]/[[...path]]/page.tsx').default;const {pageSegments}=require('../config/bulex/routes.ts');let count=0;for(const locale of ['nl','en']){const paths=Object.keys(pageSegments).map(key=>href(locale,key));paths.push(...getServices(locale).map(s=>href(locale,'services',s.slug)),...getSolutions(locale).map(s=>href(locale,'solutions',s.slug)),...getAdvice(locale).map(s=>href(locale,'blog',s.slug)),...getCities('nl').map(c=>href(locale,'areas',c.slug)));for(const url of paths){const segments=parsePublicPath(url).segments;const element=await Page({params:Promise.resolve({locale,path:segments})});const html=renderToStaticMarkup(element);assert.ok(html.includes('id="main-content"'),url);assert.doesNotMatch(html,/vaillant|href="#"|\/fr\//i,url); for(const match of html.matchAll(/<a[^>]+href="(\/[^" ]*)"/g)){ const link=match[1].split('#')[0];const {locale:targetLocale,segments:target}=parsePublicPath(link); const key=require('../config/bulex/routes.ts').pageKey(targetLocale,target[0]);assert.ok(key,link);if(target[1]){const records=key==='services'?getServices(targetLocale):key==='solutions'?getSolutions(targetLocale):key==='blog'?getAdvice(targetLocale):key==='areas'?getCities('nl'):[];assert.ok(records.some(record=>record.slug===target[1]),link);}}assert.match(html,/<h1[ >]/,url);count++;}}assert.ok(count>150,`Rendered ${count} routes`)});
 
 test('Restored local content keeps all Brussels profiles and model references are sourced',()=>{
  const translations=require('../config/bulex/geo-en.json');
@@ -61,13 +62,13 @@ test('Local and product content actually appears in both public languages',async
  const {renderToStaticMarkup}=require('react-dom/server');
  const Page=require('../app/bulex/[locale]/[[...path]]/page.tsx').default;
  for(const locale of ['en','nl']){
-  const local=renderToStaticMarkup(await Page({params:Promise.resolve({locale,path:href(locale,'areas','anderlecht').split('/').slice(2)})}));
+  const local=renderToStaticMarkup(await Page({params:Promise.resolve({locale,path:parsePublicPath(href(locale,'areas','anderlecht')).segments})}));
   assert.match(local,/1070/);assert.match(local,/Parc Astrid/);
   assert.match(local,locale==='en'?/Terraced workers/:/Arbeiderswoningen/);
   assert.doesNotMatch(local,/within 30 minutes|binnen 30 minuten|Vaillant/i);
-  const solution=renderToStaticMarkup(await Page({params:Promise.resolve({locale,path:href(locale,'solutions',getSolutions(locale)[0].slug).split('/').slice(2)})}));
+  const solution=renderToStaticMarkup(await Page({params:Promise.resolve({locale,path:parsePublicPath(href(locale,'solutions',getSolutions(locale)[0].slug)).segments})}));
   assert.match(solution,/ThemaFast Condens/);assert.match(solution,/0010043888/);
-  const repair=renderToStaticMarkup(await Page({params:Promise.resolve({locale,path:href(locale,'services',getServices(locale)[0].slug).split('/').slice(2)})}));
+  const repair=renderToStaticMarkup(await Page({params:Promise.resolve({locale,path:parsePublicPath(href(locale,'services',getServices(locale)[0].slug)).segments})}));
   assert.match(repair,/F 28/);assert.match(repair,/codes-d-erreur/);
  }
 });
@@ -87,9 +88,9 @@ test('Main pages have unique metadata and translated editorial sections',async()
  for(const locale of ['en','nl']){
   const descriptions=[];
   for(const key of Object.keys(pageSegments)){
-   const metadata=await generateMetadata({params:Promise.resolve({locale,path:href(locale,key).split('/').slice(2)})});
+   const metadata=await generateMetadata({params:Promise.resolve({locale,path:parsePublicPath(href(locale,key)).segments})});
    assert.ok(metadata.description.length>60,key);descriptions.push(metadata.description);
-   assert.equal(metadata.alternates.languages['x-default'],href('en',key));
+   assert.equal(metadata.alternates.languages['x-default'],href('nl',key));
   }
   assert.equal(new Set(descriptions).size,descriptions.length);
   for(const topic of ['services','solutions','areas','about','contact','booking','blog',...Array.from({length:8},(_,i)=>'service-'+i),...Array.from({length:3},(_,i)=>'solution-'+i)]){
@@ -100,7 +101,7 @@ test('Main pages have unique metadata and translated editorial sections',async()
 test('All policy routes render linked localized content without invented company details',async()=>{
  const {renderToStaticMarkup}=require('react-dom/server'),Page=require('../app/bulex/[locale]/[[...path]]/page.tsx').default;
  for(const locale of ['en','nl'])for(const key of ['privacy','cookies','terms','legal','consumer','accessibility']){
-  const html=renderToStaticMarkup(await Page({params:Promise.resolve({locale,path:href(locale,key).split('/').slice(2)})}));
+  const html=renderToStaticMarkup(await Page({params:Promise.resolve({locale,path:parsePublicPath(href(locale,key)).segments})}));
   assert.match(html,/bx-legal/);assert.match(html,/bx-cookie-dialog/);
   assert.doesNotMatch(html,/Cookiebot|googletagmanager\.com|application\/ld\+json[^]*FAQPage/);
  }
@@ -135,17 +136,17 @@ test('Review carousel renders nine customer reviews with Google review image and
  }finally{reviews.pop()}
 });
 
-test('Minimal SMTP configuration defaults correctly and preserves explicit routing overrides',()=>{
+test('SMTP configuration uses the sending mailbox and ignores retired forwarding overrides',()=>{
  const keys=['SMTP_HOST','SMTP_USER','SMTP_PASS','SMTP_PORT','SMTP_SECURE','MAIL_FROM','MAIL_TO','ADMIN_EMAIL','NEXT_PUBLIC_SUPPORT_EMAIL'];
  const saved=Object.fromEntries(keys.map(k=>[k,process.env[k]]));
  try{
   keys.forEach(k=>delete process.env[k]);
   Object.assign(process.env,{SMTP_HOST:'smtp.example.test',SMTP_USER:'login@example.test',SMTP_PASS:'test-secret',NEXT_PUBLIC_SUPPORT_EMAIL:'contact@example.test'});
   let cfg=actualGetSmtpConfig();
-  assert.equal(cfg.mailFrom,'contact@example.test');assert.equal(cfg.mailTo,'contact@example.test');
+  assert.equal(cfg.mailFrom,'contact@example.test');assert.equal(cfg.mailTo,undefined);
   assert.equal(cfg.port,587);assert.equal(cfg.secure,false);
   Object.assign(process.env,{MAIL_FROM:'sender@example.test',MAIL_TO:'office@example.test',SMTP_PORT:'465'});
-  cfg=actualGetSmtpConfig();assert.equal(cfg.mailFrom,'sender@example.test');assert.equal(cfg.mailTo,'office@example.test');assert.equal(cfg.secure,true);
+  cfg=actualGetSmtpConfig();assert.equal(cfg.mailFrom,'sender@example.test');assert.equal(cfg.mailTo,undefined);assert.equal(cfg.secure,true);
   process.env.SMTP_PORT='587invalid';assert.equal(actualGetSmtpConfig(),null);
   process.env.SMTP_PORT='70000';assert.equal(actualGetSmtpConfig(),null);
   delete process.env.SMTP_PASS;assert.equal(actualGetSmtpConfig(),null);
@@ -213,7 +214,7 @@ test('Dutch logo appears only in Dutch pages and new header blog link is present
 });
  test('Each published sitemap entry has reciprocal EN/NL and fallback alternates',async()=>{
  const brand=require('../config/bulex/brand.ts');const previous=brand.bulexIndexable;brand.bulexIndexable=true;
- try{const entries=await require('../app/sitemap.ts').default();const urls=new Map(entries.map(e=>[e.url,e]));for(const entry of entries){const langs=entry.alternates.languages;assert.ok(Object.values(langs).includes(entry.url));assert.equal(langs['x-default'],langs['en-BE']);for(const target of Object.values(langs)){assert.ok(urls.has(target),target);assert.deepEqual(urls.get(target).alternates.languages,langs);}}}finally{brand.bulexIndexable=previous;}
+ try{const entries=await require('../app/sitemap.ts').default();const urls=new Map(entries.map(e=>[e.url,e]));for(const entry of entries){const langs=entry.alternates.languages;assert.ok(Object.values(langs).includes(entry.url));assert.equal(langs['x-default'],langs['nl-BE']);for(const target of Object.values(langs)){assert.ok(urls.has(target),target);assert.deepEqual(urls.get(target).alternates.languages,langs);}}}finally{brand.bulexIndexable=previous;}
 });
 
 test('Public origin follows the request domain, protocol and local port with validated proxy fallback',()=>{
@@ -252,4 +253,55 @@ test('Canonical, hreflang, social URLs, schema, sitemap, robots and llms use one
    const llms=await require('../app/bulex-meta/route.ts').GET();assert.ok((await llms.text()).includes(origin+'/en'));
   }
  }finally{brand.bulexIndexable=previousIndexable;seoRequestHeaders=previousHeaders;}
+});
+
+test('Attachment contents, extension and MIME must agree; unsafe names and missing types are refused',async()=>{
+ const {validateAttachments}=require('../lib/mail/attachments.ts');
+ const png=Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aZusAAAAASUVORK5CYII=','base64');
+ const good=await validateAttachments([new File([png],'boiler photo.png',{type:'image/png'})]);assert.equal(good[0].filename,'boiler-photo.png');assert.deepEqual(good[0].content,png);
+ const pdf=await validateAttachments([new File(['%PDF-1.7\n1 0 obj\n<<>>\nendobj\n%%EOF\n'],'manual.pdf',{type:'application/pdf'})]);assert.equal(pdf[0].contentType,'application/pdf');
+ for(const [data,name,type] of [['<script>alert(1)</script>','photo.png','image/png'],[png,'photo.jpg','image/jpeg'],[png,'photo.png',''],[png,'photo.svg','image/svg+xml'],[png,'shell.php.png','image/png'],[png,'../photo.png','image/png'],[png,'photo\r\nBcc-test.png','image/png'],['%PDF-1.7 no trailer','manual.pdf','application/pdf'],['','empty.png','image/png']])await assert.rejects(()=>validateAttachments([new File([data],name,{type})]),name);
+ await assert.rejects(()=>validateAttachments(['https://example.test/remote.png']));
+ await assert.rejects(()=>validateAttachments(Array.from({length:6},()=>new File([png],'photo.png',{type:'image/png'}))));
+ await assert.rejects(()=>validateAttachments([new File([Buffer.alloc(5*1024*1024+1)],'photo.png',{type:'image/png'})]));
+ const padded=Buffer.alloc(4*1024*1024);png.copy(padded);png.subarray(-12).copy(padded,padded.length-12);
+ await assert.rejects(()=>validateAttachments(Array.from({length:3},()=>new File([padded],'photo.png',{type:'image/png'}))));
+});
+test('Cross-site, invalid fields, header injection and forged attachments never reach SMTP',async()=>{
+ sent.length=0;
+ const foreign=await POST(new Request('http://localhost/api/mail',{method:'POST',headers:{origin:'https://other.test'},body:validData()}));assert.equal(foreign.status,403);
+ const duplicates=validData();duplicates.append('email','attacker@example.test');assert.equal((await POST(new Request('http://localhost/api/mail',{method:'POST',body:duplicates}))).status,400);
+ const injected=validData();injected.set('nom','Name\r\nBcc: attacker@example.test');assert.equal((await POST(new Request('http://localhost/api/mail',{method:'POST',body:injected}))).status,400);
+ const forged=validData();forged.append('attachments',new File(['executable content'],'photo.png',{type:'image/png'}));const result=await POST(new Request('http://localhost/api/mail',{method:'POST',body:forged}));assert.equal(result.status,400);assert.equal((await result.json()).code,'ATTACHMENT_INVALID');assert.equal(sent.length,0);
+});
+test('Request byte cap applies before form parsing, including a false Content-Length',async()=>{
+ const {boundedFormData,MAIL_ATTACHMENT_LIMITS}= {...require('../lib/mail/protection.ts'),...require('../lib/mail/smtp-config.ts')};
+ const oversized=new Request('http://localhost/api/mail',{method:'POST',headers:{'content-type':'multipart/form-data; boundary=test','content-length':String(MAIL_ATTACHMENT_LIMITS.maxRequestBytes+1)},body:'small'});
+ await assert.rejects(()=>boundedFormData(oversized),{name:'Error'});
+ const streamed=new Request('http://localhost/api/mail',{method:'POST',headers:{'content-type':'multipart/form-data; boundary=test','content-length':'1'},body:Buffer.alloc(MAIL_ATTACHMENT_LIMITS.maxRequestBytes+1)});
+ await assert.rejects(()=>boundedFormData(streamed));
+});
+test('Mail throttles expire and repeated confirmation requests stop before another SMTP send',async()=>{
+ const {consumeMailLimit}=require('../lib/mail/protection.ts');assert.equal(consumeMailLimit('test',1,100,1000),true);assert.equal(consumeMailLimit('test',1,100,1050),false);assert.equal(consumeMailLimit('test',1,100,1100),true);
+ sent.length=0;for(let i=0;i<3;i++)assert.equal((await POST(new Request('http://localhost/api/mail',{method:'POST',body:validData()}))).status,200);
+ const result=await POST(new Request('http://localhost/api/mail',{method:'POST',body:validData()}));assert.equal(result.status,429);assert.equal(sent.length,6);assert.ok(result.headers.has('retry-after'));
+});
+test('Admin failure is not success; a confirmation failure reports partial success without resending the lead',async()=>{
+ const original=transport.sendViaSmtp,originalLog=console.error,logs=[];console.error=(...args)=>logs.push(args);
+ try{
+  transport.sendViaSmtp=async()=>{throw Object.assign(new Error('secret visitor@example.test SMTP_PASS=private'),{code:'EAUTH',responseCode:535})};
+  let response=await POST(new Request('http://localhost/api/mail',{method:'POST',body:validData()}));assert.equal(response.status,502);assert.doesNotMatch(JSON.stringify(logs),/visitor@example|SMTP_PASS|private/);assert.match(JSON.stringify(logs),/EAUTH/);
+  resetMailLimits();let calls=0;transport.sendViaSmtp=async()=>{if(++calls===2)throw Object.assign(new Error('secret'),{code:'ERECIPIENT'})};
+  response=await POST(new Request('http://localhost/api/mail',{method:'POST',body:validData()}));const body=await response.json();assert.equal(response.status,200);assert.equal(body.confirmationSent,false);assert.ok(body.requestId);assert.equal(calls,2);
+ }finally{transport.sendViaSmtp=original;console.error=originalLog;}
+});
+test('SMTP sends to its mailbox only, leaves forwarding to the provider and verifies acceptance',async()=>{
+ const nodemailer=require('nodemailer'),original=nodemailer.createTransport;let settings,envelope;
+ const cfg={host:'smtp.example.test',port:587,secure:false,user:'sender@example.test',pass:'not-a-real-password',mailFrom:'sender@example.test',mailTo:'admin@example.test'};
+ nodemailer.createTransport=(options)=>{settings=options;return {sendMail:async mail=>{envelope=mail;return{accepted:['sender@example.test']}}}};
+ try{
+  await actualSendViaSmtp(cfg,{subject:'Test',text:'Test'});assert.equal(settings.requireTLS,true);assert.equal(settings.tls.rejectUnauthorized,true);assert.equal(settings.disableFileAccess,true);assert.equal(settings.disableUrlAccess,true);assert.equal(envelope.to,cfg.mailFrom);assert.equal(envelope.cc,undefined);assert.equal(envelope.bcc,undefined);assert.equal(envelope.disableFileAccess,true);
+  await assert.rejects(()=>actualSendViaSmtp(cfg,{to:'second@example.test',subject:'Test',text:'Test'}),{code:'ERECIPIENT'});
+  await assert.rejects(()=>actualSendViaSmtp(cfg,{subject:'Test',text:'Test',replyTo:'visitor@example.test\r\nBcc: bad@example.test'}),{code:'EADDRESS'});
+ }finally{nodemailer.createTransport=original;}
 });

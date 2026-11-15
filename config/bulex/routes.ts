@@ -10,7 +10,7 @@ export const pageSegments = {
 } as const;
 export type PageKey = keyof typeof pageSegments;
 export function href(locale: BulexLocale, key: PageKey, slug?: string) {
-  return `/${locale}${pageSegments[key][locale === 'nl' ? 0 : 1] ? '/' + pageSegments[key][locale === 'nl' ? 0 : 1] : ''}${slug ? '/' + slug : ''}`;
+  return `${locale==='en'?'/en':''}${pageSegments[key][locale === 'nl' ? 0 : 1] ? '/' + pageSegments[key][locale === 'nl' ? 0 : 1] : ''}${slug ? '/' + slug : ''}`||'/';
 }
 export function pageKey(locale: BulexLocale, segment = ''): PageKey | undefined {
   return (Object.keys(pageSegments) as PageKey[]).find(k => pageSegments[k][locale === 'nl' ? 0 : 1] === segment);
@@ -27,6 +27,8 @@ export function equivalentSlug(slug: string, locale: BulexLocale, key?: PageKey)
  return row ? row[locale === 'nl' ? 0 : 1] : slug;
 }
 export function alternatePath(path: string, locale: BulexLocale) {
- const parts=path.split('/').filter(Boolean); const from=parts[0]==='en'?'en':'nl';
- const key=pageKey(from,parts[1]); return key ? href(locale,key,parts[2] ? (key==='blog'?adviceAlternate(parts[2],locale):equivalentSlug(parts[2],locale,key)):undefined):href(locale,'home');
+ const {locale:from,segments}=parsePublicPath(path);
+ const key=pageKey(from,segments[0]); return key ? href(locale,key,segments[1] ? (key==='blog'?adviceAlternate(segments[1],locale):equivalentSlug(segments[1],locale,key)):undefined):href(locale,'home');
 }
+
+export function parsePublicPath(path:string):{locale:BulexLocale;segments:string[]}{const parts=path.split(/[?#]/,1)[0].split('/').filter(Boolean);const locale=parts[0]==='en'?'en':'nl';if(parts[0]==='nl'||parts[0]==='en')parts.shift();return{locale,segments:parts};}

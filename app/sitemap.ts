@@ -35,7 +35,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       alternates: {languages: {
         "nl-BE": bulexOrigin + alternatePath(path,"nl"),
         "en-BE": bulexOrigin + alternatePath(path,"en"),
-        "x-default": bulexOrigin + alternatePath(path,"en"),
+        "x-default": bulexOrigin + alternatePath(path,"nl"),
       }},
       ...(articles.find(a=>href(locale,'blog',a.slug)===path)?.blogPost?{lastModified:new Date(articles.find(a=>href(locale,'blog',a.slug)===path)!.blogPost!.publishAt)}:{}),
       changeFrequency: "monthly" as const,

@@ -1,0 +1,11 @@
+# Dutch default URLs, SSR and provider forwarding — 15 November 2026
+
+- Dutch public URLs are unprefixed: /, /diensten, /oplossingen, /loodgieter, /blog, /contact and /demande-offerte. English routes retain /en.
+- Old /nl and /nl/... URLs redirect permanently with HTTP 308 to their Dutch equivalents, preserving query strings. Redirects also record the explicit Dutch language choice. The homepage retains browser-language detection with Dutch as the fallback; explicit selection takes precedence.
+- Language switching preserves the corresponding service, solution, city and article path. Server-rendered canonical, hreflang, x-default, JSON-LD, sitemap and discovery text reflect the public routes. Dutch is the x-default language.
+- MAIL_TO/ADMIN_EMAIL forwarding overrides were removed from application configuration and local environment templates. Enquiries go directly to the configured sending mailbox. The SMTP helper has no recipient list, CC or BCC. Customer confirmations use one explicit recipient and remain separate from forwarding. Hostinger Mail manages forwarding rules; no provider rules were changed.
+- All 39 automated tests pass, including full public-route rendering, internal-link resolution, localized route round-trips, sitemap alternates, retired forwarding overrides and secured attachments/mail handling.
+- The production build passes. A temporary production server returned server-rendered HTML with correct language, h1, main content, canonical and Dutch fallback alternates for nine representative pages: Dutch home, boiler repair, contact, booking, water-leak article, plus English home, boiler repair, contact and water-leak article. Contact and booking inputs were present in raw HTML, without executing JavaScript.
+- Actual HTTP checks confirmed /nl -> /, /nl/contact?ref=test -> /contact?ref=test and /nl/blog/waterlek -> /blog/waterlek, each with 308 status. Internal /bulex/nl/contact remained inaccessible (404).
+- Interactions such as menus, carousels and asynchronous form submissions hydrate on the client. Main content and SEO metadata remain server-rendered.
+- Inbox delivery is not verified: the prior read-only SMTP check could not resolve smtp.hostinger.com in this execution environment. Provider forwarding and mailbox receipt require verification in the Hostinger environment.

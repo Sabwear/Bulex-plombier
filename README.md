@@ -9,7 +9,7 @@ npm ci
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000). The default route opens English at `/en`; Dutch is available at `/nl`.
+Open [http://localhost:3000](http://localhost:3000). Dutch is the default at `/`; English is available at `/en`. Existing `/nl/...` links redirect to the unprefixed Dutch pages.
 
 ## Website
 
@@ -28,7 +28,7 @@ The configuration is grouped in `.env.example`: application mode, company/contac
 - `BULEX_COMPANY_NAME`, `BULEX_COMPANY_NUMBER`, `BULEX_COMPANY_ADDRESS`: registered operator details.
 - `SMTP_HOST`, `SMTP_USER`, `SMTP_PASS`: private email credentials.
 
-Mail defaults to port 587 (STARTTLS). Use `SMTP_PORT=465` for implicit TLS. The public support email is the default sender and recipient; only set `MAIL_FROM` or `MAIL_TO` if the sender or enquiry inbox is different. `SMTP_SECURE` is only an override for a nonstandard transport setup.
+Mail defaults to port 587 (STARTTLS). Use `SMTP_PORT=465` for implicit TLS. The public support email is the default sender and recipient; only set `MAIL_FROM` if the sending mailbox differs. Enquiries go directly to that mailbox; configure any forwarding in Hostinger Mail. `SMTP_SECURE` is only an override for a nonstandard transport setup.
 
 Public social and Google review links use a single `NEXT_PUBLIC_*` naming scheme, listed in the example. `BULEX_GOOGLE_SITE_VERIFICATION` is an optional Search Console token. Analytics and Google Ads configuration fields are retained in the example. They do not activate tags on their own; no optional tracking is installed by the current site.
 
@@ -46,7 +46,7 @@ Public social and Google review links use a single `NEXT_PUBLIC_*` naming scheme
 | `BULEX_PUBLIC_EMAIL` | `NEXT_PUBLIC_SUPPORT_EMAIL` |
 | `BULEX_GOOGLE_REVIEW_URL` | `NEXT_PUBLIC_GOOGLE_REVIEW_URL` |
 | `BULEX_INSTAGRAM_URL`, `BULEX_FACEBOOK_URL`, `BULEX_LINKEDIN_URL` | Corresponding `NEXT_PUBLIC_*_URL` |
-| `ADMIN_EMAIL` | `MAIL_TO` only if the inbox differs |
+| `ADMIN_EMAIL` / `MAIL_TO` | Removed; manage forwarding in Hostinger Mail |
 | `SITE_BRAND` | Removed; this checkout serves Bulex |
 | `BULEX_LAUNCH_READY` | Replaced by `APP_MODE` |
 
@@ -91,3 +91,17 @@ The Dutch logo is `public/bulex/loodgieter-logo.webp`; English retains `plombier
 ### Automatic SEO origin
 
 SEO URLs are resolved per request on the server. A public `Host` takes precedence; when the application receives an internal host, the proxy's single `X-Forwarded-Host` value supplies the public host. `X-Forwarded-Proto` supplies HTTP/HTTPS, with HTTPS as the public-domain default and HTTP for local development. Configure the hosting proxy to overwrite these headers rather than pass arbitrary client-supplied values through. Host values containing paths, credentials, query strings or multiple authorities are rejected. Request paths come from the public EN/NL route, so tracking parameters and internal `/bulex` rewrites do not enter canonical URLs. Preview environments should use `APP_MODE=development` to remain non-indexable.
+
+### Email delivery and uploads
+
+Run `npm run check:mail` in the deployment environment to verify the configured SMTP host, encrypted connection and authentication. This read-only command sends no email and prints no credentials. An SMTP acceptance is not proof of inbox delivery: check the sending mailbox, spam/quarantine and provider delivery logs for the actual test submission, plus SPF/DKIM/DMARC on the sender domain. Local diagnostics on 15 November 2026 could not resolve smtp.hostinger.com (EDNS), so neither authentication nor production delivery was confirmed.
+
+Enquiries go directly to the configured sending mailbox (MAIL_FROM, with the existing support-email/SMTP-login fallback). There is no application forwarding, CC, BCC or extra recipient list. Hostinger Mail manages forwarding rules. Customer confirmation is a separate send. The API requires SMTP acceptance for the intended recipients before returning success; a failed confirmation is reported as confirmationSent:false while keeping the already-accepted enquiry successful. Errors log only a request reference, stage and safe SMTP codes, with no submitted personal data or credentials.
+
+Attachments: at most five JPEG, PNG, GIF, WebP or PDF files; 5 MB per file and 10 MB total. The request reader caps the entire multipart body at 11 MB before parsing, including when Content-Length is absent or false. Filename, extension, declared MIME and file signatures must agree; paths, executable double extensions and empty MIME types are refused. Attachment names are normalized. Files are never written to public storage or executed; Nodemailer can use only supplied buffers, not filesystem paths or remote URLs. Signature checks do not replace malware scanning or full document sanitization. Treat received documents as untrusted, and retain the mailbox provider's malware filtering.
+
+The endpoint refuses cross-site browser submissions and header-injection/duplicate fields. Bounded in-memory rate limits cover client requests and confirmation recipients; at most three requests process concurrently per Node process. The hosting proxy must overwrite client-IP/forwarded headers and enforce an upload size limit. For multiple workers or replicas, apply shared edge/WAF rate limits as well; process-local counters are not a distributed abuse-control service.
+
+### Dutch default URLs
+
+Dutch pages use `/`, `/diensten`, `/oplossingen`, `/loodgieter`, `/blog` and other unprefixed routes. English stays under `/en`. Old `/nl/...` URLs permanently redirect to their Dutch equivalent, preserving query strings; the language switcher maps the current page and article slug. Canonicals, hreflang (including Dutch x-default), sitemap and structured data use these public URLs. Browser-language detection on the homepage remains available with Dutch as the fallback and explicit language choices taking precedence.

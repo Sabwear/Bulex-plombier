@@ -1,9 +1,12 @@
+import {randomUUID} from 'node:crypto';
+import {validateAttachments} from '@/lib/mail/attachments';
+import {boundedFormData,BodyLimitError,consumeMailLimit,mailClientKey,sameOriginMail,validMailFields,safeMailError} from '@/lib/mail/protection';
 import {validateBulexRequest,bulexConfirmation} from '@/lib/mail/bulex-request';
 import {isBulex} from '@/config/bulex/brand';
 import { NextResponse } from "next/server";
 import {
   getSmtpConfig,
-  MAIL_ATTACHMENT_LIMITS,
+  validMailAddress,
 } from "@/lib/mail/smtp-config";
 import { sendViaSmtp } from "@/lib/mail/sendViaSmtp";
 import {
@@ -22,19 +25,29 @@ function isTruthy(v: string): boolean {
   return v === "true" || v === "1" || v === "on" || v === "yes";
 }
 
-const SIMPLE_EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function validEmail(s: string): boolean {
-  return SIMPLE_EMAIL.test(s.trim());
+  return validMailAddress(s.trim());
 }
 
-export async function POST(req: Request) {
+let activeUploads=0;
+export async function POST(req:Request){
+ if(!sameOriginMail(req))return NextResponse.json({error:'Request not allowed.'},{status:403});
+ if(!/^multipart\/form-data;.*boundary=/i.test(req.headers.get('content-type')||''))return NextResponse.json({error:'Multipart form required.'},{status:415});
+ if(!consumeMailLimit('ip:'+mailClientKey(req),10,15*60*1000))return NextResponse.json({error:'Too many requests. Please call our team.'},{status:429,headers:{'Retry-After':'900'}});
+ if(activeUploads>=3)return NextResponse.json({error:'Please try again shortly.'},{status:503});
+ activeUploads++;try{return await handleMail(req);}finally{activeUploads--;}
+}
+async function handleMail(req:Request){
+ const requestId=randomUUID();
   const config = getSmtpConfig();
   if (!config) {
+    console.error("[api/mail]",{requestId,stage:"configuration",code:"SMTP_CONFIG_INVALID"});
     return NextResponse.json(
       {
         error:
           "Email delivery is temporarily unavailable. Please contact the team by telephone.",
+        requestId,
       },
       { status: 503 }
     );
@@ -42,11 +55,12 @@ export async function POST(req: Request) {
 
   let formData: FormData;
   try {
-    formData = await req.formData();
-  } catch {
-    return NextResponse.json({ error: "Corps de requête invalide." }, { status: 400 });
+    formData = await boundedFormData(req);
+  } catch(error) {
+    return NextResponse.json({ error: "Invalid or oversized upload." }, { status: error instanceof BodyLimitError?413:400 });
   }
 
+  if(!validMailFields(formData))return NextResponse.json({error:"Invalid form fields."},{status:400});
   const hp = str(formData, "website");
   if (hp.length > 0) {
     return NextResponse.json({ ok: true }, { status: 200 });
@@ -55,37 +69,8 @@ export async function POST(req: Request) {
   const formType = str(formData, "formType");
   const replyTo = str(formData, "email") || str(formData, "Email");
 
-  const attachmentParts: { filename: string; content: Buffer; contentType?: string }[] = [];
-  const rawFiles = formData.getAll("attachments");
-
-  for (const entry of rawFiles) {
-    if (!(entry instanceof File) || entry.size === 0) continue;
-    if (attachmentParts.length >= MAIL_ATTACHMENT_LIMITS.maxFiles) {
-      return NextResponse.json(
-        { error: `Maximum ${MAIL_ATTACHMENT_LIMITS.maxFiles} fichiers.` },
-        { status: 400 }
-      );
-    }
-    if (entry.size > MAIL_ATTACHMENT_LIMITS.maxBytesPerFile) {
-      return NextResponse.json(
-        { error: "Un fichier dépasse la taille maximale (5 Mo)." },
-        { status: 400 }
-      );
-    }
-    const mime = (entry.type || "").toLowerCase();
-    if (mime && !MAIL_ATTACHMENT_LIMITS.allowedMimeTypes.has(mime)) {
-      return NextResponse.json(
-        { error: "Type de fichier non autorisé (images ou PDF uniquement)." },
-        { status: 400 }
-      );
-    }
-    const buf = Buffer.from(await entry.arrayBuffer());
-    attachmentParts.push({
-      filename: entry.name || "piece-jointe",
-      content: buf,
-      contentType: entry.type || undefined,
-    });
-  }
+  let attachmentParts;
+  try{attachmentParts=await validateAttachments(formData.getAll('attachments'));}catch{return NextResponse.json({code:'ATTACHMENT_INVALID',error:'Attachments must be valid JPG, PNG, GIF, WebP or PDF files (5 files, 5 MB each, 10 MB total).'}, {status:400});}
 
   let subject: string;
   let body: string;
@@ -280,10 +265,11 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Type de formulaire inconnu." }, { status: 400 });
   }
 
-  if (!replyTo || !replyTo.includes("@")) {
+  if (!validMailAddress(replyTo)) {
     return NextResponse.json({ error: "E-mail de réponse manquant." }, { status: 400 });
   }
 
+  if(!consumeMailLimit('recipient:'+replyTo.toLowerCase(),3,60*60*1000)||!consumeMailLimit('global-delivery',100,15*60*1000))return NextResponse.json({error:"Too many requests. Please call our team."},{status:429,headers:{'Retry-After':'3600'}});
   try {
     await sendViaSmtp(config, {
       senderName: formType === "bulex" ? "Bulex Plombier" : undefined,
@@ -293,9 +279,9 @@ export async function POST(req: Request) {
       attachments: attachmentParts,
     });
   } catch (e) {
-    console.error("[api/mail]", e);
+    console.error("[api/mail]",{requestId,stage:"enquiry",...safeMailError(e)});
     return NextResponse.json(
-      { error: "Envoi impossible pour le moment. Réessayez plus tard." },
+      { error: "We could not deliver your request. Please call our team or try again later.",requestId },
       { status: 502 }
     );
   }
@@ -311,6 +297,7 @@ export async function POST(req: Request) {
     confirmLocale = "nl";
   }
 
+  let confirmationSent=true;
   try {
     const { subject: subjC, text: textC } = formType === "bulex" ? bulexConfirmation(str(formData,"locale"), visitorName, body) : buildCustomerConfirmationEmail({
       locale: confirmLocale,
@@ -319,14 +306,14 @@ export async function POST(req: Request) {
     });
     await sendViaSmtp(config, {
       senderName: formType === "bulex" ? "Bulex Plombier" : undefined,
-      to: [replyTo],
+      to: replyTo,
       subject: subjC,
       text: textC,
       replyTo: config.mailFrom,
     });
   } catch (e) {
-    console.error("[api/mail] customer confirmation", e);
+    confirmationSent=false;console.error("[api/mail]",{requestId,stage:"confirmation",...safeMailError(e)});
   }
 
-  return NextResponse.json({ ok: true }, { status: 200 });
+  return NextResponse.json({ ok: true,confirmationSent,requestId }, { status: 200 });
 }
