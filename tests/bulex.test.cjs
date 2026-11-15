@@ -52,7 +52,12 @@ test('Contact and booking confirmations go to the submitted requester in both la
   assert.match(sent[1].text,/Test enquiry for automated validation only/);assert.match(sent[1].subject,locale==='nl'?/Uw aanvraag is ontvangen/:/Your request has been received/);
  }
 });
-test('Honeypot and invalid inputs never send email',async()=>{sent.length=0;const data=validData();data.set('website','spam');assert.equal((await POST(new Request('http://localhost/api/mail',{method:'POST',body:data}))).status,200);assert.equal(sent.length,0);data.set('website','');data.delete('consent');assert.equal((await POST(new Request('http://localhost/api/mail',{method:'POST',body:data}))).status,400);assert.equal(sent.length,0)});
+test('An autofilled Bulex honeypot cannot claim delivery and has a traceable rejection',async()=>{
+ sent.length=0;const data=validData();data.set('company_fax','Autofilled company');
+ const response=await POST(new Request('http://localhost/api/mail',{method:'POST',body:data}));const result=await response.json();
+ assert.equal(response.status,422);assert.equal(result.code,'FORM_VERIFICATION_FAILED');assert.ok(result.requestId);assert.notEqual(result.ok,true);assert.equal(sent.length,0);
+});
+test('Honeypot and invalid inputs never send email',async()=>{sent.length=0;const data=validData();data.set('website','spam');const rejected=await POST(new Request('http://localhost/api/mail',{method:'POST',body:data}));assert.equal(rejected.status,422);assert.equal((await rejected.json()).code,'FORM_VERIFICATION_FAILED');assert.equal(sent.length,0);data.set('website','');data.delete('consent');assert.equal((await POST(new Request('http://localhost/api/mail',{method:'POST',body:data}))).status,400);assert.equal(sent.length,0)});
 test('Disallowed attachments are rejected before transport',async()=>{sent.length=0;const data=validData();data.append('attachments',new File(['test'],'run.exe',{type:'application/octet-stream'}));assert.equal((await POST(new Request('http://localhost/api/mail',{method:'POST',body:data}))).status,400);assert.equal(sent.length,0)});
 test('Existing NL contact form remains supported',async()=>{sent.length=0;const data=validData();data.set('formType','contact');data.set('locale','nl');assert.equal((await POST(new Request('http://localhost/api/mail',{method:'POST',body:data}))).status,200);assert.equal(sent.length,2);assert.match(sent[0].subject,/Contact NL/)});
 test('Bulex is the only public brand and French is not a public language',()=>{const {middleware}=require('../middleware.ts');assert.equal(destination(middleware(request('/'))),'/bulex/nl');assert.equal(destination(middleware(request('/nl/contact'))),'/contact');assert.equal(destination(middleware(request('/fr/contact'))),'/en/contact')});

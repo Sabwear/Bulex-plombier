@@ -32,14 +32,15 @@ function validEmail(s: string): boolean {
 
 let activeUploads=0;
 export async function POST(req:Request){
- if(!sameOriginMail(req))return NextResponse.json({error:'Request not allowed.'},{status:403});
- if(!/^multipart\/form-data;.*boundary=/i.test(req.headers.get('content-type')||''))return NextResponse.json({error:'Multipart form required.'},{status:415});
+ const requestId=randomUUID();logMailEvent('INFO',requestId,'received');
+ const reject=(status:number,code:string,error:string)=>{logMailEvent('ERROR',requestId,'rejected',{code});return NextResponse.json({error,code,requestId},{status});};
+ if(!sameOriginMail(req))return reject(403,'ORIGIN_REJECTED','Request not allowed.');
+ if(!/^multipart\/form-data;.*boundary=/i.test(req.headers.get('content-type')||''))return reject(415,'CONTENT_TYPE_INVALID','Multipart form required.');
  if(!consumeMailLimit('ip:'+mailClientKey(req),10,15*60*1000))return NextResponse.json({error:'Too many requests. Please call our team.'},{status:429,headers:{'Retry-After':'900'}});
  if(activeUploads>=3)return NextResponse.json({error:'Please try again shortly.'},{status:503});
- activeUploads++;try{return await handleMail(req);}finally{activeUploads--;}
+ activeUploads++;try{return await handleMail(req,requestId);}finally{activeUploads--;}
 }
-async function handleMail(req:Request){
- const requestId=randomUUID();logMailEvent("INFO",requestId,"received");
+async function handleMail(req:Request,requestId:string){
   const config = getSmtpConfig();
   if (!config) {
     logMailEvent("ERROR",requestId,"configuration",{code:"SMTP_CONFIG_INVALID"});
@@ -63,9 +64,10 @@ async function handleMail(req:Request){
 
   logMailEvent("INFO",requestId,"upload-parsed");
   if(!validMailFields(formData))return NextResponse.json({error:"Invalid form fields."},{status:400});
-  const hp = str(formData, "website");
+  const hp = str(formData, "website") || str(formData, "company_fax");
   if (hp.length > 0) {
-    return NextResponse.json({ ok: true }, { status: 200 });
+    logMailEvent("ERROR",requestId,"verification",{code:"FORM_VERIFICATION_FAILED"});
+    return NextResponse.json({error:"We could not verify this submission. Please reload the page and enter your details again, or call our team.",code:"FORM_VERIFICATION_FAILED",requestId}, {status:422});
   }
 
   const formType = str(formData, "formType");
@@ -81,7 +83,7 @@ async function handleMail(req:Request){
     case "bulex": {
       if (!isBulex) return NextResponse.json({ error: "Unknown form." }, { status: 400 });
       const result = validateBulexRequest(formData);
-      if ('error' in result) return NextResponse.json(result, { status: 400 });
+      if ('error' in result){logMailEvent('ERROR',requestId,'validation',{code:'FIELDS_INVALID'});return NextResponse.json({...result,code:'FIELDS_INVALID',requestId}, { status: 400 });}
       subject = result.subject;
       body = result.body;
       break;

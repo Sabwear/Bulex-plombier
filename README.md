@@ -109,3 +109,5 @@ Dutch pages use `/`, `/diensten`, `/oplossingen`, `/loodgieter`, `/blog` and oth
 ### Requester confirmations and success navigation
 
 Contact and booking requests send a separate localized confirmation, including the submitted request, to the visitor's email address. After success the shared EN/NL form scrolls to and focuses its success panel. Reduced-motion users get immediate scrolling. The panel shows the submitted email address only when the API confirms SMTP acceptance; confirmation failure keeps the accepted enquiry successful and explains that no resubmission is needed. Provider spam filtering can still affect delivery.
+
+Hidden anti-spam fields now reject with FORM_VERIFICATION_FAILED and a request reference rather than returning fake delivery success. Browser autofill must leave these fields blank. The shared Bulex form uses company_fax; the API also checks the legacy website field. Hosted SMTP/contact settings were resynchronized from the local working configuration on 15 November 2026, keeping production mode. Hostinger masks values on read, so synchronization establishes the desired values rather than proving the previous values matched.
