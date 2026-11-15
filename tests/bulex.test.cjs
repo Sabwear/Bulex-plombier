@@ -19,7 +19,14 @@ const {getCities}=require('../data/city-data.ts');
 const {validateBulexRequest,bulexConfirmation}=require('../lib/mail/bulex-request.ts');
 function request(p,cookie){return new NextRequest('http://localhost:3001'+p,{headers:cookie?{cookie}:undefined})}
 function destination(response){return new URL(response.headers.get('location')||response.headers.get('x-middleware-rewrite')).pathname}
-test('Root always defaults to English and explicit Dutch routes work',()=>{assert.equal(destination(bulexMiddleware(request('/'))),'/en');assert.equal(destination(bulexMiddleware(request('/','BULEX_LOCALE=en'))),'/en');assert.equal(destination(bulexMiddleware(request('/','BULEX_LOCALE=nl'))),'/en');assert.equal(destination(bulexMiddleware(request('/nl','BULEX_LOCALE=en'))),'/bulex/nl')});
+test('Root detects browser language, honours saved choice and keeps explicit locale routes',()=>{
+ const detect=(url,headers={})=>bulexMiddleware(new NextRequest('http://localhost:3001'+url,{headers}));
+ for(const [headers,expected] of [[{},'/en'],[{'accept-language':'nl-BE,nl;q=0.9,en;q=0.8'},'/nl'],[{'accept-language':'en-GB,en;q=0.9,nl;q=0.7'},'/en'],[{'accept-language':'fr-BE,fr;q=0.9'},'/en'],[{'accept-language':'nl;q=0,en;q=0.8'},'/en'],[{'accept-language':'nl;q=bad,en;q=0.5'},'/en'],[{cookie:'BULEX_LOCALE=en','accept-language':'nl'},'/en'],[{cookie:'BULEX_LOCALE=nl','accept-language':'en'},'/nl']]){
+  const result=detect('/',headers);assert.equal(destination(result),expected);assert.equal(result.status,307);assert.match(result.headers.get('vary'),/Accept-Language/);assert.match(result.headers.get('cache-control'),/no-store/);
+ }
+ assert.equal(destination(detect('/?utm_source=test',{'accept-language':'nl'})),'/nl');assert.equal(new URL(detect('/?utm_source=test',{'accept-language':'nl'}).headers.get('location')).search,'?utm_source=test');
+ assert.equal(destination(detect('/nl',{cookie:'BULEX_LOCALE=en','accept-language':'en'})),'/bulex/nl');assert.equal(destination(detect('/en/services/boiler-repair',{'accept-language':'nl'})),'/bulex/en/services/boiler-repair');
+});
 test('Legacy French URLs redirect to English equivalents and preserve query strings',()=>{for(const [from,to] of [['/fr','/en'],['/fr/contact','/en/contact'],['/fr/services/reparation-vaillant-bruxelles','/en/services/boiler-repair'],['/fr/services/contrat-entretien-vaillant','/en/services/boiler-maintenance'],['/fr/plombier/anvers','/en/service-areas/antwerpen'],['/fr/brussel','/en/service-areas/brussel'],['/fr/demande-devis','/en/book-a-technician']])assert.equal(destination(bulexMiddleware(request(from))),to);assert.equal(new URL(bulexMiddleware(request('/fr/contact?ref=test')).headers.get('location')).search,'?ref=test')});
 test('All service, solution and advice language links round-trip',()=>{for(const key of ['services','solutions','blog']){const getter={services:getServices,solutions:getSolutions,blog:getAdvice}[key];for(const record of getter('nl')){const dutch=href('nl',key,record.slug);const english=alternatePath(dutch,'en');assert.ok(getter('en').some(s=>href('en',key,s.slug)===english),english);assert.equal(alternatePath(english,'nl'),dutch)}}});
 test('Legacy advice URLs redirect to English or Dutch articles',()=>{for(const a of getAdvice('nl')){assert.equal(destination(bulexMiddleware(request(`/fr/blog/${a.legacy}`))),href('en','blog',adviceAlternate(a.legacy,'en')));assert.equal(destination(bulexMiddleware(request(`/nl/blog/${a.legacy}`))),href('nl','blog',a.slug))}});
@@ -196,4 +203,13 @@ test('Dutch logo appears only in Dutch pages and new header blog link is present
   if(locale==='nl')assert.match(html,/loodgieter-logo/);else assert.doesNotMatch(html,/loodgieter-logo/);
   assert.match(html,/flanders.webp/);assert.ok(html.includes(href(locale,'blog')));assert.match(html,/bx-mobile-call-bar/);
  }}finally{if(saved===undefined)delete process.env.NEXT_PUBLIC_PHONE_NUMBER;else process.env.NEXT_PUBLIC_PHONE_NUMBER=saved}
+});
+
+ test('Footer links go to localized public subpages without home anchors or localhost origins',()=>{
+ const {renderToStaticMarkup}=require('react-dom/server');const {Footer}=require('../components/bulex/Shared.tsx');
+ for(const locale of ['en','nl']){const html=renderToStaticMarkup(Footer({locale}));assert.doesNotMatch(html,/href="[^" ]*(?:localhost|127\.0\.0\.1|#)/);assert.ok(html.includes(`href="${href(locale,'reviews')}"`));assert.ok(html.includes(`href="${href(locale,'contact')}"`));for(const service of getServices(locale))assert.ok(html.includes(`href="${href(locale,'services',service.slug)}"`));}
+});
+ test('Each published sitemap entry has reciprocal EN/NL and fallback alternates',()=>{
+ const brand=require('../config/bulex/brand.ts');const previous=brand.bulexIndexable;brand.bulexIndexable=true;
+ try{const entries=require('../app/sitemap.ts').default();const urls=new Map(entries.map(e=>[e.url,e]));for(const entry of entries){const langs=entry.alternates.languages;assert.ok(Object.values(langs).includes(entry.url));assert.equal(langs['x-default'],langs['en-BE']);for(const target of Object.values(langs)){assert.ok(urls.has(target),target);assert.deepEqual(urls.get(target).alternates.languages,langs);}}}finally{brand.bulexIndexable=previous;}
 });

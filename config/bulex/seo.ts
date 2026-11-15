@@ -2,6 +2,7 @@ import type {BulexLocale,PageKey} from './routes';
 export function mainMeta(locale:BulexLocale,key:PageKey){
  const nl=locale==='nl';
  const entries:Partial<Record<PageKey,[string,string]>>=nl?{
+ reviews:['Klantervaringen en feedback over Bulex-service','Bekijk de beoordelingssectie en deel uw ervaring met verwarming, sanitair of een Bulex-herstelling. Neem contact op met vragen over uw interventie.'],
  home:['Bulex verwarming en loodgieterij in België','Bulex-ketelherstelling, onderhoud, installatie en sanitair. Bekijk oplossingen en lokale dienstinformatie of bespreek uw woning met ons team.'],
  services:['Verwarming en sanitair: herstelling en installatie','Vergelijk ketelherstelling, onderhoud, nieuwe verwarming, warm water en sanitaire werken. Bereid uw aanvraag voor met toestel- en adresgegevens.'],
  solutions:['Bulex-ketels, warmtepompen en boilers','Vergelijk Bulex-condensatieketels, GeniaAir-warmtepompen en boilers. Lees welke aansluitingen, regeling en woninggegevens de keuze bepalen.'],
@@ -19,6 +20,7 @@ export function mainMeta(locale:BulexLocale,key:PageKey){
  consumer:['Consumenteninformatie en klachten','Informatie over offertes, herroeping bij toepasselijke overeenkomsten, dringende herstellingen en de behandeling van consumentenklachten.'],
  accessibility:['Toegankelijkheid en hulp','Lees hoe u de website met toetsenbord en hulpmiddelen gebruikt en hoe u een toegangsprobleem meldt of een andere contactwijze vraagt.']
  }:{
+ reviews:['Customer feedback on Bulex heating and plumbing','Explore our customer feedback section and share your heating, plumbing or boiler service experience. Contact the team with questions about your visit.'],
  home:['Bulex heating and plumbing services in Belgium','Bulex boiler repair, maintenance, installation and plumbing. Explore equipment and local service information, or discuss your home with our team.'],
  services:['Heating and plumbing: repairs and installation','Compare boiler repair, maintenance, heating, hot water and plumbing installation. Prepare an enquiry with your appliance and address details.'],
  solutions:['Bulex boilers, heat pumps and water heaters','Compare Bulex condensing boilers, GeniaAir heat pumps and hot-water equipment. Learn which connections, controls and property details matter.'],

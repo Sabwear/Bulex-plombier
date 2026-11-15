@@ -1,7 +1,7 @@
 import { bulexOrigin, bulexIndexable } from "@/config/bulex/brand";
 import { getAdvice } from "@/config/bulex/advice";
 import { getServices, getSolutions } from "@/config/bulex/content";
-import { href, pageSegments, type PageKey } from "@/config/bulex/routes";
+import { alternatePath, href, pageSegments, type PageKey } from "@/config/bulex/routes";
 import { getAllSlugsNl } from "@/data/city-data";
 import type { MetadataRoute } from "next";
 
@@ -30,6 +30,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const articles=getAdvice(locale);
     return paths.map((path) => ({
       url: bulexOrigin + path,
+      alternates: {languages: {
+        "nl-BE": bulexOrigin + alternatePath(path,"nl"),
+        "en-BE": bulexOrigin + alternatePath(path,"en"),
+        "x-default": bulexOrigin + alternatePath(path,"en"),
+      }},
       ...(articles.find(a=>href(locale,'blog',a.slug)===path)?.blogPost?{lastModified:new Date(articles.find(a=>href(locale,'blog',a.slug)===path)!.blogPost!.publishAt)}:{}),
       changeFrequency: "monthly" as const,
     }));

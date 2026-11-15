@@ -90,6 +90,10 @@
       {
         "title": "Google services",
         "text": "A Google site-verification meta tag, when configured, proves site ownership and does not itself load advertising or analytics. No consent-based Google tag is enabled by this banner. If measurement or advertising is later introduced, the operator must configure its consent controls, purposes and disclosures before enabling that service."
+      },
+      {
+        "title": "Your language choice",
+        "text": "When you choose EN or NL, the first-party BULEX_LOCALE cookie remembers that choice for up to 180 days. It contains only the selected language and is used to provide the language preference you requested. On the main website address, we otherwise use the browser language setting, with English as the fallback. You can change language using the header or remove the cookie in your browser settings."
       }
     ],
     "nl": [
@@ -112,6 +116,10 @@
       {
         "title": "Google-diensten",
         "text": "Een ingestelde Google-verificatiemeta-tag bewijst eigendom van de site en laadt zelf geen advertenties of analytics. Deze banner activeert geen Google-tag op basis van toestemming. Bij latere meting of advertenties moet de exploitant toestemmingsbeheer, doeleinden en informatie vooraf configureren."
+      },
+      {
+        "title": "Uw taalkeuze",
+        "text": "Wanneer u EN of NL kiest, onthoudt de first-partycookie BULEX_LOCALE deze keuze maximaal 180 dagen. De cookie bevat alleen de gekozen taal en dient om uw aangevraagde taalvoorkeur toe te passen. Op het algemene websiteadres gebruiken wij anders de browsertaal, met Engels als terugvaltaal. U kunt de taal via de koptekst wijzigen of de cookie verwijderen in uw browserinstellingen."
       }
     ]
   },

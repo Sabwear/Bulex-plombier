@@ -4,7 +4,7 @@ export const pageSegments = {
   home: ['', ''], services: ['diensten', 'services'], solutions: ['oplossingen', 'solutions'],
   areas: ['loodgieter', 'service-areas'], about: ['over-ons', 'about'], contact: ['contact', 'contact'],
   booking: ['demande-offerte', 'book-a-technician'], blog: ['blog', 'advice'], faq: ['faq', 'faq'],
-  credentials: ['certificeringen', 'credentials'], privacy: ['privacy', 'privacy'], cookies: ['cookies', 'cookies'],
+  reviews: ['klantervaringen', 'reviews'], credentials: ['certificeringen', 'credentials'], privacy: ['privacy', 'privacy'], cookies: ['cookies', 'cookies'],
   consumer: ['consumenteninfo', 'consumer-information'], accessibility: ['toegankelijkheid', 'accessibility'],
   terms: ['gebruiksvoorwaarden', 'terms'], legal: ['juridische-vermelding', 'legal'],
 } as const;
