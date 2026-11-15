@@ -11,7 +11,7 @@ export type MailAttachment = {
 export function createSmtpTransport(config:SmtpEnv){return nodemailer.createTransport({
     host:config.host,port:config.port,secure:config.secure,requireTLS:!config.secure,
     tls:{minVersion:"TLSv1.2",rejectUnauthorized:true},
-    connectionTimeout:10000,greetingTimeout:10000,socketTimeout:20000,
+    dnsTimeout:5000,connectionTimeout:10000,greetingTimeout:8000,socketTimeout:15000,
     disableFileAccess:true,disableUrlAccess:true,auth:{user:config.user,pass:config.pass},
   });}
 

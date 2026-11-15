@@ -1,6 +1,6 @@
 import {randomUUID} from 'node:crypto';
 import {validateAttachments} from '@/lib/mail/attachments';
-import {boundedFormData,BodyLimitError,consumeMailLimit,mailClientKey,sameOriginMail,validMailFields,safeMailError} from '@/lib/mail/protection';
+import {boundedFormData,BodyLimitError,consumeMailLimit,mailClientKey,sameOriginMail,validMailFields,logMailEvent} from '@/lib/mail/protection';
 import {validateBulexRequest,bulexConfirmation} from '@/lib/mail/bulex-request';
 import {isBulex} from '@/config/bulex/brand';
 import { NextResponse } from "next/server";
@@ -39,10 +39,10 @@ export async function POST(req:Request){
  activeUploads++;try{return await handleMail(req);}finally{activeUploads--;}
 }
 async function handleMail(req:Request){
- const requestId=randomUUID();
+ const requestId=randomUUID();logMailEvent("INFO",requestId,"received");
   const config = getSmtpConfig();
   if (!config) {
-    console.error("[api/mail]",{requestId,stage:"configuration",code:"SMTP_CONFIG_INVALID"});
+    logMailEvent("ERROR",requestId,"configuration",{code:"SMTP_CONFIG_INVALID"});
     return NextResponse.json(
       {
         error:
@@ -57,9 +57,11 @@ async function handleMail(req:Request){
   try {
     formData = await boundedFormData(req);
   } catch(error) {
+    logMailEvent("ERROR",requestId,"upload",{code:error instanceof BodyLimitError?"UPLOAD_LIMIT":"UPLOAD_INVALID"});
     return NextResponse.json({ error: "Invalid or oversized upload." }, { status: error instanceof BodyLimitError?413:400 });
   }
 
+  logMailEvent("INFO",requestId,"upload-parsed");
   if(!validMailFields(formData))return NextResponse.json({error:"Invalid form fields."},{status:400});
   const hp = str(formData, "website");
   if (hp.length > 0) {
@@ -271,6 +273,7 @@ async function handleMail(req:Request){
 
   if(!consumeMailLimit('recipient:'+replyTo.toLowerCase(),3,60*60*1000)||!consumeMailLimit('global-delivery',100,15*60*1000))return NextResponse.json({error:"Too many requests. Please call our team."},{status:429,headers:{'Retry-After':'3600'}});
   try {
+    logMailEvent("INFO",requestId,"enquiry-start");
     await sendViaSmtp(config, {
       senderName: formType === "bulex" ? "Bulex Plombier" : undefined,
       subject,
@@ -278,8 +281,9 @@ async function handleMail(req:Request){
       replyTo,
       attachments: attachmentParts,
     });
+    logMailEvent("INFO",requestId,"enquiry-accepted");
   } catch (e) {
-    console.error("[api/mail]",{requestId,stage:"enquiry",...safeMailError(e)});
+    logMailEvent("ERROR",requestId,"enquiry",e);
     return NextResponse.json(
       { error: "We could not deliver your request. Please call our team or try again later.",requestId },
       { status: 502 }
@@ -299,6 +303,7 @@ async function handleMail(req:Request){
 
   let confirmationSent=true;
   try {
+    logMailEvent("INFO",requestId,"confirmation-start");
     const { subject: subjC, text: textC } = formType === "bulex" ? bulexConfirmation(str(formData,"locale"), visitorName, body) : buildCustomerConfirmationEmail({
       locale: confirmLocale,
       visitorFirstNameOrNom: visitorName,
@@ -311,9 +316,11 @@ async function handleMail(req:Request){
       text: textC,
       replyTo: config.mailFrom,
     });
+    logMailEvent("INFO",requestId,"confirmation-accepted");
   } catch (e) {
-    confirmationSent=false;console.error("[api/mail]",{requestId,stage:"confirmation",...safeMailError(e)});
+    confirmationSent=false;logMailEvent("ERROR",requestId,"confirmation",e);
   }
 
+  logMailEvent("INFO",requestId,"completed");
   return NextResponse.json({ ok: true,confirmationSent,requestId }, { status: 200 });
 }

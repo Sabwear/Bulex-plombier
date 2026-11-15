@@ -35,3 +35,10 @@ export function validMailFields(data:FormData){
  return true;
 }
 export function safeMailError(error:unknown){const e=error as {code?:unknown;responseCode?:unknown};return{code:typeof e?.code==='string'&&/^[A-Z0-9_]+$/.test(e.code)?e.code:'MAIL_FAILED',...(typeof e?.responseCode==='number'?{responseCode:e.responseCode}:{})};}
+
+// One JSON line is required for Hostinger's runtime-log API to retain these events.
+export function logMailEvent(level:'INFO'|'ERROR',requestId:string,stage:string,error?:unknown){
+ const details=error===undefined?{}:safeMailError(error);const message=['[api/mail]',stage,`request=${requestId}`,...Object.entries(details).map(([key,value])=>`${key}=${value}`)].join(' ');
+ const line=JSON.stringify({timestamp:new Date().toISOString(),level,message});
+ if(level==='ERROR')console.error(line);else console.info(line);
+}

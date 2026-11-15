@@ -305,3 +305,14 @@ test('SMTP sends to its mailbox only, leaves forwarding to the provider and veri
   await assert.rejects(()=>actualSendViaSmtp(cfg,{subject:'Test',text:'Test',replyTo:'visitor@example.test\r\nBcc: bad@example.test'}),{code:'EADDRESS'});
  }finally{nodemailer.createTransport=original;}
 });
+
+test('Slow submissions abort at their deadline without claiming delivery or automatically retrying',async()=>{
+ const {submitEnquiry,EnquiryTimeoutError}=require('../lib/mail/submit-request.ts');let calls=0;
+ const slowFetch=async(url,options)=>{calls++;return new Promise((resolve,reject)=>{options.signal.addEventListener('abort',()=>reject(new Error('aborted')),{once:true})})};
+ await assert.rejects(()=>submitEnquiry(validData(),{timeoutMs:10,fetchImpl:slowFetch}),EnquiryTimeoutError);assert.equal(calls,1);
+ const result=await submitEnquiry(validData(),{timeoutMs:100,fetchImpl:async()=>Response.json({ok:true,confirmationSent:false})});assert.equal(result.result.ok,true);assert.equal(result.result.confirmationSent,false);
+});
+test('Hostinger mail logs are single-line JSON and include diagnostic stages without personal data',()=>{
+ const {logMailEvent}=require('../lib/mail/protection.ts');const original=console.error,lines=[];console.error=line=>lines.push(line);
+ try{logMailEvent('ERROR','test-request','enquiry',Object.assign(new Error('secret visitor@example.test'),{code:'ETIMEDOUT',responseCode:421}));assert.equal(lines.length,1);const entry=JSON.parse(lines[0]);assert.ok(Date.parse(entry.timestamp));assert.equal(entry.level,'ERROR');assert.match(entry.message,/enquiry request=test-request code=ETIMEDOUT responseCode=421/);assert.doesNotMatch(lines[0],/secret|visitor@example/);}finally{console.error=original;}
+});
