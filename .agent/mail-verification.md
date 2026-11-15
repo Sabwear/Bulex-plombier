@@ -17,3 +17,13 @@ Hostinger spam classification prevents confirmed Inbox placement. Available host
 ## Code and deployment
 
 No application or environment changes were needed to send email. README and migration records now reflect live evidence. Historical entries in migration/design QA documents describe previous checks and are superseded by this record for email verification.
+
+## Production browser follow-up
+
+The user reported seeing success without receiving email in Inbox. Two submissions were made through the actual production Dutch contact form in the browser, both reaching the success state. IMAP confirmed the first enquiry and confirmation in Junk (marker BULEX-BROWSER-20261115; subjects Production browser verification and Uw aanvraag is ontvangen). SPF/DKIM/DMARC passed; X-Spam: Yes.
+
+A Hostinger filter named “Website Bulex enquiries to Inbox” was created with Match all rules: Subject contains “[Bulex ” AND From equals contact@bulex-loodgieter.com; action Move message to Inbox. The second production browser submission (BULEX-INBOX-FIX-20261115, Production Inbox verification) still reached Junk, so the rule was disabled. It remains saved but inactive. No allow/block lists or global spam protection were changed.
+
+All six labelled verification messages were manually moved from Spam to Inbox using Hostinger Mail. Their presence in Inbox is manual recovery, not proof that future messages land there automatically. No messages were deleted. Mailbox-provider remediation remains outstanding; Hostinger support must investigate the false-positive classification. No support message was sent. Application code and credentials were unchanged.
+
+Evidence: qa/production-contact-success.jpg and qa/production-contact-inbox.jpg. Browser testing is now complete for the Dutch contact page; English/booking browser flows and external customer confirmation delivery remain untested.

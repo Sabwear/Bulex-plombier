@@ -1,3 +1,5 @@
+> Production browser follow-up: two actual contact-form submissions succeeded but landed in Hostinger Junk. A targeted Inbox rule was ineffective and disabled; six test emails were manually recovered into Inbox. Future automatic Inbox placement still needs Hostinger remediation. Evidence and mailbox changes: `.agent/mail-verification.md`.
+
 > Live email verification (15 November 2026): production /api/mail delivered an enquiry and confirmation to contact@bulex-loodgieter.com. Both landed in Junk despite passing SPF/DKIM/DMARC; Inbox placement remains unresolved. See `.agent/mail-verification.md`.
 
 > Current routing and mail policy (15 November 2026): Dutch is the default with unprefixed public URLs; English uses /en. Old /nl URLs redirect permanently. Application forwarding and MAIL_TO have been removed; enquiries go to the configured sending mailbox and forwarding is managed in Hostinger Mail. Earlier entries below document historical migration decisions.
