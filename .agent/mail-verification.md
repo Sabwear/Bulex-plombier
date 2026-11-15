@@ -31,3 +31,5 @@ Evidence: qa/production-contact-success.jpg and qa/production-contact-inbox.jpg.
 ## Requester confirmation UX update
 
 Shared EN/NL contact and booking success feedback now focuses and scrolls the success panel into view, respects reduced motion, and displays the submitted recipient when confirmationSent is explicitly true. API tests check localized confirmation routing separately from the business enquiry for all four locale/request-type combinations. Hostinger spam classification remains a separate known limitation.
+
+Production verification of commit d1e5a5c: Hostinger build 01a1e0ae-ce48-71fc-acb6-4e60ecbeb199 completed. English browser contact submission succeeded; success panel was focused and its top measured 23.82 CSS pixels from viewport top. Screenshot: qa/production-success-scroll.jpg. Marker BULEX-SUCCESS-SCROLL-20261115. Read-only IMAP confirmed the EN enquiry and separate confirmation (Your request has been received | Bulex Plombier) addressed to the submitted contact@bulex-loodgieter.com mailbox, both in Junk. External-recipient delivery is not established by this same-mailbox test. All 42 regression checks and TypeScript pass.

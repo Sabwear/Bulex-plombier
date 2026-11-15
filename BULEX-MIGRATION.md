@@ -96,3 +96,5 @@ Six new full bilingual guides replace the matching legacy article content; six a
 ## 15 November 2026 — requester confirmation and success scrolling
 
 Updated shared components/bulex/EnquiryForm.tsx for both EN/NL contact and booking pages: scroll and keyboard focus move to the success panel after the request resolves, with reduced-motion support. Success feedback identifies the requester confirmation address when confirmationSent is explicitly true; otherwise the existing partial-delivery warning remains. No backend recipient changes. Regression checks exercise both languages and both request types with distinct visitor recipients.
+
+Verification: 42 automated checks and TypeScript passed. Hostinger deployed d1e5a5c successfully. Production EN browser test confirmed success focus and scroll position at approximately 24px from the viewport top; separate requester email was received in the configured test mailbox's Junk folder. EN/NL share the same component and structure; localized confirmation routing is covered for both languages and contact/booking forms. Screenshot: qa/production-success-scroll.jpg.
