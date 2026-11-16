@@ -372,3 +372,14 @@ test('Public email links opt out of Cloudflare rewriting and escape configured t
  const escaped=renderToStaticMarkup(React.createElement(EmailLink,{email:'"<script>&@example.test'}));
  assert.doesNotMatch(escaped,/<script>/);assert.match(escaped,/&quot;&lt;script&gt;&amp;/);
 });
+
+test('Contact and booking forms expose no off-screen text field for browser autofill',()=>{
+ const React=require('react'),{renderToStaticMarkup}=require('react-dom/server');
+ const EnquiryForm=require('../components/bulex/EnquiryForm.tsx').default;
+ for(const locale of ['en','nl'])for(const booking of [false,true]){
+  const html=renderToStaticMarkup(React.createElement(EnquiryForm,{locale,booking}));
+  assert.doesNotMatch(html,/name="(?:company_fax|website)"|Leave this field blank/);
+  for(const name of ['nom','email','telephone','adresse','service','message','consent'])assert.ok(html.includes(`name="${name}"`),`${locale}/${booking}: ${name}`);
+  assert.match(html,/autoComplete="email"/);
+ }
+});
