@@ -35,3 +35,11 @@
 - Completed: Hostinger deployment of a684ca7 confirmed; fresh production crawl passes 126/126 sitemap URLs.
 - Implemented email correction using Cloudflare's documented per-address email_off exemption and escaped native mailto anchors across shared EN/NL templates. 46 tests pass. Release uses the existing automatic Git deployment; live follow-up is recorded in the active execution chat.
 - Search Console submission still needs authenticated Search Console access; hosting tools do not expose it. PageSpeed retry remains rate-limited.
+
+## Search Console execution result
+
+Authenticated Search Console submission completed on 16 November 2026. The sitemap details report confirms **Sitemap processed successfully**, last read 16 November 2026, and **126 discovered pages**. The initial temporary fetch warning cleared when processing completed. Screenshot: `seo-evidence/2026-11-16/search-console-submitted.jpg`. This supersedes earlier notes that submission access was unavailable. Search performance and index coverage are still processing; sitemap discovery is not proof that all pages are indexed.
+
+## Final production verification
+
+Hostinger completed build `01a1e660-6555-7063-a94d-1ca82ef7b59d` for code commit `489bc4c`. All eight checked EN/NL homepage, contact, booking and legal URLs return HTTP 200 with native mailto destinations and no Cloudflare email-protection rewrite (evidence: `seo-evidence/2026-11-16/live-email-links.json`). The email follow-up and sitemap submission are complete. Tests: 46 passed; production build passed. Google reports 126 sitemap pages discovered; actual indexing, performance reports and PageSpeed measurements remain pending. Earlier open deployment/email/submission notes above are superseded by these verified results.

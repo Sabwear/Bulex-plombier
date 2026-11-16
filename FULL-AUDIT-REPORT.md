@@ -62,3 +62,11 @@ PASS: no visual styling or unrelated controls changed; existing design remains i
 Hostinger confirmed deployment of a684ca7 completed successfully (build 01a1e63a-4784-7351-83e0-6779fac7e4f9). A fresh live crawl passed all 126 sitemap URLs; robots now permits public image assets. See deployed-crawl.json for evidence.
 
 The email-protection follow-up has a source-level correction: shared escaped EmailLink anchors wrapped in Cloudflare's documented email_off comments, used by both languages' footer/contact/booking/legal sections. This prevents the broken edge rewrite without changing unrelated CDN settings. See https://developers.cloudflare.com/waf/tools/scrape-shield/email-address-obfuscation/. 46 regression tests pass. The follow-up source is released through the existing Git automatic deployment; final live validation is reported in the execution chat. Search Console submission/coverage remains unavailable via current connected tools. The second PageSpeed attempt remains rate-limited.
+
+## Search Console execution result
+
+Authenticated Search Console submission completed on 16 November 2026. The sitemap details report confirms **Sitemap processed successfully**, last read 16 November 2026, and **126 discovered pages**. The initial temporary fetch warning cleared when processing completed. Screenshot: `seo-evidence/2026-11-16/search-console-submitted.jpg`. This supersedes earlier notes that submission access was unavailable. Search performance and index coverage are still processing; sitemap discovery is not proof that all pages are indexed.
+
+## Final production verification
+
+Hostinger completed build `01a1e660-6555-7063-a94d-1ca82ef7b59d` for code commit `489bc4c`. All eight checked EN/NL homepage, contact, booking and legal URLs return HTTP 200 with native mailto destinations and no Cloudflare email-protection rewrite (evidence: `seo-evidence/2026-11-16/live-email-links.json`). The email follow-up and sitemap submission are complete. Tests: 46 passed; production build passed. Google reports 126 sitemap pages discovered; actual indexing, performance reports and PageSpeed measurements remain pending. Earlier open deployment/email/submission notes above are superseded by these verified results.

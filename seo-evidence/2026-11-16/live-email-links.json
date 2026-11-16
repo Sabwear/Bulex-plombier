@@ -1,0 +1,50 @@
+[
+  {
+    "path": "/",
+    "status": 200,
+    "native_mailto": true,
+    "edge_rewrite": false
+  },
+  {
+    "path": "/en",
+    "status": 200,
+    "native_mailto": true,
+    "edge_rewrite": false
+  },
+  {
+    "path": "/contact",
+    "status": 200,
+    "native_mailto": true,
+    "edge_rewrite": false
+  },
+  {
+    "path": "/en/contact",
+    "status": 200,
+    "native_mailto": true,
+    "edge_rewrite": false
+  },
+  {
+    "path": "/demande-offerte",
+    "status": 200,
+    "native_mailto": true,
+    "edge_rewrite": false
+  },
+  {
+    "path": "/en/book-a-technician",
+    "status": 200,
+    "native_mailto": true,
+    "edge_rewrite": false
+  },
+  {
+    "path": "/juridische-vermelding",
+    "status": 200,
+    "native_mailto": true,
+    "edge_rewrite": false
+  },
+  {
+    "path": "/en/legal",
+    "status": 200,
+    "native_mailto": true,
+    "edge_rewrite": false
+  }
+]

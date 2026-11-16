@@ -127,3 +127,11 @@ Robots permits public `/bulex/` image assets. Reviews require a source URL and n
 Reproduce the HTTP sitemap audit with `python3 scripts/audit-seo.py http://localhost:3100 --output /tmp/bulex-seo-crawl.json` against a running production build. Evidence and sitemap structure are saved under `seo-evidence/2026-11-16/`. Live Cloudflare email protection and Search Console/CWV follow-ups remain in the action plan.
 
 The SEO release `a684ca7` was confirmed deployed by Hostinger and passed a live 126-URL sitemap crawl. Public email anchors now use the shared `EmailLink` component with Cloudflare's documented `email_off` exemption, keeping native `mailto:` destinations available without a decoder. EN/NL footer, contact, booking and legal pages use the same implementation. Regression checks cover HTML escaping and exemption markers.
+
+## Search Console execution result
+
+Authenticated Search Console submission completed on 16 November 2026. The sitemap details report confirms **Sitemap processed successfully**, last read 16 November 2026, and **126 discovered pages**. The initial temporary fetch warning cleared when processing completed. Screenshot: `seo-evidence/2026-11-16/search-console-submitted.jpg`. This supersedes earlier notes that submission access was unavailable. Search performance and index coverage are still processing; sitemap discovery is not proof that all pages are indexed.
+
+## Final production verification
+
+Hostinger completed build `01a1e660-6555-7063-a94d-1ca82ef7b59d` for code commit `489bc4c`. All eight checked EN/NL homepage, contact, booking and legal URLs return HTTP 200 with native mailto destinations and no Cloudflare email-protection rewrite (evidence: `seo-evidence/2026-11-16/live-email-links.json`). The email follow-up and sitemap submission are complete. Tests: 46 passed; production build passed. Google reports 126 sitemap pages discovered; actual indexing, performance reports and PageSpeed measurements remain pending. Earlier open deployment/email/submission notes above are superseded by these verified results.
