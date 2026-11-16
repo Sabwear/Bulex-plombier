@@ -30,7 +30,7 @@ The configuration is grouped in `.env.example`: application mode, company/contac
 
 Mail defaults to port 587 (STARTTLS). Use `SMTP_PORT=465` for implicit TLS. The public support email is the default sender and recipient; only set `MAIL_FROM` if the sending mailbox differs. Enquiries go directly to that mailbox; configure any forwarding in Hostinger Mail. `SMTP_SECURE` is only an override for a nonstandard transport setup.
 
-Public social and Google review links use a single `NEXT_PUBLIC_*` naming scheme, listed in the example. `BULEX_GOOGLE_SITE_VERIFICATION` is an optional Search Console token. Analytics and Google Ads configuration fields are retained in the example. They do not activate tags on their own; no optional tracking is installed by the current site.
+Public social and Google review links use a single `NEXT_PUBLIC_*` naming scheme, listed in the example. `BULEX_GOOGLE_SITE_VERIFICATION` is an optional Search Console token. Analytics and Google Ads configuration fields are retained in the example. These environment fields do not activate tags on their own. The shared layout now installs Google Ads AW-11417443258 only after advertising consent; Google Analytics remains uninstalled.
 
 ### Deploy
 
@@ -111,3 +111,9 @@ Dutch pages use `/`, `/diensten`, `/oplossingen`, `/loodgieter`, `/blog` and oth
 Contact and booking requests send a separate localized confirmation, including the submitted request, to the visitor's email address. After success the shared EN/NL form scrolls to and focuses its success panel. Reduced-motion users get immediate scrolling. The panel shows the submitted email address only when the API confirms SMTP acceptance; confirmation failure keeps the accepted enquiry successful and explains that no resubmission is needed. Provider spam filtering can still affect delivery.
 
 Hidden anti-spam fields now reject with FORM_VERIFICATION_FAILED and a request reference rather than returning fake delivery success. Browser autofill must leave these fields blank. The shared Bulex form uses company_fax; the API also checks the legacy website field. Hosted SMTP/contact settings were resynchronized from the local working configuration on 15 November 2026, keeping production mode. Hostinger masks values on read, so synchronization establishes the desired values rather than proving the previous values matched.
+
+### Google Ads and delivery investigation — 16 November 2026
+
+The global head integration loads one Google tag using the supplied current snippet URL (`https://www.googletagmanager.com/gtm.js?id=AW-11417443258`) after explicit marketing consent. Consent defaults are denied before tag initialization. Acceptance, custom preferences and withdrawal are available in EN/NL; consent policy version 2 requests a new choice from existing visitors. Google Analytics stays denied. Existing form/WhatsApp conversion action labels are preserved and gated by consent. No email addresses or form text are supplied to conversion events. Cookie settings remain reopenable after dismissal. Verify account-side destinations and conversions in Google Tag Assistant; loading the script alone does not prove Google Ads attribution.
+
+An external-recipient production test on 16 November established an asynchronous delivery failure: Hostinger initially accepted both sends, then MailChannels bounced the customer confirmation with `550 5.7.1 [CS] Message blocked`. The business enquiry reached Junk. SMTP acceptance cannot guarantee downstream delivery; the provider report was submitted with the user's approval. Provider remediation and a subsequent external delivery check are required. Do not describe the transport as fully fixed merely because the API returned success.

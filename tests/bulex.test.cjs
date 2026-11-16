@@ -330,3 +330,19 @@ test('Hostinger mail logs are single-line JSON and include diagnostic stages wit
  const {logMailEvent}=require('../lib/mail/protection.ts');const original=console.error,lines=[];console.error=line=>lines.push(line);
  try{logMailEvent('ERROR','test-request','enquiry',Object.assign(new Error('secret visitor@example.test'),{code:'ETIMEDOUT',responseCode:421}));assert.equal(lines.length,1);const entry=JSON.parse(lines[0]);assert.ok(Date.parse(entry.timestamp));assert.equal(entry.level,'ERROR');assert.match(entry.message,/enquiry request=test-request code=ETIMEDOUT responseCode=421/);assert.doesNotMatch(lines[0],/secret|visitor@example/);}finally{console.error=original;}
 });
+
+ test('Google Ads loads once after consent and updates denial on withdrawal',()=>{
+ const previous={window:global.window,document:global.document,localStorage:global.localStorage};
+ const {CONSENT_KEY,CONSENT_VERSION,denyMarketingForSession}=require('../config/bulex/consent.ts');const {syncGoogleTag}=require('../lib/google-tag.ts');
+ let saved=null;const scripts=[];
+ global.window={};global.localStorage={getItem:key=>key===CONSENT_KEY?saved:null};
+ global.document={getElementById:id=>scripts.find(script=>script.id===id),createElement:()=>({}),head:{appendChild:script=>scripts.push(script)}};
+ try{
+  syncGoogleTag();assert.equal(scripts.length,0);assert.equal(global.window.gtag,undefined);
+  saved=JSON.stringify({version:CONSENT_VERSION,necessary:true,analytics:false,marketing:true,updatedAt:Date.now()});syncGoogleTag();syncGoogleTag();
+  assert.equal(scripts.length,1);assert.equal(scripts[0].src,'https://www.googletagmanager.com/gtm.js?id=AW-11417443258');
+  const calls=global.window.dataLayer.map(args=>Array.from(args));assert.equal(calls.filter(args=>args[0]==='js').length,1);assert.equal(calls[0][2].ad_storage,'denied');
+  saved=JSON.stringify({version:CONSENT_VERSION,necessary:true,analytics:false,marketing:false,updatedAt:Date.now()});syncGoogleTag();assert.equal(global.window.dataLayer.at(-1)[2].ad_storage,'denied');
+  saved=JSON.stringify({version:CONSENT_VERSION,necessary:true,analytics:false,marketing:true,updatedAt:Date.now()});denyMarketingForSession(true);syncGoogleTag();assert.equal(global.window.dataLayer.at(-1)[2].ad_storage,'denied');
+ }finally{denyMarketingForSession(false);global.window=previous.window;global.document=previous.document;global.localStorage=previous.localStorage;}
+});

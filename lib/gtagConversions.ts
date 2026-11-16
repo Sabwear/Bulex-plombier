@@ -2,8 +2,8 @@ import {hasMarketingConsent} from '@/config/bulex/consent';
 /**
  * Google Ads conversion helpers (gtag).
  *
- * No Google tag is loaded by the current Bulex layout. These legacy actions
- * are additionally gated on explicit, unexpired marketing consent.
+ * The shared layout loads one Google tag after explicit, unexpired
+ * marketing consent. Conversion events use the same consent gate.
  * These helpers fire individual conversion events at the right moments:
  * - Lead form successfully submitted (contact + request-quote pages)
  * - WhatsApp button clicked (wa.me links)

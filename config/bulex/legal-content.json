@@ -31,7 +31,7 @@
       },
       {
         "title": "Cookies and external websites",
-        "text": "Our cookie policy describes the consent-choice storage. This version loads no optional analytics or advertising tags. Manufacturer documentation and social links open external services governed by their own notices. Clicking a link is different from this website embedding their tracking tools."
+        "text": "Google Ads is loaded only after advertising consent to measure enquiries and advertising results. Google may process device, browser, page and advertising-interaction data and use advertising storage. Reject or withdraw consent through Cookie settings; enquiry forms remain available. Google processes data under its privacy policy at https://policies.google.com/privacy. No Google Analytics tag is installed."
       }
     ],
     "nl": [
@@ -65,7 +65,7 @@
       },
       {
         "title": "Cookies en externe websites",
-        "text": "Ons cookiebeleid beschrijft de opslag van uw toestemmingskeuze. Deze versie laadt geen optionele analytics- of advertentietags. Fabrikantdocumentatie en sociale links leiden naar externe diensten met eigen beleid. Een link aanklikken verschilt van het insluiten van hun trackingtools op deze website."
+        "text": "Google Ads wordt alleen geladen na toestemming voor advertenties om aanvragen en advertentieresultaten te meten. Google kan apparaat-, browser-, pagina- en advertentie-interactiegegevens verwerken en advertentieopslag gebruiken. Weiger of trek toestemming in via Cookie-instellingen; formulieren blijven beschikbaar. Google verwerkt gegevens volgens https://policies.google.com/privacy. Er is geen Google Analytics-tag geïnstalleerd."
       }
     ]
   },
@@ -76,8 +76,8 @@
         "text": "The first-party localStorage entry bulex-cookie-choice remembers your cookie preference, a policy version and the time of your choice. It is necessary to remember your privacy choice and is valid for up to six months. It is stored in your browser, rather than sent as an enquiry attachment or sold to a third party."
       },
       {
-        "title": "No optional tracking is active",
-        "text": "This version does not install Google Analytics, Google Ads tags, advertising pixels or embedded social-media trackers. Analytics and advertising are shown as unavailable in the preferences panel. Accepting all and rejecting optional cookies currently produce the same result: necessary choice storage only. Optional services will require an updated notice and fresh consent before activation."
+        "title": "Optional Google Ads measurement",
+        "text": "Google Ads (AW-11417443258) loads after you accept advertising cookies. It measures submitted enquiries and WhatsApp clicks and may use Google advertising cookies, including _gcl_au (typically up to 90 days). Google may process device, browser, page and advertising-interaction data. Rejecting leaves this tag unloaded. Google Analytics is not installed. Choices expire after six months and a changed policy requests fresh consent."
       },
       {
         "title": "Change or withdraw your choice",
@@ -89,7 +89,7 @@
       },
       {
         "title": "Google services",
-        "text": "A Google site-verification meta tag, when configured, proves site ownership and does not itself load advertising or analytics. No consent-based Google tag is enabled by this banner. If measurement or advertising is later introduced, the operator must configure its consent controls, purposes and disclosures before enabling that service."
+        "text": "Google processes advertising measurement data after consent. See https://policies.google.com/privacy and https://business.safety.google/privacy/. Withdrawing consent updates Google consent settings to denied and stops application conversion events. You can delete existing cookies in your browser. Site-verification metadata does not itself load advertising."
       },
       {
         "title": "Your language choice",
@@ -102,8 +102,8 @@
         "text": "Het first-party localStorage-item bulex-cookie-choice onthoudt uw cookievoorkeur, beleidsversie en keuzetijdstip. Dit is nodig om uw privacykeuze te bewaren en is maximaal zes maanden geldig. De gegevens blijven in uw browser en worden niet als aanvraagbijlage verzonden of aan derden verkocht."
       },
       {
-        "title": "Geen optionele tracking actief",
-        "text": "Deze versie installeert geen Google Analytics, Google Ads-tags, advertentiepixels of ingesloten sociale trackers. Analytics en advertenties zijn in het voorkeurenvenster niet beschikbaar. Alles accepteren en optionele cookies weigeren hebben momenteel hetzelfde resultaat: uitsluitend noodzakelijke keuzeopslag. Nieuwe optionele diensten vragen bijgewerkte informatie en nieuwe toestemming vóór activering."
+        "title": "Optionele Google Ads-meting",
+        "text": "Google Ads (AW-11417443258) wordt geladen nadat u advertentiecookies accepteert. Het meet verzonden aanvragen en WhatsApp-klikken en kan Google-advertentiecookies gebruiken, waaronder _gcl_au (doorgaans maximaal 90 dagen). Google kan apparaat-, browser-, pagina- en advertentie-interactiegegevens verwerken. Bij weigering wordt de tag niet geladen. Google Analytics is niet geïnstalleerd. Keuzes vervallen na zes maanden; een gewijzigd beleid vraagt opnieuw toestemming."
       },
       {
         "title": "Uw keuze wijzigen of intrekken",
@@ -115,7 +115,7 @@
       },
       {
         "title": "Google-diensten",
-        "text": "Een ingestelde Google-verificatiemeta-tag bewijst eigendom van de site en laadt zelf geen advertenties of analytics. Deze banner activeert geen Google-tag op basis van toestemming. Bij latere meting of advertenties moet de exploitant toestemmingsbeheer, doeleinden en informatie vooraf configureren."
+        "text": "Google verwerkt advertentiemeetgegevens na toestemming. Zie https://policies.google.com/privacy en https://business.safety.google/privacy/. Bij intrekking worden Google-toestemmingsinstellingen geweigerd en stopt de toepassing conversiegebeurtenissen. Bestaande cookies kunt u in uw browser wissen. Siteverificatie-metadata laadt op zichzelf geen advertenties."
       },
       {
         "title": "Uw taalkeuze",

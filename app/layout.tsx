@@ -1,3 +1,4 @@
+import GoogleTag from '@/components/bulex/GoogleTag';
 import { headers } from 'next/headers';
 import {getBulexOrigin} from '@/config/bulex/request-origin';
 import type { Metadata } from "next";
@@ -22,6 +23,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <head>
+        <GoogleTag />
         <link rel="icon" href="/bulex/logo.png" />
       </head>
       <body>

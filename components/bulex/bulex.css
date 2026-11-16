@@ -315,3 +315,5 @@
 @media(max-width:700px){.bx-header .bx-main-header{display:grid;grid-template-columns:minmax(0,1fr) auto;height:auto;min-height:94px;padding-block:12px;row-gap:12px}.bx-main-header .bx-brand-lockup{grid-column:1;grid-row:1}.bx-main-header .bx-menu-button{grid-column:2;grid-row:1}.bx-main-header .bx-header-cta{grid-column:1/-1;grid-row:2;width:100%;min-width:0;height:40px}.bx-brand-lockup .bx-logo,.bx-brand-lockup .bx-logo img{width:clamp(150px,46vw,220px)}}
 
 .bx-form-success{scroll-margin-top:24px}
+
+.bulex-site .bx-cookie-settings{display:block;margin:0 auto;padding:12px 24px;border:0;background:white;color:#111318;text-decoration:underline;cursor:pointer}
