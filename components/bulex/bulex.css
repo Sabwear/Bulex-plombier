@@ -317,3 +317,7 @@
 .bx-form-success{scroll-margin-top:24px}
 
 .bulex-site .bx-cookie-settings{display:block;margin:0 auto;padding:12px 24px;border:0;background:white;color:#111318;text-decoration:underline;cursor:pointer}
+
+/* Keep footer navigation easy to target on touch screens. */
+.bulex-site .bx-footer-grid>div:not(:first-child)>a,
+.bulex-site .bx-footer-grid>div>span>a{display:flex;align-items:center;min-height:32px;padding-block:6px}

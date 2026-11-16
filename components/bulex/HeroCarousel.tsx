@@ -35,7 +35,7 @@ export default function HeroCarousel({ locale }: { locale: BulexLocale }) {
   }, [hovered, focused, reducedMotion, visible]);
   function select(index: number) { setActive((index + 3) % 3); }
   return <section className="bx-hero bx-carousel" aria-roledescription="carousel" aria-label={locale === 'en' ? 'Heating and plumbing services' : 'Verwarming en loodgieterij'} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} onFocusCapture={() => setFocused(true)} onBlurCapture={event => { if (!event.currentTarget.contains(event.relatedTarget)) setFocused(false); }}>
-    <div className="bx-hero-photo" aria-hidden="true">{slides.map((slide, index) => <div key={slide.image} className={`bx-slide-image ${index === active ? 'is-active' : ''}`}><Image src={slide.image} alt="" fill priority={index === 0} loading={index ? 'eager' : undefined} sizes="(max-width: 700px) 100vw, 60vw" /></div>)}</div>
+    <div className="bx-hero-photo" aria-hidden="true">{slides.map((slide, index) => <div key={slide.image} className={`bx-slide-image ${index === active ? 'is-active' : ''}`}><Image src={slide.image} alt="" fill priority={index === 0} fetchPriority={index === 0 ? 'high' : undefined} loading={index ? 'eager' : undefined} sizes="(max-width: 700px) 100vw, 60vw" /></div>)}</div>
     <div className="bx-container bx-hero-container"><div className="bx-hero-copy">
       <span className="bx-eyebrow">{t.partner} · {t.belgium}</span>
       <h1 className="bx-sr-only">{t.heroTitle} {t.heroSub}</h1>

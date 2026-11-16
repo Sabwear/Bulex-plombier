@@ -1,0 +1,576 @@
+Browser tab: 1500943767, Title: "PageSpeed Insights", URL: "https://pagespeed.web.dev/analysis/https-bulex-loodgieter-com/jkiou6mmgd?utm_source=search_console&form_factor=mobile&hl=en".
+0 AXWebArea PageSpeed Insights, URL: pagespeed.web.dev/analysis/https-bulex-loodgieter-com/jkiou6mmgd?utm_source=search_console&form_factor=mobile&hl=en
+	1 container yDmH0d
+		2 container kO001e
+			3 link Description: PageSpeed Insights logo PageSpeed Insights, Value: pagespeed.web.dev/
+			4 button Copy Link
+				5 image
+				6 text Copy Link
+			7 container
+				8 link Description: Docs, Value: developers.google.com/speed/docs/insights/v5/about
+		9 container
+			10 container
+				11 text Report from  Nov 16, 2026, 10:07:15 PM
+				12 text field (settable) Value: https://bulex-loodgieter.com/, ID: c7
+				13 button Analyze
+					14 text Analyze
+				15 tab group
+					16 tab (selected, settable, boolean) Mobile, Value: 1, ID: mobile_tab
+					17 tab (selectable, settable, boolean) Desktop, Value: 0, ID: desktop_tab
+				18 container Mobile
+					19 container
+						20 text Showing results for URL: https://bulex-loodgieter.com/ en
+						21 text Run with original URL
+					22 text Discover what your real users are experiencing
+					23 button button
+					24 text No Data
+					26 text Diagnose performance issues
+					51 container
+						52 container
+							53 link Description: 98 Performance, Value: pagespeed.web.dev/#performance
+							54 link Description: 96 Accessibility, Value: pagespeed.web.dev/#accessibility
+							55 link Description: 100 Best Practices, Value: pagespeed.web.dev/#best-practices
+							56 link Description: 100 SEO, Value: pagespeed.web.dev/#seo
+							57 link Description: 2/3 Agentic Browsing, Value: pagespeed.web.dev/#agentic-browsing
+						58 container performance
+							59 image
+								60 text 98
+								61 text FCP
+								62 text +10
+								63 text LCP
+								64 text +24
+								65 text TBT
+								66 text +30
+								67 text CLS
+								68 text +25
+								69 text SI
+								70 text +10
+								71 text Performance
+							72 container
+								73 text Values are estimated and may vary. The 
+								74 link Description: performance score is calculated, Value: developer.chrome.com/docs/lighthouse/performance/performance-scoring/?utm_source=lighthouse&utm_medium=lr
+								75 text  directly from these metrics.
+								76 link Description: See calculator., Value: googlechrome.github.io/lighthouse/scorecalc/#FCP=901&LCP=2261&TBT=89&CLS=0&SI=2422&TTI=2261&device=mobile&version=13.6.0
+							77 text 0–49 50–89 90–100
+							78 image Final Screenshot
+							79 container
+								80 checkbox (settable, integer) Description: Toggle the display of metric descriptions, Value: 0, ID: lh-metrics-toggle0
+								81 text METRICS Expand view
+								82 container first-contentful-paint
+									83 text First Contentful Paint
+									84 text 0.9 s
+								85 container largest-contentful-paint
+									86 text Largest Contentful Paint
+									87 text 2.3 s
+								88 container total-blocking-time
+									89 text Total Blocking Time
+									90 text 90 ms
+								91 container cumulative-layout-shift
+									92 text Cumulative Layout Shift
+									93 text 0
+								94 container speed-index
+									95 text Speed Index
+									96 text 2.4 s
+								97 content list
+									98 text Captured at Nov 16, 2026, 10:07 PM GMT+0
+									99 text Emulated Moto G Power with Lighthouse 13.6.0
+									100 text Single page session
+									101 text Initial page load
+									102 text Slow 4G throttling
+									103 text Using HeadlessChromium 157.0.8103.38 with lr
+								104 button View Treemap
+							105 container screenshot-thumbnails
+								106 image Screenshot
+								107 image Screenshot
+								108 image Screenshot
+								109 image Screenshot
+								110 image Screenshot
+								111 image Screenshot
+								112 image Screenshot
+								113 image Screenshot
+							114 text Show audits relevant to:
+							115 radio button (settable, integer) Description: All, Value: 1, ID: metric-All-6
+							116 radio button (settable, integer) Description: FCP, Value: 0, ID: metric-FCP-6
+							117 container First Contentful Paint
+								118 text FCP
+							119 radio button (settable, integer) Description: LCP, Value: 0, ID: metric-LCP-6
+							120 container Largest Contentful Paint
+								121 text LCP
+							122 radio button (settable, integer) Description: TBT, Value: 0, ID: metric-TBT-6
+							123 container Total Blocking Time
+								124 text TBT
+							125 container
+								126 text INSIGHTS
+								127 button (collapsed) Improve image delivery —Est savings of 15 KiB, Secondary Actions: Expand
+									128 text Improve image delivery
+									129 text —
+									130 text Est savings of 15 KiB
+								131 button (collapsed) Legacy JavaScript —Est savings of 12 KiB, Secondary Actions: Expand
+									132 text Legacy JavaScript
+									133 text —
+									134 text Est savings of 12 KiB
+								135 button (collapsed) Render-blocking requests —Est savings of 580 ms, Secondary Actions: Expand
+									136 text Render-blocking requests
+									137 text —
+									138 text Est savings of 580 ms
+								266 container
+									267 button (expanded) LCP request discovery, Secondary Actions: Collapse
+										268 text LCP request discovery
+									269 link Description: Optimize LCP, Value: developer.chrome.com/docs/performance/insights/lcp-discovery?utm_source=lighthouse&utm_medium=lr
+									270 text  by making the LCP image discoverable from the HTML immediately, and avoiding lazy-loading
+									271 text LCP
+									272 text Unscored
+									273 content list
+										274 text LCP resources shouldn’t use loading=lazy
+										275 text fetchpriority=high should be applied to the image preload request
+										276 text Request is discoverable in initial document
+									277 container section.bx-hero > div.bx-hero-photo > div.bx-slide-image > img
+										278 text section.bx-hero > div.bx-hero-photo > div.bx-slide-image > img
+										279 text <img alt="" decoding="async" data-nimg="fill" style="position: absolute; height: 100%; width: 100%; inset: 0px;" sizes="(max-width: 700px) 100vw, 60vw" srcset="/_next/image?url=%2Fbulex%2Fhero-consultation.webp&amp;w=384&amp;q=75 384w, /_next…" src="https://bulex-loodgieter.com/_next/image?url=%2Fbulex%2Fhero-consultation.…">
+								141 button (collapsed) Network dependency tree, Secondary Actions: Expand
+									142 text Network dependency tree
+								143 button (collapsed) Use efficient cache lifetimes —Est savings of 1 KiB, Secondary Actions: Expand
+									144 text Use efficient cache lifetimes
+									145 text —
+									146 text Est savings of 1 KiB
+								147 button (collapsed) LCP breakdown, Secondary Actions: Expand
+									148 text LCP breakdown
+								149 text These insights are also available in the Chrome DevTools Performance Panel - 
+								150 link Description: record a trace, Value: developer.chrome.com/docs/devtools/performance/reference?utm_source=lighthouse&utm_medium=lr
+								151 text  to view more detailed information.
+							152 container
+								153 text DIAGNOSTICS
+								154 button (collapsed) Avoid long main-thread tasks —1 long task found, Secondary Actions: Expand
+									155 text Avoid long main-thread tasks
+									156 text —
+									157 text 1 long task found
+								158 text More information about the performance of your application. These numbers don't 
+								159 link Description: directly affect, Value: developer.chrome.com/docs/lighthouse/performance/performance-scoring/?utm_source=lighthouse&utm_medium=lr
+								160 text  the Performance score.
+							161 button (collapsed) PASSED AUDITS (19) Show, Secondary Actions: Expand
+								162 container
+									163 text PASSED AUDITS (19)
+								164 text Show
+						165 container accessibility
+							166 heading 96 Accessibility, Value: 2
+								167 container
+									168 image
+									169 text 96 Accessibility
+							170 container
+								171 text These checks highlight opportunities to 
+								172 link Description: improve the accessibility of your web app, Value: developer.chrome.com/docs/lighthouse/accessibility/?utm_source=lighthouse&utm_medium=lr
+								173 text . Automatic detection can only detect a subset of issues and does not guarantee the accessibility of your web app, so 
+								174 link Description: manual testing, Value: web.dev/articles/how-to-review?utm_source=lighthouse&utm_medium=lr
+								175 text  is also encouraged.
+							176 container
+								177 text BEST PRACTICES
+								280 container
+									281 button (expanded) Touch targets do not have sufficient size or spacing., Secondary Actions: Collapse
+										282 text Touch targets do not have sufficient size or spacing.
+									283 text Touch targets with sufficient size and spacing help users who may have difficulty targeting small controls to activate the targets. 
+									284 link Description: Learn more about touch targets, Value: dequeuniversity.com/rules/axe/4.14/target-size
+									285 text .
+									286 table
+										287 row
+											288 cell
+												289 text Failing Elements
+										290 row
+											291 cell
+												292 container div.bx-container > div.bx-footer-grid > div > a
+													293 text Boiler repair
+													294 text <a href="/en/services/boiler-repair">
+										295 row
+											296 cell
+												297 container div.bx-container > div.bx-footer-grid > div > a
+													298 text Boiler maintenance
+													299 text <a href="/en/services/boiler-maintenance">
+										300 row
+											301 cell
+												302 container div.bx-container > div.bx-footer-grid > div > a
+													303 text Boiler maintenance
+													304 text <a href="/en/services/boiler-maintenance">
+										305 row
+											306 cell
+												307 container div.bx-container > div.bx-footer-grid > div > a
+													308 text Boiler repair
+													309 text <a href="/en/services/boiler-repair">
+										310 row
+											311 cell
+												312 container div.bx-container > div.bx-footer-grid > div > a
+													313 text Boiler installation
+													314 text <a href="/en/services/boiler-installation">
+										315 row
+											316 cell
+												317 container div.bx-container > div.bx-footer-grid > div > a
+													318 text Boiler installation
+													319 text <a href="/en/services/boiler-installation">
+										320 row
+											321 cell
+												322 container div.bx-container > div.bx-footer-grid > div > a
+													323 text Boiler maintenance
+													324 text <a href="/en/services/boiler-maintenance">
+										325 row
+											326 cell
+												327 container div.bx-container > div.bx-footer-grid > div > a
+													328 text Heating systems
+													329 text <a href="/en/services/heating-systems">
+										330 row
+											331 cell
+												332 container div.bx-container > div.bx-footer-grid > div > a
+													333 text Heating systems
+													334 text <a href="/en/services/heating-systems">
+										335 row
+											336 cell
+												337 container div.bx-container > div.bx-footer-grid > div > a
+													338 text Boiler installation
+													339 text <a href="/en/services/boiler-installation">
+										340 row
+											341 cell
+												342 container div.bx-container > div.bx-footer-grid > div > a
+													343 text Water heaters & hot water
+													344 text <a href="/en/services/water-heaters">
+										345 row
+											346 cell
+												347 container div.bx-container > div.bx-footer-grid > div > a
+													348 text Water heaters & hot water
+													349 text <a href="/en/services/water-heaters">
+										350 row
+											351 cell
+												352 container div.bx-container > div.bx-footer-grid > div > a
+													353 text Heating systems
+													354 text <a href="/en/services/heating-systems">
+										355 row
+											356 cell
+												357 container div.bx-container > div.bx-footer-grid > div > a
+													358 text Emergency service
+													359 text <a href="/en/services/emergency-service">
+										360 row
+											361 cell
+												362 container div.bx-container > div.bx-footer-grid > div > a
+													363 text Emergency service
+													364 text <a href="/en/services/emergency-service">
+										365 row
+											366 cell
+												367 container div.bx-container > div.bx-footer-grid > div > a
+													368 text Water heaters & hot water
+													369 text <a href="/en/services/water-heaters">
+										370 row
+											371 cell
+												372 container div.bx-container > div.bx-footer-grid > div > a
+													373 text Water leak repair
+													374 text <a href="/en/services/water-leak-repair">
+										375 row
+											376 cell
+												377 container div.bx-container > div.bx-footer-grid > div > a
+													378 text Water leak repair
+													379 text <a href="/en/services/water-leak-repair">
+										380 row
+											381 cell
+												382 container div.bx-container > div.bx-footer-grid > div > a
+													383 text Emergency service
+													384 text <a href="/en/services/emergency-service">
+										385 row
+											386 cell
+												387 container div.bx-container > div.bx-footer-grid > div > a
+													388 text Plumbing installation
+													389 text <a href="/en/services/plumbing-installation">
+										390 row
+											391 cell
+												392 container div.bx-container > div.bx-footer-grid > div > a
+													393 text Plumbing installation
+													394 text <a href="/en/services/plumbing-installation">
+										395 row
+											396 cell
+												397 container div.bx-container > div.bx-footer-grid > div > a
+													398 text Water leak repair
+													399 text <a href="/en/services/water-leak-repair">
+										400 row
+											401 cell
+												402 container div.bx-container > div.bx-footer-grid > div > a
+													403 text Gas boilers
+													404 text <a href="/en/solutions/gas-boilers">
+										405 row
+											406 cell
+												407 container div.bx-container > div.bx-footer-grid > div > a
+													408 text Heat pumps
+													409 text <a href="/en/solutions/heat-pumps">
+										410 row
+											411 cell
+												412 container div.bx-container > div.bx-footer-grid > div > a
+													413 text Heat pumps
+													414 text <a href="/en/solutions/heat-pumps">
+										415 row
+											416 cell
+												417 container div.bx-container > div.bx-footer-grid > div > a
+													418 text Gas boilers
+													419 text <a href="/en/solutions/gas-boilers">
+										420 row
+											421 cell
+												422 container div.bx-container > div.bx-footer-grid > div > a
+													423 text Water heaters
+													424 text <a href="/en/solutions/water-heaters">
+										425 row
+											426 cell
+												427 container div.bx-container > div.bx-footer-grid > div > a
+													428 text Water heaters
+													429 text <a href="/en/solutions/water-heaters">
+										430 row
+											431 cell
+												432 container div.bx-container > div.bx-footer-grid > div > a
+													433 text Heat pumps
+													434 text <a href="/en/solutions/heat-pumps">
+										435 row
+											436 cell
+												437 container div.bx-container > div.bx-footer-grid > div > a
+													438 text Blog & advice
+													439 text <a href="/en/advice">
+										440 row
+											441 cell
+												442 container div.bx-container > div.bx-footer-grid > div > a
+													443 text Blog & advice
+													444 text <a href="/en/advice">
+										445 row
+											446 cell
+												447 container div.bx-container > div.bx-footer-grid > div > a
+													448 text Water heaters
+													449 text <a href="/en/solutions/water-heaters">
+										450 row
+											451 cell
+												452 container div.bx-container > div.bx-footer-grid > div > a
+													453 text About us
+													454 text <a href="/en/about">
+										455 row
+											456 cell
+												457 container div.bx-container > div.bx-footer-grid > div > a
+													458 text Authorized Bulex Partner
+													459 text <a href="/en/credentials">
+										460 row
+											461 cell
+												462 container div.bx-container > div.bx-footer-grid > div > a
+													463 text Authorized Bulex Partner
+													464 text <a href="/en/credentials">
+										465 row
+											466 cell
+												467 container div.bx-container > div.bx-footer-grid > div > a
+													468 text About us
+													469 text <a href="/en/about">
+										470 row
+											471 cell
+												472 container div.bx-container > div.bx-footer-grid > div > a
+													473 text Our service areas
+													474 text <a href="/en/service-areas">
+										475 row
+											476 cell
+												477 container div.bx-container > div.bx-footer-grid > div > a
+													478 text Our service areas
+													479 text <a href="/en/service-areas">
+										480 row
+											481 cell
+												482 container div.bx-container > div.bx-footer-grid > div > a
+													483 text Authorized Bulex Partner
+													484 text <a href="/en/credentials">
+										485 row
+											486 cell
+												487 container div.bx-container > div.bx-footer-grid > div > a
+													488 text Frequently asked questions
+													489 text <a href="/en/faq">
+										490 row
+											491 cell
+												492 container div.bx-container > div.bx-footer-grid > div > a
+													493 text Frequently asked questions
+													494 text <a href="/en/faq">
+										495 row
+											496 cell
+												497 container div.bx-container > div.bx-footer-grid > div > a
+													498 text Our service areas
+													499 text <a href="/en/service-areas">
+										500 row
+											501 cell
+												502 container div.bx-container > div.bx-footer-grid > div > a
+													503 text Customer reviews
+													504 text <a href="/en/reviews">
+										505 row
+											506 cell
+												507 container div.bx-container > div.bx-footer-grid > div > a
+													508 text Customer reviews
+													509 text <a href="/en/reviews">
+										510 row
+											511 cell
+												512 container div.bx-container > div.bx-footer-grid > div > a
+													513 text Frequently asked questions
+													514 text <a href="/en/faq">
+										515 row
+											516 cell
+												517 container div.bx-container > div.bx-footer-grid > div > a
+													518 text Contact & enquiries
+													519 text <a href="/en/contact">
+										520 row
+											521 cell
+												522 container div.bx-container > div.bx-footer-grid > div > a
+													523 text 04 67 80 20 90
+													524 text <a href="tel:+32467802090">
+										525 row
+											526 cell
+												527 container div.bx-container > div.bx-footer-grid > div > a
+													528 text 04 67 80 20 90
+													529 text <a href="tel:+32467802090">
+										530 row
+											531 cell
+												532 container div.bx-container > div.bx-footer-grid > div > a
+													533 text Contact & enquiries
+													534 text <a href="/en/contact">
+										535 row
+											536 cell
+												537 container div.bx-footer-grid > div > span > a
+													538 text contact@bulex-loodgieter.com
+													539 text <a href="mailto:contact@bulex-loodgieter.com">
+										540 row
+											541 cell
+												542 container div.bx-footer-grid > div > span > a
+													543 text contact@bulex-loodgieter.com
+													544 text <a href="mailto:contact@bulex-loodgieter.com">
+										545 row
+											546 cell
+												547 container div.bx-container > div.bx-footer-grid > div > a
+													548 text 04 67 80 20 90
+													549 text <a href="tel:+32467802090">
+										550 row
+											551 cell
+												552 container div.bx-container > div.bx-footer-grid > div > a
+													553 text WhatsApp
+													554 text <a href="https://wa.me/32467802090" target="_blank" rel="noopener noreferrer">
+										555 row
+											556 cell
+												557 container div.bx-container > div.bx-footer-grid > div > a
+													558 text WhatsApp
+													559 text <a href="https://wa.me/32467802090" target="_blank" rel="noopener noreferrer">
+										560 row
+											561 cell
+												562 container div.bx-footer-grid > div > span > a
+													563 text contact@bulex-loodgieter.com
+													564 text <a href="mailto:contact@bulex-loodgieter.com">
+								180 text These items highlight common accessibility best practices.
+							181 container
+								182 button (collapsed) ADDITIONAL ITEMS TO MANUALLY CHECK (10) Show, Secondary Actions: Expand
+									183 container
+										184 text ADDITIONAL ITEMS TO MANUALLY CHECK (10)
+									185 text Show
+								186 text These items address areas which an automated testing tool cannot cover. Learn more in our guide on 
+								187 link Description: conducting an accessibility review, Value: web.dev/articles/how-to-review?utm_source=lighthouse&utm_medium=lr
+								188 text .
+							189 button (collapsed) PASSED AUDITS (25) Show, Secondary Actions: Expand
+								190 container
+									191 text PASSED AUDITS (25)
+								192 text Show
+							193 button (collapsed) NOT APPLICABLE (37) Show, Secondary Actions: Expand
+								194 container
+									195 text NOT APPLICABLE (37)
+								196 text Show
+						197 container best-practices
+							198 heading 100 Best Practices, Value: 2
+								199 container
+									200 image
+									201 text 100 Best Practices
+							202 container
+								203 text TRUST AND SAFETY
+								204 button (collapsed) Ensure CSP is effective against XSS attacks, Secondary Actions: Expand
+									205 text Ensure CSP is effective against XSS attacks
+								206 button (collapsed) Ensure proper origin isolation with COOP, Secondary Actions: Expand
+									207 text Ensure proper origin isolation with COOP
+								208 button (collapsed) Mitigate DOM-based XSS with Trusted Types, Secondary Actions: Expand
+									209 text Mitigate DOM-based XSS with Trusted Types
+							210 container
+								211 text BROWSER COMPATIBILITY
+								212 button (collapsed) Baseline Features, Secondary Actions: Expand
+									213 text Baseline Features
+							214 button (collapsed) PASSED AUDITS (13) Show, Secondary Actions: Expand
+								215 container
+									216 text PASSED AUDITS (13)
+								217 text Show
+							218 button (collapsed) NOT APPLICABLE (4) Show, Secondary Actions: Expand
+								219 container
+									220 text NOT APPLICABLE (4)
+								221 text Show
+						222 container seo
+							223 heading 100 SEO, Value: 2
+								224 container
+									225 image
+									226 text 100 SEO
+							227 container
+								228 text These checks ensure that your page is following basic search engine optimization advice. There are many additional factors Lighthouse does not score here that may affect your search ranking, including performance on 
+								229 link Description: Core Web Vitals, Value: web.dev/explore/vitals?utm_source=lighthouse&utm_medium=lr
+								230 text . 
+								231 link Description: Learn more about Google Search Essentials, Value: support.google.com/webmasters/answer/35769
+								232 text .
+							233 container
+								234 button (expanded) ADDITIONAL ITEMS TO MANUALLY CHECK (1) Hide, Secondary Actions: Collapse
+									235 container
+										236 text ADDITIONAL ITEMS TO MANUALLY CHECK (1)
+									237 text Hide
+								238 button (collapsed) Structured data is valid, Secondary Actions: Expand
+									239 text Structured data is valid
+								240 text Run these additional validators on your site to check additional SEO best practices.
+							241 button (collapsed) PASSED AUDITS (10) Show, Secondary Actions: Expand
+								242 container
+									243 text PASSED AUDITS (10)
+								244 text Show
+						245 container agentic-browsing
+							246 heading 2/3 Agentic Browsing, Value: 2
+								247 container
+									248 text 2/3 Agentic Browsing
+							249 container
+								250 text These checks ensure high-quality, 
+								251 link Description: browsable websites for AI agents, Value: goo.gle/lighthouse-agentic-web
+								252 text  and validate the correctness of WebMCP integrations. This category is still under development and subject to change.
+							253 container
+								254 text AGENT DISCOVERABILITY
+								565 container
+									566 button (expanded) llms.txt does not follow recommendations, Secondary Actions: Collapse
+										567 text llms.txt does not follow recommendations
+									568 text If your llms.txt file does not follow recommendations, large language models may not be able to understand how you want your website to be crawled or used for training. The 
+									569 link Description: llms.txt, Value: llmstxt.org/
+									570 text  file should be a Markdown file containing at least one H1 header. 
+									571 link Description: Learn more about the llms.txt audit, Value: developer.chrome.com/docs/lighthouse/agentic-browsing/llms-txt?utm_source=lighthouse&utm_medium=lr
+									572 text .
+									573 table
+										574 row
+											575 cell
+												576 text Error
+										577 row
+											578 cell
+												579 text File does not appear to contain any links.
+								257 text These audits validate that websites expose discoverable resources, documentation, and catalogs for AI agents.
+							258 button (collapsed) PASSED AUDITS (2) Show, Secondary Actions: Expand
+								259 container
+									260 text PASSED AUDITS (2)
+								261 text Show
+							262 button (collapsed) NOT APPLICABLE (4) Show, Secondary Actions: Expand
+								263 container
+									264 text NOT APPLICABLE (4)
+								265 text Show
+		27 container ZCHFDb
+			28 text More on PageSpeed Insights
+			29 link Description: What's new, Value: developers.google.com/speed/docs/insights/release_notes
+			30 link Description: Documentation, Value: developers.google.com/speed/docs/insights/v5/about
+			31 link Description: Learn about Web Performance, Value: developers.google.com/speed
+			32 link Description: Ask questions on Stack Overflow, Value: stackoverflow.com/questions/tagged/pagespeed-insights
+			33 link Description: Mailing list, Value: groups.google.com/g/pagespeed-insights-discuss
+			34 text Related Content
+			35 link Description: Updates, Value: developer.chrome.com/blog
+			36 link Description: Web Fundamentals, Value: developers.google.com/focus/web-development
+			37 link Description: Case Studies, Value: web.dev/case-studies
+			38 link Description: Podcasts, Value: web.dev/shows
+			39 text Connect
+			40 link Description: Twitter, Value: twitter.com/ChromiumDev
+			41 link Description: Youtube, Value: youtube.com/user/ChromeDevelopers
+			42 link Description: Google Developers Logo, Value: developers.google.com/
+			43 link Description: Chrome, Value: developer.chrome.com/
+			44 link Description: Firebase, Value: firebase.google.com/
+			45 link Description: All products, Value: developers.google.com/products/
+			46 link Description: Terms and Privacy Policy, Value: policies.google.com/
+			47 container
+				48 text For details, see the 
+				49 link Description: Google Developers Site Policies, Value: developers.google.com/terms/site-policies
+				50 text .
+
+The focused UI element is 267 button (expanded) LCP request discovery, Secondary Actions: Collapse

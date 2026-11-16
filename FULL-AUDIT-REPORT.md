@@ -74,3 +74,7 @@ Hostinger completed build `01a1e660-6555-7063-a94d-1ca82ef7b59d` for code commit
 ## Current indexing policy: explicit owner override
 
 The owner requested indexing of every published page. All existing area pages are now indexable and included in the sitemap: 45 cities in both languages, bringing the currently published sitemap to 178 canonical URLs. The earlier 19-pair restriction is removed. Content-quality findings remain relevant editorial work but do not block indexing. Unpublished scheduled guides, invalid routes, API endpoints and internal rewrites remain excluded. Search Console Page indexing data is still processing, so actual coverage cannot yet be confirmed.
+
+## Measured mobile performance and follow-up
+
+A browser PageSpeed run succeeded despite the earlier API rate limit: English homepage mobile Performance 98, Accessibility 96, Best Practices 100, SEO 100; LCP 2.3s, CLS 0, TBT 90ms. No field CWV dataset is available in Search Console. The remaining observed issues led to larger footer targets, proper Markdown llms.txt links, and explicit initial-hero fetch priority. These are shared EN/NL changes. The score is a pre-follow-up lab result and does not guarantee rankings or accessibility compliance. See pagespeed-mobile-before.txt and ACTION-PLAN.md.
