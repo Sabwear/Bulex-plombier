@@ -1,0 +1,17 @@
+{
+  "sitemap_urls": 178,
+  "google_discovered_pages": 178,
+  "google_sitemap_status": "Success",
+  "home_indexed": true,
+  "home_recrawl_requested": true,
+  "english_home_indexing_requested": true,
+  "mobile_footer_min_height": 32,
+  "mobile_horizontal_overflow": false,
+  "hero_fetch_priority": "high",
+  "llms": {
+    "markdown_links": 13,
+    "old_nl_prefix": false,
+    "dutch_default": true
+  },
+  "tests_passed": 46
+}

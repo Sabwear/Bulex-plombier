@@ -1,0 +1,27 @@
+# Bulex Plombier
+
+> Authorized Bulex partner for heating and plumbing services in Belgium.
+
+Dutch is the default language at unprefixed URLs. English pages use /en. Contact the team to confirm service availability. An enquiry does not confirm an appointment.
+
+## Dutch
+
+- [Home](/): Heating and plumbing services.
+- [Diensten](/diensten): Repair, maintenance and installation.
+- [Werkgebied](/loodgieter): Published service areas.
+- [Blog en advies](/blog): Heating and hot-water guidance.
+- [Contact](/contact): Service enquiries.
+
+## English
+
+- [Home](/en): Heating and plumbing services.
+- [Services](/en/services): Repair, maintenance and installation.
+- [Service areas](/en/service-areas): Published service areas.
+- [Advice](/en/advice): Heating and hot-water guidance.
+- [Contact](/en/contact): Service enquiries.
+
+## Website information
+
+- [Sitemap](/sitemap.xml): Published canonical pages and language alternatives.
+- [Legal information](/en/legal): Website operator information.
+- [Privacy policy](/en/privacy): Enquiry data processing.

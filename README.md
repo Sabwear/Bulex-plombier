@@ -143,3 +143,11 @@ At the owner's request, all 45 existing cities in EN/NL are eligible for indexin
 Measured SEO follow-up: shared footer links have a 32px minimum target height, llms.txt uses descriptive Markdown links, and the first hero image has explicit high fetch priority. Browser PageSpeed baseline on /en measured mobile 98 Performance / 96 Accessibility / 100 Best Practices / 100 SEO; field Core Web Vitals data is insufficient. 46 tests and production build pass.
 
 Hostinger may serve `public/llms.txt` before Node middleware. Keep this static Markdown fallback aligned with `app/bulex-meta/route.ts`; relative links preserve the serving domain and Dutch unprefixed routes.
+
+## All-published-pages execution result
+
+The live sitemap now contains 178 canonical published URLs; the complete crawl passes with no failed/redirected/noindex URLs, duplicate metadata, missing descriptions or canonical mismatches. Google Search Console reports Success and 178 discovered pages. Both homepage crawl/indexing requests were accepted. The Dutch homepage is confirmed indexed; English was discovered but not yet indexed at inspection. This is an indexing request for the site, not a claim that all 178 URLs are already in Google.
+
+Measured follow-up fixes are live: first hero fetch priority is high; EN/NL mobile checks at 390px confirm 32px footer targets and no horizontal overflow; hosted llms.txt now contains correct Markdown links and current language paths. Final code release: d032056, Hostinger build 01a1e66c-81f6-70e7-ad75-bb56c624b7ab. Evidence: all-published-live-crawl.json, all-178-google-submitted.jpg, en-indexing-requested.jpg, mobile-footer-verified.jpg, llms-final.txt and final-checks.json under seo-evidence/2026-11-16.
+
+Delivery checks PASS: 46 tests and production build; complete live sitemap crawl; matching shared EN/NL changes; mobile target dimensions and overflow measured; no invented credentials, address, dates or reviews. Remaining work needs Google processing/usage data or real business/editorial information. The PageSpeed baseline remains 98 Performance / 96 Accessibility / 100 Best Practices / 100 SEO; no unmeasured post-fix score is claimed.

@@ -78,3 +78,11 @@ The owner requested indexing of every published page. All existing area pages ar
 ## Measured mobile performance and follow-up
 
 A browser PageSpeed run succeeded despite the earlier API rate limit: English homepage mobile Performance 98, Accessibility 96, Best Practices 100, SEO 100; LCP 2.3s, CLS 0, TBT 90ms. No field CWV dataset is available in Search Console. The remaining observed issues led to larger footer targets, proper Markdown llms.txt links, and explicit initial-hero fetch priority. These are shared EN/NL changes. The score is a pre-follow-up lab result and does not guarantee rankings or accessibility compliance. See pagespeed-mobile-before.txt and ACTION-PLAN.md.
+
+## All-published-pages execution result
+
+The live sitemap now contains 178 canonical published URLs; the complete crawl passes with no failed/redirected/noindex URLs, duplicate metadata, missing descriptions or canonical mismatches. Google Search Console reports Success and 178 discovered pages. Both homepage crawl/indexing requests were accepted. The Dutch homepage is confirmed indexed; English was discovered but not yet indexed at inspection. This is an indexing request for the site, not a claim that all 178 URLs are already in Google.
+
+Measured follow-up fixes are live: first hero fetch priority is high; EN/NL mobile checks at 390px confirm 32px footer targets and no horizontal overflow; hosted llms.txt now contains correct Markdown links and current language paths. Final code release: d032056, Hostinger build 01a1e66c-81f6-70e7-ad75-bb56c624b7ab. Evidence: all-published-live-crawl.json, all-178-google-submitted.jpg, en-indexing-requested.jpg, mobile-footer-verified.jpg, llms-final.txt and final-checks.json under seo-evidence/2026-11-16.
+
+Delivery checks PASS: 46 tests and production build; complete live sitemap crawl; matching shared EN/NL changes; mobile target dimensions and overflow measured; no invented credentials, address, dates or reviews. Remaining work needs Google processing/usage data or real business/editorial information. The PageSpeed baseline remains 98 Performance / 96 Accessibility / 100 Best Practices / 100 SEO; no unmeasured post-fix score is claimed.
