@@ -67,3 +67,7 @@ Then withdrew marketing consent before a labelled production browser form submis
 ## Contact form rejection fix
 
 User supplied screenshot reference 5178b01e-57fb-4949-84a8-de06c39e8f56. Exact Hostinger log correlation: upload parsed, then FORM_VERIFICATION_FAILED, without SMTP starting. Off-screen company_fax text input removed from shared EnquiryForm across EN/NL contact/booking to avoid autofill-induced rejection. Retained existing server protections and legacy trap rejection. 47 regression tests pass. Read-only SMTP verification passed. Environment values masked by hosting API, keys complete; no env mutation or credential logging. qa/contact-autofill-fix.md records cause and boundaries. Next step is deployment and a labeled own-mailbox browser test.
+
+### Deployed autofill fix verification
+
+Hostinger build 01a1e6c7-1fb1-73d1-8003-8e3c36ea659a deployed code c92d5b7. Real Dutch browser submission BULEX-AUTOFILL-FIX succeeded; request c00a80c9-d71a-46a3-a5a9-dc18dae6bc20 logged enquiry-accepted, confirmation-accepted and completed at 23:56:26–27 UTC, 16 November 2026. Used only the site's own mailbox. No credentials changed. Screenshot qa/contact-autofill-fixed-live.jpg. SMTP acceptance verified; no inbox/external-provider delivery claim. 47 tests and production build pass. Existing browser tabs must reload to receive corrected form code.

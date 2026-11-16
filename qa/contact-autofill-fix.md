@@ -17,3 +17,9 @@ Server origin checks, request/recipient throttles, required consent and field va
 47 automated tests pass, including rendering all four locale/form combinations without an off-screen text trap, existing forged-honeypot rejections, valid contact/booking delivery, attachment limits and delivery-failure behavior. Production build is run before release. Production verification follows deployment using a clearly labeled test addressed to the website's own mailbox, without an actual appointment request.
 
 This fixes the screenshot's submission rejection. It does not establish that every downstream mailbox accepts customer confirmations; prior MailChannels filtering is a separate recorded issue.
+
+## Production result
+
+Hostinger build 01a1e6c7-1fb1-73d1-8003-8e3c36ea659a deployed c92d5b7. The live Dutch contact form no longer contains company_fax. A real browser submission labeled BULEX-AUTOFILL-FIX reached “Uw aanvraag is ontvangen.” and showed the localized confirmation notice. Request c00a80c9-d71a-46a3-a5a9-dc18dae6bc20 logged enquiry-accepted at 23:56:26 UTC, confirmation-accepted and completed at 23:56:27 UTC on 16 November 2026. Both emails were addressed to the site's own mailbox; no external test recipient or real appointment was involved. Screenshot: qa/contact-autofill-fixed-live.jpg.
+
+SMTP acceptance is verified; Inbox placement was not checked in this run. The screenshot's pre-SMTP verification failure is resolved. Reload an already-open form before retesting. 47 tests and production build passed. Shared EN/NL contact/booking form coverage passed; only the Dutch contact flow was submitted through the live browser.

@@ -155,3 +155,5 @@ Delivery checks PASS: 46 tests and production build; complete live sitemap crawl
 ### Contact autofill fix
 
 The contact error reference `5178b01e-57fb-4949-84a8-de06c39e8f56` was a pre-SMTP verification rejection: an off-screen anti-spam text field was filled. The shared EN/NL contact and booking form no longer includes that browser-autofill target. Existing server origin/rate/field/upload checks remain, and direct legacy trap submissions still reject. SMTP connection and authentication passed without changing environment values. See `qa/contact-autofill-fix.md` for evidence and validation. Reload an already-open form to load the corrected version.
+
+Production verification of the autofill fix passed: the Dutch browser contact submission reached success and Hostinger logged SMTP acceptance for enquiry and confirmation. Code release `c92d5b7`; evidence in `qa/contact-autofill-fix.md` and `qa/contact-autofill-fixed-live.jpg`. All 47 tests and production build pass. SMTP acceptance does not establish Inbox placement.
