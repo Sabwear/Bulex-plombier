@@ -31,3 +31,5 @@ PageSpeed browser run on 16 November 2026 for the English homepage (root negotia
 Implemented the observed small fixes: footer links have at least 32px height to resolve adjacent touch-target spacing; llms.txt now has descriptive Markdown links and Dutch/English sections; first hero image explicitly uses fetchPriority=high. Shared components preserve the same EN/NL structure and styling. No claim of improved score until a new measurement completes. 46 tests and production build pass.
 
 Google URL inspection confirms the Dutch homepage is already indexed; a recrawl request was accepted into the priority queue. The field Core Web Vitals report has insufficient mobile and desktop usage data in the last 90 days. This supersedes the earlier API-only performance limitation.
+
+Hostinger static-file follow-up: corrected public/llms.txt as well as the dynamic route, because the host serves the static file before Node middleware. The static version uses actual Markdown links, unprefixed Dutch URLs and /en English URLs.

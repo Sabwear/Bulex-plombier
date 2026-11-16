@@ -47,7 +47,7 @@ Browser tab: 1500943767, Title: "PageSpeed Insights", URL: "https://pagespeed.we
 								70 text +10
 								71 text Performance
 							72 container
-								73 text Values are estimated and may vary. The 
+								73 text Values are estimated and may vary. The
 								74 link Description: performance score is calculated, Value: developer.chrome.com/docs/lighthouse/performance/performance-scoring/?utm_source=lighthouse&utm_medium=lr
 								75 text  directly from these metrics.
 								76 link Description: See calculator., Value: googlechrome.github.io/lighthouse/scorecalc/#FCP=901&LCP=2261&TBT=89&CLS=0&SI=2422&TTI=2261&device=mobile&version=13.6.0
@@ -135,7 +135,7 @@ Browser tab: 1500943767, Title: "PageSpeed Insights", URL: "https://pagespeed.we
 									146 text Est savings of 1 KiB
 								147 button (collapsed) LCP breakdown, Secondary Actions: Expand
 									148 text LCP breakdown
-								149 text These insights are also available in the Chrome DevTools Performance Panel - 
+								149 text These insights are also available in the Chrome DevTools Performance Panel -
 								150 link Description: record a trace, Value: developer.chrome.com/docs/devtools/performance/reference?utm_source=lighthouse&utm_medium=lr
 								151 text  to view more detailed information.
 							152 container
@@ -144,7 +144,7 @@ Browser tab: 1500943767, Title: "PageSpeed Insights", URL: "https://pagespeed.we
 									155 text Avoid long main-thread tasks
 									156 text —
 									157 text 1 long task found
-								158 text More information about the performance of your application. These numbers don't 
+								158 text More information about the performance of your application. These numbers don't
 								159 link Description: directly affect, Value: developer.chrome.com/docs/lighthouse/performance/performance-scoring/?utm_source=lighthouse&utm_medium=lr
 								160 text  the Performance score.
 							161 button (collapsed) PASSED AUDITS (19) Show, Secondary Actions: Expand
@@ -157,9 +157,9 @@ Browser tab: 1500943767, Title: "PageSpeed Insights", URL: "https://pagespeed.we
 									168 image
 									169 text 96 Accessibility
 							170 container
-								171 text These checks highlight opportunities to 
+								171 text These checks highlight opportunities to
 								172 link Description: improve the accessibility of your web app, Value: developer.chrome.com/docs/lighthouse/accessibility/?utm_source=lighthouse&utm_medium=lr
-								173 text . Automatic detection can only detect a subset of issues and does not guarantee the accessibility of your web app, so 
+								173 text . Automatic detection can only detect a subset of issues and does not guarantee the accessibility of your web app, so
 								174 link Description: manual testing, Value: web.dev/articles/how-to-review?utm_source=lighthouse&utm_medium=lr
 								175 text  is also encouraged.
 							176 container
@@ -167,7 +167,7 @@ Browser tab: 1500943767, Title: "PageSpeed Insights", URL: "https://pagespeed.we
 								280 container
 									281 button (expanded) Touch targets do not have sufficient size or spacing., Secondary Actions: Collapse
 										282 text Touch targets do not have sufficient size or spacing.
-									283 text Touch targets with sufficient size and spacing help users who may have difficulty targeting small controls to activate the targets. 
+									283 text Touch targets with sufficient size and spacing help users who may have difficulty targeting small controls to activate the targets.
 									284 link Description: Learn more about touch targets, Value: dequeuniversity.com/rules/axe/4.14/target-size
 									285 text .
 									286 table
@@ -455,7 +455,7 @@ Browser tab: 1500943767, Title: "PageSpeed Insights", URL: "https://pagespeed.we
 									183 container
 										184 text ADDITIONAL ITEMS TO MANUALLY CHECK (10)
 									185 text Show
-								186 text These items address areas which an automated testing tool cannot cover. Learn more in our guide on 
+								186 text These items address areas which an automated testing tool cannot cover. Learn more in our guide on
 								187 link Description: conducting an accessibility review, Value: web.dev/articles/how-to-review?utm_source=lighthouse&utm_medium=lr
 								188 text .
 							189 button (collapsed) PASSED AUDITS (25) Show, Secondary Actions: Expand
@@ -497,9 +497,9 @@ Browser tab: 1500943767, Title: "PageSpeed Insights", URL: "https://pagespeed.we
 									225 image
 									226 text 100 SEO
 							227 container
-								228 text These checks ensure that your page is following basic search engine optimization advice. There are many additional factors Lighthouse does not score here that may affect your search ranking, including performance on 
+								228 text These checks ensure that your page is following basic search engine optimization advice. There are many additional factors Lighthouse does not score here that may affect your search ranking, including performance on
 								229 link Description: Core Web Vitals, Value: web.dev/explore/vitals?utm_source=lighthouse&utm_medium=lr
-								230 text . 
+								230 text .
 								231 link Description: Learn more about Google Search Essentials, Value: support.google.com/webmasters/answer/35769
 								232 text .
 							233 container
@@ -519,7 +519,7 @@ Browser tab: 1500943767, Title: "PageSpeed Insights", URL: "https://pagespeed.we
 								247 container
 									248 text 2/3 Agentic Browsing
 							249 container
-								250 text These checks ensure high-quality, 
+								250 text These checks ensure high-quality,
 								251 link Description: browsable websites for AI agents, Value: goo.gle/lighthouse-agentic-web
 								252 text  and validate the correctness of WebMCP integrations. This category is still under development and subject to change.
 							253 container
@@ -527,9 +527,9 @@ Browser tab: 1500943767, Title: "PageSpeed Insights", URL: "https://pagespeed.we
 								565 container
 									566 button (expanded) llms.txt does not follow recommendations, Secondary Actions: Collapse
 										567 text llms.txt does not follow recommendations
-									568 text If your llms.txt file does not follow recommendations, large language models may not be able to understand how you want your website to be crawled or used for training. The 
+									568 text If your llms.txt file does not follow recommendations, large language models may not be able to understand how you want your website to be crawled or used for training. The
 									569 link Description: llms.txt, Value: llmstxt.org/
-									570 text  file should be a Markdown file containing at least one H1 header. 
+									570 text  file should be a Markdown file containing at least one H1 header.
 									571 link Description: Learn more about the llms.txt audit, Value: developer.chrome.com/docs/lighthouse/agentic-browsing/llms-txt?utm_source=lighthouse&utm_medium=lr
 									572 text .
 									573 table
@@ -569,7 +569,7 @@ Browser tab: 1500943767, Title: "PageSpeed Insights", URL: "https://pagespeed.we
 			45 link Description: All products, Value: developers.google.com/products/
 			46 link Description: Terms and Privacy Policy, Value: policies.google.com/
 			47 container
-				48 text For details, see the 
+				48 text For details, see the
 				49 link Description: Google Developers Site Policies, Value: developers.google.com/terms/site-policies
 				50 text .
 
