@@ -29,3 +29,9 @@
 
 - Obtain PageSpeed/CrUX LCP, INP and CLS data when the rate limit clears; investigate only measured deficiencies.
 - Monitor indexing and query data after deployment. Sitemap submission does not guarantee indexing or rankings.
+
+## Execution update
+
+- Completed: Hostinger deployment of a684ca7 confirmed; fresh production crawl passes 126/126 sitemap URLs.
+- Implemented email correction using Cloudflare's documented per-address email_off exemption and escaped native mailto anchors across shared EN/NL templates. 46 tests pass. Release uses the existing automatic Git deployment; live follow-up is recorded in the active execution chat.
+- Search Console submission still needs authenticated Search Console access; hosting tools do not expose it. PageSpeed retry remains rate-limited.

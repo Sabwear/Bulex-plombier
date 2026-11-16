@@ -364,3 +364,11 @@ test('SEO sitemap excludes thin area pairs and robots allows public images',asyn
   const robots=await require('../app/robots.ts').default();assert.ok(!robots.rules.disallow.includes('/bulex/'));
  }finally{brand.bulexIndexable=previous}
 });
+
+test('Public email links opt out of Cloudflare rewriting and escape configured text',()=>{
+ const React=require('react'),{renderToStaticMarkup}=require('react-dom/server'),EmailLink=require('../components/bulex/EmailLink.tsx').default;
+ const html=renderToStaticMarkup(React.createElement(EmailLink,{email:'contact@example.test'}));
+ assert.match(html,/<!--email_off--><a href="mailto:contact@example.test">contact@example.test<\/a><!--\/email_off-->/);
+ const escaped=renderToStaticMarkup(React.createElement(EmailLink,{email:'"<script>&@example.test'}));
+ assert.doesNotMatch(escaped,/<script>/);assert.match(escaped,/&quot;&lt;script&gt;&amp;/);
+});

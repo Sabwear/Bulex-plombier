@@ -125,3 +125,5 @@ See [the current audit](FULL-AUDIT-REPORT.md) and [action plan](ACTION-PLAN.md);
 Robots permits public `/bulex/` image assets. Reviews require a source URL and no sample testimonials are published. The advice hubs link older guidance, and business schema uses configured identity/contact details without invented address or ratings.
 
 Reproduce the HTTP sitemap audit with `python3 scripts/audit-seo.py http://localhost:3100 --output /tmp/bulex-seo-crawl.json` against a running production build. Evidence and sitemap structure are saved under `seo-evidence/2026-11-16/`. Live Cloudflare email protection and Search Console/CWV follow-ups remain in the action plan.
+
+The SEO release `a684ca7` was confirmed deployed by Hostinger and passed a live 126-URL sitemap crawl. Public email anchors now use the shared `EmailLink` component with Cloudflare's documented `email_off` exemption, keeping native `mailto:` destinations available without a decoder. EN/NL footer, contact, booking and legal pages use the same implementation. Regression checks cover HTML escaping and exemption markers.

@@ -56,3 +56,9 @@ PASS: no invented business data or testimonials introduced; sample reviews remov
 PASS: changed shared EN/NL routes render and metadata agree, backed by 45 tests.
 PASS: production build and complete 126-URL production-build crawl passed.
 PASS: no visual styling or unrelated controls changed; existing design remains in place.
+
+## Production execution follow-up
+
+Hostinger confirmed deployment of a684ca7 completed successfully (build 01a1e63a-4784-7351-83e0-6779fac7e4f9). A fresh live crawl passed all 126 sitemap URLs; robots now permits public image assets. See deployed-crawl.json for evidence.
+
+The email-protection follow-up has a source-level correction: shared escaped EmailLink anchors wrapped in Cloudflare's documented email_off comments, used by both languages' footer/contact/booking/legal sections. This prevents the broken edge rewrite without changing unrelated CDN settings. See https://developers.cloudflare.com/waf/tools/scrape-shield/email-address-obfuscation/. 46 regression tests pass. The follow-up source is released through the existing Git automatic deployment; final live validation is reported in the execution chat. Search Console submission/coverage remains unavailable via current connected tools. The second PageSpeed attempt remains rate-limited.
