@@ -1,0 +1,25 @@
+Social Meta Tags — https://bulex-loodgieter.com
+==================================================
+Score: 85/100
+
+Open Graph (7/7):
+  ✅ og:title: Bulex verwarming en loodgieterij in België | Bulex Plombier
+  ✅ og:description: Bulex-ketelherstelling, onderhoud, installatie en sanitair. ...
+  ✅ og:image: https://bulex-loodgieter.com/bulex/hero.webp
+  ✅ og:url: https://bulex-loodgieter.com
+  ✅ og:type: website
+  ✅ og:site_name: Bulex Plombier
+  ✅ og:locale: nl_BE
+
+Twitter Card (4/6):
+  ✅ twitter:card: summary_large_image
+  ✅ twitter:title: Bulex verwarming en loodgieterij in België | Bulex Plombier
+  ✅ twitter:description: Bulex-ketelherstelling, onderhoud, installatie en sanitair.
+  ✅ twitter:image: https://bulex-loodgieter.com/bulex/hero.webp
+  ℹ️ twitter:site: missing (optional)
+  ℹ️ twitter:creator: missing (optional)
+
+Social Preview:
+  Title: Bulex verwarming en loodgieterij in België | Bulex Plombier
+  Description: Bulex-ketelherstelling, onderhoud, installatie en sanitair. Bekijk oplossingen e
+  Image: https://bulex-loodgieter.com/bulex/hero.webp

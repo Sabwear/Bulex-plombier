@@ -10,7 +10,7 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
     rules: {
       userAgent: "*",
       ...(bulexIndexable
-        ? { allow: "/", disallow: ["/bulex/", "/api/"] }
+        ? { allow: "/", disallow: ["/bulex/nl", "/bulex/en", "/api/"] }
         : { disallow: "/" }),
     },
     ...(bulexIndexable

@@ -1,0 +1,12 @@
+Security Headers — https://bulex-loodgieter.com
+==================================================
+✅ HTTPS: Yes
+Security Score: 100/100
+
+✅ Present (6):
+  HSTS (Strict-Transport-Security): max-age=31536000; includeSubDomains; preload
+  Content-Security-Policy (CSP): upgrade-insecure-requests
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()

@@ -1,0 +1,635 @@
+{
+  "title": "Bulex verwarming en loodgieterij in Belgi\u00eb | Bulex Plombier",
+  "meta_description": "Bulex-ketelherstelling, onderhoud, installatie en sanitair. Bekijk oplossingen en lokale dienstinformatie of bespreek uw woning met ons team.",
+  "meta_robots": "index, follow",
+  "canonical": "https://bulex-loodgieter.com",
+  "h1": [
+    "Relax, het is Bulex.Uw expert in verwarming en loodgieterij"
+  ],
+  "h2": [
+    "Uw expert in verwarming en loodgieterij",
+    "Deskundige zorg voor uw Bulex-verwarming",
+    "De juiste warmte voor uw dagelijks leven.",
+    "Hoe kunnen we u helpen?",
+    "Uw erkende Bulex-partner",
+    "Bulex-verwarming voor uw woning",
+    "Waarom voor ons kiezen?",
+    "Ons werkgebied",
+    "Onze klanten aan het woord",
+    "Een Bulex-technieker nodig?",
+    "Cookievoorkeuren"
+  ],
+  "h3": [
+    "Ketelherstelling",
+    "Ketelonderhoud",
+    "Ketelinstallatie",
+    "Verwarmingssystemen",
+    "Boilers & warm water",
+    "Spoeddienst",
+    "Gasketels",
+    "Warmtepompen",
+    "Boilers",
+    "Onze diensten",
+    "Bulex-oplossingen",
+    "Over ons",
+    "Contact"
+  ],
+  "images": [
+    {
+      "src": "https://bulex-loodgieter.com/_next/image?url=%2Fbulex%2Floodgieter-logo.webp&w=1920&q=75",
+      "alt": "Bulex Loodgieter",
+      "width": "660",
+      "height": "220",
+      "loading": null
+    },
+    {
+      "src": "https://bulex-loodgieter.com/_next/image?url=%2Fbulex%2Fflanders.webp&w=128&q=75",
+      "alt": "Vlaamse Leeuw",
+      "width": "56",
+      "height": "56",
+      "loading": null
+    },
+    {
+      "src": "https://bulex-loodgieter.com/_next/image?url=%2Fbulex%2Fhero-consultation.webp&w=3840&q=75",
+      "alt": "",
+      "width": null,
+      "height": null,
+      "loading": null
+    },
+    {
+      "src": "https://bulex-loodgieter.com/_next/image?url=%2Fbulex%2Fhero-service.webp&w=3840&q=75",
+      "alt": "",
+      "width": null,
+      "height": null,
+      "loading": "eager"
+    },
+    {
+      "src": "https://bulex-loodgieter.com/_next/image?url=%2Fbulex%2Fhero-comfort.webp&w=3840&q=75",
+      "alt": "",
+      "width": null,
+      "height": null,
+      "loading": "eager"
+    },
+    {
+      "src": "https://bulex-loodgieter.com/_next/image?url=%2Fbulex%2Fbrand-technician.webp&w=3840&q=75",
+      "alt": "Een verwarmingsmonteur inspecteert een ketel",
+      "width": null,
+      "height": null,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://bulex-loodgieter.com/_next/image?url=%2Fbulex%2Fbrand-boiler.webp&w=3840&q=75",
+      "alt": "Illustratie van een Bulex-ketel",
+      "width": null,
+      "height": null,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://bulex-loodgieter.com/_next/image?url=%2Fbulex%2Fbrand-boiler.webp&w=3840&q=75",
+      "alt": "Bulex Gasketels",
+      "width": null,
+      "height": null,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://bulex-loodgieter.com/_next/image?url=%2Fbulex%2Fheat-pump.webp&w=3840&q=75",
+      "alt": "Bulex Warmtepompen",
+      "width": null,
+      "height": null,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://bulex-loodgieter.com/_next/image?url=%2Fbulex%2Fbrand-water-heater.webp&w=3840&q=75",
+      "alt": "Bulex Boilers",
+      "width": null,
+      "height": null,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://bulex-loodgieter.com/_next/image?url=%2Fbulex%2Fhero-comfort.webp&w=3840&q=75",
+      "alt": "Ontspannen in een comfortabel verwarmde woning",
+      "width": null,
+      "height": null,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://bulex-loodgieter.com/_next/image?url=%2Fbulex%2Fservice-map.webp&w=3840&q=75",
+      "alt": "",
+      "width": null,
+      "height": null,
+      "loading": "lazy"
+    },
+    {
+      "src": "https://bulex-loodgieter.com/_next/image?url=%2Fgoogle-avis.png&w=384&q=75",
+      "alt": "Google-beoordelingen 5 sterren",
+      "width": "168",
+      "height": "70",
+      "loading": "lazy"
+    },
+    {
+      "src": "https://bulex-loodgieter.com/_next/image?url=%2Fbulex%2Floodgieter-logo.webp&w=1920&q=75",
+      "alt": "Bulex Loodgieter",
+      "width": "660",
+      "height": "220",
+      "loading": "lazy"
+    },
+    {
+      "src": "https://bulex-loodgieter.com/icons/plumbing-elements/whatsapp.svg",
+      "alt": "",
+      "width": "15",
+      "height": "15",
+      "loading": "lazy"
+    },
+    {
+      "src": "https://bulex-loodgieter.com/icons/plumbing-elements/whatsapp.svg",
+      "alt": "",
+      "width": "29",
+      "height": "29",
+      "loading": "lazy"
+    }
+  ],
+  "links": {
+    "internal": [
+      {
+        "href": "https://bulex-loodgieter.com/over-ons",
+        "text": "Over ons",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/blog",
+        "text": "Advies & tips",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/faq",
+        "text": "Veelgestelde vragen",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/en",
+        "text": "EN",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/",
+        "text": "NL",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/",
+        "text": "",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/",
+        "text": "Home",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/diensten",
+        "text": "Onze diensten",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/diensten/bulex-herstelling-belgie",
+        "text": "Ketelherstelling",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/diensten/bulex-onderhoudscontract",
+        "text": "Ketelonderhoud",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/diensten/boiler-vervangen-belgie",
+        "text": "Ketelinstallatie",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/diensten/nieuwe-verwarming-belgie",
+        "text": "Verwarmingssystemen",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/diensten/warm-water",
+        "text": "Boilers & warm water",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/diensten/spoeddienst",
+        "text": "Spoeddienst",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/diensten/waterlek-herstellen-belgie",
+        "text": "Waterlek herstellen",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/diensten/sanitair-installatie-belgie",
+        "text": "Sanitaire installatie",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/oplossingen",
+        "text": "Bulex-oplossingen",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/oplossingen/gasketels",
+        "text": "Gasketels",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/oplossingen/warmtepompen",
+        "text": "Warmtepompen",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/oplossingen/boilers",
+        "text": "Boilers",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/loodgieter",
+        "text": "Werkgebied",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/blog",
+        "text": "Blog & advies",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/contact",
+        "text": "Contact",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/",
+        "text": "Home",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/diensten",
+        "text": "Onze diensten",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/oplossingen",
+        "text": "Bulex-oplossingen",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/loodgieter",
+        "text": "Werkgebied",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/blog",
+        "text": "Blog & advies",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/contact",
+        "text": "Contact",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/demande-offerte",
+        "text": "Boek een technieker",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/demande-offerte",
+        "text": "Boek een technieker",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/diensten/bulex-herstelling-belgie",
+        "text": "Ketelherstelling",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/diensten/bulex-onderhoudscontract",
+        "text": "Ketelonderhoud",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/diensten/boiler-vervangen-belgie",
+        "text": "Ketelinstallatie",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/diensten/nieuwe-verwarming-belgie",
+        "text": "Verwarmingssystemen",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/diensten/warm-water",
+        "text": "Boilers & warm water",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/diensten/spoeddienst",
+        "text": "Spoeddienst",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/oplossingen/gasketels",
+        "text": "GasketelsVerwarming en warm water, afgestemd op uw woning.Ontdek",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/oplossingen/warmtepompen",
+        "text": "WarmtepompenEen toekomstgerichte oplossing voor uw comfort.Ontdek",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/oplossingen/boilers",
+        "text": "BoilersComfortabel warm water, elke dag.Ontdek",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/loodgieter",
+        "text": "Bekijk ons werkgebied",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/loodgieter/brussel",
+        "text": "Brussel",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/loodgieter/antwerpen",
+        "text": "Antwerpen",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/loodgieter/gent",
+        "text": "Gent",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/demande-offerte",
+        "text": "Boek een technieker",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/",
+        "text": "",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/diensten/bulex-herstelling-belgie",
+        "text": "Ketelherstelling",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/diensten/bulex-onderhoudscontract",
+        "text": "Ketelonderhoud",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/diensten/boiler-vervangen-belgie",
+        "text": "Ketelinstallatie",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/diensten/nieuwe-verwarming-belgie",
+        "text": "Verwarmingssystemen",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/diensten/warm-water",
+        "text": "Boilers & warm water",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/diensten/spoeddienst",
+        "text": "Spoeddienst",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/diensten/waterlek-herstellen-belgie",
+        "text": "Waterlek herstellen",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/diensten/sanitair-installatie-belgie",
+        "text": "Sanitaire installatie",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/oplossingen/gasketels",
+        "text": "Gasketels",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/oplossingen/warmtepompen",
+        "text": "Warmtepompen",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/oplossingen/boilers",
+        "text": "Boilers",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/blog",
+        "text": "Blog & advies",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/over-ons",
+        "text": "Over ons",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/certificeringen",
+        "text": "Erkend Bulex-partner",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/loodgieter",
+        "text": "Ons werkgebied",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/faq",
+        "text": "Veelgestelde vragen",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/klantervaringen",
+        "text": "Klantervaringen",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/contact",
+        "text": "Contact en aanvraag",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/cdn-cgi/l/email-protection#63000c0d170200172301160f061b4e0f0c0c07040a061706114d000c0e",
+        "text": "[email\u00a0protected]",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/privacy",
+        "text": "Privacybeleid",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/gebruiksvoorwaarden",
+        "text": "Gebruiksvoorwaarden",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/cookies",
+        "text": "Cookiebeleid",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/juridische-vermelding",
+        "text": "Juridische informatie",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/consumenteninfo",
+        "text": "Consumenteninformatie",
+        "rel": []
+      },
+      {
+        "href": "https://bulex-loodgieter.com/toegankelijkheid",
+        "text": "Toegankelijkheid",
+        "rel": []
+      }
+    ],
+    "external": [
+      {
+        "href": "tel:+32467802090",
+        "text": "04 67 80 20 90",
+        "rel": []
+      },
+      {
+        "href": "tel:+32467802090",
+        "text": "04 67 80 20 90",
+        "rel": []
+      },
+      {
+        "href": "tel:+32467802090",
+        "text": "04 67 80 20 90",
+        "rel": []
+      },
+      {
+        "href": "tel:+32467802090",
+        "text": "04 67 80 20 90",
+        "rel": []
+      },
+      {
+        "href": "https://www.google.com/search?q=Bulex+Plombier+reviews",
+        "text": "Schrijf een Google-review",
+        "rel": [
+          "noopener",
+          "noreferrer"
+        ]
+      },
+      {
+        "href": "tel:+32467802090",
+        "text": "04 67 80 20 90",
+        "rel": []
+      },
+      {
+        "href": "tel:+32467802090",
+        "text": "04 67 80 20 90",
+        "rel": []
+      },
+      {
+        "href": "https://wa.me/32467802090",
+        "text": "WhatsApp",
+        "rel": [
+          "noopener",
+          "noreferrer"
+        ]
+      },
+      {
+        "href": "https://ranber.com",
+        "text": "Ranber Agency",
+        "rel": [
+          "noopener",
+          "noreferrer"
+        ]
+      },
+      {
+        "href": "https://wa.me/32467802090",
+        "text": "Kunnen we u helpen?Stuur ons een bericht",
+        "rel": [
+          "noopener",
+          "noreferrer"
+        ]
+      },
+      {
+        "href": "tel:+32467802090",
+        "text": "04 67 80 20 90",
+        "rel": []
+      }
+    ]
+  },
+  "schema": [
+    {
+      "@type": "Unknown",
+      "@context": "https://schema.org",
+      "status": "active",
+      "note": "",
+      "has_context": true,
+      "has_type": false,
+      "raw": {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://bulex-loodgieter.com/#website",
+            "name": "Bulex Plombier",
+            "url": "https://bulex-loodgieter.com",
+            "inLanguage": "nl-BE"
+          }
+        ]
+      }
+    }
+  ],
+  "open_graph": {
+    "og:title": "Bulex verwarming en loodgieterij in Belgi\u00eb | Bulex Plombier",
+    "og:description": "Bulex-ketelherstelling, onderhoud, installatie en sanitair. Bekijk oplossingen en lokale dienstinformatie of bespreek uw woning met ons team.",
+    "og:url": "https://bulex-loodgieter.com",
+    "og:site_name": "Bulex Plombier",
+    "og:locale": "nl_BE",
+    "og:image": "https://bulex-loodgieter.com/bulex/hero.webp",
+    "og:image:width": "1500",
+    "og:image:height": "844",
+    "og:image:alt": "Erkend Bulex-partner",
+    "og:locale:alternate": "en_BE",
+    "og:type": "website"
+  },
+  "twitter_card": {
+    "twitter:card": "summary_large_image",
+    "twitter:title": "Bulex verwarming en loodgieterij in Belgi\u00eb | Bulex Plombier",
+    "twitter:description": "Bulex-ketelherstelling, onderhoud, installatie en sanitair. Bekijk oplossingen en lokale dienstinformatie of bespreek uw woning met ons team.",
+    "twitter:image": "https://bulex-loodgieter.com/bulex/hero.webp"
+  },
+  "word_count": 656,
+  "hreflang": [
+    {
+      "lang": "nl-BE",
+      "href": "https://bulex-loodgieter.com"
+    },
+    {
+      "lang": "en-BE",
+      "href": "https://bulex-loodgieter.com/en"
+    },
+    {
+      "lang": "x-default",
+      "href": "https://bulex-loodgieter.com"
+    }
+  ]
+}

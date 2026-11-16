@@ -1,0 +1,18 @@
+llms.txt Check — https://bulex-loodgieter.com/llms.txt
+==================================================
+Status: ✅ Found (HTTP 200)
+Title: Bulex Plombier
+Description: None
+Sections: 1
+Links: 0
+Quality Score: 40/100
+
+llms-full.txt: ❌ Not found
+
+Issues:
+  ⚠️ Missing description (> blockquote)
+  ⚠️ No links found
+
+Suggestions:
+  💡 Add a description: > Brief site description
+  💡 Add key page links: - [Page Title](URL): Description

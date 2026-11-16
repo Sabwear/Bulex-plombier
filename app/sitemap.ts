@@ -1,3 +1,4 @@
+import {isIndexableArea} from '@/config/bulex/indexability';
 import {getBulexOrigin} from '@/config/bulex/request-origin';
 import { bulexIndexable } from "@/config/bulex/brand";
 import { getAdvice } from "@/config/bulex/advice";
@@ -23,14 +24,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       ...getSolutions(locale).map((solution) =>
         href(locale, "solutions", solution.slug),
       ),
-      ...getAllSlugsNl().map((slug) => href(locale, "areas", slug)),
+      ...getAllSlugsNl().filter(isIndexableArea).map((slug) => href(locale, "areas", slug)),
       ...getAdvice(locale).map((article) =>
         href(locale, "blog", article.slug),
       ),
     );
 
     const articles=getAdvice(locale);
-    return paths.map((path) => ({
+    return [...new Set(paths)].map((path) => ({
       url: bulexOrigin + path,
       alternates: {languages: {
         "nl-BE": bulexOrigin + alternatePath(path,"nl"),
@@ -38,7 +39,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         "x-default": bulexOrigin + alternatePath(path,"nl"),
       }},
       ...(articles.find(a=>href(locale,'blog',a.slug)===path)?.blogPost?{lastModified:new Date(articles.find(a=>href(locale,'blog',a.slug)===path)!.blogPost!.publishAt)}:{}),
-      changeFrequency: "monthly" as const,
     }));
   });
 }

@@ -1,0 +1,61 @@
+{
+  "findings": [
+    {
+      "area": "Crawlability",
+      "severity": "Warning",
+      "confidence": "Confirmed",
+      "finding": "Public images blocked by robots",
+      "evidence": "app/robots.ts disallowed /bulex/",
+      "fix": "Narrow block to internal /bulex/nl and /bulex/en routes; fixed",
+      "sources": []
+    },
+    {
+      "area": "Content",
+      "severity": "Warning",
+      "confidence": "Confirmed",
+      "finding": "52 location URLs lack paired useful local detail",
+      "evidence": "45 cities; only 19 have NL profiles and English translated profiles",
+      "fix": "noindex,follow and exclude 26 area pairs from sitemap; fixed",
+      "sources": []
+    },
+    {
+      "area": "Trust",
+      "severity": "Warning",
+      "confidence": "Confirmed",
+      "finding": "Example testimonials shown as verified customers",
+      "evidence": "Empty reviews array fell back to nine five-star examples",
+      "fix": "Remove sample fallback and unsupported Google rating; fixed",
+      "sources": []
+    },
+    {
+      "area": "Internal linking",
+      "severity": "Warning",
+      "confidence": "Confirmed",
+      "finding": "20 legacy advice URLs absent from blog hubs",
+      "evidence": "getAdvice includes ten snippets per language beyond six full guides",
+      "fix": "Add EN/NL hub links; fixed",
+      "sources": []
+    },
+    {
+      "area": "Schema",
+      "severity": "Warning",
+      "confidence": "Confirmed",
+      "finding": "No business entity in active JSON-LD graph",
+      "evidence": "Only WebSite/BreadcrumbList/Service/BlogPosting in active route",
+      "fix": "Add Organization using configured contact data and stable references; fixed",
+      "sources": []
+    },
+    {
+      "area": "Infrastructure",
+      "severity": "Warning",
+      "confidence": "Confirmed",
+      "finding": "Cloudflare email obfuscation creates broken link",
+      "evidence": "Live checker /cdn-cgi/l/email-protection returns 404",
+      "fix": "Disable email obfuscation or repair Cloudflare feature in hosting dashboard",
+      "sources": []
+    }
+  ],
+  "dropped": [],
+  "raw_count": 6,
+  "verified_count": 6
+}

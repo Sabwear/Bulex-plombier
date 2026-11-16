@@ -1,0 +1,10 @@
+Broken Link Check — https://bulex-loodgieter.com
+==================================================
+Total: 36 | ✅ Healthy: 34 | 🔴 Broken: 1 | ↪️ Redirected: 1 | ⏱️ Timeout: 0
+
+🔴 Broken Links:
+  [404] (internal) https://bulex-loodgieter.com/cdn-cgi/l/email-protection#65060a0b1104061125071009001d48090a0a01020c001100174b060a08
+         anchor: "[email protected]"
+
+Issues:
+  🔴 1 broken link(s) found

@@ -136,12 +136,12 @@ test('Legacy conversion events are blocked without valid marketing consent',()=>
   stored=null;trackFormSubmitConversion();assert.equal(calls.length,1);
  }finally{global.window=originalWindow;global.localStorage=originalStorage}
 });
-test('Review carousel renders nine customer reviews with Google review image and switches to custom reviews without mixing them',()=>{
+test('Reviews require a source and display an honest empty state',()=>{
  const React=require('react'),{renderToStaticMarkup}=require('react-dom/server'),Testimonials=require('../components/bulex/Testimonials.tsx').default;
  const {reviews}=require('../config/bulex/content.ts');
  const sample=renderToStaticMarkup(React.createElement(Testimonials,{locale:'en'}));
- assert.equal((sample.match(/class="bx-testimonial-card"/g)||[]).length,9);
- assert.match(sample,/google-avis\.png/);assert.match(sample,/Verified customer/);assert.match(sample,/Thomas V\./);
+ assert.equal((sample.match(/class="bx-testimonial-card"/g)||[]).length,0);
+ assert.doesNotMatch(sample,/google-avis\.png|Verified customer|Thomas V\./);assert.match(sample,/No customer reviews/);
  reviews.push({name:'Test review fixture',text:{en:'A sourced review fixture',nl:'Een beoordelingsfixture'},rating:4,sourceUrl:'https://example.test/review',verified:false});
  try{const real=renderToStaticMarkup(React.createElement(Testimonials,{locale:'en',googleReviewUrl:'https://g.page/r/test/review'}));
  assert.equal((real.match(/class="bx-testimonial-card"/g)||[]).length,1);
@@ -345,4 +345,22 @@ test('Hostinger mail logs are single-line JSON and include diagnostic stages wit
   saved=JSON.stringify({version:CONSENT_VERSION,necessary:true,analytics:false,marketing:false,updatedAt:Date.now()});syncGoogleTag();assert.equal(global.window.dataLayer.at(-1)[2].ad_storage,'denied');
   saved=JSON.stringify({version:CONSENT_VERSION,necessary:true,analytics:false,marketing:true,updatedAt:Date.now()});denyMarketingForSession(true);syncGoogleTag();assert.equal(global.window.dataLayer.at(-1)[2].ad_storage,'denied');
  }finally{denyMarketingForSession(false);global.window=previous.window;global.document=previous.document;global.localStorage=previous.localStorage;}
+});
+
+test('SEO sitemap excludes thin area pairs and robots allows public images',async()=>{
+ const brand=require('../config/bulex/brand.ts'),previous=brand.bulexIndexable;brand.bulexIndexable=true;
+ const {isIndexableArea}=require('../config/bulex/indexability.ts');
+ try{
+  const entries=await require('../app/sitemap.ts').default();
+  assert.equal(new Set(entries.map(e=>e.url)).size,entries.length);
+  for(const city of getCities('nl'))for(const locale of ['nl','en']){
+   const included=entries.some(e=>new URL(e.url).pathname===href(locale,'areas',city.slug));
+   assert.equal(included,isIndexableArea(city.slug),city.slug);
+   const meta=await require('../app/bulex/[locale]/[[...path]]/page.tsx').generateMetadata({params:Promise.resolve({locale,path:parsePublicPath(href(locale,'areas',city.slug)).segments})});
+   assert.equal(meta.robots.index,included,city.slug);
+  }
+  assert.equal(entries.filter(e=>new URL(e.url).pathname.startsWith('/loodgieter/')).length,19);
+  assert.ok(entries.every(e=>!('changeFrequency'in e)&&(!e.lastModified||new Date(e.lastModified)<=new Date())));
+  const robots=await require('../app/robots.ts').default();assert.ok(!robots.rules.disallow.includes('/bulex/'));
+ }finally{brand.bulexIndexable=previous}
 });

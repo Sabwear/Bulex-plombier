@@ -1,0 +1,771 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<url>
+<loc>http://localhost:3100/</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/" />
+</url>
+<url>
+<loc>http://localhost:3100/diensten</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/diensten" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/services" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/diensten" />
+</url>
+<url>
+<loc>http://localhost:3100/oplossingen</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/oplossingen" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/solutions" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/oplossingen" />
+</url>
+<url>
+<loc>http://localhost:3100/loodgieter</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/loodgieter" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/service-areas" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/loodgieter" />
+</url>
+<url>
+<loc>http://localhost:3100/over-ons</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/over-ons" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/about" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/over-ons" />
+</url>
+<url>
+<loc>http://localhost:3100/contact</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/contact" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/contact" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/contact" />
+</url>
+<url>
+<loc>http://localhost:3100/demande-offerte</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/demande-offerte" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/book-a-technician" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/demande-offerte" />
+</url>
+<url>
+<loc>http://localhost:3100/blog</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/blog" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/advice" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/blog" />
+</url>
+<url>
+<loc>http://localhost:3100/faq</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/faq" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/faq" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/faq" />
+</url>
+<url>
+<loc>http://localhost:3100/klantervaringen</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/klantervaringen" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/reviews" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/klantervaringen" />
+</url>
+<url>
+<loc>http://localhost:3100/certificeringen</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/certificeringen" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/credentials" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/certificeringen" />
+</url>
+<url>
+<loc>http://localhost:3100/privacy</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/privacy" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/privacy" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/privacy" />
+</url>
+<url>
+<loc>http://localhost:3100/cookies</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/cookies" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/cookies" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/cookies" />
+</url>
+<url>
+<loc>http://localhost:3100/consumenteninfo</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/consumenteninfo" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/consumer-information" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/consumenteninfo" />
+</url>
+<url>
+<loc>http://localhost:3100/toegankelijkheid</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/toegankelijkheid" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/accessibility" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/toegankelijkheid" />
+</url>
+<url>
+<loc>http://localhost:3100/gebruiksvoorwaarden</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/gebruiksvoorwaarden" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/terms" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/gebruiksvoorwaarden" />
+</url>
+<url>
+<loc>http://localhost:3100/juridische-vermelding</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/juridische-vermelding" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/legal" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/juridische-vermelding" />
+</url>
+<url>
+<loc>http://localhost:3100/diensten/bulex-herstelling-belgie</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/diensten/bulex-herstelling-belgie" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/services/boiler-repair" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/diensten/bulex-herstelling-belgie" />
+</url>
+<url>
+<loc>http://localhost:3100/diensten/bulex-onderhoudscontract</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/diensten/bulex-onderhoudscontract" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/services/boiler-maintenance" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/diensten/bulex-onderhoudscontract" />
+</url>
+<url>
+<loc>http://localhost:3100/diensten/boiler-vervangen-belgie</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/diensten/boiler-vervangen-belgie" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/services/boiler-installation" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/diensten/boiler-vervangen-belgie" />
+</url>
+<url>
+<loc>http://localhost:3100/diensten/nieuwe-verwarming-belgie</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/diensten/nieuwe-verwarming-belgie" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/services/heating-systems" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/diensten/nieuwe-verwarming-belgie" />
+</url>
+<url>
+<loc>http://localhost:3100/diensten/warm-water</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/diensten/warm-water" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/services/water-heaters" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/diensten/warm-water" />
+</url>
+<url>
+<loc>http://localhost:3100/diensten/spoeddienst</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/diensten/spoeddienst" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/services/emergency-service" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/diensten/spoeddienst" />
+</url>
+<url>
+<loc>http://localhost:3100/diensten/waterlek-herstellen-belgie</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/diensten/waterlek-herstellen-belgie" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/services/water-leak-repair" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/diensten/waterlek-herstellen-belgie" />
+</url>
+<url>
+<loc>http://localhost:3100/diensten/sanitair-installatie-belgie</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/diensten/sanitair-installatie-belgie" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/services/plumbing-installation" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/diensten/sanitair-installatie-belgie" />
+</url>
+<url>
+<loc>http://localhost:3100/oplossingen/gasketels</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/oplossingen/gasketels" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/solutions/gas-boilers" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/oplossingen/gasketels" />
+</url>
+<url>
+<loc>http://localhost:3100/oplossingen/warmtepompen</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/oplossingen/warmtepompen" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/solutions/heat-pumps" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/oplossingen/warmtepompen" />
+</url>
+<url>
+<loc>http://localhost:3100/oplossingen/boilers</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/oplossingen/boilers" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/solutions/water-heaters" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/oplossingen/boilers" />
+</url>
+<url>
+<loc>http://localhost:3100/loodgieter/anderlecht</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/loodgieter/anderlecht" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/service-areas/anderlecht" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/loodgieter/anderlecht" />
+</url>
+<url>
+<loc>http://localhost:3100/loodgieter/auderghem</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/loodgieter/auderghem" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/service-areas/auderghem" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/loodgieter/auderghem" />
+</url>
+<url>
+<loc>http://localhost:3100/loodgieter/berchem-sainte-agathe</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/loodgieter/berchem-sainte-agathe" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/service-areas/berchem-sainte-agathe" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/loodgieter/berchem-sainte-agathe" />
+</url>
+<url>
+<loc>http://localhost:3100/loodgieter/brussel</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/loodgieter/brussel" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/service-areas/brussel" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/loodgieter/brussel" />
+</url>
+<url>
+<loc>http://localhost:3100/loodgieter/etterbeek</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/loodgieter/etterbeek" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/service-areas/etterbeek" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/loodgieter/etterbeek" />
+</url>
+<url>
+<loc>http://localhost:3100/loodgieter/evere</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/loodgieter/evere" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/service-areas/evere" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/loodgieter/evere" />
+</url>
+<url>
+<loc>http://localhost:3100/loodgieter/forest</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/loodgieter/forest" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/service-areas/forest" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/loodgieter/forest" />
+</url>
+<url>
+<loc>http://localhost:3100/loodgieter/ganshoren</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/loodgieter/ganshoren" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/service-areas/ganshoren" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/loodgieter/ganshoren" />
+</url>
+<url>
+<loc>http://localhost:3100/loodgieter/ixelles</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/loodgieter/ixelles" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/service-areas/ixelles" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/loodgieter/ixelles" />
+</url>
+<url>
+<loc>http://localhost:3100/loodgieter/jette</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/loodgieter/jette" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/service-areas/jette" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/loodgieter/jette" />
+</url>
+<url>
+<loc>http://localhost:3100/loodgieter/koekelberg</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/loodgieter/koekelberg" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/service-areas/koekelberg" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/loodgieter/koekelberg" />
+</url>
+<url>
+<loc>http://localhost:3100/loodgieter/molenbeek</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/loodgieter/molenbeek" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/service-areas/molenbeek" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/loodgieter/molenbeek" />
+</url>
+<url>
+<loc>http://localhost:3100/loodgieter/saint-gilles</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/loodgieter/saint-gilles" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/service-areas/saint-gilles" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/loodgieter/saint-gilles" />
+</url>
+<url>
+<loc>http://localhost:3100/loodgieter/saint-josse-ten-noode</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/loodgieter/saint-josse-ten-noode" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/service-areas/saint-josse-ten-noode" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/loodgieter/saint-josse-ten-noode" />
+</url>
+<url>
+<loc>http://localhost:3100/loodgieter/schaerbeek</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/loodgieter/schaerbeek" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/service-areas/schaerbeek" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/loodgieter/schaerbeek" />
+</url>
+<url>
+<loc>http://localhost:3100/loodgieter/uccle</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/loodgieter/uccle" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/service-areas/uccle" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/loodgieter/uccle" />
+</url>
+<url>
+<loc>http://localhost:3100/loodgieter/watermael-boitsfort</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/loodgieter/watermael-boitsfort" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/service-areas/watermael-boitsfort" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/loodgieter/watermael-boitsfort" />
+</url>
+<url>
+<loc>http://localhost:3100/loodgieter/woluwe-saint-lambert</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/loodgieter/woluwe-saint-lambert" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/service-areas/woluwe-saint-lambert" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/loodgieter/woluwe-saint-lambert" />
+</url>
+<url>
+<loc>http://localhost:3100/loodgieter/woluwe-saint-pierre</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/loodgieter/woluwe-saint-pierre" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/service-areas/woluwe-saint-pierre" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/loodgieter/woluwe-saint-pierre" />
+</url>
+<url>
+<loc>http://localhost:3100/blog/ketelonderhoud</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/blog/ketelonderhoud" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/advice/boiler-maintenance" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/blog/ketelonderhoud" />
+<lastmod>2026-11-14T23:00:00.000Z</lastmod>
+</url>
+<url>
+<loc>http://localhost:3100/blog/onderhoud-offerte</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/blog/onderhoud-offerte" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/advice/maintenance-quote" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/blog/onderhoud-offerte" />
+</url>
+<url>
+<loc>http://localhost:3100/blog/foutcode-ketel</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/blog/foutcode-ketel" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/advice/boiler-error-code" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/blog/foutcode-ketel" />
+<lastmod>2026-11-14T23:00:00.000Z</lastmod>
+</url>
+<url>
+<loc>http://localhost:3100/blog/geluid-ketel</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/blog/geluid-ketel" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/advice/boiler-noises" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/blog/geluid-ketel" />
+</url>
+<url>
+<loc>http://localhost:3100/blog/warm-water-kiezen</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/blog/warm-water-kiezen" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/advice/choosing-hot-water" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/blog/warm-water-kiezen" />
+<lastmod>2026-11-14T23:00:00.000Z</lastmod>
+</url>
+<url>
+<loc>http://localhost:3100/blog/verwarming-winter</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/blog/verwarming-winter" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/advice/heating-before-winter" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/blog/verwarming-winter" />
+</url>
+<url>
+<loc>http://localhost:3100/blog/koude-radiatoren</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/blog/koude-radiatoren" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/advice/cold-radiators" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/blog/koude-radiatoren" />
+</url>
+<url>
+<loc>http://localhost:3100/blog/keteldruk</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/blog/keteldruk" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/advice/boiler-pressure" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/blog/keteldruk" />
+<lastmod>2026-11-14T23:00:00.000Z</lastmod>
+</url>
+<url>
+<loc>http://localhost:3100/blog/kalk-warm-water</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/blog/kalk-warm-water" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/advice/limescale-hot-water" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/blog/kalk-warm-water" />
+</url>
+<url>
+<loc>http://localhost:3100/blog/energiepremies</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/blog/energiepremies" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/advice/energy-grants" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/blog/energiepremies" />
+</url>
+<url>
+<loc>http://localhost:3100/blog/bulex-partner</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/blog/bulex-partner" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/advice/bulex-partner" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/blog/bulex-partner" />
+</url>
+<url>
+<loc>http://localhost:3100/blog/verwarmingsregeling</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/blog/verwarmingsregeling" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/advice/heating-controls" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/blog/verwarmingsregeling" />
+</url>
+<url>
+<loc>http://localhost:3100/blog/warmtepomp-woning</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/blog/warmtepomp-woning" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/advice/heat-pump-home" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/blog/warmtepomp-woning" />
+<lastmod>2026-11-14T23:00:00.000Z</lastmod>
+</url>
+<url>
+<loc>http://localhost:3100/blog/ketel-vervangen</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/blog/ketel-vervangen" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/advice/replacing-boiler" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/blog/ketel-vervangen" />
+</url>
+<url>
+<loc>http://localhost:3100/blog/verstopte-afvoer</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/blog/verstopte-afvoer" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/advice/blocked-drain" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/blog/verstopte-afvoer" />
+</url>
+<url>
+<loc>http://localhost:3100/blog/waterlek</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/blog/waterlek" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/advice/water-leak" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/blog/waterlek" />
+<lastmod>2026-11-14T23:00:00.000Z</lastmod>
+</url>
+<url>
+<loc>http://localhost:3100/en</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/" />
+</url>
+<url>
+<loc>http://localhost:3100/en/services</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/diensten" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/services" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/diensten" />
+</url>
+<url>
+<loc>http://localhost:3100/en/solutions</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/oplossingen" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/solutions" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/oplossingen" />
+</url>
+<url>
+<loc>http://localhost:3100/en/service-areas</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/loodgieter" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/service-areas" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/loodgieter" />
+</url>
+<url>
+<loc>http://localhost:3100/en/about</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/over-ons" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/about" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/over-ons" />
+</url>
+<url>
+<loc>http://localhost:3100/en/contact</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/contact" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/contact" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/contact" />
+</url>
+<url>
+<loc>http://localhost:3100/en/book-a-technician</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/demande-offerte" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/book-a-technician" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/demande-offerte" />
+</url>
+<url>
+<loc>http://localhost:3100/en/advice</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/blog" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/advice" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/blog" />
+</url>
+<url>
+<loc>http://localhost:3100/en/faq</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/faq" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/faq" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/faq" />
+</url>
+<url>
+<loc>http://localhost:3100/en/reviews</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/klantervaringen" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/reviews" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/klantervaringen" />
+</url>
+<url>
+<loc>http://localhost:3100/en/credentials</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/certificeringen" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/credentials" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/certificeringen" />
+</url>
+<url>
+<loc>http://localhost:3100/en/privacy</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/privacy" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/privacy" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/privacy" />
+</url>
+<url>
+<loc>http://localhost:3100/en/cookies</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/cookies" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/cookies" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/cookies" />
+</url>
+<url>
+<loc>http://localhost:3100/en/consumer-information</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/consumenteninfo" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/consumer-information" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/consumenteninfo" />
+</url>
+<url>
+<loc>http://localhost:3100/en/accessibility</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/toegankelijkheid" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/accessibility" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/toegankelijkheid" />
+</url>
+<url>
+<loc>http://localhost:3100/en/terms</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/gebruiksvoorwaarden" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/terms" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/gebruiksvoorwaarden" />
+</url>
+<url>
+<loc>http://localhost:3100/en/legal</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/juridische-vermelding" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/legal" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/juridische-vermelding" />
+</url>
+<url>
+<loc>http://localhost:3100/en/services/boiler-repair</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/diensten/bulex-herstelling-belgie" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/services/boiler-repair" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/diensten/bulex-herstelling-belgie" />
+</url>
+<url>
+<loc>http://localhost:3100/en/services/boiler-maintenance</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/diensten/bulex-onderhoudscontract" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/services/boiler-maintenance" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/diensten/bulex-onderhoudscontract" />
+</url>
+<url>
+<loc>http://localhost:3100/en/services/boiler-installation</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/diensten/boiler-vervangen-belgie" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/services/boiler-installation" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/diensten/boiler-vervangen-belgie" />
+</url>
+<url>
+<loc>http://localhost:3100/en/services/heating-systems</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/diensten/nieuwe-verwarming-belgie" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/services/heating-systems" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/diensten/nieuwe-verwarming-belgie" />
+</url>
+<url>
+<loc>http://localhost:3100/en/services/water-heaters</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/diensten/warm-water" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/services/water-heaters" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/diensten/warm-water" />
+</url>
+<url>
+<loc>http://localhost:3100/en/services/emergency-service</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/diensten/spoeddienst" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/services/emergency-service" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/diensten/spoeddienst" />
+</url>
+<url>
+<loc>http://localhost:3100/en/services/water-leak-repair</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/diensten/waterlek-herstellen-belgie" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/services/water-leak-repair" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/diensten/waterlek-herstellen-belgie" />
+</url>
+<url>
+<loc>http://localhost:3100/en/services/plumbing-installation</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/diensten/sanitair-installatie-belgie" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/services/plumbing-installation" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/diensten/sanitair-installatie-belgie" />
+</url>
+<url>
+<loc>http://localhost:3100/en/solutions/gas-boilers</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/oplossingen/gasketels" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/solutions/gas-boilers" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/oplossingen/gasketels" />
+</url>
+<url>
+<loc>http://localhost:3100/en/solutions/heat-pumps</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/oplossingen/warmtepompen" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/solutions/heat-pumps" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/oplossingen/warmtepompen" />
+</url>
+<url>
+<loc>http://localhost:3100/en/solutions/water-heaters</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/oplossingen/boilers" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/solutions/water-heaters" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/oplossingen/boilers" />
+</url>
+<url>
+<loc>http://localhost:3100/en/service-areas/anderlecht</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/loodgieter/anderlecht" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/service-areas/anderlecht" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/loodgieter/anderlecht" />
+</url>
+<url>
+<loc>http://localhost:3100/en/service-areas/auderghem</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/loodgieter/auderghem" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/service-areas/auderghem" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/loodgieter/auderghem" />
+</url>
+<url>
+<loc>http://localhost:3100/en/service-areas/berchem-sainte-agathe</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/loodgieter/berchem-sainte-agathe" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/service-areas/berchem-sainte-agathe" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/loodgieter/berchem-sainte-agathe" />
+</url>
+<url>
+<loc>http://localhost:3100/en/service-areas/brussel</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/loodgieter/brussel" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/service-areas/brussel" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/loodgieter/brussel" />
+</url>
+<url>
+<loc>http://localhost:3100/en/service-areas/etterbeek</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/loodgieter/etterbeek" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/service-areas/etterbeek" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/loodgieter/etterbeek" />
+</url>
+<url>
+<loc>http://localhost:3100/en/service-areas/evere</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/loodgieter/evere" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/service-areas/evere" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/loodgieter/evere" />
+</url>
+<url>
+<loc>http://localhost:3100/en/service-areas/forest</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/loodgieter/forest" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/service-areas/forest" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/loodgieter/forest" />
+</url>
+<url>
+<loc>http://localhost:3100/en/service-areas/ganshoren</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/loodgieter/ganshoren" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/service-areas/ganshoren" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/loodgieter/ganshoren" />
+</url>
+<url>
+<loc>http://localhost:3100/en/service-areas/ixelles</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/loodgieter/ixelles" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/service-areas/ixelles" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/loodgieter/ixelles" />
+</url>
+<url>
+<loc>http://localhost:3100/en/service-areas/jette</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/loodgieter/jette" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/service-areas/jette" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/loodgieter/jette" />
+</url>
+<url>
+<loc>http://localhost:3100/en/service-areas/koekelberg</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/loodgieter/koekelberg" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/service-areas/koekelberg" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/loodgieter/koekelberg" />
+</url>
+<url>
+<loc>http://localhost:3100/en/service-areas/molenbeek</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/loodgieter/molenbeek" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/service-areas/molenbeek" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/loodgieter/molenbeek" />
+</url>
+<url>
+<loc>http://localhost:3100/en/service-areas/saint-gilles</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/loodgieter/saint-gilles" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/service-areas/saint-gilles" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/loodgieter/saint-gilles" />
+</url>
+<url>
+<loc>http://localhost:3100/en/service-areas/saint-josse-ten-noode</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/loodgieter/saint-josse-ten-noode" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/service-areas/saint-josse-ten-noode" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/loodgieter/saint-josse-ten-noode" />
+</url>
+<url>
+<loc>http://localhost:3100/en/service-areas/schaerbeek</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/loodgieter/schaerbeek" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/service-areas/schaerbeek" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/loodgieter/schaerbeek" />
+</url>
+<url>
+<loc>http://localhost:3100/en/service-areas/uccle</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/loodgieter/uccle" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/service-areas/uccle" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/loodgieter/uccle" />
+</url>
+<url>
+<loc>http://localhost:3100/en/service-areas/watermael-boitsfort</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/loodgieter/watermael-boitsfort" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/service-areas/watermael-boitsfort" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/loodgieter/watermael-boitsfort" />
+</url>
+<url>
+<loc>http://localhost:3100/en/service-areas/woluwe-saint-lambert</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/loodgieter/woluwe-saint-lambert" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/service-areas/woluwe-saint-lambert" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/loodgieter/woluwe-saint-lambert" />
+</url>
+<url>
+<loc>http://localhost:3100/en/service-areas/woluwe-saint-pierre</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/loodgieter/woluwe-saint-pierre" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/service-areas/woluwe-saint-pierre" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/loodgieter/woluwe-saint-pierre" />
+</url>
+<url>
+<loc>http://localhost:3100/en/advice/boiler-maintenance</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/blog/ketelonderhoud" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/advice/boiler-maintenance" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/blog/ketelonderhoud" />
+<lastmod>2026-11-14T23:00:00.000Z</lastmod>
+</url>
+<url>
+<loc>http://localhost:3100/en/advice/maintenance-quote</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/blog/onderhoud-offerte" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/advice/maintenance-quote" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/blog/onderhoud-offerte" />
+</url>
+<url>
+<loc>http://localhost:3100/en/advice/boiler-error-code</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/blog/foutcode-ketel" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/advice/boiler-error-code" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/blog/foutcode-ketel" />
+<lastmod>2026-11-14T23:00:00.000Z</lastmod>
+</url>
+<url>
+<loc>http://localhost:3100/en/advice/boiler-noises</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/blog/geluid-ketel" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/advice/boiler-noises" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/blog/geluid-ketel" />
+</url>
+<url>
+<loc>http://localhost:3100/en/advice/choosing-hot-water</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/blog/warm-water-kiezen" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/advice/choosing-hot-water" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/blog/warm-water-kiezen" />
+<lastmod>2026-11-14T23:00:00.000Z</lastmod>
+</url>
+<url>
+<loc>http://localhost:3100/en/advice/heating-before-winter</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/blog/verwarming-winter" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/advice/heating-before-winter" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/blog/verwarming-winter" />
+</url>
+<url>
+<loc>http://localhost:3100/en/advice/cold-radiators</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/blog/koude-radiatoren" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/advice/cold-radiators" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/blog/koude-radiatoren" />
+</url>
+<url>
+<loc>http://localhost:3100/en/advice/boiler-pressure</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/blog/keteldruk" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/advice/boiler-pressure" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/blog/keteldruk" />
+<lastmod>2026-11-14T23:00:00.000Z</lastmod>
+</url>
+<url>
+<loc>http://localhost:3100/en/advice/limescale-hot-water</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/blog/kalk-warm-water" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/advice/limescale-hot-water" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/blog/kalk-warm-water" />
+</url>
+<url>
+<loc>http://localhost:3100/en/advice/energy-grants</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/blog/energiepremies" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/advice/energy-grants" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/blog/energiepremies" />
+</url>
+<url>
+<loc>http://localhost:3100/en/advice/bulex-partner</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/blog/bulex-partner" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/advice/bulex-partner" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/blog/bulex-partner" />
+</url>
+<url>
+<loc>http://localhost:3100/en/advice/heating-controls</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/blog/verwarmingsregeling" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/advice/heating-controls" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/blog/verwarmingsregeling" />
+</url>
+<url>
+<loc>http://localhost:3100/en/advice/heat-pump-home</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/blog/warmtepomp-woning" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/advice/heat-pump-home" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/blog/warmtepomp-woning" />
+<lastmod>2026-11-14T23:00:00.000Z</lastmod>
+</url>
+<url>
+<loc>http://localhost:3100/en/advice/replacing-boiler</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/blog/ketel-vervangen" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/advice/replacing-boiler" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/blog/ketel-vervangen" />
+</url>
+<url>
+<loc>http://localhost:3100/en/advice/blocked-drain</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/blog/verstopte-afvoer" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/advice/blocked-drain" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/blog/verstopte-afvoer" />
+</url>
+<url>
+<loc>http://localhost:3100/en/advice/water-leak</loc>
+<xhtml:link rel="alternate" hreflang="nl-BE" href="http://localhost:3100/blog/waterlek" />
+<xhtml:link rel="alternate" hreflang="en-BE" href="http://localhost:3100/en/advice/water-leak" />
+<xhtml:link rel="alternate" hreflang="x-default" href="http://localhost:3100/blog/waterlek" />
+<lastmod>2026-11-14T23:00:00.000Z</lastmod>
+</url>
+</urlset>
