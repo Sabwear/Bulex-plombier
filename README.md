@@ -135,3 +135,7 @@ Authenticated Search Console submission completed on 16 November 2026. The sitem
 ## Final production verification
 
 Hostinger completed build `01a1e660-6555-7063-a94d-1ca82ef7b59d` for code commit `489bc4c`. All eight checked EN/NL homepage, contact, booking and legal URLs return HTTP 200 with native mailto destinations and no Cloudflare email-protection rewrite (evidence: `seo-evidence/2026-11-16/live-email-links.json`). The email follow-up and sitemap submission are complete. Tests: 46 passed; production build passed. Google reports 126 sitemap pages discovered; actual indexing, performance reports and PageSpeed measurements remain pending. Earlier open deployment/email/submission notes above are superseded by these verified results.
+
+### Current indexing policy: all published pages
+
+At the owner's request, all 45 existing cities in EN/NL are eligible for indexing; the sitemap includes all 178 currently published canonical routes. This supersedes the earlier bilingual-profile indexing gate. Future scheduled guides remain excluded until publication. Private endpoints and invalid URLs are excluded. `config/bulex/indexability.ts` now checks city existence only; the same policy applies to both languages. Actual Google indexing depends on crawling and selection, not only the index directive.

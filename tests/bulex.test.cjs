@@ -347,7 +347,7 @@ test('Hostinger mail logs are single-line JSON and include diagnostic stages wit
  }finally{denyMarketingForSession(false);global.window=previous.window;global.document=previous.document;global.localStorage=previous.localStorage;}
 });
 
-test('SEO sitemap excludes thin area pairs and robots allows public images',async()=>{
+test('SEO sitemap includes every existing area pair and robots allows public images',async()=>{
  const brand=require('../config/bulex/brand.ts'),previous=brand.bulexIndexable;brand.bulexIndexable=true;
  const {isIndexableArea}=require('../config/bulex/indexability.ts');
  try{
@@ -359,7 +359,7 @@ test('SEO sitemap excludes thin area pairs and robots allows public images',asyn
    const meta=await require('../app/bulex/[locale]/[[...path]]/page.tsx').generateMetadata({params:Promise.resolve({locale,path:parsePublicPath(href(locale,'areas',city.slug)).segments})});
    assert.equal(meta.robots.index,included,city.slug);
   }
-  assert.equal(entries.filter(e=>new URL(e.url).pathname.startsWith('/loodgieter/')).length,19);
+  assert.equal(entries.filter(e=>new URL(e.url).pathname.startsWith('/loodgieter/')).length,getCities('nl').length);
   assert.ok(entries.every(e=>!('changeFrequency'in e)&&(!e.lastModified||new Date(e.lastModified)<=new Date())));
   const robots=await require('../app/robots.ts').default();assert.ok(!robots.rules.disallow.includes('/bulex/'));
  }finally{brand.bulexIndexable=previous}

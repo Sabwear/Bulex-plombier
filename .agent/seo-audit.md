@@ -17,3 +17,7 @@ Authenticated Search Console submission completed on 16 November 2026. The sitem
 ## Final production verification
 
 Hostinger completed build `01a1e660-6555-7063-a94d-1ca82ef7b59d` for code commit `489bc4c`. All eight checked EN/NL homepage, contact, booking and legal URLs return HTTP 200 with native mailto destinations and no Cloudflare email-protection rewrite (evidence: `seo-evidence/2026-11-16/live-email-links.json`). The email follow-up and sitemap submission are complete. Tests: 46 passed; production build passed. Google reports 126 sitemap pages discovered; actual indexing, performance reports and PageSpeed measurements remain pending. Earlier open deployment/email/submission notes above are superseded by these verified results.
+
+## Owner override: index all published pages
+
+The user explicitly requested “index everything and do the rest”. Removed the bilingual-profile indexing restriction: every existing city now passes isIndexableArea. All 90 area pages and the other published routes are eligible; sitemap returns 178 entries at the current publication date. Future scheduled articles retain publication dates and 404 behavior; private/API/internal/invalid routes are excluded. Regression now checks all existing cities, with 46 tests and production build passing. Confirmed Google Page indexing data is still processing. Existing audit findings about repetitive content remain editorial follow-ups, not a noindex policy. This user instruction supersedes the earlier skill-based location-page limit decision.
