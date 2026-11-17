@@ -1,3 +1,4 @@
+import {legacyAdviceImages} from './advice-images';
 import {getPublishedBlogPosts,type BlogPost} from './blog';
 import type {BulexLocale} from './routes';
 // Brand-neutral editorial replacements: never relabel Vaillant fault codes or models as Bulex.
@@ -22,7 +23,7 @@ const articles=[
 export type AdviceArticle={legacy:string;slug:string;title:string;body:string;image:string;blogPost?:BlogPost};
 export function getAdvice(locale:BulexLocale,now:Date=new Date()):AdviceArticle[]{
  const published=getPublishedBlogPosts(now);
- const existing:AdviceArticle[]=articles.map((a,i)=>{const slug=a[locale==='nl'?1:2],post=published.find(p=>p.slug[locale]===slug);return{legacy:a[0],slug,title:post?.title[locale]||a[locale==='nl'?3:4],body:post?.answer[locale]||a[locale==='nl'?5:6],image:post?.image||['technician','boiler','lifestyle','heat-pump'][i%4],blogPost:post}});
+ const existing:AdviceArticle[]=articles.map((a)=>{const slug=a[locale==='nl'?1:2],post=published.find(p=>p.slug[locale]===slug);return{legacy:a[0],slug,title:post?.title[locale]||a[locale==='nl'?3:4],body:post?.answer[locale]||a[locale==='nl'?5:6],image:post?.image||'blog/'+legacyAdviceImages[a[2]],blogPost:post}});
  return [...existing,...published.filter(p=>!existing.some(a=>a.slug===p.slug[locale])).map(p=>({legacy:p.slug.en,slug:p.slug[locale],title:p.title[locale],body:p.answer[locale],image:p.image,blogPost:p}))];
 }
 export {adviceAlternate} from './advice-routes';

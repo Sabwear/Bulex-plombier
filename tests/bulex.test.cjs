@@ -228,7 +228,7 @@ test('Dutch logo appears only in Dutch pages and new header blog link is present
 });
  test('Each published sitemap entry has reciprocal EN/NL and fallback alternates',async()=>{
  const brand=require('../config/bulex/brand.ts');const previous=brand.bulexIndexable;brand.bulexIndexable=true;
- try{const entries=await require('../app/sitemap.ts').default();const urls=new Map(entries.map(e=>[e.url,e]));for(const entry of entries){const langs=entry.alternates.languages;assert.ok(Object.values(langs).includes(entry.url));assert.equal(langs['x-default'],langs['nl-BE']);for(const target of Object.values(langs)){assert.ok(urls.has(target),target);assert.deepEqual(urls.get(target).alternates.languages,langs);}}}finally{brand.bulexIndexable=previous;}
+ try{const entries=await require('../config/bulex/sitemap.ts').default();const urls=new Map(entries.map(e=>[e.url,e]));for(const entry of entries){const langs=entry.alternates.languages;assert.ok(Object.values(langs).includes(entry.url));assert.equal(langs['x-default'],langs['nl-BE']);for(const target of Object.values(langs)){assert.ok(urls.has(target),target);assert.deepEqual(urls.get(target).alternates.languages,langs);}}}finally{brand.bulexIndexable=previous;}
 });
 
 test('Public origin follows the request domain, protocol and local port with validated proxy fallback',()=>{
@@ -262,7 +262,7 @@ test('Canonical, hreflang, social URLs, schema, sitemap, robots and llms use one
    const origin='https://'+domain,props={params:Promise.resolve({locale:'en',path:['advice','water-leak']})};
    const meta=await generateMetadata(props);assert.equal(meta.metadataBase.origin,origin);assert.equal(meta.alternates.canonical,'/en/advice/water-leak');assert.equal(meta.openGraph.url,'/en/advice/water-leak');assert.equal(meta.openGraph.type,'article');assert.equal(meta.openGraph.images[0].url,'/bulex/'+getAdvice('en').find(a=>a.slug==='water-leak').image+'.webp');
    const html=renderToStaticMarkup(await Page(props));assert.ok(html.includes(origin+'/en/advice/water-leak'));assert.doesNotMatch(html,/http:\/\/localhost:3000/);
-   const sitemap=await require('../app/sitemap.ts').default();assert.ok(sitemap.every(entry=>entry.url.startsWith(origin+'/')));
+   const sitemap=await require('../config/bulex/sitemap.ts').default();assert.ok(sitemap.every(entry=>entry.url.startsWith(origin+'/')));
    const robots=await require('../app/robots.ts').default();assert.equal(robots.sitemap,origin+'/sitemap.xml');
    const llms=await require('../app/bulex-meta/route.ts').GET();assert.ok((await llms.text()).includes(origin+'/en'));
   }
@@ -351,7 +351,7 @@ test('SEO sitemap includes every existing area pair and robots allows public ima
  const brand=require('../config/bulex/brand.ts'),previous=brand.bulexIndexable;brand.bulexIndexable=true;
  const {isIndexableArea}=require('../config/bulex/indexability.ts');
  try{
-  const entries=await require('../app/sitemap.ts').default();
+  const entries=await require('../config/bulex/sitemap.ts').default();
   assert.equal(new Set(entries.map(e=>e.url)).size,entries.length);
   for(const city of getCities('nl'))for(const locale of ['nl','en']){
    const included=entries.some(e=>new URL(e.url).pathname===href(locale,'areas',city.slug));
@@ -382,4 +382,24 @@ test('Contact and booking forms expose no off-screen text field for browser auto
   for(const name of ['nom','email','telephone','adresse','service','message','consent'])assert.ok(html.includes(`name="${name}"`),`${locale}/${booking}: ${name}`);
   assert.match(html,/autoComplete="email"/);
  }
+});
+
+test('Sitemap XML keeps language alternates and escapes URL attributes with a readable stylesheet',async()=>{
+ const {sitemapXml}=require('../lib/sitemap-xml.ts');
+ const xml=sitemapXml([{url:'https://example.test/a?x=1&y=2',alternates:{languages:{'nl-BE':'https://example.test/a?x=1&y=2'}},lastModified:new Date('2026-11-15T00:00:00Z')}]);
+ assert.match(xml,/<\?xml-stylesheet type="text\/xsl" href="\/sitemap.xsl"\?>/);
+ assert.match(xml,/x=1&amp;y=2/);assert.match(xml,/hreflang="nl-BE"/);assert.match(xml,/<lastmod>2026-11-15T00:00:00.000Z<\/lastmod>/);
+ assert.equal(bulexMiddleware(request('/sitemap')).headers.get('x-middleware-next'),'1');
+});
+
+test('Every full or legacy article has a distinct local generated image and matching EN/NL asset',()=>{
+ const {blogPosts}=require('../config/bulex/blog.ts');
+ const posts=blogPosts.map(p=>p.image);
+ for(const locale of ['en','nl']){
+  const all=[...posts,...getAdvice(locale).filter(a=>!a.blogPost).map(a=>a.image)];
+  assert.equal(new Set(all).size,all.length,locale);
+  for(const image of all)assert.ok(fs.existsSync(path.join(process.cwd(),'public/bulex',image+'.webp')),image);
+ }
+ for(const post of blogPosts)assert.ok(post.imageAlt.en&&post.imageAlt.nl);
+ for(const article of getAdvice('nl'))assert.equal(getAdvice('en').find(a=>a.legacy===article.legacy).image,article.image);
 });

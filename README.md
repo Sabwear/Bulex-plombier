@@ -157,3 +157,11 @@ Delivery checks PASS: 46 tests and production build; complete live sitemap crawl
 The contact error reference `5178b01e-57fb-4949-84a8-de06c39e8f56` was a pre-SMTP verification rejection: an off-screen anti-spam text field was filled. The shared EN/NL contact and booking form no longer includes that browser-autofill target. Existing server origin/rate/field/upload checks remain, and direct legacy trap submissions still reject. SMTP connection and authentication passed without changing environment values. See `qa/contact-autofill-fix.md` for evidence and validation. Reload an already-open form to load the corrected version.
 
 Production verification of the autofill fix passed: the Dutch browser contact submission reached success and Hostinger logged SMTP acceptance for enquiry and confirmation. Code release `c92d5b7`; evidence in `qa/contact-autofill-fix.md` and `qa/contact-autofill-fixed-live.jpg`. All 47 tests and production build pass. SMTP acceptance does not establish Inbox placement.
+
+### Readable sitemap and original article covers (17 November 2026)
+
+Use `/sitemap` for a readable, responsive view grouped by topic. `/sitemap.xml` stays the search-engine endpoint and adds an optional XSL presentation for compatible browsers. Edge/Chrome are retiring XSLT, so the HTML view remains available independently. Both use `config/bulex/sitemap.ts`; canonical URLs, language alternates and scheduled publication are preserved.
+
+Blog imagery now uses 22 distinct generated topic illustrations under `public/bulex/blog/`, including scheduled posts and older advice. EN/NL article variants share the matching cover; other topics no longer reuse homepage photos. Images are illustrations rather than actual job photographs. Provenance: `public/bulex/blog/asset-sources.json`. QA and priorities: `qa/sitemap-and-blog-images.md` and `qa/seo-improvements.md`.
+
+The newer returned-mail screenshot confirms MailChannels rejected an external confirmation after SMTP acceptance. This differs from the fixed contact-form autofill rejection; see `qa/mailchannels-followup.md`. Provider review remains necessary and no successful external delivery is claimed.

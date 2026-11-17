@@ -10,7 +10,7 @@
       "nl": "Bulex F.28 of F.75 in Brussel: wat doet u?"
     },
     "category": "faults",
-    "image": "brand-boiler",
+    "image": "blog/faults",
     "area": "brussel",
     "service": 0,
     "publishAt": "2026-11-15T00:00:00+01:00",
@@ -77,7 +77,11 @@
     "sources": [
       "https://www.bulex.be/particulier/diensten/foutcodes/",
       "https://www.bulex.be/particulier/documentatie/technische-documentaties/handleidingen/"
-    ]
+    ],
+    "imageAlt": {
+      "en": "Closed boiler with an amber indicator and an inspection notebook (illustration)",
+      "nl": "Gesloten ketel met een amberkleurig lampje en een notitieboek (illustratie)"
+    }
   },
   {
     "id": "maintenance",
@@ -90,7 +94,7 @@
       "nl": "Bulex-ketelonderhoud in Antwerpen: bereid uw bezoek voor"
     },
     "category": "maintenance",
-    "image": "brand-technician",
+    "image": "blog/maintenance",
     "area": "antwerpen",
     "service": 1,
     "publishAt": "2026-11-15T00:00:00+01:00",
@@ -157,7 +161,11 @@
     "sources": [
       "https://www.bulex.be/particulier/diensten/onderhoud/",
       "https://www.bulex.be/particulier/documentatie/technische-documentaties/handleidingen/"
-    ]
+    ],
+    "imageAlt": {
+      "en": "Technician recording observations beside a closed boiler (illustration)",
+      "nl": "Technieker noteert waarnemingen naast een gesloten ketel (illustratie)"
+    }
   },
   {
     "id": "hotwater",
@@ -170,7 +178,7 @@
       "nl": "Geen warm water in Gent: ketel, Opalia of kraan?"
     },
     "category": "hot-water",
-    "image": "brand-water-heater",
+    "image": "blog/hotwater",
     "area": "gent",
     "service": 4,
     "publishAt": "2026-11-15T00:00:00+01:00",
@@ -237,7 +245,11 @@
     "sources": [
       "https://www.bulex.be/particuliers/produits/opalia-1797.html",
       "https://www.bulex.be/particulier/documentatie/technische-documentaties/handleidingen/"
-    ]
+    ],
+    "imageAlt": {
+      "en": "Kitchen tap and domestic water heater (illustration)",
+      "nl": "Keukenkraan en warmwatertoestel (illustratie)"
+    }
   },
   {
     "id": "pressure",
@@ -250,7 +262,7 @@
       "nl": "Bulex-druk daalt in Anderlecht: wat noteert u?"
     },
     "category": "faults",
-    "image": "boiler",
+    "image": "blog/pressure",
     "area": "anderlecht",
     "service": 0,
     "publishAt": "2026-11-15T00:00:00+01:00",
@@ -317,7 +329,11 @@
     "sources": [
       "https://www.bulex.be/particulier/documentatie/technische-documentaties/handleidingen/",
       "https://www.bulex.be/particulier/diensten/foutcodes/"
-    ]
+    ],
+    "imageAlt": {
+      "en": "Boiler pressure gauge and observation notebook (illustration)",
+      "nl": "Keteldrukmeter en notitieboek (illustratie)"
+    }
   },
   {
     "id": "heatpump",
@@ -330,7 +346,7 @@
       "nl": "GeniaAir in Leuven: kan een warmtepomp met uw radiatoren?"
     },
     "category": "equipment",
-    "image": "heat-pump",
+    "image": "blog/heatpump",
     "area": "leuven",
     "service": 3,
     "publishAt": "2026-11-15T00:00:00+01:00",
@@ -397,7 +413,11 @@
     "sources": [
       "https://www.bulex.be/particulier/producten/alle-producten/",
       "https://www.bulex.be/particulier/documentatie/technische-documentaties/handleidingen/"
-    ]
+    ],
+    "imageAlt": {
+      "en": "Outdoor heat pump beside a brick house (illustration)",
+      "nl": "Buitenunit van een warmtepomp bij een bakstenen woning (illustratie)"
+    }
   },
   {
     "id": "leak",
@@ -410,7 +430,7 @@
       "nl": "Waterlek in Brussel: welke informatie helpt de loodgieter?"
     },
     "category": "plumbing",
-    "image": "brand-technician",
+    "image": "blog/leak",
     "area": "brussel",
     "service": 6,
     "publishAt": "2026-11-15T00:00:00+01:00",
@@ -476,7 +496,11 @@
     },
     "sources": [
       "https://www.bulex.be/particulier/documentatie/technische-documentaties/handleidingen/"
-    ]
+    ],
+    "imageAlt": {
+      "en": "Plumber inspecting a drip beneath a basin (illustration)",
+      "nl": "Loodgieter onderzoekt een druppelend lek onder een wastafel (illustratie)"
+    }
   },
   {
     "id": "f29",
@@ -489,7 +513,7 @@
       "nl": "Bulex F.29 in Antwerpen: waarom valt de vlam uit?"
     },
     "category": "faults",
-    "image": "brand-boiler",
+    "image": "blog/f29",
     "area": "antwerpen",
     "service": 0,
     "publishAt": "2026-11-22T09:00:00+01:00",
@@ -544,7 +568,11 @@
     "sources": [
       "https://www.bulex.be/particulier/diensten/foutcodes/",
       "https://www.bulex.be/particulier/documentatie/technische-documentaties/handleidingen/"
-    ]
+    ],
+    "imageAlt": {
+      "en": "Homeowner recording an indicator on a closed boiler (illustration)",
+      "nl": "Bewoner legt een lampje op een gesloten ketel vast (illustratie)"
+    }
   },
   {
     "id": "replacement",
@@ -557,7 +585,7 @@
       "nl": "Bulex ThemaFast vervangen in Brussel: wat controleren?"
     },
     "category": "equipment",
-    "image": "brand-boiler",
+    "image": "blog/replacement",
     "area": "brussel",
     "service": 2,
     "publishAt": "2026-11-29T09:00:00+01:00",
@@ -612,7 +640,11 @@
     "sources": [
       "https://www.bulex.be/professioneel/technische-fiches/",
       "https://www.bulex.be/particuliers/produits/themafast-condens-85568.html"
-    ]
+    ],
+    "imageAlt": {
+      "en": "Technician measuring clearance around a boiler (illustration)",
+      "nl": "Technieker meet de vrije ruimte rond een ketel (illustratie)"
+    }
   },
   {
     "id": "radiators",
@@ -625,7 +657,7 @@
       "nl": "Koude radiatoren in Gent terwijl warm water werkt: waar beginnen?"
     },
     "category": "heating",
-    "image": "hero-comfort",
+    "image": "blog/radiators",
     "area": "gent",
     "service": 3,
     "publishAt": "2026-12-06T09:00:00+01:00",
@@ -679,7 +711,11 @@
     },
     "sources": [
       "https://www.bulex.be/particulier/documentatie/technische-documentaties/handleidingen/"
-    ]
+    ],
+    "imageAlt": {
+      "en": "Radiator surface temperature being checked (illustration)",
+      "nl": "Controle van de oppervlaktetemperatuur van een radiator (illustratie)"
+    }
   },
   {
     "id": "controls",
@@ -692,7 +728,7 @@
       "nl": "MiGo of MiPro Sense in Leuven: welke Bulex-regeling past?"
     },
     "category": "equipment",
-    "image": "boiler",
+    "image": "blog/controls",
     "area": "leuven",
     "service": 3,
     "publishAt": "2026-12-13T09:00:00+01:00",
@@ -747,7 +783,11 @@
     "sources": [
       "https://www.bulex.be/particulier/producten/alle-producten/",
       "https://www.bulex.be/particulier/documentatie/technische-documentaties/handleidingen/"
-    ]
+    ],
+    "imageAlt": {
+      "en": "Two unbranded heating controls and a home plan (illustration)",
+      "nl": "Twee merkloze verwarmingsregelingen en een woningplan (illustratie)"
+    }
   },
   {
     "id": "noise",
@@ -760,7 +800,7 @@
       "nl": "Een luidruchtige Bulex-ketel in Anderlecht: wat meldt u?"
     },
     "category": "faults",
-    "image": "brand-technician",
+    "image": "blog/noise",
     "area": "anderlecht",
     "service": 0,
     "publishAt": "2026-12-20T09:00:00+01:00",
@@ -814,7 +854,11 @@
     },
     "sources": [
       "https://www.bulex.be/particulier/documentatie/technische-documentaties/handleidingen/"
-    ]
+    ],
+    "imageAlt": {
+      "en": "Homeowner recording a sound near a closed boiler (illustration)",
+      "nl": "Bewoner neemt geluid bij een gesloten ketel op (illustratie)"
+    }
   },
   {
     "id": "capacity",
@@ -827,7 +871,7 @@
       "nl": "Boiler te klein in Antwerpen? Vergelijk eerst het watergebruik"
     },
     "category": "hot-water",
-    "image": "brand-water-heater",
+    "image": "blog/capacity",
     "area": "antwerpen",
     "service": 4,
     "publishAt": "2026-12-27T09:00:00+01:00",
@@ -882,6 +926,10 @@
     "sources": [
       "https://www.bulex.be/particulier/producten/alle-producten/",
       "https://www.bulex.be/particulier/documentatie/technische-documentaties/handleidingen/"
-    ]
+    ],
+    "imageAlt": {
+      "en": "Domestic hot-water storage tank in a utility room (illustration)",
+      "nl": "Warmwatervoorraadvat in een technische ruimte (illustratie)"
+    }
   }
 ]

@@ -4,6 +4,7 @@ import {adviceAlternate} from './advice-routes';
 import {alternatePath} from './routes';
 import {preferredLocale,localeCookie} from './language';
 export function bulexMiddleware(request:NextRequest){const path=request.nextUrl.pathname;
+ if(path==='/sitemap'){const headers=new Headers(request.headers);headers.set('x-bulex-locale','en');return NextResponse.next({request:{headers}});}
  if(path==='/llms.txt'){const url=request.nextUrl.clone();url.pathname='/bulex-meta';return NextResponse.rewrite(url);}
  if(path.startsWith('/api/')||path.startsWith('/_next/')||/\.[a-zA-Z0-9]+$/.test(path))return NextResponse.next();
  if(path.startsWith('/bulex/'))return new NextResponse('Not found',{status:404});
