@@ -1,0 +1,99 @@
+{
+  "xml_urls": 178,
+  "alternate_links": 534,
+  "stylesheet": true,
+  "html_sitemap": true,
+  "generated_images": 22,
+  "image_statuses": [
+    [
+      "/bulex/blog/faults.webp",
+      200
+    ],
+    [
+      "/bulex/blog/maintenance.webp",
+      200
+    ],
+    [
+      "/bulex/blog/hotwater.webp",
+      200
+    ],
+    [
+      "/bulex/blog/pressure.webp",
+      200
+    ],
+    [
+      "/bulex/blog/heatpump.webp",
+      200
+    ],
+    [
+      "/bulex/blog/leak.webp",
+      200
+    ],
+    [
+      "/bulex/blog/f29.webp",
+      200
+    ],
+    [
+      "/bulex/blog/replacement.webp",
+      200
+    ],
+    [
+      "/bulex/blog/radiators.webp",
+      200
+    ],
+    [
+      "/bulex/blog/controls.webp",
+      200
+    ],
+    [
+      "/bulex/blog/noise.webp",
+      200
+    ],
+    [
+      "/bulex/blog/capacity.webp",
+      200
+    ],
+    [
+      "/bulex/blog/quote.webp",
+      200
+    ],
+    [
+      "/bulex/blog/winter.webp",
+      200
+    ],
+    [
+      "/bulex/blog/cold-radiators.webp",
+      200
+    ],
+    [
+      "/bulex/blog/limescale.webp",
+      200
+    ],
+    [
+      "/bulex/blog/grants.webp",
+      200
+    ],
+    [
+      "/bulex/blog/partner.webp",
+      200
+    ],
+    [
+      "/bulex/blog/heating-controls.webp",
+      200
+    ],
+    [
+      "/bulex/blog/replacing-boiler.webp",
+      200
+    ],
+    [
+      "/bulex/blog/blocked-drain.webp",
+      200
+    ],
+    [
+      "/bulex/blog/boiler-noises.webp",
+      200
+    ]
+  ],
+  "tests": 49,
+  "deployment": "01a1e6da-02ba-7239-9e5b-1c76513f7de9"
+}

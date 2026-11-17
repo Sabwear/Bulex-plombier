@@ -25,3 +25,7 @@ See qa/seo-improvements.md for prioritized evidence-based recommendations. Origi
 Browser checks: HTML sitemap contains all 178 links and no horizontal overflow at 390px. Both XML/XSL and HTML render successfully. EN/NL blog hubs reference the same six published topic covers; all loaded successfully in the browser. Full/scheduled and legacy asset references are checked across both locales. Screenshots: sitemap-readable-desktop.jpg, sitemap-readable-mobile.jpg and blog-new-covers-preview.jpg. The utility view uses English document language with its Dutch explanatory paragraph explicitly marked nl; staging retains the application indexing mode.
 
 Delivery checks PASS: build and 49 tests; valid XML and reciprocal alternates; real link destinations; mobile overflow check; optimized local images; visual QA of generated cover contact sheet; no fake reviews, logos or completed-work claims. Remaining provider email filtering is explicitly unresolved rather than hidden as a site-code failure.
+
+## Production verification
+
+Hostinger completed deployment 01a1e6da-02ba-7239-9e5b-1c76513f7de9 for code 0966383. The live XML includes the stylesheet instruction and parses all 178 URL entries with 534 language alternatives; the live HTML /sitemap contains 178 page links and English document language. All 22 generated WebP assets return HTTP 200. Evidence: qa/sitemap-images-live-checks.json and qa/sitemap-readable-live.jpg. No Google ranking or external-mail delivery improvement is claimed.

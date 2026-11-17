@@ -165,3 +165,5 @@ Use `/sitemap` for a readable, responsive view grouped by topic. `/sitemap.xml` 
 Blog imagery now uses 22 distinct generated topic illustrations under `public/bulex/blog/`, including scheduled posts and older advice. EN/NL article variants share the matching cover; other topics no longer reuse homepage photos. Images are illustrations rather than actual job photographs. Provenance: `public/bulex/blog/asset-sources.json`. QA and priorities: `qa/sitemap-and-blog-images.md` and `qa/seo-improvements.md`.
 
 The newer returned-mail screenshot confirms MailChannels rejected an external confirmation after SMTP acceptance. This differs from the fixed contact-form autofill rejection; see `qa/mailchannels-followup.md`. Provider review remains necessary and no successful external delivery is claimed.
+
+Production verification passed for sitemap/image release `0966383`: `/sitemap` shows all 178 links, XML retains 178 entries and 534 language alternates, and all 22 new WebP assets return HTTP 200. Hostinger build `01a1e6da-02ba-7239-9e5b-1c76513f7de9` completed. Evidence: `qa/sitemap-images-live-checks.json` and `qa/sitemap-readable-live.jpg`.
