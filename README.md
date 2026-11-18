@@ -171,3 +171,5 @@ Production verification passed for sitemap/image release `0966383`: `/sitemap` s
 ### Google Ads website phone conversion (18 November 2026)
 
 The global consent-gated Google tag now configures `AW-11417443258/sMZZCOKQqpscELq3ocQq` with `phone_conversion_number: '+32467802090'` immediately after tag initialization. It applies to both languages through the shared root integration and runs once per document after marketing consent. Existing form/WhatsApp conversions remain separate. See `qa/google-phone-conversion.md`; actual forwarding-number replacement and call attribution need account-side verification.
+
+Phone-conversion code `35b0cfa` is deployed (Hostinger build `01a1ef6f-2602-732c-8cd2-ec1a227b71b9`). Exact label and number are present in the served root-layout bundle; browser consent checks confirm zero loaders while declined and one after acceptance. See `qa/google-phone-live-checks.json`. This verifies installation, not a real attributed call.
