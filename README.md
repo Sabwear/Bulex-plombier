@@ -177,3 +177,5 @@ Phone-conversion code `35b0cfa` is deployed (Hostinger build `01a1ef6f-2602-732c
 ### Red-bird favicon (18 November 2026)
 
 The favicon now uses only the red Bulex bird, generated from the supplied existing logo reference. Next.js serves a multi-size `app/favicon.ico`, `app/icon.png` and `app/apple-icon.png` for both languages. The old manual favicon link to the full wordmark was removed. The 512px transparent master and provenance are under `public/bulex/favicon-bird.png` and `favicon-source.json`. See `qa/favicon-bird.md` for validation. Reload or reopen a tab if the browser caches the previous favicon.
+
+The red-bird favicon release `f55945f` is verified live: both languages link the new icons, and `/favicon.ico`, `/icon.png` and `/apple-icon.png` return the expected generated files. Evidence: `qa/favicon-live-checks.json`.

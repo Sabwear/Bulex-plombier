@@ -1,0 +1,75 @@
+[
+  {
+    "page": "/",
+    "icons": [
+      {
+        "rel": "icon",
+        "href": "/favicon.ico",
+        "type": "image/x-icon",
+        "sizes": "16x16"
+      },
+      {
+        "rel": "icon",
+        "href": "/icon.png?6d7b09b73e5123e3",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-icon.png?9cc6b2b290238673",
+        "type": "image/png",
+        "sizes": "180x180"
+      }
+    ]
+  },
+  {
+    "page": "/en",
+    "icons": [
+      {
+        "rel": "icon",
+        "href": "/favicon.ico",
+        "type": "image/x-icon",
+        "sizes": "16x16"
+      },
+      {
+        "rel": "icon",
+        "href": "/icon.png?6d7b09b73e5123e3",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "rel": "apple-touch-icon",
+        "href": "/apple-icon.png?9cc6b2b290238673",
+        "type": "image/png",
+        "sizes": "180x180"
+      }
+    ]
+  },
+  {
+    "path": "/favicon.ico",
+    "status": 200,
+    "format": "ICO",
+    "size": [
+      48,
+      48
+    ]
+  },
+  {
+    "path": "/icon.png",
+    "status": 200,
+    "format": "PNG",
+    "size": [
+      192,
+      192
+    ]
+  },
+  {
+    "path": "/apple-icon.png",
+    "status": 200,
+    "format": "PNG",
+    "size": [
+      180,
+      180
+    ]
+  }
+]
