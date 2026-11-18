@@ -167,3 +167,7 @@ Blog imagery now uses 22 distinct generated topic illustrations under `public/bu
 The newer returned-mail screenshot confirms MailChannels rejected an external confirmation after SMTP acceptance. This differs from the fixed contact-form autofill rejection; see `qa/mailchannels-followup.md`. Provider review remains necessary and no successful external delivery is claimed.
 
 Production verification passed for sitemap/image release `0966383`: `/sitemap` shows all 178 links, XML retains 178 entries and 534 language alternates, and all 22 new WebP assets return HTTP 200. Hostinger build `01a1e6da-02ba-7239-9e5b-1c76513f7de9` completed. Evidence: `qa/sitemap-images-live-checks.json` and `qa/sitemap-readable-live.jpg`.
+
+### Google Ads website phone conversion (18 November 2026)
+
+The global consent-gated Google tag now configures `AW-11417443258/sMZZCOKQqpscELq3ocQq` with `phone_conversion_number: '+32467802090'` immediately after tag initialization. It applies to both languages through the shared root integration and runs once per document after marketing consent. Existing form/WhatsApp conversions remain separate. See `qa/google-phone-conversion.md`; actual forwarding-number replacement and call attribution need account-side verification.

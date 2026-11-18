@@ -342,7 +342,11 @@ test('Hostinger mail logs are single-line JSON and include diagnostic stages wit
   saved=JSON.stringify({version:CONSENT_VERSION,necessary:true,analytics:false,marketing:true,updatedAt:Date.now()});syncGoogleTag();syncGoogleTag();
   assert.equal(scripts.length,1);assert.equal(scripts[0].src,'https://www.googletagmanager.com/gtm.js?id=AW-11417443258');
   const calls=global.window.dataLayer.map(args=>Array.from(args));assert.equal(calls.filter(args=>args[0]==='js').length,1);assert.equal(calls[0][2].ad_storage,'denied');
+  const phoneCalls=calls.filter(args=>args[0]==='config');
+  assert.deepEqual(phoneCalls,[['config','AW-11417443258/sMZZCOKQqpscELq3ocQq',{phone_conversion_number:'+32467802090'}]]);
+  assert.ok(calls.findIndex(args=>args[0]==='config')>calls.findIndex(args=>args[0]==='js'));
   saved=JSON.stringify({version:CONSENT_VERSION,necessary:true,analytics:false,marketing:false,updatedAt:Date.now()});syncGoogleTag();assert.equal(global.window.dataLayer.at(-1)[2].ad_storage,'denied');
+  assert.equal(global.window.dataLayer.filter(args=>args[0]==='config').length,1);
   saved=JSON.stringify({version:CONSENT_VERSION,necessary:true,analytics:false,marketing:true,updatedAt:Date.now()});denyMarketingForSession(true);syncGoogleTag();assert.equal(global.window.dataLayer.at(-1)[2].ad_storage,'denied');
  }finally{denyMarketingForSession(false);global.window=previous.window;global.document=previous.document;global.localStorage=previous.localStorage;}
 });

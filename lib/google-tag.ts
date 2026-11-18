@@ -1,5 +1,7 @@
 import {hasMarketingConsent} from '@/config/bulex/consent';
 export const GOOGLE_ADS_TAG_ID='AW-11417443258';
+export const GOOGLE_ADS_PHONE_CONVERSION='AW-11417443258/sMZZCOKQqpscELq3ocQq';
+export const GOOGLE_ADS_PHONE_NUMBER='+32467802090';
 const SCRIPT_ID='bulex-google-tag';
 export function syncGoogleTag(){
  if(typeof window==='undefined')return;
@@ -16,4 +18,5 @@ export function syncGoogleTag(){
  const script=document.createElement('script');script.id=SCRIPT_ID;script.async=true;
  script.src=`https://www.googletagmanager.com/gtm.js?id=${GOOGLE_ADS_TAG_ID}`;
  document.head.appendChild(script);
+ window.gtag('config',GOOGLE_ADS_PHONE_CONVERSION,{phone_conversion_number:GOOGLE_ADS_PHONE_NUMBER});
 }
