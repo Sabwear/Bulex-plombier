@@ -179,3 +179,9 @@ Phone-conversion code `35b0cfa` is deployed (Hostinger build `01a1ef6f-2602-732c
 The favicon now uses only the red Bulex bird, generated from the supplied existing logo reference. Next.js serves a multi-size `app/favicon.ico`, `app/icon.png` and `app/apple-icon.png` for both languages. The old manual favicon link to the full wordmark was removed. The 512px transparent master and provenance are under `public/bulex/favicon-bird.png` and `favicon-source.json`. See `qa/favicon-bird.md` for validation. Reload or reopen a tab if the browser caches the previous favicon.
 
 The red-bird favicon release `f55945f` is verified live: both languages link the new icons, and `/favicon.ico`, `/icon.png` and `/apple-icon.png` return the expected generated files. Evidence: `qa/favicon-live-checks.json`.
+
+### Cookie banner behavior (18 November 2026)
+
+The first-visit notice saves acceptance, rejection or close as a six-month preference and stays dismissed across page visits and reloads. Close leaves optional tracking off. No floating Cookie settings button remains over WhatsApp. Reopen preferences using the normal **Cookie settings** / **Cookie-instellingen** button inside `/en/cookies` or `/cookies`.
+
+The preference uses localStorage and a first-party `bulex-cookie-choice` cookie, with tracking off if persistence is unavailable. Existing version-2 choices are retained. Clearing/expiring the stored choice can show the first-visit notice again. The compact notice is positioned above WhatsApp, including alongside the mobile call bar. QA: `qa/cookie-banner-dismissal.md`; 51 tests and production build pass.

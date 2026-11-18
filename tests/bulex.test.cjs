@@ -407,3 +407,33 @@ test('Every full or legacy article has a distinct local generated image and matc
  for(const post of blogPosts)assert.ok(post.imageAlt.en&&post.imageAlt.nl);
  for(const article of getAdvice('nl'))assert.equal(getAdvice('en').find(a=>a.legacy===article.legacy).image,article.image);
 });
+
+test('Consent cookie preserves the choice when localStorage is blocked, with safe memory fallback',()=>{
+ const previous={window:global.window,document:global.document,location:global.location,localStorage:global.localStorage};
+ const {CONSENT_KEY,persistConsentChoice,readConsentChoice,hasMarketingConsent}=require('../config/bulex/consent.ts');
+ let cookie='',stored=null;
+ global.window={};global.location={protocol:'https:'};global.localStorage={getItem:()=>{throw new Error('blocked')},setItem:()=>{throw new Error('blocked')}};
+ global.document={get cookie(){return cookie},set cookie(value){cookie=value.split(';')[0]}};
+ try{
+  assert.equal(readConsentChoice(),null);
+  assert.equal(persistConsentChoice(false).persisted,true);assert.equal(readConsentChoice().marketing,false);
+  assert.ok(cookie.startsWith(CONSENT_KEY+'='));
+  assert.equal(persistConsentChoice(true).persisted,true);assert.equal(hasMarketingConsent(),true);
+  global.document={get cookie(){return cookie},set cookie(value){}};
+  assert.equal(persistConsentChoice(false).persisted,false);assert.equal(readConsentChoice().marketing,false);assert.equal(hasMarketingConsent(),false);
+  global.document={get cookie(){return ''},set cookie(value){}};
+  const failed=persistConsentChoice(true);assert.equal(failed.persisted,false);assert.equal(readConsentChoice().marketing,false);assert.equal(hasMarketingConsent(),false);
+ }finally{
+  global.localStorage={getItem:()=>stored,setItem:(key,value)=>{stored=value}};persistConsentChoice(false);
+  Object.assign(global,previous);
+ }
+});
+test('Cookie settings are inline on the policy page, with no floating settings widget',()=>{
+ const React=require('react'),{renderToStaticMarkup}=require('react-dom/server');
+ const CookieConsent=require('../components/bulex/CookieConsent.tsx').default,Legal=require('../components/bulex/Legal.tsx').default;
+ for(const locale of ['en','nl']){
+  const shell=renderToStaticMarkup(React.createElement(CookieConsent,{locale}));assert.doesNotMatch(shell,/class="bx-cookie-settings"/);
+  const policy=renderToStaticMarkup(React.createElement(Legal,{locale,page:'cookies'}));assert.match(policy,/class="bx-cookie-policy-settings"/);
+  assert.doesNotMatch(renderToStaticMarkup(React.createElement(Legal,{locale,page:'privacy'})),/class="bx-cookie-policy-settings"/);
+ }
+});

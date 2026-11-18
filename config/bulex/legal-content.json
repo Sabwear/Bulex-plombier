@@ -73,19 +73,19 @@
     "en": [
       {
         "title": "What this website stores",
-        "text": "The first-party localStorage entry bulex-cookie-choice remembers your cookie preference, a policy version and the time of your choice. It is necessary to remember your privacy choice and is valid for up to six months. It is stored in your browser, rather than sent as an enquiry attachment or sold to a third party."
+        "text": "The first-party localStorage entry and cookie named bulex-cookie-choice remember your privacy preference, policy version and choice time for up to six months. Either saved copy can keep the first-visit notice dismissed. This necessary preference is not advertising consent by itself. If persistent storage is unavailable, the notice stays dismissed for the current page session and optional tracking remains off."
       },
       {
         "title": "Optional Google Ads measurement",
-        "text": "Google Ads (AW-11417443258) loads after you accept advertising cookies. It measures submitted enquiries and WhatsApp clicks and may use Google advertising cookies, including _gcl_au (typically up to 90 days). Google may process device, browser, page and advertising-interaction data. Rejecting leaves this tag unloaded. Google Analytics is not installed. Choices expire after six months and a changed policy requests fresh consent."
+        "text": "Google Ads (AW-11417443258) loads after you accept advertising cookies. It measures submitted enquiries, WhatsApp clicks and eligible website phone-call conversions and may use Google advertising cookies, including _gcl_au (typically up to 90 days). Google may process device, browser, page and advertising-interaction data. Rejecting leaves this tag unloaded. Google Analytics is not installed. Choices expire after six months and a changed policy requests fresh consent."
       },
       {
         "title": "Change or withdraw your choice",
-        "text": "Open Cookie settings at the bottom of any page. You can reject optional storage or withdraw optional consent with one action. Your enquiry form remains available. Clearing browser storage removes the saved choice and the notice may appear again. If your browser prevents storage, optional tracking remains off."
+        "text": "Use the Cookie settings button on this Cookie policy page to change or withdraw your choice. No cookie-settings widget stays floating over the website. Accepting, rejecting or closing the first-visit banner saves your preference; closing leaves optional tracking off. Forms and WhatsApp remain available. Clearing the saved browser preference, its expiry or a material policy change can show the notice again."
       },
       {
         "title": "Languages and third-party services",
-        "text": "English is the default and the language is identified by the page URL. This version does not need a language-preference cookie. Hosting or security infrastructure may use essential mechanisms outside the application; the operator must keep this inventory aligned with its deployed providers. External links follow the destination’s policies when you choose to visit them."
+        "text": "Dutch pages use unprefixed URLs and English pages use /en. Your selected language is remembered as described below. Hosting or security infrastructure may use essential mechanisms outside the application. External services follow their own policies when you choose to visit them."
       },
       {
         "title": "Google services",
@@ -99,19 +99,19 @@
     "nl": [
       {
         "title": "Wat bewaart deze website?",
-        "text": "Het first-party localStorage-item bulex-cookie-choice onthoudt uw cookievoorkeur, beleidsversie en keuzetijdstip. Dit is nodig om uw privacykeuze te bewaren en is maximaal zes maanden geldig. De gegevens blijven in uw browser en worden niet als aanvraagbijlage verzonden of aan derden verkocht."
+        "text": "Het first-party localStorage-item en de cookie bulex-cookie-choice onthouden uw privacyvoorkeur, beleidsversie en keuzetijdstip maximaal zes maanden. Beide opgeslagen kopieën kunnen de eerste melding verborgen houden. Deze noodzakelijke voorkeur is op zichzelf geen advertentietoestemming. Als permanente opslag niet beschikbaar is, blijft de melding tijdens de huidige paginasessie verborgen en blijft optionele tracking uit."
       },
       {
         "title": "Optionele Google Ads-meting",
-        "text": "Google Ads (AW-11417443258) wordt geladen nadat u advertentiecookies accepteert. Het meet verzonden aanvragen en WhatsApp-klikken en kan Google-advertentiecookies gebruiken, waaronder _gcl_au (doorgaans maximaal 90 dagen). Google kan apparaat-, browser-, pagina- en advertentie-interactiegegevens verwerken. Bij weigering wordt de tag niet geladen. Google Analytics is niet geïnstalleerd. Keuzes vervallen na zes maanden; een gewijzigd beleid vraagt opnieuw toestemming."
+        "text": "Google Ads (AW-11417443258) wordt geladen nadat u advertentiecookies accepteert. Het meet verzonden aanvragen, WhatsApp-klikken en in aanmerking komende website-oproepconversies en kan Google-advertentiecookies gebruiken, waaronder _gcl_au (doorgaans maximaal 90 dagen). Google kan apparaat-, browser-, pagina- en advertentie-interactiegegevens verwerken. Bij weigering wordt de tag niet geladen. Google Analytics is niet geïnstalleerd. Keuzes vervallen na zes maanden; een gewijzigd beleid vraagt opnieuw toestemming."
       },
       {
         "title": "Uw keuze wijzigen of intrekken",
-        "text": "Open Cookie-instellingen onderaan elke pagina. U kunt met één handeling optionele opslag weigeren of toestemming intrekken. Het aanvraagformulier blijft beschikbaar. Wis browseropslag om de bewaarde keuze te verwijderen; de melding kan dan opnieuw verschijnen. Als opslag niet mogelijk is, blijft optionele tracking uit."
+        "text": "Gebruik de knop Cookie-instellingen op deze cookiebeleidpagina om uw keuze te wijzigen of in te trekken. Er blijft geen zwevende cookieknop boven de website staan. Accepteren, weigeren of sluiten van de eerste melding bewaart uw voorkeur; bij sluiten blijft optionele tracking uit. Formulieren en WhatsApp blijven beschikbaar. Het wissen of vervallen van de browservoorkeur of een wezenlijke beleidswijziging kan de melding opnieuw tonen."
       },
       {
         "title": "Talen en externe diensten",
-        "text": "Engels is de standaardtaal; de pagina-URL identificeert de taal. Deze versie heeft geen taalvoorkeurcookie nodig. Hosting- of beveiligingsinfrastructuur kan buiten de applicatie noodzakelijke mechanismen gebruiken; de exploitant moet de inventaris met de ingezette providers afstemmen. Bij een externe link geldt het beleid van de bestemming."
+        "text": "Nederlandse pagina’s gebruiken URL’s zonder taalvoorvoegsel en Engelse pagina’s gebruiken /en. Uw gekozen taal wordt onthouden zoals hieronder beschreven. Hosting- of beveiligingsinfrastructuur kan buiten de applicatie noodzakelijke mechanismen gebruiken. Externe diensten volgen hun eigen beleid wanneer u die bezoekt."
       },
       {
         "title": "Google-diensten",

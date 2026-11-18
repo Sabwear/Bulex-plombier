@@ -1,0 +1,7 @@
+# Cookie notice and WhatsApp fix: 18 November 2026
+
+User requested first-visit notice only, then settings only from cookie policy; no overlay covering WhatsApp. Removed the global fixed settings button from CookieConsent. Added inline CookieSettingsButton in shared Legal cookie page (EN/NL), dispatching explicit open event. Accept/reject/close persist and hide banner; close rejects optional tracking. Existing policy version 2 retained, no forced re-consent on deployment.
+
+Added consent read/write helpers sharing localStorage and first-party preference cookie. Cookie fallback handles blocked localStorage; memory-only rejection handles fully blocked writes without enabling tracking or trusting an old grant. Google tag/legacy conversion gate uses same read helper. Cross-tab changes reread valid preference. Updated EN/NL cookie policy storage/settings text. Compact banner positioned above left WhatsApp control, with reserved mobile call-bar space.
+
+51 tests and production build pass. Local browser verified fresh notice, dismiss/reload, no floating button, policy-only EN/NL reopening, zero desktop/mobile overlap including visible call bar, and zero horizontal overflow at390px. Screenshot/QA in qa/cookie-banner-dismissal.md and qa/cookie-whatsapp-first-visit-mobile.jpg. No new UI theme/motion or fabricated claims. Deploy through existing GitHub main/Hostinger pipeline and verify live persistence/settings.
