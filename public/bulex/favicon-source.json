@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-18",
+  "asset": "favicon-bird.png",
+  "source": "OpenAI image generation based on public/bulex/logo.png",
+  "purpose": "Red Bulex bird mark isolated for website favicon; no wordmark",
+  "outputs": {
+    "favicon.ico": [
+      16,
+      32,
+      48
+    ],
+    "icon.png": 192,
+    "apple-icon.png": 180,
+    "favicon-bird.png": 512
+  },
+  "transparent": true
+}

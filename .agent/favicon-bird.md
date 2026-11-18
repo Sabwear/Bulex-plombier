@@ -1,0 +1,3 @@
+# Red Bulex bird favicon
+
+18 November 2026: user explicitly authorized generating and setting the bird mark from the Bulex logo as favicon. Used built-in image generation with existing public/bulex/logo.png reference. New transparent master public/bulex/favicon-bird.png; optimized resized outputs app/favicon.ico (16/32/48), app/icon.png (192), app/apple-icon.png (180). Removed old manual full-logo favicon link from app/layout.tsx, using Next file metadata globally in EN/NL. Existing brand logos untouched. ICO entries and PNG dimensions/transparency verified, 192px mark visually inspected, all49 tests pass. QA/provenance files added. Deploy via GitHub main/Hostinger and verify live icon links and responses; avoid claiming a user's browser cache updated immediately.

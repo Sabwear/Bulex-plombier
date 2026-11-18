@@ -24,7 +24,6 @@ export default async function RootLayout({
     <html lang={locale} suppressHydrationWarning>
       <head>
         <GoogleTag />
-        <link rel="icon" href="/bulex/logo.png" />
       </head>
       <body>
         {children}

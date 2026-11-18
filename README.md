@@ -173,3 +173,7 @@ Production verification passed for sitemap/image release `0966383`: `/sitemap` s
 The global consent-gated Google tag now configures `AW-11417443258/sMZZCOKQqpscELq3ocQq` with `phone_conversion_number: '+32467802090'` immediately after tag initialization. It applies to both languages through the shared root integration and runs once per document after marketing consent. Existing form/WhatsApp conversions remain separate. See `qa/google-phone-conversion.md`; actual forwarding-number replacement and call attribution need account-side verification.
 
 Phone-conversion code `35b0cfa` is deployed (Hostinger build `01a1ef6f-2602-732c-8cd2-ec1a227b71b9`). Exact label and number are present in the served root-layout bundle; browser consent checks confirm zero loaders while declined and one after acceptance. See `qa/google-phone-live-checks.json`. This verifies installation, not a real attributed call.
+
+### Red-bird favicon (18 November 2026)
+
+The favicon now uses only the red Bulex bird, generated from the supplied existing logo reference. Next.js serves a multi-size `app/favicon.ico`, `app/icon.png` and `app/apple-icon.png` for both languages. The old manual favicon link to the full wordmark was removed. The 512px transparent master and provenance are under `public/bulex/favicon-bird.png` and `favicon-source.json`. See `qa/favicon-bird.md` for validation. Reload or reopen a tab if the browser caches the previous favicon.
