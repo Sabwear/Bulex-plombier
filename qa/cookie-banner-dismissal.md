@@ -28,3 +28,9 @@ Local production browser checks:
 Screenshot: qa/cookie-whatsapp-first-visit-mobile.jpg.
 
 Design read: existing Bulex utility consent flow, ENERGY/RHYTHM/MOTION unchanged. Compact positioning exists to preserve access to WhatsApp, and the policy button provides the requested manual entry point. PASS: real native controls and visible focus; persistent rejection does not enable optional tracking; no new animation; matching EN/NL structure; responsive overlap measurements and existing tests/build pass.
+
+## Production result
+
+Hostinger build 01a1ef97-1d75-7290-9acb-c908c6fb4ebb deployed code 710f5cb. Automatic deployment had not picked up the commit, so the existing connected Git main branch was deployed explicitly.
+
+Live browser verification on /en: existing saved preference suppresses the banner; floating settings count is zero; WhatsApp remains present. On /en/cookies, the single inline Cookie settings button opens the preferences dialog. After withdrawing optional consent, navigating home and reloading: banner count zero, floating settings count zero, Google loader count zero, WhatsApp present. Screenshot: qa/cookie-dismissed-live.jpg. First-visit desktop/mobile geometry and EN/NL policy dialogs were verified against the same production build locally before release. All51 tests and production build pass.
